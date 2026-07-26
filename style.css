@@ -1,79 +1,199 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* ===== Reset ===== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-/* Body */
-body {
-    font-family: Arial, sans-serif;
-    background: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f5f7fa;
+    color:#333;
+    line-height:1.6;
 }
 
-/* Header */
-header {
-    background: #0d6efd;
-    color: white;
-    padding: 20px;
-    text-align: center;
+/* ===== Header ===== */
+header{
+    background:linear-gradient(90deg,#0d6efd,#198754);
+    color:#fff;
+    padding:20px;
+    text-align:center;
 }
 
-/* Navigation */
-nav {
-    background: #004aad;
-    padding: 10px;
-    text-align: center;
+header h1{
+    font-size:38px;
 }
 
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
+header p{
+    margin-top:10px;
+    font-size:18px;
 }
 
-nav a:hover {
-    color: yellow;
+/* ===== Navigation ===== */
+nav{
+    background:#004aad;
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
 }
 
-/* Main Content */
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 20px auto;
+nav a{
+    color:#fff;
+    text-decoration:none;
+    padding:15px 20px;
+    font-weight:bold;
+    transition:.3s;
 }
 
-/* Cards */
-.card {
-    background: white;
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+nav a:hover{
+    background:#198754;
+    border-radius:5px;
 }
 
-/* Button */
-.btn {
-    display: inline-block;
-    background: #0d6efd;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
+/* ===== Hero ===== */
+.hero{
+    background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url("banner.jpg");
+    background-size:cover;
+    background-position:center;
+    height:450px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    color:white;
+    text-align:center;
 }
 
-.btn:hover {
-    background: #004aad;
+.hero h2{
+    font-size:42px;
 }
 
-/* Footer */
-footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 15px;
-    margin-top: 30px;
+.hero p{
+    font-size:20px;
+    margin:15px 0;
+}
+
+.btn{
+    display:inline-block;
+    background:#198754;
+    color:white;
+    padding:12px 25px;
+    border-radius:6px;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#0d6efd;
+}
+
+/* ===== Section ===== */
+section{
+    padding:60px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+/* ===== Cards ===== */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:#0d6efd;
+    margin-bottom:10px;
+}
+
+/* ===== Donate ===== */
+.donate{
+    background:#198754;
+    color:white;
+    text-align:center;
+    padding:60px 20px;
+}
+
+/* ===== Contact ===== */
+.contact{
+    background:white;
+}
+
+.contact form{
+    max-width:600px;
+    margin:auto;
+}
+
+.contact input,
+.contact textarea{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:5px;
+}
+
+.contact button{
+    width:100%;
+    padding:12px;
+    background:#0d6efd;
+    color:white;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+.contact button:hover{
+    background:#198754;
+}
+
+/* ===== Footer ===== */
+footer{
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+/* ===== Responsive ===== */
+@media(max-width:768px){
+
+header h1{
+font-size:28px;
+}
+
+.hero{
+height:300px;
+}
+
+.hero h2{
+font-size:28px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+nav{
+flex-direction:column;
+}
+
+nav a{
+border-bottom:1px solid rgba(255,255,255,.2);
+}
+
 }
