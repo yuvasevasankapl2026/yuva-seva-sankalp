@@ -174,3 +174,21 @@ topBtn.onclick = function () {
         behavior: "smooth"
     });
 };
+.card{
+opacity:0;
+transform:translateY(40px);
+transition:.6s;
+}
+
+.card.show{
+opacity:1;
+transform:translateY(0);
+}
+
+#topBtn:hover{
+background:#ff9800;
+}
+
+html{
+scroll-behavior:smooth;
+}
