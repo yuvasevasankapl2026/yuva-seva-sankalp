@@ -1,27 +1,41 @@
-/* ===== Reset ===== */
+/* ========== RESET ========== */
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f5f7fa;
-    color:#333;
-    line-height:1.6;
+html{
+    scroll-behavior:smooth;
 }
 
-/* ===== Header ===== */
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#f4f7fb;
+    color:#333;
+    line-height:1.7;
+}
+
+/* ========== CONTAINER ========== */
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* ========== HEADER ========== */
+
 header{
-    background:linear-gradient(90deg,#0d6efd,#198754);
+    background:linear-gradient(90deg,#0066cc,#009966);
     color:#fff;
-    padding:20px;
     text-align:center;
+    padding:25px;
 }
 
 header h1{
-    font-size:38px;
+    font-size:40px;
 }
 
 header p{
@@ -29,147 +43,192 @@ header p{
     font-size:18px;
 }
 
-/* ===== Navigation ===== */
+/* ========== NAVIGATION ========== */
+
 nav{
-    background:#004aad;
+    background:#004080;
     display:flex;
     justify-content:center;
     flex-wrap:wrap;
+    position:sticky;
+    top:0;
+    z-index:1000;
 }
 
 nav a{
     color:#fff;
     text-decoration:none;
-    padding:15px 20px;
+    padding:18px;
     font-weight:bold;
     transition:.3s;
 }
 
 nav a:hover{
-    background:#198754;
-    border-radius:5px;
+    background:#009966;
 }
 
-/* ===== Hero ===== */
+/* ========== HERO ========== */
+
 .hero{
-    background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)),url("banner.jpg");
-    background-size:cover;
-    background-position:center;
-    height:450px;
+    height:500px;
     display:flex;
     justify-content:center;
     align-items:center;
-    color:white;
     text-align:center;
+    color:#fff;
+    background:linear-gradient(rgba(0,0,0,.5),
+    rgba(0,0,0,.5)),
+    url("images/banner.jpg");
+    background-size:cover;
+    background-position:center;
 }
 
 .hero h2{
-    font-size:42px;
+    font-size:48px;
 }
 
 .hero p{
+    margin:20px 0;
     font-size:20px;
-    margin:15px 0;
 }
+
+/* ========== BUTTON ========== */
 
 .btn{
     display:inline-block;
-    background:#198754;
-    color:white;
-    padding:12px 25px;
-    border-radius:6px;
+    padding:14px 30px;
+    background:#009966;
+    color:#fff;
     text-decoration:none;
+    border-radius:5px;
     transition:.3s;
 }
 
 .btn:hover{
-    background:#0d6efd;
+    background:#0066cc;
 }
 
-/* ===== Section ===== */
+/* ========== SECTION ========== */
+
 section{
-    padding:60px 20px;
+    padding:70px 0;
 }
 
-.container{
-    max-width:1200px;
-    margin:auto;
+.title{
+    text-align:center;
+    color:#0066cc;
+    margin-bottom:40px;
+    font-size:35px;
 }
 
-/* ===== Cards ===== */
+/* ========== CARDS ========== */
+
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
 }
 
 .card{
-    background:white;
-    padding:20px;
-    border-radius:10px;
+    background:#fff;
+    padding:25px;
+    border-radius:12px;
+    text-align:center;
     box-shadow:0 5px 15px rgba(0,0,0,.1);
-    transition:.3s;
+    transition:.4s;
 }
 
 .card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-10px);
+}
+
+.card i{
+    color:#009966;
+    margin-bottom:15px;
 }
 
 .card h3{
-    color:#0d6efd;
     margin-bottom:10px;
+    color:#0066cc;
 }
 
-/* ===== Donate ===== */
+/* ========== GALLERY ========== */
+
+.card img{
+    width:100%;
+    border-radius:10px;
+}
+
+.card img:hover{
+    transform:scale(1.05);
+    transition:.4s;
+}
+
+/* ========== DONATE ========== */
+
 .donate{
-    background:#198754;
-    color:white;
+    background:#009966;
+    color:#fff;
     text-align:center;
-    padding:60px 20px;
 }
 
-/* ===== Contact ===== */
-.contact{
-    background:white;
+.donate h2{
+    font-size:40px;
 }
+
+.donate p{
+    margin:20px;
+    font-size:20px;
+}
+
+/* ========== CONTACT ========== */
 
 .contact form{
-    max-width:600px;
+    max-width:700px;
     margin:auto;
 }
 
 .contact input,
 .contact textarea{
     width:100%;
-    padding:12px;
+    padding:15px;
     margin:10px 0;
     border:1px solid #ccc;
-    border-radius:5px;
+    border-radius:6px;
+    font-size:16px;
 }
 
 .contact button{
     width:100%;
-    padding:12px;
-    background:#0d6efd;
-    color:white;
+    padding:15px;
+    background:#0066cc;
+    color:#fff;
     border:none;
-    border-radius:5px;
+    font-size:18px;
+    border-radius:6px;
     cursor:pointer;
 }
 
 .contact button:hover{
-    background:#198754;
+    background:#009966;
 }
 
-/* ===== Footer ===== */
+/* ========== FOOTER ========== */
+
 footer{
     background:#222;
-    color:white;
+    color:#fff;
     text-align:center;
-    padding:20px;
+    padding:25px;
 }
 
-/* ===== Responsive ===== */
+footer p{
+    margin:8px 0;
+}
+
+/* ========== RESPONSIVE ========== */
+
 @media(max-width:768px){
 
 header h1{
@@ -177,11 +236,12 @@ font-size:28px;
 }
 
 .hero{
-height:300px;
+height:350px;
+padding:20px;
 }
 
 .hero h2{
-font-size:28px;
+font-size:30px;
 }
 
 .hero p{
@@ -194,6 +254,10 @@ flex-direction:column;
 
 nav a{
 border-bottom:1px solid rgba(255,255,255,.2);
+}
+
+.title{
+font-size:28px;
 }
 
 }
