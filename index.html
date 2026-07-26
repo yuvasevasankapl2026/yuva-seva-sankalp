@@ -4,415 +4,118 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yuva Seva Sankalp Foundation</title>
-<style>
-/* ===== RESET ===== */
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
 
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:#f5f7fa;
-    color:#333;
-    line-height:1.7;
-}
+<link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-/* ===== HEADER ===== */
-
-header{
-    background:linear-gradient(135deg,#0b6b3a,#138f5a);
-    color:#fff;
-    text-align:center;
-    padding:25px;
-    box-shadow:0 5px 15px rgba(0,0,0,.2);
-}
-
-header h1{
-    font-size:42px;
-}
-
-header p{
-    margin-top:10px;
-    font-size:18px;
-}
-
-/* ===== NAVBAR ===== */
-
-nav{
-    background:#044d2a;
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
-
-nav ul{
-    display:flex;
-    justify-content:center;
-    list-style:none;
-    flex-wrap:wrap;
-}
-
-nav ul li a{
-    display:block;
-    color:white;
-    padding:16px 22px;
-    text-decoration:none;
-    font-weight:bold;
-    transition:.3s;
-}
-
-nav ul li a:hover{
-    background:#18a35d;
-}
-
-/* ===== HERO ===== */
-
-.hero{
-    height:90vh;
-    background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-    url("hero.jpg");
-    background-size:cover;
-    background-position:center;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:white;
-    padding:20px;
-}
-
-.hero h2{
-    font-size:55px;
-}
-
-.hero p{
-    margin:20px 0;
-    font-size:22px;
-    max-width:800px;
-}
-
-.btn{
-    background:#ff9800;
-    color:white;
-    padding:14px 35px;
-    text-decoration:none;
-    border-radius:30px;
-    font-size:18px;
-    transition:.3s;
-}
-
-.btn:hover{
-    background:#ff7700;
-}
-
-/* ===== SECTION ===== */
-
-section{
-    padding:70px 10%;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:40px;
-}
-
-.section-title h2{
-    font-size:38px;
-    color:#0b6b3a;
-}
-
-/* ===== CARDS ===== */
-
-.cards{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
-
-.card{
-    background:white;
-    padding:25px;
-    border-radius:12px;
-    box-shadow:0 10px 20px rgba(0,0,0,.08);
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-10px);
-}
-
-.card h3{
-    color:#0b6b3a;
-    margin-bottom:15px;
-}
-
-/* ===== COUNTER ===== */
-
-.counter{
-    background:#0b6b3a;
-    color:white;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    text-align:center;
-    padding:60px 20px;
-}
-
-.counter h2{
-    font-size:45px;
-}
-
-.counter p{
-    font-size:18px;
-}
-
-/* ===== GALLERY ===== */
-
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.gallery img{
-    width:100%;
-    border-radius:10px;
-}
-
-/* ===== CONTACT ===== */
-
-.contact{
-    background:white;
-    border-radius:12px;
-    padding:30px;
-    box-shadow:0 8px 20px rgba(0,0,0,.08);
-}
-
-.contact input,
-.contact textarea{
-    width:100%;
-    padding:15px;
-    margin:10px 0;
-    border:1px solid #ccc;
-    border-radius:8px;
-}
-
-.contact button{
-    background:#0b6b3a;
-    color:white;
-    border:none;
-    padding:15px 30px;
-    border-radius:8px;
-    cursor:pointer;
-}
-
-/* ===== FOOTER ===== */
-
-footer{
-    background:#222;
-    color:white;
-    text-align:center;
-    padding:30px;
-}
-
-footer a{
-    color:#7fffad;
-    text-decoration:none;
-}
-
-/* ===== RESPONSIVE ===== */
-
-@media(max-width:768px){
-
-header h1{
-font-size:30px;
-}
-
-.hero h2{
-font-size:36px;
-}
-
-.hero p{
-font-size:18px;
-}
-
-nav ul{
-flex-direction:column;
-}
-
-}
-</style>
 </head>
+
 <body>
 
+<header class="header">
 
-<header>
-    <div class="container">
-        <h1>Yuva Seva Sankalp Foundation</h1>
-        <p>Education | Health | Social Welfare | Skill Development</p>
+<div class="logo">
 
-        <nav>
-            <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#mission">Mission</a></li>
-                <li><a href="#programs">Programs</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#donate">Donate</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </div>
+<h1>Yuva Seva Sankalp Foundation</h1>
+
+<p>Education • Health • Women Empowerment • Social Welfare</p>
+
+</div>
+
+<nav>
+
+<ul>
+
+<li><a href="#home">Home</a></li>
+
+<li><a href="#about">About</a></li>
+
+<li><a href="#mission">Mission</a></li>
+
+<li><a href="#programs">Programs</a></li>
+
+<li><a href="#gallery">Gallery</a></li>
+
+<li><a href="#team">Team</a></li>
+
+<li><a href="#donate">Donate</a></li>
+
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</nav>
+
 </header>
 
-<!-- HERO SECTION -->
 <section id="home" class="hero">
-    <div class="hero-content">
-        <h2>Welcome to Yuva Seva Sankalp Foundation</h2>
-        <p>
-            Together we work for Education, Health, Women Empowerment,
-            Child Development, Environmental Protection and Social Welfare.
-        </p>
 
-        <a href="#donate" class="btn">Donate Now</a>
-        <a href="#about" class="btn">Learn More</a>
-    </div>
+<div class="hero-content">
+
+<h2>Together We Can Build A Better Society</h2>
+
+<p>
+
+Supporting education, healthcare, women empowerment,
+
+youth development and environmental protection.
+
+</p>
+
+<a href="#donate" class="btn">Donate Now</a>
+
+<a href="#about" class="btn btn2">Know More</a>
+
+</div>
+
 </section>
 
-<!-- ABOUT -->
-<section id="about"> 
-   
-<section id="mission">
+<section id="about">
 
-<div class="section-title">
-<h2>Mission & Vision</h2>
-<p>Our commitment towards building a better society.</p>
-</div>
+<div class="container">
+
+<h2>About Our Foundation</h2>
+
+<p>
+
+Yuva Seva Sankalp Foundation is a non-profit organisation
+
+working for education, health, social welfare, environment,
+
+women empowerment and youth development.
+
+</p>
 
 <div class="cards">
 
 <div class="card">
-<h3>📚 Education</h3>
-<p>
-Free coaching, scholarship support, digital education,
-library development and career guidance for students.
-</p>
+
+<h3>Education</h3>
+
+<p>Free coaching, scholarships and digital literacy.</p>
+
 </div>
 
 <div class="card">
-<h3>🏥 Health</h3>
-<p>
-Free health camps, blood donation drives, awareness
-campaigns and medical support for poor families.
-</p>
+
+<h3>Healthcare</h3>
+
+<p>Medical camps, blood donation and awareness programmes.</p>
+
 </div>
 
 <div class="card">
-<h3>👩 Women Empowerment</h3>
-<p>
-Skill development, self employment training,
-financial literacy and leadership programs.
-</p>
+
+<h3>Social Welfare</h3>
+
+<p>Helping poor families and supporting community development.</p>
+
 </div>
 
-<div class="card">
-<h3>🌱 Environment</h3>
-<p>
-Tree plantation, clean village campaigns,
-water conservation and environmental awareness.
-</p>
-</div>
-
-<div class="card">
-<h3>👨 Youth Development</h3>
-<p>
-Sports activities, personality development,
-career counselling and leadership training.
-</p>
-</div>
-
-<div class="card">
-<h3>🤝 Social Welfare</h3>
-<p>
-Helping poor families, senior citizens,
-orphans and differently-abled people.
-</p>
 </div>
 
 </div>
 
 </section>
-
-<!-- COUNTER -->
-
-<section class="counter">
-
-<div>
-<h2>5000+</h2>
-<p>Beneficiaries</p>
-</div>
-
-<div>
-<h2>150+</h2>
-<p>Volunteers</p>
-</div>
-
-<div>
-<h2>100+</h2>
-<p>Projects</p>
-</div>
-
-<div>
-<h2>20+</h2>
-<p>District Programs</p>
-</div>
-
-</section>
-    <div class="section-title">
-        <h2>About Us</h2>
-    </div>
-
-    <div class="cards">
-
-        <div class="card">
-            <h3>Who We Are</h3>
-            <p>
-                Yuva Seva Sankalp Foundation is a non-profit organisation
-                dedicated to helping poor families through education,
-                healthcare, social welfare, employment support and
-                community development.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Our Vision</h3>
-            <p>
-                To build a society where every individual gets equal
-                opportunities for education, health, dignity and
-                sustainable development.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>Our Values</h3>
-            <p>
-                Transparency, Humanity, Equality, Service, Innovation,
-                Responsibility and Community Participation.
-            </p>
-        </div>
-
-    </div>
-</section>
-
-<!-- MISSION -->
-<section id="mission">
-
-            </p>
-        </div>
-
-    </div>
-
-</section>
-</html>
