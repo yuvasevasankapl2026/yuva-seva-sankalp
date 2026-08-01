@@ -135,4 +135,7 @@ nav a{
 .logo img{
     margin-bottom:10px;
 }
+}.logo{
+    width:120px;
+    height:auto;
 }
