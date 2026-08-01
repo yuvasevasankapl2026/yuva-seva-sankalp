@@ -239,3 +239,22 @@ footer{
     text-align:center;
     padding:20px;
 }
+.about{
+    padding:80px 20px;
+    background:#fff;
+    text-align:center;
+}
+
+.about h2{
+    font-size:38px;
+    color:#0b5e2b;
+    margin-bottom:20px;
+}
+
+.about p{
+    max-width:900px;
+    margin:auto;
+    font-size:20px;
+    line-height:1.8;
+    color:#555;
+}
