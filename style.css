@@ -139,3 +139,13 @@ nav a{
     width:120px;
     height:auto;
 }
+.logo{
+    width:100px;
+    height:auto;
+}
+
+.header .logo{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
