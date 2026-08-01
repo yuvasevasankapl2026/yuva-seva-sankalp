@@ -405,3 +405,14 @@ footer{
 }
 
 }
+#about{
+    padding:80px 20px;
+    background:#fff;
+}
+
+#services,
+#gallery,
+#donate,
+#contact{
+    padding:80px 20px;
+}
