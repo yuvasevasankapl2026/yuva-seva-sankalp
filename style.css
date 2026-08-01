@@ -258,3 +258,150 @@ footer{
     line-height:1.8;
     color:#555;
 }
+/* ===== HERO ===== */
+.hero{
+    background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1600");
+    background-size:cover;
+    background-position:center;
+    height:500px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    color:#fff;
+}
+
+.hero-content h2{
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+.hero-content p{
+    font-size:22px;
+    margin-bottom:25px;
+}
+
+.btn{
+    display:inline-block;
+    background:#ff6f00;
+    color:#fff;
+    padding:12px 28px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.btn:hover{
+    background:#e65100;
+}
+
+/* ===== Sections ===== */
+section{
+    padding:70px 20px;
+}
+
+section h2{
+    text-align:center;
+    color:#0b5e2b;
+    font-size:36px;
+    margin-bottom:25px;
+}
+
+/* ===== About ===== */
+.about,
+#about{
+    background:#fff;
+}
+
+#about p{
+    max-width:900px;
+    margin:auto;
+    text-align:center;
+    font-size:18px;
+    line-height:1.8;
+}
+
+/* ===== Services ===== */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+    margin-top:30px;
+}
+
+.card{
+    background:#fff;
+    padding:30px;
+    border-radius:12px;
+    box-shadow:0 5px 15px rgba(0,0,0,.1);
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:#0b5e2b;
+    margin-bottom:15px;
+}
+
+/* ===== Gallery ===== */
+#gallery{
+    background:#f8f8f8;
+    text-align:center;
+}
+
+/* ===== Donate ===== */
+#donate{
+    background:#0b5e2b;
+    color:#fff;
+    text-align:center;
+}
+
+#donate h2{
+    color:#fff;
+}
+
+/* ===== Contact ===== */
+#contact{
+    background:#fff;
+    text-align:center;
+}
+
+#contact p{
+    margin:10px 0;
+    font-size:18px;
+}
+
+/* ===== Footer ===== */
+footer{
+    background:#071d5a;
+    color:#fff;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
+}
+
+/* ===== Responsive ===== */
+@media(max-width:768px){
+
+.hero{
+    height:350px;
+}
+
+.hero-content h2{
+    font-size:30px;
+}
+
+.hero-content p{
+    font-size:18px;
+}
+
+.logo h1{
+    font-size:24px;
+}
+
+}
