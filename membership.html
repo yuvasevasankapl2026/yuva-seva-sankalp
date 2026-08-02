@@ -1,68 +1,3 @@
-<section id="member">
-
-    <div class="container">
-
-        <h2>सदस्यता लें</h2>
-
-        <p class="member-text">
-            युवा सेवा संकल्प फाउंडेशन से जुड़ें और
-            समाज सेवा के कार्यों में अपना योगदान दें।
-        </p>
-
-        <form class="member-form">
-
-            <input
-                type="text"
-                placeholder="पूरा नाम"
-                required
-            >
-
-            <input
-                type="tel"
-                placeholder="मोबाइल नंबर"
-                required
-            >
-
-            <input
-                type="email"
-                placeholder="ईमेल पता"
-            >
-
-            <textarea
-                placeholder="पूरा पता"
-                rows="4"
-                required
-            ></textarea>
-
-            <select required>
-
-                <option value="">
-                    सदस्यता का प्रकार चुनें
-                </option>
-
-                <option>
-                    सामान्य सदस्य
-                </option>
-
-                <option>
-                    सक्रिय सदस्य
-                </option>
-
-                <option>
-                    आजीवन सदस्य
-                </option>
-
-            </select>
-
-            <button type="submit">
-                सदस्यता के लिए आवेदन करें
-            </button>
-
-        </form>
-
-    </div>
-
-</section>
 <!DOCTYPE html>
 
 <html lang="hi">
@@ -80,6 +15,8 @@
         सदस्यता | युवा सेवा संकल्प फाउंडेशन
     </title>
 
+    <!-- CSS FILE -->
+
     <link
         rel="stylesheet"
         href="style.css"
@@ -91,7 +28,9 @@
 <body>
 
 
-<!-- TOP BAR -->
+<!-- =====================================
+     TOP BAR
+===================================== -->
 
 <div class="top-bar">
 
@@ -110,13 +49,21 @@
 
         <div class="right">
 
-            <a href="#">Facebook</a>
+            <a href="#">
+                Facebook
+            </a>
 
-            <a href="#">Instagram</a>
+            <a href="#">
+                Instagram
+            </a>
 
-            <a href="#">YouTube</a>
+            <a href="#">
+                YouTube
+            </a>
 
-            <a href="#">WhatsApp</a>
+            <a href="#">
+                WhatsApp
+            </a>
 
         </div>
 
@@ -125,11 +72,15 @@
 </div>
 
 
-<!-- HEADER -->
+<!-- =====================================
+     HEADER
+===================================== -->
 
 <header class="header">
 
     <div class="header-content">
+
+        <!-- LOGO -->
 
         <img
             src="images/logo.png"
@@ -137,6 +88,8 @@
             alt="युवा सेवा संकल्प फाउंडेशन लोगो"
         >
 
+
+        <!-- TITLE -->
 
         <div class="title">
 
@@ -160,7 +113,9 @@
 </header>
 
 
-<!-- NAVIGATION -->
+<!-- =====================================
+     NAVIGATION
+===================================== -->
 
 <nav>
 
@@ -249,12 +204,16 @@
 </nav>
 
 
-<!-- MEMBERSHIP -->
+<!-- =====================================
+     MEMBERSHIP SECTION
+===================================== -->
 
 <section id="member">
 
     <div class="member-container">
 
+
+        <!-- HEADING -->
 
         <div class="member-heading">
 
@@ -276,6 +235,8 @@
         </div>
 
 
+        <!-- MEMBERSHIP FORM -->
+
         <form
             class="member-form"
             action="#"
@@ -283,9 +244,11 @@
         >
 
 
+            <!-- FULL NAME -->
+
             <div class="form-group">
 
-                <label>
+                <label for="name">
 
                     पूरा नाम
 
@@ -294,6 +257,7 @@
 
                 <input
                     type="text"
+                    id="name"
                     name="name"
                     placeholder="अपना पूरा नाम लिखें"
                     required
@@ -302,12 +266,14 @@
             </div>
 
 
+            <!-- MOBILE AND EMAIL -->
+
             <div class="form-row">
 
 
                 <div class="form-group">
 
-                    <label>
+                    <label for="mobile">
 
                         मोबाइल नंबर
 
@@ -316,9 +282,11 @@
 
                     <input
                         type="tel"
+                        id="mobile"
                         name="mobile"
                         placeholder="10 अंकों का मोबाइल नंबर"
                         maxlength="10"
+                        pattern="[0-9]{10}"
                         required
                     >
 
@@ -327,7 +295,7 @@
 
                 <div class="form-group">
 
-                    <label>
+                    <label for="email">
 
                         ईमेल पता
 
@@ -336,18 +304,22 @@
 
                     <input
                         type="email"
+                        id="email"
                         name="email"
                         placeholder="आपका ईमेल पता"
                     >
 
                 </div>
 
+
             </div>
 
 
+            <!-- ADDRESS -->
+
             <div class="form-group">
 
-                <label>
+                <label for="address">
 
                     पूरा पता
 
@@ -355,17 +327,21 @@
 
 
                 <textarea
+                    id="address"
                     name="address"
-                    placeholder="गाँव / शहर, पोस्ट, तहसील, जिला और राज्य"
+                    placeholder="गाँव / शहर, पोस्ट, तहसील, जिला और राज्य लिखें"
+                    rows="5"
                     required
                 ></textarea>
 
             </div>
 
 
+            <!-- MEMBERSHIP TYPE -->
+
             <div class="form-group">
 
-                <label>
+                <label for="membership-type">
 
                     सदस्यता का प्रकार
 
@@ -373,6 +349,7 @@
 
 
                 <select
+                    id="membership-type"
                     name="membership_type"
                     required
                 >
@@ -409,6 +386,30 @@
             </div>
 
 
+            <!-- DECLARATION -->
+
+            <div class="member-check">
+
+                <input
+                    type="checkbox"
+                    id="agreement"
+                    required
+                >
+
+
+                <label for="agreement">
+
+                    मैं संस्था के नियमों का पालन करने
+                    और समाज सेवा में सहयोग देने के लिए
+                    सहमत हूँ।
+
+                </label>
+
+            </div>
+
+
+            <!-- SUBMIT BUTTON -->
+
             <button
                 type="submit"
                 class="member-submit"
@@ -421,13 +422,14 @@
 
         </form>
 
-
     </div>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- =====================================
+     FOOTER
+===================================== -->
 
 <footer>
 
@@ -465,7 +467,7 @@
 
     <p>
 
-        © 2026 All Rights Reserved
+        © 2026 युवा सेवा संकल्प फाउंडेशन
 
     </p>
 
