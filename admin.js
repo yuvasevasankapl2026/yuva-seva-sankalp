@@ -1,82 +1,77 @@
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
+function adminLogin(event) {
 
-        const adminLoginForm =
-        document.getElementById(
-            "adminLoginForm"
-        );
+    event.preventDefault();
 
 
-        adminLoginForm.addEventListener(
-            "submit",
-            function (event) {
+    const username =
 
-                event.preventDefault();
-
-
-                const username =
-
-                document.getElementById(
-                    "adminUsername"
-                ).value.trim();
+    document.getElementById(
+        "adminUsername"
+    ).value.trim();
 
 
-                const password =
+    const password =
 
-                document.getElementById(
-                    "adminPassword"
-                ).value;
-
-
-                const message =
-
-                document.getElementById(
-                    "loginMessage"
-                );
+    document.getElementById(
+        "adminPassword"
+    ).value;
 
 
-                if (
-                    username === "admin"
-                    &&
-                    password === "12345"
-                ) {
+    const message =
 
-                    message.style.color =
-                    "#247331";
+    document.getElementById(
+        "loginMessage"
+    );
 
 
-                    message.innerHTML =
+    if (
 
-                    "लॉगिन सफल हो गया।";
+        username === "admin"
 
+        &&
 
-                    setTimeout(
-                        function () {
+        password === "12345"
 
-                            window.location.href =
-                            "admin-dashboard.html";
+    ) {
 
-                        },
-                        1000
-                    );
-
-                }
-
-                else {
-
-                    message.style.color =
-                    "#d32f2f";
+        message.style.color =
+        "#247331";
 
 
-                    message.innerHTML =
+        message.innerHTML =
 
-                    "यूज़रनेम या पासवर्ड गलत है।";
+        "लॉगिन सफल हो गया।";
 
-                }
 
-            }
+        setTimeout(
+
+            function () {
+
+                window.location.href =
+
+                "admin-dashboard.html";
+
+            },
+
+            1000
+
         );
 
     }
-);
+
+    else {
+
+        message.style.color =
+        "#d32f2f";
+
+
+        message.innerHTML =
+
+        "यूज़रनेम या पासवर्ड गलत है।";
+
+    }
+
+
+    return false;
+
+}
