@@ -2935,3 +2935,95 @@ section h2::after {
     }
 
 }
+/* MEMBERSHIP FINAL FIX */
+
+#member {
+    padding: 80px 20px !important;
+    background: #eef6f2 !important;
+}
+
+#member .container {
+    width: 100% !important;
+    max-width: 850px !important;
+    margin: auto !important;
+}
+
+#member .member-form {
+    display: block !important;
+    width: 100% !important;
+    max-width: 750px !important;
+
+    margin: 30px auto !important;
+    padding: 40px !important;
+
+    background: white !important;
+
+    border-radius: 20px !important;
+
+    box-sizing: border-box !important;
+
+    box-shadow:
+        0 15px 40px
+        rgba(0, 0, 0, 0.15) !important;
+}
+
+#member .member-form input,
+#member .member-form textarea,
+#member .member-form select {
+
+    display: block !important;
+
+    width: 100% !important;
+
+    min-width: 100% !important;
+
+    height: auto !important;
+
+    padding: 15px !important;
+
+    margin:
+        0
+        0
+        18px
+        0 !important;
+
+    box-sizing: border-box !important;
+
+    font-size: 17px !important;
+
+    border:
+        2px solid
+        #d5dfe5 !important;
+
+    border-radius: 10px !important;
+}
+
+#member .member-form textarea {
+
+    min-height: 120px !important;
+
+}
+
+#member .member-form button {
+
+    display: block !important;
+
+    width: 100% !important;
+
+    padding: 17px !important;
+
+    color: white !important;
+
+    background:
+        #247331 !important;
+
+    border: none !important;
+
+    border-radius: 10px !important;
+
+    font-size: 18px !important;
+
+    font-weight: bold !important;
+
+    cursor: pointer !important;
+}
