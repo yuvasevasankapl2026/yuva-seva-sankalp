@@ -1,37 +1,25 @@
-const loginForm =
-document.getElementById(
-    "adminLoginForm"
-);
+const loginForm = document.getElementById("adminLoginForm");
 
+if (loginForm) {
 
-loginForm.addEventListener(
-    "submit",
-
-    function(event) {
+    loginForm.addEventListener("submit", function(event) {
 
         event.preventDefault();
 
+        const username = document
+            .getElementById("adminUsername")
+            .value
+            .trim()
+            .toLowerCase();
 
-        const username =
-        document.getElementById(
-            "adminUsername"
-        ).value.trim();
-
-
-        const password =
-        document.getElementById(
-            "adminPassword"
-        ).value.trim();
-
+        const password = document
+            .getElementById("adminPassword")
+            .value
+            .trim();
 
         if (
-
-            username === "admin"
-
-            &&
-
+            username === "admin" &&
             password === "admin123"
-
         ) {
 
             localStorage.setItem(
@@ -39,25 +27,19 @@ loginForm.addEventListener(
                 "true"
             );
 
-
-            alert(
-                "लॉगिन सफल हुआ"
-            );
-
+            alert("लॉगिन सफल हुआ");
 
             window.location.href =
-            "admin-dashboard.html";
+                "admin-dashboard.html";
 
-        }
-
-        else {
+        } else {
 
             alert(
-                "यूज़रनेम या पासवर्ड गलत है"
+                "यूज़रनेम या पासवर्ड गलत है।"
             );
 
         }
 
-    }
+    });
 
-);
+}
