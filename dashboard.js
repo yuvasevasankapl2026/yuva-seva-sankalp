@@ -557,3 +557,27 @@ if (
 ===================================== */
 
 loadDashboard();
+/* =====================================
+   HATAYE BUTTON FINAL FIX
+===================================== */
+
+function deleteMember(index) {
+
+    const confirmDelete = confirm(
+        "क्या आप इस सदस्य को हटाना चाहते हैं?"
+    );
+
+    if (confirmDelete) {
+
+        members.splice(index, 1);
+
+        localStorage.setItem(
+            "members",
+            JSON.stringify(members)
+        );
+
+        location.reload();
+
+    }
+
+}
