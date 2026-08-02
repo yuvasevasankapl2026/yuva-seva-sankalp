@@ -1,20 +1,65 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Membership Form</title>
-</head>
-<body>
+<section id="member">
 
-<h2>Yuva Seva Sankalp Foundation Membership Form</h2>
+    <div class="container">
 
-<form>
-<input type="text" placeholder="Full Name"><br><br>
-<input type="text" placeholder="Father Name"><br><br>
-<input type="text" placeholder="Mobile Number"><br><br>
-<input type="email" placeholder="Email"><br><br>
-<textarea placeholder="Address"></textarea><br><br>
-<button type="submit">Submit</button>
-</form>
+        <h2>सदस्यता लें</h2>
 
-</body>
-</html>
+        <p class="member-text">
+            युवा सेवा संकल्प फाउंडेशन से जुड़ें और
+            समाज सेवा के कार्यों में अपना योगदान दें।
+        </p>
+
+        <form class="member-form">
+
+            <input
+                type="text"
+                placeholder="पूरा नाम"
+                required
+            >
+
+            <input
+                type="tel"
+                placeholder="मोबाइल नंबर"
+                required
+            >
+
+            <input
+                type="email"
+                placeholder="ईमेल पता"
+            >
+
+            <textarea
+                placeholder="पूरा पता"
+                rows="4"
+                required
+            ></textarea>
+
+            <select required>
+
+                <option value="">
+                    सदस्यता का प्रकार चुनें
+                </option>
+
+                <option>
+                    सामान्य सदस्य
+                </option>
+
+                <option>
+                    सक्रिय सदस्य
+                </option>
+
+                <option>
+                    आजीवन सदस्य
+                </option>
+
+            </select>
+
+            <button type="submit">
+                सदस्यता के लिए आवेदन करें
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
