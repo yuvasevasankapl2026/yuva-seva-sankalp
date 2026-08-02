@@ -38,7 +38,7 @@ body {
 
 .top-bar {
     background: #0b5e2b;
-    color: #fff;
+    color: white;
     padding: 10px 0;
     font-size: 14px;
 }
@@ -51,10 +51,16 @@ body {
     gap: 10px;
 }
 
+.top-bar .right {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
 .top-bar a {
-    color: #fff;
+    color: white;
     text-decoration: none;
-    margin-left: 10px;
+    font-weight: bold;
 }
 
 .top-bar a:hover {
@@ -74,18 +80,24 @@ body {
 }
 
 
-/* Header Logo */
+/* HEADER LOGO */
 
-.header .logo {
+.header img.logo {
+    display: block;
     width: 85px;
     height: 85px;
+
     object-fit: contain;
+
     margin-right: 20px;
+
+    border-radius: 50%;
+
     flex-shrink: 0;
 }
 
 
-/* Title Area */
+/* TITLE AREA */
 
 .title {
     display: flex;
@@ -94,7 +106,7 @@ body {
 }
 
 
-/* मुख्य नाम */
+/* MAIN TITLE */
 
 .main-title {
     font-size: 42px;
@@ -104,14 +116,17 @@ body {
 }
 
 
-/* स्लोगन - मुख्य नाम के नीचे */
+/* TAGLINE */
 
 .tagline {
     display: block;
     margin-top: 6px;
+
     font-size: 20px;
     font-weight: 700;
+
     color: #ff6600;
+
     line-height: 1.3;
 }
 
@@ -124,37 +139,50 @@ nav {
     display: flex;
     justify-content: center;
     align-items: center;
+
     flex-wrap: wrap;
-    gap: 10px;
-    padding: 15px;
-    background: #ffffff;
+
+    gap: 8px;
+
+    padding: 14px 15px;
+
+    background: white;
+
+    box-shadow:
+        0 2px 8px
+        rgba(0, 0, 0, 0.08);
 }
 
 nav a {
     text-decoration: none;
+
     color: #333;
+
     font-weight: bold;
+
     padding: 10px 15px;
+
     border-radius: 5px;
+
     transition: 0.3s;
 }
 
 nav a:hover {
     background: #0b5e2b;
-    color: #fff;
+    color: white;
 }
 
 
-/* Donate Button */
+/* DONATE BUTTON */
 
 .donate-btn {
     background: #ff6600;
-    color: #fff;
+    color: white;
 }
 
 .donate-btn:hover {
     background: #e65100;
-    color: #fff;
+    color: white;
 }
 
 
@@ -181,7 +209,8 @@ nav a:hover {
     align-items: center;
 
     text-align: center;
-    color: #fff;
+
+    color: white;
 
     padding: 40px 20px;
 }
@@ -192,6 +221,7 @@ nav a:hover {
 
 .hero h2 {
     font-size: 48px;
+
     margin-bottom: 15px;
 
     text-shadow:
@@ -201,17 +231,23 @@ nav a:hover {
 
 .hero p {
     font-size: 22px;
+
     margin-bottom: 25px;
 }
+
+
+/* HERO BUTTON */
 
 .hero .btn {
     display: inline-block;
 
     padding: 12px 25px;
+
     margin: 5px;
 
     background: #ff6600;
-    color: #fff;
+
+    color: white;
 
     text-decoration: none;
 
@@ -224,12 +260,13 @@ nav a:hover {
 
 .hero .btn:hover {
     background: #e65100;
+
     transform: translateY(-2px);
 }
 
 
 /* =====================================
-   SECTIONS
+   ALL SECTIONS
 ===================================== */
 
 section {
@@ -239,11 +276,17 @@ section {
 section h2 {
     text-align: center;
 
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 
     color: #0b5e2b;
 
     font-size: 32px;
+
+    font-weight: 900;
+}
+
+section p {
+    margin-bottom: 15px;
 }
 
 
@@ -255,7 +298,10 @@ section h2 {
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(250px, 1fr));
+        repeat(
+            auto-fit,
+            minmax(250px, 1fr)
+        );
 
     gap: 20px;
 
@@ -263,7 +309,7 @@ section h2 {
 }
 
 .card {
-    background: #fff;
+    background: white;
 
     padding: 25px;
 
@@ -280,6 +326,16 @@ section h2 {
 
 .card:hover {
     transform: translateY(-5px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    color: #0b5e2b;
+
+    margin-bottom: 10px;
 }
 
 
@@ -297,6 +353,8 @@ section h2 {
     gap: 25px;
 
     flex-wrap: wrap;
+
+    margin-top: 30px;
 }
 
 .team-members .card {
@@ -306,7 +364,7 @@ section h2 {
 }
 
 
-/* Team Photo */
+/* TEAM IMAGE */
 
 .team-img {
     width: 180px;
@@ -323,29 +381,6 @@ section h2 {
 }
 
 
-/* Founder Photo */
-
-.founder-img {
-    width: 180px;
-
-    height: 180px;
-
-    border-radius: 50%;
-
-    object-fit: cover;
-
-    border: 5px solid #0b5e2b;
-
-    margin-bottom: 15px;
-
-    display: block;
-
-    margin-left: auto;
-
-    margin-right: auto;
-}
-
-
 /* =====================================
    GALLERY
 ===================================== */
@@ -354,7 +389,10 @@ section h2 {
     display: grid;
 
     grid-template-columns:
-        repeat(auto-fit, minmax(250px, 1fr));
+        repeat(
+            auto-fit,
+            minmax(250px, 1fr)
+        );
 
     gap: 15px;
 }
@@ -387,13 +425,25 @@ section h2 {
 }
 
 #donate img {
+    display: block;
+
     max-width: 250px;
 
     width: 100%;
 
-    margin-top: 20px;
+    height: auto;
+
+    margin: 20px auto;
+
+    padding: 8px;
+
+    background: white;
 
     border-radius: 10px;
+
+    box-shadow:
+        0 3px 12px
+        rgba(0, 0, 0, 0.15);
 }
 
 
@@ -402,7 +452,7 @@ section h2 {
 ===================================== */
 
 #contact {
-    background: #ffffff;
+    background: white;
 
     text-align: center;
 }
@@ -423,7 +473,23 @@ footer {
 }
 
 footer img {
+    width: 70px;
+
+    height: 70px;
+
+    object-fit: contain;
+
     margin-bottom: 10px;
+}
+
+footer h3 {
+    font-size: 25px;
+
+    margin-bottom: 8px;
+}
+
+footer p {
+    margin-bottom: 7px;
 }
 
 
@@ -450,19 +516,28 @@ footer img {
 
 @media (max-width: 768px) {
 
+    /* TOP BAR */
+
     .top-bar .container {
         flex-direction: column;
 
         text-align: center;
     }
 
-
-    .header {
-        padding: 12px 15px;
+    .top-bar .right {
+        justify-content: center;
     }
 
 
-    .header .logo {
+    /* HEADER */
+
+    .header {
+        padding: 12px 15px;
+
+        justify-content: center;
+    }
+
+    .header img.logo {
         width: 65px;
 
         height: 65px;
@@ -470,13 +545,11 @@ footer img {
         margin-right: 12px;
     }
 
-
     .main-title {
         font-size: 25px;
 
         line-height: 1.3;
     }
-
 
     .tagline {
         font-size: 16px;
@@ -485,12 +558,13 @@ footer img {
     }
 
 
+    /* NAVIGATION */
+
     nav {
         flex-direction: column;
 
         align-items: center;
     }
-
 
     nav a {
         width: 100%;
@@ -499,30 +573,33 @@ footer img {
     }
 
 
+    /* HERO */
+
     .hero {
         min-height: 450px;
     }
 
-
     .hero h2 {
         font-size: 28px;
     }
-
 
     .hero p {
         font-size: 16px;
     }
 
 
+    /* SECTION */
+
     section {
         padding: 50px 15px;
     }
-
 
     section h2 {
         font-size: 26px;
     }
 
+
+    /* TEAM */
 
     .team-members .card {
         width: 100%;
@@ -530,64 +607,24 @@ footer img {
         max-width: 300px;
     }
 
-
     .team-img {
         width: 150px;
 
         height: 150px;
     }
 
-}
-/* ===== HEADER ===== */
 
-.header {
-    display: flex;
-    align-items: center;
-    padding: 12px 30px;
-    background: #f5f5f5;
-}
+    /* GALLERY */
+
+    .gallery img {
+        height: 220px;
+    }
 
 
-/* LOGO IMAGE */
+    /* FOOTER */
 
-.header img.logo {
-    display: block;
-    width: 85px;
-    height: 85px;
+    footer h3 {
+        font-size: 21px;
+    }
 
-    object-fit: contain;
-
-    margin-right: 20px;
-
-    border-radius: 50%;
-}
-
-
-/* TITLE */
-
-.title {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-
-/* MAIN TITLE */
-
-.main-title {
-    font-size: 42px;
-    font-weight: 900;
-    color: #0b5e2b;
-    line-height: 1.2;
-}
-
-
-/* TAGLINE */
-
-.tagline {
-    display: block;
-    margin-top: 6px;
-    font-size: 20px;
-    font-weight: 700;
-    color: #ff6600;
 }
