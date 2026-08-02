@@ -1,8 +1,5 @@
-/* =====================================
-   MEMBER LOGIN JAVASCRIPT
-===================================== */
-
 document.addEventListener(
+
     "DOMContentLoaded",
 
     function () {
@@ -18,11 +15,15 @@ document.addEventListener(
         const message =
 
         document.getElementById(
-            "memberLoginMessage"
+            "memberMessage"
         );
 
 
         if (!loginForm) {
+
+            alert(
+                "Member Login Form नहीं मिला।"
+            );
 
             return;
 
@@ -50,14 +51,39 @@ document.addEventListener(
                 .toUpperCase();
 
 
-                const password =
+                const mobile =
 
                 document
                 .getElementById(
-                    "memberPassword"
+                    "memberMobile"
                 )
                 .value
                 .trim();
+
+
+                if (
+
+                    memberId === ""
+
+                    ||
+
+                    mobile === ""
+
+                ) {
+
+                    message.textContent =
+
+                    "कृपया Member ID और मोबाइल नंबर भरें।";
+
+
+                    message.style.color =
+
+                    "red";
+
+
+                    return;
+
+                }
 
 
                 let members = [];
@@ -65,19 +91,27 @@ document.addEventListener(
 
                 try {
 
-                    members = JSON.parse(
+                    const savedMembers =
 
-                        localStorage.getItem(
-                            "members"
-                        )
+                    localStorage.getItem(
+                        "members"
+                    );
 
+
+                    members =
+
+                    JSON.parse(
+                        savedMembers
                     ) || [];
+
 
                 }
 
                 catch (error) {
 
+
                     members = [];
+
 
                 }
 
@@ -89,18 +123,41 @@ document.addEventListener(
                     function (member) {
 
 
+                        const savedMemberId =
+
+                        String(
+
+                            member.memberId
+
+                            ||
+
+                            ""
+
+                        )
+
+                        .trim()
+
+                        .toUpperCase();
+
+
+                        const savedMobile =
+
+                        String(
+
+                            member.mobile
+
+                            ||
+
+                            ""
+
+                        )
+
+                        .trim();
+
+
                         return (
 
-                            String(
-
-                                member.memberId
-                                || ""
-
-                            )
-
-                            .trim()
-
-                            .toUpperCase()
+                            savedMemberId
 
                             ===
 
@@ -108,20 +165,14 @@ document.addEventListener(
 
                             &&
 
-                            String(
-
-                                member.mobile
-                                || ""
-
-                            )
-
-                            .trim()
+                            savedMobile
 
                             ===
 
-                            password
+                            mobile
 
                         );
+
 
                     }
 
@@ -129,26 +180,6 @@ document.addEventListener(
 
 
                 if (foundMember) {
-
-
-                    localStorage.setItem(
-
-                        "memberLoggedIn",
-
-                        "true"
-
-                    );
-
-
-                    localStorage.setItem(
-
-                        "loggedInMember",
-
-                        JSON.stringify(
-                            foundMember
-                        )
-
-                    );
 
 
                     message.textContent =
@@ -161,21 +192,110 @@ document.addEventListener(
                     "green";
 
 
-                    setTimeout(
+                    loginForm.style.display =
 
-                        function () {
-
-
-                            window.location.href =
-
-                            "member-dashboard.html";
+                    "none";
 
 
-                        },
+                    document
+                    .getElementById(
+                        "memberProfile"
+                    )
+                    .style.display =
 
-                        500
+                    "block";
 
-                    );
+
+                    document
+                    .getElementById(
+                        "profileMemberId"
+                    )
+                    .textContent =
+
+                    foundMember.memberId
+
+                    ||
+
+                    "-";
+
+
+                    document
+                    .getElementById(
+                        "profileName"
+                    )
+                    .textContent =
+
+                    foundMember.name
+
+                    ||
+
+                    "-";
+
+
+                    document
+                    .getElementById(
+                        "profileMobile"
+                    )
+                    .textContent =
+
+                    foundMember.mobile
+
+                    ||
+
+                    "-";
+
+
+                    document
+                    .getElementById(
+                        "profileMembership"
+                    )
+                    .textContent =
+
+                    foundMember.membershipType
+
+                    ||
+
+                    foundMember.membership
+
+                    ||
+
+                    "-";
+
+
+                    const status =
+
+                    String(
+
+                        foundMember.status
+
+                        ||
+
+                        "pending"
+
+                    )
+
+                    .toLowerCase();
+
+
+                    document
+                    .getElementById(
+                        "profileStatus"
+                    )
+                    .textContent =
+
+                    status === "approved"
+
+                    ||
+
+                    status === "स्वीकृत"
+
+                    ?
+
+                    "✅ स्वीकृत"
+
+                    :
+
+                    "⏳ लंबित";
 
 
                 }
@@ -204,3 +324,12 @@ document.addEventListener(
     }
 
 );
+
+
+function memberLogout() {
+
+
+    window.location.reload();
+
+
+}
