@@ -66,11 +66,9 @@ body{
 
 .logo h1{
     color:#0b5e2b;
-    margin-top:10px;
-    font-size:32px
-    white-space:nowrap
+    font-size:32px;
+    font-weight:900;
 }
-
 .logo p{
     color:#ff6600;
     font-weight:bold;
