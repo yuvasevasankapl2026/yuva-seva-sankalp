@@ -26,9 +26,7 @@
 <body>
 
 
-<!-- =====================================
-     TOP BAR
-===================================== -->
+<!-- TOP BAR -->
 
 <div class="top-bar">
 
@@ -62,9 +60,7 @@
 </div>
 
 
-<!-- =====================================
-     HEADER
-===================================== -->
+<!-- HEADER -->
 
 <header class="header">
 
@@ -99,9 +95,7 @@
 </header>
 
 
-<!-- =====================================
-     NAVIGATION
-===================================== -->
+<!-- NAVIGATION -->
 
 <nav>
 
@@ -190,9 +184,7 @@
 </nav>
 
 
-<!-- =====================================
-     ADMIN LOGIN
-===================================== -->
+<!-- ADMIN LOGIN -->
 
 <section class="admin-login-section">
 
@@ -213,23 +205,25 @@
         </h2>
 
 
-        <p>
+        <p class="admin-login-text">
 
             एडमिन पैनल में प्रवेश करने के लिए
-            अपनी जानकारी भरें।
+            अपनी जानकारी दर्ज करें।
 
         </p>
 
 
-        <form
-            id="adminLoginForm"
-            onsubmit="return adminLogin(event);"
-        >
+        <!-- IMPORTANT:
+             method="post" नहीं लगाया है।
+             इसलिए HTTP ERROR 405 नहीं आएगा।
+        -->
+
+        <form id="adminLoginForm">
 
 
             <div class="form-group">
 
-                <label>
+                <label for="adminUsername">
 
                     एडमिन यूज़रनेम
 
@@ -240,6 +234,7 @@
                     type="text"
                     id="adminUsername"
                     placeholder="यूज़रनेम लिखें"
+                    autocomplete="username"
                     required
                 >
 
@@ -248,7 +243,7 @@
 
             <div class="form-group">
 
-                <label>
+                <label for="adminPassword">
 
                     पासवर्ड
 
@@ -259,6 +254,7 @@
                     type="password"
                     id="adminPassword"
                     placeholder="पासवर्ड लिखें"
+                    autocomplete="current-password"
                     required
                 >
 
@@ -278,7 +274,7 @@
                 class="admin-login-btn"
             >
 
-                एडमिन लॉगिन करें
+                लॉगिन करें
 
             </button>
 
@@ -296,14 +292,19 @@
         </a>
 
 
+        <p class="admin-security">
+
+            🔒 यह केवल अधिकृत एडमिन के लिए है
+
+        </p>
+
+
     </div>
 
 </section>
 
 
-<!-- =====================================
-     FOOTER
-===================================== -->
+<!-- FOOTER -->
 
 <footer>
 
@@ -347,6 +348,8 @@
 
 </footer>
 
+
+<!-- ADMIN JAVASCRIPT -->
 
 <script src="admin.js"></script>
 
