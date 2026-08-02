@@ -3,6 +3,7 @@ document.addEventListener(
     function () {
 
         const membershipForm =
+
         document.getElementById(
             "membershipForm"
         );
@@ -10,7 +11,7 @@ document.addEventListener(
 
         if (!membershipForm) {
 
-            console.log(
+            alert(
                 "Membership form नहीं मिला।"
             );
 
@@ -18,83 +19,6 @@ document.addEventListener(
 
         }
 
-
-        /* =====================================
-           MEMBER ID बनाने का Function
-        ===================================== */
-
-        function generateMemberId(
-            members
-        ) {
-
-            let lastNumber = 0;
-
-
-            members.forEach(
-                function(member) {
-
-                    if (
-                        member.memberId
-                    ) {
-
-                        const numberPart =
-
-                        member.memberId
-                        .split("-")
-                        .pop();
-
-
-                        const number =
-
-                        parseInt(
-                            numberPart
-                        );
-
-
-                        if (
-                            number > lastNumber
-                        ) {
-
-                            lastNumber =
-                            number;
-
-                        }
-
-                    }
-
-                }
-            );
-
-
-            const newNumber =
-
-            lastNumber + 1;
-
-
-            const formattedNumber =
-
-            String(
-                newNumber
-            ).padStart(
-                4,
-                "0"
-            );
-
-
-            return (
-
-                "YSSF-2026-" +
-
-                formattedNumber
-
-            );
-
-        }
-
-
-        /* =====================================
-           MEMBERSHIP FORM SUBMIT
-        ===================================== */
 
         membershipForm.addEventListener(
             "submit",
@@ -138,8 +62,6 @@ document.addEventListener(
                 ).value;
 
 
-                /* मोबाइल नंबर जांच */
-
                 if (
                     !/^[0-9]{10}$/.test(
                         mobile
@@ -155,17 +77,26 @@ document.addEventListener(
                 }
 
 
-                /* पुराने सदस्य लोड करें */
+                let members = [];
 
-                let members =
 
-                JSON.parse(
+                try {
 
-                    localStorage.getItem(
-                        "members"
-                    )
+                    members = JSON.parse(
 
-                );
+                        localStorage.getItem(
+                            "members"
+                        )
+
+                    ) || [];
+
+                }
+
+                catch (error) {
+
+                    members = [];
+
+                }
 
 
                 if (
@@ -179,48 +110,62 @@ document.addEventListener(
                 }
 
 
-                /* नया Member ID */
+                const memberNumber =
+
+                members.length + 1;
+
 
                 const memberId =
 
-                generateMemberId(
-                    members
+                "YSSF-2026-" +
+
+                String(
+                    memberNumber
+                ).padStart(
+                    4,
+                    "0"
                 );
 
-
-                /* नया सदस्य */
 
                 const newMember = {
 
                     id:
+
                     Date.now(),
 
 
                     memberId:
+
                     memberId,
 
 
                     name:
+
                     name,
 
 
                     mobile:
+
                     mobile,
 
 
                     email:
+
                     email,
 
 
                     address:
+
                     address,
 
 
                     membershipType:
+
                     membershipType,
 
 
                     status:
+
                     "pending",
 
 
@@ -233,8 +178,6 @@ document.addEventListener(
 
                 };
 
-
-                /* सदस्य Save करें */
 
                 members.push(
                     newMember
@@ -252,11 +195,11 @@ document.addEventListener(
                 );
 
 
-                /* सफलता का Message */
-
                 alert(
 
-                    "आपका सदस्यता आवेदन सफलतापूर्वक जमा हो गया।\n\n" +
+                    "सदस्यता आवेदन सफलतापूर्वक जमा हो गया।" +
+
+                    "\n\n" +
 
                     "आपकी Member ID: " +
 
