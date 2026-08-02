@@ -1,26 +1,20 @@
 document.addEventListener(
-
     "DOMContentLoaded",
-
     function () {
 
-
         const loginForm =
-
         document.getElementById(
             "memberLoginForm"
         );
 
 
         const message =
-
         document.getElementById(
             "memberMessage"
         );
 
 
-        const profile =
-
+        const memberProfile =
         document.getElementById(
             "memberProfile"
         );
@@ -28,8 +22,8 @@ document.addEventListener(
 
         if (!loginForm) {
 
-            alert(
-                "Login form नहीं मिला।"
+            console.log(
+                "Member login form नहीं मिला।"
             );
 
             return;
@@ -38,17 +32,13 @@ document.addEventListener(
 
 
         loginForm.addEventListener(
-
             "submit",
-
             function (event) {
-
 
                 event.preventDefault();
 
 
                 const memberId =
-
                 document
                 .getElementById(
                     "memberId"
@@ -59,7 +49,6 @@ document.addEventListener(
 
 
                 const mobile =
-
                 document
                 .getElementById(
                     "memberMobile"
@@ -73,7 +62,6 @@ document.addEventListener(
 
                 try {
 
-
                     const savedMembers =
 
                     localStorage.getItem(
@@ -84,115 +72,90 @@ document.addEventListener(
                     if (savedMembers) {
 
                         members =
-
                         JSON.parse(
                             savedMembers
                         );
 
                     }
 
-
                 }
 
                 catch (error) {
 
+                    console.log(
+                        "Members load नहीं हुए।"
+                    );
 
                     members = [];
-
 
                 }
 
 
                 if (
-
                     !Array.isArray(
                         members
                     )
-
                 ) {
 
-
                     members = [];
-
 
                 }
 
 
                 const foundMember =
-
                 members.find(
-
                     function (member) {
-
 
                         const savedMemberId =
 
                         String(
-
                             member.memberId
-                            ||
-                            ""
-
+                            || ""
                         )
-
                         .trim()
-
                         .toUpperCase();
 
 
                         const savedMobile =
 
                         String(
-
                             member.mobile
-                            ||
-                            ""
-
+                            || ""
                         )
-
                         .trim();
 
 
                         return (
 
-                            savedMemberId
-                            ===
+                            savedMemberId ===
                             memberId
 
                             &&
 
-                            savedMobile
-                            ===
+                            savedMobile ===
                             mobile
 
                         );
 
-
                     }
-
                 );
 
 
                 if (foundMember) {
 
-
                     message.textContent =
-
-                    "लॉगिन सफल हुआ।";
+                    "✅ लॉगिन सफल हुआ।";
 
 
                     message.style.color =
-
                     "green";
 
 
                     loginForm.style.display =
-
                     "none";
 
 
-                    profile.style.display =
-
+                    memberProfile.style.display =
                     "block";
 
 
@@ -203,8 +166,7 @@ document.addEventListener(
                     .textContent =
 
                     foundMember.memberId
-                    ||
-                    "-";
+                    || "-";
 
 
                     document
@@ -214,8 +176,7 @@ document.addEventListener(
                     .textContent =
 
                     foundMember.name
-                    ||
-                    "-";
+                    || "-";
 
 
                     document
@@ -225,8 +186,7 @@ document.addEventListener(
                     .textContent =
 
                     foundMember.mobile
-                    ||
-                    "-";
+                    || "-";
 
 
                     document
@@ -237,32 +197,26 @@ document.addEventListener(
 
                     foundMember.membershipType
                     ||
+
                     foundMember.membership
                     ||
+
                     "-";
 
 
-                    const memberStatus =
+                    const status =
 
                     String(
-
                         foundMember.status
-                        ||
-                        "pending"
-
+                        || "pending"
                     )
-
                     .toLowerCase();
 
 
                     if (
-
-                        memberStatus
-                        ===
+                        status ===
                         "approved"
-
                     ) {
-
 
                         document
                         .getElementById(
@@ -272,11 +226,9 @@ document.addEventListener(
 
                         "✅ स्वीकृत";
 
-
                     }
 
                     else {
-
 
                         document
                         .getElementById(
@@ -286,14 +238,11 @@ document.addEventListener(
 
                         "⏳ लंबित";
 
-
                     }
-
 
                 }
 
                 else {
-
 
                     message.textContent =
 
@@ -304,26 +253,17 @@ document.addEventListener(
 
                     "red";
 
-
                 }
 
-
             }
-
         );
 
-
     }
-
 );
 
 
-/* MEMBER LOGOUT */
-
 function memberLogout() {
 
-
     window.location.reload();
-
 
 }
