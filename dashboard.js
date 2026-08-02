@@ -2,108 +2,187 @@ document.addEventListener(
     "DOMContentLoaded",
     function () {
 
-        showMembers();
-
-    }
-);
-
-
-function showMembers() {
-
-    const members =
+        let members =
 
         JSON.parse(
-
             localStorage.getItem(
                 "members"
             )
-
-        )
-        ||
-        [];
+        );
 
 
-    const memberTable =
+        if (
+            !Array.isArray(
+                members
+            )
+        ) {
+
+            members = [];
+
+        }
+
+
+        const totalMembers =
+
+        document.getElementById(
+            "totalMembers"
+        );
+
+
+        const newApplications =
+
+        document.getElementById(
+            "newApplications"
+        );
+
+
+        const approvedMembers =
+
+        document.getElementById(
+            "approvedMembers"
+        );
+
+
+        const pendingMembers =
+
+        document.getElementById(
+            "pendingMembers"
+        );
+
+
+        const memberTable =
 
         document.getElementById(
             "memberTable"
         );
 
 
-    if (
-        !memberTable
-    ) {
-
-        return;
-
-    }
+        function updateDashboard(
+            memberList
+        ) {
 
 
-    memberTable.innerHTML = "";
+            totalMembers.textContent =
+
+            members.length;
 
 
-    if (
-        members.length === 0
-    ) {
+            const approved =
 
-        memberTable.innerHTML = `
+            members.filter(
+                function (member) {
 
-            <tr>
+                    return (
+                        member.status ===
+                        "स्वीकृत"
+                    );
 
-                <td colspan="6">
+                }
+            );
 
-                    अभी कोई सदस्यता आवेदन नहीं है।
 
-                </td>
+            const pending =
 
-            </tr>
+            members.filter(
+                function (member) {
 
-        `;
+                    return (
+                        member.status !==
+                        "स्वीकृत"
+                    );
 
-    }
+                }
+            );
 
-    else {
 
-        members.forEach(
+            newApplications.textContent =
 
-            function (
-                member,
-                index
+            pending.length;
+
+
+            approvedMembers.textContent =
+
+            approved.length;
+
+
+            pendingMembers.textContent =
+
+            pending.length;
+
+
+            memberTable.innerHTML = "";
+
+
+            if (
+                memberList.length === 0
             ) {
 
-                let membershipName =
+                memberTable.innerHTML =
+
+                `
+                <tr>
+
+                    <td colspan="6">
+
+                        कोई सदस्यता आवेदन नहीं मिला।
+
+                    </td>
+
+                </tr>
+                `;
+
+
+                return;
+
+            }
+
+
+            memberList.forEach(
+
+                function (
+                    member,
+                    index
+                ) {
+
+
+                    let membershipName =
 
                     "सामान्य सदस्य";
 
 
-                if (
-                    member.membershipType
-                    ===
-                    "active"
-                ) {
+                    if (
+                        member.membershipType ===
+                        "active"
+                    ) {
 
-                    membershipName =
+                        membershipName =
 
                         "सक्रिय सदस्य";
 
-                }
+                    }
 
 
-                if (
-                    member.membershipType
-                    ===
-                    "lifetime"
-                ) {
+                    if (
+                        member.membershipType ===
+                        "lifetime"
+                    ) {
 
-                    membershipName =
+                        membershipName =
 
                         "आजीवन सदस्य";
 
-                }
+                    }
 
 
-                memberTable.innerHTML += `
+                    const status =
 
+                    member.status ||
+                    "लंबित";
+
+
+                    memberTable.innerHTML +=
+
+                    `
                     <tr>
 
                         <td>
@@ -136,11 +215,7 @@ function showMembers() {
 
                         <td>
 
-                            <span class="status-pending">
-
-                                ${member.status}
-
-                            </span>
+                            ${status}
 
                         </td>
 
@@ -148,11 +223,11 @@ function showMembers() {
                         <td>
 
                             <button
-
-                                onclick="approveMember(
-                                    ${member.id}
-                                )"
-
+                                onclick="
+                                approveMember(
+                                ${member.id}
+                                )
+                                "
                             >
 
                                 स्वीकृत करें
@@ -162,169 +237,132 @@ function showMembers() {
                         </td>
 
                     </tr>
-
-                `;
-
-            }
-
-        );
-
-    }
-
-
-    updateDashboardCount(
-        members
-    );
-
-}
-
-
-function updateDashboardCount(
-    members
-) {
-
-    const cards =
-
-        document.querySelectorAll(
-            ".dashboard-card h3"
-        );
-
-
-    if (
-        cards.length >= 4
-    ) {
-
-        cards[0].innerHTML =
-
-            members.length;
-
-
-        cards[1].innerHTML =
-
-            members.length;
-
-
-        cards[2].innerHTML =
-
-            members.filter(
-
-                function (
-                    member
-                ) {
-
-                    return (
-
-                        member.status
-                        ===
-                        "स्वीकृत"
-
-                    );
+                    `;
 
                 }
 
-            ).length;
-
-
-        cards[3].innerHTML =
-
-            members.filter(
-
-                function (
-                    member
-                ) {
-
-                    return (
-
-                        member.status
-                        ===
-                        "लंबित"
-
-                    );
-
-                }
-
-            ).length;
-
-    }
-
-}
-
-
-function approveMember(
-    memberId
-) {
-
-    const members =
-
-        JSON.parse(
-
-            localStorage.getItem(
-                "members"
-            )
-
-        )
-        ||
-        [];
-
-
-    members.forEach(
-
-        function (
-            member
-        ) {
-
-            if (
-                member.id
-                ===
-                memberId
-            ) {
-
-                member.status =
-
-                    "स्वीकृत";
-
-            }
+            );
 
         }
 
-    );
+
+        window.approveMember =
+
+        function (
+            memberId
+        ) {
 
 
-    localStorage.setItem(
+            members =
 
-        "members",
+            members.map(
 
-        JSON.stringify(
-            members
-        )
-
-    );
+                function (
+                    member
+                ) {
 
 
-    showMembers();
+                    if (
+                        member.id ===
+                        memberId
+                    ) {
 
-}
+                        member.status =
+
+                        "स्वीकृत";
+
+                    }
 
 
-function logoutAdmin() {
+                    return member;
 
-    const confirmLogout =
+                }
 
-        confirm(
+            );
 
-            "क्या आप लॉगआउट करना चाहते हैं?"
+
+            localStorage.setItem(
+
+                "members",
+
+                JSON.stringify(
+                    members
+                )
+
+            );
+
+
+            updateDashboard(
+                members
+            );
+
+        };
+
+
+        const memberSearch =
+
+        document.getElementById(
+            "memberSearch"
+        );
+
+
+        memberSearch.addEventListener(
+
+            "input",
+
+            function () {
+
+
+                const searchText =
+
+                this.value
+                .toLowerCase()
+                .trim();
+
+
+                const filteredMembers =
+
+                members.filter(
+
+                    function (
+                        member
+                    ) {
+
+
+                        return (
+
+                            member.name
+                            .toLowerCase()
+                            .includes(
+                                searchText
+                            )
+
+                            ||
+
+                            member.mobile
+                            .includes(
+                                searchText
+                            )
+
+                        );
+
+                    }
+
+                );
+
+
+                updateDashboard(
+                    filteredMembers
+                );
+
+            }
 
         );
 
 
-    if (
-        confirmLogout
-    ) {
-
-        window.location.href =
-
-            "admin-login.html";
+        updateDashboard(
+            members
+        );
 
     }
-
-}
+);
