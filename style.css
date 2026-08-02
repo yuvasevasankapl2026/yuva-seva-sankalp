@@ -5670,3 +5670,62 @@ tr:hover {
         800;
 
 }
+/* =====================================
+   DELETE BUTTON FINAL STYLE
+===================================== */
+
+.delete-btn {
+
+    display:
+        inline-block
+        !important;
+
+    visibility:
+        visible
+        !important;
+
+    opacity:
+        1
+        !important;
+
+    padding:
+        9px 14px;
+
+    margin:
+        4px;
+
+    color:
+        #ffffff;
+
+    background:
+        #d32f2f;
+
+    border:
+        none;
+
+    border-radius:
+        8px;
+
+    font-family:
+        "Noto Sans Devanagari",
+        Arial,
+        sans-serif;
+
+    font-size:
+        15px;
+
+    font-weight:
+        800;
+
+    cursor:
+        pointer;
+
+}
+
+
+.delete-btn:hover {
+
+    background:
+        #a91f1f;
+
+}
