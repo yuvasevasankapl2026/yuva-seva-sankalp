@@ -67,6 +67,8 @@ body{
 .logo h1{
     color:#0b5e2b;
     margin-top:10px;
+    font-size:32px
+    white-space:nowrap
 }
 
 .logo p{
