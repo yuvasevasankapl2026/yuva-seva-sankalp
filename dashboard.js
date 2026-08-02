@@ -158,7 +158,7 @@ function displayMembers(
             <tr>
 
                 <td
-                    colspan="6"
+                    colspan="7"
                     style="
                         text-align:
                         center;
@@ -300,6 +300,19 @@ function displayMembers(
                     </td>
 
 
+                    <!-- MEMBER ID -->
+
+                    <td>
+
+                        ${
+                            member.memberId
+                            ||
+                            "ID उपलब्ध नहीं"
+                        }
+
+                    </td>
+
+
                     <td>
 
                         ${
@@ -327,7 +340,7 @@ function displayMembers(
                         ${
                             member.membership
                             ||
-                            member.memberType
+                            member.membershipType
                             ||
                             "-"
                         }
@@ -550,6 +563,19 @@ if (
                             );
 
 
+                        const memberId =
+
+                            String(
+
+                                member.memberId
+                                ||
+                                ""
+
+                            )
+
+                            .toLowerCase();
+
+
                         return (
 
                             name.includes(
@@ -559,6 +585,12 @@ if (
                             ||
 
                             mobile.includes(
+                                searchText
+                            )
+
+                            ||
+
+                            memberId.includes(
                                 searchText
                             )
 
