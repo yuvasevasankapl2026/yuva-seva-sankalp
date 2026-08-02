@@ -1,1 +1,499 @@
+<!DOCTYPE html>
 
+<html lang="hi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        एडमिन डैशबोर्ड | युवा सेवा संकल्प फाउंडेशन
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- TOP BAR -->
+
+<div class="top-bar">
+
+    <div class="container">
+
+        <div class="left">
+
+            🔐 एडमिन पैनल
+
+        </div>
+
+
+        <div class="right">
+
+            <a href="index.html">
+
+                वेबसाइट देखें
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="header-content">
+
+        <img
+            src="images/logo.png"
+            class="logo"
+            alt="युवा सेवा संकल्प फाउंडेशन लोगो"
+        >
+
+
+        <div class="title">
+
+            <h1 class="main-title">
+
+                युवा सेवा संकल्प फाउंडेशन
+
+            </h1>
+
+
+            <p class="tagline">
+
+                एडमिन डैशबोर्ड
+
+            </p>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- DASHBOARD -->
+
+<section class="admin-dashboard">
+
+
+    <div class="dashboard-container">
+
+
+        <!-- DASHBOARD HEADING -->
+
+        <div class="dashboard-heading">
+
+            <div>
+
+                <h2>
+
+                    एडमिन डैशबोर्ड
+
+                </h2>
+
+
+                <p>
+
+                    सदस्यता आवेदनों और सदस्यों की जानकारी प्रबंधित करें।
+
+                </p>
+
+            </div>
+
+
+            <button
+                class="logout-btn"
+                onclick="logoutAdmin()"
+            >
+
+                लॉगआउट करें
+
+            </button>
+
+        </div>
+
+
+        <!-- STATISTICS -->
+
+        <div class="dashboard-cards">
+
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-icon">
+
+                    👥
+
+                </div>
+
+
+                <h3>
+
+                    0
+
+                </h3>
+
+
+                <p>
+
+                    कुल सदस्य
+
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-icon">
+
+                    📋
+
+                </div>
+
+
+                <h3>
+
+                    0
+
+                </h3>
+
+
+                <p>
+
+                    नए आवेदन
+
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-icon">
+
+                    ✅
+
+                </div>
+
+
+                <h3>
+
+                    0
+
+                </h3>
+
+
+                <p>
+
+                    स्वीकृत सदस्य
+
+                </p>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-icon">
+
+                    ⏳
+
+                </div>
+
+
+                <h3>
+
+                    0
+
+                </h3>
+
+
+                <p>
+
+                    लंबित आवेदन
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- MEMBER APPLICATIONS -->
+
+        <div class="dashboard-table-box">
+
+
+            <div class="table-heading">
+
+                <h3>
+
+                    सदस्यता आवेदन
+
+                </h3>
+
+
+                <input
+                    type="search"
+                    id="memberSearch"
+                    placeholder="नाम या मोबाइल नंबर खोजें"
+                >
+
+            </div>
+
+
+            <div class="table-responsive">
+
+
+                <table>
+
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+
+                                क्रमांक
+
+                            </th>
+
+
+                            <th>
+
+                                नाम
+
+                            </th>
+
+
+                            <th>
+
+                                मोबाइल नंबर
+
+                            </th>
+
+
+                            <th>
+
+                                सदस्यता
+
+                            </th>
+
+
+                            <th>
+
+                                स्थिति
+
+                            </th>
+
+
+                            <th>
+
+                                कार्य
+
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="memberTable">
+
+
+                        <tr>
+
+                            <td>
+
+                                1
+
+                            </td>
+
+
+                            <td>
+
+                                कोई आवेदन नहीं
+
+                            </td>
+
+
+                            <td>
+
+                                —
+
+                            </td>
+
+
+                            <td>
+
+                                —
+
+                            </td>
+
+
+                            <td>
+
+                                <span class="status-pending">
+
+                                    प्रतीक्षारत
+
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                —
+
+                            </td>
+
+                        </tr>
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!-- QUICK ACTIONS -->
+
+        <div class="quick-actions">
+
+
+            <a
+                href="membership.html"
+                class="quick-btn green-btn"
+            >
+
+                ➕ नया सदस्य जोड़ें
+
+            </a>
+
+
+            <a
+                href="index.html"
+                class="quick-btn blue-btn"
+            >
+
+                🌐 वेबसाइट देखें
+
+            </a>
+
+
+            <button
+                class="quick-btn orange-btn"
+                onclick="showMessage()"
+            >
+
+                📥 रिपोर्ट डाउनलोड करें
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <img
+        src="images/logo.png"
+        alt="युवा सेवा संकल्प फाउंडेशन लोगो"
+        width="70"
+    >
+
+
+    <h3>
+
+        युवा सेवा संकल्प फाउंडेशन
+
+    </h3>
+
+
+    <p>
+
+        युवा शक्ति, राष्ट्र शक्ति
+
+    </p>
+
+
+    <p>
+
+        © 2026 All Rights Reserved
+
+    </p>
+
+</footer>
+
+
+<script>
+
+function logoutAdmin() {
+
+    const confirmLogout =
+
+        confirm(
+            "क्या आप एडमिन पैनल से लॉगआउट करना चाहते हैं?"
+        );
+
+
+    if (
+        confirmLogout
+    ) {
+
+        window.location.href =
+            "admin-login.html";
+
+    }
+
+}
+
+
+function showMessage() {
+
+    alert(
+        "रिपोर्ट डाउनलोड सुविधा जल्द उपलब्ध होगी।"
+    );
+
+}
+
+</script>
+
+
+</body>
+
+</html>
