@@ -5529,3 +5529,144 @@ tr:hover {
     }
 
 }
+/* =====================================
+   ADMIN APPROVE AND DELETE BUTTON
+===================================== */
+
+.approve-btn {
+
+    padding:
+        8px 12px;
+
+    margin:
+        3px;
+
+    color:
+        white;
+
+    background:
+        #247331;
+
+    border:
+        none;
+
+    border-radius:
+        7px;
+
+    font-family:
+        "Noto Sans Devanagari",
+        sans-serif;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+}
+
+
+.approve-btn:hover {
+
+    background:
+        #195c25;
+
+}
+
+
+.delete-btn {
+
+    padding:
+        8px 12px;
+
+    margin:
+        3px;
+
+    color:
+        white;
+
+    background:
+        #d32f2f;
+
+    border:
+        none;
+
+    border-radius:
+        7px;
+
+    font-family:
+        "Noto Sans Devanagari",
+        sans-serif;
+
+    font-weight:
+        700;
+
+    cursor:
+        pointer;
+
+}
+
+
+.delete-btn:hover {
+
+    background:
+        #a91f1f;
+
+}
+
+
+.status-approved {
+
+    display:
+        inline-block;
+
+    padding:
+        5px 10px;
+
+    color:
+        white;
+
+    background:
+        #247331;
+
+    border-radius:
+        20px;
+
+    font-weight:
+        700;
+
+}
+
+
+.status-pending {
+
+    display:
+        inline-block;
+
+    padding:
+        5px 10px;
+
+    color:
+        #7a4b00;
+
+    background:
+        #fff1c7;
+
+    border-radius:
+        20px;
+
+    font-weight:
+        700;
+
+}
+
+
+.approved-text {
+
+    color:
+        #247331;
+
+    font-weight:
+        800;
+
+}
