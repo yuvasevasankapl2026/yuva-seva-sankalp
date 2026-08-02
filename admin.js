@@ -1,81 +1,123 @@
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
+/* =====================================
+   ADMIN LOGIN JAVASCRIPT
+===================================== */
 
-        const adminLoginForm =
-            document.getElementById(
-                "adminLoginForm"
+
+/* =====================================
+   GET FORM
+===================================== */
+
+const adminLoginForm =
+
+document.getElementById(
+    "adminLoginForm"
+);
+
+
+/* =====================================
+   LOGIN FORM SUBMIT
+===================================== */
+
+adminLoginForm.addEventListener(
+
+    "submit",
+
+    function(event) {
+
+        event.preventDefault();
+
+
+        const username =
+
+        document.getElementById(
+            "adminUsername"
+        ).value.trim();
+
+
+        const password =
+
+        document.getElementById(
+            "adminPassword"
+        ).value.trim();
+
+
+        const loginMessage =
+
+        document.getElementById(
+            "loginMessage"
+        );
+
+
+        /* =================================
+           ADMIN USERNAME AND PASSWORD
+        ================================= */
+
+        if (
+
+            username === "admin"
+
+            &&
+
+            password === "12345"
+
+        ) {
+
+            /* LOGIN SAVE */
+
+            localStorage.setItem(
+
+                "adminLoggedIn",
+
+                "true"
+
             );
 
 
-        if (adminLoginForm) {
+            /* SUCCESS MESSAGE */
 
-            adminLoginForm.addEventListener(
-                "submit",
-                function (event) {
+            loginMessage.style.color =
 
-                    event.preventDefault();
+            "#247331";
 
 
-                    const username =
-                        document.getElementById(
-                            "adminUsername"
-                        ).value.trim();
+            loginMessage.textContent =
+
+            "लॉगिन सफल हो रहा है...";
 
 
-                    const password =
-                        document.getElementById(
-                            "adminPassword"
-                        ).value;
+            /* DASHBOARD OPEN */
 
+            setTimeout(
 
-                    const message =
-                        document.getElementById(
-                            "loginMessage"
-                        );
+                function() {
 
+                    window.location.href =
 
-                    if (
-                        username === "admin"
-                        &&
-                        password === "12345"
-                    ) {
+                    "admin-dashboard.html";
 
-                        message.style.color =
-                            "#247331";
+                },
 
+                500
 
-                        message.innerHTML =
-                            "✓ लॉगिन सफल हो गया।";
-
-
-                        setTimeout(
-                            function () {
-
-                                window.location.href =
-                                    "admin-dashboard.html";
-
-                            },
-                            1000
-                        );
-
-                    }
-
-                    else {
-
-                        message.style.color =
-                            "#d32f2f";
-
-
-                        message.innerHTML =
-                            "✗ यूज़रनेम या पासवर्ड गलत है।";
-
-                    }
-
-                }
             );
 
         }
 
+        else {
+
+            /* ERROR MESSAGE */
+
+            loginMessage.style.color =
+
+            "#d32f2f";
+
+
+            loginMessage.textContent =
+
+            "यूज़रनेम या पासवर्ड गलत है।";
+
+        }
+
     }
+
 );
