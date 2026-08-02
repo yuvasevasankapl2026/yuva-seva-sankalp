@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="hi">
 
 <head>
@@ -12,7 +11,7 @@
     >
 
     <title>
-        सदस्य लॉगिन | युवा सेवा संकल्प फाउंडेशन
+        सदस्य लॉगिन
     </title>
 
     <link
@@ -26,25 +25,6 @@
 <body>
 
 
-<!-- TOP BAR -->
-
-<div class="top-bar">
-
-    <div class="container">
-
-        <div class="left">
-
-            🔐 सदस्य लॉगिन
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- HEADER -->
-
 <header class="header">
 
     <div class="header-content">
@@ -52,7 +32,7 @@
         <img
             src="images/logo.png"
             class="logo"
-            alt="युवा सेवा संकल्प फाउंडेशन लोगो"
+            alt="लोगो"
         >
 
 
@@ -67,7 +47,7 @@
 
             <p class="tagline">
 
-                युवा शक्ति, राष्ट्र शक्ति
+                सदस्य लॉगिन
 
             </p>
 
@@ -78,9 +58,8 @@
 </header>
 
 
-<!-- MEMBER LOGIN -->
-
 <section class="admin-login-section">
+
 
     <div class="admin-login-box">
 
@@ -102,8 +81,6 @@
         <form id="memberLoginForm">
 
 
-            <!-- MEMBER ID -->
-
             <div class="form-group">
 
                 <label for="memberId">
@@ -116,36 +93,39 @@
                 <input
                     type="text"
                     id="memberId"
-                    placeholder="जैसे: YSSF-2026-0001"
+                    placeholder="YSSF-2026-0001"
                     required
                 >
 
             </div>
 
-
-            <!-- MOBILE NUMBER -->
 
             <div class="form-group">
 
                 <label for="memberMobile">
 
-                    मोबाइल नंबर
+                    पासवर्ड
 
                 </label>
 
 
                 <input
-                    type="tel"
+                    type="password"
                     id="memberMobile"
-                    placeholder="10 अंकों का मोबाइल नंबर"
+                    placeholder="मोबाइल नंबर लिखें"
                     maxlength="10"
+                    inputmode="numeric"
                     required
                 >
 
             </div>
 
 
-            <!-- LOGIN BUTTON -->
+            <p
+                id="memberMessage"
+                class="login-message"
+            ></p>
+
 
             <button
                 type="submit"
@@ -160,13 +140,11 @@
         </form>
 
 
-        <!-- MEMBER DETAILS -->
-
         <div
             id="memberProfile"
-            class="member-profile"
-            style="display: none;"
+            style="display:none;"
         >
+
 
             <h2>
 
@@ -178,7 +156,9 @@
             <p>
 
                 <strong>
+
                     Member ID:
+
                 </strong>
 
                 <span id="profileMemberId"></span>
@@ -189,7 +169,9 @@
             <p>
 
                 <strong>
+
                     नाम:
+
                 </strong>
 
                 <span id="profileName"></span>
@@ -200,7 +182,9 @@
             <p>
 
                 <strong>
+
                     मोबाइल:
+
                 </strong>
 
                 <span id="profileMobile"></span>
@@ -211,7 +195,9 @@
             <p>
 
                 <strong>
+
                     सदस्यता:
+
                 </strong>
 
                 <span id="profileMembership"></span>
@@ -222,7 +208,9 @@
             <p>
 
                 <strong>
+
                     स्थिति:
+
                 </strong>
 
                 <span id="profileStatus"></span>
@@ -240,7 +228,11 @@
 
             </button>
 
+
         </div>
+
+
+        <br>
 
 
         <a
@@ -255,44 +247,9 @@
 
     </div>
 
+
 </section>
 
-
-<!-- FOOTER -->
-
-<footer>
-
-    <img
-        src="images/logo.png"
-        alt="युवा सेवा संकल्प फाउंडेशन लोगो"
-        width="70"
-    >
-
-
-    <h3>
-
-        युवा सेवा संकल्प फाउंडेशन
-
-    </h3>
-
-
-    <p>
-
-        युवा शक्ति, राष्ट्र शक्ति
-
-    </p>
-
-
-    <p>
-
-        © 2026 युवा सेवा संकल्प फाउंडेशन
-
-    </p>
-
-</footer>
-
-
-<!-- MEMBER LOGIN JAVASCRIPT -->
 
 <script src="member-login.js"></script>
 
