@@ -55,40 +55,27 @@ function saveMembers() {
 
 
 /* =====================================
-   DASHBOARD LOAD
-===================================== */
-
-function loadDashboard() {
-
-    updateStatistics();
-
-    displayMembers(
-        members
-    );
-
-}
-
-
-/* =====================================
-   STATISTICS
+   UPDATE STATISTICS
 ===================================== */
 
 function updateStatistics() {
 
-    const total =
+    const totalMembers =
 
         members.length;
 
 
-    const approved =
+    const approvedMembers =
 
         members.filter(
 
             function(member) {
 
                 return (
+
                     member.status ===
                     "approved"
+
                 );
 
             }
@@ -96,7 +83,7 @@ function updateStatistics() {
         ).length;
 
 
-    const pending =
+    const pendingMembers =
 
         members.filter(
 
@@ -116,28 +103,36 @@ function updateStatistics() {
 
     document.getElementById(
         "totalMembers"
-    ).textContent = total;
+    ).textContent =
+
+        totalMembers;
 
 
     document.getElementById(
         "newApplications"
-    ).textContent = pending;
+    ).textContent =
+
+        pendingMembers;
 
 
     document.getElementById(
         "approvedMembers"
-    ).textContent = approved;
+    ).textContent =
+
+        approvedMembers;
 
 
     document.getElementById(
         "pendingMembers"
-    ).textContent = pending;
+    ).textContent =
+
+        pendingMembers;
 
 }
 
 
 /* =====================================
-   MEMBER TABLE
+   DISPLAY MEMBERS
 ===================================== */
 
 function displayMembers(
@@ -165,8 +160,11 @@ function displayMembers(
                 <td
                     colspan="6"
                     style="
-                        text-align:center;
-                        padding:30px;
+                        text-align:
+                        center;
+
+                        padding:
+                        30px;
                     "
                 >
 
@@ -191,88 +189,104 @@ function displayMembers(
             index
         ) {
 
-            const status =
+            const originalIndex =
 
+                members.indexOf(
+                    member
+                );
+
+
+            let statusHTML;
+
+
+            if (
                 member.status ===
                 "approved"
+            ) {
 
-                ?
+                statusHTML = `
 
-                `
+                    <span
+                        class="
+                        status-approved
+                        "
+                    >
 
-                <span
-                    class="
-                    status-approved
-                    "
-                >
+                        स्वीकृत
 
-                    स्वीकृत
-
-                </span>
-
-                `
-
-                :
-
-                `
-
-                <span
-                    class="
-                    status-pending
-                    "
-                >
-
-                    लंबित
-
-                </span>
+                    </span>
 
                 `;
 
+            }
 
-            const approveButton =
+            else {
 
-                member.status ===
-                "approved"
+                statusHTML = `
 
-                ?
+                    <span
+                        class="
+                        status-pending
+                        "
+                    >
 
-                `
+                        लंबित
 
-                <span
-                    class="
-                    approved-text
-                    "
-                >
-
-                    ✓ स्वीकृत
-
-                </span>
-
-                `
-
-                :
-
-                `
-
-                <button
-
-                    class="
-                    approve-btn
-                    "
-
-                    onclick="
-                    approveMember(
-                        ${index}
-                    )
-                    "
-
-                >
-
-                    ✓ स्वीकृत करें
-
-                </button>
+                    </span>
 
                 `;
+
+            }
+
+
+            let approveHTML;
+
+
+            if (
+                member.status ===
+                "approved"
+            ) {
+
+                approveHTML = `
+
+                    <span
+                        class="
+                        approved-text
+                        "
+                    >
+
+                        ✓ स्वीकृत
+
+                    </span>
+
+                `;
+
+            }
+
+            else {
+
+                approveHTML = `
+
+                    <button
+                        type="button"
+                        class="
+                        approve-btn
+                        "
+
+                        onclick="
+                        approveMember(
+                            ${originalIndex}
+                        )
+                        "
+                    >
+
+                        ✓ स्वीकृत करें
+
+                    </button>
+
+                `;
+
+            }
 
 
             table.innerHTML += `
@@ -323,28 +337,27 @@ function displayMembers(
 
                     <td>
 
-                        ${status}
+                        ${statusHTML}
 
                     </td>
 
 
                     <td>
 
-                        ${approveButton}
+                        ${approveHTML}
 
 
                         <button
-
+                            type="button"
                             class="
                             delete-btn
                             "
 
                             onclick="
                             deleteMember(
-                                ${index}
+                                ${originalIndex}
                             )
                             "
-
                         >
 
                             🗑️ हटाएँ
@@ -393,7 +406,12 @@ function approveMember(
         saveMembers();
 
 
-        loadDashboard();
+        updateStatistics();
+
+
+        displayMembers(
+            members
+        );
 
 
         alert(
@@ -440,15 +458,23 @@ function deleteMember(
     ) {
 
         members.splice(
+
             index,
+
             1
+
         );
 
 
         saveMembers();
 
 
-        loadDashboard();
+        updateStatistics();
+
+
+        displayMembers(
+            members
+        );
 
 
         alert(
@@ -463,7 +489,7 @@ function deleteMember(
 
 
 /* =====================================
-   SEARCH MEMBER
+   MEMBER SEARCH
 ===================================== */
 
 const searchBox =
@@ -502,10 +528,12 @@ if (
 
                         const name =
 
-                            (
+                            String(
+
                                 member.name
                                 ||
                                 ""
+
                             )
 
                             .toLowerCase();
@@ -542,7 +570,9 @@ if (
 
 
             displayMembers(
+
                 filteredMembers
+
             );
 
         }
@@ -556,28 +586,9 @@ if (
    START DASHBOARD
 ===================================== */
 
-loadDashboard();
-/* =====================================
-   HATAYE BUTTON FINAL FIX
-===================================== */
+updateStatistics();
 
-function deleteMember(index) {
 
-    const confirmDelete = confirm(
-        "क्या आप इस सदस्य को हटाना चाहते हैं?"
-    );
-
-    if (confirmDelete) {
-
-        members.splice(index, 1);
-
-        localStorage.setItem(
-            "members",
-            JSON.stringify(members)
-        );
-
-        location.reload();
-
-    }
-
-}
+displayMembers(
+    members
+);
