@@ -19,10 +19,17 @@ document.addEventListener(
         );
 
 
+        const profile =
+
+        document.getElementById(
+            "memberProfile"
+        );
+
+
         if (!loginForm) {
 
             alert(
-                "Member Login Form नहीं मिला।"
+                "Login form नहीं मिला।"
             );
 
             return;
@@ -61,35 +68,11 @@ document.addEventListener(
                 .trim();
 
 
-                if (
-
-                    memberId === ""
-
-                    ||
-
-                    mobile === ""
-
-                ) {
-
-                    message.textContent =
-
-                    "कृपया Member ID और मोबाइल नंबर भरें।";
-
-
-                    message.style.color =
-
-                    "red";
-
-
-                    return;
-
-                }
-
-
                 let members = [];
 
 
                 try {
+
 
                     const savedMembers =
 
@@ -98,16 +81,35 @@ document.addEventListener(
                     );
 
 
-                    members =
+                    if (savedMembers) {
 
-                    JSON.parse(
-                        savedMembers
-                    ) || [];
+                        members =
+
+                        JSON.parse(
+                            savedMembers
+                        );
+
+                    }
 
 
                 }
 
                 catch (error) {
+
+
+                    members = [];
+
+
+                }
+
+
+                if (
+
+                    !Array.isArray(
+                        members
+                    )
+
+                ) {
 
 
                     members = [];
@@ -128,9 +130,7 @@ document.addEventListener(
                         String(
 
                             member.memberId
-
                             ||
-
                             ""
 
                         )
@@ -145,9 +145,7 @@ document.addEventListener(
                         String(
 
                             member.mobile
-
                             ||
-
                             ""
 
                         )
@@ -158,17 +156,13 @@ document.addEventListener(
                         return (
 
                             savedMemberId
-
                             ===
-
                             memberId
 
                             &&
 
                             savedMobile
-
                             ===
-
                             mobile
 
                         );
@@ -184,7 +178,7 @@ document.addEventListener(
 
                     message.textContent =
 
-                    "✅ लॉगिन सफल हुआ।";
+                    "लॉगिन सफल हुआ।";
 
 
                     message.style.color =
@@ -197,11 +191,7 @@ document.addEventListener(
                     "none";
 
 
-                    document
-                    .getElementById(
-                        "memberProfile"
-                    )
-                    .style.display =
+                    profile.style.display =
 
                     "block";
 
@@ -213,9 +203,7 @@ document.addEventListener(
                     .textContent =
 
                     foundMember.memberId
-
                     ||
-
                     "-";
 
 
@@ -226,9 +214,7 @@ document.addEventListener(
                     .textContent =
 
                     foundMember.name
-
                     ||
-
                     "-";
 
 
@@ -239,9 +225,7 @@ document.addEventListener(
                     .textContent =
 
                     foundMember.mobile
-
                     ||
-
                     "-";
 
 
@@ -252,24 +236,18 @@ document.addEventListener(
                     .textContent =
 
                     foundMember.membershipType
-
                     ||
-
                     foundMember.membership
-
                     ||
-
                     "-";
 
 
-                    const status =
+                    const memberStatus =
 
                     String(
 
                         foundMember.status
-
                         ||
-
                         "pending"
 
                     )
@@ -277,25 +255,39 @@ document.addEventListener(
                     .toLowerCase();
 
 
-                    document
-                    .getElementById(
-                        "profileStatus"
-                    )
-                    .textContent =
+                    if (
 
-                    status === "approved"
+                        memberStatus
+                        ===
+                        "approved"
 
-                    ||
+                    ) {
 
-                    status === "स्वीकृत"
 
-                    ?
+                        document
+                        .getElementById(
+                            "profileStatus"
+                        )
+                        .textContent =
 
-                    "✅ स्वीकृत"
+                        "✅ स्वीकृत";
 
-                    :
 
-                    "⏳ लंबित";
+                    }
+
+                    else {
+
+
+                        document
+                        .getElementById(
+                            "profileStatus"
+                        )
+                        .textContent =
+
+                        "⏳ लंबित";
+
+
+                    }
 
 
                 }
@@ -325,6 +317,8 @@ document.addEventListener(
 
 );
 
+
+/* MEMBER LOGOUT */
 
 function memberLogout() {
 
