@@ -65,9 +65,11 @@ body{
 }
 
 .logo h1{
-    color:#0b5e2b;
-    font-size:32px;
+    font-size:38px;
     font-weight:900;
+    color:#0b5e2b;
+    text-shadow:1px 1px 2px rgba(0,0,0,0.2);
+
 }
 .logo p{
     color:#ff6600;
