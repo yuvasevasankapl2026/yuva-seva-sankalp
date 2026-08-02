@@ -2,9 +2,7 @@ document.addEventListener(
     "DOMContentLoaded",
     function () {
 
-        let members =
-
-        JSON.parse(
+        let members = JSON.parse(
             localStorage.getItem(
                 "members"
             )
@@ -23,49 +21,86 @@ document.addEventListener(
 
 
         const totalMembers =
-
         document.getElementById(
             "totalMembers"
         );
 
 
         const newApplications =
-
         document.getElementById(
             "newApplications"
         );
 
 
         const approvedMembers =
-
         document.getElementById(
             "approvedMembers"
         );
 
 
         const pendingMembers =
-
         document.getElementById(
             "pendingMembers"
         );
 
 
         const memberTable =
-
         document.getElementById(
             "memberTable"
         );
 
 
+        const memberSearch =
+        document.getElementById(
+            "memberSearch"
+        );
+
+
+        function saveMembers() {
+
+            localStorage.setItem(
+
+                "members",
+
+                JSON.stringify(
+                    members
+                )
+
+            );
+
+        }
+
+
+        function getMembershipName(
+            type
+        ) {
+
+            if (
+                type === "active"
+            ) {
+
+                return "सक्रिय सदस्य";
+
+            }
+
+
+            if (
+                type === "lifetime"
+            ) {
+
+                return "आजीवन सदस्य";
+
+            }
+
+
+            return "सामान्य सदस्य";
+
+        }
+
+
         function updateDashboard(
             memberList
         ) {
-
-
-            totalMembers.textContent =
-
-            members.length;
-
 
             const approved =
 
@@ -95,18 +130,19 @@ document.addEventListener(
             );
 
 
-            newApplications.textContent =
+            totalMembers.textContent =
+            members.length;
 
+
+            newApplications.textContent =
             pending.length;
 
 
             approvedMembers.textContent =
-
             approved.length;
 
 
             pendingMembers.textContent =
-
             pending.length;
 
 
@@ -124,7 +160,7 @@ document.addEventListener(
 
                     <td colspan="6">
 
-                        कोई सदस्यता आवेदन नहीं मिला।
+                        कोई सदस्य नहीं मिला।
 
                     </td>
 
@@ -144,40 +180,63 @@ document.addEventListener(
                     index
                 ) {
 
-
-                    let membershipName =
-
-                    "सामान्य सदस्य";
-
-
-                    if (
-                        member.membershipType ===
-                        "active"
-                    ) {
-
-                        membershipName =
-
-                        "सक्रिय सदस्य";
-
-                    }
-
-
-                    if (
-                        member.membershipType ===
-                        "lifetime"
-                    ) {
-
-                        membershipName =
-
-                        "आजीवन सदस्य";
-
-                    }
-
-
                     const status =
 
                     member.status ||
                     "लंबित";
+
+
+                    let statusClass =
+
+                    "status-pending";
+
+
+                    if (
+                        status ===
+                        "स्वीकृत"
+                    ) {
+
+                        statusClass =
+
+                        "status-approved";
+
+                    }
+
+
+                    let actionButton =
+
+                    `
+                    <button
+                        class="approve-btn"
+                        onclick="
+                        approveMember(
+                        ${member.id}
+                        )
+                        "
+                    >
+
+                        स्वीकृत करें
+
+                    </button>
+                    `;
+
+
+                    if (
+                        status ===
+                        "स्वीकृत"
+                    ) {
+
+                        actionButton =
+
+                        `
+                        <span class="approved-text">
+
+                            ✓ स्वीकृत
+
+                        </span>
+                        `;
+
+                    }
 
 
                     memberTable.innerHTML +=
@@ -208,29 +267,41 @@ document.addEventListener(
 
                         <td>
 
-                            ${membershipName}
+                            ${getMembershipName(
+                                member.membershipType
+                            )}
 
                         </td>
 
 
                         <td>
 
-                            ${status}
+                            <span
+                                class="${statusClass}"
+                            >
+
+                                ${status}
+
+                            </span>
 
                         </td>
 
 
                         <td>
+
+                            ${actionButton}
+
 
                             <button
+                                class="delete-btn"
                                 onclick="
-                                approveMember(
+                                deleteMember(
                                 ${member.id}
                                 )
                                 "
                             >
 
-                                स्वीकृत करें
+                                हटाएँ
 
                             </button>
 
@@ -252,6 +323,21 @@ document.addEventListener(
             memberId
         ) {
 
+            const confirmApprove =
+
+            confirm(
+                "क्या आप इस सदस्य को स्वीकृत करना चाहते हैं?"
+            );
+
+
+            if (
+                !confirmApprove
+            ) {
+
+                return;
+
+            }
+
 
             members =
 
@@ -261,14 +347,12 @@ document.addEventListener(
                     member
                 ) {
 
-
                     if (
                         member.id ===
                         memberId
                     ) {
 
                         member.status =
-
                         "स्वीकृत";
 
                     }
@@ -281,15 +365,7 @@ document.addEventListener(
             );
 
 
-            localStorage.setItem(
-
-                "members",
-
-                JSON.stringify(
-                    members
-                )
-
-            );
+            saveMembers();
 
 
             updateDashboard(
@@ -299,65 +375,124 @@ document.addEventListener(
         };
 
 
-        const memberSearch =
+        window.deleteMember =
 
-        document.getElementById(
-            "memberSearch"
-        );
+        function (
+            memberId
+        ) {
 
+            const confirmDelete =
 
-        memberSearch.addEventListener(
-
-            "input",
-
-            function () {
-
-
-                const searchText =
-
-                this.value
-                .toLowerCase()
-                .trim();
+            confirm(
+                "क्या आप इस सदस्य को हटाना चाहते हैं?"
+            );
 
 
-                const filteredMembers =
+            if (
+                !confirmDelete
+            ) {
 
-                members.filter(
-
-                    function (
-                        member
-                    ) {
-
-
-                        return (
-
-                            member.name
-                            .toLowerCase()
-                            .includes(
-                                searchText
-                            )
-
-                            ||
-
-                            member.mobile
-                            .includes(
-                                searchText
-                            )
-
-                        );
-
-                    }
-
-                );
-
-
-                updateDashboard(
-                    filteredMembers
-                );
+                return;
 
             }
 
-        );
+
+            members =
+
+            members.filter(
+
+                function (
+                    member
+                ) {
+
+                    return (
+                        member.id !==
+                        memberId
+                    );
+
+                }
+
+            );
+
+
+            saveMembers();
+
+
+            updateDashboard(
+                members
+            );
+
+        };
+
+
+        if (
+            memberSearch
+        ) {
+
+            memberSearch.addEventListener(
+
+                "input",
+
+                function () {
+
+                    const searchText =
+
+                    this.value
+                    .toLowerCase()
+                    .trim();
+
+
+                    const filteredMembers =
+
+                    members.filter(
+
+                        function (
+                            member
+                        ) {
+
+                            const name =
+
+                            (
+                                member.name ||
+                                ""
+                            )
+                            .toLowerCase();
+
+
+                            const mobile =
+
+                            member.mobile ||
+                            "";
+
+
+                            return (
+
+                                name.includes(
+                                    searchText
+                                )
+
+                                ||
+
+                                mobile.includes(
+                                    searchText
+                                )
+
+                            );
+
+                        }
+
+                    );
+
+
+                    updateDashboard(
+                        filteredMembers
+                    );
+
+                }
+
+            );
+
+        }
 
 
         updateDashboard(
