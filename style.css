@@ -4607,3 +4607,297 @@ section h2::after {
     }
 
 }
+/* =====================================
+   ADMIN LOGIN PAGE
+===================================== */
+
+.admin-login-section {
+
+    min-height: 650px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 80px 20px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #eaf3fb,
+            #eefaf0
+        );
+
+}
+
+
+.admin-login-box {
+
+    width: 100%;
+
+    max-width: 500px;
+
+    padding: 45px;
+
+    text-align: center;
+
+    background: #ffffff;
+
+    border-radius: 25px;
+
+    box-shadow:
+
+        0 20px 50px
+        rgba(
+            18,
+            54,
+            91,
+            0.20
+        );
+
+}
+
+
+.admin-login-box h2 {
+
+    color: #1f4e79;
+
+    font-size: 38px;
+
+    font-weight: 900;
+
+    margin-bottom: 12px;
+
+}
+
+
+.admin-login-box h2::after {
+
+    content: "";
+
+    display: block;
+
+    width: 100px;
+
+    height: 5px;
+
+    margin: 13px auto;
+
+    border-radius: 20px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #1f4e79 33%,
+            #ff6b00 33%,
+            #ff6b00 66%,
+            #2e8b3c 66%
+        );
+
+}
+
+
+.admin-login-box > p {
+
+    color: #546e7a;
+
+    margin-bottom: 30px;
+
+}
+
+
+.admin-login-box .form-group {
+
+    text-align: left;
+
+    margin-bottom: 20px;
+
+}
+
+
+.admin-login-box label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #1f4e79;
+
+    font-size: 17px;
+
+    font-weight: 800;
+
+}
+
+
+.admin-login-box input {
+
+    width: 100%;
+
+    padding: 16px;
+
+    font-family:
+
+        "Noto Sans Devanagari",
+        Arial,
+        sans-serif;
+
+    font-size: 16px;
+
+    border:
+
+        2px solid
+        #d8e2e8;
+
+    border-radius: 11px;
+
+    outline: none;
+
+    background: #f8fbfd;
+
+}
+
+
+.admin-login-box input:focus {
+
+    background: #ffffff;
+
+    border-color: #1f4e79;
+
+    box-shadow:
+
+        0 0 0 4px
+
+        rgba(
+            31,
+            78,
+            121,
+            0.12
+        );
+
+}
+
+
+.admin-login-btn {
+
+    width: 100%;
+
+    padding: 17px;
+
+    margin-top: 8px;
+
+    color: #ffffff;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #3e9e4c,
+            #247331
+        );
+
+    border: none;
+
+    border-radius: 12px;
+
+    font-family:
+
+        "Noto Sans Devanagari",
+        Arial,
+        sans-serif;
+
+    font-size: 19px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.admin-login-btn:hover {
+
+    transform:
+
+        translateY(-3px);
+
+    box-shadow:
+
+        0 12px 25px
+
+        rgba(
+            36,
+            115,
+            49,
+            0.25
+        );
+
+}
+
+
+.login-message {
+
+    min-height: 25px;
+
+    margin: 5px 0;
+
+    font-weight: 800;
+
+}
+
+
+.back-home {
+
+    display: inline-block;
+
+    margin-top: 25px;
+
+    color: #1f4e79;
+
+    font-weight: 800;
+
+    text-decoration: none;
+
+}
+
+
+.back-home:hover {
+
+    color: #ff6b00;
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .admin-login-section {
+
+        padding: 50px 12px;
+
+    }
+
+
+    .admin-login-box {
+
+        padding: 30px 20px;
+
+        border-radius: 18px;
+
+    }
+
+
+    .admin-login-box h2 {
+
+        font-size: 31px;
+
+    }
+
+}
