@@ -1,503 +1,559 @@
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-        let members = JSON.parse(
-            localStorage.getItem(
-                "members"
-            )
-        );
+/* =====================================
+   ADMIN DASHBOARD JAVASCRIPT
+===================================== */
 
 
-        if (
-            !Array.isArray(
-                members
-            )
-        ) {
+/* =====================================
+   ADMIN LOGIN CHECK
+===================================== */
 
-            members = [];
-
-        }
+const adminLogin = localStorage.getItem(
+    "adminLoggedIn"
+);
 
 
-        const totalMembers =
-        document.getElementById(
-            "totalMembers"
-        );
+if (
+    adminLogin !== "true"
+) {
+
+    window.location.href =
+    "admin-login.html";
+
+}
 
 
-        const newApplications =
-        document.getElementById(
-            "newApplications"
-        );
+/* =====================================
+   MEMBERS LOAD
+===================================== */
+
+let members = JSON.parse(
+
+    localStorage.getItem(
+        "members"
+    )
+
+) || [];
 
 
-        const approvedMembers =
-        document.getElementById(
-            "approvedMembers"
-        );
+/* =====================================
+   SAVE MEMBERS
+===================================== */
+
+function saveMembers() {
+
+    localStorage.setItem(
+
+        "members",
+
+        JSON.stringify(
+            members
+        )
+
+    );
+
+}
 
 
-        const pendingMembers =
-        document.getElementById(
-            "pendingMembers"
-        );
+/* =====================================
+   DASHBOARD LOAD
+===================================== */
+
+function loadDashboard() {
+
+    updateStatistics();
+
+    displayMembers(
+        members
+    );
+
+}
 
 
-        const memberTable =
+/* =====================================
+   STATISTICS
+===================================== */
+
+function updateStatistics() {
+
+    const total =
+
+        members.length;
+
+
+    const approved =
+
+        members.filter(
+
+            function(member) {
+
+                return (
+                    member.status ===
+                    "approved"
+                );
+
+            }
+
+        ).length;
+
+
+    const pending =
+
+        members.filter(
+
+            function(member) {
+
+                return (
+
+                    member.status !==
+                    "approved"
+
+                );
+
+            }
+
+        ).length;
+
+
+    document.getElementById(
+        "totalMembers"
+    ).textContent = total;
+
+
+    document.getElementById(
+        "newApplications"
+    ).textContent = pending;
+
+
+    document.getElementById(
+        "approvedMembers"
+    ).textContent = approved;
+
+
+    document.getElementById(
+        "pendingMembers"
+    ).textContent = pending;
+
+}
+
+
+/* =====================================
+   MEMBER TABLE
+===================================== */
+
+function displayMembers(
+    memberList
+) {
+
+    const table =
+
         document.getElementById(
             "memberTable"
         );
 
 
-        const memberSearch =
-        document.getElementById(
-            "memberSearch"
-        );
+    table.innerHTML = "";
 
 
-        function saveMembers() {
+    if (
+        memberList.length === 0
+    ) {
 
-            localStorage.setItem(
+        table.innerHTML = `
 
-                "members",
+            <tr>
 
-                JSON.stringify(
-                    members
-                )
+                <td
+                    colspan="6"
+                    style="
+                        text-align:center;
+                        padding:30px;
+                    "
+                >
 
-            );
+                    कोई सदस्यता आवेदन नहीं मिला।
 
-        }
+                </td>
+
+            </tr>
+
+        `;
 
 
-        function getMembershipName(
-            type
+        return;
+
+    }
+
+
+    memberList.forEach(
+
+        function(
+            member,
+            index
         ) {
 
-            if (
-                type === "active"
-            ) {
+            const status =
 
-                return "सक्रिय सदस्य";
+                member.status ===
+                "approved"
 
-            }
-
-
-            if (
-                type === "lifetime"
-            ) {
-
-                return "आजीवन सदस्य";
-
-            }
-
-
-            return "सामान्य सदस्य";
-
-        }
-
-
-        function updateDashboard(
-            memberList
-        ) {
-
-            const approved =
-
-            members.filter(
-                function (member) {
-
-                    return (
-                        member.status ===
-                        "स्वीकृत"
-                    );
-
-                }
-            );
-
-
-            const pending =
-
-            members.filter(
-                function (member) {
-
-                    return (
-                        member.status !==
-                        "स्वीकृत"
-                    );
-
-                }
-            );
-
-
-            totalMembers.textContent =
-            members.length;
-
-
-            newApplications.textContent =
-            pending.length;
-
-
-            approvedMembers.textContent =
-            approved.length;
-
-
-            pendingMembers.textContent =
-            pending.length;
-
-
-            memberTable.innerHTML = "";
-
-
-            if (
-                memberList.length === 0
-            ) {
-
-                memberTable.innerHTML =
+                ?
 
                 `
+
+                <span
+                    class="
+                    status-approved
+                    "
+                >
+
+                    स्वीकृत
+
+                </span>
+
+                `
+
+                :
+
+                `
+
+                <span
+                    class="
+                    status-pending
+                    "
+                >
+
+                    लंबित
+
+                </span>
+
+                `;
+
+
+            const approveButton =
+
+                member.status ===
+                "approved"
+
+                ?
+
+                `
+
+                <span
+                    class="
+                    approved-text
+                    "
+                >
+
+                    ✓ स्वीकृत
+
+                </span>
+
+                `
+
+                :
+
+                `
+
+                <button
+
+                    class="
+                    approve-btn
+                    "
+
+                    onclick="
+                    approveMember(
+                        ${index}
+                    )
+                    "
+
+                >
+
+                    ✓ स्वीकृत करें
+
+                </button>
+
+                `;
+
+
+            table.innerHTML += `
+
                 <tr>
 
-                    <td colspan="6">
+                    <td>
 
-                        कोई सदस्य नहीं मिला।
+                        ${index + 1}
+
+                    </td>
+
+
+                    <td>
+
+                        ${
+                            member.name
+                            ||
+                            "-"
+                        }
+
+                    </td>
+
+
+                    <td>
+
+                        ${
+                            member.mobile
+                            ||
+                            "-"
+                        }
+
+                    </td>
+
+
+                    <td>
+
+                        ${
+                            member.membership
+                            ||
+                            member.memberType
+                            ||
+                            "-"
+                        }
+
+                    </td>
+
+
+                    <td>
+
+                        ${status}
+
+                    </td>
+
+
+                    <td>
+
+                        ${approveButton}
+
+
+                        <button
+
+                            class="
+                            delete-btn
+                            "
+
+                            onclick="
+                            deleteMember(
+                                ${index}
+                            )
+                            "
+
+                        >
+
+                            🗑️ हटाएँ
+
+                        </button>
 
                     </td>
 
                 </tr>
-                `;
 
-
-                return;
-
-            }
-
-
-            memberList.forEach(
-
-                function (
-                    member,
-                    index
-                ) {
-
-                    const status =
-
-                    member.status ||
-                    "लंबित";
-
-
-                    let statusClass =
-
-                    "status-pending";
-
-
-                    if (
-                        status ===
-                        "स्वीकृत"
-                    ) {
-
-                        statusClass =
-
-                        "status-approved";
-
-                    }
-
-
-                    let actionButton =
-
-                    `
-                    <button
-                        class="approve-btn"
-                        onclick="
-                        approveMember(
-                        ${member.id}
-                        )
-                        "
-                    >
-
-                        स्वीकृत करें
-
-                    </button>
-                    `;
-
-
-                    if (
-                        status ===
-                        "स्वीकृत"
-                    ) {
-
-                        actionButton =
-
-                        `
-                        <span class="approved-text">
-
-                            ✓ स्वीकृत
-
-                        </span>
-                        `;
-
-                    }
-
-
-                    memberTable.innerHTML +=
-
-                    `
-                    <tr>
-
-                        <td>
-
-                            ${index + 1}
-
-                        </td>
-
-
-                        <td>
-
-                            ${member.name}
-
-                        </td>
-
-
-                        <td>
-
-                            ${member.mobile}
-
-                        </td>
-
-
-                        <td>
-
-                            ${getMembershipName(
-                                member.membershipType
-                            )}
-
-                        </td>
-
-
-                        <td>
-
-                            <span
-                                class="${statusClass}"
-                            >
-
-                                ${status}
-
-                            </span>
-
-                        </td>
-
-
-                        <td>
-
-                            ${actionButton}
-
-
-                            <button
-                                class="delete-btn"
-                                onclick="
-                                deleteMember(
-                                ${member.id}
-                                )
-                                "
-                            >
-
-                                हटाएँ
-
-                            </button>
-
-                        </td>
-
-                    </tr>
-                    `;
-
-                }
-
-            );
+            `;
 
         }
 
+    );
 
-        window.approveMember =
+}
 
-        function (
-            memberId
-        ) {
 
-            const confirmApprove =
+/* =====================================
+   APPROVE MEMBER
+===================================== */
 
-            confirm(
-                "क्या आप इस सदस्य को स्वीकृत करना चाहते हैं?"
-            );
+function approveMember(
+    index
+) {
 
+    const confirmApprove =
 
-            if (
-                !confirmApprove
-            ) {
+        confirm(
 
-                return;
+            "क्या आप इस सदस्य को स्वीकृत करना चाहते हैं?"
 
-            }
+        );
 
 
-            members =
+    if (
+        confirmApprove
+    ) {
 
-            members.map(
+        members[index].status =
 
-                function (
-                    member
-                ) {
+            "approved";
 
-                    if (
-                        member.id ===
-                        memberId
-                    ) {
 
-                        member.status =
-                        "स्वीकृत";
+        saveMembers();
 
-                    }
 
+        loadDashboard();
 
-                    return member;
 
-                }
+        alert(
 
-            );
+            "सदस्य को सफलतापूर्वक स्वीकृत कर दिया गया।"
 
-
-            saveMembers();
-
-
-            updateDashboard(
-                members
-            );
-
-        };
-
-
-        window.deleteMember =
-
-        function (
-            memberId
-        ) {
-
-            const confirmDelete =
-
-            confirm(
-                "क्या आप इस सदस्य को हटाना चाहते हैं?"
-            );
-
-
-            if (
-                !confirmDelete
-            ) {
-
-                return;
-
-            }
-
-
-            members =
-
-            members.filter(
-
-                function (
-                    member
-                ) {
-
-                    return (
-                        member.id !==
-                        memberId
-                    );
-
-                }
-
-            );
-
-
-            saveMembers();
-
-
-            updateDashboard(
-                members
-            );
-
-        };
-
-
-        if (
-            memberSearch
-        ) {
-
-            memberSearch.addEventListener(
-
-                "input",
-
-                function () {
-
-                    const searchText =
-
-                    this.value
-                    .toLowerCase()
-                    .trim();
-
-
-                    const filteredMembers =
-
-                    members.filter(
-
-                        function (
-                            member
-                        ) {
-
-                            const name =
-
-                            (
-                                member.name ||
-                                ""
-                            )
-                            .toLowerCase();
-
-
-                            const mobile =
-
-                            member.mobile ||
-                            "";
-
-
-                            return (
-
-                                name.includes(
-                                    searchText
-                                )
-
-                                ||
-
-                                mobile.includes(
-                                    searchText
-                                )
-
-                            );
-
-                        }
-
-                    );
-
-
-                    updateDashboard(
-                        filteredMembers
-                    );
-
-                }
-
-            );
-
-        }
-
-
-        updateDashboard(
-            members
         );
 
     }
-);
+
+}
+
+
+/* =====================================
+   DELETE MEMBER
+===================================== */
+
+function deleteMember(
+    index
+) {
+
+    const memberName =
+
+        members[index].name
+        ||
+        "इस सदस्य";
+
+
+    const confirmDelete =
+
+        confirm(
+
+            "क्या आप " +
+
+            memberName +
+
+            " का आवेदन हटाना चाहते हैं?"
+
+        );
+
+
+    if (
+        confirmDelete
+    ) {
+
+        members.splice(
+            index,
+            1
+        );
+
+
+        saveMembers();
+
+
+        loadDashboard();
+
+
+        alert(
+
+            "सदस्य का आवेदन सफलतापूर्वक हटा दिया गया।"
+
+        );
+
+    }
+
+}
+
+
+/* =====================================
+   SEARCH MEMBER
+===================================== */
+
+const searchBox =
+
+    document.getElementById(
+        "memberSearch"
+    );
+
+
+if (
+    searchBox
+) {
+
+    searchBox.addEventListener(
+
+        "input",
+
+        function() {
+
+            const searchText =
+
+                this.value
+
+                .toLowerCase()
+
+                .trim();
+
+
+            const filteredMembers =
+
+                members.filter(
+
+                    function(
+                        member
+                    ) {
+
+                        const name =
+
+                            (
+                                member.name
+                                ||
+                                ""
+                            )
+
+                            .toLowerCase();
+
+
+                        const mobile =
+
+                            String(
+
+                                member.mobile
+                                ||
+                                ""
+
+                            );
+
+
+                        return (
+
+                            name.includes(
+                                searchText
+                            )
+
+                            ||
+
+                            mobile.includes(
+                                searchText
+                            )
+
+                        );
+
+                    }
+
+                );
+
+
+            displayMembers(
+                filteredMembers
+            );
+
+        }
+
+    );
+
+}
+
+
+/* =====================================
+   START DASHBOARD
+===================================== */
+
+loadDashboard();
