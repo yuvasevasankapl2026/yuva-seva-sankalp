@@ -194,12 +194,10 @@
      ADMIN LOGIN
 ===================================== -->
 
-<section class="admin-login-page">
+<section class="admin-login-section">
 
     <div class="admin-login-box">
 
-
-        <!-- ADMIN ICON -->
 
         <div class="admin-icon">
 
@@ -207,266 +205,6 @@
 
         </div>
 
-
-        <!-- HEADING -->
-
-        <h2>
-
-            एडमिन लॉगिन
-
-        </h2>
-
-
-        <p class="admin-login-text">
-
-            एडमिन पैनल में प्रवेश करने के लिए
-            अपनी जानकारी दर्ज करें
-
-        </p>
-
-
-        <!-- LOGIN FORM -->
-
-        <form
-            class="admin-login-form"
-            action="#"
-            method="post"
-        >
-
-
-            <!-- USERNAME -->
-
-            <div class="admin-form-group">
-
-                <label>
-
-                    एडमिन यूज़रनेम
-
-                </label>
-
-
-                <input
-                    type="text"
-                    name="username"
-                    placeholder="अपना यूज़रनेम लिखें"
-                    required
-                >
-
-            </div>
-
-
-            <!-- PASSWORD -->
-
-            <div class="admin-form-group">
-
-                <label>
-
-                    पासवर्ड
-
-                </label>
-
-
-                <input
-                    type="password"
-                    name="password"
-                    placeholder="अपना पासवर्ड लिखें"
-                    required
-                >
-
-            </div>
-
-
-            <!-- REMEMBER -->
-
-            <div class="admin-options">
-
-                <label class="admin-remember">
-
-                    <input
-                        type="checkbox"
-                    >
-
-                    मुझे याद रखें
-
-                </label>
-
-
-                <a href="#">
-
-                    पासवर्ड भूल गए?
-
-                </a>
-
-            </div>
-
-
-            <!-- LOGIN BUTTON -->
-
-            <button
-                type="submit"
-                class="admin-login-button"
-            >
-
-                एडमिन लॉगिन करें
-
-            </button>
-
-
-        </form>
-
-
-        <!-- SECURITY TEXT -->
-
-        <p class="admin-security">
-
-            🔒 यह केवल अधिकृत एडमिन के लिए है
-
-        </p>
-
-
-    </div>
-
-</section>
-
-
-<!-- =====================================
-     FOOTER
-===================================== -->
-
-<footer>
-
-    <img
-        src="images/logo.png"
-        alt="युवा सेवा संकल्प फाउंडेशन लोगो"
-        width="70"
-    >
-
-
-    <h3>
-
-        युवा सेवा संकल्प फाउंडेशन
-
-    </h3>
-
-
-    <p>
-
-        युवा शक्ति, राष्ट्र शक्ति
-
-    </p>
-
-
-    <p>
-
-        📧 yuvasevasankalp2026@gmail.com
-
-        |
-
-        📞 +91 9651731313
-
-    </p>
-
-
-    <p>
-
-        © 2026 All Rights Reserved
-
-    </p>
-
-</footer>
-
-
-</body>
-
-</html>
-<!DOCTYPE html>
-<html lang="hi">
-
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
-
-    <title>
-        एडमिन लॉगिन | युवा सेवा संकल्प फाउंडेशन
-    </title>
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
-</head>
-
-
-<body>
-
-
-<!-- TOP BAR -->
-
-<div class="top-bar">
-
-    <div class="container">
-
-        <div class="left">
-
-            📧 yuvasevasankalp2026@gmail.com
-
-            |
-
-            📞 +91 9651731313
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- HEADER -->
-
-<header class="header">
-
-    <div class="header-content">
-
-        <img
-            src="images/logo.png"
-            class="logo"
-            alt="युवा सेवा संकल्प फाउंडेशन लोगो"
-        >
-
-
-        <div class="title">
-
-            <h1 class="main-title">
-
-                युवा सेवा संकल्प फाउंडेशन
-
-            </h1>
-
-
-            <p class="tagline">
-
-                युवा शक्ति, राष्ट्र शक्ति
-
-            </p>
-
-        </div>
-
-    </div>
-
-</header>
-
-
-<!-- ADMIN LOGIN -->
-
-<section class="admin-login-section">
-
-    <div class="admin-login-box">
 
         <h2>
 
@@ -483,10 +221,11 @@
         </p>
 
 
-        <<form
-    id="adminLoginForm"
-    action="javascript:void(0);"
->
+        <form
+            id="adminLoginForm"
+            onsubmit="return adminLogin(event);"
+        >
+
 
             <div class="form-group">
 
@@ -539,7 +278,7 @@
                 class="admin-login-btn"
             >
 
-                लॉगिन करें
+                एडमिन लॉगिन करें
 
             </button>
 
@@ -556,12 +295,15 @@
 
         </a>
 
+
     </div>
 
 </section>
 
 
-<!-- FOOTER -->
+<!-- =====================================
+     FOOTER
+===================================== -->
 
 <footer>
 
@@ -582,6 +324,17 @@
     <p>
 
         युवा शक्ति, राष्ट्र शक्ति
+
+    </p>
+
+
+    <p>
+
+        📧 yuvasevasankalp2026@gmail.com
+
+        |
+
+        📞 +91 9651731313
 
     </p>
 
