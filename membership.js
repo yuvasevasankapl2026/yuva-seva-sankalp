@@ -19,6 +19,83 @@ document.addEventListener(
         }
 
 
+        /* =====================================
+           MEMBER ID बनाने का Function
+        ===================================== */
+
+        function generateMemberId(
+            members
+        ) {
+
+            let lastNumber = 0;
+
+
+            members.forEach(
+                function(member) {
+
+                    if (
+                        member.memberId
+                    ) {
+
+                        const numberPart =
+
+                        member.memberId
+                        .split("-")
+                        .pop();
+
+
+                        const number =
+
+                        parseInt(
+                            numberPart
+                        );
+
+
+                        if (
+                            number > lastNumber
+                        ) {
+
+                            lastNumber =
+                            number;
+
+                        }
+
+                    }
+
+                }
+            );
+
+
+            const newNumber =
+
+            lastNumber + 1;
+
+
+            const formattedNumber =
+
+            String(
+                newNumber
+            ).padStart(
+                4,
+                "0"
+            );
+
+
+            return (
+
+                "YSSF-2026-" +
+
+                formattedNumber
+
+            );
+
+        }
+
+
+        /* =====================================
+           MEMBERSHIP FORM SUBMIT
+        ===================================== */
+
         membershipForm.addEventListener(
             "submit",
             function (event) {
@@ -61,8 +138,12 @@ document.addEventListener(
                 ).value;
 
 
+                /* मोबाइल नंबर जांच */
+
                 if (
-                    mobile.length !== 10
+                    !/^[0-9]{10}$/.test(
+                        mobile
+                    )
                 ) {
 
                     alert(
@@ -73,6 +154,8 @@ document.addEventListener(
 
                 }
 
+
+                /* पुराने सदस्य लोड करें */
 
                 let members =
 
@@ -96,10 +179,25 @@ document.addEventListener(
                 }
 
 
+                /* नया Member ID */
+
+                const memberId =
+
+                generateMemberId(
+                    members
+                );
+
+
+                /* नया सदस्य */
+
                 const newMember = {
 
                     id:
                     Date.now(),
+
+
+                    memberId:
+                    memberId,
 
 
                     name:
@@ -123,7 +221,7 @@ document.addEventListener(
 
 
                     status:
-                    "लंबित",
+                    "pending",
 
 
                     date:
@@ -135,6 +233,8 @@ document.addEventListener(
 
                 };
 
+
+                /* सदस्य Save करें */
 
                 members.push(
                     newMember
@@ -152,9 +252,15 @@ document.addEventListener(
                 );
 
 
+                /* सफलता का Message */
+
                 alert(
 
-                    "आपका सदस्यता आवेदन सफलतापूर्वक जमा हो गया है।"
+                    "आपका सदस्यता आवेदन सफलतापूर्वक जमा हो गया।\n\n" +
+
+                    "आपकी Member ID: " +
+
+                    memberId
 
                 );
 
