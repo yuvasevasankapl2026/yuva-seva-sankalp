@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="hi">
 
 <head>
@@ -82,50 +81,6 @@
 </header>
 
 
-<!-- NAVIGATION -->
-
-<nav>
-
-    <a href="index.html">
-
-        होम
-
-    </a>
-
-
-    <a href="index.html#about">
-
-        हमारे बारे में
-
-    </a>
-
-
-    <a href="membership.html">
-
-        सदस्यता
-
-    </a>
-
-
-    <a
-        href="member-login.html"
-        class="active"
-    >
-
-        सदस्य लॉगिन
-
-    </a>
-
-
-    <a href="admin-login.html">
-
-        एडमिन लॉगिन
-
-    </a>
-
-</nav>
-
-
 <!-- MEMBER LOGIN -->
 
 <section class="admin-login-section">
@@ -147,10 +102,10 @@
         </p>
 
 
+        <!-- LOGIN FORM -->
+
         <form id="memberLoginForm">
 
-
-            <!-- MEMBER ID -->
 
             <div class="form-group">
 
@@ -165,61 +120,44 @@
                     type="text"
                     id="memberId"
                     placeholder="जैसे: YSSF-2026-0001"
-                    autocomplete="off"
                     required
                 >
 
             </div>
 
 
-            <!-- MOBILE NUMBER AS PASSWORD -->
-
             <div class="form-group">
 
-                <label for="memberPassword">
+                <label for="memberMobile">
 
-                    पासवर्ड
+                    पासवर्ड / मोबाइल नंबर
 
                 </label>
 
 
                 <input
                     type="password"
-                    id="memberPassword"
-                    placeholder="अपना 10 अंकों का मोबाइल नंबर लिखें"
+                    id="memberMobile"
+                    placeholder="10 अंकों का मोबाइल नंबर"
                     maxlength="10"
-                    inputmode="numeric"
                     required
                 >
-
-
-                <small>
-
-                    पासवर्ड आपका रजिस्टर्ड मोबाइल नंबर है।
-
-                </small>
 
             </div>
 
 
-            <!-- LOGIN MESSAGE -->
-
             <p
-                id="memberLoginMessage"
+                id="memberMessage"
                 class="login-message"
-            >
+            ></p>
 
-            </p>
-
-
-            <!-- LOGIN BUTTON -->
 
             <button
                 type="submit"
                 class="admin-login-btn"
             >
 
-                लॉगिन करें
+                🔐 लॉगिन करें
 
             </button>
 
@@ -227,14 +165,108 @@
         </form>
 
 
-        <a
-            href="membership.html"
-            class="back-home"
+        <!-- MEMBER PROFILE -->
+
+        <div
+            id="memberProfile"
+            style="display:none;"
         >
 
-            ← सदस्यता के लिए आवेदन करें
 
-        </a>
+            <h2>
+
+                सदस्य प्रोफाइल
+
+            </h2>
+
+
+            <p>
+
+                <strong>
+
+                    Member ID:
+
+                </strong>
+
+                <span id="profileMemberId">
+
+                </span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+
+                    नाम:
+
+                </strong>
+
+                <span id="profileName">
+
+                </span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+
+                    मोबाइल नंबर:
+
+                </strong>
+
+                <span id="profileMobile">
+
+                </span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+
+                    सदस्यता:
+
+                </strong>
+
+                <span id="profileMembership">
+
+                </span>
+
+            </p>
+
+
+            <p>
+
+                <strong>
+
+                    स्थिति:
+
+                </strong>
+
+                <span id="profileStatus">
+
+                </span>
+
+            </p>
+
+
+            <button
+                type="button"
+                class="admin-login-btn"
+                onclick="memberLogout()"
+            >
+
+                🚪 लॉगआउट करें
+
+            </button>
+
+
+        </div>
 
 
         <br>
@@ -259,7 +291,6 @@
 
 <footer>
 
-
     <img
         src="images/logo.png"
         alt="युवा सेवा संकल्प फाउंडेशन लोगो"
@@ -283,26 +314,14 @@
 
     <p>
 
-        📧 yuvasevasankalp2026@gmail.com
-
-        |
-
-        📞 +91 9651731313
-
-    </p>
-
-
-    <p>
-
         © 2026 युवा सेवा संकल्प फाउंडेशन
 
     </p>
 
-
 </footer>
 
 
-<!-- MEMBER LOGIN JAVASCRIPT -->
+<!-- JAVASCRIPT -->
 
 <script src="member-login.js"></script>
 
