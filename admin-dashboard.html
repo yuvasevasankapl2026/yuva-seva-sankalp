@@ -26,7 +26,9 @@
 <body>
 
 
-<!-- TOP BAR -->
+<!-- =====================================
+     TOP BAR
+===================================== -->
 
 <div class="top-bar">
 
@@ -43,7 +45,7 @@
 
             <a href="index.html">
 
-                वेबसाइट देखें
+                🌐 वेबसाइट देखें
 
             </a>
 
@@ -54,7 +56,9 @@
 </div>
 
 
-<!-- HEADER -->
+<!-- =====================================
+     HEADER
+===================================== -->
 
 <header class="header">
 
@@ -89,15 +93,16 @@
 </header>
 
 
-<!-- DASHBOARD -->
+<!-- =====================================
+     ADMIN DASHBOARD
+===================================== -->
 
 <section class="admin-dashboard">
-
 
     <div class="dashboard-container">
 
 
-        <!-- HEADING -->
+        <!-- DASHBOARD HEADING -->
 
         <div class="dashboard-heading">
 
@@ -120,21 +125,26 @@
 
 
             <button
+                type="button"
                 class="logout-btn"
                 onclick="logoutAdmin()"
             >
 
-                लॉगआउट करें
+                🚪 लॉगआउट करें
 
             </button>
 
         </div>
 
 
-        <!-- STATISTICS -->
+        <!-- =====================================
+             STATISTICS CARDS
+        ===================================== -->
 
         <div class="dashboard-cards">
 
+
+            <!-- TOTAL MEMBERS -->
 
             <div class="dashboard-card">
 
@@ -161,6 +171,8 @@
             </div>
 
 
+            <!-- NEW APPLICATIONS -->
+
             <div class="dashboard-card">
 
                 <div class="dashboard-icon">
@@ -186,6 +198,8 @@
             </div>
 
 
+            <!-- APPROVED MEMBERS -->
+
             <div class="dashboard-card">
 
                 <div class="dashboard-icon">
@@ -210,6 +224,8 @@
 
             </div>
 
+
+            <!-- PENDING MEMBERS -->
 
             <div class="dashboard-card">
 
@@ -239,7 +255,9 @@
         </div>
 
 
-        <!-- MEMBER TABLE -->
+        <!-- =====================================
+             MEMBER TABLE
+        ===================================== -->
 
         <div class="dashboard-table-box">
 
@@ -257,6 +275,7 @@
                     type="search"
                     id="memberSearch"
                     placeholder="नाम या मोबाइल नंबर खोजें"
+                    autocomplete="off"
                 >
 
             </div>
@@ -332,7 +351,9 @@
         </div>
 
 
-        <!-- QUICK ACTIONS -->
+        <!-- =====================================
+             QUICK ACTIONS
+        ===================================== -->
 
         <div class="quick-actions">
 
@@ -358,6 +379,7 @@
 
 
             <button
+                type="button"
                 class="quick-btn orange-btn"
                 onclick="showMessage()"
             >
@@ -372,13 +394,15 @@
 
     </div>
 
-
 </section>
 
 
-<!-- FOOTER -->
+<!-- =====================================
+     FOOTER
+===================================== -->
 
 <footer>
+
 
     <img
         src="images/logo.png"
@@ -407,30 +431,44 @@
 
     </p>
 
+
 </footer>
 
 
-<!-- DASHBOARD JAVASCRIPT -->
+<!-- =====================================
+     DASHBOARD JAVASCRIPT
+===================================== -->
 
 <script src="dashboard.js"></script>
 
 
+<!-- =====================================
+     LOGOUT AND REPORT
+===================================== -->
+
 <script>
+
 
 function logoutAdmin() {
 
-    const confirmLogout =
+    const confirmLogout = confirm(
 
-    confirm(
         "क्या आप एडमिन पैनल से लॉगआउट करना चाहते हैं?"
+
     );
 
 
-    if (
-        confirmLogout
-    ) {
+    if (confirmLogout) {
+
+        localStorage.removeItem(
+
+            "adminLoggedIn"
+
+        );
+
 
         window.location.href =
+
         "admin-login.html";
 
     }
@@ -441,10 +479,13 @@ function logoutAdmin() {
 function showMessage() {
 
     alert(
+
         "रिपोर्ट डाउनलोड सुविधा जल्द उपलब्ध होगी।"
+
     );
 
 }
+
 
 </script>
 
