@@ -3,7 +3,6 @@ document.addEventListener(
     function () {
 
         const membershipForm =
-
         document.getElementById(
             "membershipForm"
         );
@@ -11,7 +10,7 @@ document.addEventListener(
 
         if (!membershipForm) {
 
-            alert(
+            console.log(
                 "Membership form नहीं मिला।"
             );
 
@@ -28,35 +27,30 @@ document.addEventListener(
 
 
                 const name =
-
                 document.getElementById(
                     "name"
                 ).value.trim();
 
 
                 const mobile =
-
                 document.getElementById(
                     "mobile"
                 ).value.trim();
 
 
                 const email =
-
                 document.getElementById(
                     "email"
                 ).value.trim();
 
 
                 const address =
-
                 document.getElementById(
                     "address"
                 ).value.trim();
 
 
                 const membershipType =
-
                 document.getElementById(
                     "membership-type"
                 ).value;
@@ -82,13 +76,21 @@ document.addEventListener(
 
                 try {
 
-                    members = JSON.parse(
+                    const savedMembers =
 
-                        localStorage.getItem(
-                            "members"
-                        )
+                    localStorage.getItem(
+                        "members"
+                    );
 
-                    ) || [];
+
+                    if (savedMembers) {
+
+                        members =
+                        JSON.parse(
+                            savedMembers
+                        );
+
+                    }
 
                 }
 
@@ -110,9 +112,65 @@ document.addEventListener(
                 }
 
 
-                const memberNumber =
+                /* Member ID बनाएं */
 
-                members.length + 1;
+                let highestNumber = 0;
+
+
+                members.forEach(
+                    function (member) {
+
+                        if (
+                            member.memberId
+                        ) {
+
+                            const idParts =
+
+                            String(
+                                member.memberId
+                            ).split(
+                                "-"
+                            );
+
+
+                            const lastPart =
+
+                            parseInt(
+
+                                idParts[
+                                    idParts.length - 1
+                                ],
+
+                                10
+
+                            );
+
+
+                            if (
+                                !isNaN(
+                                    lastPart
+                                )
+
+                                &&
+
+                                lastPart >
+                                highestNumber
+                            ) {
+
+                                highestNumber =
+                                lastPart;
+
+                            }
+
+                        }
+
+                    }
+                );
+
+
+                const nextNumber =
+
+                highestNumber + 1;
 
 
                 const memberId =
@@ -120,12 +178,14 @@ document.addEventListener(
                 "YSSF-2026-" +
 
                 String(
-                    memberNumber
+                    nextNumber
                 ).padStart(
                     4,
                     "0"
                 );
 
+
+                /* नया सदस्य */
 
                 const newMember = {
 
@@ -197,11 +257,17 @@ document.addEventListener(
 
                 alert(
 
-                    "सदस्यता आवेदन सफलतापूर्वक जमा हो गया।" +
+                    "आपका सदस्यता आवेदन सफलतापूर्वक जमा हो गया।"
 
-                    "\n\n" +
+                    +
 
-                    "आपकी Member ID: " +
+                    "\n\n"
+
+                    +
+
+                    "आपकी Member ID: "
+
+                    +
 
                     memberId
 
