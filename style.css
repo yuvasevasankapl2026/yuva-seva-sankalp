@@ -277,30 +277,25 @@ footer img{
     margin-left:auto;
     margin-right:auto;
 }
-<section id="team">
-    <div class="container">
-        <h2>हमारी टीम</h2>
+/* ===== TEAM SECTION ===== */
+.team-members{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    gap:25px;
+    flex-wrap:wrap;
+}
 
-        <div class="team-members">
+.team-members .card{
+    width:250px;
+    text-align:center;
+}
 
-            <div class="card">
-                <img src="images/founder.jpg" alt="संस्थापक" class="team-img">
-                <h3>राहुल कुमार</h3>
-                <p>संस्थापक</p>
-            </div>
-
-            <div class="card">
-                <img src="images/secretary.jpg" alt="सचिव" class="team-img">
-                <h3>सेवाराम</h3>
-                <p>सचिव</p>
-            </div>
-
-            <div class="card">
-                <img src="images/treasurer.jpg" alt="कोषाध्यक्ष" class="team-img">
-                <h3>कोषाध्यक्ष का नाम</h3>
-                <p>कोषाध्यक्ष</p>
-            </div>
-
-        </div>
-    </div>
-</section>
+.team-img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #0b5e2b;
+    margin-bottom:10px;
+}
