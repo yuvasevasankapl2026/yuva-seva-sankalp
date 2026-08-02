@@ -8,10 +8,6 @@ document.addEventListener(
     function () {
 
 
-        /* =====================================
-           HTML ELEMENTS
-        ===================================== */
-
         const loginForm =
 
         document.getElementById(
@@ -26,24 +22,12 @@ document.addEventListener(
         );
 
 
-        /* =====================================
-           FORM CHECK
-        ===================================== */
-
         if (!loginForm) {
-
-            console.log(
-                "Member login form नहीं मिला।"
-            );
 
             return;
 
         }
 
-
-        /* =====================================
-           LOGIN FORM SUBMIT
-        ===================================== */
 
         loginForm.addEventListener(
 
@@ -54,10 +38,6 @@ document.addEventListener(
 
                 event.preventDefault();
 
-
-                /* =====================================
-                   MEMBER ID
-                ===================================== */
 
                 const memberId =
 
@@ -70,10 +50,6 @@ document.addEventListener(
                 .toUpperCase();
 
 
-                /* =====================================
-                   MOBILE NUMBER / PASSWORD
-                ===================================== */
-
                 const password =
 
                 document
@@ -84,94 +60,18 @@ document.addEventListener(
                 .trim();
 
 
-                /* =====================================
-                   EMPTY CHECK
-                ===================================== */
-
-                if (
-                    memberId === ""
-                    ||
-                    password === ""
-                ) {
-
-                    message.textContent =
-
-                    "कृपया Member ID और मोबाइल नंबर भरें।";
-
-
-                    message.style.color =
-
-                    "red";
-
-
-                    return;
-
-                }
-
-
-                /* =====================================
-                   MOBILE NUMBER CHECK
-                ===================================== */
-
-                if (
-                    !/^[0-9]{10}$/.test(
-                        password
-                    )
-                ) {
-
-                    message.textContent =
-
-                    "कृपया 10 अंकों का मोबाइल नंबर लिखें।";
-
-
-                    message.style.color =
-
-                    "red";
-
-
-                    return;
-
-                }
-
-
-                /* =====================================
-                   MEMBERS LOAD
-                ===================================== */
-
                 let members = [];
 
 
                 try {
 
-                    const savedMembers =
+                    members = JSON.parse(
 
-                    localStorage.getItem(
-                        "members"
-                    );
-
-
-                    if (
-                        savedMembers
-                    ) {
-
-                        members =
-
-                        JSON.parse(
-                            savedMembers
-                        );
-
-                    }
-
-
-                    if (
-                        !Array.isArray(
-                            members
+                        localStorage.getItem(
+                            "members"
                         )
-                    ) {
 
-                        members = [];
-
-                    }
+                    ) || [];
 
                 }
 
@@ -182,33 +82,6 @@ document.addEventListener(
                 }
 
 
-                /* =====================================
-                   MEMBER NOT FOUND
-                ===================================== */
-
-                if (
-                    members.length === 0
-                ) {
-
-                    message.textContent =
-
-                    "कोई सदस्य रिकॉर्ड नहीं मिला। पहले सदस्यता फॉर्म भरें।";
-
-
-                    message.style.color =
-
-                    "red";
-
-
-                    return;
-
-                }
-
-
-                /* =====================================
-                   FIND MEMBER
-                ===================================== */
-
                 const foundMember =
 
                 members.find(
@@ -216,44 +89,36 @@ document.addEventListener(
                     function (member) {
 
 
-                        const savedMemberId =
-
-                        String(
-
-                            member.memberId
-                            ||
-                            ""
-
-                        )
-
-                        .trim()
-
-                        .toUpperCase();
-
-
-                        const savedMobile =
-
-                        String(
-
-                            member.mobile
-                            ||
-                            ""
-
-                        )
-
-                        .trim();
-
-
                         return (
 
-                            savedMemberId
+                            String(
+
+                                member.memberId
+                                || ""
+
+                            )
+
+                            .trim()
+
+                            .toUpperCase()
+
                             ===
+
                             memberId
 
                             &&
 
-                            savedMobile
+                            String(
+
+                                member.mobile
+                                || ""
+
+                            )
+
+                            .trim()
+
                             ===
+
                             password
 
                         );
@@ -263,26 +128,8 @@ document.addEventListener(
                 );
 
 
-                /* =====================================
-                   LOGIN SUCCESS
-                ===================================== */
+                if (foundMember) {
 
-                if (
-                    foundMember
-                ) {
-
-
-                    message.textContent =
-
-                    "✅ लॉगिन सफल हुआ।";
-
-
-                    message.style.color =
-
-                    "green";
-
-
-                    /* LOGIN DATA SAVE */
 
                     localStorage.setItem(
 
@@ -304,69 +151,34 @@ document.addEventListener(
                     );
 
 
-                    /* SUCCESS MESSAGE */
+                    message.textContent =
+
+                    "✅ लॉगिन सफल हुआ।";
+
+
+                    message.style.color =
+
+                    "green";
+
 
                     setTimeout(
 
                         function () {
 
 
-                            alert(
+                            window.location.href =
 
-                                "लॉगिन सफल हुआ।\n\n" +
-
-                                "नाम: " +
-
-                                (
-                                    foundMember.name
-                                    ||
-                                    "-"
-                                )
-
-                                +
-
-                                "\n\nMember ID: " +
-
-                                (
-                                    foundMember.memberId
-                                    ||
-                                    "-"
-                                )
-
-                                +
-
-                                "\n\nस्थिति: " +
-
-                                (
-                                    foundMember.status
-                                    ===
-                                    "approved"
-
-                                    ?
-
-                                    "स्वीकृत"
-
-                                    :
-
-                                    "लंबित"
-                                )
-
-                            );
+                            "member-dashboard.html";
 
 
                         },
 
-                        300
+                        500
 
                     );
 
 
                 }
-
-
-                /* =====================================
-                   LOGIN FAILED
-                ===================================== */
 
                 else {
 
