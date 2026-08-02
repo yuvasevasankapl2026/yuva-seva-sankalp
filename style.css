@@ -30,29 +30,69 @@
 
 :root {
 
-    --green: #08783a;
+    /* =====================================
+       BLUE
+    ===================================== */
 
-    --dark-green: #045126;
+    --blue: #1f4e79;
 
-    --light-green: #eaf8ef;
+    --dark-blue: #12365b;
 
-    --orange: #f36b21;
+    --light-blue: #eaf3fb;
 
-    --dark-orange: #d94f0a;
+
+    /* =====================================
+       GREEN
+    ===================================== */
+
+    --green: #2e8b3c;
+
+    --dark-green: #1f6b2b;
+
+    --light-green: #eaf8ed;
+
+
+    /* =====================================
+       ORANGE
+    ===================================== */
+
+    --orange: #ff6b00;
+
+    --dark-orange: #d94f00;
+
+    --light-orange: #fff2e8;
+
+
+    /* =====================================
+       COMMON
+    ===================================== */
 
     --navy: #12365b;
 
     --white: #ffffff;
 
-    --light: #f5f8f6;
+    --light: #f4f8fb;
 
     --text: #263238;
 
+
+    /* =====================================
+       SHADOW
+    ===================================== */
+
     --shadow:
+
         0 10px 30px
-        rgba(0, 0, 0, 0.10);
+
+        rgba(
+            18,
+            54,
+            91,
+            0.15
+        );
 
 }
+
 
 
 /* =========================================
@@ -1769,36 +1809,494 @@ footer p {
 ========================================= */
 
 @media
-(max-width: 450px) {
-
-    .main-title {
-
-        font-size:
-            24px;
-
-    }
+/* =====================================
+   NEW BLUE ORANGE GREEN HERO DESIGN
+===================================== */
 
 
-    .tagline {
+/* HERO BACKGROUND */
 
-        font-size:
+.hero {
+
+    background:
+
+        linear-gradient(
+
+            120deg,
+
+            rgba(
+                18,
+                54,
+                91,
+                0.88
+            ),
+
+            rgba(
+                31,
+                78,
+                121,
+                0.72
+            )
+
+        ),
+
+        url("images/banner.png");
+
+
+    background-size:
+
+        cover;
+
+
+    background-position:
+
+        center;
+
+
+    background-repeat:
+
+        no-repeat;
+
+}
+
+
+/* HERO MAIN BOX */
+
+.hero-content {
+
+    width:
+
+        min(
+            92%,
+            1100px
+        );
+
+
+    padding:
+
+        55px
+        30px;
+
+
+    border-radius:
+
+        28px;
+
+
+    background:
+
+        rgba(
+            255,
+            255,
+            255,
+            0.92
+        );
+
+
+    border:
+
+        1px
+        solid
+
+        rgba(
+            255,
+            255,
+            255,
+            0.90
+        );
+
+
+    backdrop-filter:
+
+        blur(
+            10px
+        );
+
+
+    box-shadow:
+
+        0
+        25px
+        55px
+
+        rgba(
+            18,
+            54,
+            91,
+            0.30
+        );
+
+}
+
+
+/* HERO TITLE */
+
+.hero h2 {
+
+    color:
+
+        var(
+            --blue
+        );
+
+
+    font-size:
+
+        clamp(
+            34px,
+            5vw,
+            62px
+        );
+
+
+    font-weight:
+
+        900;
+
+
+    text-shadow:
+
+        0
+        5px
+        15px
+
+        rgba(
+            18,
+            54,
+            91,
+            0.18
+        );
+
+}
+
+
+/* HERO DESCRIPTION */
+
+.hero p {
+
+    color:
+
+        #37474f;
+
+
+    font-size:
+
+        clamp(
+            18px,
+            2.5vw,
+            26px
+        );
+
+
+    font-weight:
+
+        800;
+
+}
+
+
+/* HERO BUTTON */
+
+.hero .btn {
+
+    display:
+
+        inline-block;
+
+
+    min-width:
+
+        190px;
+
+
+    padding:
+
+        16px
+        30px;
+
+
+    margin:
+
+        8px;
+
+
+    color:
+
+        #ffffff;
+
+
+    border:
+
+        none;
+
+
+    border-radius:
+
+        14px;
+
+
+    font-size:
+
+        18px;
+
+
+    font-weight:
+
+        900;
+
+
+    text-decoration:
+
+        none;
+
+
+    box-shadow:
+
+        0
+        10px
+        24px
+
+        rgba(
+            0,
+            0,
+            0,
+            0.18
+        );
+
+
+    transition:
+
+        0.3s;
+
+}
+
+
+/* BLUE BUTTON */
+
+.hero .btn-blue {
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            #2f6598,
+
+            #1f4e79
+
+        );
+
+}
+
+
+/* ORANGE BUTTON */
+
+.hero .btn-orange {
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            #ff922f,
+
+            #ff6b00
+
+        );
+
+}
+
+
+/* GREEN BUTTON */
+
+.hero .btn-green {
+
+    background:
+
+        linear-gradient(
+
+            135deg,
+
+            #48a856,
+
+            #2e8b3c
+
+        );
+
+}
+
+
+/* BUTTON HOVER */
+
+.hero .btn:hover {
+
+    transform:
+
+        translateY(
+            -5px
+        );
+
+
+    filter:
+
+        brightness(
+            0.92
+        );
+
+
+    box-shadow:
+
+        0
+        15px
+        30px
+
+        rgba(
+            0,
+            0,
+            0,
+            0.25
+        );
+
+}
+
+
+/* =====================================
+   HEADER TITLE COLORS
+===================================== */
+
+.main-title {
+
+    color:
+
+        var(
+            --blue
+        );
+
+}
+
+
+.tagline {
+
+    color:
+
+        var(
+            --orange
+        );
+
+}
+
+
+/* =====================================
+   TOP BAR
+===================================== */
+
+.top-bar {
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            var(
+                --dark-blue
+            ),
+
+            var(
+                --blue
+            )
+
+        );
+
+}
+
+
+/* =====================================
+   SECTION HEADING
+===================================== */
+
+section h2 {
+
+    color:
+
+        var(
+            --blue
+        );
+
+}
+
+
+section h2::after {
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            var(
+                --blue
+            ),
+
+            var(
+                --orange
+            ),
+
+            var(
+                --green
+            )
+
+        );
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media
+(max-width: 768px) {
+
+
+    .hero-content {
+
+        padding:
+
+            40px
             15px;
 
-    }
 
+        border-radius:
 
-    .hero h2 {
-
-        font-size:
-            28px;
+            20px;
 
     }
 
 
-    section h2 {
+    .hero .btn {
 
-        font-size:
-            26px;
+        display:
+
+            block;
+
+
+        width:
+
+            92%;
+
+
+        max-width:
+
+            320px;
+
+
+        margin:
+
+            12px
+            auto;
 
     }
 
