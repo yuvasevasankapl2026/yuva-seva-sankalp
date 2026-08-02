@@ -2301,3 +2301,398 @@ section h2::after {
     }
 
 }
+/* =========================================
+   SAME HERO DESIGN
+========================================= */
+
+/* HERO BACKGROUND */
+
+.hero {
+
+    min-height: 580px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 60px 20px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+
+        linear-gradient(
+            120deg,
+            rgba(5, 45, 38, 0.88),
+            rgba(10, 70, 58, 0.75)
+        ),
+
+        url("images/banner.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+}
+
+
+/* DARK OVERLAY */
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        rgba(
+            0,
+            25,
+            20,
+            0.20
+        );
+
+}
+
+
+/* WHITE HERO BOX */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: min(92%, 1250px);
+
+    padding: 55px 35px;
+
+    background:
+
+        rgba(
+            255,
+            255,
+            255,
+            0.94
+        );
+
+    border:
+
+        1px solid
+        rgba(
+            255,
+            255,
+            255,
+            0.90
+        );
+
+    border-radius: 30px;
+
+    box-shadow:
+
+        0 22px 50px
+        rgba(
+            0,
+            0,
+            0,
+            0.30
+        );
+
+    backdrop-filter:
+
+        blur(12px);
+
+}
+
+
+/* MAIN HERO TITLE */
+
+.hero h2 {
+
+    margin: 0;
+
+    color: #1f4e79;
+
+    font-size:
+
+        clamp(
+            40px,
+            5vw,
+            70px
+        );
+
+    font-weight: 900;
+
+    line-height: 1.25;
+
+    letter-spacing: -1px;
+
+    text-shadow:
+
+        0 5px 15px
+        rgba(
+            31,
+            78,
+            121,
+            0.18
+        );
+
+}
+
+
+/* TRICOLOR LINE */
+
+.hero h2::after {
+
+    content: "";
+
+    display: block;
+
+    width: 150px;
+
+    height: 7px;
+
+    margin: 22px auto 20px;
+
+    border-radius: 20px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            #1f4e79 0%,
+            #1f4e79 33%,
+
+            #ff6b00 33%,
+            #ff6b00 66%,
+
+            #2e8b3c 66%,
+            #2e8b3c 100%
+        );
+
+}
+
+
+/* HERO TAGLINE */
+
+.hero p {
+
+    margin:
+
+        0
+        0
+        28px;
+
+    color: #37474f;
+
+    font-size:
+
+        clamp(
+            20px,
+            2.5vw,
+            29px
+        );
+
+    font-weight: 800;
+
+    line-height: 1.5;
+
+}
+
+
+/* ALL BUTTONS */
+
+.hero .btn {
+
+    display: inline-flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    min-width: 220px;
+
+    min-height: 72px;
+
+    margin: 8px 12px;
+
+    padding: 15px 30px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 20px;
+
+    font-weight: 900;
+
+    border: none;
+
+    border-radius: 15px;
+
+    box-shadow:
+
+        0 10px 22px
+        rgba(
+            0,
+            0,
+            0,
+            0.20
+        );
+
+    transition:
+
+        transform 0.3s,
+        box-shadow 0.3s,
+        filter 0.3s;
+
+}
+
+
+/* BLUE BUTTON */
+
+.hero .btn-blue {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #315f93,
+            #1f4e79
+        );
+
+}
+
+
+/* ORANGE BUTTON */
+
+.hero .btn-orange {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ff8b2b,
+            #ff6b00
+        );
+
+}
+
+
+/* GREEN BUTTON */
+
+.hero .btn-green {
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #3d9b4b,
+            #247331
+        );
+
+}
+
+
+/* BUTTON HOVER */
+
+.hero .btn:hover {
+
+    transform:
+
+        translateY(-5px);
+
+    filter:
+
+        brightness(0.94);
+
+    box-shadow:
+
+        0 16px 30px
+        rgba(
+            0,
+            0,
+            0,
+            0.28
+        );
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+
+    .hero {
+
+        min-height: auto;
+
+        padding:
+
+            45px
+            12px;
+
+    }
+
+
+    .hero-content {
+
+        width: 95%;
+
+        padding:
+
+            40px
+            15px;
+
+        border-radius: 22px;
+
+    }
+
+
+    .hero h2 {
+
+        font-size: 36px;
+
+    }
+
+
+    .hero p {
+
+        font-size: 19px;
+
+    }
+
+
+    .hero .btn {
+
+        display: flex;
+
+        width: 92%;
+
+        min-width: auto;
+
+        min-height: 62px;
+
+        margin:
+
+            12px
+            auto;
+
+        font-size: 18px;
+
+    }
+
+}
