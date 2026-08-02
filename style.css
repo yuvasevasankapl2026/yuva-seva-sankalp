@@ -2767,3 +2767,171 @@ section h2::after {
             #2e8b3c
         );
 }
+/* =====================================
+   MEMBERSHIP FORM FINAL DESIGN
+===================================== */
+
+#member {
+    padding: 80px 20px;
+    background:
+        linear-gradient(
+            135deg,
+            #eaf3fb,
+            #f2fff4
+        );
+}
+
+#member .container {
+    max-width: 850px;
+    margin: auto;
+}
+
+#member h2 {
+    text-align: center;
+    color: #1f4e79;
+    font-size: 38px;
+    margin-bottom: 12px;
+}
+
+.member-text {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 35px;
+    font-size: 18px;
+    color: #37474f;
+}
+
+/* FORM BOX */
+
+.member-form {
+    width: 100%;
+    margin: auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 22px;
+    box-shadow:
+        0 15px 40px
+        rgba(18, 54, 91, 0.18);
+}
+
+/* INPUTS */
+
+.member-form input,
+.member-form textarea,
+.member-form select {
+    display: block;
+
+    width: 100%;
+
+    padding: 15px 18px;
+
+    margin: 0 0 18px;
+
+    font-family:
+        "Noto Sans Devanagari",
+        Arial,
+        sans-serif;
+
+    font-size: 16px;
+
+    color: #263238;
+
+    background: #f8fbfd;
+
+    border:
+        2px solid
+        #d7e2ea;
+
+    border-radius: 10px;
+
+    outline: none;
+
+    box-sizing: border-box;
+}
+
+/* TEXT AREA */
+
+.member-form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* INPUT FOCUS */
+
+.member-form input:focus,
+.member-form textarea:focus,
+.member-form select:focus {
+    border-color: #1f4e79;
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px
+        rgba(31, 78, 121, 0.12);
+}
+
+/* BUTTON */
+
+.member-form button {
+    display: block;
+
+    width: 100%;
+
+    padding: 16px;
+
+    margin-top: 5px;
+
+    color: #ffffff;
+
+    background:
+        linear-gradient(
+            135deg,
+            #3d9b4b,
+            #247331
+        );
+
+    border: none;
+
+    border-radius: 12px;
+
+    font-family:
+        "Noto Sans Devanagari",
+        Arial,
+        sans-serif;
+
+    font-size: 19px;
+
+    font-weight: 900;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.member-form button:hover {
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 10px 22px
+        rgba(36, 115, 49, 0.25);
+}
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+
+    #member {
+        padding: 55px 12px;
+    }
+
+    #member h2 {
+        font-size: 30px;
+    }
+
+    .member-form {
+        padding: 25px 18px;
+        border-radius: 16px;
+    }
+
+}
