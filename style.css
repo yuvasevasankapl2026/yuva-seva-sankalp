@@ -265,3 +265,15 @@ footer img{
         font-size:26px;
     }
 }
+/* ===== FOUNDER PHOTO ===== */
+.founder-img{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #0b5e2b;
+    margin-bottom:15px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
