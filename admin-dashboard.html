@@ -97,7 +97,7 @@
     <div class="dashboard-container">
 
 
-        <!-- DASHBOARD HEADING -->
+        <!-- HEADING -->
 
         <div class="dashboard-heading">
 
@@ -145,7 +145,7 @@
                 </div>
 
 
-                <h3>
+                <h3 id="totalMembers">
 
                     0
 
@@ -170,7 +170,7 @@
                 </div>
 
 
-                <h3>
+                <h3 id="newApplications">
 
                     0
 
@@ -195,7 +195,7 @@
                 </div>
 
 
-                <h3>
+                <h3 id="approvedMembers">
 
                     0
 
@@ -220,7 +220,7 @@
                 </div>
 
 
-                <h3>
+                <h3 id="pendingMembers">
 
                     0
 
@@ -235,10 +235,11 @@
 
             </div>
 
+
         </div>
 
 
-        <!-- MEMBER APPLICATIONS -->
+        <!-- MEMBER TABLE -->
 
         <div class="dashboard-table-box">
 
@@ -318,57 +319,6 @@
 
 
                     <tbody id="memberTable">
-
-
-                        <tr>
-
-                            <td>
-
-                                1
-
-                            </td>
-
-
-                            <td>
-
-                                कोई आवेदन नहीं
-
-                            </td>
-
-
-                            <td>
-
-                                —
-
-                            </td>
-
-
-                            <td>
-
-                                —
-
-                            </td>
-
-
-                            <td>
-
-                                <span class="status-pending">
-
-                                    प्रतीक्षारत
-
-                                </span>
-
-                            </td>
-
-
-                            <td>
-
-                                —
-
-                            </td>
-
-                        </tr>
-
 
                     </tbody>
 
@@ -460,15 +410,20 @@
 </footer>
 
 
+<!-- DASHBOARD JAVASCRIPT -->
+
 <script src="dashboard.js"></script>
+
+
+<script>
 
 function logoutAdmin() {
 
     const confirmLogout =
 
-        confirm(
-            "क्या आप एडमिन पैनल से लॉगआउट करना चाहते हैं?"
-        );
+    confirm(
+        "क्या आप एडमिन पैनल से लॉगआउट करना चाहते हैं?"
+    );
 
 
     if (
@@ -476,7 +431,7 @@ function logoutAdmin() {
     ) {
 
         window.location.href =
-            "admin-login.html";
+        "admin-login.html";
 
     }
 
