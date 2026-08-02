@@ -1,9 +1,16 @@
-document.addEventListener(
+/* =====================================
+   MEMBER LOGIN JAVASCRIPT
+===================================== */
 
+document.addEventListener(
     "DOMContentLoaded",
 
     function () {
 
+
+        /* =====================================
+           HTML ELEMENTS
+        ===================================== */
 
         const loginForm =
 
@@ -15,9 +22,13 @@ document.addEventListener(
         const message =
 
         document.getElementById(
-            "memberMessage"
+            "memberLoginMessage"
         );
 
+
+        /* =====================================
+           FORM CHECK
+        ===================================== */
 
         if (!loginForm) {
 
@@ -30,6 +41,10 @@ document.addEventListener(
         }
 
 
+        /* =====================================
+           LOGIN FORM SUBMIT
+        ===================================== */
+
         loginForm.addEventListener(
 
             "submit",
@@ -39,6 +54,10 @@ document.addEventListener(
 
                 event.preventDefault();
 
+
+                /* =====================================
+                   MEMBER ID
+                ===================================== */
 
                 const memberId =
 
@@ -51,28 +70,108 @@ document.addEventListener(
                 .toUpperCase();
 
 
-                const mobile =
+                /* =====================================
+                   MOBILE NUMBER / PASSWORD
+                ===================================== */
+
+                const password =
 
                 document
                 .getElementById(
-                    "memberMobile"
+                    "memberPassword"
                 )
                 .value
                 .trim();
 
+
+                /* =====================================
+                   EMPTY CHECK
+                ===================================== */
+
+                if (
+                    memberId === ""
+                    ||
+                    password === ""
+                ) {
+
+                    message.textContent =
+
+                    "कृपया Member ID और मोबाइल नंबर भरें।";
+
+
+                    message.style.color =
+
+                    "red";
+
+
+                    return;
+
+                }
+
+
+                /* =====================================
+                   MOBILE NUMBER CHECK
+                ===================================== */
+
+                if (
+                    !/^[0-9]{10}$/.test(
+                        password
+                    )
+                ) {
+
+                    message.textContent =
+
+                    "कृपया 10 अंकों का मोबाइल नंबर लिखें।";
+
+
+                    message.style.color =
+
+                    "red";
+
+
+                    return;
+
+                }
+
+
+                /* =====================================
+                   MEMBERS LOAD
+                ===================================== */
 
                 let members = [];
 
 
                 try {
 
-                    members = JSON.parse(
+                    const savedMembers =
 
-                        localStorage.getItem(
-                            "members"
+                    localStorage.getItem(
+                        "members"
+                    );
+
+
+                    if (
+                        savedMembers
+                    ) {
+
+                        members =
+
+                        JSON.parse(
+                            savedMembers
+                        );
+
+                    }
+
+
+                    if (
+                        !Array.isArray(
+                            members
                         )
+                    ) {
 
-                    ) || [];
+                        members = [];
+
+                    }
 
                 }
 
@@ -83,6 +182,33 @@ document.addEventListener(
                 }
 
 
+                /* =====================================
+                   MEMBER NOT FOUND
+                ===================================== */
+
+                if (
+                    members.length === 0
+                ) {
+
+                    message.textContent =
+
+                    "कोई सदस्य रिकॉर्ड नहीं मिला। पहले सदस्यता फॉर्म भरें।";
+
+
+                    message.style.color =
+
+                    "red";
+
+
+                    return;
+
+                }
+
+
+                /* =====================================
+                   FIND MEMBER
+                ===================================== */
+
                 const foundMember =
 
                 members.find(
@@ -90,37 +216,45 @@ document.addEventListener(
                     function (member) {
 
 
+                        const savedMemberId =
+
+                        String(
+
+                            member.memberId
+                            ||
+                            ""
+
+                        )
+
+                        .trim()
+
+                        .toUpperCase();
+
+
+                        const savedMobile =
+
+                        String(
+
+                            member.mobile
+                            ||
+                            ""
+
+                        )
+
+                        .trim();
+
+
                         return (
 
-                            String(
-
-                                member.memberId
-                                || ""
-
-                            )
-
-                            .trim()
-
-                            .toUpperCase()
-
+                            savedMemberId
                             ===
-
                             memberId
 
                             &&
 
-                            String(
-
-                                member.mobile
-                                || ""
-
-                            )
-
-                            .trim()
-
+                            savedMobile
                             ===
-
-                            mobile
+                            password
 
                         );
 
@@ -129,12 +263,18 @@ document.addEventListener(
                 );
 
 
-                if (foundMember) {
+                /* =====================================
+                   LOGIN SUCCESS
+                ===================================== */
+
+                if (
+                    foundMember
+                ) {
 
 
                     message.textContent =
 
-                    "लॉगिन सफल हुआ।";
+                    "✅ लॉगिन सफल हुआ।";
 
 
                     message.style.color =
@@ -142,106 +282,104 @@ document.addEventListener(
                     "green";
 
 
-                    loginForm.style.display =
+                    /* LOGIN DATA SAVE */
 
-                    "none";
+                    localStorage.setItem(
 
+                        "memberLoggedIn",
 
-                    document
-                    .getElementById(
-                        "memberProfile"
-                    )
-                    .style.display =
+                        "true"
 
-                    "block";
+                    );
 
 
-                    document
-                    .getElementById(
-                        "profileMemberId"
-                    )
-                    .textContent =
+                    localStorage.setItem(
 
-                    foundMember.memberId;
+                        "loggedInMember",
 
+                        JSON.stringify(
+                            foundMember
+                        )
 
-                    document
-                    .getElementById(
-                        "profileName"
-                    )
-                    .textContent =
-
-                    foundMember.name
-                    || "-";
+                    );
 
 
-                    document
-                    .getElementById(
-                        "profileMobile"
-                    )
-                    .textContent =
+                    /* SUCCESS MESSAGE */
 
-                    foundMember.mobile
-                    || "-";
+                    setTimeout(
+
+                        function () {
 
 
-                    document
-                    .getElementById(
-                        "profileMembership"
-                    )
-                    .textContent =
+                            alert(
 
-                    foundMember.membershipType
-                    ||
+                                "लॉगिन सफल हुआ।\n\n" +
 
-                    foundMember.membership
-                    ||
+                                "नाम: " +
 
-                    "-";
+                                (
+                                    foundMember.name
+                                    ||
+                                    "-"
+                                )
+
+                                +
+
+                                "\n\nMember ID: " +
+
+                                (
+                                    foundMember.memberId
+                                    ||
+                                    "-"
+                                )
+
+                                +
+
+                                "\n\nस्थिति: " +
+
+                                (
+                                    foundMember.status
+                                    ===
+                                    "approved"
+
+                                    ?
+
+                                    "स्वीकृत"
+
+                                    :
+
+                                    "लंबित"
+                                )
+
+                            );
 
 
-                    const status =
+                        },
 
-                    String(
+                        300
 
-                        foundMember.status
-                        || "pending"
-
-                    )
-
-                    .toLowerCase();
-
-
-                    document
-                    .getElementById(
-                        "profileStatus"
-                    )
-                    .textContent =
-
-                    status === "approved"
-
-                    ?
-
-                    "✅ स्वीकृत"
-
-                    :
-
-                    "⏳ लंबित";
+                    );
 
 
                 }
+
+
+                /* =====================================
+                   LOGIN FAILED
+                ===================================== */
 
                 else {
 
 
                     message.textContent =
 
-                    "Member ID या पासवर्ड गलत है।";
+                    "❌ Member ID या मोबाइल नंबर गलत है।";
 
 
                     message.style.color =
 
                     "red";
+
 
                 }
 
@@ -254,12 +392,3 @@ document.addEventListener(
     }
 
 );
-
-
-function memberLogout() {
-
-
-    window.location.reload();
-
-
-}
