@@ -15,6 +15,9 @@
         एडमिन डैशबोर्ड | युवा सेवा संकल्प फाउंडेशन
     </title>
 
+
+    <!-- Main CSS -->
+
     <link
         rel="stylesheet"
         href="style.css"
@@ -34,6 +37,7 @@
 
     <div class="container">
 
+
         <div class="left">
 
             🔐 एडमिन पैनल
@@ -51,6 +55,7 @@
 
         </div>
 
+
     </div>
 
 </div>
@@ -64,6 +69,9 @@
 
     <div class="header-content">
 
+
+        <!-- Logo -->
+
         <img
             src="images/logo.png"
             class="logo"
@@ -71,7 +79,10 @@
         >
 
 
+        <!-- Foundation Name -->
+
         <div class="title">
+
 
             <h1 class="main-title">
 
@@ -86,7 +97,9 @@
 
             </p>
 
+
         </div>
+
 
     </div>
 
@@ -99,14 +112,19 @@
 
 <section class="admin-dashboard">
 
+
     <div class="dashboard-container">
 
 
-        <!-- DASHBOARD HEADING -->
+        <!-- =====================================
+             DASHBOARD HEADING
+        ===================================== -->
 
         <div class="dashboard-heading">
 
+
             <div>
+
 
                 <h2>
 
@@ -117,12 +135,16 @@
 
                 <p>
 
-                    सदस्यता आवेदनों और सदस्यों की जानकारी प्रबंधित करें।
+                    सदस्यता आवेदनों और सदस्यों की
+                    जानकारी प्रबंधित करें।
 
                 </p>
 
+
             </div>
 
+
+            <!-- Logout Button -->
 
             <button
                 type="button"
@@ -134,6 +156,7 @@
 
             </button>
 
+
         </div>
 
 
@@ -144,7 +167,10 @@
         <div class="dashboard-cards">
 
 
+            <!-- Total Members -->
+
             <div class="dashboard-card">
+
 
                 <div class="dashboard-icon">
 
@@ -166,10 +192,14 @@
 
                 </p>
 
+
             </div>
 
 
+            <!-- New Applications -->
+
             <div class="dashboard-card">
+
 
                 <div class="dashboard-icon">
 
@@ -191,10 +221,14 @@
 
                 </p>
 
+
             </div>
 
 
+            <!-- Approved Members -->
+
             <div class="dashboard-card">
+
 
                 <div class="dashboard-icon">
 
@@ -216,10 +250,14 @@
 
                 </p>
 
+
             </div>
 
 
+            <!-- Pending Applications -->
+
             <div class="dashboard-card">
+
 
                 <div class="dashboard-icon">
 
@@ -241,6 +279,7 @@
 
                 </p>
 
+
             </div>
 
 
@@ -248,13 +287,16 @@
 
 
         <!-- =====================================
-             MEMBER TABLE
+             MEMBER APPLICATION TABLE
         ===================================== -->
 
         <div class="dashboard-table-box">
 
 
+            <!-- Table Heading -->
+
             <div class="table-heading">
+
 
                 <h3>
 
@@ -270,8 +312,11 @@
                     autocomplete="off"
                 >
 
+
             </div>
 
+
+            <!-- Responsive Table -->
 
             <div class="table-responsive">
 
@@ -281,7 +326,9 @@
 
                     <thead>
 
+
                         <tr>
+
 
                             <th>
 
@@ -289,8 +336,6 @@
 
                             </th>
 
-
-                            <!-- नया Member ID Column -->
 
                             <th>
 
@@ -333,10 +378,14 @@
 
                             </th>
 
+
                         </tr>
+
 
                     </thead>
 
+
+                    <!-- Members will be added by dashboard.js -->
 
                     <tbody id="memberTable">
 
@@ -359,6 +408,8 @@
         <div class="quick-actions">
 
 
+            <!-- Add New Member -->
+
             <a
                 href="membership.html"
                 class="quick-btn green-btn"
@@ -369,6 +420,20 @@
             </a>
 
 
+            <!-- Membership Certificate -->
+
+            <a
+                href="certificate.html"
+                class="quick-btn purple-btn"
+            >
+
+                📜 सदस्यता प्रमाणपत्र
+
+            </a>
+
+
+            <!-- Website -->
+
             <a
                 href="index.html"
                 class="quick-btn blue-btn"
@@ -378,6 +443,8 @@
 
             </a>
 
+
+            <!-- Download Report -->
 
             <button
                 type="button"
@@ -394,6 +461,7 @@
 
 
     </div>
+
 
 </section>
 
@@ -444,13 +512,18 @@
 
 
 <!-- =====================================
-     LOGOUT AND REPORT
+     LOGOUT AND REPORT JAVASCRIPT
 ===================================== -->
 
 <script>
 
 
+/* =====================================
+   ADMIN LOGOUT
+===================================== */
+
 function logoutAdmin() {
+
 
     const confirmLogout = confirm(
 
@@ -460,6 +533,7 @@ function logoutAdmin() {
 
 
     if (confirmLogout) {
+
 
         localStorage.removeItem(
 
@@ -472,18 +546,26 @@ function logoutAdmin() {
 
         "admin-login.html";
 
+
     }
+
 
 }
 
 
+/* =====================================
+   REPORT MESSAGE
+===================================== */
+
 function showMessage() {
+
 
     alert(
 
         "रिपोर्ट डाउनलोड सुविधा जल्द उपलब्ध होगी।"
 
     );
+
 
 }
 
