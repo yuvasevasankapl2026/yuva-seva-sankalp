@@ -1,1 +1,623 @@
+<!DOCTYPE html>
 
+<html lang="hi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        सदस्य ID कार्ड | युवा सेवा संकल्प फाउंडेशन
+    </title>
+
+
+    <!-- Main CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     ID CARD PAGE
+===================================== -->
+
+<section class="id-card-page">
+
+
+    <!-- =====================================
+         ID CARD FORM
+    ===================================== -->
+
+    <div
+        class="id-card-form"
+        id="idCardFormBox"
+    >
+
+
+        <!-- LOGO -->
+
+        <img
+            src="images/logo.png"
+            alt="युवा सेवा संकल्प फाउंडेशन लोगो"
+            class="id-form-logo"
+        >
+
+
+        <h1>
+
+            सदस्य ID कार्ड
+
+        </h1>
+
+
+        <p>
+
+            सदस्य की जानकारी भरकर ID कार्ड बनाएँ।
+
+        </p>
+
+
+        <!-- MEMBER NAME -->
+
+        <div class="id-input">
+
+
+            <label for="idMemberName">
+
+                सदस्य का पूरा नाम *
+
+            </label>
+
+
+            <input
+                type="text"
+                id="idMemberName"
+                placeholder="सदस्य का पूरा नाम लिखें"
+                required
+            >
+
+
+        </div>
+
+
+        <!-- MEMBER ID -->
+
+        <div class="id-input">
+
+
+            <label for="idMemberId">
+
+                Member ID *
+
+            </label>
+
+
+            <input
+                type="text"
+                id="idMemberId"
+                placeholder="जैसे: YSSF-2026-001"
+                required
+            >
+
+
+        </div>
+
+
+        <!-- MEMBERSHIP TYPE -->
+
+        <div class="id-input">
+
+
+            <label for="idMemberType">
+
+                सदस्यता प्रकार
+
+            </label>
+
+
+            <select id="idMemberType">
+
+
+                <option value="सामान्य सदस्य">
+
+                    सामान्य सदस्य
+
+                </option>
+
+
+                <option value="सक्रिय सदस्य">
+
+                    सक्रिय सदस्य
+
+                </option>
+
+
+                <option value="आजीवन सदस्य">
+
+                    आजीवन सदस्य
+
+                </option>
+
+
+                <option value="स्वयंसेवक">
+
+                    स्वयंसेवक
+
+                </option>
+
+
+            </select>
+
+
+        </div>
+
+
+        <!-- MOBILE NUMBER -->
+
+        <div class="id-input">
+
+
+            <label for="idMemberPhone">
+
+                मोबाइल नंबर
+
+            </label>
+
+
+            <input
+                type="tel"
+                id="idMemberPhone"
+                placeholder="10 अंकों का मोबाइल नंबर"
+                maxlength="10"
+            >
+
+
+        </div>
+
+
+        <!-- MEMBER PHOTO -->
+
+        <div class="id-input">
+
+
+            <label for="idMemberPhoto">
+
+                सदस्य की फोटो
+
+            </label>
+
+
+            <input
+                type="file"
+                id="idMemberPhoto"
+                accept="image/*"
+            >
+
+
+        </div>
+
+
+        <!-- CREATE BUTTON -->
+
+        <button
+            type="button"
+            class="id-create-btn"
+            onclick="createIdCard()"
+        >
+
+            🪪 ID कार्ड बनाएँ
+
+        </button>
+
+
+        <!-- BACK BUTTON -->
+
+        <a
+            href="admin-dashboard.html"
+            class="id-back-link"
+        >
+
+            ← एडमिन डैशबोर्ड पर वापस जाएँ
+
+        </a>
+
+
+    </div>
+
+
+    <!-- =====================================
+         GENERATED ID CARD
+    ===================================== -->
+
+    <div
+        class="id-card-result"
+        id="idCardResult"
+    >
+
+
+        <div class="member-id-card">
+
+
+            <!-- HEADER -->
+
+            <div class="id-card-top">
+
+
+                <img
+                    src="images/logo.png"
+                    alt="संस्था का लोगो"
+                    class="id-card-logo"
+                >
+
+
+                <div>
+
+
+                    <h2>
+
+                        युवा सेवा संकल्प फाउंडेशन
+
+                    </h2>
+
+
+                    <p>
+
+                        युवा शक्ति, राष्ट्र शक्ति
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- CARD TITLE -->
+
+            <div class="id-card-title">
+
+                सदस्य पहचान पत्र
+
+            </div>
+
+
+            <!-- MEMBER PHOTO -->
+
+            <div class="id-photo-box">
+
+
+                <img
+                    id="idPhotoPreview"
+                    src="images/logo.png"
+                    alt="सदस्य की फोटो"
+                >
+
+
+            </div>
+
+
+            <!-- MEMBER NAME -->
+
+            <h3 id="cardMemberName">
+
+                सदस्य का नाम
+
+            </h3>
+
+
+            <!-- MEMBER TYPE -->
+
+            <p
+                id="cardMemberType"
+                class="card-member-type"
+            >
+
+                सक्रिय सदस्य
+
+            </p>
+
+
+            <!-- MEMBER INFORMATION -->
+
+            <div class="id-card-details">
+
+
+                <p>
+
+
+                    <strong>
+
+                        Member ID:
+
+                    </strong>
+
+
+                    <span id="cardMemberId">
+
+                        YSSF-2026-001
+
+                    </span>
+
+
+                </p>
+
+
+                <p>
+
+
+                    <strong>
+
+                        मोबाइल:
+
+                    </strong>
+
+
+                    <span id="cardMemberPhone">
+
+                        0000000000
+
+                    </span>
+
+
+                </p>
+
+
+            </div>
+
+
+            <!-- SIGNATURE -->
+
+            <div class="id-card-signature">
+
+                अधिकृत हस्ताक्षर
+
+            </div>
+
+
+            <!-- FOOTER -->
+
+            <div class="id-card-footer">
+
+                यह कार्ड युवा सेवा संकल्प फाउंडेशन की संपत्ति है।
+
+            </div>
+
+
+        </div>
+
+
+        <!-- PRINT BUTTON -->
+
+        <button
+            type="button"
+            class="id-print-btn"
+            onclick="window.print()"
+        >
+
+            🖨️ ID कार्ड Print करें
+
+        </button>
+
+
+        <!-- BACK TO DASHBOARD -->
+
+        <a
+            href="admin-dashboard.html"
+            class="id-back-link"
+        >
+
+            ← एडमिन डैशबोर्ड पर जाएँ
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================
+     JAVASCRIPT
+===================================== -->
+
+<script>
+
+
+function createIdCard() {
+
+
+    /* MEMBER NAME */
+
+    const name =
+
+    document
+    .getElementById(
+        "idMemberName"
+    )
+    .value
+    .trim();
+
+
+    /* MEMBER ID */
+
+    const memberId =
+
+    document
+    .getElementById(
+        "idMemberId"
+    )
+    .value
+    .trim();
+
+
+    /* MEMBER TYPE */
+
+    const memberType =
+
+    document
+    .getElementById(
+        "idMemberType"
+    )
+    .value;
+
+
+    /* PHONE */
+
+    const phone =
+
+    document
+    .getElementById(
+        "idMemberPhone"
+    )
+    .value
+    .trim();
+
+
+    /* CHECK REQUIRED FIELDS */
+
+    if (
+        name === "" ||
+        memberId === ""
+    ) {
+
+
+        alert(
+
+            "कृपया सदस्य का नाम और Member ID भरें।"
+
+        );
+
+
+        return;
+
+
+    }
+
+
+    /* ADD MEMBER NAME */
+
+    document
+    .getElementById(
+        "cardMemberName"
+    )
+    .textContent = name;
+
+
+    /* ADD MEMBER ID */
+
+    document
+    .getElementById(
+        "cardMemberId"
+    )
+    .textContent = memberId;
+
+
+    /* ADD MEMBER TYPE */
+
+    document
+    .getElementById(
+        "cardMemberType"
+    )
+    .textContent = memberType;
+
+
+    /* ADD MOBILE NUMBER */
+
+    document
+    .getElementById(
+        "cardMemberPhone"
+    )
+    .textContent =
+
+    phone || "उपलब्ध नहीं";
+
+
+    /* MEMBER PHOTO */
+
+    const photoInput =
+
+    document
+    .getElementById(
+        "idMemberPhoto"
+    );
+
+
+    if (
+        photoInput.files &&
+        photoInput.files[0]
+    ) {
+
+
+        const reader =
+
+        new FileReader();
+
+
+        reader.onload =
+
+        function(event) {
+
+
+            document
+            .getElementById(
+                "idPhotoPreview"
+            )
+            .src =
+
+            event.target.result;
+
+
+        };
+
+
+        reader.readAsDataURL(
+
+            photoInput.files[0]
+
+        );
+
+
+    }
+
+
+    /* HIDE FORM */
+
+    document
+    .getElementById(
+        "idCardFormBox"
+    )
+    .style.display = "none";
+
+
+    /* SHOW ID CARD */
+
+    document
+    .getElementById(
+        "idCardResult"
+    )
+    .style.display = "block";
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
