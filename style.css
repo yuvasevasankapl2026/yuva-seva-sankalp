@@ -6061,3 +6061,19 @@ tr:hover {
 .purple-btn:hover {
     background: #4a126d;
 }
+/* =====================================
+   CERTIFICATE LOGO SIZE FIX
+===================================== */
+
+.certificate-form-logo {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+
+.certificate-logo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+}
