@@ -5729,3 +5729,84 @@ tr:hover {
         #a91f1f;
 
 }
+/* =====================================
+   SOCIAL MEDIA ICONS
+===================================== */
+
+.social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+.social-icons a {
+    width: 38px;
+    height: 38px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: white;
+
+    font-size: 19px;
+
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+
+.social-icons a:hover {
+    transform: translateY(-4px) scale(1.08);
+}
+
+
+/* Facebook */
+
+.social-icons .facebook {
+    background: #1877f2;
+}
+
+
+/* Instagram */
+
+.social-icons .instagram {
+    background: #e1306c;
+}
+
+
+/* YouTube */
+
+.social-icons .youtube {
+    background: #ff0000;
+}
+
+
+/* WhatsApp */
+
+.social-icons .whatsapp {
+    background: #25d366;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+    .social-icons {
+        gap: 7px;
+    }
+
+    .social-icons a {
+        width: 34px;
+        height: 34px;
+
+        font-size: 17px;
+    }
+
+}
