@@ -6047,3 +6047,17 @@ tr:hover {
     }
 
 }
+/* =====================================
+   CERTIFICATE BUTTON
+===================================== */
+
+.purple-btn {
+    background: #6a1b9a;
+
+    color: white;
+}
+
+
+.purple-btn:hover {
+    background: #4a126d;
+}
