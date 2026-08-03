@@ -1,1 +1,661 @@
+<!DOCTYPE html>
 
+<html lang="hi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        सदस्यता प्रमाणपत्र | युवा सेवा संकल्प फाउंडेशन
+    </title>
+
+
+    <!-- Main CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     CERTIFICATE PAGE
+===================================== -->
+
+<section class="certificate-page">
+
+
+    <!-- =====================================
+         CERTIFICATE FORM
+    ===================================== -->
+
+    <div
+        class="certificate-form"
+        id="certificateFormBox"
+    >
+
+
+        <!-- Logo -->
+
+        <img
+            src="images/logo.png"
+            alt="युवा सेवा संकल्प फाउंडेशन लोगो"
+            class="certificate-form-logo"
+        >
+
+
+        <h1>
+
+            सदस्यता प्रमाणपत्र
+
+        </h1>
+
+
+        <p>
+
+            सदस्य की जानकारी भरें और प्रमाणपत्र बनाएँ।
+
+        </p>
+
+
+        <!-- Member Name -->
+
+        <div class="certificate-input">
+
+
+            <label for="memberName">
+
+                सदस्य का पूरा नाम *
+
+            </label>
+
+
+            <input
+                type="text"
+                id="memberName"
+                placeholder="सदस्य का पूरा नाम लिखें"
+                required
+            >
+
+
+        </div>
+
+
+        <!-- Member ID -->
+
+        <div class="certificate-input">
+
+
+            <label for="memberId">
+
+                सदस्यता क्रमांक / Member ID *
+
+            </label>
+
+
+            <input
+                type="text"
+                id="memberId"
+                placeholder="जैसे: YSSF-2026-001"
+                required
+            >
+
+
+        </div>
+
+
+        <!-- Membership Type -->
+
+        <div class="certificate-input">
+
+
+            <label for="memberType">
+
+                सदस्यता प्रकार
+
+            </label>
+
+
+            <select id="memberType">
+
+
+                <option value="सामान्य सदस्य">
+
+                    सामान्य सदस्य
+
+                </option>
+
+
+                <option value="सक्रिय सदस्य">
+
+                    सक्रिय सदस्य
+
+                </option>
+
+
+                <option value="आजीवन सदस्य">
+
+                    आजीवन सदस्य
+
+                </option>
+
+
+                <option value="स्वयंसेवक">
+
+                    स्वयंसेवक
+
+                </option>
+
+
+            </select>
+
+
+        </div>
+
+
+        <!-- Membership Date -->
+
+        <div class="certificate-input">
+
+
+            <label for="memberDate">
+
+                सदस्यता तिथि
+
+            </label>
+
+
+            <input
+                type="date"
+                id="memberDate"
+            >
+
+
+        </div>
+
+
+        <!-- Create Certificate Button -->
+
+        <button
+            type="button"
+            class="certificate-create-btn"
+            onclick="createCertificate()"
+        >
+
+            📜 प्रमाणपत्र बनाएँ
+
+        </button>
+
+
+        <!-- Back to Dashboard -->
+
+        <a
+            href="admin-dashboard.html"
+            class="certificate-home-btn"
+        >
+
+            ← एडमिन डैशबोर्ड पर वापस जाएँ
+
+        </a>
+
+
+    </div>
+
+
+    <!-- =====================================
+         MEMBERSHIP CERTIFICATE
+    ===================================== -->
+
+    <div
+        class="certificate"
+        id="certificate"
+    >
+
+
+        <div class="certificate-border">
+
+
+            <!-- Certificate Header -->
+
+            <div class="certificate-top">
+
+
+                <img
+                    src="images/logo.png"
+                    alt="संस्था का लोगो"
+                    class="certificate-logo"
+                >
+
+
+                <div>
+
+
+                    <h1>
+
+                        युवा सेवा संकल्प फाउंडेशन
+
+                    </h1>
+
+
+                    <p>
+
+                        युवा शक्ति, राष्ट्र शक्ति
+
+                    </p>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- Certificate Title -->
+
+            <h2>
+
+                सदस्यता प्रमाणपत्र
+
+            </h2>
+
+
+            <p class="certificate-subtitle">
+
+                MEMBERSHIP CERTIFICATE
+
+            </p>
+
+
+            <!-- Certificate Text -->
+
+            <p class="certificate-text">
+
+                यह प्रमाणित किया जाता है कि
+
+            </p>
+
+
+            <!-- Member Name -->
+
+            <h3 id="certificateName">
+
+                सदस्य का नाम
+
+            </h3>
+
+
+            <p class="certificate-text">
+
+                युवा सेवा संकल्प फाउंडेशन के
+
+            </p>
+
+
+            <!-- Membership Type -->
+
+            <h4 id="certificateType">
+
+                सक्रिय सदस्य
+
+            </h4>
+
+
+            <p class="certificate-text">
+
+                हैं और संस्था के सामाजिक,
+                शैक्षिक, पर्यावरण एवं
+                जनकल्याणकारी कार्यों में
+                सहयोग प्रदान करेंगे।
+
+            </p>
+
+
+            <!-- Member Details -->
+
+            <div class="certificate-details">
+
+
+                <p>
+
+
+                    <strong>
+
+                        सदस्यता क्रमांक:
+
+                    </strong>
+
+
+                    <span id="certificateId">
+
+                        YSSF-2026-001
+
+                    </span>
+
+
+                </p>
+
+
+                <p>
+
+
+                    <strong>
+
+                        सदस्यता तिथि:
+
+                    </strong>
+
+
+                    <span id="certificateDate">
+
+                        01 अगस्त 2026
+
+                    </span>
+
+
+                </p>
+
+
+            </div>
+
+
+            <!-- Signatures -->
+
+            <div class="certificate-signatures">
+
+
+                <!-- President -->
+
+                <div>
+
+
+                    <div class="signature-line">
+
+                    </div>
+
+
+                    <strong>
+
+                        अध्यक्ष के हस्ताक्षर
+
+                    </strong>
+
+
+                </div>
+
+
+                <!-- Seal -->
+
+                <div>
+
+
+                    <div class="signature-line">
+
+                    </div>
+
+
+                    <strong>
+
+                        संस्था की मुहर
+
+                    </strong>
+
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!-- Print Button -->
+
+        <button
+            type="button"
+            class="print-certificate-btn"
+            onclick="window.print()"
+        >
+
+            🖨️ प्रमाणपत्र Print करें
+
+        </button>
+
+
+        <!-- Back Button -->
+
+        <a
+            href="admin-dashboard.html"
+            class="certificate-back-dashboard"
+        >
+
+            ← एडमिन डैशबोर्ड पर जाएँ
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================
+     CERTIFICATE JAVASCRIPT
+===================================== -->
+
+<script>
+
+
+function createCertificate() {
+
+
+    /* Get Form Values */
+
+    const name =
+
+    document
+    .getElementById(
+        "memberName"
+    )
+    .value
+    .trim();
+
+
+    const memberId =
+
+    document
+    .getElementById(
+        "memberId"
+    )
+    .value
+    .trim();
+
+
+    const memberType =
+
+    document
+    .getElementById(
+        "memberType"
+    )
+    .value;
+
+
+    const memberDate =
+
+    document
+    .getElementById(
+        "memberDate"
+    )
+    .value;
+
+
+    /* Check Required Fields */
+
+    if (
+        name === "" ||
+        memberId === ""
+    ) {
+
+
+        alert(
+
+            "कृपया सदस्य का नाम और Member ID भरें।"
+
+        );
+
+
+        return;
+
+
+    }
+
+
+    /* Add Name */
+
+    document
+    .getElementById(
+        "certificateName"
+    )
+    .textContent = name;
+
+
+    /* Add Member ID */
+
+    document
+    .getElementById(
+        "certificateId"
+    )
+    .textContent = memberId;
+
+
+    /* Add Membership Type */
+
+    document
+    .getElementById(
+        "certificateType"
+    )
+    .textContent = memberType;
+
+
+    /* Format Date */
+
+    let finalDate;
+
+
+    if (
+        memberDate !== ""
+    ) {
+
+
+        const selectedDate =
+
+        new Date(
+
+            memberDate +
+            "T00:00:00"
+
+        );
+
+
+        finalDate =
+
+        selectedDate
+        .toLocaleDateString(
+
+            "hi-IN",
+
+            {
+
+                day: "2-digit",
+
+                month: "long",
+
+                year: "numeric"
+
+            }
+
+        );
+
+
+    }
+
+
+    else {
+
+
+        const today =
+
+        new Date();
+
+
+        finalDate =
+
+        today
+        .toLocaleDateString(
+
+            "hi-IN",
+
+            {
+
+                day: "2-digit",
+
+                month: "long",
+
+                year: "numeric"
+
+            }
+
+        );
+
+
+    }
+
+
+    /* Add Date */
+
+    document
+    .getElementById(
+        "certificateDate"
+    )
+    .textContent = finalDate;
+
+
+    /* Hide Form */
+
+    document
+    .getElementById(
+        "certificateFormBox"
+    )
+    .style.display = "none";
+
+
+    /* Show Certificate */
+
+    document
+    .getElementById(
+        "certificate"
+    )
+    .style.display = "block";
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
