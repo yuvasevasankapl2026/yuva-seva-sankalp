@@ -982,7 +982,110 @@ if (
 
     }
 
+/* =====================================
+   CHANGE MEMBER PHOTO
+===================================== */
 
+const photoUpload =
+
+document.getElementById(
+
+    "photoUpload"
+
+);
+
+
+if (
+
+    photoUpload
+
+) {
+
+
+    photoUpload.addEventListener(
+
+        "change",
+
+        function (event) {
+
+
+            const selectedPhoto =
+
+            event.target.files[0];
+
+
+            if (
+
+                !selectedPhoto
+
+            ) {
+
+                return;
+
+            }
+
+
+            const photoReader =
+
+            new FileReader();
+
+
+            photoReader.onload =
+
+            function (photoEvent) {
+
+
+                const newPhoto =
+
+                photoEvent.target.result;
+
+
+                memberPhoto.src =
+
+                newPhoto;
+
+
+                loggedInMember.photo =
+
+                newPhoto;
+
+
+                localStorage.setItem(
+
+                    "loggedInMember",
+
+                    JSON.stringify(
+
+                        loggedInMember
+
+                    )
+
+                );
+
+
+                alert(
+
+                    "✅ फोटो सफलतापूर्वक बदल दी गई।"
+
+                );
+
+
+            };
+
+
+            photoReader.readAsDataURL(
+
+                selectedPhoto
+
+            );
+
+
+        }
+
+    );
+
+
+}
     /* =====================================
        MEMBER STATUS
     ===================================== */
