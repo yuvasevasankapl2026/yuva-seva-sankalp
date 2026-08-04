@@ -1504,3 +1504,55 @@ function deleteMember(index) {
     );
 
 }
+/* =====================================
+   VOLUNTEER DELETE
+===================================== */
+
+function deleteVolunteer(index) {
+
+    const confirmDelete = confirm(
+
+        "क्या आप इस वॉलंटियर आवेदन को हटाना चाहते हैं?"
+
+    );
+
+
+    if (!confirmDelete) {
+
+        return;
+
+    }
+
+
+    volunteers.splice(
+
+        index,
+
+        1
+
+    );
+
+
+    localStorage.setItem(
+
+        "volunteers",
+
+        JSON.stringify(
+
+            volunteers
+
+        )
+
+    );
+
+
+    showVolunteers();
+
+
+    alert(
+
+        "🗑 वॉलंटियर आवेदन सफलतापूर्वक हटा दिया गया।"
+
+    );
+
+}
