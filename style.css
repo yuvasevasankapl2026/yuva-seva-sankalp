@@ -10088,3 +10088,216 @@ tr:hover {
 
 
 }
+/* =====================================
+   CONTACT FORM
+===================================== */
+
+.contact-form-section {
+
+    padding: 60px 20px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #f3f8ff,
+        #ffffff
+    );
+
+}
+
+
+.contact-form-box {
+
+    max-width: 700px;
+
+    margin: auto;
+
+    padding: 40px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+
+    0 8px 30px
+
+    rgba(
+        0,
+        0,
+        0,
+        0.12
+    );
+
+}
+
+
+.contact-form-box h2 {
+
+    text-align: center;
+
+    color: #0b4f9c;
+
+    font-size: 32px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.contact-form-text {
+
+    text-align: center;
+
+    color: #555;
+
+    margin-bottom: 30px;
+
+}
+
+
+.contact-form-box input,
+
+.contact-form-box textarea {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border:
+
+    1px solid #cfd8e3;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+}
+
+
+.contact-form-box textarea {
+
+    resize: vertical;
+
+}
+
+
+.contact-form-box input:focus,
+
+.contact-form-box textarea:focus {
+
+    outline: none;
+
+    border-color: #0b4f9c;
+
+    box-shadow:
+
+    0 0 5px
+
+    rgba(
+        11,
+        79,
+        156,
+        0.25
+    );
+
+}
+
+
+.contact-agreement {
+
+    display: flex;
+
+    gap: 10px;
+
+    align-items: flex-start;
+
+    margin:
+
+    20px 0;
+
+}
+
+
+.contact-agreement input {
+
+    width: auto;
+
+    margin-top: 5px;
+
+}
+
+
+.contact-submit-btn {
+
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #0b4f9c;
+
+    color: white;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+}
+
+
+.contact-submit-btn:hover {
+
+    background: #083b75;
+
+}
+
+
+.contact-result {
+
+    text-align: center;
+
+    font-weight: bold;
+
+    margin-top: 20px;
+
+    line-height: 1.8;
+
+}
+
+
+/* MOBILE */
+
+@media screen and (max-width: 600px) {
+
+
+    .contact-form-section {
+
+        padding:
+
+        30px 12px;
+
+    }
+
+
+    .contact-form-box {
+
+        padding:
+
+        22px 16px;
+
+    }
+
+
+    .contact-form-box h2 {
+
+        font-size: 25px;
+
+    }
+
+
+}
