@@ -3440,3 +3440,289 @@ document.addEventListener(
     }
 
 );
+/* =====================================
+   ADMIN PASSWORD CHANGE
+===================================== */
+
+function openPasswordModal() {
+
+    const passwordModal =
+
+    document.getElementById(
+
+        "passwordModal"
+
+    );
+
+
+    if (
+
+        passwordModal
+
+    ) {
+
+        passwordModal.classList.add(
+
+            "show"
+
+        );
+
+    }
+
+}
+
+
+/* =====================================
+   CLOSE PASSWORD MODAL
+===================================== */
+
+function closePasswordModal() {
+
+    const passwordModal =
+
+    document.getElementById(
+
+        "passwordModal"
+
+    );
+
+
+    if (
+
+        passwordModal
+
+    ) {
+
+        passwordModal.classList.remove(
+
+            "show"
+
+        );
+
+    }
+
+
+    const passwordForm =
+
+    document.getElementById(
+
+        "passwordChangeForm"
+
+    );
+
+
+    if (
+
+        passwordForm
+
+    ) {
+
+        passwordForm.reset();
+
+    }
+
+}
+
+
+/* =====================================
+   PASSWORD CHANGE FORM
+===================================== */
+
+document.addEventListener(
+
+    "DOMContentLoaded",
+
+    function () {
+
+
+        const passwordForm =
+
+        document.getElementById(
+
+            "passwordChangeForm"
+
+        );
+
+
+        if (
+
+            !passwordForm
+
+        ) {
+
+            return;
+
+        }
+
+
+        passwordForm.addEventListener(
+
+            "submit",
+
+            function (
+
+                event
+
+            ) {
+
+
+                event.preventDefault();
+
+
+                const oldPassword =
+
+                document.getElementById(
+
+                    "oldPassword"
+
+                ).value.trim();
+
+
+                const newPassword =
+
+                document.getElementById(
+
+                    "newPassword"
+
+                ).value.trim();
+
+
+                const confirmNewPassword =
+
+                document.getElementById(
+
+                    "confirmNewPassword"
+
+                ).value.trim();
+
+
+                /* =====================================
+                   CURRENT PASSWORD
+                ===================================== */
+
+                const savedPassword =
+
+                localStorage.getItem(
+
+                    "adminPassword"
+
+                ) ||
+
+                "admin123";
+
+
+                /* OLD PASSWORD CHECK */
+
+                if (
+
+                    oldPassword !==
+
+                    savedPassword
+
+                ) {
+
+                    alert(
+
+                        "❌ पुराना पासवर्ड गलत है।"
+
+                    );
+
+
+                    return;
+
+                }
+
+
+                /* NEW PASSWORD LENGTH */
+
+                if (
+
+                    newPassword.length < 4
+
+                ) {
+
+                    alert(
+
+                        "❌ नया पासवर्ड कम से कम 4 अक्षरों का होना चाहिए।"
+
+                    );
+
+
+                    return;
+
+                }
+
+
+                /* PASSWORD MATCH */
+
+                if (
+
+                    newPassword !==
+
+                    confirmNewPassword
+
+                ) {
+
+                    alert(
+
+                        "❌ नया पासवर्ड और दोबारा लिखा गया पासवर्ड एक जैसा नहीं है।"
+
+                    );
+
+
+                    return;
+
+                }
+
+
+                /* SAME PASSWORD CHECK */
+
+                if (
+
+                    newPassword ===
+
+                    savedPassword
+
+                ) {
+
+                    alert(
+
+                        "⚠️ नया पासवर्ड पुराने पासवर्ड से अलग रखें।"
+
+                    );
+
+
+                    return;
+
+                }
+
+
+                /* SAVE NEW PASSWORD */
+
+                localStorage.setItem(
+
+                    "adminPassword",
+
+                    newPassword
+
+                );
+
+
+                alert(
+
+                    "✅ एडमिन पासवर्ड सफलतापूर्वक बदल दिया गया है।"
+
+                );
+
+
+                closePasswordModal();
+
+
+            }
+
+        );
+
+
+    }
+
+);
