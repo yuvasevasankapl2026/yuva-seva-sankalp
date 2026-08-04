@@ -7914,3 +7914,702 @@ tr:hover {
     }
 
 }
+/* =====================================
+   MEMBER DASHBOARD
+===================================== */
+
+.member-dashboard {
+
+    padding: 50px 20px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #f4f7fb,
+        #e8eef7
+    );
+
+}
+
+
+.member-dashboard-container {
+
+    max-width: 1150px;
+
+    margin: auto;
+
+}
+
+
+/* =====================================
+   WELCOME BOX
+===================================== */
+
+.member-welcome {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 20px;
+
+    padding: 28px 30px;
+
+    margin-bottom: 30px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    border-left:
+
+    7px solid #f57c00;
+
+    box-shadow:
+
+    0 8px 25px
+
+    rgba(
+        0,
+        0,
+        0,
+        0.10
+    );
+
+}
+
+
+.member-welcome h2 {
+
+    margin: 0 0 8px;
+
+    color: #12305c;
+
+    font-size: 30px;
+
+}
+
+
+.member-welcome p {
+
+    margin: 0;
+
+    color: #555;
+
+    font-size: 17px;
+
+}
+
+
+.member-logout-btn {
+
+    border: none;
+
+    padding: 13px 22px;
+
+    background: #c62828;
+
+    color: white;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.member-logout-btn:hover {
+
+    background: #8e1d1d;
+
+}
+
+
+/* =====================================
+   MEMBER PROFILE BOX
+===================================== */
+
+.member-info-box {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 30px;
+
+    padding: 30px;
+
+    margin-bottom: 40px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    box-shadow:
+
+    0 8px 25px
+
+    rgba(
+        0,
+        0,
+        0,
+        0.10
+    );
+
+}
+
+
+.member-profile-image {
+
+    width: 180px;
+
+    height: 180px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    border-radius: 50%;
+
+    border:
+
+    6px solid #12305c;
+
+    background: #edf2f8;
+
+}
+
+
+.member-profile-image img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+.member-basic-info {
+
+    flex: 1;
+
+}
+
+
+.member-basic-info h2 {
+
+    margin-bottom: 18px;
+
+    color: #12305c;
+
+    font-size: 30px;
+
+}
+
+
+.member-basic-info p {
+
+    margin: 10px 0;
+
+    font-size: 17px;
+
+    color: #333;
+
+}
+
+
+/* =====================================
+   MEMBER STATUS
+===================================== */
+
+.member-status {
+
+    display: inline-block;
+
+    padding: 6px 14px;
+
+    border-radius: 20px;
+
+    font-weight: bold;
+
+}
+
+
+.member-status.pending {
+
+    color: #8a5200;
+
+    background: #fff3cd;
+
+}
+
+
+.member-status.approved {
+
+    color: #146c2e;
+
+    background: #d9f5df;
+
+}
+
+
+.member-status.rejected {
+
+    color: #a51d2d;
+
+    background: #f8d7da;
+
+}
+
+
+/* =====================================
+   SERVICE TITLE
+===================================== */
+
+.member-service-title {
+
+    text-align: center;
+
+    margin:
+
+    20px 0 30px;
+
+    color: #12305c;
+
+    font-size: 32px;
+
+}
+
+
+/* =====================================
+   SERVICE CARDS
+===================================== */
+
+.member-service-grid {
+
+    display: grid;
+
+    grid-template-columns:
+
+    repeat(
+        3,
+        1fr
+    );
+
+    gap: 22px;
+
+    margin-bottom: 45px;
+
+}
+
+
+.member-service-card {
+
+    display: block;
+
+    padding: 28px 20px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    color: #222;
+
+    background: white;
+
+    border-radius: 18px;
+
+    border:
+
+    1px solid #e1e6ed;
+
+    box-shadow:
+
+    0 5px 18px
+
+    rgba(
+        0,
+        0,
+        0,
+        0.08
+    );
+
+    transition:
+
+    0.3s;
+
+}
+
+
+.member-service-card:hover {
+
+    transform:
+
+    translateY(
+        -7px
+    );
+
+    border-color: #f57c00;
+
+    box-shadow:
+
+    0 12px 28px
+
+    rgba(
+        0,
+        0,
+        0,
+        0.14
+    );
+
+}
+
+
+.member-service-icon {
+
+    width: 70px;
+
+    height: 70px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin:
+
+    0 auto 15px;
+
+    background: #eaf0f8;
+
+    border-radius: 50%;
+
+    font-size: 35px;
+
+}
+
+
+.member-service-card h3 {
+
+    margin-bottom: 10px;
+
+    color: #12305c;
+
+    font-size: 21px;
+
+}
+
+
+.member-service-card p {
+
+    margin: 0;
+
+    color: #666;
+
+    line-height: 1.6;
+
+}
+
+
+/* =====================================
+   DETAIL SECTIONS
+===================================== */
+
+.member-detail-section {
+
+    padding: 30px;
+
+    margin-bottom: 30px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    box-shadow:
+
+    0 6px 20px
+
+    rgba(
+        0,
+        0,
+        0,
+        0.08
+    );
+
+}
+
+
+.member-detail-section h2 {
+
+    margin:
+
+    0 0 22px;
+
+    padding-bottom: 12px;
+
+    color: #12305c;
+
+    border-bottom:
+
+    3px solid #f57c00;
+
+}
+
+
+.member-detail-list {
+
+    display: grid;
+
+    grid-template-columns:
+
+    repeat(
+        2,
+        1fr
+    );
+
+    gap: 15px;
+
+}
+
+
+.member-detail-list p {
+
+    margin: 0;
+
+    padding: 14px;
+
+    background: #f5f7fa;
+
+    border-radius: 8px;
+
+}
+
+
+/* =====================================
+   PAYMENT
+===================================== */
+
+.payment-pending {
+
+    color: #8a5200;
+
+    font-weight: bold;
+
+}
+
+
+.member-pay-btn {
+
+    margin-top: 15px;
+
+    padding: 13px 25px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #1565c0;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.member-pay-btn:hover {
+
+    background: #0d47a1;
+
+}
+
+
+/* =====================================
+   NOTICE
+===================================== */
+
+.member-notice {
+
+    padding: 20px;
+
+    border-left:
+
+    5px solid #f57c00;
+
+    background: #fff7e8;
+
+    border-radius: 8px;
+
+    font-size: 17px;
+
+}
+
+
+/* =====================================
+   WHATSAPP BUTTON
+===================================== */
+
+.member-whatsapp-btn {
+
+    display: inline-block;
+
+    margin-top: 15px;
+
+    padding: 13px 22px;
+
+    background: #1b8f45;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    font-weight: bold;
+
+}
+
+
+.member-whatsapp-btn:hover {
+
+    background: #126d33;
+
+}
+
+
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+@media screen and (max-width: 800px) {
+
+
+    .member-welcome {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+    }
+
+
+    .member-info-box {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+
+    .member-service-grid {
+
+        grid-template-columns:
+
+        repeat(
+            2,
+            1fr
+        );
+
+    }
+
+
+    .member-detail-list {
+
+        grid-template-columns:
+
+        1fr;
+
+    }
+
+
+}
+
+
+@media screen and (max-width: 500px) {
+
+
+    .member-dashboard {
+
+        padding:
+
+        25px 12px;
+
+    }
+
+
+    .member-welcome {
+
+        padding: 20px;
+
+    }
+
+
+    .member-welcome h2 {
+
+        font-size: 24px;
+
+    }
+
+
+    .member-info-box {
+
+        padding: 22px 15px;
+
+    }
+
+
+    .member-profile-image {
+
+        width: 130px;
+
+        height: 130px;
+
+    }
+
+
+    .member-basic-info h2 {
+
+        font-size: 25px;
+
+    }
+
+
+    .member-service-grid {
+
+        grid-template-columns:
+
+        1fr;
+
+    }
+
+
+    .member-service-title {
+
+        font-size: 27px;
+
+    }
+
+
+    .member-detail-section {
+
+        padding: 20px;
+
+    }
+
+
+}
