@@ -12,10 +12,9 @@
     >
 
     <title>
-
         एडमिन डैशबोर्ड | युवा सेवा संकल्प फाउंडेशन
-
     </title>
+
 
     <!-- MAIN CSS -->
 
@@ -128,8 +127,9 @@
 
                 <p>
 
-                    सदस्यता आवेदनों, सदस्यों और
-                    रक्तदाताओं की जानकारी प्रबंधित करें।
+                    सदस्यता आवेदनों, सदस्यों,
+                    संपर्क संदेशों और वॉलंटियर
+                    आवेदनों की जानकारी प्रबंधित करें।
 
                 </p>
 
@@ -281,7 +281,7 @@
 
                 <h3>
 
-                    सदस्यता आवेदन
+                    👥 सदस्यता आवेदन
 
                 </h3>
 
@@ -295,136 +295,8 @@
 
             </div>
 
-<!-- =====================================
-     CONTACT MESSAGES
-===================================== -->
 
-<div class="dashboard-table-box">
-
-
-    <div class="table-heading">
-
-
-        <h3>
-
-            📩 संपर्क संदेश
-
-        </h3>
-
-
-        <input
-            type="search"
-            id="contactSearch"
-            placeholder="नाम, मोबाइल या विषय खोजें"
-            autocomplete="off"
-        >
-
-
-    </div>
-
-
-    <div class="table-responsive">
-
-
-        <table>
-
-
-            <thead>
-
-
-                <tr>
-
-
-                    <th>
-
-                        क्रमांक
-
-                    </th>
-
-
-                    <th>
-
-                        संदेश ID
-
-                    </th>
-
-
-                    <th>
-
-                        नाम
-
-                    </th>
-
-
-                    <th>
-
-                        मोबाइल नंबर
-
-                    </th>
-
-
-                    <th>
-
-                        ईमेल
-
-                    </th>
-
-
-                    <th>
-
-                        विषय
-
-                    </th>
-
-
-                    <th>
-
-                        संदेश
-
-                    </th>
-
-
-                    <th>
-
-                        दिनांक
-
-                    </th>
-
-
-                    <th>
-
-                        स्थिति
-
-                    </th>
-
-
-                    <th>
-
-                        कार्य
-
-                    </th>
-
-
-                </tr>
-
-
-            </thead>
-
-
-            <tbody id="contactTable">
-
-
-            </tbody>
-
-
-        </table>
-
-
-    </div>
-
-
-</div>
-            <!-- RESPONSIVE TABLE -->
+            <!-- MEMBER TABLE -->
 
             <div class="table-responsive">
 
@@ -499,121 +371,239 @@
 
         </div>
 
-<!-- =====================================
-     VOLUNTEER LIST
-===================================== -->
 
-<div class="dashboard-table-box volunteer-list-box">
+        <!-- =====================================
+             CONTACT MESSAGES
+        ===================================== -->
 
+        <div class="dashboard-table-box">
 
-    <div class="table-heading">
 
+            <div class="table-heading">
 
-        <h3>
+                <h3>
 
-            🤝 वॉलंटियर आवेदन
+                    📩 संपर्क संदेश
 
-        </h3>
+                </h3>
 
 
-        <input
-            type="search"
-            id="volunteerSearch"
-            placeholder="Volunteer ID, नाम या मोबाइल नंबर खोजें"
-            autocomplete="off"
-        >
+                <input
+                    type="search"
+                    id="contactSearch"
+                    placeholder="नाम, मोबाइल या विषय खोजें"
+                    autocomplete="off"
+                >
 
+            </div>
 
-    </div>
 
+            <!-- CONTACT TABLE -->
 
-    <div class="table-responsive">
+            <div class="table-responsive">
 
+                <table>
 
-        <table>
+                    <thead>
 
+                        <tr>
 
-            <thead>
+                            <th>
 
+                                क्रमांक
 
-                <tr>
+                            </th>
 
 
-                    <th>
+                            <th>
 
-                        क्रमांक
+                                संदेश ID
 
-                    </th>
+                            </th>
 
 
-                    <th>
+                            <th>
 
-                        Volunteer ID
+                                नाम
 
-                    </th>
+                            </th>
 
 
-                    <th>
+                            <th>
 
-                        नाम
+                                मोबाइल नंबर
 
-                    </th>
+                            </th>
 
 
-                    <th>
+                            <th>
 
-                        मोबाइल नंबर
+                                ईमेल
 
-                    </th>
+                            </th>
 
 
-                    <th>
+                            <th>
 
-                        सेवा क्षेत्र
+                                विषय
 
-                    </th>
+                            </th>
 
 
-                    <th>
+                            <th>
 
-                        उपलब्धता
+                                संदेश
 
-                    </th>
+                            </th>
 
 
-                    <th>
+                            <th>
 
-                        स्थिति
+                                दिनांक
 
-                    </th>
+                            </th>
 
 
-                    <th>
+                            <th>
 
-                        कार्य
+                                स्थिति
 
-                    </th>
+                            </th>
 
 
-                </tr>
+                            <th>
 
+                                कार्य
 
-            </thead>
+                            </th>
 
+                        </tr>
 
-            <tbody id="volunteerTable">
+                    </thead>
 
 
-            </tbody>
+                    <!-- CONTACT DATA dashboard.js से आएगा -->
 
+                    <tbody id="contactTable">
 
-        </table>
+                    </tbody>
 
+                </table>
 
-    </div>
+            </div>
 
+        </div>
 
-</div>
+
+        <!-- =====================================
+             VOLUNTEER APPLICATIONS
+        ===================================== -->
+
+        <div class="dashboard-table-box volunteer-list-box">
+
+
+            <div class="table-heading">
+
+                <h3>
+
+                    🤝 वॉलंटियर आवेदन
+
+                </h3>
+
+
+                <input
+                    type="search"
+                    id="volunteerSearch"
+                    placeholder="Volunteer ID, नाम या मोबाइल नंबर खोजें"
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <!-- VOLUNTEER TABLE -->
+
+            <div class="table-responsive">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+
+                                क्रमांक
+
+                            </th>
+
+
+                            <th>
+
+                                Volunteer ID
+
+                            </th>
+
+
+                            <th>
+
+                                नाम
+
+                            </th>
+
+
+                            <th>
+
+                                मोबाइल नंबर
+
+                            </th>
+
+
+                            <th>
+
+                                सेवा क्षेत्र
+
+                            </th>
+
+
+                            <th>
+
+                                उपलब्धता
+
+                            </th>
+
+
+                            <th>
+
+                                स्थिति
+
+                            </th>
+
+
+                            <th>
+
+                                कार्य
+
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <!-- VOLUNTEER DATA dashboard.js से आएगा -->
+
+                    <tbody id="volunteerTable">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+
         <!-- =====================================
              QUICK ACTION BUTTONS
         ===================================== -->
@@ -706,6 +696,7 @@
 
 <footer>
 
+
     <img
         src="images/logo.png"
         alt="युवा सेवा संकल्प फाउंडेशन लोगो"
@@ -733,6 +724,7 @@
 
     </p>
 
+
 </footer>
 
 
@@ -751,6 +743,7 @@
 
 function logoutAdmin() {
 
+
     const confirmLogout = confirm(
 
         "क्या आप एडमिन पैनल से लॉगआउट करना चाहते हैं?"
@@ -759,6 +752,7 @@ function logoutAdmin() {
 
 
     if (confirmLogout) {
+
 
         localStorage.removeItem(
 
@@ -770,6 +764,7 @@ function logoutAdmin() {
         window.location.href =
 
         "admin-login.html";
+
 
     }
 
@@ -787,22 +782,39 @@ function logoutAdmin() {
 function downloadReport() {
 
 
-    /* LOCAL STORAGE से MEMBER DATA */
+    let members = [];
 
-    const members = JSON.parse(
 
-        localStorage.getItem(
+    try {
 
-            "members"
 
-        )
+        members = JSON.parse(
 
-    ) || [];
+            localStorage.getItem(
+
+                "members"
+
+            )
+
+        ) || [];
+
+
+    }
+
+    catch (error) {
+
+
+        members = [];
+
+
+    }
 
 
     /* MEMBER नहीं मिलने पर */
 
+
     if (members.length === 0) {
+
 
         alert(
 
@@ -810,12 +822,15 @@ function downloadReport() {
 
         );
 
+
         return;
+
 
     }
 
 
     /* CSV FILE HEADER */
+
 
     let csv =
 
@@ -824,9 +839,16 @@ function downloadReport() {
 
     /* MEMBER DATA CSV में डालें */
 
+
     members.forEach(
 
-        function(member, index) {
+        function (
+
+            member,
+
+            index
+
+        ) {
 
 
             const memberId =
@@ -834,6 +856,8 @@ function downloadReport() {
                 member.memberId ||
 
                 member.id ||
+
+                member.memberID ||
 
                 "";
 
@@ -844,6 +868,8 @@ function downloadReport() {
 
                 member.fullName ||
 
+                member.memberName ||
+
                 "";
 
 
@@ -853,6 +879,8 @@ function downloadReport() {
 
                 member.phone ||
 
+                member.mobileNumber ||
+
                 "";
 
 
@@ -861,6 +889,8 @@ function downloadReport() {
                 member.membership ||
 
                 member.membershipType ||
+
+                member.category ||
 
                 "";
 
@@ -886,12 +916,14 @@ function downloadReport() {
 
                 `"${status}"\n`;
 
+
         }
 
     );
 
 
     /* CSV FILE बनाएँ */
+
 
     const file = new Blob(
 
@@ -909,6 +941,7 @@ function downloadReport() {
 
 
     /* DOWNLOAD LINK बनाएँ */
+
 
     const downloadLink =
 
@@ -935,12 +968,14 @@ function downloadReport() {
 
     /* REPORT FILE NAME */
 
+
     downloadLink.download =
 
         "YSSF-Member-Report.csv";
 
 
     /* REPORT DOWNLOAD */
+
 
     document.body.appendChild(
 
@@ -961,6 +996,7 @@ function downloadReport() {
 
     /* TEMPORARY FILE हटाएँ */
 
+
     URL.revokeObjectURL(
 
         fileURL
@@ -970,11 +1006,13 @@ function downloadReport() {
 
     /* SUCCESS MESSAGE */
 
+
     alert(
 
         "✅ सदस्य रिपोर्ट सफलतापूर्वक डाउनलोड हो गई।"
 
     );
+
 
 }
 
