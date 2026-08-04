@@ -1,1 +1,450 @@
+<!DOCTYPE html>
 
+<html lang="hi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+
+        रक्तदान पंजीकरण | युवा सेवा संकल्प फाउंडेशन
+
+    </title>
+
+
+    <!-- MAIN CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     TOP BAR
+===================================== -->
+
+<div class="top-bar">
+
+    <div class="container">
+
+        <div class="left">
+
+            📧 yuvasevasankalp2026@gmail.com
+
+            |
+
+            📞 +91 9651731313
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     HEADER
+===================================== -->
+
+<header class="header">
+
+    <div class="header-content">
+
+
+        <img
+            src="images/logo.png"
+            class="logo"
+            alt="युवा सेवा संकल्प फाउंडेशन लोगो"
+        >
+
+
+        <div class="title">
+
+
+            <h1 class="main-title">
+
+                युवा सेवा संकल्प फाउंडेशन
+
+            </h1>
+
+
+            <p class="tagline">
+
+                युवा शक्ति, राष्ट्र शक्ति
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+</header>
+
+
+<!-- =====================================
+     BLOOD DONATION REGISTRATION
+===================================== -->
+
+<section class="blood-donation-section">
+
+
+    <div class="blood-donation-box">
+
+
+        <h2>
+
+            🩸 रक्तदान पंजीकरण
+
+        </h2>
+
+
+        <p class="blood-intro">
+
+            रक्तदान महादान है। जरूरतमंद लोगों की सहायता के लिए
+            रक्तदाता के रूप में अपना पंजीकरण करें।
+
+        </p>
+
+
+        <form id="bloodDonationForm">
+
+
+            <!-- FULL NAME -->
+
+            <div class="form-group">
+
+
+                <label for="donorName">
+
+                    पूरा नाम
+
+                </label>
+
+
+                <input
+                    type="text"
+                    id="donorName"
+                    placeholder="अपना पूरा नाम लिखें"
+                    required
+                >
+
+
+            </div>
+
+
+            <!-- MOBILE NUMBER -->
+
+            <div class="form-group">
+
+
+                <label for="donorMobile">
+
+                    मोबाइल नंबर
+
+                </label>
+
+
+                <input
+                    type="tel"
+                    id="donorMobile"
+                    placeholder="10 अंकों का मोबाइल नंबर"
+                    maxlength="10"
+                    pattern="[0-9]{10}"
+                    required
+                >
+
+
+            </div>
+
+
+            <!-- BLOOD GROUP -->
+
+            <div class="form-group">
+
+
+                <label for="bloodGroup">
+
+                    रक्त समूह
+
+                </label>
+
+
+                <select
+                    id="bloodGroup"
+                    required
+                >
+
+
+                    <option value="">
+
+                        रक्त समूह चुनें
+
+                    </option>
+
+
+                    <option value="A+">
+
+                        A+
+
+                    </option>
+
+
+                    <option value="A-">
+
+                        A-
+
+                    </option>
+
+
+                    <option value="B+">
+
+                        B+
+
+                    </option>
+
+
+                    <option value="B-">
+
+                        B-
+
+                    </option>
+
+
+                    <option value="AB+">
+
+                        AB+
+
+                    </option>
+
+
+                    <option value="AB-">
+
+                        AB-
+
+                    </option>
+
+
+                    <option value="O+">
+
+                        O+
+
+                    </option>
+
+
+                    <option value="O-">
+
+                        O-
+
+                    </option>
+
+
+                </select>
+
+
+            </div>
+
+
+            <!-- AGE -->
+
+            <div class="form-group">
+
+
+                <label for="donorAge">
+
+                    उम्र
+
+                </label>
+
+
+                <input
+                    type="number"
+                    id="donorAge"
+                    placeholder="अपनी उम्र लिखें"
+                    min="18"
+                    max="65"
+                    required
+                >
+
+
+            </div>
+
+
+            <!-- ADDRESS -->
+
+            <div class="form-group">
+
+
+                <label for="donorAddress">
+
+                    पूरा पता
+
+                </label>
+
+
+                <textarea
+                    id="donorAddress"
+                    placeholder="गाँव, पोस्ट, तहसील, जिला और राज्य लिखें"
+                    rows="4"
+                    required
+                ></textarea>
+
+
+            </div>
+
+
+            <!-- LAST BLOOD DONATION -->
+
+            <div class="form-group">
+
+
+                <label for="lastDonation">
+
+                    अंतिम रक्तदान की तारीख
+
+                </label>
+
+
+                <input
+                    type="date"
+                    id="lastDonation"
+                >
+
+
+                <small>
+
+                    अगर पहले कभी रक्तदान नहीं किया है,
+                    तो इसे खाली छोड़ दें।
+
+                </small>
+
+
+            </div>
+
+
+            <!-- CONSENT -->
+
+            <div class="blood-consent">
+
+
+                <input
+                    type="checkbox"
+                    id="donorConsent"
+                    required
+                >
+
+
+                <label for="donorConsent">
+
+                    मैं अपनी जानकारी रक्तदान से संबंधित
+                    संपर्क और सहायता के लिए उपयोग करने की
+                    सहमति देता/देती हूँ।
+
+                </label>
+
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <p
+                id="bloodMessage"
+                class="blood-message"
+            ></p>
+
+
+            <!-- SUBMIT BUTTON -->
+
+            <button
+                type="submit"
+                class="blood-submit-btn"
+            >
+
+                🩸 रक्तदाता के रूप में पंजीकरण करें
+
+            </button>
+
+
+        </form>
+
+
+        <!-- BACK HOME -->
+
+        <a
+            href="index.html"
+            class="back-home"
+        >
+
+            ← होम पेज पर जाएँ
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+
+    <img
+        src="images/logo.png"
+        alt="युवा सेवा संकल्प फाउंडेशन लोगो"
+        width="70"
+    >
+
+
+    <h3>
+
+        युवा सेवा संकल्प फाउंडेशन
+
+    </h3>
+
+
+    <p>
+
+        युवा शक्ति, राष्ट्र शक्ति
+
+    </p>
+
+
+    <p>
+
+        © 2026 All Rights Reserved
+
+    </p>
+
+
+</footer>
+
+
+<!-- =====================================
+     BLOOD DONATION JAVASCRIPT
+===================================== -->
+
+<script src="blood-donation.js"></script>
+
+
+</body>
+
+</html>
