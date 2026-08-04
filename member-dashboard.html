@@ -16,7 +16,7 @@
     </title>
 
 
-    <!-- Main CSS -->
+    <!-- MAIN CSS -->
 
     <link
         rel="stylesheet"
@@ -112,7 +112,7 @@
     <div class="member-dashboard-container">
 
 
-        <!-- WELCOME BOX -->
+        <!-- WELCOME -->
 
         <div class="member-welcome">
 
@@ -160,10 +160,14 @@
         </div>
 
 
-        <!-- MEMBER INFORMATION -->
+        <!-- =====================================
+             MEMBER INFORMATION
+        ===================================== -->
 
         <div class="member-info-box">
 
+
+            <!-- MEMBER PHOTO -->
 
             <div class="member-profile-image">
 
@@ -175,8 +179,28 @@
                 >
 
 
+                <label
+                    for="photoUpload"
+                    class="change-photo-btn"
+                >
+
+                    📷 फोटो बदलें
+
+                </label>
+
+
+                <input
+                    type="file"
+                    id="photoUpload"
+                    accept="image/*"
+                    onchange="changeMemberPhoto(event)"
+                >
+
+
             </div>
 
+
+            <!-- MEMBER BASIC DETAILS -->
 
             <div class="member-basic-info">
 
@@ -249,7 +273,9 @@
         </div>
 
 
-        <!-- MEMBER SERVICES -->
+        <!-- =====================================
+             MEMBER SERVICES
+        ===================================== -->
 
         <h2 class="member-service-title">
 
@@ -260,8 +286,6 @@
 
         <div class="member-service-grid">
 
-
-            <!-- PROFILE -->
 
             <a
                 href="#profile"
@@ -288,11 +312,8 @@
 
                 </p>
 
-
             </a>
 
-
-            <!-- ID CARD -->
 
             <a
                 href="id-card.html"
@@ -319,11 +340,8 @@
 
                 </p>
 
-
             </a>
 
-
-            <!-- CERTIFICATE -->
 
             <a
                 href="certificate.html"
@@ -350,11 +368,8 @@
 
                 </p>
 
-
             </a>
 
-
-            <!-- PAYMENT -->
 
             <a
                 href="#payment"
@@ -381,11 +396,8 @@
 
                 </p>
 
-
             </a>
 
-
-            <!-- NOTICE -->
 
             <a
                 href="#notice"
@@ -412,11 +424,8 @@
 
                 </p>
 
-
             </a>
 
-
-            <!-- CONTACT -->
 
             <a
                 href="#help"
@@ -442,7 +451,6 @@
                     संस्था से संपर्क करें।
 
                 </p>
-
 
             </a>
 
@@ -478,7 +486,6 @@
 
                     </strong>
 
-
                     <span id="profileName">
 
                         -
@@ -495,7 +502,6 @@
                         Member ID:
 
                     </strong>
-
 
                     <span id="profileId">
 
@@ -514,7 +520,6 @@
 
                     </strong>
 
-
                     <span id="profileMobile">
 
                         -
@@ -531,7 +536,6 @@
                         सदस्यता:
 
                     </strong>
-
 
                     <span id="profileType">
 
@@ -624,7 +628,6 @@
 
             <div class="member-notice">
 
-
                 📢 युवा सेवा संकल्प फाउंडेशन में
                 आपका स्वागत है। आगामी कार्यक्रमों
                 की जानकारी यहाँ दिखाई जाएगी।
@@ -655,7 +658,6 @@
             <p>
 
                 📧
-
                 yuvasevasankalp2026@gmail.com
 
             </p>
@@ -664,7 +666,6 @@
             <p>
 
                 📞
-
                 +91 9651731313
 
             </p>
@@ -730,14 +731,14 @@
 
 
 <!-- =====================================
-     MEMBER DASHBOARD JAVASCRIPT
+     JAVASCRIPT
 ===================================== -->
 
 <script>
 
 
 /* =====================================
-   MEMBER DATA
+   GET LOGGED-IN MEMBER
 ===================================== */
 
 const loggedInMember = JSON.parse(
@@ -861,7 +862,7 @@ if (
     ).textContent = memberType;
 
 
-    /* Member Photo */
+    /* SAVED PHOTO */
 
     if (
 
@@ -882,7 +883,7 @@ if (
     }
 
 
-    /* Member Status */
+    /* MEMBER STATUS */
 
     const status =
 
@@ -893,11 +894,11 @@ if (
 
     const statusBox =
 
-        document.getElementById(
+    document.getElementById(
 
-            "memberStatus"
+        "memberStatus"
 
-        );
+    );
 
 
     if (
@@ -938,6 +939,128 @@ if (
 
 
     }
+
+
+}
+
+
+/* =====================================
+   CHANGE MEMBER PHOTO
+===================================== */
+
+function changeMemberPhoto(
+
+    event
+
+) {
+
+
+    const selectedFile =
+
+    event.target.files[0];
+
+
+    if (
+
+        !selectedFile
+
+    ) {
+
+        return;
+
+    }
+
+
+    if (
+
+        !selectedFile.type.startsWith(
+
+            "image/"
+
+        )
+
+    ) {
+
+        alert(
+
+            "❌ कृपया केवल फोटो चुनें।"
+
+        );
+
+        return;
+
+    }
+
+
+    const reader =
+
+    new FileReader();
+
+
+    reader.onload = function (
+
+        fileEvent
+
+    ) {
+
+
+        const photoData =
+
+        fileEvent.target.result;
+
+
+        document.getElementById(
+
+            "memberPhoto"
+
+        ).src =
+
+        photoData;
+
+
+        if (
+
+            loggedInMember
+
+        ) {
+
+
+            loggedInMember.photo =
+
+            photoData;
+
+
+            localStorage.setItem(
+
+                "loggedInMember",
+
+                JSON.stringify(
+
+                    loggedInMember
+
+                )
+
+            );
+
+
+        }
+
+
+        alert(
+
+            "✅ सदस्य की फोटो बदल दी गई है।"
+
+        );
+
+
+    };
+
+
+    reader.readAsDataURL(
+
+        selectedFile
+
+    );
 
 
 }
