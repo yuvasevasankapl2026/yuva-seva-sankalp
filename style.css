@@ -10973,3 +10973,8 @@ tr:hover {
     }
 
 }
+html {
+
+    scroll-behavior: smooth;
+
+}
