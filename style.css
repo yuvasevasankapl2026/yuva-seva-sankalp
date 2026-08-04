@@ -9828,3 +9828,71 @@ tr:hover {
 
 
 }
+/* =====================================
+   BLOOD DONATION IMPORTANT NOTICE
+===================================== */
+
+.blood-donation-note {
+
+    width: 100%;
+
+    margin-top: 25px;
+
+    margin-bottom: 20px;
+
+    padding: 18px 20px;
+
+    background: #fff3cd;
+
+    color: #5f4700;
+
+    border-left: 6px solid #d32f2f;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    text-align: left;
+
+    box-sizing: border-box;
+
+    box-shadow:
+
+    0 3px 10px
+
+    rgba(
+        0,
+        0,
+        0,
+        0.08
+    );
+
+}
+
+
+.blood-donation-note strong {
+
+    color: #b71c1c;
+
+}
+
+
+/* MOBILE VIEW */
+
+@media screen and (max-width: 600px) {
+
+
+    .blood-donation-note {
+
+        padding: 15px;
+
+        font-size: 15px;
+
+        line-height: 1.7;
+
+    }
+
+
+}
