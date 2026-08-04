@@ -3,17 +3,10 @@
 ===================================== */
 
 if (
-
-    localStorage.getItem(
-
-        "adminLoggedIn"
-
-    ) !== "true"
-
+    localStorage.getItem("adminLoggedIn") !== "true"
 ) {
 
     window.location.href =
-
     "admin-login.html";
 
 }
@@ -23,56 +16,26 @@ if (
    SAFE LOCAL STORAGE DATA
 ===================================== */
 
-function getStorageData(
-
-    key
-
-) {
+function getStorageData(key) {
 
     try {
 
-        const data =
-
-        JSON.parse(
-
-            localStorage.getItem(
-
-                key
-
-            )
-
+        const data = JSON.parse(
+            localStorage.getItem(key)
         );
 
-
-        return Array.isArray(
-
-            data
-
-        )
-
-        ? data
-
-        : [];
-
+        return Array.isArray(data)
+            ? data
+            : [];
 
     }
 
-    catch (
-
-        error
-
-    ) {
+    catch (error) {
 
         console.error(
-
-            key +
-
-            " डेटा पढ़ने में समस्या:",
-
+            key + " data पढ़ने में समस्या:",
             error
-
         );
-
 
         return [];
 
@@ -82,134 +45,46 @@ function getStorageData(
 
 
 /* =====================================
-   MEMBER DATA
+   HTML SAFE TEXT
 ===================================== */
 
-let members =
+function safeText(value) {
 
-getStorageData(
+    if (
+        value === undefined ||
+        value === null
+    ) {
 
-    "members"
+        return "-";
 
-);
+    }
 
-
-/* =====================================
-   VOLUNTEER DATA
-===================================== */
-
-let volunteers =
-
-getStorageData(
-
-    "volunteers"
-
-);
-
-
-/* =====================================
-   CONTACT DATA
-===================================== */
-
-let contacts =
-
-getStorageData(
-
-    "contactMessages"
-
-);
-
-
-/* =====================================
-   SAVE MEMBER DATA
-===================================== */
-
-function saveMembers() {
-
-    localStorage.setItem(
-
-        "members",
-
-        JSON.stringify(
-
-            members
-
-        )
-
-    );
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
 
 }
 
 
 /* =====================================
-   SAVE VOLUNTEER DATA
+   STATUS CLASS
 ===================================== */
 
-function saveVolunteers() {
+function getStatusClass(status) {
 
-    localStorage.setItem(
-
-        "volunteers",
-
-        JSON.stringify(
-
-            volunteers
-
-        )
-
-    );
-
-}
-
-
-/* =====================================
-   SAVE CONTACT DATA
-===================================== */
-
-function saveContacts() {
-
-    localStorage.setItem(
-
-        "contactMessages",
-
-        JSON.stringify(
-
-            contacts
-
-        )
-
-    );
-
-}
-
-
-/* =====================================
-   MEMBER STATUS CLASS
-===================================== */
-
-function getMemberStatusClass(
-
-    status
-
-) {
-
-    const currentStatus =
-
-    String(
-
+    const value = String(
         status || "लंबित"
-
     )
-
-    .toLowerCase();
+    .toLowerCase()
+    .trim();
 
 
     if (
-
-        currentStatus === "स्वीकृत" ||
-
-        currentStatus === "approved"
-
+        value === "स्वीकृत" ||
+        value === "approved"
     ) {
 
         return "approved";
@@ -218,14 +93,21 @@ function getMemberStatusClass(
 
 
     if (
-
-        currentStatus === "अस्वीकृत" ||
-
-        currentStatus === "rejected"
-
+        value === "अस्वीकृत" ||
+        value === "rejected"
     ) {
 
         return "rejected";
+
+    }
+
+
+    if (
+        value === "पढ़ा गया" ||
+        value === "read"
+    ) {
+
+        return "read";
 
     }
 
@@ -240,38 +122,35 @@ function getMemberStatusClass(
 ===================================== */
 
 function showMembers(
-
-    memberList = members
-
+    memberList
 ) {
 
     const memberTable =
-
     document.getElementById(
-
         "memberTable"
-
     );
 
 
-    if (
-
-        !memberTable
-
-    ) {
+    if (!memberTable) {
 
         return;
 
     }
 
 
+    const members =
+    getStorageData("members");
+
+
+    const list =
+    memberList || members;
+
+
     memberTable.innerHTML = "";
 
 
     if (
-
-        memberList.length === 0
-
+        list.length === 0
     ) {
 
         memberTable.innerHTML = `
@@ -279,17 +158,11 @@ function showMembers(
             <tr>
 
                 <td
-
                     colspan="7"
-
                     style="
-
                         text-align:center;
-
                         padding:25px;
-
                     "
-
                 >
 
                     अभी कोई सदस्य आवेदन उपलब्ध नहीं है।
@@ -303,30 +176,20 @@ function showMembers(
 
         updateDashboard();
 
-
         return;
 
     }
 
 
-    memberList.forEach(
-
+    list.forEach(
         function(
-
             member,
-
-            displayIndex
-
+            index
         ) {
 
 
             const originalIndex =
-
-            members.indexOf(
-
-                member
-
-            );
+            members.indexOf(member);
 
 
             const memberId =
@@ -338,12 +201,7 @@ function showMembers(
             member.id ||
 
             "YSSF-" +
-
-            (
-
-                originalIndex + 1
-
-            );
+            (originalIndex + 1);
 
 
             const name =
@@ -388,10 +246,8 @@ function showMembers(
 
             const statusClass =
 
-            getMemberStatusClass(
-
+            getStatusClass(
                 status
-
             );
 
 
@@ -401,35 +257,43 @@ function showMembers(
 
                     <td>
 
-                        ${displayIndex + 1}
+                        ${index + 1}
 
                     </td>
 
 
                     <td>
 
-                        ${memberId}
+                        ${safeText(
+                            memberId
+                        )}
 
                     </td>
 
 
                     <td>
 
-                        ${name}
+                        ${safeText(
+                            name
+                        )}
 
                     </td>
 
 
                     <td>
 
-                        ${mobile}
+                        ${safeText(
+                            mobile
+                        )}
 
                     </td>
 
 
                     <td>
 
-                        ${membership}
+                        ${safeText(
+                            membership
+                        )}
 
                     </td>
 
@@ -437,12 +301,15 @@ function showMembers(
                     <td>
 
                         <span
-
-                            class="status ${statusClass}"
-
+                            class="
+                                status
+                                ${statusClass}
+                            "
                         >
 
-                            ${status}
+                            ${safeText(
+                                status
+                            )}
 
                         </span>
 
@@ -452,17 +319,13 @@ function showMembers(
                     <td>
 
                         <button
-
                             type="button"
-
                             class="approve-btn"
-
-                            onclick="approveMember(
-
-                                ${originalIndex}
-
-                            )"
-
+                            onclick="
+                                approveMember(
+                                    ${originalIndex}
+                                )
+                            "
                         >
 
                             ✅ Approve
@@ -471,17 +334,13 @@ function showMembers(
 
 
                         <button
-
                             type="button"
-
                             class="reject-btn"
-
-                            onclick="rejectMember(
-
-                                ${originalIndex}
-
-                            )"
-
+                            onclick="
+                                rejectMember(
+                                    ${originalIndex}
+                                )
+                            "
                         >
 
                             ❌ Reject
@@ -490,17 +349,13 @@ function showMembers(
 
 
                         <button
-
                             type="button"
-
                             class="delete-btn"
-
-                            onclick="deleteMember(
-
-                                ${originalIndex}
-
-                            )"
-
+                            onclick="
+                                deleteMember(
+                                    ${originalIndex}
+                                )
+                            "
                         >
 
                             🗑 Delete
@@ -528,43 +383,12 @@ function showMembers(
 ===================================== */
 
 function approveMember(
-
     index
-
 ) {
 
-    if (
-
-        !members[index]
-
-    ) {
-
-        alert(
-
-            "सदस्य आवेदन नहीं मिला।"
-
-        );
-
-        return;
-
-    }
-
-
-    members[index].status =
-
-    "स्वीकृत";
-
-
-    saveMembers();
-
-
-    showMembers();
-
-
-    alert(
-
-        "✅ सदस्य को स्वीकृत कर दिया गया।"
-
+    updateMemberStatus(
+        index,
+        "स्वीकृत"
     );
 
 }
@@ -575,21 +399,38 @@ function approveMember(
 ===================================== */
 
 function rejectMember(
-
     index
-
 ) {
 
+    updateMemberStatus(
+        index,
+        "अस्वीकृत"
+    );
+
+}
+
+
+/* =====================================
+   UPDATE MEMBER STATUS
+===================================== */
+
+function updateMemberStatus(
+    index,
+    newStatus
+) {
+
+    const members =
+    getStorageData(
+        "members"
+    );
+
+
     if (
-
         !members[index]
-
     ) {
 
         alert(
-
             "सदस्य आवेदन नहीं मिला।"
-
         );
 
         return;
@@ -598,19 +439,32 @@ function rejectMember(
 
 
     members[index].status =
+    newStatus;
 
-    "अस्वीकृत";
 
+    localStorage.setItem(
 
-    saveMembers();
+        "members",
+
+        JSON.stringify(
+            members
+        )
+
+    );
 
 
     showMembers();
 
+    updateDashboard();
+
 
     alert(
 
-        "❌ सदस्य आवेदन अस्वीकृत कर दिया गया।"
+        "✅ सदस्य की स्थिति " +
+
+        newStatus +
+
+        " कर दी गई है।"
 
     );
 
@@ -622,27 +476,8 @@ function rejectMember(
 ===================================== */
 
 function deleteMember(
-
     index
-
 ) {
-
-    if (
-
-        !members[index]
-
-    ) {
-
-        alert(
-
-            "सदस्य आवेदन नहीं मिला।"
-
-        );
-
-        return;
-
-    }
-
 
     const confirmDelete =
 
@@ -654,9 +489,7 @@ function deleteMember(
 
 
     if (
-
         !confirmDelete
-
     ) {
 
         return;
@@ -664,25 +497,50 @@ function deleteMember(
     }
 
 
+    const members =
+
+    getStorageData(
+        "members"
+    );
+
+
+    if (
+        !members[index]
+    ) {
+
+        alert(
+            "सदस्य नहीं मिला।"
+        );
+
+        return;
+
+    }
+
+
     members.splice(
-
         index,
-
         1
+    );
+
+
+    localStorage.setItem(
+
+        "members",
+
+        JSON.stringify(
+            members
+        )
 
     );
 
 
-    saveMembers();
-
-
     showMembers();
+
+    updateDashboard();
 
 
     alert(
-
         "🗑 सदस्य सफलतापूर्वक हटा दिया गया।"
-
     );
 
 }
@@ -693,24 +551,18 @@ function deleteMember(
 ===================================== */
 
 function showVolunteers(
-
-    volunteerList = volunteers
-
+    volunteerList
 ) {
 
     const volunteerTable =
 
     document.getElementById(
-
         "volunteerTable"
-
     );
 
 
     if (
-
         !volunteerTable
-
     ) {
 
         return;
@@ -718,13 +570,24 @@ function showVolunteers(
     }
 
 
+    const volunteers =
+
+    getStorageData(
+        "volunteers"
+    );
+
+
+    const list =
+
+    volunteerList ||
+    volunteers;
+
+
     volunteerTable.innerHTML = "";
 
 
     if (
-
-        volunteerList.length === 0
-
+        list.length === 0
     ) {
 
         volunteerTable.innerHTML = `
@@ -732,17 +595,11 @@ function showVolunteers(
             <tr>
 
                 <td
-
                     colspan="8"
-
                     style="
-
                         text-align:center;
-
                         padding:25px;
-
                     "
-
                 >
 
                     अभी कोई वॉलंटियर आवेदन उपलब्ध नहीं है।
@@ -753,29 +610,23 @@ function showVolunteers(
 
         `;
 
-
         return;
 
     }
 
 
-    volunteerList.forEach(
+    list.forEach(
 
         function(
-
             volunteer,
-
-            displayIndex
-
+            index
         ) {
 
 
             const originalIndex =
 
             volunteers.indexOf(
-
                 volunteer
-
             );
 
 
@@ -786,12 +637,7 @@ function showVolunteers(
             volunteer.id ||
 
             "VOL-" +
-
-            (
-
-                originalIndex + 1
-
-            );
+            (originalIndex + 1);
 
 
             const name =
@@ -841,10 +687,8 @@ function showVolunteers(
 
             const statusClass =
 
-            getMemberStatusClass(
-
+            getStatusClass(
                 status
-
             );
 
 
@@ -854,42 +698,52 @@ function showVolunteers(
 
                     <td>
 
-                        ${displayIndex + 1}
+                        ${index + 1}
 
                     </td>
 
 
                     <td>
 
-                        ${volunteerId}
+                        ${safeText(
+                            volunteerId
+                        )}
 
                     </td>
 
 
                     <td>
 
-                        ${name}
+                        ${safeText(
+                            name
+                        )}
 
                     </td>
 
 
                     <td>
 
-                        ${mobile}
+                        ${safeText(
+                            mobile
+                        )}
 
                     </td>
 
 
                     <td>
 
-                        ${service}
+                        ${safeText(
+                            service
+                        )}
 
                     </td>
 
 
                     <td>
 
-                        ${availability}
+                        ${safeText(
+                            availability
+                        )}
 
                     </td>
 
@@ -897,12 +751,15 @@ function showVolunteers(
                     <td>
 
                         <span
-
-                            class="status ${statusClass}"
-
+                            class="
+                                volunteer-status
+                                ${statusClass}
+                            "
                         >
 
-                            ${status}
+                            ${safeText(
+                                status
+                            )}
 
                         </span>
 
@@ -912,17 +769,13 @@ function showVolunteers(
                     <td>
 
                         <button
-
                             type="button"
-
                             class="approve-btn"
-
-                            onclick="approveVolunteer(
-
-                                ${originalIndex}
-
-                            )"
-
+                            onclick="
+                                approveVolunteer(
+                                    ${originalIndex}
+                                )
+                            "
                         >
 
                             ✅ Approve
@@ -931,17 +784,13 @@ function showVolunteers(
 
 
                         <button
-
                             type="button"
-
                             class="reject-btn"
-
-                            onclick="rejectVolunteer(
-
-                                ${originalIndex}
-
-                            )"
-
+                            onclick="
+                                rejectVolunteer(
+                                    ${originalIndex}
+                                )
+                            "
                         >
 
                             ❌ Reject
@@ -950,17 +799,13 @@ function showVolunteers(
 
 
                         <button
-
                             type="button"
-
                             class="delete-btn"
-
-                            onclick="deleteVolunteer(
-
-                                ${originalIndex}
-
-                            )"
-
+                            onclick="
+                                deleteVolunteer(
+                                    ${originalIndex}
+                                )
+                            "
                         >
 
                             🗑 Delete
@@ -985,43 +830,12 @@ function showVolunteers(
 ===================================== */
 
 function approveVolunteer(
-
     index
-
 ) {
 
-    if (
-
-        !volunteers[index]
-
-    ) {
-
-        alert(
-
-            "वॉलंटियर आवेदन नहीं मिला।"
-
-        );
-
-        return;
-
-    }
-
-
-    volunteers[index].status =
-
-    "स्वीकृत";
-
-
-    saveVolunteers();
-
-
-    showVolunteers();
-
-
-    alert(
-
-        "✅ वॉलंटियर आवेदन स्वीकृत कर दिया गया।"
-
+    updateVolunteerStatus(
+        index,
+        "स्वीकृत"
     );
 
 }
@@ -1032,21 +846,39 @@ function approveVolunteer(
 ===================================== */
 
 function rejectVolunteer(
-
     index
-
 ) {
 
+    updateVolunteerStatus(
+        index,
+        "अस्वीकृत"
+    );
+
+}
+
+
+/* =====================================
+   UPDATE VOLUNTEER STATUS
+===================================== */
+
+function updateVolunteerStatus(
+    index,
+    newStatus
+) {
+
+    const volunteers =
+
+    getStorageData(
+        "volunteers"
+    );
+
+
     if (
-
         !volunteers[index]
-
     ) {
 
         alert(
-
             "वॉलंटियर आवेदन नहीं मिला।"
-
         );
 
         return;
@@ -1056,10 +888,18 @@ function rejectVolunteer(
 
     volunteers[index].status =
 
-    "अस्वीकृत";
+    newStatus;
 
 
-    saveVolunteers();
+    localStorage.setItem(
+
+        "volunteers",
+
+        JSON.stringify(
+            volunteers
+        )
+
+    );
 
 
     showVolunteers();
@@ -1067,7 +907,11 @@ function rejectVolunteer(
 
     alert(
 
-        "❌ वॉलंटियर आवेदन अस्वीकृत कर दिया गया।"
+        "✅ वॉलंटियर की स्थिति " +
+
+        newStatus +
+
+        " कर दी गई है।"
 
     );
 
@@ -1079,27 +923,8 @@ function rejectVolunteer(
 ===================================== */
 
 function deleteVolunteer(
-
     index
-
 ) {
-
-    if (
-
-        !volunteers[index]
-
-    ) {
-
-        alert(
-
-            "वॉलंटियर आवेदन नहीं मिला।"
-
-        );
-
-        return;
-
-    }
-
 
     const confirmDelete =
 
@@ -1111,10 +936,28 @@ function deleteVolunteer(
 
 
     if (
-
         !confirmDelete
-
     ) {
+
+        return;
+
+    }
+
+
+    const volunteers =
+
+    getStorageData(
+        "volunteers"
+    );
+
+
+    if (
+        !volunteers[index]
+    ) {
+
+        alert(
+            "वॉलंटियर आवेदन नहीं मिला।"
+        );
 
         return;
 
@@ -1122,52 +965,49 @@ function deleteVolunteer(
 
 
     volunteers.splice(
-
         index,
-
         1
-
     );
 
 
-    saveVolunteers();
+    localStorage.setItem(
+
+        "volunteers",
+
+        JSON.stringify(
+            volunteers
+        )
+
+    );
 
 
     showVolunteers();
 
 
     alert(
-
         "🗑 वॉलंटियर आवेदन हटा दिया गया।"
-
     );
 
 }
 
 
 /* =====================================
-   CONTACT TABLE
+   CONTACT MESSAGE TABLE
 ===================================== */
 
 function loadContactMessages(
-
-    contactList = contacts
-
+    contactList
 ) {
 
     const contactTable =
 
     document.getElementById(
-
         "contactTable"
-
     );
 
 
     if (
-
         !contactTable
-
     ) {
 
         return;
@@ -1175,13 +1015,24 @@ function loadContactMessages(
     }
 
 
+    const contacts =
+
+    getStorageData(
+        "contactMessages"
+    );
+
+
+    const list =
+
+    contactList ||
+    contacts;
+
+
     contactTable.innerHTML = "";
 
 
     if (
-
-        contactList.length === 0
-
+        list.length === 0
     ) {
 
         contactTable.innerHTML = `
@@ -1189,17 +1040,11 @@ function loadContactMessages(
             <tr>
 
                 <td
-
                     colspan="10"
-
                     style="
-
                         text-align:center;
-
                         padding:25px;
-
                     "
-
                 >
 
                     अभी कोई संपर्क संदेश उपलब्ध नहीं है।
@@ -1210,29 +1055,23 @@ function loadContactMessages(
 
         `;
 
-
         return;
 
     }
 
 
-    contactList.forEach(
+    list.forEach(
 
         function(
-
             contact,
-
-            displayIndex
-
+            index
         ) {
 
 
             const originalIndex =
 
             contacts.indexOf(
-
                 contact
-
             );
 
 
@@ -1243,110 +1082,98 @@ function loadContactMessages(
             "नया";
 
 
+            const statusClass =
+
+            getStatusClass(
+                status
+            );
+
+
             contactTable.innerHTML += `
 
                 <tr>
 
                     <td>
 
-                        ${displayIndex + 1}
+                        ${index + 1}
 
                     </td>
 
 
                     <td>
 
-                        ${
+                        ${safeText(
 
                             contact.contactId ||
 
                             contact.id ||
 
-                            "-"
+                            "MSG-" +
+                            (originalIndex + 1)
 
-                        }
-
-                    </td>
-
-
-                    <td>
-
-                        ${
-
-                            contact.name ||
-
-                            "-"
-
-                        }
+                        )}
 
                     </td>
 
 
                     <td>
 
-                        ${
+                        ${safeText(
+                            contact.name
+                        )}
+
+                    </td>
+
+
+                    <td>
+
+                        ${safeText(
 
                             contact.mobile ||
 
-                            contact.phone ||
+                            contact.phone
 
-                            "-"
-
-                        }
+                        )}
 
                     </td>
 
 
                     <td>
 
-                        ${
-
-                            contact.email ||
-
-                            "-"
-
-                        }
+                        ${safeText(
+                            contact.email
+                        )}
 
                     </td>
 
 
                     <td>
 
-                        ${
-
-                            contact.subject ||
-
-                            "-"
-
-                        }
+                        ${safeText(
+                            contact.subject
+                        )}
 
                     </td>
 
 
                     <td>
 
-                        ${
-
-                            contact.message ||
-
-                            "-"
-
-                        }
+                        ${safeText(
+                            contact.message
+                        )}
 
                     </td>
 
 
                     <td>
 
-                        ${
+                        ${safeText(
 
                             contact.date ||
 
-                            contact.createdAt ||
+                            contact.createdAt
 
-                            "-"
-
-                        }
+                        )}
 
                     </td>
 
@@ -1354,12 +1181,15 @@ function loadContactMessages(
                     <td>
 
                         <span
-
-                            class="contact-status"
-
+                            class="
+                                contact-status
+                                ${statusClass}
+                            "
                         >
 
-                            ${status}
+                            ${safeText(
+                                status
+                            )}
 
                         </span>
 
@@ -1369,17 +1199,13 @@ function loadContactMessages(
                     <td>
 
                         <button
-
                             type="button"
-
                             class="contact-read-btn"
-
-                            onclick="markContactRead(
-
-                                ${originalIndex}
-
-                            )"
-
+                            onclick="
+                                markContactRead(
+                                    ${originalIndex}
+                                )
+                            "
                         >
 
                             ✓ पढ़ा
@@ -1388,17 +1214,13 @@ function loadContactMessages(
 
 
                         <button
-
                             type="button"
-
                             class="contact-delete-btn"
-
-                            onclick="deleteContact(
-
-                                ${originalIndex}
-
-                            )"
-
+                            onclick="
+                                deleteContact(
+                                    ${originalIndex}
+                                )
+                            "
                         >
 
                             🗑 हटाएँ
@@ -1423,21 +1245,22 @@ function loadContactMessages(
 ===================================== */
 
 function markContactRead(
-
     index
-
 ) {
 
+    const contacts =
+
+    getStorageData(
+        "contactMessages"
+    );
+
+
     if (
-
         !contacts[index]
-
     ) {
 
         alert(
-
             "संपर्क संदेश नहीं मिला।"
-
         );
 
         return;
@@ -1450,16 +1273,22 @@ function markContactRead(
     "पढ़ा गया";
 
 
-    saveContacts();
+    localStorage.setItem(
+
+        "contactMessages",
+
+        JSON.stringify(
+            contacts
+        )
+
+    );
 
 
     loadContactMessages();
 
 
     alert(
-
-        "✓ संदेश को पढ़ा गया के रूप में चिन्हित कर दिया गया।"
-
+        "✓ संदेश को पढ़ा गया कर दिया गया।"
     );
 
 }
@@ -1470,27 +1299,8 @@ function markContactRead(
 ===================================== */
 
 function deleteContact(
-
     index
-
 ) {
-
-    if (
-
-        !contacts[index]
-
-    ) {
-
-        alert(
-
-            "संपर्क संदेश नहीं मिला।"
-
-        );
-
-        return;
-
-    }
-
 
     const confirmDelete =
 
@@ -1502,9 +1312,7 @@ function deleteContact(
 
 
     if (
-
         !confirmDelete
-
     ) {
 
         return;
@@ -1512,35 +1320,65 @@ function deleteContact(
     }
 
 
-    contacts.splice(
+    const contacts =
 
-        index,
-
-        1
-
+    getStorageData(
+        "contactMessages"
     );
 
 
-    saveContacts();
+    if (
+        !contacts[index]
+    ) {
+
+        alert(
+            "संपर्क संदेश नहीं मिला।"
+        );
+
+        return;
+
+    }
+
+
+    contacts.splice(
+        index,
+        1
+    );
+
+
+    localStorage.setItem(
+
+        "contactMessages",
+
+        JSON.stringify(
+            contacts
+        )
+
+    );
 
 
     loadContactMessages();
 
 
     alert(
-
         "🗑 संपर्क संदेश हटा दिया गया।"
-
     );
 
 }
 
 
 /* =====================================
-   DASHBOARD COUNT
+   DASHBOARD STATISTICS
 ===================================== */
 
 function updateDashboard() {
+
+    const members =
+
+    getStorageData(
+        "members"
+    );
+
 
     const totalMembers =
 
@@ -1551,11 +1389,7 @@ function updateDashboard() {
 
     members.filter(
 
-        function(
-
-            member
-
-        ) {
+        function(member) {
 
             const status =
 
@@ -1566,8 +1400,8 @@ function updateDashboard() {
                 ""
 
             )
-
-            .toLowerCase();
+            .toLowerCase()
+            .trim();
 
 
             return (
@@ -1587,11 +1421,7 @@ function updateDashboard() {
 
     members.filter(
 
-        function(
-
-            member
-
-        ) {
+        function(member) {
 
             const status =
 
@@ -1602,8 +1432,8 @@ function updateDashboard() {
                 "लंबित"
 
             )
-
-            .toLowerCase();
+            .toLowerCase()
+            .trim();
 
 
             return (
@@ -1624,43 +1454,33 @@ function updateDashboard() {
     const totalElement =
 
     document.getElementById(
-
         "totalMembers"
-
     );
 
 
     const newElement =
 
     document.getElementById(
-
         "newApplications"
-
     );
 
 
     const approvedElement =
 
     document.getElementById(
-
         "approvedMembers"
-
     );
 
 
     const pendingElement =
 
     document.getElementById(
-
         "pendingMembers"
-
     );
 
 
     if (
-
         totalElement
-
     ) {
 
         totalElement.textContent =
@@ -1671,9 +1491,7 @@ function updateDashboard() {
 
 
     if (
-
         newElement
-
     ) {
 
         newElement.textContent =
@@ -1684,9 +1502,7 @@ function updateDashboard() {
 
 
     if (
-
         approvedElement
-
     ) {
 
         approvedElement.textContent =
@@ -1697,9 +1513,7 @@ function updateDashboard() {
 
 
     if (
-
         pendingElement
-
     ) {
 
         pendingElement.textContent =
@@ -1720,16 +1534,12 @@ function setupMemberSearch() {
     const memberSearch =
 
     document.getElementById(
-
         "memberSearch"
-
     );
 
 
     if (
-
         !memberSearch
-
     ) {
 
         return;
@@ -1747,95 +1557,54 @@ function setupMemberSearch() {
             const searchText =
 
             this.value
-
             .toLowerCase()
-
             .trim();
+
+
+            const members =
+
+            getStorageData(
+                "members"
+            );
 
 
             const filteredMembers =
 
             members.filter(
 
-                function(
-
-                    member
-
-                ) {
+                function(member) {
 
 
-                    const memberId =
+                    const text =
 
-                    String(
+                    [
 
-                        member.memberId ||
+                        member.memberId,
 
-                        member.memberID ||
+                        member.memberID,
 
-                        member.id ||
+                        member.id,
 
-                        ""
+                        member.name,
 
-                    )
+                        member.fullName,
 
+                        member.memberName,
+
+                        member.mobile,
+
+                        member.phone,
+
+                        member.mobileNumber
+
+                    ]
+                    .join(" ")
                     .toLowerCase();
 
 
-                    const name =
+                    return text.includes(
 
-                    String(
-
-                        member.name ||
-
-                        member.fullName ||
-
-                        member.memberName ||
-
-                        ""
-
-                    )
-
-                    .toLowerCase();
-
-
-                    const mobile =
-
-                    String(
-
-                        member.mobile ||
-
-                        member.phone ||
-
-                        member.mobileNumber ||
-
-                        ""
-
-                    );
-
-
-                    return (
-
-                        memberId.includes(
-
-                            searchText
-
-                        )
-
-                        ||
-
-                        name.includes(
-
-                            searchText
-
-                        )
-
-                        ||
-
-                        mobile.includes(
-
-                            searchText
-
-                        )
+                        searchText
 
                     );
 
@@ -1866,16 +1635,12 @@ function setupVolunteerSearch() {
     const volunteerSearch =
 
     document.getElementById(
-
         "volunteerSearch"
-
     );
 
 
     if (
-
         !volunteerSearch
-
     ) {
 
         return;
@@ -1893,89 +1658,48 @@ function setupVolunteerSearch() {
             const searchText =
 
             this.value
-
             .toLowerCase()
-
             .trim();
+
+
+            const volunteers =
+
+            getStorageData(
+                "volunteers"
+            );
 
 
             const filteredVolunteers =
 
             volunteers.filter(
 
-                function(
-
-                    volunteer
-
-                ) {
+                function(volunteer) {
 
 
-                    const volunteerId =
+                    const text =
 
-                    String(
+                    [
 
-                        volunteer.volunteerId ||
+                        volunteer.volunteerId,
 
-                        volunteer.id ||
+                        volunteer.id,
 
-                        ""
+                        volunteer.name,
 
-                    )
+                        volunteer.fullName,
 
+                        volunteer.mobile,
+
+                        volunteer.phone
+
+                    ]
+                    .join(" ")
                     .toLowerCase();
 
 
-                    const name =
+                    return text.includes(
 
-                    String(
-
-                        volunteer.name ||
-
-                        volunteer.fullName ||
-
-                        ""
-
-                    )
-
-                    .toLowerCase();
-
-
-                    const mobile =
-
-                    String(
-
-                        volunteer.mobile ||
-
-                        volunteer.phone ||
-
-                        ""
-
-                    );
-
-
-                    return (
-
-                        volunteerId.includes(
-
-                            searchText
-
-                        )
-
-                        ||
-
-                        name.includes(
-
-                            searchText
-
-                        )
-
-                        ||
-
-                        mobile.includes(
-
-                            searchText
-
-                        )
+                        searchText
 
                     );
 
@@ -2006,16 +1730,12 @@ function setupContactSearch() {
     const contactSearch =
 
     document.getElementById(
-
         "contactSearch"
-
     );
 
 
     if (
-
         !contactSearch
-
     ) {
 
         return;
@@ -2033,85 +1753,52 @@ function setupContactSearch() {
             const searchText =
 
             this.value
-
             .toLowerCase()
-
             .trim();
+
+
+            const contacts =
+
+            getStorageData(
+                "contactMessages"
+            );
 
 
             const filteredContacts =
 
             contacts.filter(
 
-                function(
-
-                    contact
-
-                ) {
+                function(contact) {
 
 
-                    const name =
+                    const text =
 
-                    String(
+                    [
 
-                        contact.name ||
+                        contact.contactId,
 
-                        ""
+                        contact.id,
 
-                    )
+                        contact.name,
 
+                        contact.mobile,
+
+                        contact.phone,
+
+                        contact.email,
+
+                        contact.subject,
+
+                        contact.message
+
+                    ]
+                    .join(" ")
                     .toLowerCase();
 
 
-                    const mobile =
+                    return text.includes(
 
-                    String(
-
-                        contact.mobile ||
-
-                        contact.phone ||
-
-                        ""
-
-                    );
-
-
-                    const subject =
-
-                    String(
-
-                        contact.subject ||
-
-                        ""
-
-                    )
-
-                    .toLowerCase();
-
-
-                    return (
-
-                        name.includes(
-
-                            searchText
-
-                        )
-
-                        ||
-
-                        mobile.includes(
-
-                            searchText
-
-                        )
-
-                        ||
-
-                        subject.includes(
-
-                            searchText
-
-                        )
+                        searchText
 
                     );
 
@@ -2142,33 +1829,6 @@ document.addEventListener(
     "DOMContentLoaded",
 
     function() {
-
-
-        members =
-
-        getStorageData(
-
-            "members"
-
-        );
-
-
-        volunteers =
-
-        getStorageData(
-
-            "volunteers"
-
-        );
-
-
-        contacts =
-
-        getStorageData(
-
-            "contactMessages"
-
-        );
 
 
         showMembers();
