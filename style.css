@@ -9076,3 +9076,411 @@ tr:hover {
 
 
 }
+/* =====================================
+   BLOOD DONOR REGISTRATION
+===================================== */
+
+.blood-donor-section {
+
+    padding: 60px 20px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #fff5f5,
+        #ffe5e5
+    );
+
+}
+
+
+/* =====================================
+   BLOOD DONOR FORM BOX
+===================================== */
+
+.blood-donor-box {
+
+    width: 100%;
+
+    max-width: 700px;
+
+    margin: auto;
+
+    padding: 40px;
+
+    background: white;
+
+    border-radius: 18px;
+
+    border-top:
+
+    7px solid #c62828;
+
+    box-shadow:
+
+    0 10px 35px
+
+    rgba(
+        0,
+        0,
+        0,
+        0.15
+    );
+
+}
+
+
+/* =====================================
+   FORM HEADING
+===================================== */
+
+.blood-donor-box h2 {
+
+    text-align: center;
+
+    color: #b71c1c;
+
+    font-size: 30px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.blood-donor-text {
+
+    text-align: center;
+
+    color: #555;
+
+    line-height: 1.8;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* =====================================
+   FORM GROUP
+===================================== */
+
+.blood-donor-box .form-group {
+
+    margin-bottom: 20px;
+
+}
+
+
+.blood-donor-box label {
+
+    display: block;
+
+    font-weight: bold;
+
+    color: #333;
+
+    margin-bottom: 8px;
+
+}
+
+
+/* =====================================
+   INPUT AND SELECT
+===================================== */
+
+.blood-donor-box input,
+
+.blood-donor-box select,
+
+.blood-donor-box textarea {
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    font-size: 16px;
+
+    border:
+
+    1px solid #ddd;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    background: #fff;
+
+    transition:
+
+    0.3s;
+
+}
+
+
+/* =====================================
+   TEXTAREA
+===================================== */
+
+.blood-donor-box textarea {
+
+    min-height: 100px;
+
+    resize: vertical;
+
+}
+
+
+/* =====================================
+   INPUT FOCUS
+===================================== */
+
+.blood-donor-box input:focus,
+
+.blood-donor-box select:focus,
+
+.blood-donor-box textarea:focus {
+
+    border-color: #c62828;
+
+    box-shadow:
+
+    0 0 0 3px
+
+    rgba(
+        198,
+        40,
+        40,
+        0.12
+    );
+
+}
+
+
+/* =====================================
+   AGREEMENT
+===================================== */
+
+.blood-agreement {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin:
+
+    20px 0;
+
+}
+
+
+.blood-agreement input {
+
+    width: 18px;
+
+    height: 18px;
+
+    margin-top: 3px;
+
+    accent-color: #c62828;
+
+}
+
+
+.blood-agreement label {
+
+    margin: 0;
+
+    font-size: 15px;
+
+    line-height: 1.6;
+
+    font-weight: normal;
+
+}
+
+
+/* =====================================
+   SUBMIT BUTTON
+===================================== */
+
+.blood-donor-btn {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #c62828,
+        #8e0000
+    );
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+
+    0.3s;
+
+}
+
+
+.blood-donor-btn:hover {
+
+    transform:
+
+    translateY(-2px);
+
+    box-shadow:
+
+    0 7px 18px
+
+    rgba(
+        183,
+        28,
+        28,
+        0.35
+    );
+
+}
+
+
+/* =====================================
+   RESULT MESSAGE
+===================================== */
+
+.donor-result {
+
+    text-align: center;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    line-height: 1.8;
+
+    margin-top: 20px;
+
+    padding: 10px;
+
+}
+
+
+/* =====================================
+   BACK HOME BUTTON
+===================================== */
+
+.blood-donor-box .back-home {
+
+    display: block;
+
+    width: fit-content;
+
+    margin:
+
+    25px auto 0;
+
+    color: #b71c1c;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+}
+
+
+.blood-donor-box .back-home:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+@media screen and (max-width: 600px) {
+
+
+    .blood-donor-section {
+
+        padding:
+
+        35px 12px;
+
+    }
+
+
+    .blood-donor-box {
+
+        padding:
+
+        25px 18px;
+
+        border-radius:
+
+        12px;
+
+    }
+
+
+    .blood-donor-box h2 {
+
+        font-size:
+
+        24px;
+
+    }
+
+
+    .blood-donor-text {
+
+        font-size:
+
+        15px;
+
+    }
+
+
+    .blood-donor-box input,
+
+    .blood-donor-box select,
+
+    .blood-donor-box textarea {
+
+        font-size:
+
+        15px;
+
+        padding:
+
+        12px;
+
+    }
+
+
+    .blood-donor-btn {
+
+        font-size:
+
+        16px;
+
+    }
+
+
+}
