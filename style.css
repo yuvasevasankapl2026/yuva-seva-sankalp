@@ -7030,3 +7030,887 @@ tr:hover {
     }
 
 }
+/* =====================================
+   NEW MEMBER ID CARD PAGE
+===================================== */
+
+.new-id-page {
+    min-height: 100vh;
+    padding: 40px 20px;
+    background: #e9edf3;
+    font-family: Arial, "Mangal", sans-serif;
+}
+
+
+/* =====================================
+   ID CARD FORM
+===================================== */
+
+.new-id-form {
+    width: 100%;
+    max-width: 700px;
+    margin: auto;
+    padding: 35px;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.18);
+}
+
+
+.new-id-form {
+    text-align: center;
+}
+
+
+.new-form-logo {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+}
+
+
+.new-id-form h1 {
+    margin: 15px 0 8px;
+    color: #102b5c;
+    font-size: 32px;
+}
+
+
+.new-id-form > p {
+    margin-bottom: 25px;
+    color: #666666;
+}
+
+
+/* =====================================
+   FORM INPUT
+===================================== */
+
+.new-input {
+    margin-bottom: 18px;
+    text-align: left;
+}
+
+
+.new-input label {
+    display: block;
+    margin-bottom: 7px;
+    color: #102b5c;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+.new-input input,
+.new-input select,
+.new-input textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #c7cdd8;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #222222;
+    font-size: 16px;
+    outline: none;
+}
+
+
+.new-input textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+
+.new-input input:focus,
+.new-input select:focus,
+.new-input textarea:focus {
+    border-color: #102b5c;
+    box-shadow: 0 0 6px rgba(16, 43, 92, 0.25);
+}
+
+
+/* =====================================
+   CREATE BUTTON
+===================================== */
+
+.new-id-create {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 9px;
+    background: #102b5c;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.new-id-create:hover {
+    background: #e65b16;
+}
+
+
+/* =====================================
+   BACK LINK
+===================================== */
+
+.new-id-back {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0;
+    color: #102b5c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+.new-id-back:hover {
+    color: #e65b16;
+}
+
+
+/* =====================================
+   ID CARD RESULT
+===================================== */
+
+.new-id-result {
+    display: none;
+    text-align: center;
+}
+
+
+/* =====================================
+   FRONT AND BACK CARD
+===================================== */
+
+.new-member-card {
+    position: relative;
+    width: 100%;
+    max-width: 1500px;
+    min-height: 900px;
+    margin: 0 auto 35px;
+    overflow: hidden;
+    background: #ffffff;
+    border: 4px solid #102b5c;
+    border-radius: 32px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =====================================
+   FRONT HEADER
+===================================== */
+
+.new-card-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    padding: 25px 40px;
+    background: #ffffff;
+    border-bottom: 3px solid #102b5c;
+}
+
+
+.new-card-logo {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+}
+
+
+.new-card-header h1 {
+    margin: 0;
+    color: #102b5c;
+    font-size: 58px;
+    line-height: 1.2;
+}
+
+
+.new-card-header p {
+    margin: 12px 0 0;
+    color: #17233d;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* =====================================
+   CARD TITLE
+===================================== */
+
+.new-card-title {
+    width: 50%;
+    margin: 25px auto;
+    padding: 15px 30px;
+    border: 3px solid #d69e2e;
+    border-radius: 25px;
+    background: #102b5c;
+    color: #ffffff;
+    font-size: 42px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+.new-card-title span {
+    display: block;
+    margin-top: 5px;
+    color: #f2c94c;
+    font-family: Georgia, serif;
+    font-size: 25px;
+    letter-spacing: 5px;
+}
+
+
+/* =====================================
+   FRONT MAIN AREA
+===================================== */
+
+.new-card-main {
+    display: grid;
+    grid-template-columns: 320px 1fr 270px;
+    gap: 35px;
+    align-items: center;
+    padding: 20px 55px 35px;
+}
+
+
+/* =====================================
+   MEMBER PHOTO
+===================================== */
+
+.new-photo-box {
+    width: 300px;
+    height: 390px;
+    overflow: hidden;
+    border: 4px solid #102b5c;
+    border-radius: 25px;
+    background: #eeeeee;
+}
+
+
+.new-photo-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =====================================
+   MEMBER DETAILS
+===================================== */
+
+.new-member-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+
+.new-member-details div {
+    display: grid;
+    grid-template-columns: 270px 35px 1fr;
+    align-items: center;
+    min-height: 76px;
+    border-bottom: 2px solid #aeb7c6;
+    color: #202020;
+}
+
+
+.new-member-details b {
+    color: #102b5c;
+    font-size: 28px;
+}
+
+
+.new-member-details span {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+
+.new-member-details strong {
+    color: #202020;
+    font-size: 28px;
+    word-break: break-word;
+}
+
+
+.new-member-details div:nth-child(1) strong,
+.new-member-details div:nth-child(2) strong {
+    color: #a72a20;
+}
+
+
+.new-member-details div:nth-child(3) strong {
+    color: #176332;
+}
+
+
+/* =====================================
+   QR BOX
+===================================== */
+
+.new-qr-box {
+    padding: 15px;
+    border: 4px solid #102b5c;
+    border-radius: 22px;
+    background: #ffffff;
+    text-align: center;
+}
+
+
+.fake-qr {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 220px;
+    margin: auto;
+    border: 12px double #111111;
+    background:
+        repeating-linear-gradient(
+            45deg,
+            #111111 0,
+            #111111 8px,
+            #ffffff 8px,
+            #ffffff 16px
+        );
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.5;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+
+.new-qr-box span {
+    display: block;
+    margin-top: 12px;
+    padding: 9px;
+    border-radius: 10px;
+    background: #102b5c;
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+
+/* =====================================
+   SIGNATURE
+===================================== */
+
+.new-sign-area {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 90px 25px;
+}
+
+
+.new-sign-area div {
+    width: 260px;
+    padding-top: 45px;
+    border-bottom: 2px solid #102b5c;
+    color: #102b5c;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* =====================================
+   CARD FOOTER
+===================================== */
+
+.new-card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    min-height: 95px;
+    padding: 20px 35px;
+    background: #102b5c;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+
+/* =====================================
+   BACK SIDE
+===================================== */
+
+.new-card-back-side {
+    min-height: 900px;
+}
+
+
+/* =====================================
+   BACK HEADER
+===================================== */
+
+.new-back-top {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 35px;
+    padding: 25px 40px;
+    border-bottom: 3px solid #102b5c;
+}
+
+
+.new-back-top img {
+    width: 180px;
+    height: 180px;
+    object-fit: contain;
+}
+
+
+.new-back-top h1 {
+    margin: 0;
+    color: #102b5c;
+    font-size: 55px;
+}
+
+
+.new-back-top p {
+    margin: 10px 0 0;
+    color: #17233d;
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
+/* =====================================
+   BACK BODY
+===================================== */
+
+.new-back-body {
+    display: grid;
+    grid-template-columns: 52% 48%;
+    min-height: 560px;
+}
+
+
+/* =====================================
+   BACK DETAILS
+===================================== */
+
+.new-back-details {
+    padding: 45px 50px;
+    border-right: 3px solid #102b5c;
+}
+
+
+.new-back-details div {
+    display: grid;
+    grid-template-columns: 270px 35px 1fr;
+    align-items: center;
+    min-height: 105px;
+    border-bottom: 2px solid #aeb7c6;
+}
+
+
+.new-back-details b {
+    color: #102b5c;
+    font-size: 27px;
+}
+
+
+.new-back-details span {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+.new-back-details strong {
+    color: #202020;
+    font-size: 25px;
+    line-height: 1.4;
+    word-break: break-word;
+}
+
+
+/* =====================================
+   RULES
+===================================== */
+
+.new-rules {
+    margin: 25px;
+    overflow: hidden;
+    border: 3px solid #102b5c;
+    border-radius: 25px;
+}
+
+
+.new-rules h2 {
+    margin: 0;
+    padding: 20px;
+    background: #102b5c;
+    color: #ffffff;
+    font-size: 29px;
+    text-align: center;
+}
+
+
+.new-rules ul {
+    margin: 0;
+    padding: 25px 40px 25px 60px;
+}
+
+
+.new-rules li {
+    margin-bottom: 20px;
+    color: #222222;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+
+/* =====================================
+   BACK CONTACT
+===================================== */
+
+.new-back-contact {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 25px;
+    border-top: 2px dashed #102b5c;
+    color: #202020;
+    font-size: 21px;
+    font-weight: bold;
+}
+
+
+/* =====================================
+   PRINT BUTTON
+===================================== */
+
+.new-id-print {
+    margin: 10px auto 20px;
+    padding: 15px 35px;
+    border: none;
+    border-radius: 10px;
+    background: #102b5c;
+    color: #ffffff;
+    font-size: 19px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+.new-id-print:hover {
+    background: #e65b16;
+}
+
+
+/* =====================================
+   TABLET
+===================================== */
+
+@media (max-width: 1100px) {
+
+    .new-card-header h1,
+    .new-back-top h1 {
+        font-size: 40px;
+    }
+
+
+    .new-card-header p,
+    .new-back-top p {
+        font-size: 22px;
+    }
+
+
+    .new-card-logo,
+    .new-back-top img {
+        width: 130px;
+        height: 130px;
+    }
+
+
+    .new-card-title {
+        width: 70%;
+        font-size: 34px;
+    }
+
+
+    .new-card-main {
+        grid-template-columns: 250px 1fr;
+    }
+
+
+    .new-qr-box {
+        grid-column: 1 / -1;
+        width: 270px;
+        margin: auto;
+    }
+
+
+    .new-photo-box {
+        width: 240px;
+        height: 320px;
+    }
+
+
+    .new-member-details div {
+        grid-template-columns: 190px 25px 1fr;
+    }
+
+
+    .new-member-details b,
+    .new-member-details strong {
+        font-size: 21px;
+    }
+
+
+    .new-back-details div {
+        grid-template-columns: 180px 25px 1fr;
+    }
+
+
+    .new-back-details b,
+    .new-back-details strong {
+        font-size: 19px;
+    }
+
+}
+
+
+/* =====================================
+   MOBILE
+===================================== */
+
+@media (max-width: 700px) {
+
+    .new-id-page {
+        padding: 20px 10px;
+    }
+
+
+    .new-id-form {
+        padding: 22px 15px;
+    }
+
+
+    .new-id-form h1 {
+        font-size: 25px;
+    }
+
+
+    .new-member-card {
+        min-height: auto;
+        border-radius: 18px;
+    }
+
+
+    .new-card-header,
+    .new-back-top {
+        flex-direction: column;
+        gap: 10px;
+        padding: 20px;
+    }
+
+
+    .new-card-logo,
+    .new-back-top img {
+        width: 100px;
+        height: 100px;
+    }
+
+
+    .new-card-header h1,
+    .new-back-top h1 {
+        font-size: 28px;
+        text-align: center;
+    }
+
+
+    .new-card-header p,
+    .new-back-top p {
+        font-size: 18px;
+    }
+
+
+    .new-card-title {
+        width: 88%;
+        margin: 15px auto;
+        padding: 12px;
+        font-size: 27px;
+    }
+
+
+    .new-card-title span {
+        font-size: 15px;
+        letter-spacing: 2px;
+    }
+
+
+    .new-card-main {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+
+
+    .new-photo-box {
+        width: 220px;
+        height: 280px;
+    }
+
+
+    .new-member-details {
+        width: 100%;
+    }
+
+
+    .new-member-details div {
+        grid-template-columns: 120px 20px 1fr;
+        min-height: 58px;
+    }
+
+
+    .new-member-details b,
+    .new-member-details strong {
+        font-size: 15px;
+    }
+
+
+    .new-member-details span {
+        font-size: 17px;
+    }
+
+
+    .new-qr-box {
+        width: 230px;
+    }
+
+
+    .fake-qr {
+        width: 180px;
+        height: 180px;
+    }
+
+
+    .new-sign-area {
+        justify-content: center;
+        padding: 10px 20px 25px;
+    }
+
+
+    .new-card-footer {
+        flex-direction: column;
+        padding: 18px;
+        font-size: 17px;
+        text-align: center;
+    }
+
+
+    .new-back-body {
+        display: block;
+    }
+
+
+    .new-back-details {
+        padding: 20px;
+        border-right: none;
+    }
+
+
+    .new-back-details div {
+        grid-template-columns: 140px 20px 1fr;
+        min-height: 75px;
+    }
+
+
+    .new-back-details b,
+    .new-back-details strong {
+        font-size: 15px;
+    }
+
+
+    .new-rules {
+        margin: 15px;
+    }
+
+
+    .new-rules h2 {
+        font-size: 22px;
+    }
+
+
+    .new-rules li {
+        font-size: 16px;
+    }
+
+
+    .new-back-contact {
+        flex-direction: column;
+        padding: 20px;
+        font-size: 16px;
+        text-align: center;
+    }
+
+}
+
+
+/* =====================================
+   PRINT SETTINGS
+===================================== */
+
+@media print {
+
+    @page {
+        size: A4 landscape;
+        margin: 5mm;
+    }
+
+
+    body {
+        background: #ffffff;
+    }
+
+
+    .new-id-page {
+        padding: 0;
+        background: #ffffff;
+    }
+
+
+    .new-id-form,
+    .new-id-print,
+    .new-id-back {
+        display: none !important;
+    }
+
+
+    .new-id-result {
+        display: block !important;
+    }
+
+
+    .new-member-card {
+        width: 100%;
+        max-width: none;
+        min-height: 0;
+        margin: 0;
+        border-width: 2px;
+        border-radius: 15px;
+        box-shadow: none;
+        page-break-after: always;
+        break-after: page;
+    }
+
+
+    .new-member-card:last-of-type {
+        page-break-after: auto;
+        break-after: auto;
+    }
+
+}
