@@ -10301,3 +10301,128 @@ tr:hover {
 
 
 }
+/* =====================================
+   CONTACT MESSAGE ADMIN
+===================================== */
+
+.contact-status {
+
+    display: inline-block;
+
+    padding:
+
+    6px 10px;
+
+    border-radius:
+
+    20px;
+
+    background:
+
+    #fff3cd;
+
+    color:
+
+    #856404;
+
+    font-weight:
+
+    bold;
+
+    white-space:
+
+    nowrap;
+
+}
+
+
+.contact-read-btn {
+
+    padding:
+
+    7px 10px;
+
+    margin:
+
+    3px;
+
+    border:
+
+    none;
+
+    border-radius:
+
+    6px;
+
+    background:
+
+    #198754;
+
+    color:
+
+    white;
+
+    cursor:
+
+    pointer;
+
+    white-space:
+
+    nowrap;
+
+}
+
+
+.contact-delete-btn {
+
+    padding:
+
+    7px 10px;
+
+    margin:
+
+    3px;
+
+    border:
+
+    none;
+
+    border-radius:
+
+    6px;
+
+    background:
+
+    #dc3545;
+
+    color:
+
+    white;
+
+    cursor:
+
+    pointer;
+
+    white-space:
+
+    nowrap;
+
+}
+
+
+.contact-read-btn:hover {
+
+    background:
+
+    #146c43;
+
+}
+
+
+.contact-delete-btn:hover {
+
+    background:
+
+    #b02a37;
+
+}
