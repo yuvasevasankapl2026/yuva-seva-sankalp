@@ -9652,3 +9652,179 @@ tr:hover {
 
 
 }
+/* =====================================
+   सदस्यता DROPDOWN FIX
+===================================== */
+
+.nav-dropdown {
+
+    position: relative;
+
+    display: inline-block;
+
+}
+
+
+/* सदस्यता BUTTON */
+
+.nav-dropdown-btn {
+
+    display: block;
+
+    background: #0b4f8a;
+
+    color: #ffffff !important;
+
+    border: none;
+
+    padding: 15px 18px;
+
+    margin: 0;
+
+    font-family: Arial, "Mangal", sans-serif;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    line-height: 1.4;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+
+}
+
+
+/* सदस्यता BUTTON HOVER */
+
+.nav-dropdown-btn:hover {
+
+    background: #083b67;
+
+    color: #ffffff !important;
+
+}
+
+
+/* DROPDOWN BOX */
+
+.nav-dropdown-content {
+
+    display: none;
+
+    position: absolute;
+
+    top: 100%;
+
+    left: 0;
+
+    min-width: 190px;
+
+    background: #ffffff;
+
+    border-radius: 0 0 8px 8px;
+
+    box-shadow:
+
+    0 8px 20px
+
+    rgba(0, 0, 0, 0.25);
+
+    overflow: hidden;
+
+    z-index: 99999;
+
+}
+
+
+/* DROPDOWN LINKS */
+
+.nav-dropdown-content a {
+
+    display: block;
+
+    width: 100%;
+
+    padding: 13px 16px;
+
+    background: #ffffff;
+
+    color: #222222 !important;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+}
+
+
+/* DROPDOWN LINK HOVER */
+
+.nav-dropdown-content a:hover {
+
+    background: #eeeeee;
+
+    color: #c62828 !important;
+
+}
+
+
+/* MOUSE ले जाने पर MENU OPEN */
+
+.nav-dropdown:hover
+.nav-dropdown-content {
+
+    display: block;
+
+}
+
+
+/* =====================================
+   MOBILE FIX
+===================================== */
+
+@media screen and (max-width: 768px) {
+
+
+    .nav-dropdown {
+
+        display: block;
+
+        width: 100%;
+
+    }
+
+
+    .nav-dropdown-btn {
+
+        width: 100%;
+
+        text-align: center;
+
+    }
+
+
+    .nav-dropdown-content {
+
+        position: static;
+
+        width: 100%;
+
+        box-shadow: none;
+
+        border-radius: 0;
+
+    }
+
+
+    .nav-dropdown-content a {
+
+        text-align: center;
+
+    }
+
+
+}
