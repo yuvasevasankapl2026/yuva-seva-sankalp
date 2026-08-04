@@ -1,1 +1,1007 @@
+<!DOCTYPE html>
 
+<html lang="hi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        सदस्य डैशबोर्ड | युवा सेवा संकल्प फाउंडेशन
+    </title>
+
+
+    <!-- Main CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     TOP BAR
+===================================== -->
+
+<div class="top-bar">
+
+    <div class="container">
+
+
+        <div class="left">
+
+            👤 सदस्य पैनल
+
+        </div>
+
+
+        <div class="right">
+
+            <a href="index.html">
+
+                🌐 वेबसाइट देखें
+
+            </a>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     HEADER
+===================================== -->
+
+<header class="header">
+
+    <div class="header-content">
+
+
+        <img
+            src="images/logo.png"
+            class="logo"
+            alt="युवा सेवा संकल्प फाउंडेशन लोगो"
+        >
+
+
+        <div class="title">
+
+
+            <h1 class="main-title">
+
+                युवा सेवा संकल्प फाउंडेशन
+
+            </h1>
+
+
+            <p class="tagline">
+
+                सदस्य डैशबोर्ड
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+</header>
+
+
+<!-- =====================================
+     MEMBER DASHBOARD
+===================================== -->
+
+<section class="member-dashboard">
+
+
+    <div class="member-dashboard-container">
+
+
+        <!-- WELCOME BOX -->
+
+        <div class="member-welcome">
+
+
+            <div>
+
+
+                <h2>
+
+                    नमस्ते,
+
+                    <span id="memberName">
+
+                        सदस्य
+
+                    </span>
+
+                    👋
+
+                </h2>
+
+
+                <p>
+
+                    युवा सेवा संकल्प फाउंडेशन के
+                    सदस्य पोर्टल में आपका स्वागत है।
+
+                </p>
+
+
+            </div>
+
+
+            <button
+                type="button"
+                class="member-logout-btn"
+                onclick="logoutMember()"
+            >
+
+                🚪 लॉगआउट
+
+            </button>
+
+
+        </div>
+
+
+        <!-- MEMBER INFORMATION -->
+
+        <div class="member-info-box">
+
+
+            <div class="member-profile-image">
+
+
+                <img
+                    id="memberPhoto"
+                    src="images/member.jpg"
+                    alt="सदस्य फोटो"
+                >
+
+
+            </div>
+
+
+            <div class="member-basic-info">
+
+
+                <h2 id="memberFullName">
+
+                    सदस्य का नाम
+
+                </h2>
+
+
+                <p>
+
+                    🪪 Member ID:
+
+                    <strong id="memberId">
+
+                        YSSF-0000
+
+                    </strong>
+
+                </p>
+
+
+                <p>
+
+                    📱 मोबाइल:
+
+                    <strong id="memberMobile">
+
+                        उपलब्ध नहीं
+
+                    </strong>
+
+                </p>
+
+
+                <p>
+
+                    🏷️ सदस्यता:
+
+                    <strong id="memberType">
+
+                        सामान्य सदस्य
+
+                    </strong>
+
+                </p>
+
+
+                <p>
+
+                    स्थिति:
+
+                    <span
+                        id="memberStatus"
+                        class="member-status pending"
+                    >
+
+                        ⏳ लंबित
+
+                    </span>
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!-- MEMBER SERVICES -->
+
+        <h2 class="member-service-title">
+
+            मेरी सुविधाएँ
+
+        </h2>
+
+
+        <div class="member-service-grid">
+
+
+            <!-- PROFILE -->
+
+            <a
+                href="#profile"
+                class="member-service-card"
+            >
+
+                <div class="member-service-icon">
+
+                    👤
+
+                </div>
+
+
+                <h3>
+
+                    मेरी प्रोफाइल
+
+                </h3>
+
+
+                <p>
+
+                    अपनी सदस्य जानकारी देखें।
+
+                </p>
+
+
+            </a>
+
+
+            <!-- ID CARD -->
+
+            <a
+                href="id-card.html"
+                class="member-service-card"
+            >
+
+                <div class="member-service-icon">
+
+                    🪪
+
+                </div>
+
+
+                <h3>
+
+                    मेरा ID Card
+
+                </h3>
+
+
+                <p>
+
+                    ID Card देखें और Print करें।
+
+                </p>
+
+
+            </a>
+
+
+            <!-- CERTIFICATE -->
+
+            <a
+                href="certificate.html"
+                class="member-service-card"
+            >
+
+                <div class="member-service-icon">
+
+                    📜
+
+                </div>
+
+
+                <h3>
+
+                    प्रमाणपत्र
+
+                </h3>
+
+
+                <p>
+
+                    सदस्यता प्रमाणपत्र देखें।
+
+                </p>
+
+
+            </a>
+
+
+            <!-- PAYMENT -->
+
+            <a
+                href="#payment"
+                class="member-service-card"
+            >
+
+                <div class="member-service-icon">
+
+                    💳
+
+                </div>
+
+
+                <h3>
+
+                    Payment Status
+
+                </h3>
+
+
+                <p>
+
+                    शुल्क भुगतान की स्थिति देखें।
+
+                </p>
+
+
+            </a>
+
+
+            <!-- NOTICE -->
+
+            <a
+                href="#notice"
+                class="member-service-card"
+            >
+
+                <div class="member-service-icon">
+
+                    📢
+
+                </div>
+
+
+                <h3>
+
+                    संस्था की सूचना
+
+                </h3>
+
+
+                <p>
+
+                    नई सूचना और घोषणाएँ देखें।
+
+                </p>
+
+
+            </a>
+
+
+            <!-- CONTACT -->
+
+            <a
+                href="#help"
+                class="member-service-card"
+            >
+
+                <div class="member-service-icon">
+
+                    📞
+
+                </div>
+
+
+                <h3>
+
+                    सहायता
+
+                </h3>
+
+
+                <p>
+
+                    संस्था से संपर्क करें।
+
+                </p>
+
+
+            </a>
+
+
+        </div>
+
+
+        <!-- =====================================
+             PROFILE
+        ===================================== -->
+
+        <div
+            id="profile"
+            class="member-detail-section"
+        >
+
+
+            <h2>
+
+                👤 मेरी प्रोफाइल
+
+            </h2>
+
+
+            <div class="member-detail-list">
+
+
+                <p>
+
+                    <strong>
+
+                        पूरा नाम:
+
+                    </strong>
+
+
+                    <span id="profileName">
+
+                        -
+
+                    </span>
+
+                </p>
+
+
+                <p>
+
+                    <strong>
+
+                        Member ID:
+
+                    </strong>
+
+
+                    <span id="profileId">
+
+                        -
+
+                    </span>
+
+                </p>
+
+
+                <p>
+
+                    <strong>
+
+                        मोबाइल नंबर:
+
+                    </strong>
+
+
+                    <span id="profileMobile">
+
+                        -
+
+                    </span>
+
+                </p>
+
+
+                <p>
+
+                    <strong>
+
+                        सदस्यता:
+
+                    </strong>
+
+
+                    <span id="profileType">
+
+                        -
+
+                    </span>
+
+                </p>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =====================================
+             PAYMENT
+        ===================================== -->
+
+        <div
+            id="payment"
+            class="member-detail-section"
+        >
+
+
+            <h2>
+
+                💳 Payment Status
+
+            </h2>
+
+
+            <p>
+
+                सदस्यता शुल्क:
+
+                <strong>
+
+                    ₹0
+
+                </strong>
+
+            </p>
+
+
+            <p>
+
+                भुगतान स्थिति:
+
+                <span class="payment-pending">
+
+                    ⏳ भुगतान लंबित
+
+                </span>
+
+            </p>
+
+
+            <button
+                type="button"
+                class="member-pay-btn"
+                onclick="showPaymentMessage()"
+            >
+
+                💳 भुगतान करें
+
+            </button>
+
+
+        </div>
+
+
+        <!-- =====================================
+             NOTICE
+        ===================================== -->
+
+        <div
+            id="notice"
+            class="member-detail-section"
+        >
+
+
+            <h2>
+
+                📢 संस्था की सूचना
+
+            </h2>
+
+
+            <div class="member-notice">
+
+
+                📢 युवा सेवा संकल्प फाउंडेशन में
+                आपका स्वागत है। आगामी कार्यक्रमों
+                की जानकारी यहाँ दिखाई जाएगी।
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =====================================
+             HELP
+        ===================================== -->
+
+        <div
+            id="help"
+            class="member-detail-section"
+        >
+
+
+            <h2>
+
+                📞 सहायता एवं संपर्क
+
+            </h2>
+
+
+            <p>
+
+                📧
+
+                yuvasevasankalp2026@gmail.com
+
+            </p>
+
+
+            <p>
+
+                📞
+
+                +91 9651731313
+
+            </p>
+
+
+            <a
+                href="https://wa.me/919651731313"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="member-whatsapp-btn"
+            >
+
+                💬 WhatsApp पर संपर्क करें
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+
+    <img
+        src="images/logo.png"
+        alt="युवा सेवा संकल्प फाउंडेशन लोगो"
+        width="70"
+    >
+
+
+    <h3>
+
+        युवा सेवा संकल्प फाउंडेशन
+
+    </h3>
+
+
+    <p>
+
+        युवा शक्ति, राष्ट्र शक्ति
+
+    </p>
+
+
+    <p>
+
+        © 2026 All Rights Reserved
+
+    </p>
+
+
+</footer>
+
+
+<!-- =====================================
+     MEMBER DASHBOARD JAVASCRIPT
+===================================== -->
+
+<script>
+
+
+/* =====================================
+   MEMBER DATA
+===================================== */
+
+const loggedInMember = JSON.parse(
+
+    localStorage.getItem(
+
+        "loggedInMember"
+
+    )
+
+);
+
+
+/* =====================================
+   SHOW MEMBER DATA
+===================================== */
+
+if (
+
+    loggedInMember
+
+) {
+
+
+    const memberName =
+
+        loggedInMember.name ||
+
+        loggedInMember.fullName ||
+
+        "सदस्य";
+
+
+    const memberId =
+
+        loggedInMember.memberId ||
+
+        loggedInMember.id ||
+
+        "YSSF-0000";
+
+
+    const memberMobile =
+
+        loggedInMember.mobile ||
+
+        loggedInMember.phone ||
+
+        "उपलब्ध नहीं";
+
+
+    const memberType =
+
+        loggedInMember.membership ||
+
+        loggedInMember.membershipType ||
+
+        "सामान्य सदस्य";
+
+
+    document.getElementById(
+
+        "memberName"
+
+    ).textContent = memberName;
+
+
+    document.getElementById(
+
+        "memberFullName"
+
+    ).textContent = memberName;
+
+
+    document.getElementById(
+
+        "memberId"
+
+    ).textContent = memberId;
+
+
+    document.getElementById(
+
+        "memberMobile"
+
+    ).textContent = memberMobile;
+
+
+    document.getElementById(
+
+        "memberType"
+
+    ).textContent = memberType;
+
+
+    document.getElementById(
+
+        "profileName"
+
+    ).textContent = memberName;
+
+
+    document.getElementById(
+
+        "profileId"
+
+    ).textContent = memberId;
+
+
+    document.getElementById(
+
+        "profileMobile"
+
+    ).textContent = memberMobile;
+
+
+    document.getElementById(
+
+        "profileType"
+
+    ).textContent = memberType;
+
+
+    /* Member Photo */
+
+    if (
+
+        loggedInMember.photo
+
+    ) {
+
+
+        document.getElementById(
+
+            "memberPhoto"
+
+        ).src =
+
+        loggedInMember.photo;
+
+
+    }
+
+
+    /* Member Status */
+
+    const status =
+
+        loggedInMember.status ||
+
+        "लंबित";
+
+
+    const statusBox =
+
+        document.getElementById(
+
+            "memberStatus"
+
+        );
+
+
+    if (
+
+        status === "स्वीकृत"
+
+    ) {
+
+
+        statusBox.textContent =
+
+        "✅ स्वीकृत";
+
+
+        statusBox.className =
+
+        "member-status approved";
+
+
+    }
+
+
+    else if (
+
+        status === "अस्वीकृत"
+
+    ) {
+
+
+        statusBox.textContent =
+
+        "❌ अस्वीकृत";
+
+
+        statusBox.className =
+
+        "member-status rejected";
+
+
+    }
+
+
+}
+
+
+/* =====================================
+   MEMBER LOGOUT
+===================================== */
+
+function logoutMember() {
+
+
+    const confirmLogout = confirm(
+
+        "क्या आप सदस्य पैनल से लॉगआउट करना चाहते हैं?"
+
+    );
+
+
+    if (
+
+        confirmLogout
+
+    ) {
+
+
+        localStorage.removeItem(
+
+            "loggedInMember"
+
+        );
+
+
+        window.location.href =
+
+        "member-login.html";
+
+
+    }
+
+
+}
+
+
+/* =====================================
+   PAYMENT MESSAGE
+===================================== */
+
+function showPaymentMessage() {
+
+
+    alert(
+
+        "ऑनलाइन भुगतान सुविधा जल्द उपलब्ध होगी।"
+
+    );
+
+
+}
+
+
+</script>
+
+
+</body>
+
+</html>
