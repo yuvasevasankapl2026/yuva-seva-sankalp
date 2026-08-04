@@ -15,9 +15,6 @@
         सदस्य ID कार्ड | युवा सेवा संकल्प फाउंडेशन
     </title>
 
-
-    <!-- Main CSS -->
-
     <link
         rel="stylesheet"
         href="style.css"
@@ -33,178 +30,228 @@
      ID CARD PAGE
 ===================================== -->
 
-<section class="id-card-page">
+<section class="new-id-page">
 
 
     <!-- =====================================
-         ID CARD FORM
+         MEMBER DETAILS FORM
     ===================================== -->
 
     <div
-        class="id-card-form"
-        id="idCardFormBox"
+        class="new-id-form"
+        id="idForm"
     >
 
 
-        <!-- LOGO -->
-
         <img
             src="images/logo.png"
-            alt="युवा सेवा संकल्प फाउंडेशन लोगो"
-            class="id-form-logo"
+            alt="संस्था का लोगो"
+            class="new-form-logo"
         >
 
 
         <h1>
 
-            सदस्य ID कार्ड
+            सदस्य ID कार्ड बनाएँ
 
         </h1>
 
 
         <p>
 
-            सदस्य की जानकारी भरकर ID कार्ड बनाएँ।
+            सदस्य की जानकारी भरें।
 
         </p>
 
 
         <!-- MEMBER NAME -->
 
-        <div class="id-input">
+        <div class="new-input">
 
+            <label>
 
-            <label for="idMemberName">
-
-                सदस्य का पूरा नाम *
+                सदस्य का नाम *
 
             </label>
 
-
             <input
                 type="text"
-                id="idMemberName"
-                placeholder="सदस्य का पूरा नाम लिखें"
-                required
+                id="memberName"
+                placeholder="सदस्य का पूरा नाम"
             >
-
 
         </div>
 
 
         <!-- MEMBER ID -->
 
-        <div class="id-input">
+        <div class="new-input">
 
-
-            <label for="idMemberId">
+            <label>
 
                 Member ID *
 
             </label>
 
-
             <input
                 type="text"
-                id="idMemberId"
-                placeholder="जैसे: YSSF-2026-001"
-                required
+                id="memberId"
+                placeholder="YSSF-2026-001"
             >
-
 
         </div>
 
 
         <!-- MEMBERSHIP TYPE -->
 
-        <div class="id-input">
+        <div class="new-input">
 
+            <label>
 
-            <label for="idMemberType">
-
-                सदस्यता प्रकार
+                सदस्यता का प्रकार
 
             </label>
 
+            <select id="memberType">
 
-            <select id="idMemberType">
-
-
-                <option value="सामान्य सदस्य">
+                <option>
 
                     सामान्य सदस्य
 
                 </option>
 
-
-                <option value="सक्रिय सदस्य">
+                <option>
 
                     सक्रिय सदस्य
 
                 </option>
 
-
-                <option value="आजीवन सदस्य">
+                <option>
 
                     आजीवन सदस्य
 
                 </option>
 
-
-                <option value="स्वयंसेवक">
+                <option>
 
                     स्वयंसेवक
 
                 </option>
 
-
             </select>
-
 
         </div>
 
 
-        <!-- MOBILE NUMBER -->
+        <!-- MOBILE -->
 
-        <div class="id-input">
+        <div class="new-input">
 
-
-            <label for="idMemberPhone">
+            <label>
 
                 मोबाइल नंबर
 
             </label>
 
-
             <input
                 type="tel"
-                id="idMemberPhone"
-                placeholder="10 अंकों का मोबाइल नंबर"
+                id="memberMobile"
+                placeholder="9876543210"
                 maxlength="10"
             >
 
+        </div>
+
+
+        <!-- REGISTRATION DATE -->
+
+        <div class="new-input">
+
+            <label>
+
+                पंजीकरण तिथि
+
+            </label>
+
+            <input
+                type="date"
+                id="memberDate"
+            >
+
+        </div>
+
+
+        <!-- ADDRESS -->
+
+        <div class="new-input">
+
+            <label>
+
+                पता
+
+            </label>
+
+            <textarea
+                id="memberAddress"
+                placeholder="सदस्य का पूरा पता"
+            ></textarea>
+
+        </div>
+
+
+        <!-- BLOOD GROUP -->
+
+        <div class="new-input">
+
+            <label>
+
+                रक्त समूह
+
+            </label>
+
+            <input
+                type="text"
+                id="memberBlood"
+                placeholder="जैसे: B+"
+            >
+
+        </div>
+
+
+        <!-- EMERGENCY CONTACT -->
+
+        <div class="new-input">
+
+            <label>
+
+                आपातकालीन संपर्क
+
+            </label>
+
+            <input
+                type="tel"
+                id="emergencyPhone"
+                placeholder="मोबाइल नंबर"
+            >
 
         </div>
 
 
         <!-- MEMBER PHOTO -->
 
-        <div class="id-input">
+        <div class="new-input">
 
-
-            <label for="idMemberPhoto">
+            <label>
 
                 सदस्य की फोटो
 
             </label>
 
-
             <input
                 type="file"
-                id="idMemberPhoto"
+                id="memberPhoto"
                 accept="image/*"
             >
-
 
         </div>
 
@@ -213,8 +260,8 @@
 
         <button
             type="button"
-            class="id-create-btn"
-            onclick="createIdCard()"
+            class="new-id-create"
+            onclick="createNewIdCard()"
         >
 
             🪪 ID कार्ड बनाएँ
@@ -222,14 +269,12 @@
         </button>
 
 
-        <!-- BACK BUTTON -->
-
         <a
             href="admin-dashboard.html"
-            class="id-back-link"
+            class="new-id-back"
         >
 
-            ← एडमिन डैशबोर्ड पर वापस जाएँ
+            ← एडमिन डैशबोर्ड
 
         </a>
 
@@ -238,46 +283,48 @@
 
 
     <!-- =====================================
-         GENERATED ID CARD
+         ID CARD RESULT
     ===================================== -->
 
     <div
-        class="id-card-result"
-        id="idCardResult"
+        class="new-id-result"
+        id="idResult"
     >
 
 
-        <div class="member-id-card">
+        <!-- =====================================
+             FRONT SIDE
+        ===================================== -->
+
+        <div class="new-member-card">
 
 
             <!-- HEADER -->
 
-            <div class="id-card-top">
+            <div class="new-card-header">
 
 
                 <img
                     src="images/logo.png"
-                    alt="संस्था का लोगो"
-                    class="id-card-logo"
+                    class="new-card-logo"
+                    alt="लोगो"
                 >
 
 
                 <div>
 
-
-                    <h2>
+                    <h1>
 
                         युवा सेवा संकल्प फाउंडेशन
 
-                    </h2>
+                    </h1>
 
 
                     <p>
 
-                        युवा शक्ति, राष्ट्र शक्ति
+                        युवा शक्ति – राष्ट्र शक्ति
 
                     </p>
-
 
                 </div>
 
@@ -287,92 +334,182 @@
 
             <!-- CARD TITLE -->
 
-            <div class="id-card-title">
+            <div class="new-card-title">
 
                 सदस्य पहचान पत्र
 
-            </div>
+                <span>
 
+                    MEMBER ID CARD
 
-            <!-- MEMBER PHOTO -->
-
-            <div class="id-photo-box">
-
-
-                <img
-                    id="idPhotoPreview"
-                    src="images/logo.png"
-                    alt="सदस्य की फोटो"
-                >
-
+                </span>
 
             </div>
 
 
-            <!-- MEMBER NAME -->
+            <!-- MAIN CARD AREA -->
 
-            <h3 id="cardMemberName">
-
-                सदस्य का नाम
-
-            </h3>
+            <div class="new-card-main">
 
 
-            <!-- MEMBER TYPE -->
+                <!-- PHOTO -->
 
-            <p
-                id="cardMemberType"
-                class="card-member-type"
-            >
+                <div class="new-photo-box">
 
-                सक्रिय सदस्य
+                    <img
+                        id="cardPhoto"
+                        src="images/logo.png"
+                        alt="सदस्य फोटो"
+                    >
 
-            </p>
-
-
-            <!-- MEMBER INFORMATION -->
-
-            <div class="id-card-details">
+                </div>
 
 
-                <p>
+                <!-- DETAILS -->
+
+                <div class="new-member-details">
 
 
-                    <strong>
+                    <div>
 
-                        Member ID:
+                        <b>
 
-                    </strong>
+                            नाम
+
+                        </b>
+
+                        <span>
+
+                            :
+
+                        </span>
+
+                        <strong id="cardName">
+
+                            सदस्य का नाम
+
+                        </strong>
+
+                    </div>
 
 
-                    <span id="cardMemberId">
+                    <div>
+
+                        <b>
+
+                            Member ID
+
+                        </b>
+
+                        <span>
+
+                            :
+
+                        </span>
+
+                        <strong id="cardId">
+
+                            YSSF-2026-001
+
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <b>
+
+                            सदस्यता का प्रकार
+
+                        </b>
+
+                        <span>
+
+                            :
+
+                        </span>
+
+                        <strong id="cardType">
+
+                            सामान्य सदस्य
+
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <b>
+
+                            मोबाइल नंबर
+
+                        </b>
+
+                        <span>
+
+                            :
+
+                        </span>
+
+                        <strong id="cardMobile">
+
+                            98XXXXXXXX
+
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <b>
+
+                            पंजीकरण तिथि
+
+                        </b>
+
+                        <span>
+
+                            :
+
+                        </span>
+
+                        <strong id="cardDate">
+
+                            01/05/2026
+
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- QR -->
+
+                <div class="new-qr-box">
+
+                    <div class="fake-qr">
+
+                        MEMBER
+
+                        <br>
+
+                        QR
+
+                    </div>
+
+
+                    <span id="qrMemberId">
 
                         YSSF-2026-001
 
                     </span>
 
-
-                </p>
-
-
-                <p>
-
-
-                    <strong>
-
-                        मोबाइल:
-
-                    </strong>
-
-
-                    <span id="cardMemberPhone">
-
-                        0000000000
-
-                    </span>
-
-
-                </p>
+                </div>
 
 
             </div>
@@ -380,18 +517,306 @@
 
             <!-- SIGNATURE -->
 
-            <div class="id-card-signature">
+            <div class="new-sign-area">
 
-                अधिकृत हस्ताक्षर
+
+                <div>
+
+                    अधिकृत हस्ताक्षर
+
+                </div>
+
 
             </div>
 
 
-            <!-- FOOTER -->
+            <!-- CARD FOOTER -->
 
-            <div class="id-card-footer">
+            <div class="new-card-footer">
 
-                यह कार्ड युवा सेवा संकल्प फाउंडेशन की संपत्ति है।
+
+                <span>
+
+                    🛡️ समाज सेवा में योगदान दें
+
+                </span>
+
+
+                <span>
+
+                    🌐 www.yuvasevasankalp.org
+
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =====================================
+             BACK SIDE
+        ===================================== -->
+
+        <div class="new-member-card new-card-back-side">
+
+
+            <!-- BACK HEADER -->
+
+            <div class="new-back-top">
+
+
+                <img
+                    src="images/logo.png"
+                    alt="लोगो"
+                >
+
+
+                <div>
+
+                    <h1>
+
+                        युवा सेवा संकल्प फाउंडेशन
+
+                    </h1>
+
+
+                    <p>
+
+                        युवा शक्ति – राष्ट्र शक्ति
+
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- BACK BODY -->
+
+            <div class="new-back-body">
+
+
+                <!-- PERSONAL DETAILS -->
+
+                <div class="new-back-details">
+
+
+                    <div>
+
+                        <b>
+
+                            📍 पता
+
+                        </b>
+
+                        <span>
+
+                            :
+
+                        </span>
+
+                        <strong id="cardAddress">
+
+                            सदस्य का पता
+
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <b>
+
+                            🗓️ पंजीकरण तिथि
+
+                        </b>
+
+                        <span>
+
+                            :
+
+                        </span>
+
+                        <strong id="backDate">
+
+                            01/05/2026
+
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <b>
+
+                            🩸 रक्त समूह
+
+                        </b>
+
+                        <span>
+
+                            :
+
+                        </span>
+
+                        <strong id="cardBlood">
+
+                            B+
+
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <b>
+
+                            📞 आपातकालीन संपर्क
+
+                        </b>
+
+                        <span>
+
+                            :
+
+                        </span>
+
+                        <strong id="cardEmergency">
+
+                            9876543210
+
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <b>
+
+                            👤 संदर्भ व्यक्ति
+
+                        </b>
+
+                        <span>
+
+                            :
+
+                        </span>
+
+                        <strong>
+
+                            युवा सेवा संकल्प फाउंडेशन
+
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- RULES -->
+
+                <div class="new-rules">
+
+
+                    <h2>
+
+                        सदस्य के लिए आवश्यक निर्देश
+
+                    </h2>
+
+
+                    <ul>
+
+                        <li>
+
+                            यह कार्ड युवा सेवा संकल्प फाउंडेशन की संपत्ति है।
+
+                        </li>
+
+
+                        <li>
+
+                            इस कार्ड का उपयोग केवल संस्था के कार्यों हेतु करें।
+
+                        </li>
+
+
+                        <li>
+
+                            कार्ड खोने या मिलने पर तुरंत संस्था को सूचित करें।
+
+                        </li>
+
+
+                        <li>
+
+                            कार्ड का दुरुपयोग करने पर सदस्यता निरस्त की जा सकती है।
+
+                        </li>
+
+
+                        <li>
+
+                            संस्था के सभी नियमों एवं निर्णयों का पालन करना अनिवार्य है।
+
+                        </li>
+
+
+                    </ul>
+
+
+                </div>
+
+
+            </div>
+
+
+            <!-- CONTACT -->
+
+            <div class="new-back-contact">
+
+
+                <span>
+
+                    📞 +91 9651731313
+
+                </span>
+
+
+                <span>
+
+                    ✉️ yuvasevasankalp2026@gmail.com
+
+                </span>
+
+
+                <span>
+
+                    🌐 www.yuvasevasankalp.org
+
+                </span>
+
+
+            </div>
+
+
+            <!-- BACK FOOTER -->
+
+            <div class="new-card-footer">
+
+
+                🛡️ समाज सेवा में योगदान दें,
+                राष्ट्र निर्माण में भागीदार बनें
+
 
             </div>
 
@@ -403,23 +828,21 @@
 
         <button
             type="button"
-            class="id-print-btn"
+            class="new-id-print"
             onclick="window.print()"
         >
 
-            🖨️ ID कार्ड Print करें
+            🖨️ Front और Back Print करें
 
         </button>
 
 
-        <!-- BACK TO DASHBOARD -->
-
         <a
             href="admin-dashboard.html"
-            class="id-back-link"
+            class="new-id-back"
         >
 
-            ← एडमिन डैशबोर्ड पर जाएँ
+            ← एडमिन डैशबोर्ड
 
         </a>
 
@@ -437,61 +860,31 @@
 <script>
 
 
-function createIdCard() {
+function createNewIdCard() {
 
-
-    /* MEMBER NAME */
 
     const name =
 
     document
-    .getElementById(
-        "idMemberName"
-    )
+    .getElementById("memberName")
     .value
     .trim();
 
-
-    /* MEMBER ID */
 
     const memberId =
 
     document
-    .getElementById(
-        "idMemberId"
-    )
+    .getElementById("memberId")
     .value
     .trim();
 
-
-    /* MEMBER TYPE */
-
-    const memberType =
-
-    document
-    .getElementById(
-        "idMemberType"
-    )
-    .value;
-
-
-    /* PHONE */
-
-    const phone =
-
-    document
-    .getElementById(
-        "idMemberPhone"
-    )
-    .value
-    .trim();
-
-
-    /* CHECK REQUIRED FIELDS */
 
     if (
+
         name === "" ||
+
         memberId === ""
+
     ) {
 
 
@@ -508,57 +901,147 @@ function createIdCard() {
     }
 
 
-    /* ADD MEMBER NAME */
+    const type =
 
     document
-    .getElementById(
-        "cardMemberName"
-    )
+    .getElementById("memberType")
+    .value;
+
+
+    const mobile =
+
+    document
+    .getElementById("memberMobile")
+    .value;
+
+
+    const date =
+
+    document
+    .getElementById("memberDate")
+    .value;
+
+
+    const address =
+
+    document
+    .getElementById("memberAddress")
+    .value;
+
+
+    const blood =
+
+    document
+    .getElementById("memberBlood")
+    .value;
+
+
+    const emergency =
+
+    document
+    .getElementById("emergencyPhone")
+    .value;
+
+
+    document
+    .getElementById("cardName")
     .textContent = name;
 
 
-    /* ADD MEMBER ID */
-
     document
-    .getElementById(
-        "cardMemberId"
-    )
+    .getElementById("cardId")
     .textContent = memberId;
 
 
-    /* ADD MEMBER TYPE */
+    document
+    .getElementById("qrMemberId")
+    .textContent = memberId;
+
 
     document
-    .getElementById(
-        "cardMemberType"
-    )
-    .textContent = memberType;
+    .getElementById("cardType")
+    .textContent = type;
 
-
-    /* ADD MOBILE NUMBER */
 
     document
-    .getElementById(
-        "cardMemberPhone"
-    )
+    .getElementById("cardMobile")
     .textContent =
 
-    phone || "उपलब्ध नहीं";
+    mobile || "उपलब्ध नहीं";
 
-
-    /* MEMBER PHOTO */
-
-    const photoInput =
 
     document
-    .getElementById(
-        "idMemberPhoto"
-    );
+    .getElementById("cardAddress")
+    .textContent =
+
+    address || "उपलब्ध नहीं";
+
+
+    document
+    .getElementById("cardBlood")
+    .textContent =
+
+    blood || "उपलब्ध नहीं";
+
+
+    document
+    .getElementById("cardEmergency")
+    .textContent =
+
+    emergency || "उपलब्ध नहीं";
+
+
+    let formattedDate =
+
+    "उपलब्ध नहीं";
+
+
+    if (date !== "") {
+
+
+        const dateParts =
+
+        date.split("-");
+
+
+        formattedDate =
+
+        dateParts[2] +
+
+        "/" +
+
+        dateParts[1] +
+
+        "/" +
+
+        dateParts[0];
+
+
+    }
+
+
+    document
+    .getElementById("cardDate")
+    .textContent = formattedDate;
+
+
+    document
+    .getElementById("backDate")
+    .textContent = formattedDate;
+
+
+    const photo =
+
+    document
+    .getElementById("memberPhoto");
 
 
     if (
-        photoInput.files &&
-        photoInput.files[0]
+
+        photo.files &&
+
+        photo.files[0]
+
     ) {
 
 
@@ -573,9 +1056,7 @@ function createIdCard() {
 
 
             document
-            .getElementById(
-                "idPhotoPreview"
-            )
+            .getElementById("cardPhoto")
             .src =
 
             event.target.result;
@@ -586,7 +1067,7 @@ function createIdCard() {
 
         reader.readAsDataURL(
 
-            photoInput.files[0]
+            photo.files[0]
 
         );
 
@@ -594,21 +1075,13 @@ function createIdCard() {
     }
 
 
-    /* HIDE FORM */
-
     document
-    .getElementById(
-        "idCardFormBox"
-    )
+    .getElementById("idForm")
     .style.display = "none";
 
 
-    /* SHOW ID CARD */
-
     document
-    .getElementById(
-        "idCardResult"
-    )
+    .getElementById("idResult")
     .style.display = "block";
 
 
