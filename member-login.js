@@ -1,269 +1,231 @@
+/* =====================================
+   MEMBER LOGIN
+===================================== */
+
 document.addEventListener(
+
     "DOMContentLoaded",
+
     function () {
 
+
         const loginForm =
-        document.getElementById(
-            "memberLoginForm"
-        );
 
+            document.getElementById(
 
-        const message =
-        document.getElementById(
-            "memberMessage"
-        );
+                "memberLoginForm"
 
-
-        const memberProfile =
-        document.getElementById(
-            "memberProfile"
-        );
-
-
-        if (!loginForm) {
-
-            console.log(
-                "Member login form नहीं मिला।"
             );
 
-            return;
 
-        }
+        const messageBox =
+
+            document.getElementById(
+
+                "memberMessage"
+
+            );
 
 
         loginForm.addEventListener(
+
             "submit",
+
             function (event) {
+
 
                 event.preventDefault();
 
 
-                const memberId =
-                document
-                .getElementById(
-                    "memberId"
-                )
-                .value
-                .trim()
-                .toUpperCase();
+                const enteredMemberId =
+
+                    document.getElementById(
+
+                        "memberId"
+
+                    ).value.trim();
 
 
-                const mobile =
-                document
-                .getElementById(
-                    "memberMobile"
-                )
-                .value
-                .trim();
+                const enteredMobile =
+
+                    document.getElementById(
+
+                        "memberMobile"
+
+                    ).value.trim();
 
 
-                let members = [];
+                /* =====================================
+                   MEMBERSHIP DATA
+                ===================================== */
 
-
-                try {
-
-                    const savedMembers =
+                const members = JSON.parse(
 
                     localStorage.getItem(
+
                         "members"
-                    );
 
-
-                    if (savedMembers) {
-
-                        members =
-                        JSON.parse(
-                            savedMembers
-                        );
-
-                    }
-
-                }
-
-                catch (error) {
-
-                    console.log(
-                        "Members load नहीं हुए।"
-                    );
-
-                    members = [];
-
-                }
-
-
-                if (
-                    !Array.isArray(
-                        members
                     )
-                ) {
 
-                    members = [];
-
-                }
+                ) || [];
 
 
-                const foundMember =
-                members.find(
-                    function (member) {
+                /* =====================================
+                   FIND MEMBER
+                ===================================== */
 
-                        const savedMemberId =
+                const member = members.find(
 
-                        String(
-                            member.memberId
-                            || ""
-                        )
-                        .trim()
-                        .toUpperCase();
-
-
-                        const savedMobile =
-
-                        String(
-                            member.mobile
-                            || ""
-                        )
-                        .trim();
+                    function (item) {
 
 
                         return (
 
-                            savedMemberId ===
-                            memberId
+                            String(
+
+                                item.memberId
+
+                            ).toUpperCase()
+
+                            ===
+
+                            enteredMemberId.toUpperCase()
 
                             &&
 
-                            savedMobile ===
-                            mobile
+                            String(
+
+                                item.mobile
+
+                            )
+
+                            ===
+
+                            enteredMobile
 
                         );
 
+
                     }
+
                 );
 
 
-                if (foundMember) {
+                /* =====================================
+                   MEMBER NOT FOUND
+                ===================================== */
 
-                    message.textContent =
-                    "✅ लॉगिन सफल हुआ।";
+                if (
+
+                    !member
+
+                ) {
 
 
-                    message.style.color =
+                    messageBox.textContent =
+
+                        "❌ Member ID या मोबाइल नंबर गलत है।";
+
+
+                    messageBox.style.color =
+
+                        "red";
+
+
+                    return;
+
+
+                }
+
+
+                /* =====================================
+                   MEMBER APPROVAL CHECK
+                ===================================== */
+
+                if (
+
+                    member.status !== "स्वीकृत"
+
+                    &&
+
+                    member.status !== "approved"
+
+                ) {
+
+
+                    messageBox.textContent =
+
+                        "⏳ आपका सदस्यता आवेदन अभी स्वीकृत नहीं हुआ है।";
+
+
+                    messageBox.style.color =
+
+                        "#d97706";
+
+
+                    return;
+
+
+                }
+
+
+                /* =====================================
+                   SAVE LOGIN MEMBER
+                ===================================== */
+
+                localStorage.setItem(
+
+                    "loggedInMember",
+
+                    JSON.stringify(
+
+                        member
+
+                    )
+
+                );
+
+
+                /* =====================================
+                   LOGIN SUCCESS
+                ===================================== */
+
+                messageBox.textContent =
+
+                    "✅ लॉगिन सफल हो गया।";
+
+
+                messageBox.style.color =
+
                     "green";
 
 
-                    loginForm.style.display =
-                    "none";
+                /* =====================================
+                   OPEN MEMBER DASHBOARD
+                ===================================== */
+
+                setTimeout(
+
+                    function () {
 
 
-                    memberProfile.style.display =
-                    "block";
+                        window.location.href =
+
+                            "member-dashboard.html";
 
 
-                    document
-                    .getElementById(
-                        "profileMemberId"
-                    )
-                    .textContent =
+                    },
 
-                    foundMember.memberId
-                    || "-";
+                    700
 
+                );
 
-                    document
-                    .getElementById(
-                        "profileName"
-                    )
-                    .textContent =
-
-                    foundMember.name
-                    || "-";
-
-
-                    document
-                    .getElementById(
-                        "profileMobile"
-                    )
-                    .textContent =
-
-                    foundMember.mobile
-                    || "-";
-
-
-                    document
-                    .getElementById(
-                        "profileMembership"
-                    )
-                    .textContent =
-
-                    foundMember.membershipType
-                    ||
-
-                    foundMember.membership
-                    ||
-
-                    "-";
-
-
-                    const status =
-
-                    String(
-                        foundMember.status
-                        || "pending"
-                    )
-                    .toLowerCase();
-
-
-                    if (
-                        status ===
-                        "approved"
-                    ) {
-
-                        document
-                        .getElementById(
-                            "profileStatus"
-                        )
-                        .textContent =
-
-                        "✅ स्वीकृत";
-
-                    }
-
-                    else {
-
-                        document
-                        .getElementById(
-                            "profileStatus"
-                        )
-                        .textContent =
-
-                        "⏳ लंबित";
-
-                    }
-
-                }
-
-                else {
-
-                    message.textContent =
-
-                    "❌ Member ID या मोबाइल नंबर गलत है।";
-
-
-                    message.style.color =
-
-                    "red";
-
-                }
 
             }
+
         );
 
+
     }
+
 );
-
-
-function memberLogout() {
-
-    window.location.reload();
-
-}
