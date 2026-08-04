@@ -10842,3 +10842,134 @@ tr:hover {
     background: #cc5200;
 
 }
+/* =====================================
+   आगामी कार्यक्रम - ROW DESIGN
+===================================== */
+
+.upcoming-programs {
+
+    padding: 50px 20px;
+
+    background: #f5f7fa;
+
+}
+
+
+.upcoming-programs h2 {
+
+    text-align: center;
+
+    font-size: 30px;
+
+    margin-bottom: 30px;
+
+    color: #0b3d91;
+
+}
+
+
+/* सभी कार्यक्रम एक Row में */
+
+.program-row {
+
+    display: flex;
+
+    gap: 20px;
+
+    justify-content: center;
+
+    align-items: stretch;
+
+    flex-wrap: wrap;
+
+}
+
+
+/* कार्यक्रम बॉक्स */
+
+.program-card {
+
+    width: 31%;
+
+    min-width: 280px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    background: white;
+
+    border-radius: 12px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+
+    transition: 0.3s;
+
+}
+
+
+.program-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+
+}
+
+
+/* तारीख */
+
+.program-date {
+
+    min-width: 90px;
+
+    padding: 12px 8px;
+
+    text-align: center;
+
+    font-weight: bold;
+
+    color: white;
+
+    background: #ff7a00;
+
+    border-radius: 8px;
+
+}
+
+
+/* कार्यक्रम की जानकारी */
+
+.program-details h3 {
+
+    margin-bottom: 7px;
+
+    color: #0b3d91;
+
+}
+
+
+.program-details p {
+
+    margin: 0;
+
+    color: #555;
+
+}
+
+
+/* मोबाइल में एक के नीचे एक */
+
+@media screen and (max-width: 900px) {
+
+    .program-card {
+
+        width: 100%;
+
+    }
+
+}
