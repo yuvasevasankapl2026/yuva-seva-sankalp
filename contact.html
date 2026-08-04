@@ -1,1 +1,576 @@
+<!DOCTYPE html>
 
+<html lang="hi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+
+        संपर्क करें | युवा सेवा संकल्प फाउंडेशन
+
+    </title>
+
+
+    <!-- MAIN CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     TOP BAR
+===================================== -->
+
+<div class="top-bar">
+
+    <div class="container">
+
+        <div class="left">
+
+            📧 info.yuvasevasankalpfoundation@gmail.com
+
+            |
+
+            📞 +91 9651731313
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     HEADER
+===================================== -->
+
+<header class="header">
+
+    <div class="header-content">
+
+        <img
+            src="images/logo.png"
+            class="logo"
+            alt="युवा सेवा संकल्प फाउंडेशन लोगो"
+        >
+
+
+        <div class="title">
+
+            <h1 class="main-title">
+
+                युवा सेवा संकल्प फाउंडेशन
+
+            </h1>
+
+
+            <p class="tagline">
+
+                युवा शक्ति, राष्ट्र शक्ति
+
+            </p>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================
+     CONTACT FORM
+===================================== -->
+
+<section class="contact-form-section">
+
+
+    <div class="contact-form-box">
+
+
+        <h2>
+
+            📩 संपर्क करें
+
+        </h2>
+
+
+        <p class="contact-form-text">
+
+            किसी भी जानकारी, सुझाव या सहायता के लिए
+            हमें संदेश भेजें।
+
+        </p>
+
+
+        <form id="contactForm">
+
+
+            <!-- NAME -->
+
+            <div class="form-group">
+
+                <label for="contactName">
+
+                    पूरा नाम *
+
+                </label>
+
+
+                <input
+                    type="text"
+                    id="contactName"
+                    placeholder="अपना पूरा नाम लिखें"
+                    required
+                >
+
+            </div>
+
+
+            <!-- MOBILE -->
+
+            <div class="form-group">
+
+                <label for="contactMobile">
+
+                    मोबाइल नंबर *
+
+                </label>
+
+
+                <input
+                    type="tel"
+                    id="contactMobile"
+                    placeholder="10 अंकों का मोबाइल नंबर"
+                    maxlength="10"
+                    inputmode="numeric"
+                    required
+                >
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+                <label for="contactEmail">
+
+                    ईमेल पता
+
+                </label>
+
+
+                <input
+                    type="email"
+                    id="contactEmail"
+                    placeholder="अपना ईमेल लिखें"
+                >
+
+            </div>
+
+
+            <!-- SUBJECT -->
+
+            <div class="form-group">
+
+                <label for="contactSubject">
+
+                    विषय *
+
+                </label>
+
+
+                <input
+                    type="text"
+                    id="contactSubject"
+                    placeholder="संदेश का विषय लिखें"
+                    required
+                >
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div class="form-group">
+
+                <label for="contactMessage">
+
+                    संदेश *
+
+                </label>
+
+
+                <textarea
+                    id="contactMessage"
+                    placeholder="अपना संदेश लिखें"
+                    rows="6"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <!-- AGREEMENT -->
+
+            <div class="contact-agreement">
+
+                <input
+                    type="checkbox"
+                    id="contactAgree"
+                    required
+                >
+
+
+                <label for="contactAgree">
+
+                    मैं अपनी जानकारी के उपयोग के लिए
+                    गोपनीयता नीति से सहमत हूँ।
+
+                </label>
+
+            </div>
+
+
+            <!-- SUBMIT BUTTON -->
+
+            <button
+                type="submit"
+                class="contact-submit-btn"
+            >
+
+                📩 संदेश भेजें
+
+            </button>
+
+
+            <!-- RESULT -->
+
+            <p
+                id="contactResult"
+                class="contact-result"
+            ></p>
+
+
+        </form>
+
+
+        <!-- HOME BUTTON -->
+
+        <a
+            href="index.html"
+            class="back-home"
+        >
+
+            ← होम पेज पर जाएँ
+
+        </a>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+    <img
+        src="images/logo.png"
+        alt="युवा सेवा संकल्प फाउंडेशन लोगो"
+        width="70"
+    >
+
+
+    <h3>
+
+        युवा सेवा संकल्प फाउंडेशन
+
+    </h3>
+
+
+    <p>
+
+        युवा शक्ति, राष्ट्र शक्ति
+
+    </p>
+
+
+    <p>
+
+        <a href="privacy-policy.html">
+
+            🔒 गोपनीयता नीति
+
+        </a>
+
+    </p>
+
+
+    <p>
+
+        © 2026 All Rights Reserved
+
+    </p>
+
+</footer>
+
+
+<!-- =====================================
+     CONTACT JAVASCRIPT
+===================================== -->
+
+<script>
+
+
+document
+.getElementById("contactForm")
+.addEventListener(
+
+    "submit",
+
+    function(event) {
+
+
+        event.preventDefault();
+
+
+        const name =
+
+        document
+        .getElementById("contactName")
+        .value
+        .trim();
+
+
+        const mobile =
+
+        document
+        .getElementById("contactMobile")
+        .value
+        .trim();
+
+
+        const email =
+
+        document
+        .getElementById("contactEmail")
+        .value
+        .trim();
+
+
+        const subject =
+
+        document
+        .getElementById("contactSubject")
+        .value
+        .trim();
+
+
+        const message =
+
+        document
+        .getElementById("contactMessage")
+        .value
+        .trim();
+
+
+        const result =
+
+        document
+        .getElementById("contactResult");
+
+
+        /* MOBILE VALIDATION */
+
+        if (
+
+            !/^[0-9]{10}$/.test(mobile)
+
+        ) {
+
+
+            result.innerHTML =
+
+            "❌ कृपया सही 10 अंकों का मोबाइल नंबर लिखें।";
+
+
+            result.style.color =
+
+            "red";
+
+
+            return;
+
+
+        }
+
+
+        /* OLD CONTACT DATA */
+
+        let contacts =
+
+        JSON.parse(
+
+            localStorage.getItem(
+
+                "contactMessages"
+
+            )
+
+        ) || [];
+
+
+        /* CONTACT ID */
+
+        const contactId =
+
+        "YSSF-CONTACT-" +
+
+        String(
+
+            contacts.length + 1
+
+        ).padStart(
+
+            4,
+
+            "0"
+
+        );
+
+
+        /* CONTACT OBJECT */
+
+        const contact = {
+
+
+            contactId:
+
+            contactId,
+
+
+            name:
+
+            name,
+
+
+            mobile:
+
+            mobile,
+
+
+            email:
+
+            email,
+
+
+            subject:
+
+            subject,
+
+
+            message:
+
+            message,
+
+
+            status:
+
+            "नया",
+
+
+            date:
+
+            new Date()
+
+            .toLocaleDateString(
+
+                "hi-IN"
+
+            )
+
+
+        };
+
+
+        /* SAVE CONTACT */
+
+        contacts.push(
+
+            contact
+
+        );
+
+
+        localStorage.setItem(
+
+            "contactMessages",
+
+            JSON.stringify(
+
+                contacts
+
+            )
+
+        );
+
+
+        /* SUCCESS MESSAGE */
+
+        result.innerHTML =
+
+        "✅ आपका संदेश सफलतापूर्वक भेज दिया गया है।" +
+
+        "<br>" +
+
+        "संदेश ID: " +
+
+        "<strong>" +
+
+        contactId +
+
+        "</strong>";
+
+
+        result.style.color =
+
+        "green";
+
+
+        /* RESET FORM */
+
+        document
+        .getElementById("contactForm")
+        .reset();
+
+
+    }
+
+);
+
+
+</script>
+
+
+</body>
+
+</html>
