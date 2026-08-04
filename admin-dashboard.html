@@ -462,15 +462,14 @@
             <!-- DOWNLOAD REPORT -->
 
             <button
-                type="button"
-                class="quick-btn orange-btn"
-                onclick="showMessage()"
-            >
+    type="button"
+    class="quick-btn orange-btn"
+    onclick="downloadReport()"
+>
 
-                📥 रिपोर्ट डाउनलोड करें
+    📥 रिपोर्ट डाउनलोड करें
 
-            </button>
-
+</button>
 
         </div>
 
@@ -572,18 +571,215 @@ function logoutAdmin() {
    REPORT MESSAGE
 ===================================== */
 
-function showMessage() {
+<script>
 
+/* =====================================
+   ADMIN LOGOUT
+===================================== */
+
+function logoutAdmin() {
+
+    const confirmLogout = confirm(
+
+        "क्या आप एडमिन पैनल से लॉगआउट करना चाहते हैं?"
+
+    );
+
+
+    if (confirmLogout) {
+
+        localStorage.removeItem(
+
+            "adminLoggedIn"
+
+        );
+
+
+        window.location.href =
+
+        "admin-login.html";
+
+    }
+
+}
+
+
+/* =====================================
+   MEMBER REPORT DOWNLOAD
+===================================== */
+
+function downloadReport() {
+
+
+    /* सदस्य की जानकारी Local Storage से लें */
+
+    const members = JSON.parse(
+
+        localStorage.getItem("members")
+
+    ) || [];
+
+
+    /* अगर कोई सदस्य नहीं है */
+
+    if (members.length === 0) {
+
+        alert(
+
+            "अभी कोई सदस्य उपलब्ध नहीं है।"
+
+        );
+
+        return;
+
+    }
+
+
+    /* CSV की पहली लाइन */
+
+    let csv =
+
+        "\uFEFFक्रमांक,Member ID,नाम,मोबाइल नंबर,सदस्यता,स्थिति\n";
+
+
+    /* सभी सदस्यों की जानकारी */
+
+    members.forEach(
+
+        function(member, index) {
+
+
+            const memberId =
+
+                member.memberId ||
+
+                member.id ||
+
+                "";
+
+
+            const name =
+
+                member.name ||
+
+                member.fullName ||
+
+                "";
+
+
+            const phone =
+
+                member.phone ||
+
+                member.mobile ||
+
+                "";
+
+
+            const membership =
+
+                member.membership ||
+
+                member.membershipType ||
+
+                "";
+
+
+            const status =
+
+                member.status ||
+
+                "लंबित";
+
+
+            csv +=
+
+                `${index + 1},` +
+
+                `"${memberId}",` +
+
+                `"${name}",` +
+
+                `"${phone}",` +
+
+                `"${membership}",` +
+
+                `"${status}"\n`;
+
+
+        }
+
+    );
+
+
+    /* CSV File बनाएँ */
+
+    const file = new Blob(
+
+        [csv],
+
+        {
+
+            type:
+
+            "text/csv;charset=utf-8;"
+
+        }
+
+    );
+
+
+    /* Download Link बनाएँ */
+
+    const downloadLink =
+
+        document.createElement("a");
+
+
+    downloadLink.href =
+
+        URL.createObjectURL(file);
+
+
+    /* File का नाम */
+
+    downloadLink.download =
+
+        "YSSF-Member-Report.csv";
+
+
+    /* File Download */
+
+    document.body.appendChild(
+
+        downloadLink
+
+    );
+
+
+    downloadLink.click();
+
+
+    document.body.removeChild(
+
+        downloadLink
+
+    );
+
+
+    /* Success Message */
 
     alert(
 
-        "रिपोर्ट डाउनलोड सुविधा जल्द उपलब्ध होगी।"
+        "सदस्य रिपोर्ट सफलतापूर्वक डाउनलोड हो गई।"
 
     );
 
 
 }
 
+
+</script>
 
 </script>
 
