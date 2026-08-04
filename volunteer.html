@@ -1,1 +1,707 @@
+<!DOCTYPE html>
 
+<html lang="hi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        वॉलंटियर पंजीकरण | युवा सेवा संकल्प फाउंडेशन
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     TOP BAR
+===================================== -->
+
+<div class="top-bar">
+
+    <div class="container">
+
+        <div class="left">
+
+            📧 yuvasevasankalp2026@gmail.com
+
+            |
+
+            📞 +91 9651731313
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     HEADER
+===================================== -->
+
+<header class="header">
+
+    <div class="header-content">
+
+        <img
+            src="images/logo.png"
+            class="logo"
+            alt="युवा सेवा संकल्प फाउंडेशन लोगो"
+        >
+
+
+        <div class="title">
+
+            <h1 class="main-title">
+
+                युवा सेवा संकल्प फाउंडेशन
+
+            </h1>
+
+
+            <p class="tagline">
+
+                युवा शक्ति, राष्ट्र शक्ति
+
+            </p>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================
+     VOLUNTEER REGISTRATION
+===================================== -->
+
+<section class="volunteer-section">
+
+    <div class="volunteer-box">
+
+
+        <h2>
+
+            🤝 वॉलंटियर पंजीकरण
+
+        </h2>
+
+
+        <p class="volunteer-text">
+
+            समाज सेवा और राष्ट्र निर्माण में
+            अपना योगदान देने के लिए वॉलंटियर बनें।
+
+        </p>
+
+
+        <form id="volunteerForm">
+
+
+            <!-- FULL NAME -->
+
+            <div class="form-group">
+
+                <label for="volunteerName">
+
+                    पूरा नाम *
+
+                </label>
+
+
+                <input
+                    type="text"
+                    id="volunteerName"
+                    placeholder="अपना पूरा नाम लिखें"
+                    required
+                >
+
+            </div>
+
+
+            <!-- MOBILE -->
+
+            <div class="form-group">
+
+                <label for="volunteerMobile">
+
+                    मोबाइल नंबर *
+
+                </label>
+
+
+                <input
+                    type="tel"
+                    id="volunteerMobile"
+                    placeholder="10 अंकों का मोबाइल नंबर"
+                    maxlength="10"
+                    inputmode="numeric"
+                    required
+                >
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="form-group">
+
+                <label for="volunteerEmail">
+
+                    ईमेल
+
+                </label>
+
+
+                <input
+                    type="email"
+                    id="volunteerEmail"
+                    placeholder="अपना ईमेल लिखें"
+                >
+
+            </div>
+
+
+            <!-- ADDRESS -->
+
+            <div class="form-group">
+
+                <label for="volunteerAddress">
+
+                    पता *
+
+                </label>
+
+
+                <textarea
+                    id="volunteerAddress"
+                    placeholder="अपना पूरा पता लिखें"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <!-- SERVICE AREA -->
+
+            <div class="form-group">
+
+                <label for="volunteerService">
+
+                    आप किस क्षेत्र में सेवा करना चाहते हैं? *
+
+                </label>
+
+
+                <select
+                    id="volunteerService"
+                    required
+                >
+
+                    <option value="">
+
+                        सेवा क्षेत्र चुनें
+
+                    </option>
+
+
+                    <option value="शिक्षा">
+
+                        📚 शिक्षा
+
+                    </option>
+
+
+                    <option value="स्वास्थ्य">
+
+                        🏥 स्वास्थ्य
+
+                    </option>
+
+
+                    <option value="पर्यावरण">
+
+                        🌳 पर्यावरण
+
+                    </option>
+
+
+                    <option value="समाज सेवा">
+
+                        🤝 समाज सेवा
+
+                    </option>
+
+
+                    <option value="महिला सशक्तिकरण">
+
+                        👩 महिला सशक्तिकरण
+
+                    </option>
+
+
+                    <option value="युवा विकास">
+
+                        👥 युवा विकास
+
+                    </option>
+
+
+                    <option value="अन्य">
+
+                        अन्य
+
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- AVAILABILITY -->
+
+            <div class="form-group">
+
+                <label for="volunteerAvailability">
+
+                    आप कब सेवा दे सकते हैं? *
+
+                </label>
+
+
+                <select
+                    id="volunteerAvailability"
+                    required
+                >
+
+                    <option value="">
+
+                        समय चुनें
+
+                    </option>
+
+
+                    <option value="सप्ताहांत">
+
+                        सप्ताहांत
+
+                    </option>
+
+
+                    <option value="सप्ताह में कुछ दिन">
+
+                        सप्ताह में कुछ दिन
+
+                    </option>
+
+
+                    <option value="कार्यक्रम के समय">
+
+                        कार्यक्रम के समय
+
+                    </option>
+
+
+                    <option value="आवश्यकतानुसार">
+
+                        आवश्यकतानुसार
+
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- MESSAGE -->
+
+            <div class="form-group">
+
+                <label for="volunteerMessage">
+
+                    संदेश / अनुभव
+
+                </label>
+
+
+                <textarea
+                    id="volunteerMessage"
+                    placeholder="यदि कोई अनुभव या संदेश हो तो लिखें"
+                ></textarea>
+
+            </div>
+
+
+            <!-- AGREEMENT -->
+
+            <div class="volunteer-agreement">
+
+                <input
+                    type="checkbox"
+                    id="volunteerAgree"
+                    required
+                >
+
+
+                <label for="volunteerAgree">
+
+                    मैं संस्था के नियमों का पालन करने
+                    और समाज सेवा में सहयोग देने के लिए
+                    सहमत हूँ।
+
+                </label>
+
+            </div>
+
+
+            <!-- SUBMIT BUTTON -->
+
+            <button
+                type="submit"
+                class="volunteer-btn"
+            >
+
+                🤝 वॉलंटियर के रूप में जुड़ें
+
+            </button>
+
+
+            <!-- MESSAGE -->
+
+            <p
+                id="volunteerResult"
+                class="volunteer-result"
+            ></p>
+
+
+        </form>
+
+
+        <a
+            href="index.html"
+            class="back-home"
+        >
+
+            ← होम पेज पर जाएँ
+
+        </a>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+    <img
+        src="images/logo.png"
+        alt="युवा सेवा संकल्प फाउंडेशन लोगो"
+        width="70"
+    >
+
+
+    <h3>
+
+        युवा सेवा संकल्प फाउंडेशन
+
+    </h3>
+
+
+    <p>
+
+        युवा शक्ति, राष्ट्र शक्ति
+
+    </p>
+
+
+    <p>
+
+        © 2026 All Rights Reserved
+
+    </p>
+
+</footer>
+
+
+<!-- =====================================
+     VOLUNTEER JAVASCRIPT
+===================================== -->
+
+<script>
+
+
+document
+.getElementById("volunteerForm")
+.addEventListener(
+
+    "submit",
+
+    function(event) {
+
+
+        event.preventDefault();
+
+
+        const name =
+
+        document
+        .getElementById("volunteerName")
+        .value
+        .trim();
+
+
+        const mobile =
+
+        document
+        .getElementById("volunteerMobile")
+        .value
+        .trim();
+
+
+        const email =
+
+        document
+        .getElementById("volunteerEmail")
+        .value
+        .trim();
+
+
+        const address =
+
+        document
+        .getElementById("volunteerAddress")
+        .value
+        .trim();
+
+
+        const service =
+
+        document
+        .getElementById("volunteerService")
+        .value;
+
+
+        const availability =
+
+        document
+        .getElementById("volunteerAvailability")
+        .value;
+
+
+        const message =
+
+        document
+        .getElementById("volunteerMessage")
+        .value
+        .trim();
+
+
+        const result =
+
+        document
+        .getElementById("volunteerResult");
+
+
+        /* MOBILE VALIDATION */
+
+        if (
+
+            !/^[0-9]{10}$/.test(mobile)
+
+        ) {
+
+
+            result.innerHTML =
+
+            "❌ कृपया सही 10 अंकों का मोबाइल नंबर लिखें।";
+
+
+            result.style.color =
+
+            "red";
+
+
+            return;
+
+
+        }
+
+
+        /* LOCAL STORAGE */
+
+        let volunteers =
+
+        JSON.parse(
+
+            localStorage.getItem(
+
+                "volunteers"
+
+            )
+
+        ) || [];
+
+
+        /* VOLUNTEER ID */
+
+        const volunteerId =
+
+        "YSSF-VOL-2026-" +
+
+        String(
+
+            volunteers.length + 1
+
+        ).padStart(
+
+            4,
+
+            "0"
+
+        );
+
+
+        /* SAVE DATA */
+
+        const volunteer = {
+
+
+            volunteerId:
+
+            volunteerId,
+
+
+            name:
+
+            name,
+
+
+            mobile:
+
+            mobile,
+
+
+            email:
+
+            email,
+
+
+            address:
+
+            address,
+
+
+            service:
+
+            service,
+
+
+            availability:
+
+            availability,
+
+
+            message:
+
+            message,
+
+
+            status:
+
+            "लंबित",
+
+
+            registrationDate:
+
+            new Date()
+
+            .toLocaleDateString(
+
+                "hi-IN"
+
+            )
+
+
+        };
+
+
+        volunteers.push(
+
+            volunteer
+
+        );
+
+
+        localStorage.setItem(
+
+            "volunteers",
+
+            JSON.stringify(
+
+                volunteers
+
+            )
+
+        );
+
+
+        /* SUCCESS MESSAGE */
+
+        result.innerHTML =
+
+        "✅ आपका वॉलंटियर पंजीकरण सफल हो गया।" +
+
+        "<br>" +
+
+        "आपकी Volunteer ID: " +
+
+        "<strong>" +
+
+        volunteerId +
+
+        "</strong>";
+
+
+        result.style.color =
+
+        "green";
+
+
+        /* FORM RESET */
+
+        document
+        .getElementById("volunteerForm")
+        .reset();
+
+
+    }
+
+);
+
+
+</script>
+
+
+</body>
+
+</html>
