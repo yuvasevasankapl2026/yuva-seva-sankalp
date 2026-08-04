@@ -8613,3 +8613,23 @@ tr:hover {
 
 
 }
+/* =====================================
+   BLOOD DONOR LIST BUTTON
+===================================== */
+
+.red-btn {
+
+    background: #d62828;
+
+    color: white;
+
+}
+
+
+.red-btn:hover {
+
+    background: #a61b1b;
+
+    color: white;
+
+}
