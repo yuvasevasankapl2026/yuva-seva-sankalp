@@ -1065,3 +1065,487 @@ if (
 showMembers();
 
 showVolunteers();
+/* =====================================
+   CONTACT MESSAGES
+===================================== */
+
+
+function loadContactMessages() {
+
+
+    const contactTable =
+
+    document.getElementById(
+
+        "contactTable"
+
+    );
+
+
+    if (
+
+        !contactTable
+
+    ) {
+
+
+        return;
+
+
+    }
+
+
+    const contacts =
+
+    JSON.parse(
+
+        localStorage.getItem(
+
+            "contactMessages"
+
+        )
+
+    ) || [];
+
+
+    contactTable.innerHTML = "";
+
+
+    /* कोई संदेश नहीं */
+
+    if (
+
+        contacts.length === 0
+
+    ) {
+
+
+        contactTable.innerHTML = `
+
+        <tr>
+
+            <td
+                colspan="10"
+                style="
+                text-align:center;
+                padding:25px;
+                "
+            >
+
+                अभी कोई संपर्क संदेश उपलब्ध नहीं है।
+
+            </td>
+
+        </tr>
+
+        `;
+
+
+        return;
+
+
+    }
+
+
+    /* सभी संदेश दिखाएँ */
+
+    contacts.forEach(
+
+        function(
+
+            contact,
+
+            index
+
+        ) {
+
+
+            const status =
+
+            contact.status ||
+
+            "नया";
+
+
+            contactTable.innerHTML += `
+
+
+            <tr>
+
+
+                <td>
+
+                    ${index + 1}
+
+                </td>
+
+
+                <td>
+
+                    ${contact.contactId || ""}
+
+                </td>
+
+
+                <td>
+
+                    ${contact.name || ""}
+
+                </td>
+
+
+                <td>
+
+                    ${contact.mobile || ""}
+
+                </td>
+
+
+                <td>
+
+                    ${contact.email || "-"}
+
+                </td>
+
+
+                <td>
+
+                    ${contact.subject || ""}
+
+                </td>
+
+
+                <td>
+
+                    ${contact.message || ""}
+
+                </td>
+
+
+                <td>
+
+                    ${contact.date || "-"}
+
+                </td>
+
+
+                <td>
+
+                    <span class="contact-status">
+
+                        ${status}
+
+                    </span>
+
+                </td>
+
+
+                <td>
+
+
+                    <button
+
+                        type="button"
+
+                        class="contact-read-btn"
+
+                        onclick="markContactRead(${index})"
+
+                    >
+
+                        ✓ पढ़ा
+
+                    </button>
+
+
+                    <button
+
+                        type="button"
+
+                        class="contact-delete-btn"
+
+                        onclick="deleteContact(${index})"
+
+                    >
+
+                        🗑 हटाएँ
+
+                    </button>
+
+
+                </td>
+
+
+            </tr>
+
+
+            `;
+
+
+        }
+
+    );
+
+
+}
+
+
+/* =====================================
+   MARK MESSAGE AS READ
+===================================== */
+
+
+function markContactRead(
+
+    index
+
+) {
+
+
+    let contacts =
+
+    JSON.parse(
+
+        localStorage.getItem(
+
+            "contactMessages"
+
+        )
+
+    ) || [];
+
+
+    if (
+
+        contacts[index]
+
+    ) {
+
+
+        contacts[index].status =
+
+        "पढ़ा गया";
+
+
+        localStorage.setItem(
+
+            "contactMessages",
+
+            JSON.stringify(
+
+                contacts
+
+            )
+
+        );
+
+
+        loadContactMessages();
+
+
+    }
+
+
+}
+
+
+/* =====================================
+   DELETE CONTACT MESSAGE
+===================================== */
+
+
+function deleteContact(
+
+    index
+
+) {
+
+
+    const confirmDelete =
+
+    confirm(
+
+        "क्या आप यह संपर्क संदेश हटाना चाहते हैं?"
+
+    );
+
+
+    if (
+
+        !confirmDelete
+
+    ) {
+
+
+        return;
+
+
+    }
+
+
+    let contacts =
+
+    JSON.parse(
+
+        localStorage.getItem(
+
+            "contactMessages"
+
+        )
+
+    ) || [];
+
+
+    contacts.splice(
+
+        index,
+
+        1
+
+    );
+
+
+    localStorage.setItem(
+
+        "contactMessages",
+
+        JSON.stringify(
+
+            contacts
+
+        )
+
+    );
+
+
+    loadContactMessages();
+
+
+}
+
+
+/* =====================================
+   CONTACT SEARCH
+===================================== */
+
+
+const contactSearch =
+
+document.getElementById(
+
+    "contactSearch"
+
+);
+
+
+if (
+
+    contactSearch
+
+) {
+
+
+    contactSearch.addEventListener(
+
+        "input",
+
+        function() {
+
+
+            const searchText =
+
+            this.value
+
+            .toLowerCase()
+
+            .trim();
+
+
+            const rows =
+
+            document
+
+            .querySelectorAll(
+
+                "#contactTable tr"
+
+            );
+
+
+            rows.forEach(
+
+                function(
+
+                    row
+
+                ) {
+
+
+                    const rowText =
+
+                    row.innerText
+
+                    .toLowerCase();
+
+
+                    if (
+
+                        rowText.includes(
+
+                            searchText
+
+                        )
+
+                    ) {
+
+
+                        row.style.display =
+
+                        "";
+
+
+                    }
+
+
+                    else {
+
+
+                        row.style.display =
+
+                        "none";
+
+
+                    }
+
+
+                }
+
+            );
+
+
+        }
+
+    );
+
+
+}
+
+
+/* =====================================
+   LOAD CONTACT MESSAGES
+===================================== */
+
+
+document.addEventListener(
+
+    "DOMContentLoaded",
+
+    function() {
+
+
+        loadContactMessages();
+
+
+    }
+
+);
