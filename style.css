@@ -8633,3 +8633,446 @@ tr:hover {
     color: white;
 
 }
+/* =====================================
+   VOLUNTEER REGISTRATION
+===================================== */
+
+.volunteer-section {
+
+    padding: 60px 20px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #eef7ff,
+        #f7fff5
+    );
+
+}
+
+
+.volunteer-box {
+
+    width: 100%;
+
+    max-width: 750px;
+
+    margin: auto;
+
+    padding: 35px;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    box-shadow:
+
+    0 8px 30px
+
+    rgba(
+        0,
+        0,
+        0,
+        0.12
+    );
+
+}
+
+
+.volunteer-box h2 {
+
+    text-align: center;
+
+    color: #0b5e2b;
+
+    font-size: 30px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.volunteer-text {
+
+    text-align: center;
+
+    color: #555;
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+
+}
+
+
+/* =====================================
+   FORM GROUP
+===================================== */
+
+.volunteer-box .form-group {
+
+    margin-bottom: 20px;
+
+}
+
+
+.volunteer-box .form-group label {
+
+    display: block;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    color: #333;
+
+    margin-bottom: 8px;
+
+}
+
+
+/* =====================================
+   INPUT
+===================================== */
+
+.volunteer-box input,
+
+.volunteer-box select,
+
+.volunteer-box textarea {
+
+    width: 100%;
+
+    padding: 13px 15px;
+
+    border:
+
+    1px solid
+
+    #cfcfcf;
+
+    border-radius: 8px;
+
+    font-size: 16px;
+
+    font-family:
+
+    Arial,
+
+    "Mangal",
+
+    sans-serif;
+
+    outline: none;
+
+    transition:
+
+    0.3s;
+
+}
+
+
+/* =====================================
+   INPUT FOCUS
+===================================== */
+
+.volunteer-box input:focus,
+
+.volunteer-box select:focus,
+
+.volunteer-box textarea:focus {
+
+    border-color:
+
+    #138a42;
+
+    box-shadow:
+
+    0 0 0 3px
+
+    rgba(
+        19,
+        138,
+        66,
+        0.12
+    );
+
+}
+
+
+/* =====================================
+   TEXTAREA
+===================================== */
+
+.volunteer-box textarea {
+
+    min-height: 110px;
+
+    resize: vertical;
+
+}
+
+
+/* =====================================
+   SELECT
+===================================== */
+
+.volunteer-box select {
+
+    background: white;
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================
+   AGREEMENT
+===================================== */
+
+.volunteer-agreement {
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin:
+
+    10px 0
+
+    25px;
+
+}
+
+
+.volunteer-agreement input {
+
+    width: 18px;
+
+    height: 18px;
+
+    margin-top: 3px;
+
+    cursor: pointer;
+
+}
+
+
+.volunteer-agreement label {
+
+    color: #444;
+
+    line-height: 1.6;
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================
+   SUBMIT BUTTON
+===================================== */
+
+.volunteer-btn {
+
+    width: 100%;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background:
+
+    linear-gradient(
+        135deg,
+        #087f3e,
+        #19a958
+    );
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+
+    0.3s;
+
+}
+
+
+.volunteer-btn:hover {
+
+    transform:
+
+    translateY(-2px);
+
+    box-shadow:
+
+    0 7px 18px
+
+    rgba(
+        8,
+        127,
+        62,
+        0.25
+    );
+
+}
+
+
+.volunteer-btn:active {
+
+    transform:
+
+    translateY(0);
+
+}
+
+
+/* =====================================
+   RESULT MESSAGE
+===================================== */
+
+.volunteer-result {
+
+    text-align: center;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    line-height: 1.8;
+
+    margin-top: 22px;
+
+    padding: 12px;
+
+    border-radius: 8px;
+
+}
+
+
+/* =====================================
+   BACK HOME
+===================================== */
+
+.volunteer-box .back-home {
+
+    display: block;
+
+    width: fit-content;
+
+    margin:
+
+    25px auto 0;
+
+    color: #075ec7;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+}
+
+
+.volunteer-box .back-home:hover {
+
+    text-decoration: underline;
+
+}
+
+
+/* =====================================
+   MOBILE RESPONSIVE
+===================================== */
+
+@media screen and (max-width: 600px) {
+
+
+    .volunteer-section {
+
+        padding:
+
+        30px 12px;
+
+    }
+
+
+    .volunteer-box {
+
+        padding:
+
+        22px 16px;
+
+        border-radius:
+
+        12px;
+
+    }
+
+
+    .volunteer-box h2 {
+
+        font-size:
+
+        24px;
+
+    }
+
+
+    .volunteer-text {
+
+        font-size:
+
+        15px;
+
+    }
+
+
+    .volunteer-box input,
+
+    .volunteer-box select,
+
+    .volunteer-box textarea {
+
+        font-size:
+
+        15px;
+
+        padding:
+
+        12px;
+
+    }
+
+
+    .volunteer-btn {
+
+        font-size:
+
+        16px;
+
+    }
+
+
+    .volunteer-agreement label {
+
+        font-size:
+
+        14px;
+
+    }
+
+
+}
