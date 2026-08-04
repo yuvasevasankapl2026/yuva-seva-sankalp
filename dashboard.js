@@ -1,183 +1,131 @@
 /* =====================================
-   ADMIN DASHBOARD JAVASCRIPT
-===================================== */
-
-
-/* =====================================
    ADMIN LOGIN CHECK
 ===================================== */
 
-const adminLogin = localStorage.getItem(
-    "adminLoggedIn"
-);
-
-
 if (
-    adminLogin !== "true"
+
+    localStorage.getItem(
+
+        "adminLoggedIn"
+
+    ) !== "true"
+
 ) {
 
+
     window.location.href =
+
     "admin-login.html";
+
 
 }
 
 
 /* =====================================
-   MEMBERS LOAD
+   MEMBER DATA
 ===================================== */
 
-let members = JSON.parse(
+let members =
+
+JSON.parse(
 
     localStorage.getItem(
+
         "members"
+
     )
 
 ) || [];
 
 
 /* =====================================
-   SAVE MEMBERS
+   VOLUNTEER DATA
 ===================================== */
 
-function saveMembers() {
+let volunteers =
 
-    localStorage.setItem(
+JSON.parse(
 
-        "members",
+    localStorage.getItem(
 
-        JSON.stringify(
-            members
-        )
+        "volunteers"
+
+    )
+
+) || [];
+
+
+/* =====================================
+   MEMBER TABLE
+===================================== */
+
+function showMembers(
+
+    memberList = members
+
+) {
+
+
+    const memberTable =
+
+    document.getElementById(
+
+        "memberTable"
 
     );
 
-}
+
+    if (
+
+        !memberTable
+
+    ) {
 
 
-/* =====================================
-   UPDATE STATISTICS
-===================================== */
-
-function updateStatistics() {
-
-    const totalMembers =
-
-        members.length;
+        return;
 
 
-    const approvedMembers =
-
-        members.filter(
-
-            function(member) {
-
-                return (
-
-                    member.status ===
-                    "approved"
-
-                );
-
-            }
-
-        ).length;
+    }
 
 
-    const pendingMembers =
-
-        members.filter(
-
-            function(member) {
-
-                return (
-
-                    member.status !==
-                    "approved"
-
-                );
-
-            }
-
-        ).length;
-
-
-    document.getElementById(
-        "totalMembers"
-    ).textContent =
-
-        totalMembers;
-
-
-    document.getElementById(
-        "newApplications"
-    ).textContent =
-
-        pendingMembers;
-
-
-    document.getElementById(
-        "approvedMembers"
-    ).textContent =
-
-        approvedMembers;
-
-
-    document.getElementById(
-        "pendingMembers"
-    ).textContent =
-
-        pendingMembers;
-
-}
-
-
-/* =====================================
-   DISPLAY MEMBERS
-===================================== */
-
-function displayMembers(
-    memberList
-) {
-
-    const table =
-
-        document.getElementById(
-            "memberTable"
-        );
-
-
-    table.innerHTML = "";
+    memberTable.innerHTML = "";
 
 
     if (
+
         memberList.length === 0
+
     ) {
 
-        table.innerHTML = `
 
-            <tr>
+        memberTable.innerHTML =
 
-                <td
-                    colspan="7"
-                    style="
-                        text-align:
-                        center;
+        `
 
-                        padding:
-                        30px;
-                    "
-                >
+        <tr>
 
-                    कोई सदस्यता आवेदन नहीं मिला।
+            <td
+                colspan="7"
+                style="
+                    text-align:center;
+                    padding:20px;
+                "
+            >
 
-                </td>
+                अभी कोई सदस्य उपलब्ध नहीं है।
 
-            </tr>
+            </td>
+
+        </tr>
 
         `;
 
 
+        updateDashboard();
+
+
         return;
+
 
     }
 
@@ -185,207 +133,444 @@ function displayMembers(
     memberList.forEach(
 
         function(
+
             member,
+
             index
+
         ) {
 
-            const originalIndex =
 
-                members.indexOf(
-                    member
-                );
+            const memberId =
+
+            member.memberId ||
+
+            member.id ||
+
+            "-";
 
 
-            let statusHTML;
+            const name =
+
+            member.name ||
+
+            member.fullName ||
+
+            "-";
 
 
-            if (
-                member.status ===
-                "approved"
-            ) {
+            const mobile =
 
-                statusHTML = `
+            member.mobile ||
 
-                    <span
-                        class="
-                        status-approved
-                        "
-                    >
+            member.phone ||
 
-                        स्वीकृत
+            "-";
+
+
+            const membership =
+
+            member.membership ||
+
+            member.membershipType ||
+
+            "-";
+
+
+            const status =
+
+            member.status ||
+
+            "लंबित";
+
+
+            memberTable.innerHTML +=
+
+            `
+
+            <tr>
+
+
+                <td>
+
+                    ${index + 1}
+
+                </td>
+
+
+                <td>
+
+                    ${memberId}
+
+                </td>
+
+
+                <td>
+
+                    ${name}
+
+                </td>
+
+
+                <td>
+
+                    ${mobile}
+
+                </td>
+
+
+                <td>
+
+                    ${membership}
+
+                </td>
+
+
+                <td>
+
+                    <span class="status-${status}">
+
+                        ${status}
 
                     </span>
 
-                `;
-
-            }
-
-            else {
-
-                statusHTML = `
-
-                    <span
-                        class="
-                        status-pending
-                        "
-                    >
-
-                        लंबित
-
-                    </span>
-
-                `;
-
-            }
+                </td>
 
 
-            let approveHTML;
+                <td>
 
-
-            if (
-                member.status ===
-                "approved"
-            ) {
-
-                approveHTML = `
-
-                    <span
-                        class="
-                        approved-text
-                        "
-                    >
-
-                        ✓ स्वीकृत
-
-                    </span>
-
-                `;
-
-            }
-
-            else {
-
-                approveHTML = `
 
                     <button
                         type="button"
-                        class="
-                        approve-btn
-                        "
-
-                        onclick="
-                        approveMember(
-                            ${originalIndex}
-                        )
-                        "
+                        onclick="approveMember(${members.indexOf(member)})"
                     >
 
-                        ✓ स्वीकृत करें
+                        ✅ Approve
 
                     </button>
 
-                `;
 
-            }
+                    <button
+                        type="button"
+                        onclick="rejectMember(${members.indexOf(member)})"
+                    >
 
+                        ❌ Reject
 
-            table.innerHTML += `
-
-                <tr>
-
-                    <td>
-
-                        ${index + 1}
-
-                    </td>
+                    </button>
 
 
-                    <!-- MEMBER ID -->
-
-                    <td>
-
-                        ${
-                            member.memberId
-                            ||
-                            "ID उपलब्ध नहीं"
-                        }
-
-                    </td>
+                </td>
 
 
-                    <td>
-
-                        ${
-                            member.name
-                            ||
-                            "-"
-                        }
-
-                    </td>
-
-
-                    <td>
-
-                        ${
-                            member.mobile
-                            ||
-                            "-"
-                        }
-
-                    </td>
-
-
-                    <td>
-
-                        ${
-                            member.membership
-                            ||
-                            member.membershipType
-                            ||
-                            "-"
-                        }
-
-                    </td>
-
-
-                    <td>
-
-                        ${statusHTML}
-
-                    </td>
-
-
-                    <td>
-
-                        ${approveHTML}
-
-
-                        <button
-                            type="button"
-                            class="
-                            delete-btn
-                            "
-
-                            onclick="
-                            deleteMember(
-                                ${originalIndex}
-                            )
-                            "
-                        >
-
-                            🗑️ हटाएँ
-
-                        </button>
-
-                    </td>
-
-                </tr>
+            </tr>
 
             `;
+
 
         }
 
     );
+
+
+    updateDashboard();
+
+
+}
+
+
+/* =====================================
+   VOLUNTEER TABLE
+===================================== */
+
+function showVolunteers(
+
+    volunteerList = volunteers
+
+) {
+
+
+    const volunteerTable =
+
+    document.getElementById(
+
+        "volunteerTable"
+
+    );
+
+
+    if (
+
+        !volunteerTable
+
+    ) {
+
+
+        return;
+
+
+    }
+
+
+    volunteerTable.innerHTML = "";
+
+
+    if (
+
+        volunteerList.length === 0
+
+    ) {
+
+
+        volunteerTable.innerHTML =
+
+        `
+
+        <tr>
+
+            <td
+                colspan="8"
+                style="
+                    text-align:center;
+                    padding:20px;
+                "
+            >
+
+                अभी कोई वॉलंटियर आवेदन उपलब्ध नहीं है।
+
+            </td>
+
+        </tr>
+
+        `;
+
+
+        return;
+
+
+    }
+
+
+    volunteerList.forEach(
+
+        function(
+
+            volunteer,
+
+            index
+
+        ) {
+
+
+            const volunteerId =
+
+            volunteer.volunteerId ||
+
+            "-";
+
+
+            const name =
+
+            volunteer.name ||
+
+            "-";
+
+
+            const mobile =
+
+            volunteer.mobile ||
+
+            "-";
+
+
+            const service =
+
+            volunteer.service ||
+
+            "-";
+
+
+            const availability =
+
+            volunteer.availability ||
+
+            "-";
+
+
+            const status =
+
+            volunteer.status ||
+
+            "लंबित";
+
+
+            volunteerTable.innerHTML +=
+
+            `
+
+            <tr>
+
+
+                <td>
+
+                    ${index + 1}
+
+                </td>
+
+
+                <td>
+
+                    ${volunteerId}
+
+                </td>
+
+
+                <td>
+
+                    ${name}
+
+                </td>
+
+
+                <td>
+
+                    ${mobile}
+
+                </td>
+
+
+                <td>
+
+                    ${service}
+
+                </td>
+
+
+                <td>
+
+                    ${availability}
+
+                </td>
+
+
+                <td>
+
+                    <span class="volunteer-status">
+
+                        ${status}
+
+                    </span>
+
+                </td>
+
+
+                <td>
+
+
+                    <button
+                        type="button"
+                        class="approve-btn"
+                        onclick="approveVolunteer(${volunteers.indexOf(volunteer)})"
+                    >
+
+                        ✅ Approve
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="reject-btn"
+                        onclick="rejectVolunteer(${volunteers.indexOf(volunteer)})"
+                    >
+
+                        ❌ Reject
+
+                    </button>
+
+
+                </td>
+
+
+            </tr>
+
+            `;
+
+
+        }
+
+    );
+
+
+}
+
+
+/* =====================================
+   APPROVE VOLUNTEER
+===================================== */
+
+function approveVolunteer(
+
+    index
+
+) {
+
+
+    volunteers[index].status =
+
+    "स्वीकृत";
+
+
+    localStorage.setItem(
+
+        "volunteers",
+
+        JSON.stringify(
+
+            volunteers
+
+        )
+
+    );
+
+
+    showVolunteers();
+
+
+}
+
+
+/* =====================================
+   REJECT VOLUNTEER
+===================================== */
+
+function rejectVolunteer(
+
+    index
+
+) {
+
+
+    volunteers[index].status =
+
+    "अस्वीकृत";
+
+
+    localStorage.setItem(
+
+        "volunteers",
+
+        JSON.stringify(
+
+            volunteers
+
+        )
+
+    );
+
+
+    showVolunteers();
+
 
 }
 
@@ -395,108 +580,230 @@ function displayMembers(
 ===================================== */
 
 function approveMember(
+
     index
+
 ) {
 
-    const confirmApprove =
 
-        confirm(
+    members[index].status =
 
-            "क्या आप इस सदस्य को स्वीकृत करना चाहते हैं?"
-
-        );
+    "स्वीकृत";
 
 
-    if (
-        confirmApprove
-    ) {
+    localStorage.setItem(
 
-        members[index].status =
+        "members",
 
-            "approved";
+        JSON.stringify(
 
-
-        saveMembers();
-
-
-        updateStatistics();
-
-
-        displayMembers(
             members
-        );
+
+        )
+
+    );
 
 
-        alert(
+    showMembers();
 
-            "सदस्य को सफलतापूर्वक स्वीकृत कर दिया गया।"
-
-        );
-
-    }
 
 }
 
 
 /* =====================================
-   DELETE MEMBER
+   REJECT MEMBER
 ===================================== */
 
-function deleteMember(
+function rejectMember(
+
     index
+
 ) {
 
-    const memberName =
 
-        members[index].name
-        ||
-        "इस सदस्य";
+    members[index].status =
+
+    "अस्वीकृत";
 
 
-    const confirmDelete =
+    localStorage.setItem(
 
-        confirm(
+        "members",
 
-            "क्या आप " +
+        JSON.stringify(
 
-            memberName +
+            members
 
-            " का आवेदन हटाना चाहते हैं?"
+        )
 
-        );
+    );
+
+
+    showMembers();
+
+
+}
+
+
+/* =====================================
+   DASHBOARD COUNT
+===================================== */
+
+function updateDashboard() {
+
+
+    const totalMembers =
+
+    members.length;
+
+
+    const approvedMembers =
+
+    members.filter(
+
+        function(
+
+            member
+
+        ) {
+
+
+            return (
+
+                member.status ===
+
+                "स्वीकृत"
+
+            );
+
+
+        }
+
+    ).length;
+
+
+    const pendingMembers =
+
+    members.filter(
+
+        function(
+
+            member
+
+        ) {
+
+
+            return (
+
+                !member.status ||
+
+                member.status ===
+
+                "लंबित"
+
+            );
+
+
+        }
+
+    ).length;
+
+
+    const totalElement =
+
+    document.getElementById(
+
+        "totalMembers"
+
+    );
+
+
+    const newElement =
+
+    document.getElementById(
+
+        "newApplications"
+
+    );
+
+
+    const approvedElement =
+
+    document.getElementById(
+
+        "approvedMembers"
+
+    );
+
+
+    const pendingElement =
+
+    document.getElementById(
+
+        "pendingMembers"
+
+    );
 
 
     if (
-        confirmDelete
+
+        totalElement
+
     ) {
 
-        members.splice(
 
-            index,
+        totalElement.textContent =
 
-            1
+        totalMembers;
 
-        );
-
-
-        saveMembers();
-
-
-        updateStatistics();
-
-
-        displayMembers(
-            members
-        );
-
-
-        alert(
-
-            "सदस्य का आवेदन सफलतापूर्वक हटा दिया गया।"
-
-        );
 
     }
+
+
+    if (
+
+        newElement
+
+    ) {
+
+
+        newElement.textContent =
+
+        pendingMembers;
+
+
+    }
+
+
+    if (
+
+        approvedElement
+
+    ) {
+
+
+        approvedElement.textContent =
+
+        approvedMembers;
+
+
+    }
+
+
+    if (
+
+        pendingElement
+
+    ) {
+
+
+        pendingElement.textContent =
+
+        pendingMembers;
+
+
+    }
+
 
 }
 
@@ -505,122 +812,256 @@ function deleteMember(
    MEMBER SEARCH
 ===================================== */
 
-const searchBox =
+const memberSearch =
 
-    document.getElementById(
-        "memberSearch"
-    );
+document.getElementById(
+
+    "memberSearch"
+
+);
 
 
 if (
-    searchBox
+
+    memberSearch
+
 ) {
 
-    searchBox.addEventListener(
+
+    memberSearch.addEventListener(
 
         "input",
 
         function() {
 
+
             const searchText =
 
-                this.value
+            this.value
 
-                .toLowerCase()
+            .toLowerCase()
 
-                .trim();
+            .trim();
 
 
             const filteredMembers =
 
-                members.filter(
+            members.filter(
 
-                    function(
-                        member
-                    ) {
+                function(
 
-                        const name =
+                    member
 
-                            String(
-
-                                member.name
-                                ||
-                                ""
-
-                            )
-
-                            .toLowerCase();
+                ) {
 
 
-                        const mobile =
+                    return (
 
-                            String(
+                        String(
 
-                                member.mobile
-                                ||
-                                ""
+                            member.memberId ||
 
-                            );
+                            member.id ||
+
+                            ""
+
+                        )
+
+                        .toLowerCase()
+
+                        .includes(
+
+                            searchText
+
+                        )
+
+                        ||
+
+                        String(
+
+                            member.name ||
+
+                            member.fullName ||
+
+                            ""
+
+                        )
+
+                        .toLowerCase()
+
+                        .includes(
+
+                            searchText
+
+                        )
+
+                        ||
+
+                        String(
+
+                            member.mobile ||
+
+                            member.phone ||
+
+                            ""
+
+                        )
+
+                        .includes(
+
+                            searchText
+
+                        )
+
+                    );
 
 
-                        const memberId =
+                }
 
-                            String(
-
-                                member.memberId
-                                ||
-                                ""
-
-                            )
-
-                            .toLowerCase();
+            );
 
 
-                        return (
-
-                            name.includes(
-                                searchText
-                            )
-
-                            ||
-
-                            mobile.includes(
-                                searchText
-                            )
-
-                            ||
-
-                            memberId.includes(
-                                searchText
-                            )
-
-                        );
-
-                    }
-
-                );
-
-
-            displayMembers(
+            showMembers(
 
                 filteredMembers
 
             );
 
+
         }
 
     );
+
 
 }
 
 
 /* =====================================
-   START DASHBOARD
+   VOLUNTEER SEARCH
 ===================================== */
 
-updateStatistics();
+const volunteerSearch =
 
+document.getElementById(
 
-displayMembers(
-    members
+    "volunteerSearch"
+
 );
+
+
+if (
+
+    volunteerSearch
+
+) {
+
+
+    volunteerSearch.addEventListener(
+
+        "input",
+
+        function() {
+
+
+            const searchText =
+
+            this.value
+
+            .toLowerCase()
+
+            .trim();
+
+
+            const filteredVolunteers =
+
+            volunteers.filter(
+
+                function(
+
+                    volunteer
+
+                ) {
+
+
+                    return (
+
+                        String(
+
+                            volunteer.volunteerId ||
+
+                            ""
+
+                        )
+
+                        .toLowerCase()
+
+                        .includes(
+
+                            searchText
+
+                        )
+
+                        ||
+
+                        String(
+
+                            volunteer.name ||
+
+                            ""
+
+                        )
+
+                        .toLowerCase()
+
+                        .includes(
+
+                            searchText
+
+                        )
+
+                        ||
+
+                        String(
+
+                            volunteer.mobile ||
+
+                            ""
+
+                        )
+
+                        .includes(
+
+                            searchText
+
+                        )
+
+                    );
+
+
+                }
+
+            );
+
+
+            showVolunteers(
+
+                filteredVolunteers
+
+            );
+
+
+        }
+
+    );
+
+
+}
+
+
+/* =====================================
+   PAGE LOAD
+===================================== */
+
+showMembers();
+
+showVolunteers();
