@@ -1549,3 +1549,573 @@ document.addEventListener(
     }
 
 );
+/* =====================================
+   ADMIN DASHBOARD JAVASCRIPT
+===================================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    loadMembers();
+
+    loadDashboardStatistics();
+
+    setupMemberSearch();
+
+});
+
+
+/* =====================================
+   MEMBER DATA LOAD
+===================================== */
+
+function loadMembers() {
+
+    const memberTable = document.getElementById("memberTable");
+
+    if (!memberTable) {
+
+        console.error(
+            "memberTable नहीं मिला।"
+        );
+
+        return;
+
+    }
+
+
+    /* LOCAL STORAGE से MEMBER DATA */
+
+    let members = [];
+
+
+    try {
+
+        members = JSON.parse(
+
+            localStorage.getItem("members")
+
+        ) || [];
+
+    }
+
+    catch (error) {
+
+        console.error(
+
+            "Member data पढ़ने में समस्या:",
+
+            error
+
+        );
+
+        members = [];
+
+    }
+
+
+    /* TABLE पहले खाली करें */
+
+    memberTable.innerHTML = "";
+
+
+    /* MEMBER नहीं होने पर */
+
+    if (members.length === 0) {
+
+        memberTable.innerHTML = `
+
+            <tr>
+
+                <td
+                    colspan="7"
+                    style="
+                        text-align:center;
+                        padding:25px;
+                    "
+                >
+
+                    अभी कोई सदस्य आवेदन उपलब्ध नहीं है।
+
+                </td>
+
+            </tr>
+
+        `;
+
+        return;
+
+    }
+
+
+    /* MEMBER TABLE में DATA दिखाएँ */
+
+    members.forEach(
+
+        function (member, index) {
+
+
+            const memberId =
+
+                member.memberId ||
+
+                member.id ||
+
+                member.memberID ||
+
+                "YSSF-" + (index + 1);
+
+
+            const name =
+
+                member.name ||
+
+                member.fullName ||
+
+                member.memberName ||
+
+                "नाम उपलब्ध नहीं";
+
+
+            const mobile =
+
+                member.mobile ||
+
+                member.phone ||
+
+                member.mobileNumber ||
+
+                "—";
+
+
+            const membership =
+
+                member.membership ||
+
+                member.membershipType ||
+
+                member.category ||
+
+                "general";
+
+
+            const status =
+
+                member.status ||
+
+                "लंबित";
+
+
+            let statusClass =
+
+                "pending";
+
+
+            if (
+
+                status === "स्वीकृत" ||
+
+                status === "approved"
+
+            ) {
+
+                statusClass = "approved";
+
+            }
+
+
+            if (
+
+                status === "अस्वीकृत" ||
+
+                status === "rejected"
+
+            ) {
+
+                statusClass = "rejected";
+
+            }
+
+
+            memberTable.innerHTML += `
+
+                <tr>
+
+                    <td>
+
+                        ${index + 1}
+
+                    </td>
+
+
+                    <td>
+
+                        ${memberId}
+
+                    </td>
+
+
+                    <td>
+
+                        ${name}
+
+                    </td>
+
+
+                    <td>
+
+                        ${mobile}
+
+                    </td>
+
+
+                    <td>
+
+                        ${membership}
+
+                    </td>
+
+
+                    <td>
+
+                        <span
+                            class="status ${statusClass}"
+                        >
+
+                            ${status}
+
+                        </span>
+
+                    </td>
+
+
+                    <td>
+
+                        <button
+                            type="button"
+                            class="approve-btn"
+                            onclick="updateMemberStatus(
+                                ${index},
+                                'स्वीकृत'
+                            )"
+                        >
+
+                            ✅ Approve
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="reject-btn"
+                            onclick="updateMemberStatus(
+                                ${index},
+                                'अस्वीकृत'
+                            )"
+                        >
+
+                            ❌ Reject
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+            `;
+
+        }
+
+    );
+
+}
+
+
+/* =====================================
+   MEMBER STATUS UPDATE
+===================================== */
+
+function updateMemberStatus(
+
+    index,
+
+    newStatus
+
+) {
+
+
+    const members = JSON.parse(
+
+        localStorage.getItem("members")
+
+    ) || [];
+
+
+    if (!members[index]) {
+
+        alert(
+
+            "सदस्य आवेदन नहीं मिला।"
+
+        );
+
+        return;
+
+    }
+
+
+    members[index].status =
+
+        newStatus;
+
+
+    localStorage.setItem(
+
+        "members",
+
+        JSON.stringify(members)
+
+    );
+
+
+    loadMembers();
+
+    loadDashboardStatistics();
+
+
+    alert(
+
+        "सदस्य की स्थिति " +
+
+        newStatus +
+
+        " कर दी गई है।"
+
+    );
+
+}
+
+
+/* =====================================
+   DASHBOARD STATISTICS
+===================================== */
+
+function loadDashboardStatistics() {
+
+
+    const members = JSON.parse(
+
+        localStorage.getItem("members")
+
+    ) || [];
+
+
+    const totalMembers =
+
+        members.length;
+
+
+    const approvedMembers =
+
+        members.filter(
+
+            function (member) {
+
+                return (
+
+                    member.status === "स्वीकृत" ||
+
+                    member.status === "approved"
+
+                );
+
+            }
+
+        ).length;
+
+
+    const pendingMembers =
+
+        members.filter(
+
+            function (member) {
+
+                return (
+
+                    !member.status ||
+
+                    member.status === "लंबित" ||
+
+                    member.status === "pending"
+
+                );
+
+            }
+
+        ).length;
+
+
+    const totalMembersElement =
+
+        document.getElementById(
+
+            "totalMembers"
+
+        );
+
+
+    const newApplicationsElement =
+
+        document.getElementById(
+
+            "newApplications"
+
+        );
+
+
+    const approvedMembersElement =
+
+        document.getElementById(
+
+            "approvedMembers"
+
+        );
+
+
+    const pendingMembersElement =
+
+        document.getElementById(
+
+            "pendingMembers"
+
+        );
+
+
+    if (totalMembersElement) {
+
+        totalMembersElement.textContent =
+
+        totalMembers;
+
+    }
+
+
+    if (newApplicationsElement) {
+
+        newApplicationsElement.textContent =
+
+        pendingMembers;
+
+    }
+
+
+    if (approvedMembersElement) {
+
+        approvedMembersElement.textContent =
+
+        approvedMembers;
+
+    }
+
+
+    if (pendingMembersElement) {
+
+        pendingMembersElement.textContent =
+
+        pendingMembers;
+
+    }
+
+}
+
+
+/* =====================================
+   MEMBER SEARCH
+===================================== */
+
+function setupMemberSearch() {
+
+
+    const searchBox =
+
+        document.getElementById(
+
+            "memberSearch"
+
+        );
+
+
+    if (!searchBox) {
+
+        return;
+
+    }
+
+
+    searchBox.addEventListener(
+
+        "input",
+
+        function () {
+
+
+            const searchText =
+
+                this.value
+
+                .toLowerCase()
+
+                .trim();
+
+
+            const rows =
+
+                document.querySelectorAll(
+
+                    "#memberTable tr"
+
+                );
+
+
+            rows.forEach(
+
+                function (row) {
+
+
+                    const rowText =
+
+                        row.textContent
+
+                        .toLowerCase();
+
+
+                    if (
+
+                        rowText.includes(
+
+                            searchText
+
+                        )
+
+                    ) {
+
+                        row.style.display = "";
+
+                    }
+
+                    else {
+
+                        row.style.display =
+
+                        "none";
+
+                    }
+
+                }
+
+            );
+
+        }
+
+    );
+
+}
