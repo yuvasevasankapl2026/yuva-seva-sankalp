@@ -10426,3 +10426,42 @@ tr:hover {
     #b02a37;
 
 }
+/* =====================================
+   DELETE BUTTON
+===================================== */
+
+.delete-btn {
+
+    background: #dc3545;
+
+    color: white;
+
+    border: none;
+
+    padding: 8px 12px;
+
+    margin: 4px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+
+.delete-btn:hover {
+
+    background: #a71d2a;
+
+}
+
+
+.delete-btn:active {
+
+    transform: scale(0.96);
+
+}
