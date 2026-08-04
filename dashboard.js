@@ -1450,3 +1450,57 @@ document.addEventListener(
 
     }
 );
+/* =====================================
+   MEMBER DELETE
+===================================== */
+
+function deleteMember(index) {
+
+    const confirmDelete = confirm(
+
+        "क्या आप इस सदस्य को हटाना चाहते हैं?"
+
+    );
+
+
+    if (!confirmDelete) {
+
+        return;
+
+    }
+
+
+    members.splice(
+
+        index,
+
+        1
+
+    );
+
+
+    localStorage.setItem(
+
+        "members",
+
+        JSON.stringify(
+
+            members
+
+        )
+
+    );
+
+
+    showMembers();
+
+    updateDashboard();
+
+
+    alert(
+
+        "🗑 सदस्य सफलतापूर्वक हटा दिया गया।"
+
+    );
+
+}
