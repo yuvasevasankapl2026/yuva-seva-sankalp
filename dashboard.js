@@ -25,7 +25,7 @@ if (
 
 
 /* =====================================
-   SAFE LOCAL STORAGE DATA
+   GET LOCAL STORAGE DATA
 ===================================== */
 
 function getStorageData(
@@ -45,6 +45,7 @@ function getStorageData(
             )
 
         );
+
 
         return Array.isArray(
 
@@ -71,6 +72,7 @@ function getStorageData(
             error
 
         );
+
 
         return [];
 
@@ -107,7 +109,7 @@ function saveStorageData(
 
 
 /* =====================================
-   GET MEMBER VALUE
+   MEMBER INFORMATION
 ===================================== */
 
 function getMemberId(
@@ -201,7 +203,7 @@ function getMemberMembership(
 
         member.category ||
 
-        "general"
+        "General"
 
     );
 
@@ -230,7 +232,7 @@ function getMemberDate(
 
 
 /* =====================================
-   STATUS NORMALIZE
+   STATUS
 ===================================== */
 
 function normalizeStatus(
@@ -309,10 +311,6 @@ function normalizeStatus(
 }
 
 
-/* =====================================
-   STATUS CLASS
-===================================== */
-
 function getStatusClass(
 
     status
@@ -378,7 +376,7 @@ function getStatusClass(
 
 
 /* =====================================
-   UPDATE DASHBOARD COUNT
+   DASHBOARD STATISTICS
 ===================================== */
 
 function updateDashboardStatistics() {
@@ -408,11 +406,6 @@ function updateDashboardStatistics() {
         "contactMessages"
 
     );
-
-
-    const totalMembers =
-
-    members.length;
 
 
     const approvedMembers =
@@ -527,7 +520,7 @@ function updateDashboardStatistics() {
 
         totalMembersElement.textContent =
 
-        totalMembers;
+        members.length;
 
     }
 
@@ -611,7 +604,7 @@ function updateDashboardStatistics() {
 
 
 /* =====================================
-   DASHBOARD NOTIFICATION
+   NOTIFICATION
 ===================================== */
 
 function updateDashboardNotification(
@@ -877,31 +870,27 @@ function loadMembers() {
             );
 
 
-            const searchMatch =
-
-            fullText.includes(
-
-                searchText
-
-            );
-
-
-            const dateMatch =
-
-            !selectedDate ||
-
-            memberDate.includes(
-
-                selectedDate
-
-            );
-
-
             return (
 
-                searchMatch &&
+                fullText.includes(
 
-                dateMatch
+                    searchText
+
+                )
+
+                &&
+
+                (
+
+                    !selectedDate ||
+
+                    memberDate.includes(
+
+                        selectedDate
+
+                    )
+
+                )
 
             );
 
@@ -921,11 +910,17 @@ function loadMembers() {
         <tr>
 
             <td
+
                 colspan="8"
+
                 style="
+
                     text-align:center;
+
                     padding:25px;
+
                 "
+
             >
 
                 अभी कोई सदस्य आवेदन उपलब्ध नहीं है।
@@ -989,57 +984,64 @@ function loadMembers() {
 
                 </td>
 
-
                 <td>
 
                     ${getMemberId(
+
                         member,
+
                         originalIndex
+
                     )}
 
                 </td>
-
 
                 <td>
 
                     ${getMemberName(
+
                         member
+
                     )}
 
                 </td>
-
 
                 <td>
 
                     ${getMemberMobile(
+
                         member
+
                     )}
 
                 </td>
-
 
                 <td>
 
                     ${getMemberMembership(
+
                         member
+
                     )}
 
                 </td>
-
 
                 <td>
 
                     ${getMemberDate(
+
                         member
+
                     )}
 
                 </td>
 
-
                 <td>
 
                     <span
+
                         class="status ${statusClass}"
+
                     >
 
                         ${status}
@@ -1048,15 +1050,20 @@ function loadMembers() {
 
                 </td>
 
-
                 <td>
 
                     <button
+
                         type="button"
+
                         class="view-btn"
+
                         onclick="viewMember(
+
                             ${originalIndex}
+
                         )"
+
                     >
 
                         👁️ देखें
@@ -1065,11 +1072,17 @@ function loadMembers() {
 
 
                     <button
+
                         type="button"
+
                         class="edit-btn"
+
                         onclick="openMemberEdit(
+
                             ${originalIndex}
+
                         )"
+
                     >
 
                         ✏️ Edit
@@ -1078,12 +1091,19 @@ function loadMembers() {
 
 
                     <button
+
                         type="button"
+
                         class="approve-btn"
+
                         onclick="updateMemberStatus(
+
                             ${originalIndex},
+
                             'स्वीकृत'
+
                         )"
+
                     >
 
                         ✅
@@ -1092,12 +1112,19 @@ function loadMembers() {
 
 
                     <button
+
                         type="button"
+
                         class="reject-btn"
+
                         onclick="updateMemberStatus(
+
                             ${originalIndex},
+
                             'अस्वीकृत'
+
                         )"
+
                     >
 
                         ❌
@@ -1118,7 +1145,7 @@ function loadMembers() {
 
 
 /* =====================================
-   MEMBER STATUS UPDATE
+   MEMBER STATUS
 ===================================== */
 
 function updateMemberStatus(
@@ -1146,7 +1173,7 @@ function updateMemberStatus(
 
         alert(
 
-            "सदस्य नहीं मिला।"
+            "❌ सदस्य नहीं मिला।"
 
         );
 
@@ -1176,7 +1203,7 @@ function updateMemberStatus(
 
     alert(
 
-        "सदस्य की स्थिति " +
+        "✅ सदस्य की स्थिति " +
 
         newStatus +
 
@@ -1217,6 +1244,12 @@ function viewMember(
 
     ) {
 
+        alert(
+
+            "❌ सदस्य की जानकारी नहीं मिली।"
+
+        );
+
         return;
 
     }
@@ -1248,59 +1281,236 @@ function viewMember(
 
     ) {
 
+        alert(
+
+            "❌ Member View Modal नहीं मिला।"
+
+        );
+
         return;
 
     }
 
 
-    let details = "";
+    const memberId =
 
+    getMemberId(
 
-    Object.keys(
+        member,
 
-        member
-
-    ).forEach(
-
-        function (
-
-            key
-
-        ) {
-
-            details += `
-
-            <div class="member-detail">
-
-                <strong>
-
-                    ${key}
-
-                </strong>
-
-                <span>
-
-                    ${member[key]}
-
-                </span>
-
-            </div>
-
-            `;
-
-        }
+        index
 
     );
 
 
-    content.innerHTML =
+    const name =
 
-    details;
+    getMemberName(
+
+        member
+
+    );
 
 
-    modal.style.display =
+    const mobile =
 
-    "flex";
+    getMemberMobile(
+
+        member
+
+    );
+
+
+    const membership =
+
+    getMemberMembership(
+
+        member
+
+    );
+
+
+    const status =
+
+    normalizeStatus(
+
+        member.status
+
+    );
+
+
+    const date =
+
+    getMemberDate(
+
+        member
+
+    );
+
+
+    const email =
+
+    member.email ||
+
+    "—";
+
+
+    const address =
+
+    member.address ||
+
+    "—";
+
+
+    content.innerHTML = `
+
+    <div class="member-details">
+
+        <div class="member-detail-item">
+
+            <strong>
+
+                Member ID
+
+            </strong>
+
+            <span>
+
+                ${memberId}
+
+            </span>
+
+        </div>
+
+
+        <div class="member-detail-item">
+
+            <strong>
+
+                सदस्य का नाम
+
+            </strong>
+
+            <span>
+
+                ${name}
+
+            </span>
+
+        </div>
+
+
+        <div class="member-detail-item">
+
+            <strong>
+
+                मोबाइल नंबर
+
+            </strong>
+
+            <span>
+
+                ${mobile}
+
+            </span>
+
+        </div>
+
+
+        <div class="member-detail-item">
+
+            <strong>
+
+                ईमेल
+
+            </strong>
+
+            <span>
+
+                ${email}
+
+            </span>
+
+        </div>
+
+
+        <div class="member-detail-item">
+
+            <strong>
+
+                सदस्यता
+
+            </strong>
+
+            <span>
+
+                ${membership}
+
+            </span>
+
+        </div>
+
+
+        <div class="member-detail-item">
+
+            <strong>
+
+                आवेदन दिनांक
+
+            </strong>
+
+            <span>
+
+                ${date}
+
+            </span>
+
+        </div>
+
+
+        <div class="member-detail-item">
+
+            <strong>
+
+                स्थिति
+
+            </strong>
+
+            <span>
+
+                ${status}
+
+            </span>
+
+        </div>
+
+
+        <div class="member-detail-item">
+
+            <strong>
+
+                पता
+
+            </strong>
+
+            <span>
+
+                ${address}
+
+            </span>
+
+        </div>
+
+    </div>
+
+    `;
+
+
+    modal.classList.add(
+
+        "show"
+
+    );
 
 }
 
@@ -1326,9 +1536,11 @@ function closeMemberView() {
 
     ) {
 
-        modal.style.display =
+        modal.classList.remove(
 
-        "none";
+            "show"
+
+        );
 
     }
 
@@ -1364,6 +1576,12 @@ function openMemberEdit(
         !member
 
     ) {
+
+        alert(
+
+            "❌ सदस्य नहीं मिला।"
+
+        );
 
         return;
 
@@ -1435,9 +1653,11 @@ function openMemberEdit(
 
         "memberEditModal"
 
-    ).style.display =
+    ).classList.add(
 
-    "flex";
+        "show"
+
+    );
 
 }
 
@@ -1463,9 +1683,11 @@ function closeMemberEdit() {
 
     ) {
 
-        modal.style.display =
+        modal.classList.remove(
 
-        "none";
+            "show"
+
+        );
 
     }
 
@@ -1539,6 +1761,12 @@ function setupMemberEditForm() {
 
             ) {
 
+                alert(
+
+                    "❌ सदस्य नहीं मिला।"
+
+                );
+
                 return;
 
             }
@@ -1550,9 +1778,7 @@ function setupMemberEditForm() {
 
                 "editMemberName"
 
-            ).value
-
-            .trim();
+            ).value.trim();
 
 
             members[index].mobile =
@@ -1561,9 +1787,7 @@ function setupMemberEditForm() {
 
                 "editMemberMobile"
 
-            ).value
-
-            .trim();
+            ).value.trim();
 
 
             members[index].membership =
@@ -1572,9 +1796,7 @@ function setupMemberEditForm() {
 
                 "editMemberMembership"
 
-            ).value
-
-            .trim();
+            ).value.trim();
 
 
             members[index].status =
@@ -1607,6 +1829,262 @@ function setupMemberEditForm() {
                 "✅ सदस्य की जानकारी सेव हो गई।"
 
             );
+
+        }
+
+    );
+
+}
+
+
+/* =====================================
+   PASSWORD MODAL
+===================================== */
+
+function openPasswordModal() {
+
+    const modal =
+
+    document.getElementById(
+
+        "passwordModal"
+
+    );
+
+
+    if (
+
+        modal
+
+    ) {
+
+        modal.classList.add(
+
+            "show"
+
+        );
+
+    }
+
+}
+
+
+function closePasswordModal() {
+
+    const modal =
+
+    document.getElementById(
+
+        "passwordModal"
+
+    );
+
+
+    if (
+
+        modal
+
+    ) {
+
+        modal.classList.remove(
+
+            "show"
+
+        );
+
+    }
+
+
+    const form =
+
+    document.getElementById(
+
+        "passwordChangeForm"
+
+    );
+
+
+    if (
+
+        form
+
+    ) {
+
+        form.reset();
+
+    }
+
+}
+
+
+/* =====================================
+   CHANGE PASSWORD
+===================================== */
+
+function setupPasswordForm() {
+
+    const form =
+
+    document.getElementById(
+
+        "passwordChangeForm"
+
+    );
+
+
+    if (
+
+        !form
+
+    ) {
+
+        return;
+
+    }
+
+
+    form.addEventListener(
+
+        "submit",
+
+        function (
+
+            event
+
+        ) {
+
+            event.preventDefault();
+
+
+            const oldPassword =
+
+            document.getElementById(
+
+                "oldPassword"
+
+            ).value.trim();
+
+
+            const newPassword =
+
+            document.getElementById(
+
+                "newPassword"
+
+            ).value.trim();
+
+
+            const confirmPassword =
+
+            document.getElementById(
+
+                "confirmNewPassword"
+
+            ).value.trim();
+
+
+            const savedPassword =
+
+            localStorage.getItem(
+
+                "adminPassword"
+
+            ) ||
+
+            "admin123";
+
+
+            if (
+
+                oldPassword !==
+
+                savedPassword
+
+            ) {
+
+                alert(
+
+                    "❌ पुराना पासवर्ड गलत है।"
+
+                );
+
+                return;
+
+            }
+
+
+            if (
+
+                newPassword.length < 4
+
+            ) {
+
+                alert(
+
+                    "❌ नया पासवर्ड कम से कम 4 अक्षरों का होना चाहिए।"
+
+                );
+
+                return;
+
+            }
+
+
+            if (
+
+                newPassword !==
+
+                confirmPassword
+
+            ) {
+
+                alert(
+
+                    "❌ दोनों नए पासवर्ड एक जैसे नहीं हैं।"
+
+                );
+
+                return;
+
+            }
+
+
+            if (
+
+                newPassword ===
+
+                savedPassword
+
+            ) {
+
+                alert(
+
+                    "⚠️ नया पासवर्ड पुराने पासवर्ड से अलग रखें।"
+
+                );
+
+                return;
+
+            }
+
+
+            localStorage.setItem(
+
+                "adminPassword",
+
+                newPassword
+
+            );
+
+
+            alert(
+
+                "✅ एडमिन पासवर्ड सफलतापूर्वक बदल दिया गया है।"
+
+            );
+
+
+            closePasswordModal();
 
         }
 
@@ -1779,11 +2257,17 @@ function loadContactMessages() {
         <tr>
 
             <td
+
                 colspan="10"
+
                 style="
+
                     text-align:center;
+
                     padding:25px;
+
                 "
+
             >
 
                 अभी कोई संपर्क संदेश उपलब्ध नहीं है।
@@ -1836,13 +2320,11 @@ function loadContactMessages() {
 
                 </td>
 
-
                 <td>
 
                     ${contact.contactId || "-"}
 
                 </td>
-
 
                 <td>
 
@@ -1850,13 +2332,11 @@ function loadContactMessages() {
 
                 </td>
 
-
                 <td>
 
                     ${contact.mobile || "-"}
 
                 </td>
-
 
                 <td>
 
@@ -1864,13 +2344,11 @@ function loadContactMessages() {
 
                 </td>
 
-
                 <td>
 
                     ${contact.subject || "-"}
 
                 </td>
-
 
                 <td>
 
@@ -1878,22 +2356,26 @@ function loadContactMessages() {
 
                 </td>
 
-
                 <td>
 
                     ${contact.date ||
+
                     contact.createdAt ||
+
                     "-"}
 
                 </td>
 
-
                 <td>
 
                     <span
+
                         class="status ${getStatusClass(
+
                             status
+
                         )}"
+
                     >
 
                         ${status}
@@ -1902,15 +2384,20 @@ function loadContactMessages() {
 
                 </td>
 
-
                 <td>
 
                     <button
+
                         type="button"
+
                         class="approve-btn"
+
                         onclick="markContactRead(
+
                             ${originalIndex}
+
                         )"
+
                     >
 
                         ✓ पढ़ा
@@ -1919,11 +2406,17 @@ function loadContactMessages() {
 
 
                     <button
+
                         type="button"
+
                         class="reject-btn"
+
                         onclick="deleteContact(
+
                             ${originalIndex}
+
                         )"
+
                     >
 
                         🗑 हटाएँ
@@ -1942,10 +2435,6 @@ function loadContactMessages() {
 
 }
 
-
-/* =====================================
-   MARK CONTACT READ
-===================================== */
 
 function markContactRead(
 
@@ -1994,28 +2483,19 @@ function markContactRead(
 }
 
 
-/* =====================================
-   DELETE CONTACT
-===================================== */
-
 function deleteContact(
 
     index
 
 ) {
 
-    const confirmDelete =
-
-    confirm(
-
-        "क्या आप यह संपर्क संदेश हटाना चाहते हैं?"
-
-    );
-
-
     if (
 
-        !confirmDelete
+        !confirm(
+
+            "क्या आप यह संपर्क संदेश हटाना चाहते हैं?"
+
+        )
 
     ) {
 
@@ -2160,7 +2640,9 @@ function loadVolunteers() {
 
                     (index + 1)
 
-                ) +
+                )
+
+                +
 
                 " " +
 
@@ -2170,7 +2652,9 @@ function loadVolunteers() {
 
                     ""
 
-                ) +
+                )
+
+                +
 
                 " " +
 
@@ -2242,11 +2726,17 @@ function loadVolunteers() {
         <tr>
 
             <td
+
                 colspan="9"
+
                 style="
+
                     text-align:center;
+
                     padding:25px;
+
                 "
+
             >
 
                 अभी कोई वॉलंटियर आवेदन उपलब्ध नहीं है।
@@ -2301,15 +2791,15 @@ function loadVolunteers() {
 
                 </td>
 
-
                 <td>
 
                     ${volunteer.volunteerId ||
+
                     "VOL-" +
+
                     (originalIndex + 1)}
 
                 </td>
-
 
                 <td>
 
@@ -2317,22 +2807,21 @@ function loadVolunteers() {
 
                 </td>
 
-
                 <td>
 
                     ${volunteer.mobile || "-"}
 
                 </td>
 
-
                 <td>
 
                     ${volunteer.service ||
+
                     volunteer.serviceArea ||
+
                     "-"}
 
                 </td>
-
 
                 <td>
 
@@ -2340,23 +2829,28 @@ function loadVolunteers() {
 
                 </td>
 
-
                 <td>
 
                     ${volunteer.date ||
+
                     volunteer.applicationDate ||
+
                     volunteer.createdAt ||
+
                     "-"}
 
                 </td>
 
-
                 <td>
 
                     <span
+
                         class="status ${getStatusClass(
+
                             status
+
                         )}"
+
                     >
 
                         ${status}
@@ -2365,16 +2859,22 @@ function loadVolunteers() {
 
                 </td>
 
-
                 <td>
 
                     <button
+
                         type="button"
+
                         class="approve-btn"
+
                         onclick="updateVolunteerStatus(
+
                             ${originalIndex},
+
                             'स्वीकृत'
+
                         )"
+
                     >
 
                         ✅ Approve
@@ -2383,12 +2883,19 @@ function loadVolunteers() {
 
 
                     <button
+
                         type="button"
+
                         class="reject-btn"
+
                         onclick="updateVolunteerStatus(
+
                             ${originalIndex},
+
                             'अस्वीकृत'
+
                         )"
+
                     >
 
                         ❌ Reject
@@ -2407,10 +2914,6 @@ function loadVolunteers() {
 
 }
 
-
-/* =====================================
-   UPDATE VOLUNTEER STATUS
-===================================== */
 
 function updateVolunteerStatus(
 
@@ -2461,7 +2964,7 @@ function updateVolunteerStatus(
 
     alert(
 
-        "वॉलंटियर की स्थिति " +
+        "✅ वॉलंटियर की स्थिति " +
 
         newStatus +
 
@@ -2473,205 +2976,7 @@ function updateVolunteerStatus(
 
 
 /* =====================================
-   PASSWORD MODAL
-===================================== */
-
-function openPasswordModal() {
-
-    const modal =
-
-    document.getElementById(
-
-        "passwordModal"
-
-    );
-
-
-    if (
-
-        modal
-
-    ) {
-
-        modal.style.display =
-
-        "flex";
-
-    }
-
-}
-
-
-function closePasswordModal() {
-
-    const modal =
-
-    document.getElementById(
-
-        "passwordModal"
-
-    );
-
-
-    if (
-
-        modal
-
-    ) {
-
-        modal.style.display =
-
-        "none";
-
-    }
-
-}
-
-
-/* =====================================
-   CHANGE PASSWORD
-===================================== */
-
-function setupPasswordForm() {
-
-    const form =
-
-    document.getElementById(
-
-        "passwordChangeForm"
-
-    );
-
-
-    if (
-
-        !form
-
-    ) {
-
-        return;
-
-    }
-
-
-    form.addEventListener(
-
-        "submit",
-
-        function (
-
-            event
-
-        ) {
-
-            event.preventDefault();
-
-
-            const oldPassword =
-
-            document.getElementById(
-
-                "oldPassword"
-
-            ).value;
-
-
-            const newPassword =
-
-            document.getElementById(
-
-                "newPassword"
-
-            ).value;
-
-
-            const confirmPassword =
-
-            document.getElementById(
-
-                "confirmNewPassword"
-
-            ).value;
-
-
-            const savedPassword =
-
-            localStorage.getItem(
-
-                "adminPassword"
-
-            ) ||
-
-            "admin123";
-
-
-            if (
-
-                oldPassword !==
-
-                savedPassword
-
-            ) {
-
-                alert(
-
-                    "❌ पुराना पासवर्ड गलत है।"
-
-                );
-
-                return;
-
-            }
-
-
-            if (
-
-                newPassword !==
-
-                confirmPassword
-
-            ) {
-
-                alert(
-
-                    "❌ नया पासवर्ड मेल नहीं खाता।"
-
-                );
-
-                return;
-
-            }
-
-
-            localStorage.setItem(
-
-                "adminPassword",
-
-                newPassword
-
-            );
-
-
-            form.reset();
-
-            closePasswordModal();
-
-
-            alert(
-
-                "✅ एडमिन पासवर्ड बदल दिया गया है।"
-
-            );
-
-        }
-
-    );
-
-}
-
-
-/* =====================================
-   CSV VALUE
+   CSV
 ===================================== */
 
 function csvValue(
@@ -2708,10 +3013,6 @@ function csvValue(
 
 }
 
-
-/* =====================================
-   DOWNLOAD CSV
-===================================== */
 
 function downloadCSV(
 
@@ -3167,7 +3468,7 @@ function downloadContactReport() {
 
 
 /* =====================================
-   PRINT MEMBER LIST
+   PRINT
 ===================================== */
 
 function printMemberList() {
@@ -3183,18 +3484,18 @@ function printMemberList() {
 
 function clearAllDashboardData() {
 
-    const confirmDelete =
+    const firstConfirm =
 
     confirm(
 
-        "क्या आप सभी सदस्य, वॉलंटियर और संपर्क डेटा हटाना चाहते हैं? यह वापस नहीं आएगा।"
+        "क्या आप सभी सदस्य, वॉलंटियर और संपर्क डेटा हटाना चाहते हैं?"
 
     );
 
 
     if (
 
-        !confirmDelete
+        !firstConfirm
 
     ) {
 
@@ -3255,7 +3556,7 @@ function clearAllDashboardData() {
 
     alert(
 
-        "✅ सभी dashboard डेटा हटा दिया गया है।"
+        "✅ सभी Dashboard डेटा हटा दिया गया है।"
 
     );
 
@@ -3263,7 +3564,7 @@ function clearAllDashboardData() {
 
 
 /* =====================================
-   SEARCH AND DATE FILTER EVENTS
+   SEARCH FILTERS
 ===================================== */
 
 function setupSearchFilters() {
@@ -3354,7 +3655,7 @@ function setupSearchFilters() {
 
 
 /* =====================================
-   CLOSE MODAL ON OUTSIDE CLICK
+   CLOSE MODAL OUTSIDE CLICK
 ===================================== */
 
 function setupModalClose() {
@@ -3394,9 +3695,11 @@ function setupModalClose() {
 
                     ) {
 
-                        modal.style.display =
+                        modal.classList.remove(
 
-                        "none";
+                            "show"
+
+                        );
 
                     }
 
@@ -3440,584 +3743,3 @@ document.addEventListener(
     }
 
 );
-/* =====================================
-   ADMIN PASSWORD CHANGE
-===================================== */
-
-function openPasswordModal() {
-
-    const passwordModal =
-
-    document.getElementById(
-
-        "passwordModal"
-
-    );
-
-
-    if (
-
-        passwordModal
-
-    ) {
-
-        passwordModal.classList.add(
-
-            "show"
-
-        );
-
-    }
-
-}
-
-
-/* =====================================
-   CLOSE PASSWORD MODAL
-===================================== */
-
-function closePasswordModal() {
-
-    const passwordModal =
-
-    document.getElementById(
-
-        "passwordModal"
-
-    );
-
-
-    if (
-
-        passwordModal
-
-    ) {
-
-        passwordModal.classList.remove(
-
-            "show"
-
-        );
-
-    }
-
-
-    const passwordForm =
-
-    document.getElementById(
-
-        "passwordChangeForm"
-
-    );
-
-
-    if (
-
-        passwordForm
-
-    ) {
-
-        passwordForm.reset();
-
-    }
-
-}
-
-
-/* =====================================
-   PASSWORD CHANGE FORM
-===================================== */
-
-document.addEventListener(
-
-    "DOMContentLoaded",
-
-    function () {
-
-
-        const passwordForm =
-
-        document.getElementById(
-
-            "passwordChangeForm"
-
-        );
-
-
-        if (
-
-            !passwordForm
-
-        ) {
-
-            return;
-
-        }
-
-
-        passwordForm.addEventListener(
-
-            "submit",
-
-            function (
-
-                event
-
-            ) {
-
-
-                event.preventDefault();
-
-
-                const oldPassword =
-
-                document.getElementById(
-
-                    "oldPassword"
-
-                ).value.trim();
-
-
-                const newPassword =
-
-                document.getElementById(
-
-                    "newPassword"
-
-                ).value.trim();
-
-
-                const confirmNewPassword =
-
-                document.getElementById(
-
-                    "confirmNewPassword"
-
-                ).value.trim();
-
-
-                /* =====================================
-                   CURRENT PASSWORD
-                ===================================== */
-
-                const savedPassword =
-
-                localStorage.getItem(
-
-                    "adminPassword"
-
-                ) ||
-
-                "admin123";
-
-
-                /* OLD PASSWORD CHECK */
-
-                if (
-
-                    oldPassword !==
-
-                    savedPassword
-
-                ) {
-
-                    alert(
-
-                        "❌ पुराना पासवर्ड गलत है।"
-
-                    );
-
-
-                    return;
-
-                }
-
-
-                /* NEW PASSWORD LENGTH */
-
-                if (
-
-                    newPassword.length < 4
-
-                ) {
-
-                    alert(
-
-                        "❌ नया पासवर्ड कम से कम 4 अक्षरों का होना चाहिए।"
-
-                    );
-
-
-                    return;
-
-                }
-
-
-                /* PASSWORD MATCH */
-
-                if (
-
-                    newPassword !==
-
-                    confirmNewPassword
-
-                ) {
-
-                    alert(
-
-                        "❌ नया पासवर्ड और दोबारा लिखा गया पासवर्ड एक जैसा नहीं है।"
-
-                    );
-
-
-                    return;
-
-                }
-
-
-                /* SAME PASSWORD CHECK */
-
-                if (
-
-                    newPassword ===
-
-                    savedPassword
-
-                ) {
-
-                    alert(
-
-                        "⚠️ नया पासवर्ड पुराने पासवर्ड से अलग रखें।"
-
-                    );
-
-
-                    return;
-
-                }
-
-
-                /* SAVE NEW PASSWORD */
-
-                localStorage.setItem(
-
-                    "adminPassword",
-
-                    newPassword
-
-                );
-
-
-                alert(
-
-                    "✅ एडमिन पासवर्ड सफलतापूर्वक बदल दिया गया है।"
-
-                );
-
-
-                closePasswordModal();
-
-
-            }
-
-        );
-
-
-    }
-
-);
-/* =====================================
-   MEMBER VIEW MODAL
-===================================== */
-
-function openMemberView(index) {
-
-    const members = JSON.parse(
-
-        localStorage.getItem("members")
-
-    ) || [];
-
-
-    const member = members[index];
-
-
-    if (!member) {
-
-        alert(
-
-            "❌ सदस्य की जानकारी नहीं मिली।"
-
-        );
-
-        return;
-
-    }
-
-
-    const memberViewModal =
-
-    document.getElementById(
-
-        "memberViewModal"
-
-    );
-
-
-    const memberViewContent =
-
-    document.getElementById(
-
-        "memberViewContent"
-
-    );
-
-
-    if (
-
-        !memberViewModal ||
-
-        !memberViewContent
-
-    ) {
-
-        alert(
-
-            "❌ Member View Modal नहीं मिला।"
-
-        );
-
-        return;
-
-    }
-
-
-    const memberId =
-
-        member.memberId ||
-
-        member.id ||
-
-        member.memberID ||
-
-        "-";
-
-
-    const name =
-
-        member.name ||
-
-        member.fullName ||
-
-        member.memberName ||
-
-        "-";
-
-
-    const mobile =
-
-        member.mobile ||
-
-        member.phone ||
-
-        member.mobileNumber ||
-
-        "-";
-
-
-    const membership =
-
-        member.membership ||
-
-        member.membershipType ||
-
-        member.category ||
-
-        "-";
-
-
-    const status =
-
-        member.status ||
-
-        "लंबित";
-
-
-    const date =
-
-        member.date ||
-
-        member.applicationDate ||
-
-        member.createdAt ||
-
-        "-";
-
-
-    const email =
-
-        member.email ||
-
-        "-";
-
-
-    const address =
-
-        member.address ||
-
-        "-";
-
-
-    memberViewContent.innerHTML = `
-
-        <div class="member-details">
-
-
-            <div class="member-detail-item">
-
-                <strong>
-
-                    Member ID
-
-                </strong>
-
-                ${memberId}
-
-            </div>
-
-
-            <div class="member-detail-item">
-
-                <strong>
-
-                    सदस्य का नाम
-
-                </strong>
-
-                ${name}
-
-            </div>
-
-
-            <div class="member-detail-item">
-
-                <strong>
-
-                    मोबाइल नंबर
-
-                </strong>
-
-                ${mobile}
-
-            </div>
-
-
-            <div class="member-detail-item">
-
-                <strong>
-
-                    ईमेल
-
-                </strong>
-
-                ${email}
-
-            </div>
-
-
-            <div class="member-detail-item">
-
-                <strong>
-
-                    सदस्यता
-
-                </strong>
-
-                ${membership}
-
-            </div>
-
-
-            <div class="member-detail-item">
-
-                <strong>
-
-                    आवेदन दिनांक
-
-                </strong>
-
-                ${date}
-
-            </div>
-
-
-            <div class="member-detail-item">
-
-                <strong>
-
-                    स्थिति
-
-                </strong>
-
-                ${status}
-
-            </div>
-
-
-            <div class="member-detail-item">
-
-                <strong>
-
-                    पता
-
-                </strong>
-
-                ${address}
-
-            </div>
-
-
-        </div>
-
-    `;
-
-
-    memberViewModal.classList.add(
-
-        "show"
-
-    );
-
-}
-
-
-/* =====================================
-   CLOSE MEMBER VIEW
-===================================== */
-
-function closeMemberView() {
-
-    const memberViewModal =
-
-    document.getElementById(
-
-        "memberViewModal"
-
-    );
-
-
-    if (
-
-        memberViewModal
-
-    ) {
-
-        memberViewModal.classList.remove(
-
-            "show"
-
-        );
-
-    }
-
-}
