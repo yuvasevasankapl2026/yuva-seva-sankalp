@@ -1,1 +1,340 @@
+<!DOCTYPE html>
 
+<html lang="hi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+
+    <title>
+
+        रक्तदाता सूची | युवा सेवा संकल्प फाउंडेशन
+
+    </title>
+
+
+    <!-- MAIN CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     TOP BAR
+===================================== -->
+
+<div class="top-bar">
+
+
+    <div class="container">
+
+
+        <div class="left">
+
+            🩸 रक्तदाता सूची
+
+        </div>
+
+
+        <div class="right">
+
+
+            <a href="admin-dashboard.html">
+
+                🔐 एडमिन डैशबोर्ड
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+<!-- =====================================
+     HEADER
+===================================== -->
+
+<header class="header">
+
+
+    <div class="header-content">
+
+
+        <img
+            src="images/logo.png"
+            class="logo"
+            alt="युवा सेवा संकल्प फाउंडेशन लोगो"
+        >
+
+
+        <div class="title">
+
+
+            <h1 class="main-title">
+
+                युवा सेवा संकल्प फाउंडेशन
+
+            </h1>
+
+
+            <p class="tagline">
+
+                रक्तदाता सूची
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</header>
+
+
+<!-- =====================================
+     BLOOD DONOR LIST
+===================================== -->
+
+<section class="admin-dashboard">
+
+
+    <div class="dashboard-container">
+
+
+        <!-- PAGE HEADING -->
+
+        <div class="dashboard-heading">
+
+
+            <div>
+
+
+                <h2>
+
+                    🩸 पंजीकृत रक्तदाता
+
+                </h2>
+
+
+                <p>
+
+                    सभी रक्तदाताओं की जानकारी यहाँ दिखाई जाएगी।
+
+                </p>
+
+
+            </div>
+
+
+            <a
+                href="blood-donation.html"
+                class="quick-btn red-btn"
+            >
+
+                ➕ नया रक्तदाता जोड़ें
+
+            </a>
+
+
+        </div>
+
+
+        <!-- SEARCH -->
+
+        <div class="dashboard-table-box">
+
+
+            <div class="table-heading">
+
+
+                <h3>
+
+                    रक्तदाता सूची
+
+                </h3>
+
+
+                <input
+                    type="search"
+                    id="donorSearch"
+                    placeholder="नाम, मोबाइल या Blood Group खोजें"
+                    autocomplete="off"
+                >
+
+
+            </div>
+
+
+            <!-- RESPONSIVE TABLE -->
+
+            <div class="table-responsive">
+
+
+                <table>
+
+
+                    <thead>
+
+
+                        <tr>
+
+
+                            <th>
+
+                                क्रमांक
+
+                            </th>
+
+
+                            <th>
+
+                                Donor ID
+
+                            </th>
+
+
+                            <th>
+
+                                नाम
+
+                            </th>
+
+
+                            <th>
+
+                                मोबाइल नंबर
+
+                            </th>
+
+
+                            <th>
+
+                                Blood Group
+
+                            </th>
+
+
+                            <th>
+
+                                उम्र
+
+                            </th>
+
+
+                            <th>
+
+                                पता
+
+                            </th>
+
+
+                            <th>
+
+                                स्थिति
+
+                            </th>
+
+
+                            <th>
+
+                                कार्य
+
+                            </th>
+
+
+                        </tr>
+
+
+                    </thead>
+
+
+                    <tbody id="donorTable">
+
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+
+    <img
+        src="images/logo.png"
+        alt="युवा सेवा संकल्प फाउंडेशन लोगो"
+        width="70"
+    >
+
+
+    <h3>
+
+        युवा सेवा संकल्प फाउंडेशन
+
+    </h3>
+
+
+    <p>
+
+        युवा शक्ति, राष्ट्र शक्ति
+
+    </p>
+
+
+    <p>
+
+        © 2026 All Rights Reserved
+
+    </p>
+
+
+</footer>
+
+
+<!-- =====================================
+     DONOR LIST JAVASCRIPT
+===================================== -->
+
+<script src="blood-donor-list.js"></script>
+
+
+</body>
+
+</html>
