@@ -6,12 +6,10 @@
 
     <meta charset="UTF-8">
 
-
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
     >
-
 
     <title>
 
@@ -19,14 +17,12 @@
 
     </title>
 
-
     <!-- MAIN CSS -->
 
     <link
         rel="stylesheet"
         href="style.css"
     >
-
 
 </head>
 
@@ -40,9 +36,7 @@
 
 <div class="top-bar">
 
-
     <div class="container">
-
 
         <div class="left">
 
@@ -53,19 +47,15 @@
 
         <div class="right">
 
-
             <a href="index.html">
 
                 🌐 वेबसाइट देखें
 
             </a>
 
-
         </div>
 
-
     </div>
-
 
 </div>
 
@@ -75,7 +65,6 @@
 ===================================== -->
 
 <header class="header">
-
 
     <div class="header-content">
 
@@ -93,7 +82,6 @@
 
         <div class="title">
 
-
             <h1 class="main-title">
 
                 युवा सेवा संकल्प फाउंडेशन
@@ -107,12 +95,9 @@
 
             </p>
 
-
         </div>
 
-
     </div>
-
 
 </header>
 
@@ -123,7 +108,6 @@
 
 <section class="admin-dashboard">
 
-
     <div class="dashboard-container">
 
 
@@ -133,9 +117,7 @@
 
         <div class="dashboard-heading">
 
-
             <div>
-
 
                 <h2>
 
@@ -146,11 +128,10 @@
 
                 <p>
 
-                    सदस्यता आवेदनों और सदस्यों की
-                    जानकारी प्रबंधित करें।
+                    सदस्यता आवेदनों, सदस्यों और
+                    रक्तदाताओं की जानकारी प्रबंधित करें।
 
                 </p>
-
 
             </div>
 
@@ -167,7 +148,6 @@
 
             </button>
 
-
         </div>
 
 
@@ -181,7 +161,6 @@
             <!-- TOTAL MEMBERS -->
 
             <div class="dashboard-card">
-
 
                 <div class="dashboard-icon">
 
@@ -203,14 +182,12 @@
 
                 </p>
 
-
             </div>
 
 
             <!-- NEW APPLICATIONS -->
 
             <div class="dashboard-card">
-
 
                 <div class="dashboard-icon">
 
@@ -232,14 +209,12 @@
 
                 </p>
 
-
             </div>
 
 
             <!-- APPROVED MEMBERS -->
 
             <div class="dashboard-card">
-
 
                 <div class="dashboard-icon">
 
@@ -261,14 +236,12 @@
 
                 </p>
 
-
             </div>
 
 
             <!-- PENDING MEMBERS -->
 
             <div class="dashboard-card">
-
 
                 <div class="dashboard-icon">
 
@@ -290,9 +263,7 @@
 
                 </p>
 
-
             </div>
-
 
         </div>
 
@@ -308,7 +279,6 @@
 
             <div class="table-heading">
 
-
                 <h3>
 
                     सदस्यता आवेदन
@@ -323,7 +293,6 @@
                     autocomplete="off"
                 >
 
-
             </div>
 
 
@@ -331,15 +300,11 @@
 
             <div class="table-responsive">
 
-
                 <table>
-
 
                     <thead>
 
-
                         <tr>
-
 
                             <th>
 
@@ -389,9 +354,7 @@
 
                             </th>
 
-
                         </tr>
-
 
                     </thead>
 
@@ -402,12 +365,9 @@
 
                     </tbody>
 
-
                 </table>
 
-
             </div>
-
 
         </div>
 
@@ -455,6 +415,18 @@
             </a>
 
 
+            <!-- BLOOD DONOR LIST -->
+
+            <a
+                href="blood-donor-list.html"
+                class="quick-btn red-btn"
+            >
+
+                🩸 रक्तदाता सूची
+
+            </a>
+
+
             <!-- VIEW WEBSITE -->
 
             <a
@@ -479,12 +451,9 @@
 
             </button>
 
-
         </div>
 
-
     </div>
-
 
 </section>
 
@@ -494,7 +463,6 @@
 ===================================== -->
 
 <footer>
-
 
     <img
         src="images/logo.png"
@@ -523,7 +491,6 @@
 
     </p>
 
-
 </footer>
 
 
@@ -540,9 +507,7 @@
 
 <script>
 
-
 function logoutAdmin() {
-
 
     const confirmLogout = confirm(
 
@@ -551,12 +516,7 @@ function logoutAdmin() {
     );
 
 
-    if (
-
-        confirmLogout
-
-    ) {
-
+    if (confirmLogout) {
 
         localStorage.removeItem(
 
@@ -569,12 +529,9 @@ function logoutAdmin() {
 
         "admin-login.html";
 
-
     }
 
-
 }
-
 
 </script>
 
@@ -584,7 +541,6 @@ function logoutAdmin() {
 ===================================== -->
 
 <script>
-
 
 function downloadReport() {
 
@@ -604,12 +560,7 @@ function downloadReport() {
 
     /* MEMBER नहीं मिलने पर */
 
-    if (
-
-        members.length === 0
-
-    ) {
-
+    if (members.length === 0) {
 
         alert(
 
@@ -617,9 +568,7 @@ function downloadReport() {
 
         );
 
-
         return;
-
 
     }
 
@@ -635,13 +584,7 @@ function downloadReport() {
 
     members.forEach(
 
-        function(
-
-            member,
-
-            index
-
-        ) {
+        function(member, index) {
 
 
             const memberId =
@@ -701,7 +644,6 @@ function downloadReport() {
 
                 `"${status}"\n`;
 
-
         }
 
     );
@@ -711,11 +653,7 @@ function downloadReport() {
 
     const file = new Blob(
 
-        [
-
-            csv
-
-        ],
+        [csv],
 
         {
 
@@ -796,9 +734,7 @@ function downloadReport() {
 
     );
 
-
 }
-
 
 </script>
 
