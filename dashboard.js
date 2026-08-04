@@ -3,9 +3,81 @@
 ===================================== */
 
 if (
-    localStorage.getItem("adminLoggedIn") !== "true"
+
+    localStorage.getItem(
+
+        "adminLoggedIn"
+
+    ) !== "true"
+
 ) {
-    window.location.href = "admin-login.html";
+
+    window.location.href =
+
+    "admin-login.html";
+
+}
+
+
+/* =====================================
+   SAFE LOCAL STORAGE DATA
+===================================== */
+
+function getStorageData(
+
+    key
+
+) {
+
+    try {
+
+        const data =
+
+        JSON.parse(
+
+            localStorage.getItem(
+
+                key
+
+            )
+
+        );
+
+
+        return Array.isArray(
+
+            data
+
+        )
+
+        ? data
+
+        : [];
+
+
+    }
+
+    catch (
+
+        error
+
+    ) {
+
+        console.error(
+
+            key +
+
+            " डेटा पढ़ने में समस्या:",
+
+            error
+
+        );
+
+
+        return [];
+
+    }
+
 }
 
 
@@ -13,57 +85,39 @@ if (
    MEMBER DATA
 ===================================== */
 
-let members = [];
+let members =
 
-try {
+getStorageData(
 
-    members = JSON.parse(
-        localStorage.getItem("members")
-    ) || [];
+    "members"
 
-} catch (error) {
-
-    members = [];
-
-}
+);
 
 
 /* =====================================
    VOLUNTEER DATA
 ===================================== */
 
-let volunteers = [];
+let volunteers =
 
-try {
+getStorageData(
 
-    volunteers = JSON.parse(
-        localStorage.getItem("volunteers")
-    ) || [];
+    "volunteers"
 
-} catch (error) {
-
-    volunteers = [];
-
-}
+);
 
 
 /* =====================================
    CONTACT DATA
 ===================================== */
 
-let contacts = [];
+let contacts =
 
-try {
+getStorageData(
 
-    contacts = JSON.parse(
-        localStorage.getItem("contactMessages")
-    ) || [];
+    "contactMessages"
 
-} catch (error) {
-
-    contacts = [];
-
-}
+);
 
 
 /* =====================================
@@ -73,8 +127,15 @@ try {
 function saveMembers() {
 
     localStorage.setItem(
+
         "members",
-        JSON.stringify(members)
+
+        JSON.stringify(
+
+            members
+
+        )
+
     );
 
 }
@@ -87,8 +148,15 @@ function saveMembers() {
 function saveVolunteers() {
 
     localStorage.setItem(
+
         "volunteers",
-        JSON.stringify(volunteers)
+
+        JSON.stringify(
+
+            volunteers
+
+        )
+
     );
 
 }
@@ -101,9 +169,68 @@ function saveVolunteers() {
 function saveContacts() {
 
     localStorage.setItem(
+
         "contactMessages",
-        JSON.stringify(contacts)
+
+        JSON.stringify(
+
+            contacts
+
+        )
+
     );
+
+}
+
+
+/* =====================================
+   MEMBER STATUS CLASS
+===================================== */
+
+function getMemberStatusClass(
+
+    status
+
+) {
+
+    const currentStatus =
+
+    String(
+
+        status || "लंबित"
+
+    )
+
+    .toLowerCase();
+
+
+    if (
+
+        currentStatus === "स्वीकृत" ||
+
+        currentStatus === "approved"
+
+    ) {
+
+        return "approved";
+
+    }
+
+
+    if (
+
+        currentStatus === "अस्वीकृत" ||
+
+        currentStatus === "rejected"
+
+    ) {
+
+        return "rejected";
+
+    }
+
+
+    return "pending";
 
 }
 
@@ -113,16 +240,25 @@ function saveContacts() {
 ===================================== */
 
 function showMembers(
+
     memberList = members
+
 ) {
 
     const memberTable =
+
     document.getElementById(
+
         "memberTable"
+
     );
 
 
-    if (!memberTable) {
+    if (
+
+        !memberTable
+
+    ) {
 
         return;
 
@@ -133,31 +269,40 @@ function showMembers(
 
 
     if (
+
         memberList.length === 0
+
     ) {
 
         memberTable.innerHTML = `
 
-        <tr>
+            <tr>
 
-            <td
-                colspan="7"
-                style="
-                    text-align:center;
-                    padding:25px;
-                "
-            >
+                <td
 
-                अभी कोई सदस्य आवेदन उपलब्ध नहीं है।
+                    colspan="7"
 
-            </td>
+                    style="
 
-        </tr>
+                        text-align:center;
+
+                        padding:25px;
+
+                    "
+
+                >
+
+                    अभी कोई सदस्य आवेदन उपलब्ध नहीं है।
+
+                </td>
+
+            </tr>
 
         `;
 
 
         updateDashboard();
+
 
         return;
 
@@ -165,23 +310,39 @@ function showMembers(
 
 
     memberList.forEach(
-        function(member, index) {
+
+        function(
+
+            member,
+
+            displayIndex
+
+        ) {
 
 
             const originalIndex =
-            members.indexOf(member);
+
+            members.indexOf(
+
+                member
+
+            );
 
 
             const memberId =
 
             member.memberId ||
 
-            member.id ||
-
             member.memberID ||
 
-            "YSSF-" + (
+            member.id ||
+
+            "YSSF-" +
+
+            (
+
                 originalIndex + 1
+
             );
 
 
@@ -225,107 +386,135 @@ function showMembers(
             "लंबित";
 
 
+            const statusClass =
+
+            getMemberStatusClass(
+
+                status
+
+            );
+
+
             memberTable.innerHTML += `
 
-            <tr>
+                <tr>
+
+                    <td>
+
+                        ${displayIndex + 1}
+
+                    </td>
 
 
-                <td>
+                    <td>
 
-                    ${index + 1}
+                        ${memberId}
 
-                </td>
-
-
-                <td>
-
-                    ${memberId}
-
-                </td>
+                    </td>
 
 
-                <td>
+                    <td>
 
-                    ${name}
+                        ${name}
 
-                </td>
-
-
-                <td>
-
-                    ${mobile}
-
-                </td>
+                    </td>
 
 
-                <td>
+                    <td>
 
-                    ${membership}
+                        ${mobile}
 
-                </td>
-
-
-                <td>
-
-                    <span class="status">
-
-                        ${status}
-
-                    </span>
-
-                </td>
+                    </td>
 
 
-                <td>
+                    <td>
+
+                        ${membership}
+
+                    </td>
 
 
-                    <button
-                        type="button"
-                        class="approve-btn"
-                        onclick="approveMember(
-                            ${originalIndex}
-                        )"
-                    >
+                    <td>
 
-                        ✅ Approve
+                        <span
 
-                    </button>
+                            class="status ${statusClass}"
 
+                        >
 
-                    <button
-                        type="button"
-                        class="reject-btn"
-                        onclick="rejectMember(
-                            ${originalIndex}
-                        )"
-                    >
+                            ${status}
 
-                        ❌ Reject
+                        </span>
 
-                    </button>
+                    </td>
 
 
-                    <button
-                        type="button"
-                        class="delete-btn"
-                        onclick="deleteMember(
-                            ${originalIndex}
-                        )"
-                    >
+                    <td>
 
-                        🗑 Delete
+                        <button
 
-                    </button>
+                            type="button"
+
+                            class="approve-btn"
+
+                            onclick="approveMember(
+
+                                ${originalIndex}
+
+                            )"
+
+                        >
+
+                            ✅ Approve
+
+                        </button>
 
 
-                </td>
+                        <button
+
+                            type="button"
+
+                            class="reject-btn"
+
+                            onclick="rejectMember(
+
+                                ${originalIndex}
+
+                            )"
+
+                        >
+
+                            ❌ Reject
+
+                        </button>
 
 
-            </tr>
+                        <button
+
+                            type="button"
+
+                            class="delete-btn"
+
+                            onclick="deleteMember(
+
+                                ${originalIndex}
+
+                            )"
+
+                        >
+
+                            🗑 Delete
+
+                        </button>
+
+                    </td>
+
+                </tr>
 
             `;
 
         }
+
     );
 
 
@@ -339,10 +528,22 @@ function showMembers(
 ===================================== */
 
 function approveMember(
+
     index
+
 ) {
 
-    if (!members[index]) {
+    if (
+
+        !members[index]
+
+    ) {
+
+        alert(
+
+            "सदस्य आवेदन नहीं मिला।"
+
+        );
 
         return;
 
@@ -350,6 +551,7 @@ function approveMember(
 
 
     members[index].status =
+
     "स्वीकृत";
 
 
@@ -360,7 +562,9 @@ function approveMember(
 
 
     alert(
-        "✅ सदस्य आवेदन स्वीकृत कर दिया गया।"
+
+        "✅ सदस्य को स्वीकृत कर दिया गया।"
+
     );
 
 }
@@ -371,10 +575,22 @@ function approveMember(
 ===================================== */
 
 function rejectMember(
+
     index
+
 ) {
 
-    if (!members[index]) {
+    if (
+
+        !members[index]
+
+    ) {
+
+        alert(
+
+            "सदस्य आवेदन नहीं मिला।"
+
+        );
 
         return;
 
@@ -382,6 +598,7 @@ function rejectMember(
 
 
     members[index].status =
+
     "अस्वीकृत";
 
 
@@ -392,7 +609,9 @@ function rejectMember(
 
 
     alert(
+
         "❌ सदस्य आवेदन अस्वीकृत कर दिया गया।"
+
     );
 
 }
@@ -403,17 +622,42 @@ function rejectMember(
 ===================================== */
 
 function deleteMember(
+
     index
+
 ) {
+
+    if (
+
+        !members[index]
+
+    ) {
+
+        alert(
+
+            "सदस्य आवेदन नहीं मिला।"
+
+        );
+
+        return;
+
+    }
+
 
     const confirmDelete =
 
     confirm(
-        "क्या आप इस सदस्य आवेदन को हटाना चाहते हैं?"
+
+        "क्या आप इस सदस्य को स्थायी रूप से हटाना चाहते हैं?"
+
     );
 
 
-    if (!confirmDelete) {
+    if (
+
+        !confirmDelete
+
+    ) {
 
         return;
 
@@ -421,8 +665,11 @@ function deleteMember(
 
 
     members.splice(
+
         index,
+
         1
+
     );
 
 
@@ -433,7 +680,9 @@ function deleteMember(
 
 
     alert(
-        "🗑 सदस्य आवेदन हटा दिया गया।"
+
+        "🗑 सदस्य सफलतापूर्वक हटा दिया गया।"
+
     );
 
 }
@@ -444,17 +693,25 @@ function deleteMember(
 ===================================== */
 
 function showVolunteers(
+
     volunteerList = volunteers
+
 ) {
 
     const volunteerTable =
 
     document.getElementById(
+
         "volunteerTable"
+
     );
 
 
-    if (!volunteerTable) {
+    if (
+
+        !volunteerTable
+
+    ) {
 
         return;
 
@@ -465,28 +722,37 @@ function showVolunteers(
 
 
     if (
+
         volunteerList.length === 0
+
     ) {
 
         volunteerTable.innerHTML = `
 
-        <tr>
+            <tr>
 
-            <td
-                colspan="8"
-                style="
-                    text-align:center;
-                    padding:25px;
-                "
-            >
+                <td
 
-                अभी कोई वॉलंटियर आवेदन उपलब्ध नहीं है।
+                    colspan="8"
 
-            </td>
+                    style="
 
-        </tr>
+                        text-align:center;
+
+                        padding:25px;
+
+                    "
+
+                >
+
+                    अभी कोई वॉलंटियर आवेदन उपलब्ध नहीं है।
+
+                </td>
+
+            </tr>
 
         `;
+
 
         return;
 
@@ -494,13 +760,22 @@ function showVolunteers(
 
 
     volunteerList.forEach(
-        function(volunteer, index) {
+
+        function(
+
+            volunteer,
+
+            displayIndex
+
+        ) {
 
 
             const originalIndex =
 
             volunteers.indexOf(
+
                 volunteer
+
             );
 
 
@@ -510,8 +785,12 @@ function showVolunteers(
 
             volunteer.id ||
 
-            "VOL-" + (
+            "VOL-" +
+
+            (
+
                 originalIndex + 1
+
             );
 
 
@@ -539,12 +818,16 @@ function showVolunteers(
 
             volunteer.serviceArea ||
 
+            volunteer.area ||
+
             "-";
 
 
             const availability =
 
             volunteer.availability ||
+
+            volunteer.availableTime ||
 
             "-";
 
@@ -556,114 +839,142 @@ function showVolunteers(
             "लंबित";
 
 
+            const statusClass =
+
+            getMemberStatusClass(
+
+                status
+
+            );
+
+
             volunteerTable.innerHTML += `
 
-            <tr>
+                <tr>
+
+                    <td>
+
+                        ${displayIndex + 1}
+
+                    </td>
 
 
-                <td>
+                    <td>
 
-                    ${index + 1}
+                        ${volunteerId}
 
-                </td>
-
-
-                <td>
-
-                    ${volunteerId}
-
-                </td>
+                    </td>
 
 
-                <td>
+                    <td>
 
-                    ${name}
+                        ${name}
 
-                </td>
-
-
-                <td>
-
-                    ${mobile}
-
-                </td>
+                    </td>
 
 
-                <td>
+                    <td>
 
-                    ${service}
+                        ${mobile}
 
-                </td>
-
-
-                <td>
-
-                    ${availability}
-
-                </td>
+                    </td>
 
 
-                <td>
+                    <td>
 
-                    <span class="volunteer-status">
+                        ${service}
 
-                        ${status}
-
-                    </span>
-
-                </td>
+                    </td>
 
 
-                <td>
+                    <td>
+
+                        ${availability}
+
+                    </td>
 
 
-                    <button
-                        type="button"
-                        class="approve-btn"
-                        onclick="approveVolunteer(
-                            ${originalIndex}
-                        )"
-                    >
+                    <td>
 
-                        ✅ Approve
+                        <span
 
-                    </button>
+                            class="status ${statusClass}"
 
+                        >
 
-                    <button
-                        type="button"
-                        class="reject-btn"
-                        onclick="rejectVolunteer(
-                            ${originalIndex}
-                        )"
-                    >
+                            ${status}
 
-                        ❌ Reject
+                        </span>
 
-                    </button>
+                    </td>
 
 
-                    <button
-                        type="button"
-                        class="delete-btn"
-                        onclick="deleteVolunteer(
-                            ${originalIndex}
-                        )"
-                    >
+                    <td>
 
-                        🗑 Delete
+                        <button
 
-                    </button>
+                            type="button"
+
+                            class="approve-btn"
+
+                            onclick="approveVolunteer(
+
+                                ${originalIndex}
+
+                            )"
+
+                        >
+
+                            ✅ Approve
+
+                        </button>
 
 
-                </td>
+                        <button
+
+                            type="button"
+
+                            class="reject-btn"
+
+                            onclick="rejectVolunteer(
+
+                                ${originalIndex}
+
+                            )"
+
+                        >
+
+                            ❌ Reject
+
+                        </button>
 
 
-            </tr>
+                        <button
+
+                            type="button"
+
+                            class="delete-btn"
+
+                            onclick="deleteVolunteer(
+
+                                ${originalIndex}
+
+                            )"
+
+                        >
+
+                            🗑 Delete
+
+                        </button>
+
+                    </td>
+
+                </tr>
 
             `;
 
         }
+
     );
 
 }
@@ -674,10 +985,22 @@ function showVolunteers(
 ===================================== */
 
 function approveVolunteer(
+
     index
+
 ) {
 
-    if (!volunteers[index]) {
+    if (
+
+        !volunteers[index]
+
+    ) {
+
+        alert(
+
+            "वॉलंटियर आवेदन नहीं मिला।"
+
+        );
 
         return;
 
@@ -685,6 +1008,7 @@ function approveVolunteer(
 
 
     volunteers[index].status =
+
     "स्वीकृत";
 
 
@@ -695,7 +1019,9 @@ function approveVolunteer(
 
 
     alert(
+
         "✅ वॉलंटियर आवेदन स्वीकृत कर दिया गया।"
+
     );
 
 }
@@ -706,10 +1032,22 @@ function approveVolunteer(
 ===================================== */
 
 function rejectVolunteer(
+
     index
+
 ) {
 
-    if (!volunteers[index]) {
+    if (
+
+        !volunteers[index]
+
+    ) {
+
+        alert(
+
+            "वॉलंटियर आवेदन नहीं मिला।"
+
+        );
 
         return;
 
@@ -717,6 +1055,7 @@ function rejectVolunteer(
 
 
     volunteers[index].status =
+
     "अस्वीकृत";
 
 
@@ -727,7 +1066,9 @@ function rejectVolunteer(
 
 
     alert(
+
         "❌ वॉलंटियर आवेदन अस्वीकृत कर दिया गया।"
+
     );
 
 }
@@ -738,17 +1079,42 @@ function rejectVolunteer(
 ===================================== */
 
 function deleteVolunteer(
+
     index
+
 ) {
+
+    if (
+
+        !volunteers[index]
+
+    ) {
+
+        alert(
+
+            "वॉलंटियर आवेदन नहीं मिला।"
+
+        );
+
+        return;
+
+    }
+
 
     const confirmDelete =
 
     confirm(
+
         "क्या आप इस वॉलंटियर आवेदन को हटाना चाहते हैं?"
+
     );
 
 
-    if (!confirmDelete) {
+    if (
+
+        !confirmDelete
+
+    ) {
 
         return;
 
@@ -756,8 +1122,11 @@ function deleteVolunteer(
 
 
     volunteers.splice(
+
         index,
+
         1
+
     );
 
 
@@ -768,7 +1137,400 @@ function deleteVolunteer(
 
 
     alert(
+
         "🗑 वॉलंटियर आवेदन हटा दिया गया।"
+
+    );
+
+}
+
+
+/* =====================================
+   CONTACT TABLE
+===================================== */
+
+function loadContactMessages(
+
+    contactList = contacts
+
+) {
+
+    const contactTable =
+
+    document.getElementById(
+
+        "contactTable"
+
+    );
+
+
+    if (
+
+        !contactTable
+
+    ) {
+
+        return;
+
+    }
+
+
+    contactTable.innerHTML = "";
+
+
+    if (
+
+        contactList.length === 0
+
+    ) {
+
+        contactTable.innerHTML = `
+
+            <tr>
+
+                <td
+
+                    colspan="10"
+
+                    style="
+
+                        text-align:center;
+
+                        padding:25px;
+
+                    "
+
+                >
+
+                    अभी कोई संपर्क संदेश उपलब्ध नहीं है।
+
+                </td>
+
+            </tr>
+
+        `;
+
+
+        return;
+
+    }
+
+
+    contactList.forEach(
+
+        function(
+
+            contact,
+
+            displayIndex
+
+        ) {
+
+
+            const originalIndex =
+
+            contacts.indexOf(
+
+                contact
+
+            );
+
+
+            const status =
+
+            contact.status ||
+
+            "नया";
+
+
+            contactTable.innerHTML += `
+
+                <tr>
+
+                    <td>
+
+                        ${displayIndex + 1}
+
+                    </td>
+
+
+                    <td>
+
+                        ${
+
+                            contact.contactId ||
+
+                            contact.id ||
+
+                            "-"
+
+                        }
+
+                    </td>
+
+
+                    <td>
+
+                        ${
+
+                            contact.name ||
+
+                            "-"
+
+                        }
+
+                    </td>
+
+
+                    <td>
+
+                        ${
+
+                            contact.mobile ||
+
+                            contact.phone ||
+
+                            "-"
+
+                        }
+
+                    </td>
+
+
+                    <td>
+
+                        ${
+
+                            contact.email ||
+
+                            "-"
+
+                        }
+
+                    </td>
+
+
+                    <td>
+
+                        ${
+
+                            contact.subject ||
+
+                            "-"
+
+                        }
+
+                    </td>
+
+
+                    <td>
+
+                        ${
+
+                            contact.message ||
+
+                            "-"
+
+                        }
+
+                    </td>
+
+
+                    <td>
+
+                        ${
+
+                            contact.date ||
+
+                            contact.createdAt ||
+
+                            "-"
+
+                        }
+
+                    </td>
+
+
+                    <td>
+
+                        <span
+
+                            class="contact-status"
+
+                        >
+
+                            ${status}
+
+                        </span>
+
+                    </td>
+
+
+                    <td>
+
+                        <button
+
+                            type="button"
+
+                            class="contact-read-btn"
+
+                            onclick="markContactRead(
+
+                                ${originalIndex}
+
+                            )"
+
+                        >
+
+                            ✓ पढ़ा
+
+                        </button>
+
+
+                        <button
+
+                            type="button"
+
+                            class="contact-delete-btn"
+
+                            onclick="deleteContact(
+
+                                ${originalIndex}
+
+                            )"
+
+                        >
+
+                            🗑 हटाएँ
+
+                        </button>
+
+                    </td>
+
+                </tr>
+
+            `;
+
+        }
+
+    );
+
+}
+
+
+/* =====================================
+   MARK CONTACT AS READ
+===================================== */
+
+function markContactRead(
+
+    index
+
+) {
+
+    if (
+
+        !contacts[index]
+
+    ) {
+
+        alert(
+
+            "संपर्क संदेश नहीं मिला।"
+
+        );
+
+        return;
+
+    }
+
+
+    contacts[index].status =
+
+    "पढ़ा गया";
+
+
+    saveContacts();
+
+
+    loadContactMessages();
+
+
+    alert(
+
+        "✓ संदेश को पढ़ा गया के रूप में चिन्हित कर दिया गया।"
+
+    );
+
+}
+
+
+/* =====================================
+   DELETE CONTACT
+===================================== */
+
+function deleteContact(
+
+    index
+
+) {
+
+    if (
+
+        !contacts[index]
+
+    ) {
+
+        alert(
+
+            "संपर्क संदेश नहीं मिला।"
+
+        );
+
+        return;
+
+    }
+
+
+    const confirmDelete =
+
+    confirm(
+
+        "क्या आप यह संपर्क संदेश हटाना चाहते हैं?"
+
+    );
+
+
+    if (
+
+        !confirmDelete
+
+    ) {
+
+        return;
+
+    }
+
+
+    contacts.splice(
+
+        index,
+
+        1
+
+    );
+
+
+    saveContacts();
+
+
+    loadContactMessages();
+
+
+    alert(
+
+        "🗑 संपर्क संदेश हटा दिया गया।"
+
     );
 
 }
@@ -780,7 +1542,6 @@ function deleteVolunteer(
 
 function updateDashboard() {
 
-
     const totalMembers =
 
     members.length;
@@ -789,92 +1550,160 @@ function updateDashboard() {
     const approvedMembers =
 
     members.filter(
-        function(member) {
+
+        function(
+
+            member
+
+        ) {
+
+            const status =
+
+            String(
+
+                member.status ||
+
+                ""
+
+            )
+
+            .toLowerCase();
+
 
             return (
 
-                member.status ===
-                "स्वीकृत"
+                status === "स्वीकृत" ||
+
+                status === "approved"
 
             );
 
         }
+
     ).length;
 
 
     const pendingMembers =
 
     members.filter(
-        function(member) {
+
+        function(
+
+            member
+
+        ) {
+
+            const status =
+
+            String(
+
+                member.status ||
+
+                "लंबित"
+
+            )
+
+            .toLowerCase();
+
 
             return (
 
-                !member.status ||
+                status === "लंबित" ||
 
-                member.status ===
-                "लंबित"
+                status === "pending" ||
+
+                status === ""
 
             );
 
         }
+
     ).length;
 
 
     const totalElement =
 
     document.getElementById(
+
         "totalMembers"
+
     );
 
 
     const newElement =
 
     document.getElementById(
+
         "newApplications"
+
     );
 
 
     const approvedElement =
 
     document.getElementById(
+
         "approvedMembers"
+
     );
 
 
     const pendingElement =
 
     document.getElementById(
+
         "pendingMembers"
+
     );
 
 
-    if (totalElement) {
+    if (
+
+        totalElement
+
+    ) {
 
         totalElement.textContent =
+
         totalMembers;
 
     }
 
 
-    if (newElement) {
+    if (
+
+        newElement
+
+    ) {
 
         newElement.textContent =
+
         pendingMembers;
 
     }
 
 
-    if (approvedElement) {
+    if (
+
+        approvedElement
+
+    ) {
 
         approvedElement.textContent =
+
         approvedMembers;
 
     }
 
 
-    if (pendingElement) {
+    if (
+
+        pendingElement
+
+    ) {
 
         pendingElement.textContent =
+
         pendingMembers;
 
     }
@@ -886,31 +1715,53 @@ function updateDashboard() {
    MEMBER SEARCH
 ===================================== */
 
-const memberSearch =
+function setupMemberSearch() {
 
-document.getElementById(
-    "memberSearch"
-);
+    const memberSearch =
+
+    document.getElementById(
+
+        "memberSearch"
+
+    );
 
 
-if (memberSearch) {
+    if (
+
+        !memberSearch
+
+    ) {
+
+        return;
+
+    }
+
 
     memberSearch.addEventListener(
+
         "input",
+
         function() {
 
 
             const searchText =
 
             this.value
+
             .toLowerCase()
+
             .trim();
 
 
             const filteredMembers =
 
             members.filter(
-                function(member) {
+
+                function(
+
+                    member
+
+                ) {
 
 
                     const memberId =
@@ -919,11 +1770,14 @@ if (memberSearch) {
 
                         member.memberId ||
 
+                        member.memberID ||
+
                         member.id ||
 
                         ""
 
                     )
+
                     .toLowerCase();
 
 
@@ -935,9 +1789,12 @@ if (memberSearch) {
 
                         member.fullName ||
 
+                        member.memberName ||
+
                         ""
 
                     )
+
                     .toLowerCase();
 
 
@@ -949,6 +1806,8 @@ if (memberSearch) {
 
                         member.phone ||
 
+                        member.mobileNumber ||
+
                         ""
 
                     );
@@ -957,32 +1816,42 @@ if (memberSearch) {
                     return (
 
                         memberId.includes(
+
                             searchText
+
                         )
 
                         ||
 
                         name.includes(
+
                             searchText
+
                         )
 
                         ||
 
                         mobile.includes(
+
                             searchText
+
                         )
 
                     );
 
                 }
+
             );
 
 
             showMembers(
+
                 filteredMembers
+
             );
 
         }
+
     );
 
 }
@@ -992,31 +1861,53 @@ if (memberSearch) {
    VOLUNTEER SEARCH
 ===================================== */
 
-const volunteerSearch =
+function setupVolunteerSearch() {
 
-document.getElementById(
-    "volunteerSearch"
-);
+    const volunteerSearch =
+
+    document.getElementById(
+
+        "volunteerSearch"
+
+    );
 
 
-if (volunteerSearch) {
+    if (
+
+        !volunteerSearch
+
+    ) {
+
+        return;
+
+    }
+
 
     volunteerSearch.addEventListener(
+
         "input",
+
         function() {
 
 
             const searchText =
 
             this.value
+
             .toLowerCase()
+
             .trim();
 
 
             const filteredVolunteers =
 
             volunteers.filter(
-                function(volunteer) {
+
+                function(
+
+                    volunteer
+
+                ) {
 
 
                     const volunteerId =
@@ -1030,6 +1921,7 @@ if (volunteerSearch) {
                         ""
 
                     )
+
                     .toLowerCase();
 
 
@@ -1044,6 +1936,7 @@ if (volunteerSearch) {
                         ""
 
                     )
+
                     .toLowerCase();
 
 
@@ -1063,287 +1956,42 @@ if (volunteerSearch) {
                     return (
 
                         volunteerId.includes(
+
                             searchText
+
                         )
 
                         ||
 
                         name.includes(
+
                             searchText
+
                         )
 
                         ||
 
                         mobile.includes(
+
                             searchText
+
                         )
 
                     );
 
                 }
+
             );
 
 
             showVolunteers(
+
                 filteredVolunteers
+
             );
 
         }
-    );
 
-}
-
-
-/* =====================================
-   CONTACT TABLE
-===================================== */
-
-function loadContactMessages(
-    contactList = contacts
-) {
-
-    const contactTable =
-
-    document.getElementById(
-        "contactTable"
-    );
-
-
-    if (!contactTable) {
-
-        return;
-
-    }
-
-
-    contactTable.innerHTML = "";
-
-
-    if (
-        contactList.length === 0
-    ) {
-
-        contactTable.innerHTML = `
-
-        <tr>
-
-            <td
-                colspan="10"
-                style="
-                    text-align:center;
-                    padding:25px;
-                "
-            >
-
-                अभी कोई संपर्क संदेश उपलब्ध नहीं है।
-
-            </td>
-
-        </tr>
-
-        `;
-
-        return;
-
-    }
-
-
-    contactList.forEach(
-        function(contact, index) {
-
-
-            const originalIndex =
-
-            contacts.indexOf(
-                contact
-            );
-
-
-            const status =
-
-            contact.status ||
-
-            "नया";
-
-
-            contactTable.innerHTML += `
-
-            <tr>
-
-
-                <td>
-
-                    ${index + 1}
-
-                </td>
-
-
-                <td>
-
-                    ${contact.contactId || "-"}
-
-                </td>
-
-
-                <td>
-
-                    ${contact.name || "-"}
-
-                </td>
-
-
-                <td>
-
-                    ${contact.mobile || "-"}
-
-                </td>
-
-
-                <td>
-
-                    ${contact.email || "-"}
-
-                </td>
-
-
-                <td>
-
-                    ${contact.subject || "-"}
-
-                </td>
-
-
-                <td>
-
-                    ${contact.message || "-"}
-
-                </td>
-
-
-                <td>
-
-                    ${contact.date || "-"}
-
-                </td>
-
-
-                <td>
-
-                    <span class="contact-status">
-
-                        ${status}
-
-                    </span>
-
-                </td>
-
-
-                <td>
-
-
-                    <button
-                        type="button"
-                        class="contact-read-btn"
-                        onclick="markContactRead(
-                            ${originalIndex}
-                        )"
-                    >
-
-                        ✓ पढ़ा
-
-                    </button>
-
-
-                    <button
-                        type="button"
-                        class="contact-delete-btn"
-                        onclick="deleteContact(
-                            ${originalIndex}
-                        )"
-                    >
-
-                        🗑 हटाएँ
-
-                    </button>
-
-
-                </td>
-
-
-            </tr>
-
-            `;
-
-        }
-    );
-
-}
-
-
-/* =====================================
-   MARK CONTACT READ
-===================================== */
-
-function markContactRead(
-    index
-) {
-
-    if (!contacts[index]) {
-
-        return;
-
-    }
-
-
-    contacts[index].status =
-
-    "पढ़ा गया";
-
-
-    saveContacts();
-
-
-    loadContactMessages();
-
-}
-
-
-/* =====================================
-   DELETE CONTACT
-===================================== */
-
-function deleteContact(
-    index
-) {
-
-    const confirmDelete =
-
-    confirm(
-        "क्या आप यह संपर्क संदेश हटाना चाहते हैं?"
-    );
-
-
-    if (!confirmDelete) {
-
-        return;
-
-    }
-
-
-    contacts.splice(
-        index,
-        1
-    );
-
-
-    saveContacts();
-
-
-    loadContactMessages();
-
-
-    alert(
-        "🗑 संपर्क संदेश हटा दिया गया।"
     );
 
 }
@@ -1353,80 +2001,133 @@ function deleteContact(
    CONTACT SEARCH
 ===================================== */
 
-const contactSearch =
+function setupContactSearch() {
 
-document.getElementById(
-    "contactSearch"
-);
+    const contactSearch =
+
+    document.getElementById(
+
+        "contactSearch"
+
+    );
 
 
-if (contactSearch) {
+    if (
+
+        !contactSearch
+
+    ) {
+
+        return;
+
+    }
+
 
     contactSearch.addEventListener(
+
         "input",
+
         function() {
 
 
             const searchText =
 
             this.value
+
             .toLowerCase()
+
             .trim();
 
 
             const filteredContacts =
 
             contacts.filter(
-                function(contact) {
+
+                function(
+
+                    contact
+
+                ) {
 
 
-                    const allData =
+                    const name =
 
-                    (
+                    String(
 
-                        contact.contactId +
+                        contact.name ||
 
-                        " " +
-
-                        contact.name +
-
-                        " " +
-
-                        contact.mobile +
-
-                        " " +
-
-                        contact.email +
-
-                        " " +
-
-                        contact.subject +
-
-                        " " +
-
-                        contact.message
+                        ""
 
                     )
+
+                    .toLowerCase();
+
+
+                    const mobile =
+
+                    String(
+
+                        contact.mobile ||
+
+                        contact.phone ||
+
+                        ""
+
+                    );
+
+
+                    const subject =
+
+                    String(
+
+                        contact.subject ||
+
+                        ""
+
+                    )
+
                     .toLowerCase();
 
 
                     return (
 
-                        allData.includes(
+                        name.includes(
+
                             searchText
+
+                        )
+
+                        ||
+
+                        mobile.includes(
+
+                            searchText
+
+                        )
+
+                        ||
+
+                        subject.includes(
+
+                            searchText
+
                         )
 
                     );
 
                 }
+
             );
 
 
             loadContactMessages(
+
                 filteredContacts
+
             );
 
         }
+
     );
 
 }
@@ -1437,122 +2138,60 @@ if (contactSearch) {
 ===================================== */
 
 document.addEventListener(
+
     "DOMContentLoaded",
+
     function() {
+
+
+        members =
+
+        getStorageData(
+
+            "members"
+
+        );
+
+
+        volunteers =
+
+        getStorageData(
+
+            "volunteers"
+
+        );
+
+
+        contacts =
+
+        getStorageData(
+
+            "contactMessages"
+
+        );
+
 
         showMembers();
 
+
         showVolunteers();
+
 
         loadContactMessages();
 
+
         updateDashboard();
 
+
+        setupMemberSearch();
+
+
+        setupVolunteerSearch();
+
+
+        setupContactSearch();
+
+
     }
+
 );
-/* =====================================
-   MEMBER DELETE
-===================================== */
-
-function deleteMember(index) {
-
-    const confirmDelete = confirm(
-
-        "क्या आप इस सदस्य को हटाना चाहते हैं?"
-
-    );
-
-
-    if (!confirmDelete) {
-
-        return;
-
-    }
-
-
-    members.splice(
-
-        index,
-
-        1
-
-    );
-
-
-    localStorage.setItem(
-
-        "members",
-
-        JSON.stringify(
-
-            members
-
-        )
-
-    );
-
-
-    showMembers();
-
-    updateDashboard();
-
-
-    alert(
-
-        "🗑 सदस्य सफलतापूर्वक हटा दिया गया।"
-
-    );
-
-}
-/* =====================================
-   VOLUNTEER DELETE
-===================================== */
-
-function deleteVolunteer(index) {
-
-    const confirmDelete = confirm(
-
-        "क्या आप इस वॉलंटियर आवेदन को हटाना चाहते हैं?"
-
-    );
-
-
-    if (!confirmDelete) {
-
-        return;
-
-    }
-
-
-    volunteers.splice(
-
-        index,
-
-        1
-
-    );
-
-
-    localStorage.setItem(
-
-        "volunteers",
-
-        JSON.stringify(
-
-            volunteers
-
-        )
-
-    );
-
-
-    showVolunteers();
-
-
-    alert(
-
-        "🗑 वॉलंटियर आवेदन सफलतापूर्वक हटा दिया गया।"
-
-    );
-
-}
