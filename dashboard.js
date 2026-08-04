@@ -3726,3 +3726,298 @@ document.addEventListener(
     }
 
 );
+/* =====================================
+   MEMBER VIEW MODAL
+===================================== */
+
+function openMemberView(index) {
+
+    const members = JSON.parse(
+
+        localStorage.getItem("members")
+
+    ) || [];
+
+
+    const member = members[index];
+
+
+    if (!member) {
+
+        alert(
+
+            "❌ सदस्य की जानकारी नहीं मिली।"
+
+        );
+
+        return;
+
+    }
+
+
+    const memberViewModal =
+
+    document.getElementById(
+
+        "memberViewModal"
+
+    );
+
+
+    const memberViewContent =
+
+    document.getElementById(
+
+        "memberViewContent"
+
+    );
+
+
+    if (
+
+        !memberViewModal ||
+
+        !memberViewContent
+
+    ) {
+
+        alert(
+
+            "❌ Member View Modal नहीं मिला।"
+
+        );
+
+        return;
+
+    }
+
+
+    const memberId =
+
+        member.memberId ||
+
+        member.id ||
+
+        member.memberID ||
+
+        "-";
+
+
+    const name =
+
+        member.name ||
+
+        member.fullName ||
+
+        member.memberName ||
+
+        "-";
+
+
+    const mobile =
+
+        member.mobile ||
+
+        member.phone ||
+
+        member.mobileNumber ||
+
+        "-";
+
+
+    const membership =
+
+        member.membership ||
+
+        member.membershipType ||
+
+        member.category ||
+
+        "-";
+
+
+    const status =
+
+        member.status ||
+
+        "लंबित";
+
+
+    const date =
+
+        member.date ||
+
+        member.applicationDate ||
+
+        member.createdAt ||
+
+        "-";
+
+
+    const email =
+
+        member.email ||
+
+        "-";
+
+
+    const address =
+
+        member.address ||
+
+        "-";
+
+
+    memberViewContent.innerHTML = `
+
+        <div class="member-details">
+
+
+            <div class="member-detail-item">
+
+                <strong>
+
+                    Member ID
+
+                </strong>
+
+                ${memberId}
+
+            </div>
+
+
+            <div class="member-detail-item">
+
+                <strong>
+
+                    सदस्य का नाम
+
+                </strong>
+
+                ${name}
+
+            </div>
+
+
+            <div class="member-detail-item">
+
+                <strong>
+
+                    मोबाइल नंबर
+
+                </strong>
+
+                ${mobile}
+
+            </div>
+
+
+            <div class="member-detail-item">
+
+                <strong>
+
+                    ईमेल
+
+                </strong>
+
+                ${email}
+
+            </div>
+
+
+            <div class="member-detail-item">
+
+                <strong>
+
+                    सदस्यता
+
+                </strong>
+
+                ${membership}
+
+            </div>
+
+
+            <div class="member-detail-item">
+
+                <strong>
+
+                    आवेदन दिनांक
+
+                </strong>
+
+                ${date}
+
+            </div>
+
+
+            <div class="member-detail-item">
+
+                <strong>
+
+                    स्थिति
+
+                </strong>
+
+                ${status}
+
+            </div>
+
+
+            <div class="member-detail-item">
+
+                <strong>
+
+                    पता
+
+                </strong>
+
+                ${address}
+
+            </div>
+
+
+        </div>
+
+    `;
+
+
+    memberViewModal.classList.add(
+
+        "show"
+
+    );
+
+}
+
+
+/* =====================================
+   CLOSE MEMBER VIEW
+===================================== */
+
+function closeMemberView() {
+
+    const memberViewModal =
+
+    document.getElementById(
+
+        "memberViewModal"
+
+    );
+
+
+    if (
+
+        memberViewModal
+
+    ) {
+
+        memberViewModal.classList.remove(
+
+            "show"
+
+        );
+
+    }
+
+}
