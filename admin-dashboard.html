@@ -6,13 +6,17 @@
 
     <meta charset="UTF-8">
 
+
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1.0"
     >
 
+
     <title>
+
         एडमिन डैशबोर्ड | युवा सेवा संकल्प फाउंडेशन
+
     </title>
 
 
@@ -22,6 +26,7 @@
         rel="stylesheet"
         href="style.css"
     >
+
 
 </head>
 
@@ -35,6 +40,7 @@
 
 <div class="top-bar">
 
+
     <div class="container">
 
 
@@ -47,16 +53,19 @@
 
         <div class="right">
 
+
             <a href="index.html">
 
                 🌐 वेबसाइट देखें
 
             </a>
 
+
         </div>
 
 
     </div>
+
 
 </div>
 
@@ -71,7 +80,7 @@
     <div class="header-content">
 
 
-        <!-- LOGO -->
+        <!-- FOUNDATION LOGO -->
 
         <img
             src="images/logo.png"
@@ -387,8 +396,7 @@
                     </thead>
 
 
-                    <!-- MEMBERS WILL BE ADDED
-                         BY dashboard.js -->
+                    <!-- MEMBER DATA dashboard.js से आएगा -->
 
                     <tbody id="memberTable">
 
@@ -405,7 +413,7 @@
 
 
         <!-- =====================================
-             QUICK ACTIONS
+             QUICK ACTION BUTTONS
         ===================================== -->
 
         <div class="quick-actions">
@@ -459,17 +467,18 @@
             </a>
 
 
-            <!-- DOWNLOAD REPORT -->
+            <!-- DOWNLOAD MEMBER REPORT -->
 
             <button
-    type="button"
-    class="quick-btn orange-btn"
-    onclick="downloadReport()"
->
+                type="button"
+                class="quick-btn orange-btn"
+                onclick="downloadReport()"
+            >
 
-    📥 रिपोर्ट डाउनलोड करें
+                📥 रिपोर्ट डाउनलोड करें
 
-</button>
+            </button>
+
 
         </div>
 
@@ -526,16 +535,12 @@
 
 
 <!-- =====================================
-     LOGOUT AND REPORT JAVASCRIPT
+     ADMIN LOGOUT
 ===================================== -->
 
 <script>
 
 
-/* =====================================
-   ADMIN LOGOUT
-===================================== */
-
 function logoutAdmin() {
 
 
@@ -546,7 +551,11 @@ function logoutAdmin() {
     );
 
 
-    if (confirmLogout) {
+    if (
+
+        confirmLogout
+
+    ) {
 
 
         localStorage.removeItem(
@@ -567,62 +576,40 @@ function logoutAdmin() {
 }
 
 
-/* =====================================
-   REPORT MESSAGE
-===================================== */
+</script>
+
+
+<!-- =====================================
+     MEMBER REPORT DOWNLOAD
+===================================== -->
 
 <script>
 
-/* =====================================
-   ADMIN LOGOUT
-===================================== */
-
-function logoutAdmin() {
-
-    const confirmLogout = confirm(
-
-        "क्या आप एडमिन पैनल से लॉगआउट करना चाहते हैं?"
-
-    );
-
-
-    if (confirmLogout) {
-
-        localStorage.removeItem(
-
-            "adminLoggedIn"
-
-        );
-
-
-        window.location.href =
-
-        "admin-login.html";
-
-    }
-
-}
-
-
-/* =====================================
-   MEMBER REPORT DOWNLOAD
-===================================== */
 
 function downloadReport() {
 
 
-    /* सदस्य की जानकारी Local Storage से लें */
+    /* LOCAL STORAGE से MEMBER DATA */
 
     const members = JSON.parse(
 
-        localStorage.getItem("members")
+        localStorage.getItem(
+
+            "members"
+
+        )
 
     ) || [];
 
 
-    /* अगर कोई सदस्य नहीं है */
+    /* MEMBER नहीं मिलने पर */
 
-    if (members.length === 0) {
+    if (
+
+        members.length === 0
+
+    ) {
+
 
         alert(
 
@@ -630,23 +617,31 @@ function downloadReport() {
 
         );
 
+
         return;
+
 
     }
 
 
-    /* CSV की पहली लाइन */
+    /* CSV FILE HEADER */
 
     let csv =
 
         "\uFEFFक्रमांक,Member ID,नाम,मोबाइल नंबर,सदस्यता,स्थिति\n";
 
 
-    /* सभी सदस्यों की जानकारी */
+    /* MEMBER DATA CSV में डालें */
 
     members.forEach(
 
-        function(member, index) {
+        function(
+
+            member,
+
+            index
+
+        ) {
 
 
             const memberId =
@@ -667,11 +662,11 @@ function downloadReport() {
                 "";
 
 
-            const phone =
-
-                member.phone ||
+            const mobile =
 
                 member.mobile ||
+
+                member.phone ||
 
                 "";
 
@@ -700,7 +695,7 @@ function downloadReport() {
 
                 `"${name}",` +
 
-                `"${phone}",` +
+                `"${mobile}",` +
 
                 `"${membership}",` +
 
@@ -712,11 +707,15 @@ function downloadReport() {
     );
 
 
-    /* CSV File बनाएँ */
+    /* CSV FILE बनाएँ */
 
     const file = new Blob(
 
-        [csv],
+        [
+
+            csv
+
+        ],
 
         {
 
@@ -729,26 +728,39 @@ function downloadReport() {
     );
 
 
-    /* Download Link बनाएँ */
+    /* DOWNLOAD LINK बनाएँ */
 
     const downloadLink =
 
-        document.createElement("a");
+        document.createElement(
+
+            "a"
+
+        );
+
+
+    const fileURL =
+
+        URL.createObjectURL(
+
+            file
+
+        );
 
 
     downloadLink.href =
 
-        URL.createObjectURL(file);
+        fileURL;
 
 
-    /* File का नाम */
+    /* REPORT FILE NAME */
 
     downloadLink.download =
 
         "YSSF-Member-Report.csv";
 
 
-    /* File Download */
+    /* REPORT DOWNLOAD */
 
     document.body.appendChild(
 
@@ -767,19 +779,26 @@ function downloadReport() {
     );
 
 
-    /* Success Message */
+    /* TEMPORARY FILE हटाएँ */
+
+    URL.revokeObjectURL(
+
+        fileURL
+
+    );
+
+
+    /* SUCCESS MESSAGE */
 
     alert(
 
-        "सदस्य रिपोर्ट सफलतापूर्वक डाउनलोड हो गई।"
+        "✅ सदस्य रिपोर्ट सफलतापूर्वक डाउनलोड हो गई।"
 
     );
 
 
 }
 
-
-</script>
 
 </script>
 
