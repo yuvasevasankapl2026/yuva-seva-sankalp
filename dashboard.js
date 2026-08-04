@@ -1,10 +1,25 @@
 /* =====================================
+   ADMIN DASHBOARD JAVASCRIPT
+===================================== */
+
+
+/* =====================================
    ADMIN LOGIN CHECK
 ===================================== */
 
-if (localStorage.getItem("adminLoggedIn") !== "true") {
+if (
 
-    window.location.href = "admin-login.html";
+    localStorage.getItem(
+
+        "adminLoggedIn"
+
+    ) !== "true"
+
+) {
+
+    window.location.href =
+
+    "admin-login.html";
 
 }
 
@@ -13,23 +28,48 @@ if (localStorage.getItem("adminLoggedIn") !== "true") {
    SAFE LOCAL STORAGE DATA
 ===================================== */
 
-function getStorageData(storageKey) {
+function getStorageData(
+
+    key
+
+) {
 
     try {
 
         const data = JSON.parse(
-            localStorage.getItem(storageKey)
+
+            localStorage.getItem(
+
+                key
+
+            )
+
         );
 
-        return Array.isArray(data) ? data : [];
+        return Array.isArray(
+
+            data
+
+        )
+
+        ? data
+
+        : [];
 
     }
 
-    catch (error) {
+    catch (
+
+        error
+
+    ) {
 
         console.error(
-            storageKey + " data पढ़ने में समस्या:",
+
+            key + " data error:",
+
             error
+
         );
 
         return [];
@@ -44,33 +84,227 @@ function getStorageData(storageKey) {
 ===================================== */
 
 function saveStorageData(
-    storageKey,
+
+    key,
+
     data
+
 ) {
 
     localStorage.setItem(
-        storageKey,
-        JSON.stringify(data)
+
+        key,
+
+        JSON.stringify(
+
+            data
+
+        )
+
     );
 
 }
 
 
 /* =====================================
-   HTML SAFE TEXT
+   GET MEMBER VALUE
 ===================================== */
 
-function escapeHTML(value) {
+function getMemberId(
 
-    return String(
-        value ?? ""
+    member,
+
+    index
+
+) {
+
+    return (
+
+        member.memberId ||
+
+        member.memberID ||
+
+        member.id ||
+
+        "YSSF-2026-" +
+
+        String(
+
+            index + 1
+
+        ).padStart(
+
+            4,
+
+            "0"
+
+        )
+
+    );
+
+}
+
+
+function getMemberName(
+
+    member
+
+) {
+
+    return (
+
+        member.name ||
+
+        member.fullName ||
+
+        member.memberName ||
+
+        "नाम उपलब्ध नहीं"
+
+    );
+
+}
+
+
+function getMemberMobile(
+
+    member
+
+) {
+
+    return (
+
+        member.mobile ||
+
+        member.phone ||
+
+        member.mobileNumber ||
+
+        "—"
+
+    );
+
+}
+
+
+function getMemberMembership(
+
+    member
+
+) {
+
+    return (
+
+        member.membership ||
+
+        member.membershipType ||
+
+        member.category ||
+
+        "general"
+
+    );
+
+}
+
+
+function getMemberDate(
+
+    member
+
+) {
+
+    return (
+
+        member.date ||
+
+        member.applicationDate ||
+
+        member.createdAt ||
+
+        "—"
+
+    );
+
+}
+
+
+/* =====================================
+   STATUS NORMALIZE
+===================================== */
+
+function normalizeStatus(
+
+    status
+
+) {
+
+    const value = String(
+
+        status ||
+
+        "लंबित"
+
     )
 
-    .replace(/&/g, "&amp;")
-    .replace(/</g, "&lt;")
-    .replace(/>/g, "&gt;")
-    .replace(/"/g, "&quot;")
-    .replace(/'/g, "&#039;");
+    .trim()
+
+    .toLowerCase();
+
+
+    if (
+
+        value === "approved" ||
+
+        value === "स्वीकृत"
+
+    ) {
+
+        return "स्वीकृत";
+
+    }
+
+
+    if (
+
+        value === "rejected" ||
+
+        value === "अस्वीकृत"
+
+    ) {
+
+        return "अस्वीकृत";
+
+    }
+
+
+    if (
+
+        value === "read" ||
+
+        value === "पढ़ा गया"
+
+    ) {
+
+        return "पढ़ा गया";
+
+    }
+
+
+    if (
+
+        value === "new" ||
+
+        value === "नया"
+
+    ) {
+
+        return "नया";
+
+    }
+
+
+    return "लंबित";
 
 }
 
@@ -79,22 +313,24 @@ function escapeHTML(value) {
    STATUS CLASS
 ===================================== */
 
-function getStatusClass(status) {
+function getStatusClass(
 
-    const currentStatus = String(
-        status || "लंबित"
-    )
+    status
 
-    .toLowerCase()
+) {
 
-    .trim();
+    const finalStatus =
+
+    normalizeStatus(
+
+        status
+
+    );
 
 
     if (
 
-        currentStatus === "स्वीकृत" ||
-
-        currentStatus === "approved"
+        finalStatus === "स्वीकृत"
 
     ) {
 
@@ -105,9 +341,7 @@ function getStatusClass(status) {
 
     if (
 
-        currentStatus === "अस्वीकृत" ||
-
-        currentStatus === "rejected"
+        finalStatus === "अस्वीकृत"
 
     ) {
 
@@ -118,13 +352,22 @@ function getStatusClass(status) {
 
     if (
 
-        currentStatus === "पढ़ा गया" ||
-
-        currentStatus === "read"
+        finalStatus === "पढ़ा गया"
 
     ) {
 
         return "read";
+
+    }
+
+
+    if (
+
+        finalStatus === "नया"
+
+    ) {
+
+        return "new";
 
     }
 
@@ -135,1253 +378,35 @@ function getStatusClass(status) {
 
 
 /* =====================================
-   MEMBER TABLE
+   UPDATE DASHBOARD COUNT
 ===================================== */
 
-function showMembers(
-    memberList
-) {
-
-    const memberTable =
-
-    document.getElementById(
-        "memberTable"
-    );
-
-
-    if (!memberTable) {
-
-        return;
-
-    }
-
+function updateDashboardStatistics() {
 
     const members =
 
     getStorageData(
+
         "members"
-    );
-
-
-    const displayMembers =
-
-    memberList || members;
-
-
-    memberTable.innerHTML = "";
-
-
-    if (
-
-        displayMembers.length === 0
-
-    ) {
-
-        memberTable.innerHTML = `
-
-            <tr>
-
-                <td
-                    colspan="7"
-                    style="
-                        text-align:center;
-                        padding:25px;
-                    "
-                >
-
-                    अभी कोई सदस्य आवेदन उपलब्ध नहीं है।
-
-                </td>
-
-            </tr>
-
-        `;
-
-
-        updateDashboard();
-
-        return;
-
-    }
-
-
-    displayMembers.forEach(
-
-        function (
-            member,
-            displayIndex
-        ) {
-
-
-            const originalIndex =
-
-            members.indexOf(
-                member
-            );
-
-
-            const memberId =
-
-            member.memberId ||
-
-            member.id ||
-
-            member.memberID ||
-
-            "YSSF-" + (
-                originalIndex + 1
-            );
-
-
-            const name =
-
-            member.name ||
-
-            member.fullName ||
-
-            member.memberName ||
-
-            "नाम उपलब्ध नहीं";
-
-
-            const mobile =
-
-            member.mobile ||
-
-            member.phone ||
-
-            member.mobileNumber ||
-
-            "—";
-
-
-            const membership =
-
-            member.membership ||
-
-            member.membershipType ||
-
-            member.category ||
-
-            "General";
-
-
-            const status =
-
-            member.status ||
-
-            "लंबित";
-
-
-            const statusClass =
-
-            getStatusClass(
-                status
-            );
-
-
-            memberTable.innerHTML += `
-
-                <tr>
-
-                    <td>
-
-                        ${displayIndex + 1}
-
-                    </td>
-
-
-                    <td>
-
-                        ${escapeHTML(memberId)}
-
-                    </td>
-
-
-                    <td>
-
-                        ${escapeHTML(name)}
-
-                    </td>
-
-
-                    <td>
-
-                        ${escapeHTML(mobile)}
-
-                    </td>
-
-
-                    <td>
-
-                        ${escapeHTML(membership)}
-
-                    </td>
-
-
-                    <td>
-
-                        <span
-                            class="status ${statusClass}"
-                        >
-
-                            ${escapeHTML(status)}
-
-                        </span>
-
-                    </td>
-
-
-                    <td>
-
-                        <button
-                            type="button"
-                            class="approve-btn"
-                            onclick="approveMember(
-                                ${originalIndex}
-                            )"
-                        >
-
-                            ✅ Approve
-
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="reject-btn"
-                            onclick="rejectMember(
-                                ${originalIndex}
-                            )"
-                        >
-
-                            ❌ Reject
-
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="delete-btn"
-                            onclick="deleteMember(
-                                ${originalIndex}
-                            )"
-                        >
-
-                            🗑 Delete
-
-                        </button>
-
-                    </td>
-
-                </tr>
-
-            `;
-
-        }
 
     );
-
-
-    updateDashboard();
-
-}
-
-
-/* =====================================
-   APPROVE MEMBER
-===================================== */
-
-function approveMember(index) {
-
-    const members =
-
-    getStorageData(
-        "members"
-    );
-
-
-    if (!members[index]) {
-
-        alert(
-            "सदस्य आवेदन नहीं मिला।"
-        );
-
-        return;
-
-    }
-
-
-    members[index].status =
-
-    "स्वीकृत";
-
-
-    saveStorageData(
-        "members",
-        members
-    );
-
-
-    showMembers();
-
-
-    alert(
-        "✅ सदस्य आवेदन स्वीकृत कर दिया गया।"
-    );
-
-}
-
-
-/* =====================================
-   REJECT MEMBER
-===================================== */
-
-function rejectMember(index) {
-
-    const members =
-
-    getStorageData(
-        "members"
-    );
-
-
-    if (!members[index]) {
-
-        alert(
-            "सदस्य आवेदन नहीं मिला।"
-        );
-
-        return;
-
-    }
-
-
-    members[index].status =
-
-    "अस्वीकृत";
-
-
-    saveStorageData(
-        "members",
-        members
-    );
-
-
-    showMembers();
-
-
-    alert(
-        "❌ सदस्य आवेदन अस्वीकृत कर दिया गया।"
-    );
-
-}
-
-
-/* =====================================
-   DELETE MEMBER
-===================================== */
-
-function deleteMember(index) {
-
-    const confirmDelete =
-
-    confirm(
-
-        "क्या आप इस सदस्य को स्थायी रूप से हटाना चाहते हैं?"
-
-    );
-
-
-    if (!confirmDelete) {
-
-        return;
-
-    }
-
-
-    const members =
-
-    getStorageData(
-        "members"
-    );
-
-
-    if (!members[index]) {
-
-        alert(
-            "सदस्य आवेदन नहीं मिला।"
-        );
-
-        return;
-
-    }
-
-
-    members.splice(
-        index,
-        1
-    );
-
-
-    saveStorageData(
-        "members",
-        members
-    );
-
-
-    const memberSearch =
-
-    document.getElementById(
-        "memberSearch"
-    );
-
-
-    if (memberSearch) {
-
-        memberSearch.value = "";
-
-    }
-
-
-    showMembers();
-
-
-    alert(
-        "🗑 सदस्य सफलतापूर्वक हटा दिया गया।"
-    );
-
-}
-
-
-/* =====================================
-   VOLUNTEER TABLE
-===================================== */
-
-function showVolunteers(
-    volunteerList
-) {
-
-    const volunteerTable =
-
-    document.getElementById(
-        "volunteerTable"
-    );
-
-
-    if (!volunteerTable) {
-
-        return;
-
-    }
 
 
     const volunteers =
 
     getStorageData(
+
         "volunteers"
-    );
-
-
-    const displayVolunteers =
-
-    volunteerList || volunteers;
-
-
-    volunteerTable.innerHTML = "";
-
-
-    if (
-
-        displayVolunteers.length === 0
-
-    ) {
-
-        volunteerTable.innerHTML = `
-
-            <tr>
-
-                <td
-                    colspan="8"
-                    style="
-                        text-align:center;
-                        padding:25px;
-                    "
-                >
-
-                    अभी कोई वॉलंटियर आवेदन उपलब्ध नहीं है।
-
-                </td>
-
-            </tr>
-
-        `;
-
-        return;
-
-    }
-
-
-    displayVolunteers.forEach(
-
-        function (
-            volunteer,
-            displayIndex
-        ) {
-
-
-            const originalIndex =
-
-            volunteers.indexOf(
-                volunteer
-            );
-
-
-            const volunteerId =
-
-            volunteer.volunteerId ||
-
-            volunteer.id ||
-
-            "VOL-" + (
-                originalIndex + 1
-            );
-
-
-            const name =
-
-            volunteer.name ||
-
-            volunteer.fullName ||
-
-            "नाम उपलब्ध नहीं";
-
-
-            const mobile =
-
-            volunteer.mobile ||
-
-            volunteer.phone ||
-
-            "—";
-
-
-            const service =
-
-            volunteer.service ||
-
-            volunteer.serviceArea ||
-
-            volunteer.work ||
-
-            "—";
-
-
-            const availability =
-
-            volunteer.availability ||
-
-            volunteer.availableTime ||
-
-            "—";
-
-
-            const status =
-
-            volunteer.status ||
-
-            "लंबित";
-
-
-            const statusClass =
-
-            getStatusClass(
-                status
-            );
-
-
-            volunteerTable.innerHTML += `
-
-                <tr>
-
-                    <td>
-
-                        ${displayIndex + 1}
-
-                    </td>
-
-
-                    <td>
-
-                        ${escapeHTML(volunteerId)}
-
-                    </td>
-
-
-                    <td>
-
-                        ${escapeHTML(name)}
-
-                    </td>
-
-
-                    <td>
-
-                        ${escapeHTML(mobile)}
-
-                    </td>
-
-
-                    <td>
-
-                        ${escapeHTML(service)}
-
-                    </td>
-
-
-                    <td>
-
-                        ${escapeHTML(availability)}
-
-                    </td>
-
-
-                    <td>
-
-                        <span
-                            class="
-                                volunteer-status
-                                ${statusClass}
-                            "
-                        >
-
-                            ${escapeHTML(status)}
-
-                        </span>
-
-                    </td>
-
-
-                    <td>
-
-                        <button
-                            type="button"
-                            class="approve-btn"
-                            onclick="approveVolunteer(
-                                ${originalIndex}
-                            )"
-                        >
-
-                            ✅ Approve
-
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="reject-btn"
-                            onclick="rejectVolunteer(
-                                ${originalIndex}
-                            )"
-                        >
-
-                            ❌ Reject
-
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="delete-btn"
-                            onclick="deleteVolunteer(
-                                ${originalIndex}
-                            )"
-                        >
-
-                            🗑 Delete
-
-                        </button>
-
-                    </td>
-
-                </tr>
-
-            `;
-
-        }
 
     );
-
-}
-
-
-/* =====================================
-   APPROVE VOLUNTEER
-===================================== */
-
-function approveVolunteer(index) {
-
-    const volunteers =
-
-    getStorageData(
-        "volunteers"
-    );
-
-
-    if (!volunteers[index]) {
-
-        alert(
-            "वॉलंटियर आवेदन नहीं मिला।"
-        );
-
-        return;
-
-    }
-
-
-    volunteers[index].status =
-
-    "स्वीकृत";
-
-
-    saveStorageData(
-        "volunteers",
-        volunteers
-    );
-
-
-    showVolunteers();
-
-
-    alert(
-        "✅ वॉलंटियर आवेदन स्वीकृत कर दिया गया।"
-    );
-
-}
-
-
-/* =====================================
-   REJECT VOLUNTEER
-===================================== */
-
-function rejectVolunteer(index) {
-
-    const volunteers =
-
-    getStorageData(
-        "volunteers"
-    );
-
-
-    if (!volunteers[index]) {
-
-        alert(
-            "वॉलंटियर आवेदन नहीं मिला।"
-        );
-
-        return;
-
-    }
-
-
-    volunteers[index].status =
-
-    "अस्वीकृत";
-
-
-    saveStorageData(
-        "volunteers",
-        volunteers
-    );
-
-
-    showVolunteers();
-
-
-    alert(
-        "❌ वॉलंटियर आवेदन अस्वीकृत कर दिया गया।"
-    );
-
-}
-
-
-/* =====================================
-   DELETE VOLUNTEER
-===================================== */
-
-function deleteVolunteer(index) {
-
-    const confirmDelete =
-
-    confirm(
-
-        "क्या आप इस वॉलंटियर आवेदन को हटाना चाहते हैं?"
-
-    );
-
-
-    if (!confirmDelete) {
-
-        return;
-
-    }
-
-
-    const volunteers =
-
-    getStorageData(
-        "volunteers"
-    );
-
-
-    if (!volunteers[index]) {
-
-        alert(
-            "वॉलंटियर आवेदन नहीं मिला।"
-        );
-
-        return;
-
-    }
-
-
-    volunteers.splice(
-        index,
-        1
-    );
-
-
-    saveStorageData(
-        "volunteers",
-        volunteers
-    );
-
-
-    const volunteerSearch =
-
-    document.getElementById(
-        "volunteerSearch"
-    );
-
-
-    if (volunteerSearch) {
-
-        volunteerSearch.value = "";
-
-    }
-
-
-    showVolunteers();
-
-
-    alert(
-        "🗑 वॉलंटियर आवेदन हटा दिया गया।"
-    );
-
-}
-
-
-/* =====================================
-   CONTACT MESSAGE TABLE
-===================================== */
-
-function loadContactMessages(
-    contactList
-) {
-
-    const contactTable =
-
-    document.getElementById(
-        "contactTable"
-    );
-
-
-    if (!contactTable) {
-
-        return;
-
-    }
 
 
     const contacts =
 
     getStorageData(
+
         "contactMessages"
-    );
 
-
-    const displayContacts =
-
-    contactList || contacts;
-
-
-    contactTable.innerHTML = "";
-
-
-    if (
-
-        displayContacts.length === 0
-
-    ) {
-
-        contactTable.innerHTML = `
-
-            <tr>
-
-                <td
-                    colspan="10"
-                    style="
-                        text-align:center;
-                        padding:25px;
-                    "
-                >
-
-                    अभी कोई संपर्क संदेश उपलब्ध नहीं है।
-
-                </td>
-
-            </tr>
-
-        `;
-
-        return;
-
-    }
-
-
-    displayContacts.forEach(
-
-        function (
-            contact,
-            displayIndex
-        ) {
-
-
-            const originalIndex =
-
-            contacts.indexOf(
-                contact
-            );
-
-
-            const contactId =
-
-            contact.contactId ||
-
-            contact.id ||
-
-            "MSG-" + (
-                originalIndex + 1
-            );
-
-
-            const name =
-
-            contact.name ||
-
-            "—";
-
-
-            const mobile =
-
-            contact.mobile ||
-
-            contact.phone ||
-
-            "—";
-
-
-            const email =
-
-            contact.email ||
-
-            "—";
-
-
-            const subject =
-
-            contact.subject ||
-
-            "—";
-
-
-            const message =
-
-            contact.message ||
-
-            "—";
-
-
-            const date =
-
-            contact.date ||
-
-            contact.createdAt ||
-
-            "—";
-
-
-            const status =
-
-            contact.status ||
-
-            "नया";
-
-
-            const statusClass =
-
-            getStatusClass(
-                status
-            );
-
-
-            contactTable.innerHTML += `
-
-                <tr>
-
-                    <td>
-
-                        ${displayIndex + 1}
-
-                    </td>
-
-
-                    <td>
-
-                        ${escapeHTML(contactId)}
-
-                    </td>
-
-
-                    <td>
-
-                        ${escapeHTML(name)}
-
-                    </td>
-
-
-                    <td>
-
-                        ${escapeHTML(mobile)}
-
-                    </td>
-
-
-                    <td>
-
-                        ${escapeHTML(email)}
-
-                    </td>
-
-
-                    <td>
-
-                        ${escapeHTML(subject)}
-
-                    </td>
-
-
-                    <td>
-
-                        ${escapeHTML(message)}
-
-                    </td>
-
-
-                    <td>
-
-                        ${escapeHTML(date)}
-
-                    </td>
-
-
-                    <td>
-
-                        <span
-                            class="
-                                contact-status
-                                ${statusClass}
-                            "
-                        >
-
-                            ${escapeHTML(status)}
-
-                        </span>
-
-                    </td>
-
-
-                    <td>
-
-                        <button
-                            type="button"
-                            class="contact-read-btn"
-                            onclick="markContactRead(
-                                ${originalIndex}
-                            )"
-                        >
-
-                            ✓ पढ़ा
-
-                        </button>
-
-
-                        <button
-                            type="button"
-                            class="contact-delete-btn"
-                            onclick="deleteContact(
-                                ${originalIndex}
-                            )"
-                        >
-
-                            🗑 हटाएँ
-
-                        </button>
-
-                    </td>
-
-                </tr>
-
-            `;
-
-        }
-
-    );
-
-}
-
-
-/* =====================================
-   MARK CONTACT AS READ
-===================================== */
-
-function markContactRead(index) {
-
-    const contacts =
-
-    getStorageData(
-        "contactMessages"
-    );
-
-
-    if (!contacts[index]) {
-
-        alert(
-            "संपर्क संदेश नहीं मिला।"
-        );
-
-        return;
-
-    }
-
-
-    contacts[index].status =
-
-    "पढ़ा गया";
-
-
-    saveStorageData(
-        "contactMessages",
-        contacts
-    );
-
-
-    loadContactMessages();
-
-
-    alert(
-        "✓ संदेश को पढ़ा गया कर दिया गया।"
-    );
-
-}
-
-
-/* =====================================
-   DELETE CONTACT
-===================================== */
-
-function deleteContact(index) {
-
-    const confirmDelete =
-
-    confirm(
-
-        "क्या आप यह संपर्क संदेश हटाना चाहते हैं?"
-
-    );
-
-
-    if (!confirmDelete) {
-
-        return;
-
-    }
-
-
-    const contacts =
-
-    getStorageData(
-        "contactMessages"
-    );
-
-
-    if (!contacts[index]) {
-
-        alert(
-            "संपर्क संदेश नहीं मिला।"
-        );
-
-        return;
-
-    }
-
-
-    contacts.splice(
-        index,
-        1
-    );
-
-
-    saveStorageData(
-        "contactMessages",
-        contacts
-    );
-
-
-    const contactSearch =
-
-    document.getElementById(
-        "contactSearch"
-    );
-
-
-    if (contactSearch) {
-
-        contactSearch.value = "";
-
-    }
-
-
-    loadContactMessages();
-
-
-    alert(
-        "🗑 संपर्क संदेश हटा दिया गया।"
-    );
-
-}
-
-
-/* =====================================
-   DASHBOARD COUNTS
-===================================== */
-
-function updateDashboard() {
-
-    const members =
-
-    getStorageData(
-        "members"
     );
 
 
@@ -1394,22 +419,19 @@ function updateDashboard() {
 
     members.filter(
 
-        function (member) {
+        function (
 
-            const status =
+            member
 
-            String(
-                member.status || ""
-            )
-
-            .toLowerCase();
-
+        ) {
 
             return (
 
-                status === "स्वीकृत" ||
+                normalizeStatus(
 
-                status === "approved"
+                    member.status
+
+                ) === "स्वीकृत"
 
             );
 
@@ -1422,24 +444,19 @@ function updateDashboard() {
 
     members.filter(
 
-        function (member) {
+        function (
 
-            const status =
+            member
 
-            String(
-                member.status || "लंबित"
-            )
-
-            .toLowerCase();
-
+        ) {
 
             return (
 
-                status === "लंबित" ||
+                normalizeStatus(
 
-                status === "pending" ||
+                    member.status
 
-                status === ""
+                ) === "लंबित"
 
             );
 
@@ -1448,170 +465,1147 @@ function updateDashboard() {
     ).length;
 
 
-    const totalElement =
+    const totalMembersElement =
 
     document.getElementById(
+
         "totalMembers"
+
     );
 
 
-    const newElement =
+    const newApplicationsElement =
 
     document.getElementById(
+
         "newApplications"
+
     );
 
 
-    const approvedElement =
+    const approvedMembersElement =
 
     document.getElementById(
+
         "approvedMembers"
+
     );
 
 
-    const pendingElement =
+    const pendingMembersElement =
 
     document.getElementById(
+
         "pendingMembers"
+
     );
 
 
-    if (totalElement) {
+    const totalVolunteersElement =
 
-        totalElement.textContent =
+    document.getElementById(
+
+        "totalVolunteers"
+
+    );
+
+
+    const totalContactsElement =
+
+    document.getElementById(
+
+        "totalContacts"
+
+    );
+
+
+    if (
+
+        totalMembersElement
+
+    ) {
+
+        totalMembersElement.textContent =
 
         totalMembers;
 
     }
 
 
-    if (newElement) {
+    if (
 
-        newElement.textContent =
+        newApplicationsElement
+
+    ) {
+
+        newApplicationsElement.textContent =
 
         pendingMembers;
 
     }
 
 
-    if (approvedElement) {
+    if (
 
-        approvedElement.textContent =
+        approvedMembersElement
+
+    ) {
+
+        approvedMembersElement.textContent =
 
         approvedMembers;
 
     }
 
 
-    if (pendingElement) {
+    if (
 
-        pendingElement.textContent =
+        pendingMembersElement
+
+    ) {
+
+        pendingMembersElement.textContent =
 
         pendingMembers;
 
     }
 
+
+    if (
+
+        totalVolunteersElement
+
+    ) {
+
+        totalVolunteersElement.textContent =
+
+        volunteers.length;
+
+    }
+
+
+    if (
+
+        totalContactsElement
+
+    ) {
+
+        totalContactsElement.textContent =
+
+        contacts.length;
+
+    }
+
+
+    updateDashboardNotification(
+
+        pendingMembers,
+
+        volunteers,
+
+        contacts
+
+    );
+
 }
 
 
 /* =====================================
-   MEMBER SEARCH
+   DASHBOARD NOTIFICATION
 ===================================== */
 
-function setupMemberSearch() {
+function updateDashboardNotification(
 
-    const memberSearch =
+    pendingMembers,
+
+    volunteers,
+
+    contacts
+
+) {
+
+    const notification =
 
     document.getElementById(
-        "memberSearch"
+
+        "dashboardNotification"
+
     );
 
 
-    if (!memberSearch) {
+    if (
+
+        !notification
+
+    ) {
 
         return;
 
     }
 
 
-    memberSearch.addEventListener(
+    const pendingVolunteers =
 
-        "input",
+    volunteers.filter(
 
-        function () {
+        function (
+
+            volunteer
+
+        ) {
+
+            return (
+
+                normalizeStatus(
+
+                    volunteer.status
+
+                ) === "लंबित"
+
+            );
+
+        }
+
+    ).length;
 
 
-            const searchText =
+    const newContacts =
 
-            this.value
+    contacts.filter(
 
-            .toLowerCase()
+        function (
 
-            .trim();
+            contact
+
+        ) {
+
+            const status = String(
+
+                contact.status ||
+
+                "नया"
+
+            )
+
+            .trim()
+
+            .toLowerCase();
+
+
+            return (
+
+                status === "नया" ||
+
+                status === "new"
+
+            );
+
+        }
+
+    ).length;
+
+
+    const totalNew =
+
+    pendingMembers +
+
+    pendingVolunteers +
+
+    newContacts;
+
+
+    if (
+
+        totalNew === 0
+
+    ) {
+
+        notification.innerHTML =
+
+        "✅ अभी कोई नया आवेदन या संदेश नहीं है।";
+
+    }
+
+    else {
+
+        notification.innerHTML =
+
+        "🔔 कुल " +
+
+        totalNew +
+
+        " नए आवेदन / संदेश उपलब्ध हैं।";
+
+    }
+
+}
+
+
+/* =====================================
+   LOAD MEMBERS
+===================================== */
+
+function loadMembers() {
+
+    const memberTable =
+
+    document.getElementById(
+
+        "memberTable"
+
+    );
+
+
+    if (
+
+        !memberTable
+
+    ) {
+
+        return;
+
+    }
+
+
+    const members =
+
+    getStorageData(
+
+        "members"
+
+    );
+
+
+    const searchBox =
+
+    document.getElementById(
+
+        "memberSearch"
+
+    );
+
+
+    const dateBox =
+
+    document.getElementById(
+
+        "memberDateSearch"
+
+    );
+
+
+    const searchText =
+
+    searchBox
+
+    ? searchBox.value
+
+        .toLowerCase()
+
+        .trim()
+
+    : "";
+
+
+    const selectedDate =
+
+    dateBox
+
+    ? dateBox.value
+
+    : "";
+
+
+    memberTable.innerHTML = "";
+
+
+    const filteredMembers =
+
+    members.filter(
+
+        function (
+
+            member,
+
+            index
+
+        ) {
+
+            const fullText =
+
+            (
+
+                getMemberId(
+
+                    member,
+
+                    index
+
+                ) +
+
+                " " +
+
+                getMemberName(
+
+                    member
+
+                ) +
+
+                " " +
+
+                getMemberMobile(
+
+                    member
+
+                )
+
+            )
+
+            .toLowerCase();
+
+
+            const memberDate =
+
+            String(
+
+                getMemberDate(
+
+                    member
+
+                )
+
+            );
+
+
+            const searchMatch =
+
+            fullText.includes(
+
+                searchText
+
+            );
+
+
+            const dateMatch =
+
+            !selectedDate ||
+
+            memberDate.includes(
+
+                selectedDate
+
+            );
+
+
+            return (
+
+                searchMatch &&
+
+                dateMatch
+
+            );
+
+        }
+
+    );
+
+
+    if (
+
+        filteredMembers.length === 0
+
+    ) {
+
+        memberTable.innerHTML = `
+
+        <tr>
+
+            <td
+                colspan="8"
+                style="
+                    text-align:center;
+                    padding:25px;
+                "
+            >
+
+                अभी कोई सदस्य आवेदन उपलब्ध नहीं है।
+
+            </td>
+
+        </tr>
+
+        `;
+
+
+        return;
+
+    }
+
+
+    filteredMembers.forEach(
+
+        function (
+
+            member,
+
+            displayIndex
+
+        ) {
+
+            const originalIndex =
+
+            members.indexOf(
+
+                member
+
+            );
+
+
+            const status =
+
+            normalizeStatus(
+
+                member.status
+
+            );
+
+
+            const statusClass =
+
+            getStatusClass(
+
+                status
+
+            );
+
+
+            memberTable.innerHTML += `
+
+            <tr>
+
+                <td>
+
+                    ${displayIndex + 1}
+
+                </td>
+
+
+                <td>
+
+                    ${getMemberId(
+                        member,
+                        originalIndex
+                    )}
+
+                </td>
+
+
+                <td>
+
+                    ${getMemberName(
+                        member
+                    )}
+
+                </td>
+
+
+                <td>
+
+                    ${getMemberMobile(
+                        member
+                    )}
+
+                </td>
+
+
+                <td>
+
+                    ${getMemberMembership(
+                        member
+                    )}
+
+                </td>
+
+
+                <td>
+
+                    ${getMemberDate(
+                        member
+                    )}
+
+                </td>
+
+
+                <td>
+
+                    <span
+                        class="status ${statusClass}"
+                    >
+
+                        ${status}
+
+                    </span>
+
+                </td>
+
+
+                <td>
+
+                    <button
+                        type="button"
+                        class="view-btn"
+                        onclick="viewMember(
+                            ${originalIndex}
+                        )"
+                    >
+
+                        👁️ देखें
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="edit-btn"
+                        onclick="openMemberEdit(
+                            ${originalIndex}
+                        )"
+                    >
+
+                        ✏️ Edit
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="approve-btn"
+                        onclick="updateMemberStatus(
+                            ${originalIndex},
+                            'स्वीकृत'
+                        )"
+                    >
+
+                        ✅
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="reject-btn"
+                        onclick="updateMemberStatus(
+                            ${originalIndex},
+                            'अस्वीकृत'
+                        )"
+                    >
+
+                        ❌
+
+                    </button>
+
+                </td>
+
+            </tr>
+
+            `;
+
+        }
+
+    );
+
+}
+
+
+/* =====================================
+   MEMBER STATUS UPDATE
+===================================== */
+
+function updateMemberStatus(
+
+    index,
+
+    newStatus
+
+) {
+
+    const members =
+
+    getStorageData(
+
+        "members"
+
+    );
+
+
+    if (
+
+        !members[index]
+
+    ) {
+
+        alert(
+
+            "सदस्य नहीं मिला।"
+
+        );
+
+        return;
+
+    }
+
+
+    members[index].status =
+
+    newStatus;
+
+
+    saveStorageData(
+
+        "members",
+
+        members
+
+    );
+
+
+    loadMembers();
+
+    updateDashboardStatistics();
+
+
+    alert(
+
+        "सदस्य की स्थिति " +
+
+        newStatus +
+
+        " कर दी गई है।"
+
+    );
+
+}
+
+
+/* =====================================
+   VIEW MEMBER
+===================================== */
+
+function viewMember(
+
+    index
+
+) {
+
+    const members =
+
+    getStorageData(
+
+        "members"
+
+    );
+
+
+    const member =
+
+    members[index];
+
+
+    if (
+
+        !member
+
+    ) {
+
+        return;
+
+    }
+
+
+    const content =
+
+    document.getElementById(
+
+        "memberViewContent"
+
+    );
+
+
+    const modal =
+
+    document.getElementById(
+
+        "memberViewModal"
+
+    );
+
+
+    if (
+
+        !content ||
+
+        !modal
+
+    ) {
+
+        return;
+
+    }
+
+
+    let details = "";
+
+
+    Object.keys(
+
+        member
+
+    ).forEach(
+
+        function (
+
+            key
+
+        ) {
+
+            details += `
+
+            <div class="member-detail">
+
+                <strong>
+
+                    ${key}
+
+                </strong>
+
+                <span>
+
+                    ${member[key]}
+
+                </span>
+
+            </div>
+
+            `;
+
+        }
+
+    );
+
+
+    content.innerHTML =
+
+    details;
+
+
+    modal.style.display =
+
+    "flex";
+
+}
+
+
+/* =====================================
+   CLOSE MEMBER VIEW
+===================================== */
+
+function closeMemberView() {
+
+    const modal =
+
+    document.getElementById(
+
+        "memberViewModal"
+
+    );
+
+
+    if (
+
+        modal
+
+    ) {
+
+        modal.style.display =
+
+        "none";
+
+    }
+
+}
+
+
+/* =====================================
+   OPEN MEMBER EDIT
+===================================== */
+
+function openMemberEdit(
+
+    index
+
+) {
+
+    const members =
+
+    getStorageData(
+
+        "members"
+
+    );
+
+
+    const member =
+
+    members[index];
+
+
+    if (
+
+        !member
+
+    ) {
+
+        return;
+
+    }
+
+
+    document.getElementById(
+
+        "editMemberIndex"
+
+    ).value =
+
+    index;
+
+
+    document.getElementById(
+
+        "editMemberName"
+
+    ).value =
+
+    getMemberName(
+
+        member
+
+    );
+
+
+    document.getElementById(
+
+        "editMemberMobile"
+
+    ).value =
+
+    getMemberMobile(
+
+        member
+
+    );
+
+
+    document.getElementById(
+
+        "editMemberMembership"
+
+    ).value =
+
+    getMemberMembership(
+
+        member
+
+    );
+
+
+    document.getElementById(
+
+        "editMemberStatus"
+
+    ).value =
+
+    normalizeStatus(
+
+        member.status
+
+    );
+
+
+    document.getElementById(
+
+        "memberEditModal"
+
+    ).style.display =
+
+    "flex";
+
+}
+
+
+/* =====================================
+   CLOSE MEMBER EDIT
+===================================== */
+
+function closeMemberEdit() {
+
+    const modal =
+
+    document.getElementById(
+
+        "memberEditModal"
+
+    );
+
+
+    if (
+
+        modal
+
+    ) {
+
+        modal.style.display =
+
+        "none";
+
+    }
+
+}
+
+
+/* =====================================
+   SAVE MEMBER EDIT
+===================================== */
+
+function setupMemberEditForm() {
+
+    const form =
+
+    document.getElementById(
+
+        "memberEditForm"
+
+    );
+
+
+    if (
+
+        !form
+
+    ) {
+
+        return;
+
+    }
+
+
+    form.addEventListener(
+
+        "submit",
+
+        function (
+
+            event
+
+        ) {
+
+            event.preventDefault();
+
+
+            const index =
+
+            Number(
+
+                document.getElementById(
+
+                    "editMemberIndex"
+
+                ).value
+
+            );
 
 
             const members =
 
             getStorageData(
+
                 "members"
-            );
-
-
-            const filteredMembers =
-
-            members.filter(
-
-                function (member) {
-
-
-                    const searchableText =
-
-                    [
-
-                        member.memberId,
-
-                        member.id,
-
-                        member.memberID,
-
-                        member.name,
-
-                        member.fullName,
-
-                        member.memberName,
-
-                        member.mobile,
-
-                        member.phone,
-
-                        member.mobileNumber,
-
-                        member.membership,
-
-                        member.membershipType
-
-                    ]
-
-                    .join(" ")
-
-                    .toLowerCase();
-
-
-                    return (
-
-                        searchableText.includes(
-                            searchText
-                        )
-
-                    );
-
-                }
 
             );
 
 
-            showMembers(
-                filteredMembers
+            if (
+
+                !members[index]
+
+            ) {
+
+                return;
+
+            }
+
+
+            members[index].name =
+
+            document.getElementById(
+
+                "editMemberName"
+
+            ).value
+
+            .trim();
+
+
+            members[index].mobile =
+
+            document.getElementById(
+
+                "editMemberMobile"
+
+            ).value
+
+            .trim();
+
+
+            members[index].membership =
+
+            document.getElementById(
+
+                "editMemberMembership"
+
+            ).value
+
+            .trim();
+
+
+            members[index].status =
+
+            document.getElementById(
+
+                "editMemberStatus"
+
+            ).value;
+
+
+            saveStorageData(
+
+                "members",
+
+                members
+
+            );
+
+
+            closeMemberEdit();
+
+            loadMembers();
+
+            updateDashboardStatistics();
+
+
+            alert(
+
+                "✅ सदस्य की जानकारी सेव हो गई।"
+
             );
 
         }
@@ -1622,198 +1616,1792 @@ function setupMemberSearch() {
 
 
 /* =====================================
-   VOLUNTEER SEARCH
+   LOAD CONTACT MESSAGES
 ===================================== */
 
-function setupVolunteerSearch() {
+function loadContactMessages() {
 
-    const volunteerSearch =
+    const contactTable =
 
     document.getElementById(
-        "volunteerSearch"
+
+        "contactTable"
+
     );
 
 
-    if (!volunteerSearch) {
+    if (
+
+        !contactTable
+
+    ) {
 
         return;
 
     }
 
 
-    volunteerSearch.addEventListener(
+    const contacts =
 
-        "input",
+    getStorageData(
 
-        function () {
-
-
-            const searchText =
-
-            this.value
-
-            .toLowerCase()
-
-            .trim();
-
-
-            const volunteers =
-
-            getStorageData(
-                "volunteers"
-            );
-
-
-            const filteredVolunteers =
-
-            volunteers.filter(
-
-                function (volunteer) {
-
-
-                    const searchableText =
-
-                    [
-
-                        volunteer.volunteerId,
-
-                        volunteer.id,
-
-                        volunteer.name,
-
-                        volunteer.fullName,
-
-                        volunteer.mobile,
-
-                        volunteer.phone,
-
-                        volunteer.service,
-
-                        volunteer.serviceArea
-
-                    ]
-
-                    .join(" ")
-
-                    .toLowerCase();
-
-
-                    return (
-
-                        searchableText.includes(
-                            searchText
-                        )
-
-                    );
-
-                }
-
-            );
-
-
-            showVolunteers(
-                filteredVolunteers
-            );
-
-        }
+        "contactMessages"
 
     );
 
-}
 
-
-/* =====================================
-   CONTACT SEARCH
-===================================== */
-
-function setupContactSearch() {
-
-    const contactSearch =
+    const searchBox =
 
     document.getElementById(
+
         "contactSearch"
+
     );
 
 
-    if (!contactSearch) {
+    const dateBox =
+
+    document.getElementById(
+
+        "contactDateSearch"
+
+    );
+
+
+    const searchText =
+
+    searchBox
+
+    ? searchBox.value
+
+        .toLowerCase()
+
+        .trim()
+
+    : "";
+
+
+    const selectedDate =
+
+    dateBox
+
+    ? dateBox.value
+
+    : "";
+
+
+    contactTable.innerHTML = "";
+
+
+    const filteredContacts =
+
+    contacts.filter(
+
+        function (
+
+            contact
+
+        ) {
+
+            const fullText =
+
+            (
+
+                (contact.contactId || "") +
+
+                " " +
+
+                (contact.name || "") +
+
+                " " +
+
+                (contact.mobile || "") +
+
+                " " +
+
+                (contact.subject || "")
+
+            )
+
+            .toLowerCase();
+
+
+            const contactDate =
+
+            String(
+
+                contact.date ||
+
+                contact.createdAt ||
+
+                ""
+
+            );
+
+
+            return (
+
+                fullText.includes(
+
+                    searchText
+
+                )
+
+                &&
+
+                (
+
+                    !selectedDate ||
+
+                    contactDate.includes(
+
+                        selectedDate
+
+                    )
+
+                )
+
+            );
+
+        }
+
+    );
+
+
+    if (
+
+        filteredContacts.length === 0
+
+    ) {
+
+        contactTable.innerHTML = `
+
+        <tr>
+
+            <td
+                colspan="10"
+                style="
+                    text-align:center;
+                    padding:25px;
+                "
+            >
+
+                अभी कोई संपर्क संदेश उपलब्ध नहीं है।
+
+            </td>
+
+        </tr>
+
+        `;
+
 
         return;
 
     }
 
 
-    contactSearch.addEventListener(
+    filteredContacts.forEach(
 
-        "input",
+        function (
 
-        function () {
+            contact,
 
+            displayIndex
 
-            const searchText =
+        ) {
 
-            this.value
+            const originalIndex =
 
-            .toLowerCase()
+            contacts.indexOf(
 
-            .trim();
+                contact
 
-
-            const contacts =
-
-            getStorageData(
-                "contactMessages"
             );
 
 
-            const filteredContacts =
+            const status =
 
-            contacts.filter(
+            contact.status ||
 
-                function (contact) {
-
-
-                    const searchableText =
-
-                    [
-
-                        contact.contactId,
-
-                        contact.id,
-
-                        contact.name,
-
-                        contact.mobile,
-
-                        contact.phone,
-
-                        contact.email,
-
-                        contact.subject,
-
-                        contact.message
-
-                    ]
-
-                    .join(" ")
-
-                    .toLowerCase();
+            "नया";
 
 
-                    return (
+            contactTable.innerHTML += `
 
-                        searchableText.includes(
-                            searchText
-                        )
+            <tr>
 
-                    );
+                <td>
+
+                    ${displayIndex + 1}
+
+                </td>
+
+
+                <td>
+
+                    ${contact.contactId || "-"}
+
+                </td>
+
+
+                <td>
+
+                    ${contact.name || "-"}
+
+                </td>
+
+
+                <td>
+
+                    ${contact.mobile || "-"}
+
+                </td>
+
+
+                <td>
+
+                    ${contact.email || "-"}
+
+                </td>
+
+
+                <td>
+
+                    ${contact.subject || "-"}
+
+                </td>
+
+
+                <td>
+
+                    ${contact.message || "-"}
+
+                </td>
+
+
+                <td>
+
+                    ${contact.date ||
+                    contact.createdAt ||
+                    "-"}
+
+                </td>
+
+
+                <td>
+
+                    <span
+                        class="status ${getStatusClass(
+                            status
+                        )}"
+                    >
+
+                        ${status}
+
+                    </span>
+
+                </td>
+
+
+                <td>
+
+                    <button
+                        type="button"
+                        class="approve-btn"
+                        onclick="markContactRead(
+                            ${originalIndex}
+                        )"
+                    >
+
+                        ✓ पढ़ा
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="reject-btn"
+                        onclick="deleteContact(
+                            ${originalIndex}
+                        )"
+                    >
+
+                        🗑 हटाएँ
+
+                    </button>
+
+                </td>
+
+            </tr>
+
+            `;
+
+        }
+
+    );
+
+}
+
+
+/* =====================================
+   MARK CONTACT READ
+===================================== */
+
+function markContactRead(
+
+    index
+
+) {
+
+    const contacts =
+
+    getStorageData(
+
+        "contactMessages"
+
+    );
+
+
+    if (
+
+        !contacts[index]
+
+    ) {
+
+        return;
+
+    }
+
+
+    contacts[index].status =
+
+    "पढ़ा गया";
+
+
+    saveStorageData(
+
+        "contactMessages",
+
+        contacts
+
+    );
+
+
+    loadContactMessages();
+
+    updateDashboardStatistics();
+
+}
+
+
+/* =====================================
+   DELETE CONTACT
+===================================== */
+
+function deleteContact(
+
+    index
+
+) {
+
+    const confirmDelete =
+
+    confirm(
+
+        "क्या आप यह संपर्क संदेश हटाना चाहते हैं?"
+
+    );
+
+
+    if (
+
+        !confirmDelete
+
+    ) {
+
+        return;
+
+    }
+
+
+    const contacts =
+
+    getStorageData(
+
+        "contactMessages"
+
+    );
+
+
+    contacts.splice(
+
+        index,
+
+        1
+
+    );
+
+
+    saveStorageData(
+
+        "contactMessages",
+
+        contacts
+
+    );
+
+
+    loadContactMessages();
+
+    updateDashboardStatistics();
+
+}
+
+
+/* =====================================
+   LOAD VOLUNTEERS
+===================================== */
+
+function loadVolunteers() {
+
+    const volunteerTable =
+
+    document.getElementById(
+
+        "volunteerTable"
+
+    );
+
+
+    if (
+
+        !volunteerTable
+
+    ) {
+
+        return;
+
+    }
+
+
+    const volunteers =
+
+    getStorageData(
+
+        "volunteers"
+
+    );
+
+
+    const searchBox =
+
+    document.getElementById(
+
+        "volunteerSearch"
+
+    );
+
+
+    const dateBox =
+
+    document.getElementById(
+
+        "volunteerDateSearch"
+
+    );
+
+
+    const searchText =
+
+    searchBox
+
+    ? searchBox.value
+
+        .toLowerCase()
+
+        .trim()
+
+    : "";
+
+
+    const selectedDate =
+
+    dateBox
+
+    ? dateBox.value
+
+    : "";
+
+
+    volunteerTable.innerHTML = "";
+
+
+    const filteredVolunteers =
+
+    volunteers.filter(
+
+        function (
+
+            volunteer,
+
+            index
+
+        ) {
+
+            const fullText =
+
+            (
+
+                (
+
+                    volunteer.volunteerId ||
+
+                    "VOL-" +
+
+                    (index + 1)
+
+                ) +
+
+                " " +
+
+                (
+
+                    volunteer.name ||
+
+                    ""
+
+                ) +
+
+                " " +
+
+                (
+
+                    volunteer.mobile ||
+
+                    ""
+
+                )
+
+            )
+
+            .toLowerCase();
+
+
+            const volunteerDate =
+
+            String(
+
+                volunteer.date ||
+
+                volunteer.applicationDate ||
+
+                volunteer.createdAt ||
+
+                ""
+
+            );
+
+
+            return (
+
+                fullText.includes(
+
+                    searchText
+
+                )
+
+                &&
+
+                (
+
+                    !selectedDate ||
+
+                    volunteerDate.includes(
+
+                        selectedDate
+
+                    )
+
+                )
+
+            );
+
+        }
+
+    );
+
+
+    if (
+
+        filteredVolunteers.length === 0
+
+    ) {
+
+        volunteerTable.innerHTML = `
+
+        <tr>
+
+            <td
+                colspan="9"
+                style="
+                    text-align:center;
+                    padding:25px;
+                "
+            >
+
+                अभी कोई वॉलंटियर आवेदन उपलब्ध नहीं है।
+
+            </td>
+
+        </tr>
+
+        `;
+
+
+        return;
+
+    }
+
+
+    filteredVolunteers.forEach(
+
+        function (
+
+            volunteer,
+
+            displayIndex
+
+        ) {
+
+            const originalIndex =
+
+            volunteers.indexOf(
+
+                volunteer
+
+            );
+
+
+            const status =
+
+            normalizeStatus(
+
+                volunteer.status
+
+            );
+
+
+            volunteerTable.innerHTML += `
+
+            <tr>
+
+                <td>
+
+                    ${displayIndex + 1}
+
+                </td>
+
+
+                <td>
+
+                    ${volunteer.volunteerId ||
+                    "VOL-" +
+                    (originalIndex + 1)}
+
+                </td>
+
+
+                <td>
+
+                    ${volunteer.name || "-"}
+
+                </td>
+
+
+                <td>
+
+                    ${volunteer.mobile || "-"}
+
+                </td>
+
+
+                <td>
+
+                    ${volunteer.service ||
+                    volunteer.serviceArea ||
+                    "-"}
+
+                </td>
+
+
+                <td>
+
+                    ${volunteer.availability || "-"}
+
+                </td>
+
+
+                <td>
+
+                    ${volunteer.date ||
+                    volunteer.applicationDate ||
+                    volunteer.createdAt ||
+                    "-"}
+
+                </td>
+
+
+                <td>
+
+                    <span
+                        class="status ${getStatusClass(
+                            status
+                        )}"
+                    >
+
+                        ${status}
+
+                    </span>
+
+                </td>
+
+
+                <td>
+
+                    <button
+                        type="button"
+                        class="approve-btn"
+                        onclick="updateVolunteerStatus(
+                            ${originalIndex},
+                            'स्वीकृत'
+                        )"
+                    >
+
+                        ✅ Approve
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        class="reject-btn"
+                        onclick="updateVolunteerStatus(
+                            ${originalIndex},
+                            'अस्वीकृत'
+                        )"
+                    >
+
+                        ❌ Reject
+
+                    </button>
+
+                </td>
+
+            </tr>
+
+            `;
+
+        }
+
+    );
+
+}
+
+
+/* =====================================
+   UPDATE VOLUNTEER STATUS
+===================================== */
+
+function updateVolunteerStatus(
+
+    index,
+
+    newStatus
+
+) {
+
+    const volunteers =
+
+    getStorageData(
+
+        "volunteers"
+
+    );
+
+
+    if (
+
+        !volunteers[index]
+
+    ) {
+
+        return;
+
+    }
+
+
+    volunteers[index].status =
+
+    newStatus;
+
+
+    saveStorageData(
+
+        "volunteers",
+
+        volunteers
+
+    );
+
+
+    loadVolunteers();
+
+    updateDashboardStatistics();
+
+
+    alert(
+
+        "वॉलंटियर की स्थिति " +
+
+        newStatus +
+
+        " कर दी गई है।"
+
+    );
+
+}
+
+
+/* =====================================
+   PASSWORD MODAL
+===================================== */
+
+function openPasswordModal() {
+
+    const modal =
+
+    document.getElementById(
+
+        "passwordModal"
+
+    );
+
+
+    if (
+
+        modal
+
+    ) {
+
+        modal.style.display =
+
+        "flex";
+
+    }
+
+}
+
+
+function closePasswordModal() {
+
+    const modal =
+
+    document.getElementById(
+
+        "passwordModal"
+
+    );
+
+
+    if (
+
+        modal
+
+    ) {
+
+        modal.style.display =
+
+        "none";
+
+    }
+
+}
+
+
+/* =====================================
+   CHANGE PASSWORD
+===================================== */
+
+function setupPasswordForm() {
+
+    const form =
+
+    document.getElementById(
+
+        "passwordChangeForm"
+
+    );
+
+
+    if (
+
+        !form
+
+    ) {
+
+        return;
+
+    }
+
+
+    form.addEventListener(
+
+        "submit",
+
+        function (
+
+            event
+
+        ) {
+
+            event.preventDefault();
+
+
+            const oldPassword =
+
+            document.getElementById(
+
+                "oldPassword"
+
+            ).value;
+
+
+            const newPassword =
+
+            document.getElementById(
+
+                "newPassword"
+
+            ).value;
+
+
+            const confirmPassword =
+
+            document.getElementById(
+
+                "confirmNewPassword"
+
+            ).value;
+
+
+            const savedPassword =
+
+            localStorage.getItem(
+
+                "adminPassword"
+
+            ) ||
+
+            "admin123";
+
+
+            if (
+
+                oldPassword !==
+
+                savedPassword
+
+            ) {
+
+                alert(
+
+                    "❌ पुराना पासवर्ड गलत है।"
+
+                );
+
+                return;
+
+            }
+
+
+            if (
+
+                newPassword !==
+
+                confirmPassword
+
+            ) {
+
+                alert(
+
+                    "❌ नया पासवर्ड मेल नहीं खाता।"
+
+                );
+
+                return;
+
+            }
+
+
+            localStorage.setItem(
+
+                "adminPassword",
+
+                newPassword
+
+            );
+
+
+            form.reset();
+
+            closePasswordModal();
+
+
+            alert(
+
+                "✅ एडमिन पासवर्ड बदल दिया गया है।"
+
+            );
+
+        }
+
+    );
+
+}
+
+
+/* =====================================
+   CSV VALUE
+===================================== */
+
+function csvValue(
+
+    value
+
+) {
+
+    return (
+
+        '"' +
+
+        String(
+
+            value ||
+
+            ""
+
+        )
+
+        .replace(
+
+            /"/g,
+
+            '""'
+
+        )
+
+        +
+
+        '"'
+
+    );
+
+}
+
+
+/* =====================================
+   DOWNLOAD CSV
+===================================== */
+
+function downloadCSV(
+
+    fileName,
+
+    csvData
+
+) {
+
+    const file =
+
+    new Blob(
+
+        [
+
+            "\uFEFF" +
+
+            csvData
+
+        ],
+
+        {
+
+            type:
+
+            "text/csv;charset=utf-8;"
+
+        }
+
+    );
+
+
+    const link =
+
+    document.createElement(
+
+        "a"
+
+    );
+
+
+    const fileURL =
+
+    URL.createObjectURL(
+
+        file
+
+    );
+
+
+    link.href =
+
+    fileURL;
+
+
+    link.download =
+
+    fileName;
+
+
+    document.body.appendChild(
+
+        link
+
+    );
+
+
+    link.click();
+
+
+    document.body.removeChild(
+
+        link
+
+    );
+
+
+    URL.revokeObjectURL(
+
+        fileURL
+
+    );
+
+}
+
+
+/* =====================================
+   MEMBER REPORT
+===================================== */
+
+function downloadReport() {
+
+    const members =
+
+    getStorageData(
+
+        "members"
+
+    );
+
+
+    if (
+
+        members.length === 0
+
+    ) {
+
+        alert(
+
+            "अभी कोई सदस्य उपलब्ध नहीं है।"
+
+        );
+
+        return;
+
+    }
+
+
+    let csv =
+
+    "क्रमांक,Member ID,नाम,मोबाइल नंबर,सदस्यता,दिनांक,स्थिति\n";
+
+
+    members.forEach(
+
+        function (
+
+            member,
+
+            index
+
+        ) {
+
+            csv +=
+
+            [
+
+                index + 1,
+
+                getMemberId(
+
+                    member,
+
+                    index
+
+                ),
+
+                getMemberName(
+
+                    member
+
+                ),
+
+                getMemberMobile(
+
+                    member
+
+                ),
+
+                getMemberMembership(
+
+                    member
+
+                ),
+
+                getMemberDate(
+
+                    member
+
+                ),
+
+                normalizeStatus(
+
+                    member.status
+
+                )
+
+            ]
+
+            .map(
+
+                csvValue
+
+            )
+
+            .join(
+
+                ","
+
+            )
+
+            +
+
+            "\n";
+
+        }
+
+    );
+
+
+    downloadCSV(
+
+        "YSSF-Member-Report.csv",
+
+        csv
+
+    );
+
+
+    alert(
+
+        "✅ सदस्य रिपोर्ट डाउनलोड हो गई।"
+
+    );
+
+}
+
+
+/* =====================================
+   VOLUNTEER REPORT
+===================================== */
+
+function downloadVolunteerReport() {
+
+    const volunteers =
+
+    getStorageData(
+
+        "volunteers"
+
+    );
+
+
+    if (
+
+        volunteers.length === 0
+
+    ) {
+
+        alert(
+
+            "अभी कोई वॉलंटियर उपलब्ध नहीं है।"
+
+        );
+
+        return;
+
+    }
+
+
+    let csv =
+
+    "क्रमांक,Volunteer ID,नाम,मोबाइल,सेवा क्षेत्र,उपलब्धता,दिनांक,स्थिति\n";
+
+
+    volunteers.forEach(
+
+        function (
+
+            volunteer,
+
+            index
+
+        ) {
+
+            csv +=
+
+            [
+
+                index + 1,
+
+                volunteer.volunteerId ||
+
+                "VOL-" +
+
+                (index + 1),
+
+                volunteer.name,
+
+                volunteer.mobile,
+
+                volunteer.service ||
+
+                volunteer.serviceArea,
+
+                volunteer.availability,
+
+                volunteer.date ||
+
+                volunteer.applicationDate ||
+
+                volunteer.createdAt,
+
+                normalizeStatus(
+
+                    volunteer.status
+
+                )
+
+            ]
+
+            .map(
+
+                csvValue
+
+            )
+
+            .join(
+
+                ","
+
+            )
+
+            +
+
+            "\n";
+
+        }
+
+    );
+
+
+    downloadCSV(
+
+        "YSSF-Volunteer-Report.csv",
+
+        csv
+
+    );
+
+
+    alert(
+
+        "✅ वॉलंटियर रिपोर्ट डाउनलोड हो गई।"
+
+    );
+
+}
+
+
+/* =====================================
+   CONTACT REPORT
+===================================== */
+
+function downloadContactReport() {
+
+    const contacts =
+
+    getStorageData(
+
+        "contactMessages"
+
+    );
+
+
+    if (
+
+        contacts.length === 0
+
+    ) {
+
+        alert(
+
+            "अभी कोई संपर्क संदेश उपलब्ध नहीं है।"
+
+        );
+
+        return;
+
+    }
+
+
+    let csv =
+
+    "क्रमांक,संदेश ID,नाम,मोबाइल,ईमेल,विषय,संदेश,दिनांक,स्थिति\n";
+
+
+    contacts.forEach(
+
+        function (
+
+            contact,
+
+            index
+
+        ) {
+
+            csv +=
+
+            [
+
+                index + 1,
+
+                contact.contactId,
+
+                contact.name,
+
+                contact.mobile,
+
+                contact.email,
+
+                contact.subject,
+
+                contact.message,
+
+                contact.date ||
+
+                contact.createdAt,
+
+                contact.status ||
+
+                "नया"
+
+            ]
+
+            .map(
+
+                csvValue
+
+            )
+
+            .join(
+
+                ","
+
+            )
+
+            +
+
+            "\n";
+
+        }
+
+    );
+
+
+    downloadCSV(
+
+        "YSSF-Contact-Report.csv",
+
+        csv
+
+    );
+
+
+    alert(
+
+        "✅ संपर्क रिपोर्ट डाउनलोड हो गई।"
+
+    );
+
+}
+
+
+/* =====================================
+   PRINT MEMBER LIST
+===================================== */
+
+function printMemberList() {
+
+    window.print();
+
+}
+
+
+/* =====================================
+   CLEAR ALL DATA
+===================================== */
+
+function clearAllDashboardData() {
+
+    const confirmDelete =
+
+    confirm(
+
+        "क्या आप सभी सदस्य, वॉलंटियर और संपर्क डेटा हटाना चाहते हैं? यह वापस नहीं आएगा।"
+
+    );
+
+
+    if (
+
+        !confirmDelete
+
+    ) {
+
+        return;
+
+    }
+
+
+    const secondConfirm =
+
+    confirm(
+
+        "अंतिम पुष्टि: क्या आप सच में सभी डेटा हटाना चाहते हैं?"
+
+    );
+
+
+    if (
+
+        !secondConfirm
+
+    ) {
+
+        return;
+
+    }
+
+
+    localStorage.removeItem(
+
+        "members"
+
+    );
+
+
+    localStorage.removeItem(
+
+        "volunteers"
+
+    );
+
+
+    localStorage.removeItem(
+
+        "contactMessages"
+
+    );
+
+
+    loadMembers();
+
+    loadVolunteers();
+
+    loadContactMessages();
+
+    updateDashboardStatistics();
+
+
+    alert(
+
+        "✅ सभी dashboard डेटा हटा दिया गया है।"
+
+    );
+
+}
+
+
+/* =====================================
+   SEARCH AND DATE FILTER EVENTS
+===================================== */
+
+function setupSearchFilters() {
+
+    const inputIds = [
+
+        "memberSearch",
+
+        "memberDateSearch",
+
+        "contactSearch",
+
+        "contactDateSearch",
+
+        "volunteerSearch",
+
+        "volunteerDateSearch"
+
+    ];
+
+
+    inputIds.forEach(
+
+        function (
+
+            id
+
+        ) {
+
+            const input =
+
+            document.getElementById(
+
+                id
+
+            );
+
+
+            if (
+
+                !input
+
+            ) {
+
+                return;
+
+            }
+
+
+            input.addEventListener(
+
+                "input",
+
+                function () {
+
+                    loadMembers();
+
+                    loadContactMessages();
+
+                    loadVolunteers();
 
                 }
 
             );
 
 
-            loadContactMessages(
-                filteredContacts
+            input.addEventListener(
+
+                "change",
+
+                function () {
+
+                    loadMembers();
+
+                    loadContactMessages();
+
+                    loadVolunteers();
+
+                }
+
+            );
+
+        }
+
+    );
+
+}
+
+
+/* =====================================
+   CLOSE MODAL ON OUTSIDE CLICK
+===================================== */
+
+function setupModalClose() {
+
+    const modals =
+
+    document.querySelectorAll(
+
+        ".dashboard-modal"
+
+    );
+
+
+    modals.forEach(
+
+        function (
+
+            modal
+
+        ) {
+
+            modal.addEventListener(
+
+                "click",
+
+                function (
+
+                    event
+
+                ) {
+
+                    if (
+
+                        event.target ===
+
+                        modal
+
+                    ) {
+
+                        modal.style.display =
+
+                        "none";
+
+                    }
+
+                }
+
             );
 
         }
@@ -1833,27 +3421,21 @@ document.addEventListener(
 
     function () {
 
-
-        showMembers();
-
-
-        showVolunteers();
-
+        loadMembers();
 
         loadContactMessages();
 
+        loadVolunteers();
 
-        updateDashboard();
+        updateDashboardStatistics();
 
+        setupSearchFilters();
 
-        setupMemberSearch();
+        setupMemberEditForm();
 
+        setupPasswordForm();
 
-        setupVolunteerSearch();
-
-
-        setupContactSearch();
-
+        setupModalClose();
 
     }
 
