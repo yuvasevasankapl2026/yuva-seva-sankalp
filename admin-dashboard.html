@@ -12,7 +12,10 @@
     >
 
     <title>
-        एडमिन डैशबोर्ड | युवा सेवा संकल्प फाउंडेशन
+
+        एडमिन डैशबोर्ड |
+        युवा सेवा संकल्प फाउंडेशन
+
     </title>
 
 
@@ -68,16 +71,12 @@
     <div class="header-content">
 
 
-        <!-- FOUNDATION LOGO -->
-
         <img
             src="images/logo.png"
             class="logo"
             alt="युवा सेवा संकल्प फाउंडेशन लोगो"
         >
 
-
-        <!-- FOUNDATION NAME -->
 
         <div class="title">
 
@@ -110,9 +109,7 @@
     <div class="dashboard-container">
 
 
-        <!-- =====================================
-             DASHBOARD HEADING
-        ===================================== -->
+        <!-- DASHBOARD HEADING -->
 
         <div class="dashboard-heading">
 
@@ -120,33 +117,60 @@
 
                 <h2>
 
-                    एडमिन डैशबोर्ड
+                    📊 एडमिन डैशबोर्ड
 
                 </h2>
 
 
                 <p>
 
-                    सदस्यता आवेदनों, सदस्यों,
-                    संपर्क संदेशों और वॉलंटियर
-                    आवेदनों की जानकारी प्रबंधित करें।
+                    सदस्य, वॉलंटियर और
+                    संपर्क संदेशों का प्रबंधन करें।
 
                 </p>
 
             </div>
 
 
-            <!-- LOGOUT BUTTON -->
+            <div class="dashboard-top-buttons">
 
-            <button
-                type="button"
-                class="logout-btn"
-                onclick="logoutAdmin()"
-            >
 
-                🚪 लॉगआउट करें
+                <button
+                    type="button"
+                    class="password-btn"
+                    onclick="openPasswordModal()"
+                >
 
-            </button>
+                    🔐 पासवर्ड बदलें
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="logout-btn"
+                    onclick="logoutAdmin()"
+                >
+
+                    🚪 लॉगआउट करें
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================
+             NOTIFICATION
+        ===================================== -->
+
+        <div
+            id="dashboardNotification"
+            class="dashboard-notification"
+        >
+
+            🔔 नए आवेदनों की जानकारी यहाँ दिखाई देगी।
 
         </div>
 
@@ -265,17 +289,69 @@
 
             </div>
 
+
+            <!-- TOTAL VOLUNTEERS -->
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-icon">
+
+                    🤝
+
+                </div>
+
+
+                <h3 id="totalVolunteers">
+
+                    0
+
+                </h3>
+
+
+                <p>
+
+                    कुल वॉलंटियर
+
+                </p>
+
+            </div>
+
+
+            <!-- TOTAL CONTACT MESSAGES -->
+
+            <div class="dashboard-card">
+
+                <div class="dashboard-icon">
+
+                    📩
+
+                </div>
+
+
+                <h3 id="totalContacts">
+
+                    0
+
+                </h3>
+
+
+                <p>
+
+                    कुल संपर्क संदेश
+
+                </p>
+
+            </div>
+
         </div>
 
 
         <!-- =====================================
-             MEMBER APPLICATION TABLE
+             MEMBER APPLICATIONS
         ===================================== -->
 
         <div class="dashboard-table-box">
 
-
-            <!-- TABLE HEADING -->
 
             <div class="table-heading">
 
@@ -286,17 +362,27 @@
                 </h3>
 
 
-                <input
-                    type="search"
-                    id="memberSearch"
-                    placeholder="Member ID, नाम या मोबाइल नंबर खोजें"
-                    autocomplete="off"
-                >
+                <div class="table-filters">
+
+
+                    <input
+                        type="search"
+                        id="memberSearch"
+                        placeholder="Member ID, नाम या मोबाइल खोजें"
+                        autocomplete="off"
+                    >
+
+
+                    <input
+                        type="date"
+                        id="memberDateSearch"
+                        title="तारीख से खोजें"
+                    >
+
+                </div>
 
             </div>
 
-
-            <!-- MEMBER TABLE -->
 
             <div class="table-responsive">
 
@@ -343,6 +429,13 @@
 
                             <th>
 
+                                दिनांक
+
+                            </th>
+
+
+                            <th>
+
                                 स्थिति
 
                             </th>
@@ -358,8 +451,6 @@
 
                     </thead>
 
-
-                    <!-- MEMBER DATA dashboard.js से आएगा -->
 
                     <tbody id="memberTable">
 
@@ -388,17 +479,27 @@
                 </h3>
 
 
-                <input
-                    type="search"
-                    id="contactSearch"
-                    placeholder="नाम, मोबाइल या विषय खोजें"
-                    autocomplete="off"
-                >
+                <div class="table-filters">
+
+
+                    <input
+                        type="search"
+                        id="contactSearch"
+                        placeholder="नाम, मोबाइल या विषय खोजें"
+                        autocomplete="off"
+                    >
+
+
+                    <input
+                        type="date"
+                        id="contactDateSearch"
+                        title="तारीख से खोजें"
+                    >
+
+                </div>
 
             </div>
 
-
-            <!-- CONTACT TABLE -->
 
             <div class="table-responsive">
 
@@ -482,8 +583,6 @@
                     </thead>
 
 
-                    <!-- CONTACT DATA dashboard.js से आएगा -->
-
                     <tbody id="contactTable">
 
                     </tbody>
@@ -499,7 +598,7 @@
              VOLUNTEER APPLICATIONS
         ===================================== -->
 
-        <div class="dashboard-table-box volunteer-list-box">
+        <div class="dashboard-table-box">
 
 
             <div class="table-heading">
@@ -511,17 +610,27 @@
                 </h3>
 
 
-                <input
-                    type="search"
-                    id="volunteerSearch"
-                    placeholder="Volunteer ID, नाम या मोबाइल नंबर खोजें"
-                    autocomplete="off"
-                >
+                <div class="table-filters">
+
+
+                    <input
+                        type="search"
+                        id="volunteerSearch"
+                        placeholder="Volunteer ID, नाम या मोबाइल खोजें"
+                        autocomplete="off"
+                    >
+
+
+                    <input
+                        type="date"
+                        id="volunteerDateSearch"
+                        title="तारीख से खोजें"
+                    >
+
+                </div>
 
             </div>
 
-
-            <!-- VOLUNTEER TABLE -->
 
             <div class="table-responsive">
 
@@ -575,6 +684,13 @@
 
                             <th>
 
+                                दिनांक
+
+                            </th>
+
+
+                            <th>
+
                                 स्थिति
 
                             </th>
@@ -591,8 +707,6 @@
                     </thead>
 
 
-                    <!-- VOLUNTEER DATA dashboard.js से आएगा -->
-
                     <tbody id="volunteerTable">
 
                     </tbody>
@@ -605,13 +719,11 @@
 
 
         <!-- =====================================
-             QUICK ACTION BUTTONS
+             QUICK ACTIONS
         ===================================== -->
 
         <div class="quick-actions">
 
-
-            <!-- ADD NEW MEMBER -->
 
             <a
                 href="membership.html"
@@ -623,8 +735,6 @@
             </a>
 
 
-            <!-- MEMBERSHIP CERTIFICATE -->
-
             <a
                 href="certificate.html"
                 class="quick-btn purple-btn"
@@ -634,8 +744,6 @@
 
             </a>
 
-
-            <!-- MEMBER ID CARD -->
 
             <a
                 href="id-card.html"
@@ -647,8 +755,6 @@
             </a>
 
 
-            <!-- BLOOD DONOR LIST -->
-
             <a
                 href="blood-donor-list.html"
                 class="quick-btn red-btn"
@@ -659,7 +765,60 @@
             </a>
 
 
-            <!-- VIEW WEBSITE -->
+            <button
+                type="button"
+                class="quick-btn blue-btn"
+                onclick="printMemberList()"
+            >
+
+                🖨️ सदस्य सूची प्रिंट करें
+
+            </button>
+
+
+            <button
+                type="button"
+                class="quick-btn orange-btn"
+                onclick="downloadReport()"
+            >
+
+                📥 सदस्य रिपोर्ट
+
+            </button>
+
+
+            <button
+                type="button"
+                class="quick-btn orange-btn"
+                onclick="downloadVolunteerReport()"
+            >
+
+                📥 वॉलंटियर रिपोर्ट
+
+            </button>
+
+
+            <button
+                type="button"
+                class="quick-btn orange-btn"
+                onclick="downloadContactReport()"
+            >
+
+                📥 संपर्क रिपोर्ट
+
+            </button>
+
+
+            <button
+                type="button"
+                class="quick-btn red-btn"
+                onclick="clearAllDashboardData()"
+            >
+
+                🧹 सभी डेटा हटाएँ
+
+            </button>
+
 
             <a
                 href="index.html"
@@ -670,24 +829,279 @@
 
             </a>
 
-
-            <!-- DOWNLOAD MEMBER REPORT -->
-
-            <button
-                type="button"
-                class="quick-btn orange-btn"
-                onclick="downloadReport()"
-            >
-
-                📥 रिपोर्ट डाउनलोड करें
-
-            </button>
-
         </div>
 
     </div>
 
 </section>
+
+
+<!-- =====================================
+     VIEW MEMBER MODAL
+===================================== -->
+
+<div
+    id="memberViewModal"
+    class="dashboard-modal"
+>
+
+    <div class="modal-content">
+
+
+        <button
+            type="button"
+            class="modal-close"
+            onclick="closeMemberView()"
+        >
+
+            ✖
+
+        </button>
+
+
+        <h2>
+
+            👁️ सदस्य की पूरी जानकारी
+
+        </h2>
+
+
+        <div
+            id="memberViewContent"
+        >
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     EDIT MEMBER MODAL
+===================================== -->
+
+<div
+    id="memberEditModal"
+    class="dashboard-modal"
+>
+
+    <div class="modal-content">
+
+
+        <button
+            type="button"
+            class="modal-close"
+            onclick="closeMemberEdit()"
+        >
+
+            ✖
+
+        </button>
+
+
+        <h2>
+
+            ✏️ सदस्य जानकारी बदलें
+
+        </h2>
+
+
+        <form
+            id="memberEditForm"
+        >
+
+
+            <input
+                type="hidden"
+                id="editMemberIndex"
+            >
+
+
+            <label>
+
+                सदस्य का नाम
+
+            </label>
+
+
+            <input
+                type="text"
+                id="editMemberName"
+                required
+            >
+
+
+            <label>
+
+                मोबाइल नंबर
+
+            </label>
+
+
+            <input
+                type="text"
+                id="editMemberMobile"
+                required
+            >
+
+
+            <label>
+
+                सदस्यता
+
+            </label>
+
+
+            <input
+                type="text"
+                id="editMemberMembership"
+            >
+
+
+            <label>
+
+                स्थिति
+
+            </label>
+
+
+            <select
+                id="editMemberStatus"
+            >
+
+                <option value="लंबित">
+
+                    लंबित
+
+                </option>
+
+
+                <option value="स्वीकृत">
+
+                    स्वीकृत
+
+                </option>
+
+
+                <option value="अस्वीकृत">
+
+                    अस्वीकृत
+
+                </option>
+
+            </select>
+
+
+            <button
+                type="submit"
+                class="save-btn"
+            >
+
+                💾 जानकारी सेव करें
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================
+     PASSWORD MODAL
+===================================== -->
+
+<div
+    id="passwordModal"
+    class="dashboard-modal"
+>
+
+    <div class="modal-content">
+
+
+        <button
+            type="button"
+            class="modal-close"
+            onclick="closePasswordModal()"
+        >
+
+            ✖
+
+        </button>
+
+
+        <h2>
+
+            🔐 एडमिन पासवर्ड बदलें
+
+        </h2>
+
+
+        <form
+            id="passwordChangeForm"
+        >
+
+
+            <label>
+
+                पुराना पासवर्ड
+
+            </label>
+
+
+            <input
+                type="password"
+                id="oldPassword"
+                required
+            >
+
+
+            <label>
+
+                नया पासवर्ड
+
+            </label>
+
+
+            <input
+                type="password"
+                id="newPassword"
+                minlength="4"
+                required
+            >
+
+
+            <label>
+
+                नया पासवर्ड दोबारा लिखें
+
+            </label>
+
+
+            <input
+                type="password"
+                id="confirmNewPassword"
+                minlength="4"
+                required
+            >
+
+
+            <button
+                type="submit"
+                class="save-btn"
+            >
+
+                🔐 पासवर्ड बदलें
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
 
 
 <!-- =====================================
@@ -732,7 +1146,9 @@
      DASHBOARD JAVASCRIPT
 ===================================== -->
 
-<script src="dashboard.js"></script>
+<script
+    src="dashboard.js"
+></script>
 
 
 <!-- =====================================
@@ -743,7 +1159,6 @@
 
 function logoutAdmin() {
 
-
     const confirmLogout = confirm(
 
         "क्या आप एडमिन पैनल से लॉगआउट करना चाहते हैं?"
@@ -752,7 +1167,6 @@ function logoutAdmin() {
 
 
     if (confirmLogout) {
-
 
         localStorage.removeItem(
 
@@ -765,254 +1179,7 @@ function logoutAdmin() {
 
         "admin-login.html";
 
-
     }
-
-}
-
-</script>
-
-
-<!-- =====================================
-     MEMBER REPORT DOWNLOAD
-===================================== -->
-
-<script>
-
-function downloadReport() {
-
-
-    let members = [];
-
-
-    try {
-
-
-        members = JSON.parse(
-
-            localStorage.getItem(
-
-                "members"
-
-            )
-
-        ) || [];
-
-
-    }
-
-    catch (error) {
-
-
-        members = [];
-
-
-    }
-
-
-    /* MEMBER नहीं मिलने पर */
-
-
-    if (members.length === 0) {
-
-
-        alert(
-
-            "अभी कोई सदस्य उपलब्ध नहीं है।"
-
-        );
-
-
-        return;
-
-
-    }
-
-
-    /* CSV FILE HEADER */
-
-
-    let csv =
-
-        "\uFEFFक्रमांक,Member ID,नाम,मोबाइल नंबर,सदस्यता,स्थिति\n";
-
-
-    /* MEMBER DATA CSV में डालें */
-
-
-    members.forEach(
-
-        function (
-
-            member,
-
-            index
-
-        ) {
-
-
-            const memberId =
-
-                member.memberId ||
-
-                member.id ||
-
-                member.memberID ||
-
-                "";
-
-
-            const name =
-
-                member.name ||
-
-                member.fullName ||
-
-                member.memberName ||
-
-                "";
-
-
-            const mobile =
-
-                member.mobile ||
-
-                member.phone ||
-
-                member.mobileNumber ||
-
-                "";
-
-
-            const membership =
-
-                member.membership ||
-
-                member.membershipType ||
-
-                member.category ||
-
-                "";
-
-
-            const status =
-
-                member.status ||
-
-                "लंबित";
-
-
-            csv +=
-
-                `${index + 1},` +
-
-                `"${memberId}",` +
-
-                `"${name}",` +
-
-                `"${mobile}",` +
-
-                `"${membership}",` +
-
-                `"${status}"\n`;
-
-
-        }
-
-    );
-
-
-    /* CSV FILE बनाएँ */
-
-
-    const file = new Blob(
-
-        [csv],
-
-        {
-
-            type:
-
-            "text/csv;charset=utf-8;"
-
-        }
-
-    );
-
-
-    /* DOWNLOAD LINK बनाएँ */
-
-
-    const downloadLink =
-
-        document.createElement(
-
-            "a"
-
-        );
-
-
-    const fileURL =
-
-        URL.createObjectURL(
-
-            file
-
-        );
-
-
-    downloadLink.href =
-
-        fileURL;
-
-
-    /* REPORT FILE NAME */
-
-
-    downloadLink.download =
-
-        "YSSF-Member-Report.csv";
-
-
-    /* REPORT DOWNLOAD */
-
-
-    document.body.appendChild(
-
-        downloadLink
-
-    );
-
-
-    downloadLink.click();
-
-
-    document.body.removeChild(
-
-        downloadLink
-
-    );
-
-
-    /* TEMPORARY FILE हटाएँ */
-
-
-    URL.revokeObjectURL(
-
-        fileURL
-
-    );
-
-
-    /* SUCCESS MESSAGE */
-
-
-    alert(
-
-        "✅ सदस्य रिपोर्ट सफलतापूर्वक डाउनलोड हो गई।"
-
-    );
-
 
 }
 
