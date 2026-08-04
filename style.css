@@ -10798,3 +10798,47 @@ tr:hover {
     }
 
 }
+/* PHOTO CHANGE BUTTON */
+
+.member-profile-image {
+
+    text-align: center;
+
+}
+
+
+#photoUpload {
+
+    display: none;
+
+}
+
+
+.photo-upload-btn {
+
+    display: inline-block;
+
+    margin-top: 12px;
+
+    padding: 10px 20px;
+
+    background: #ff6600;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+}
+
+
+.photo-upload-btn:hover {
+
+    background: #cc5200;
+
+}
