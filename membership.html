@@ -1,109 +1,70 @@
 <!DOCTYPE html>
-
 <html lang="hi">
 
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>सदस्यता | युवा सेवा संकल्प फाउंडेशन</title>
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <link rel="stylesheet" href="style.css">
 
-    <title>
-        सदस्यता | युवा सेवा संकल्प फाउंडेशन
-    </title>
-
-    <!-- CSS FILE -->
-
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
-
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
-
 
 <body>
 
-
-<!-- =====================================
-     TOP BAR
-===================================== -->
+<!-- ================= TOP BAR ================= -->
 
 <div class="top-bar">
-
     <div class="container">
 
         <div class="left">
-
-            📧 yuvasevasankalp2026@gmail.com
-
-            |
-
+            📧 yuvasevasankalp2026@gmail.com |
             📞 +91 9651731313
-
         </div>
 
+        <div class="right social-icons">
 
-        <div class="right">
-
-            <a href="#">
-                Facebook
+            <a href="https://facebook.com" target="_blank">
+                <i class="fa-brands fa-facebook-f"></i>
             </a>
 
-            <a href="#">
-                Instagram
+            <a href="https://instagram.com" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
             </a>
 
-            <a href="#">
-                YouTube
+            <a href="https://youtube.com" target="_blank">
+                <i class="fa-brands fa-youtube"></i>
             </a>
 
-            <a href="#">
-                WhatsApp
+            <a href="https://wa.me/919651731313" target="_blank">
+                <i class="fa-brands fa-whatsapp"></i>
             </a>
 
         </div>
 
     </div>
-
 </div>
 
-
-<!-- =====================================
-     HEADER
-===================================== -->
+<!-- ================= HEADER ================= -->
 
 <header class="header">
 
     <div class="header-content">
 
-        <!-- LOGO -->
-
-        <img
-            src="images/logo.png"
+        <img src="images/logo.png"
             class="logo"
-            alt="युवा सेवा संकल्प फाउंडेशन लोगो"
-        >
-
-
-        <!-- TITLE -->
+            alt="युवा सेवा संकल्प फाउंडेशन लोगो">
 
         <div class="title">
 
             <h1 class="main-title">
-
                 युवा सेवा संकल्प फाउंडेशन
-
             </h1>
 
-
             <p class="tagline">
-
                 युवा शक्ति, राष्ट्र शक्ति
-
             </p>
 
         </div>
@@ -112,367 +73,228 @@
 
 </header>
 
-
-<!-- =====================================
-     NAVIGATION
-===================================== -->
+<!-- ================= NAVBAR ================= -->
 
 <nav>
 
-    <a href="index.html">
-
-        होम
-
-    </a>
-
+    <a href="index.html">होम</a>
 
     <a href="index.html#about">
-
         हमारे बारे में
-
     </a>
-
 
     <a href="index.html#team">
-
         हमारी टीम
-
     </a>
-
 
     <a href="index.html#services">
-
         सेवाएँ
-
     </a>
-
 
     <a href="index.html#mission">
-
         मिशन
-
     </a>
-
 
     <a href="index.html#gallery">
-
         गैलरी
-
     </a>
-
 
     <a href="index.html#contact">
-
         संपर्क
-
     </a>
 
-
-    <a
-        href="membership.html"
-        class="active"
-    >
-
+    <a href="membership.html" class="active">
         सदस्यता
-
     </a>
-
 
     <a href="member-login.html">
-
         सदस्य लॉगिन
-
     </a>
-
 
     <a href="admin-login.html">
-
         एडमिन लॉगिन
-
     </a>
 
-
-    <a
-        href="index.html#donate"
-        class="donate-btn"
-    >
-
+    <a href="index.html#donate" class="donate-btn">
         दान करें
-
     </a>
 
 </nav>
 
+<!-- ================= MEMBERSHIP ================= -->
 
-<!-- =====================================
-     MEMBERSHIP SECTION
-===================================== -->
+<section class="member-section">
 
-<section id="member">
+<div class="member-container">
 
-    <div class="member-container">
+<div class="member-heading">
 
+<h2>सदस्यता लें</h2>
 
-        <!-- HEADING -->
+<p>
 
-        <div class="member-heading">
+युवा सेवा संकल्प फाउंडेशन से जुड़ें और
+समाज सेवा के कार्यों में अपना योगदान दें।
 
-            <h2>
+</p>
 
-                सदस्यता लें
+</div>
 
-            </h2>
+<form class="member-form" id="membershipForm">
 
+<div class="form-group">
 
-            <p>
+<label for="name">पूरा नाम</label>
 
-                युवा सेवा संकल्प फाउंडेशन से जुड़ें
-                और समाज सेवा के कार्यों में
-                अपना योगदान दें।
+<input
+type="text"
+id="name"
+name="name"
+placeholder="अपना पूरा नाम लिखें"
+required>
 
-            </p>
+</div>
+
+<div class="form-row">
+
+<div class="form-group">
+
+<label for="mobile">
+मोबाइल नंबर
+</label>
+
+<input
+type="tel"
+id="mobile"
+name="mobile"
+maxlength="10"
+pattern="[0-9]{10}"
+required>
+
+</div>
+
+<div class="form-group">
+
+<label for="email">
+
+ईमेल
+
+</label>
+
+<input
+type="email"
+id="email"
+name="email">
+
+</div>
+
+</div>
+
+<div class="form-group">
+
+<label for="address">
+
+पूरा पता
+
+</label>
+
+<textarea
+id="address"
+name="address"
+rows="5"
+required></textarea>
+        <div class="form-group">
+
+            <label for="membership-type">
+                सदस्यता का प्रकार
+            </label>
+
+            <select
+                id="membership-type"
+                name="membership_type"
+                required>
+
+                <option value="">
+                    सदस्यता का प्रकार चुनें
+                </option>
+
+                <option value="general">
+                    सामान्य सदस्य
+                </option>
+
+                <option value="active">
+                    सक्रिय सदस्य
+                </option>
+
+                <option value="lifetime">
+                    आजीवन सदस्य
+                </option>
+
+            </select>
 
         </div>
 
 
-        <!-- MEMBERSHIP FORM -->
+        <div class="member-check">
 
-        <form
-    class="member-form"
-    id="membershipForm"
->
+            <input
+                type="checkbox"
+                id="agreement"
+                required>
 
+            <label for="agreement">
+                मैं संस्था के नियमों का पालन करने तथा
+                समाज सेवा में सहयोग देने के लिए सहमत हूँ।
+            </label>
 
-            <!-- FULL NAME -->
+        </div>
 
-            <div class="form-group">
 
-                <label for="name">
+        <button
+            type="submit"
+            class="member-submit">
 
-                    पूरा नाम
+            सदस्यता के लिए आवेदन करें
 
-                </label>
+        </button>
 
+    </form>
 
-                <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="अपना पूरा नाम लिखें"
-                    required
-                >
-
-            </div>
-
-
-            <!-- MOBILE AND EMAIL -->
-
-            <div class="form-row">
-
-
-                <div class="form-group">
-
-                    <label for="mobile">
-
-                        मोबाइल नंबर
-
-                    </label>
-
-
-                    <input
-                        type="tel"
-                        id="mobile"
-                        name="mobile"
-                        placeholder="10 अंकों का मोबाइल नंबर"
-                        maxlength="10"
-                        pattern="[0-9]{10}"
-                        required
-                    >
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="email">
-
-                        ईमेल पता
-
-                    </label>
-
-
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="आपका ईमेल पता"
-                    >
-
-                </div>
-
-
-            </div>
-
-
-            <!-- ADDRESS -->
-
-            <div class="form-group">
-
-                <label for="address">
-
-                    पूरा पता
-
-                </label>
-
-
-                <textarea
-                    id="address"
-                    name="address"
-                    placeholder="गाँव / शहर, पोस्ट, तहसील, जिला और राज्य लिखें"
-                    rows="5"
-                    required
-                ></textarea>
-
-            </div>
-
-
-            <!-- MEMBERSHIP TYPE -->
-
-            <div class="form-group">
-
-                <label for="membership-type">
-
-                    सदस्यता का प्रकार
-
-                </label>
-
-
-                <select
-                    id="membership-type"
-                    name="membership_type"
-                    required
-                >
-
-                    <option value="">
-
-                        सदस्यता का प्रकार चुनें
-
-                    </option>
-
-
-                    <option value="general">
-
-                        सामान्य सदस्य
-
-                    </option>
-
-
-                    <option value="active">
-
-                        सक्रिय सदस्य
-
-                    </option>
-
-
-                    <option value="lifetime">
-
-                        आजीवन सदस्य
-
-                    </option>
-
-                </select>
-
-            </div>
-
-
-            <!-- DECLARATION -->
-
-            <div class="member-check">
-
-                <input
-                    type="checkbox"
-                    id="agreement"
-                    required
-                >
-
-
-                <label for="agreement">
-
-                    मैं संस्था के नियमों का पालन करने
-                    और समाज सेवा में सहयोग देने के लिए
-                    सहमत हूँ।
-
-                </label>
-
-            </div>
-
-
-            <!-- SUBMIT BUTTON -->
-
-            <button
-                type="submit"
-                class="member-submit"
-            >
-
-                सदस्यता के लिए आवेदन करें
-
-            </button>
-
-
-        </form>
-
-    </div>
+</div>
 
 </section>
 
-
-<!-- =====================================
-     FOOTER
-===================================== -->
+<!-- ================= FOOTER ================= -->
 
 <footer>
 
     <img
         src="images/logo.png"
         alt="युवा सेवा संकल्प फाउंडेशन लोगो"
-        width="70"
-    >
-
+        width="70">
 
     <h3>
-
         युवा सेवा संकल्प फाउंडेशन
-
     </h3>
 
-
     <p>
-
         युवा शक्ति, राष्ट्र शक्ति
-
     </p>
 
-
     <p>
-
-        📧 yuvasevasankalp2026@gmail.com
-
-        |
-
+        📧 yuvasevasankalp2026@gmail.com |
         📞 +91 9651731313
-
     </p>
 
-
     <p>
-
         © 2026 युवा सेवा संकल्प फाउंडेशन
-
     </p>
 
 </footer>
 
-<script src="membership.js"></script>
-</body>
+<!-- Membership Form Script -->
 
+<script src="membership.js"></script>
+
+</body>
 </html>
