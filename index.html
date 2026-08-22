@@ -17,6 +17,7 @@
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
           rel="stylesheet">
 
@@ -24,11 +25,12 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- Main CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
 
 <!-- =========================================================
      TOP BAR
@@ -56,6 +58,7 @@
             </span>
 
         </div>
+
 
         <div class="top-social">
 
@@ -96,6 +99,7 @@
 
     <div class="container header-inner">
 
+
         <!-- LOGO -->
 
         <a href="index.html" class="brand">
@@ -119,11 +123,15 @@
         </a>
 
 
-        <!-- HEADER ACTIONS -->
+        <!-- HEADER BUTTONS -->
 
         <div class="header-actions">
 
-            <a href="member.html" class="header-action member-action">
+
+            <!-- MEMBER -->
+
+            <a href="member.html"
+               class="header-action member-action">
 
                 <i class="fa-solid fa-user-plus"></i>
 
@@ -135,7 +143,10 @@
             </a>
 
 
-            <a href="volunteer.html" class="header-action volunteer-action">
+            <!-- VOLUNTEER -->
+
+            <a href="volunteer.html"
+               class="header-action volunteer-action">
 
                 <i class="fa-solid fa-hands-helping"></i>
 
@@ -147,7 +158,10 @@
             </a>
 
 
-            <a href="donate.html" class="donate-button">
+            <!-- DONATE -->
+
+            <a href="donate.html"
+               class="donate-button">
 
                 <i class="fa-solid fa-hand-holding-heart"></i>
 
@@ -173,44 +187,69 @@
 
     <div class="container nav-inner">
 
-        <button class="mobile-menu-btn" id="mobileMenuBtn">
+
+        <button
+            class="mobile-menu-btn"
+            id="mobileMenuBtn"
+            aria-label="Menu">
+
             <i class="fa-solid fa-bars"></i>
+
         </button>
 
 
         <ul class="nav-menu" id="navMenu">
 
+
             <li>
+
                 <a href="index.html" class="active">
+
                     <i class="fa-solid fa-house"></i>
+
                     होम
+
                 </a>
+
             </li>
 
+
+            <!-- ABOUT -->
 
             <li class="dropdown">
 
                 <a href="#">
+
                     संस्था के बारे में
+
                     <i class="fa-solid fa-chevron-down"></i>
+
                 </a>
 
                 <ul class="dropdown-menu">
 
                     <li>
-                        <a href="about.html">हमारे बारे में</a>
+                        <a href="about.html">
+                            हमारे बारे में
+                        </a>
                     </li>
 
                     <li>
-                        <a href="mission.html">हमारा मिशन</a>
+                        <a href="mission.html">
+                            हमारा मिशन
+                        </a>
                     </li>
 
                     <li>
-                        <a href="vision.html">हमारा विजन</a>
+                        <a href="vision.html">
+                            हमारा विजन
+                        </a>
                     </li>
 
                     <li>
-                        <a href="team.html">हमारी टीम</a>
+                        <a href="team.html">
+                            हमारी टीम
+                        </a>
                     </li>
 
                 </ul>
@@ -218,11 +257,16 @@
             </li>
 
 
+            <!-- WORK -->
+
             <li class="dropdown">
 
                 <a href="#">
+
                     हमारे कार्य
+
                     <i class="fa-solid fa-chevron-down"></i>
+
                 </a>
 
                 <ul class="dropdown-menu">
@@ -304,10 +348,16 @@
             </li>
 
 
+            <!-- SEARCH -->
+
             <li class="search-item">
 
-                <button id="searchBtn" aria-label="Search">
+                <button
+                    id="searchBtn"
+                    aria-label="Search">
+
                     <i class="fa-solid fa-magnifying-glass"></i>
+
                 </button>
 
             </li>
@@ -336,8 +386,11 @@
                 aria-label="Search">
 
             <button type="submit">
+
                 <i class="fa-solid fa-magnifying-glass"></i>
+
                 खोजें
+
             </button>
 
         </form>
@@ -348,61 +401,90 @@
 
 
 <!-- =========================================================
-     HERO SECTION
+     HERO
 ========================================================= -->
 
 <section class="hero-section">
 
     <div class="hero-overlay"></div>
 
+
     <div class="container hero-container">
 
+
         <div class="hero-content">
+
 
             <span class="hero-small-title">
                 सेवा से बदलाव, संकल्प से विकास
             </span>
 
+
             <h2>
+
                 युवा शक्ति,
+
                 <br>
-                <span>राष्ट्र की शक्ति</span>
+
+                <span>
+                    राष्ट्र की शक्ति
+                </span>
+
             </h2>
+
 
             <h3>
                 आइए, एक बेहतर समाज का निर्माण करें
             </h3>
 
+
             <p>
-                हम शिक्षा, स्वास्थ्य, पर्यावरण और समाज सेवा के क्षेत्र में
-                निरंतर कार्य कर रहे हैं ताकि हर व्यक्ति को एक बेहतर जीवन
-                और सम्मानजनक भविष्य मिल सके।
+
+                हम शिक्षा, स्वास्थ्य, पर्यावरण और समाज सेवा
+                के क्षेत्र में निरंतर कार्य कर रहे हैं ताकि हर
+                व्यक्ति को एक बेहतर जीवन और सम्मानजनक भविष्य
+                मिल सके।
+
             </p>
 
-            <div class="hero-buttons">
-    <a href="work.html" class="btn btn-primary">
-        हमारे कार्य देखें
-        <i class="fa-solid fa-arrow-right"></i>
-    </a>
 
-    <a href="member.html" class="btn btn-orange">
-        सदस्य बनें
-        <i class="fa-solid fa-users"></i>
-    </a>
-</div>
+            <div class="hero-buttons">
+
+
+                <a href="work.html"
+                   class="btn btn-primary">
+
+                    हमारे कार्य देखें
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+
+                <a href="member.html"
+                   class="btn btn-orange">
+
+                    सदस्य बनें
+
+                    <i class="fa-solid fa-users"></i>
+
+                </a>
+
+            </div>
 
         </div>
-
-
-        
 
     </div>
 
 
+    <!-- HERO DOTS -->
+
     <div class="hero-dots">
 
         <span class="dot active"></span>
+
         <span class="dot"></span>
+
         <span class="dot"></span>
 
     </div>
@@ -418,16 +500,21 @@
 
     <div class="container">
 
+
         <div class="section-title">
 
-            <span>हमारा योगदान</span>
+            <span>
+                हमारा योगदान
+            </span>
 
             <h2>
                 हमारे प्रमुख कार्य
             </h2>
 
             <div class="title-line">
+
                 <i class="fa-solid fa-leaf"></i>
+
             </div>
 
         </div>
@@ -441,10 +528,14 @@
             <div class="work-card education-card">
 
                 <div class="work-icon">
+
                     <i class="fa-solid fa-book-open"></i>
+
                 </div>
 
-                <h3>शिक्षा</h3>
+                <h3>
+                    शिक्षा
+                </h3>
 
                 <p>
                     गुणवत्तापूर्ण शिक्षा के माध्यम से
@@ -452,8 +543,11 @@
                 </p>
 
                 <a href="education.html">
+
                     और जानें
+
                     <i class="fa-solid fa-arrow-right"></i>
+
                 </a>
 
             </div>
@@ -464,10 +558,14 @@
             <div class="work-card health-card">
 
                 <div class="work-icon">
+
                     <i class="fa-solid fa-heart-pulse"></i>
+
                 </div>
 
-                <h3>स्वास्थ्य</h3>
+                <h3>
+                    स्वास्थ्य
+                </h3>
 
                 <p>
                     स्वास्थ्य शिविर और चिकित्सा सुविधाओं
@@ -475,8 +573,11 @@
                 </p>
 
                 <a href="health.html">
+
                     और जानें
+
                     <i class="fa-solid fa-arrow-right"></i>
+
                 </a>
 
             </div>
@@ -487,10 +588,14 @@
             <div class="work-card environment-card">
 
                 <div class="work-icon">
+
                     <i class="fa-solid fa-tree"></i>
+
                 </div>
 
-                <h3>पर्यावरण</h3>
+                <h3>
+                    पर्यावरण
+                </h3>
 
                 <p>
                     वृक्षारोपण और पर्यावरण संरक्षण
@@ -498,22 +603,29 @@
                 </p>
 
                 <a href="environment.html">
+
                     और जानें
+
                     <i class="fa-solid fa-arrow-right"></i>
+
                 </a>
 
             </div>
 
 
-            <!-- SOCIAL SERVICE -->
+            <!-- SOCIAL -->
 
             <div class="work-card social-card">
 
                 <div class="work-icon">
+
                     <i class="fa-solid fa-people-group"></i>
+
                 </div>
 
-                <h3>समाज सेवा</h3>
+                <h3>
+                    समाज सेवा
+                </h3>
 
                 <p>
                     जरूरतमंदों की सहायता और समाज में
@@ -521,8 +633,11 @@
                 </p>
 
                 <a href="social-service.html">
+
                     और जानें
+
                     <i class="fa-solid fa-arrow-right"></i>
+
                 </a>
 
             </div>
@@ -533,10 +648,14 @@
             <div class="work-card blood-card">
 
                 <div class="work-icon">
+
                     <i class="fa-solid fa-droplet"></i>
+
                 </div>
 
-                <h3>रक्तदान</h3>
+                <h3>
+                    रक्तदान
+                </h3>
 
                 <p>
                     रक्तदान महादान है, आइए जीवन बचाने
@@ -544,8 +663,11 @@
                 </p>
 
                 <a href="blood-donation.html">
+
                     और जानें
+
                     <i class="fa-solid fa-arrow-right"></i>
+
                 </a>
 
             </div>
@@ -558,77 +680,114 @@
 
 
 <!-- =========================================================
-     IMPACT STATISTICS
+     IMPACT
 ========================================================= -->
 
 <section class="impact-section">
 
     <div class="container">
 
-        <div class="impact-title">
-
-            <h2>
-                हमारा प्रभाव
-                <span>हमारी पहचान</span>
-            </h2>
-
-        </div>
-
-
         <div class="impact-grid">
 
+
+            <!-- TITLE -->
+
+            <div class="impact-title">
+
+                <h2>
+
+                    हमारा प्रभाव
+
+                    <span>
+                        हमारी पहचान
+                    </span>
+
+                </h2>
+
+            </div>
+
+
+            <!-- MEMBERS -->
 
             <div class="impact-item">
 
                 <i class="fa-solid fa-users"></i>
 
-                <strong>2500+</strong>
+                <strong>
+                    2500+
+                </strong>
 
-                <span>सदस्य</span>
+                <span>
+                    सदस्य
+                </span>
 
             </div>
 
+
+            <!-- PROJECT -->
 
             <div class="impact-item">
 
                 <i class="fa-solid fa-hand-holding-heart"></i>
 
-                <strong>150+</strong>
+                <strong>
+                    150+
+                </strong>
 
-                <span>सेवा प्रकल्प</span>
+                <span>
+                    सेवा प्रकल्प
+                </span>
 
             </div>
 
+
+            <!-- BENEFICIARY -->
 
             <div class="impact-item">
 
                 <i class="fa-solid fa-people-group"></i>
 
-                <strong>5000+</strong>
+                <strong>
+                    5000+
+                </strong>
 
-                <span>लाभार्थी</span>
+                <span>
+                    लाभार्थी
+                </span>
 
             </div>
 
+
+            <!-- BLOOD -->
 
             <div class="impact-item">
 
                 <i class="fa-solid fa-droplet"></i>
 
-                <strong>800+</strong>
+                <strong>
+                    800+
+                </strong>
 
-                <span>रक्तदान यूनिट</span>
+                <span>
+                    रक्तदान यूनिट
+                </span>
 
             </div>
 
+
+            <!-- TREES -->
 
             <div class="impact-item">
 
                 <i class="fa-solid fa-tree"></i>
 
-                <strong>10000+</strong>
+                <strong>
+                    10000+
+                </strong>
 
-                <span>वृक्षारोपण</span>
+                <span>
+                    वृक्षारोपण
+                </span>
 
             </div>
 
@@ -640,7 +799,7 @@
 
 
 <!-- =========================================================
-     JOIN / VOLUNTEER / DONATE
+     JOIN SECTION
 ========================================================= -->
 
 <section class="join-section">
@@ -650,48 +809,64 @@
         <div class="join-grid">
 
 
-            <!-- VOLUNTEER -->
+            <!-- =================================================
+                 VOLUNTEER
+            ================================================= -->
 
             <div class="join-card volunteer-box">
 
+
                 <div class="join-content">
 
-                    <span>समाज सेवा</span>
+                    <span>
+                        समाज सेवा
+                    </span>
 
                     <h2>
                         वॉलंटियर बनें
                     </h2>
 
                     <p>
-                        समाज सेवा के इस अभियान में हमारे साथ जुड़ें
-                        और बदलाव का हिस्सा बनें।
+                        समाज सेवा के इस अभियान में हमारे साथ
+                        जुड़ें और बदलाव का हिस्सा बनें।
                     </p>
 
-                    <a href="volunteer.html" class="join-btn">
+                    <a href="volunteer.html"
+                       class="join-btn">
+
                         अभी जुड़ें
+
                         <i class="fa-solid fa-arrow-right"></i>
+
                     </a>
 
                 </div>
+
 
                 <div class="join-image">
 
                     <img
                         src="images/volunteer.jpg"
-                        alt="Volunteer">
+                        alt="युवा सेवा संकल्प फाउंडेशन वॉलंटियर"
+                        loading="lazy">
 
                 </div>
 
             </div>
 
 
-            <!-- MEMBER -->
+            <!-- =================================================
+                 MEMBER
+            ================================================= -->
 
             <div class="join-card member-box">
 
+
                 <div class="join-content">
 
-                    <span>हमारा परिवार</span>
+                    <span>
+                        हमारा परिवार
+                    </span>
 
                     <h2>
                         सदस्य बनें
@@ -702,12 +877,17 @@
                         और योजनाओं का लाभ उठाएं।
                     </p>
 
-                    <a href="member.html" class="join-btn">
+                    <a href="member.html"
+                       class="join-btn">
+
                         सदस्य बनें
+
                         <i class="fa-solid fa-arrow-right"></i>
+
                     </a>
 
                 </div>
+
 
                 <div class="join-image member-icon">
 
@@ -718,13 +898,18 @@
             </div>
 
 
-            <!-- DONATE -->
+            <!-- =================================================
+                 DONATION
+            ================================================= -->
 
             <div class="join-card donation-box">
 
+
                 <div class="join-content">
 
-                    <span>आपका सहयोग</span>
+                    <span>
+                        आपका सहयोग
+                    </span>
 
                     <h2>
                         दान करें
@@ -735,18 +920,24 @@
                         बदल सकता है। आइए, मदद करें।
                     </p>
 
-                    <a href="donate.html" class="join-btn">
+                    <a href="donate.html"
+                       class="join-btn">
+
                         दान करें
+
                         <i class="fa-solid fa-heart"></i>
+
                     </a>
 
                 </div>
+
 
                 <div class="join-image">
 
                     <img
                         src="images/donation.jpg"
-                        alt="Donation">
+                        alt="युवा सेवा संकल्प फाउंडेशन दान"
+                        loading="lazy">
 
                 </div>
 
@@ -767,16 +958,21 @@
 
     <div class="container">
 
+
         <div class="section-title">
 
-            <span>हमारी सेवा यात्रा</span>
+            <span>
+                हमारी सेवा यात्रा
+            </span>
 
             <h2>
                 हमारी गतिविधियाँ
             </h2>
 
             <div class="title-line">
+
                 <i class="fa-solid fa-heart"></i>
+
             </div>
 
         </div>
@@ -785,91 +981,115 @@
         <div class="activity-grid">
 
 
-            <a href="gallery.html" class="activity-card">
+            <a href="gallery.html"
+               class="activity-card">
 
                 <img
                     src="images/activity-education.jpg"
-                    alt="शिक्षा सहायता कार्यक्रम">
+                    alt="शिक्षा सहायता कार्यक्रम"
+                    loading="lazy">
 
                 <div>
+
                     <h3>
                         शिक्षा सहायता कार्यक्रम
                     </h3>
+
                 </div>
 
             </a>
 
 
-            <a href="gallery.html" class="activity-card">
+            <a href="gallery.html"
+               class="activity-card">
 
                 <img
                     src="images/activity-health.jpg"
-                    alt="स्वास्थ्य शिविर">
+                    alt="स्वास्थ्य शिविर"
+                    loading="lazy">
 
                 <div>
+
                     <h3>
                         स्वास्थ्य शिविर
                     </h3>
+
                 </div>
 
             </a>
 
 
-            <a href="gallery.html" class="activity-card">
+            <a href="gallery.html"
+               class="activity-card">
 
                 <img
                     src="images/activity-tree.jpg"
-                    alt="वृक्षारोपण अभियान">
+                    alt="वृक्षारोपण अभियान"
+                    loading="lazy">
 
                 <div>
+
                     <h3>
                         वृक्षारोपण अभियान
                     </h3>
+
                 </div>
 
             </a>
 
 
-            <a href="gallery.html" class="activity-card">
+            <a href="gallery.html"
+               class="activity-card">
 
                 <img
                     src="images/activity-social.jpg"
-                    alt="जरूरतमंदों की सहायता">
+                    alt="जरूरतमंदों की सहायता"
+                    loading="lazy">
 
                 <div>
+
                     <h3>
                         जरूरतमंदों की सहायता
                     </h3>
+
                 </div>
 
             </a>
 
 
-            <a href="gallery.html" class="activity-card">
+            <a href="gallery.html"
+               class="activity-card">
 
                 <img
                     src="images/activity-blood.jpg"
-                    alt="रक्तदान शिविर">
+                    alt="रक्तदान शिविर"
+                    loading="lazy">
 
                 <div>
+
                     <h3>
                         रक्तदान शिविर
                     </h3>
+
                 </div>
 
             </a>
 
 
-            <a href="gallery.html" class="activity-card">
+            <a href="gallery.html"
+               class="activity-card">
 
                 <img
                     src="images/activity-awareness.jpg"
-                    alt="जागरूकता अभियान">
+                    alt="जागरूकता अभियान"
+                    loading="lazy">
 
                 <div>
+
                     <h3>
                         जागरूकता अभियान
                     </h3>
+
                 </div>
 
             </a>
@@ -879,9 +1099,13 @@
 
         <div class="center-button">
 
-            <a href="gallery.html" class="btn btn-green">
+            <a href="gallery.html"
+               class="btn btn-green">
+
                 और देखें
+
                 <i class="fa-solid fa-arrow-right"></i>
+
             </a>
 
         </div>
@@ -908,11 +1132,16 @@
 
                 <div class="info-header">
 
-                    <h2>समाचार</h2>
+                    <h2>
+                        समाचार
+                    </h2>
 
                     <a href="news.html">
+
                         और देखें
+
                         <i class="fa-solid fa-arrow-right"></i>
+
                     </a>
 
                 </div>
@@ -922,7 +1151,8 @@
 
                     <img
                         src="images/news-1.jpg"
-                        alt="समाचार">
+                        alt="समाचार"
+                        loading="lazy">
 
                     <div>
 
@@ -948,7 +1178,8 @@
 
                     <img
                         src="images/news-2.jpg"
-                        alt="समाचार">
+                        alt="समाचार"
+                        loading="lazy">
 
                     <div>
 
@@ -983,8 +1214,11 @@
                     </h2>
 
                     <a href="events.html">
+
                         और देखें
+
                         <i class="fa-solid fa-arrow-right"></i>
+
                     </a>
 
                 </div>
@@ -994,8 +1228,13 @@
 
                     <div class="event-date">
 
-                        <strong>25</strong>
-                        <span>मई</span>
+                        <strong>
+                            25
+                        </strong>
+
+                        <span>
+                            मई
+                        </span>
 
                     </div>
 
@@ -1022,8 +1261,13 @@
 
                     <div class="event-date">
 
-                        <strong>05</strong>
-                        <span>जून</span>
+                        <strong>
+                            05
+                        </strong>
+
+                        <span>
+                            जून
+                        </span>
 
                     </div>
 
@@ -1050,8 +1294,13 @@
 
                     <div class="event-date">
 
-                        <strong>15</strong>
-                        <span>जून</span>
+                        <strong>
+                            15
+                        </strong>
+
+                        <span>
+                            जून
+                        </span>
 
                     </div>
 
@@ -1119,6 +1368,7 @@
 
     <div class="container final-cta-inner">
 
+
         <div>
 
             <span>
@@ -1131,16 +1381,27 @@
 
         </div>
 
+
         <div class="final-buttons">
 
-            <a href="volunteer.html" class="btn btn-green">
+
+            <a href="volunteer.html"
+               class="btn btn-green">
+
                 वॉलंटियर बनें
+
                 <i class="fa-solid fa-hands-helping"></i>
+
             </a>
 
-            <a href="donate.html" class="btn btn-orange">
+
+            <a href="donate.html"
+               class="btn btn-orange">
+
                 दान करें
+
                 <i class="fa-solid fa-heart"></i>
+
             </a>
 
         </div>
@@ -1163,45 +1424,54 @@
 
         <div class="footer-column footer-about">
 
-            <a href="index.html" class="footer-logo">
+
+            <a href="index.html"
+               class="footer-logo">
 
                 <img
                     src="images/logo.png"
                     alt="Yuva Seva Sankalp Foundation">
 
                 <span>
+
                     युवा सेवा संकल्प
-                    <strong>फाउंडेशन</strong>
+
+                    <strong>
+                        फाउंडेशन
+                    </strong>
+
                 </span>
 
             </a>
 
 
             <p>
+
                 सेवा ही संकल्प, संकल्प ही राष्ट्र निर्माण।
                 युवा शक्ति के साथ समाज सेवा की ओर एक मजबूत कदम।
+
             </p>
 
 
             <div class="footer-social">
 
-                <a href="#">
+                <a href="#" aria-label="Facebook">
                     <i class="fa-brands fa-facebook-f"></i>
                 </a>
 
-                <a href="#">
+                <a href="#" aria-label="Instagram">
                     <i class="fa-brands fa-instagram"></i>
                 </a>
 
-                <a href="#">
+                <a href="#" aria-label="Twitter">
                     <i class="fa-brands fa-x-twitter"></i>
                 </a>
 
-                <a href="#">
+                <a href="#" aria-label="YouTube">
                     <i class="fa-brands fa-youtube"></i>
                 </a>
 
-                <a href="#">
+                <a href="#" aria-label="WhatsApp">
                     <i class="fa-brands fa-whatsapp"></i>
                 </a>
 
@@ -1221,31 +1491,45 @@
             <ul>
 
                 <li>
-                    <a href="index.html">होम</a>
+                    <a href="index.html">
+                        होम
+                    </a>
                 </li>
 
                 <li>
-                    <a href="about.html">संस्था के बारे में</a>
+                    <a href="about.html">
+                        संस्था के बारे में
+                    </a>
                 </li>
 
                 <li>
-                    <a href="work.html">हमारे कार्य</a>
+                    <a href="work.html">
+                        हमारे कार्य
+                    </a>
                 </li>
 
                 <li>
-                    <a href="volunteer.html">वॉलंटियर</a>
+                    <a href="volunteer.html">
+                        वॉलंटियर
+                    </a>
                 </li>
 
                 <li>
-                    <a href="member.html">सदस्य बनें</a>
+                    <a href="member.html">
+                        सदस्य बनें
+                    </a>
                 </li>
 
                 <li>
-                    <a href="news.html">समाचार</a>
+                    <a href="news.html">
+                        समाचार
+                    </a>
                 </li>
 
                 <li>
-                    <a href="contact.html">संपर्क करें</a>
+                    <a href="contact.html">
+                        संपर्क करें
+                    </a>
                 </li>
 
             </ul>
@@ -1306,13 +1590,17 @@
                 संपर्क जानकारी
             </h3>
 
+
             <p>
+
                 <i class="fa-solid fa-location-dot"></i>
 
                 <span>
                     बिहार, भारत
                 </span>
+
             </p>
+
 
             <p>
 
@@ -1324,6 +1612,7 @@
 
             </p>
 
+
             <p>
 
                 <i class="fa-solid fa-envelope"></i>
@@ -1333,6 +1622,7 @@
                 </a>
 
             </p>
+
 
             <p>
 
@@ -1356,11 +1646,12 @@
             </h3>
 
             <p>
-                हमारे समाचार और नवीनतम अपडेट
-                प्राप्त करें।
+                हमारे समाचार और नवीनतम अपडेट प्राप्त करें।
             </p>
 
-            <form action="#" method="post">
+
+            <form action="#"
+                  method="post">
 
                 <input
                     type="email"
@@ -1368,8 +1659,11 @@
                     placeholder="अपना ईमेल दर्ज करें"
                     required>
 
+
                 <button type="submit">
+
                     सब्सक्राइब करें
+
                 </button>
 
             </form>
@@ -1386,14 +1680,21 @@
         <div class="container footer-bottom-inner">
 
             <p>
+
                 © 2026 युवा सेवा संकल्प फाउंडेशन |
                 सर्वाधिकार सुरक्षित
+
             </p>
 
+
             <p>
+
                 Designed with
+
                 <i class="fa-solid fa-heart"></i>
+
                 for Society
+
             </p>
 
         </div>
@@ -1407,7 +1708,10 @@
      BACK TO TOP
 ========================================================= -->
 
-<button id="backToTop" class="back-to-top" aria-label="Back to top">
+<button
+    id="backToTop"
+    class="back-to-top"
+    aria-label="Back to top">
 
     <i class="fa-solid fa-arrow-up"></i>
 
@@ -1423,27 +1727,38 @@
 document.addEventListener("DOMContentLoaded", function () {
 
 
-    /* Mobile Menu */
+    /* =====================================================
+       MOBILE MENU
+    ===================================================== */
 
-    const menuBtn = document.getElementById("mobileMenuBtn");
-    const navMenu = document.getElementById("navMenu");
+    const menuBtn =
+        document.getElementById("mobileMenuBtn");
 
-    if (menuBtn && navMenu) {
+    const navMenu =
+        document.getElementById("navMenu");
 
-        menuBtn.addEventListener("click", function () {
+
+    if(menuBtn && navMenu){
+
+        menuBtn.addEventListener("click", function(){
 
             navMenu.classList.toggle("show");
 
-            const icon = menuBtn.querySelector("i");
 
-            if (navMenu.classList.contains("show")) {
+            const icon =
+                menuBtn.querySelector("i");
+
+
+            if(navMenu.classList.contains("show")){
 
                 icon.classList.remove("fa-bars");
+
                 icon.classList.add("fa-xmark");
 
-            } else {
+            }else{
 
                 icon.classList.remove("fa-xmark");
+
                 icon.classList.add("fa-bars");
 
             }
@@ -1453,19 +1768,24 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* Mobile Dropdown */
+    /* =====================================================
+       MOBILE DROPDOWN
+    ===================================================== */
 
-    const dropdowns = document.querySelectorAll(".dropdown > a");
+    const dropdowns =
+        document.querySelectorAll(".dropdown > a");
 
-    dropdowns.forEach(function (dropdown) {
 
-        dropdown.addEventListener("click", function (event) {
+    dropdowns.forEach(function(dropdown){
 
-            if (window.innerWidth <= 900) {
+        dropdown.addEventListener("click", function(event){
+
+            if(window.innerWidth <= 900){
 
                 event.preventDefault();
 
-                const parent = this.parentElement;
+                const parent =
+                    this.parentElement;
 
                 parent.classList.toggle("open");
 
@@ -1476,25 +1796,38 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* Search */
+    /* =====================================================
+       SEARCH
+    ===================================================== */
 
-    const searchBtn = document.getElementById("searchBtn");
-    const searchBox = document.getElementById("searchBox");
+    const searchBtn =
+        document.getElementById("searchBtn");
 
-    if (searchBtn && searchBox) {
+    const searchBox =
+        document.getElementById("searchBox");
 
-        searchBtn.addEventListener("click", function () {
+
+    if(searchBtn && searchBox){
+
+        searchBtn.addEventListener("click", function(){
 
             searchBox.classList.toggle("show");
 
-            if (searchBox.classList.contains("show")) {
 
-                const input = searchBox.querySelector("input");
+            if(searchBox.classList.contains("show")){
 
-                if (input) {
-                    setTimeout(function () {
+                const input =
+                    searchBox.querySelector("input");
+
+
+                if(input){
+
+                    setTimeout(function(){
+
                         input.focus();
-                    }, 200);
+
+                    },200);
+
                 }
 
             }
@@ -1504,17 +1837,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* Back To Top */
+    /* =====================================================
+       BACK TO TOP
+    ===================================================== */
 
-    const backToTop = document.getElementById("backToTop");
+    const backToTop =
+        document.getElementById("backToTop");
 
-    window.addEventListener("scroll", function () {
 
-        if (window.scrollY > 500) {
+    window.addEventListener("scroll", function(){
+
+        if(window.scrollY > 500){
 
             backToTop.classList.add("show");
 
-        } else {
+        }else{
 
             backToTop.classList.remove("show");
 
@@ -1523,13 +1860,16 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    if (backToTop) {
+    if(backToTop){
 
-        backToTop.addEventListener("click", function () {
+        backToTop.addEventListener("click", function(){
 
             window.scrollTo({
-                top: 0,
-                behavior: "smooth"
+
+                top:0,
+
+                behavior:"smooth"
+
             });
 
         });
@@ -1537,24 +1877,35 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* Smooth Scroll */
+    /* =====================================================
+       SMOOTH ANCHOR
+    ===================================================== */
 
-    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(function(anchor){
 
-        anchor.addEventListener("click", function (event) {
+        anchor.addEventListener("click", function(event){
 
-            const targetId = this.getAttribute("href");
+            const targetId =
+                this.getAttribute("href");
 
-            if (
+
+            if(
                 targetId &&
                 targetId !== "#" &&
                 document.querySelector(targetId)
-            ) {
+            ){
 
                 event.preventDefault();
 
-                document.querySelector(targetId).scrollIntoView({
-                    behavior: "smooth"
+
+                document
+                .querySelector(targetId)
+                .scrollIntoView({
+
+                    behavior:"smooth"
+
                 });
 
             }
@@ -1564,32 +1915,45 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* Simple Hero Dots */
+    /* =====================================================
+       HERO DOTS
+    ===================================================== */
 
-    const dots = document.querySelectorAll(".hero-dots .dot");
+    const dots =
+        document.querySelectorAll(".hero-dots .dot");
+
 
     let currentDot = 0;
 
-    if (dots.length > 0) {
 
-        setInterval(function () {
+    if(dots.length > 0){
 
-            dots.forEach(function (dot) {
+        setInterval(function(){
+
+            dots.forEach(function(dot){
+
                 dot.classList.remove("active");
+
             });
+
 
             currentDot++;
 
-            if (currentDot >= dots.length) {
+
+            if(currentDot >= dots.length){
+
                 currentDot = 0;
+
             }
 
-            dots[currentDot].classList.add("active");
 
-        }, 4000);
+            dots[currentDot]
+                .classList.add("active");
+
+
+        },4000);
 
     }
-
 
 });
 
