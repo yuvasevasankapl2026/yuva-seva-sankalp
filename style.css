@@ -3168,3 +3168,363 @@ ul{
     }
 
 }
+/* =========================================================
+   MOBILE FINAL FIX - WEBSITE FULL WIDTH
+========================================================= */
+
+html,
+body{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden !important;
+}
+
+*{
+    max-width:100%;
+}
+
+
+/* CONTAINER */
+
+.container{
+    width:94%;
+    max-width:1200px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+/* =========================================================
+   IMPACT MOBILE FIX
+========================================================= */
+
+@media(max-width:600px){
+
+    .impact-section{
+        width:100%;
+        overflow:hidden;
+        padding:20px 0 15px;
+    }
+
+    .impact-section .container{
+        width:94%;
+    }
+
+    .impact-title{
+        width:100%;
+        text-align:center;
+        border:0 !important;
+        padding:5px 0 15px !important;
+    }
+
+    .impact-title h2{
+        font-size:23px !important;
+    }
+
+    .impact-grid{
+        width:100% !important;
+        display:grid !important;
+        grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+        gap:0 !important;
+    }
+
+    .impact-item{
+        width:100%;
+        min-width:0;
+        border-right:1px solid rgba(255,255,255,.25);
+        min-height:90px;
+    }
+
+    .impact-item:nth-child(2n){
+        border-right:0;
+    }
+
+    .impact-item strong{
+        font-size:21px;
+    }
+
+    .impact-item span{
+        font-size:10px;
+    }
+
+}
+
+
+/* =========================================================
+   JOIN SECTION MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+    .join-section{
+        width:100%;
+        overflow:hidden;
+        padding:20px 0;
+    }
+
+    .join-section .container{
+        width:94%;
+    }
+
+    .join-grid{
+        width:100% !important;
+
+        display:grid !important;
+
+        grid-template-columns:1fr !important;
+
+        gap:12px !important;
+    }
+
+    .join-card{
+        width:100% !important;
+        min-width:0 !important;
+
+        max-width:100% !important;
+
+        display:flex !important;
+
+        min-height:145px;
+
+        overflow:hidden !important;
+    }
+
+    .join-content{
+        width:60%;
+        min-width:0;
+        flex:1 1 60%;
+    }
+
+    .join-image,
+    .member-icon{
+        width:40% !important;
+        min-width:40% !important;
+        max-width:40% !important;
+    }
+
+    .join-image img{
+        width:100% !important;
+        height:100% !important;
+
+        object-fit:cover !important;
+
+        object-position:center !important;
+    }
+
+}
+
+
+/* =========================================================
+   ACTIVITIES MOBILE FIX
+========================================================= */
+
+.activities-section{
+    width:100%;
+    overflow:hidden;
+}
+
+@media(max-width:600px){
+
+    .activities-section .container{
+        width:94%;
+    }
+
+    .activity-grid{
+        width:100% !important;
+
+        display:grid !important;
+
+        grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+
+        gap:10px !important;
+    }
+
+    .activity-card{
+        width:100% !important;
+        min-width:0 !important;
+        overflow:hidden !important;
+    }
+
+    .activity-card img{
+        display:block;
+
+        width:100% !important;
+        height:115px !important;
+
+        object-fit:cover !important;
+    }
+
+    .activity-card h3{
+        font-size:11px !important;
+        padding:4px;
+    }
+
+}
+
+
+/* =========================================================
+   INFORMATION MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+    .information-section{
+        width:100%;
+        overflow:hidden;
+    }
+
+    .info-grid{
+        width:100% !important;
+
+        display:grid !important;
+
+        grid-template-columns:1fr !important;
+
+        gap:12px !important;
+    }
+
+    .info-box{
+        width:100% !important;
+        min-width:0 !important;
+    }
+
+}
+
+
+/* =========================================================
+   HERO MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+    .hero-section{
+        width:100%;
+        min-height:410px;
+        overflow:hidden;
+    }
+
+    .hero-container{
+        width:94%;
+        min-height:410px;
+    }
+
+    .hero-content{
+        width:75%;
+        max-width:75%;
+    }
+
+}
+
+
+/* =========================================================
+   HEADER MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+    .main-header{
+        width:100%;
+        overflow:hidden;
+    }
+
+    .header-inner{
+        width:94%;
+        min-height:82px;
+    }
+
+    .brand{
+        min-width:0;
+        max-width:65%;
+    }
+
+    .brand-text{
+        min-width:0;
+    }
+
+    .brand-text h1{
+        white-space:normal;
+    }
+
+    .header-actions{
+        flex-shrink:0;
+    }
+
+}
+
+
+/* =========================================================
+   NAV MOBILE
+========================================================= */
+
+@media(max-width:900px){
+
+    .main-nav{
+        width:100%;
+        overflow:visible;
+    }
+
+    .nav-inner{
+        width:100%;
+        position:relative;
+    }
+
+    .nav-menu{
+        width:100% !important;
+        max-width:100% !important;
+    }
+
+}
+
+
+/* =========================================================
+   FOOTER MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+    .footer{
+        width:100%;
+        overflow:hidden;
+    }
+
+    .footer-grid{
+        width:94%;
+
+        display:grid !important;
+
+        grid-template-columns:1fr 1fr !important;
+
+        gap:25px 15px;
+    }
+
+    .footer-column{
+        min-width:0;
+        max-width:100%;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media(max-width:380px){
+
+    .join-grid{
+        grid-template-columns:1fr !important;
+    }
+
+    .activity-grid{
+        grid-template-columns:1fr !important;
+    }
+
+    .impact-grid{
+        grid-template-columns:1fr 1fr !important;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr !important;
+    }
+
+}
