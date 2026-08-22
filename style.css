@@ -2310,3 +2310,79 @@ ul{
 .hero-buttons .btn-orange:hover{
     background:#ff8a18 !important;
 }
+/* =========================================================
+   VOLUNTEER + DONATION IMAGE FIX
+========================================================= */
+
+.join-card{
+    align-items:stretch;
+}
+
+.join-image{
+    width:38%;
+    min-width:38%;
+    height:auto;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#f5f8fc;
+}
+
+.join-image img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    object-position:center;
+}
+
+
+/* =========================================================
+   MOBILE IMAGE FIX
+========================================================= */
+
+@media(max-width:600px){
+
+    .join-card{
+        min-height:140px;
+    }
+
+    .join-image{
+        width:36%;
+        min-width:36%;
+    }
+
+    .join-image img{
+        width:100%;
+        height:100%;
+        object-fit:contain;
+        object-position:center;
+    }
+
+}
+
+
+/* =========================================================
+   DONATION IMAGE
+========================================================= */
+
+.donation-box .join-image{
+    background:#fff7ed;
+}
+
+.donation-box .join-image img{
+    object-fit:contain;
+}
+
+
+/* =========================================================
+   VOLUNTEER IMAGE
+========================================================= */
+
+.volunteer-box .join-image{
+    background:#eef9f1;
+}
+
+.volunteer-box .join-image img{
+    object-fit:contain;
+}
