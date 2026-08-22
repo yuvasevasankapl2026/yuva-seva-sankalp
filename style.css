@@ -3056,3 +3056,115 @@ ul{
         object-position:center;
     }
 }
+/* =========================================================
+   FINAL FIX — VOLUNTEER & DONATION IMAGE पूरी दिखे
+========================================================= */
+
+.join-card{
+    display:flex;
+    align-items:stretch;
+    overflow:hidden;
+}
+
+.join-content{
+    flex:1;
+    min-width:0;
+}
+
+/* Image area */
+.join-image{
+    width:42%;
+    min-width:42%;
+    height:auto;
+    overflow:hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#f5f8fc;
+}
+
+/* पूरी image दिखे — crop नहीं होगी */
+.join-image img{
+    width:100%;
+    height:100%;
+    display:block;
+    object-fit:contain !important;
+    object-position:center center;
+}
+
+/* Volunteer */
+.volunteer-box .join-image{
+    background:#eef9f1;
+}
+
+.volunteer-box .join-image img{
+    object-fit:contain !important;
+}
+
+/* Donation */
+.donation-box .join-image{
+    background:#fff7ed;
+}
+
+.donation-box .join-image img{
+    object-fit:contain !important;
+}
+
+/* Member */
+.member-icon{
+    width:42%;
+    min-width:42%;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+    .join-card{
+        min-height:150px;
+    }
+
+    .join-image{
+        width:40%;
+        min-width:40%;
+    }
+
+    .join-image img{
+        width:100%;
+        height:100%;
+        object-fit:contain !important;
+        object-position:center center;
+    }
+
+    .volunteer-box .join-image,
+    .donation-box .join-image{
+        width:40%;
+        min-width:40%;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media(max-width:380px){
+
+    .join-card{
+        min-height:140px;
+    }
+
+    .join-image{
+        width:39%;
+        min-width:39%;
+    }
+
+    .join-image img{
+        object-fit:contain !important;
+    }
+
+}
