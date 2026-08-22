@@ -2291,3 +2291,22 @@ ul{
 ::-webkit-scrollbar-thumb:hover{
     background:var(--green);
 }
+.hero-buttons .btn-primary{
+    background:#06295c !important;
+    color:#ffffff !important;
+    border:2px solid #06295c !important;
+}
+
+.hero-buttons .btn-orange{
+    background:#f36b12 !important;
+    color:#ffffff !important;
+    border:2px solid #f36b12 !important;
+}
+
+.hero-buttons .btn-primary:hover{
+    background:#1559a6 !important;
+}
+
+.hero-buttons .btn-orange:hover{
+    background:#ff8a18 !important;
+}
