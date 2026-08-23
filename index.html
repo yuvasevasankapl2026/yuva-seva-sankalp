@@ -1,33 +1,35 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>युवा सेवा संकल्प फाउंडेशन | युवा शक्ति - राष्ट्र शक्ति</title>
+    <title>युवा सेवा संकल्प फाउंडेशन | युवा शक्ति - राष्ट्र शक्ति</title>
 
-<meta name="description"
-content="युवा सेवा संकल्प फाउंडेशन - शिक्षा, स्वास्थ्य, पर्यावरण, समाज सेवा और रक्तदान के क्षेत्र में सेवा कार्य।">
+    <meta name="description"
+          content="युवा सेवा संकल्प फाउंडेशन - शिक्षा, स्वास्थ्य, पर्यावरण, समाज सेवा और रक्तदान के क्षेत्र में सेवा कार्य।">
 
-<link rel="icon" href="images/logo.png">
+    <meta name="keywords"
+          content="युवा सेवा संकल्प फाउंडेशन, Yuva Seva Sankalp Foundation, NGO, समाज सेवा, रक्तदान, पर्यावरण, शिक्षा, स्वास्थ्य">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="icon" href="images/logo.png">
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
-rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-
 <!-- =====================================================
-TOP BAR
+     TOP BAR
 ===================================================== -->
 
 <div class="top-bar">
@@ -41,9 +43,9 @@ TOP BAR
                 +91 8709 450 450
             </a>
 
-            <a href="mailto:info.yssfoundation@gmail.com">
+            <a href="mailto:info@yuvasevasankalp.org">
                 <i class="fa-solid fa-envelope"></i>
-                info.yssfoundation@gmail.com
+                info@yuvasevasankalp.org
             </a>
 
             <span>
@@ -65,7 +67,7 @@ TOP BAR
                 <i class="fa-brands fa-instagram"></i>
             </a>
 
-            <a href="#" aria-label="X">
+            <a href="#" aria-label="Twitter">
                 <i class="fa-brands fa-x-twitter"></i>
             </a>
 
@@ -85,7 +87,7 @@ TOP BAR
 
 
 <!-- =====================================================
-HEADER
+     HEADER
 ===================================================== -->
 
 <header class="main-header">
@@ -94,8 +96,9 @@ HEADER
 
         <a href="index.html" class="brand">
 
-            <img src="images/logo.png"
-                 alt="युवा सेवा संकल्प फाउंडेशन लोगो">
+            <img
+                src="images/logo.png"
+                alt="युवा सेवा संकल्प फाउंडेशन लोगो">
 
             <div class="brand-text">
 
@@ -112,42 +115,50 @@ HEADER
         </a>
 
 
+        <!-- LOGIN ACTIONS -->
+
         <div class="header-actions">
 
-            <a href="member.html"
+            <!-- MEMBER LOGIN -->
+
+            <a href="login.php?role=member"
                class="header-action member-action">
 
-                <i class="fa-solid fa-user-plus"></i>
+                <i class="fa-solid fa-user"></i>
 
                 <span>
-                    <b>सदस्य बनें</b>
-                    <small>आज ही जुड़ें</small>
+                    <b>सदस्य Login</b>
+                    <small>अपने खाते में जाएँ</small>
                 </span>
 
             </a>
 
 
-            <a href="volunteer.html"
+            <!-- VOLUNTEER LOGIN -->
+
+            <a href="login.php?role=volunteer"
                class="header-action volunteer-action">
 
                 <i class="fa-solid fa-hands-helping"></i>
 
                 <span>
-                    <b>वॉलंटियर बनें</b>
-                    <small>समाज के लिए कार्य करें</small>
+                    <b>Volunteer Login</b>
+                    <small>सेवा गतिविधियाँ</small>
                 </span>
 
             </a>
 
 
-            <a href="donate.html"
-               class="donate-button">
+            <!-- ADMIN LOGIN -->
 
-                <i class="fa-solid fa-hand-holding-heart"></i>
+            <a href="login.php?role=admin"
+               class="donate-button admin-login-button">
+
+                <i class="fa-solid fa-user-shield"></i>
 
                 <span>
-                    <b>दान करें</b>
-                    <small>एक कदम बदलाव की ओर</small>
+                    <b>Admin Login</b>
+                    <small>Admin Panel</small>
                 </span>
 
             </a>
@@ -160,7 +171,7 @@ HEADER
 
 
 <!-- =====================================================
-NAVIGATION
+     NAVIGATION
 ===================================================== -->
 
 <nav class="main-nav">
@@ -180,26 +191,18 @@ NAVIGATION
         <ul class="nav-menu" id="navMenu">
 
             <li>
-
                 <a href="index.html" class="active">
-
                     <i class="fa-solid fa-house"></i>
-
                     होम
-
                 </a>
-
             </li>
 
 
             <li class="dropdown">
 
                 <a href="#">
-
                     संस्था के बारे में
-
                     <i class="fa-solid fa-chevron-down"></i>
-
                 </a>
 
                 <ul class="dropdown-menu">
@@ -236,11 +239,8 @@ NAVIGATION
             <li class="dropdown">
 
                 <a href="#">
-
                     हमारे कार्य
-
                     <i class="fa-solid fa-chevron-down"></i>
-
                 </a>
 
                 <ul class="dropdown-menu">
@@ -342,7 +342,7 @@ NAVIGATION
 
 
 <!-- =====================================================
-SEARCH
+     SEARCH
 ===================================================== -->
 
 <div class="search-box" id="searchBox">
@@ -373,7 +373,7 @@ SEARCH
 
 
 <!-- =====================================================
-HERO
+     HERO
 ===================================================== -->
 
 <section class="hero-section">
@@ -389,13 +389,9 @@ HERO
             </span>
 
             <h2>
-
                 युवा शक्ति,
-
                 <br>
-
                 <span>राष्ट्र की शक्ति</span>
-
             </h2>
 
             <h3>
@@ -403,14 +399,10 @@ HERO
             </h3>
 
             <p>
-
-                हम शिक्षा, स्वास्थ्य, पर्यावरण और समाज सेवा
-                के क्षेत्र में निरंतर कार्य कर रहे हैं ताकि
-                हर व्यक्ति को एक बेहतर जीवन और सम्मानजनक
-                भविष्य मिल सके।
-
+                हम शिक्षा, स्वास्थ्य, पर्यावरण और समाज सेवा के क्षेत्र में
+                निरंतर कार्य कर रहे हैं ताकि हर व्यक्ति को एक बेहतर जीवन
+                और सम्मानजनक भविष्य मिल सके।
             </p>
-
 
             <div class="hero-buttons">
 
@@ -452,7 +444,7 @@ HERO
 
 
 <!-- =====================================================
-OUR WORK
+     OUR WORK
 ===================================================== -->
 
 <section class="section works-section">
@@ -470,9 +462,7 @@ OUR WORK
             </h2>
 
             <div class="title-line">
-
                 <i class="fa-solid fa-leaf"></i>
-
             </div>
 
         </div>
@@ -481,12 +471,12 @@ OUR WORK
         <div class="work-grid">
 
 
+            <!-- EDUCATION -->
+
             <div class="work-card education-card">
 
                 <div class="work-icon">
-
                     <i class="fa-solid fa-book-open"></i>
-
                 </div>
 
                 <h3>
@@ -509,12 +499,12 @@ OUR WORK
             </div>
 
 
+            <!-- HEALTH -->
+
             <div class="work-card health-card">
 
                 <div class="work-icon">
-
                     <i class="fa-solid fa-heart-pulse"></i>
-
                 </div>
 
                 <h3>
@@ -537,12 +527,12 @@ OUR WORK
             </div>
 
 
+            <!-- ENVIRONMENT -->
+
             <div class="work-card environment-card">
 
                 <div class="work-icon">
-
                     <i class="fa-solid fa-tree"></i>
-
                 </div>
 
                 <h3>
@@ -565,12 +555,12 @@ OUR WORK
             </div>
 
 
+            <!-- SOCIAL -->
+
             <div class="work-card social-card">
 
                 <div class="work-icon">
-
                     <i class="fa-solid fa-people-group"></i>
-
                 </div>
 
                 <h3>
@@ -593,12 +583,12 @@ OUR WORK
             </div>
 
 
+            <!-- BLOOD -->
+
             <div class="work-card blood-card">
 
                 <div class="work-icon">
-
                     <i class="fa-solid fa-droplet"></i>
-
                 </div>
 
                 <h3>
@@ -628,7 +618,7 @@ OUR WORK
 
 
 <!-- =====================================================
-IMPACT
+     IMPACT
 ===================================================== -->
 
 <section class="impact-section">
@@ -641,13 +631,9 @@ IMPACT
             <div class="impact-title">
 
                 <h2>
-
                     हमारा प्रभाव
-
                     <br>
-
                     हमारी पहचान
-
                 </h2>
 
             </div>
@@ -735,7 +721,7 @@ IMPACT
 
 
 <!-- =====================================================
-JOIN CARDS
+     JOIN SECTION
 ===================================================== -->
 
 <section class="join-section">
@@ -760,8 +746,8 @@ JOIN CARDS
                     </h2>
 
                     <p>
-                        समाज सेवा के इस अभियान में हमारे साथ
-                        जुड़ें और बदलाव का हिस्सा बनें।
+                        समाज सेवा के इस अभियान में हमारे साथ जुड़ें
+                        और बदलाव का हिस्सा बनें।
                     </p>
 
                     <a href="volunteer.html"
@@ -780,7 +766,7 @@ JOIN CARDS
 
                     <img
                         src="images/volunteer.jpg"
-                        alt="वॉलंटियर">
+                        alt="युवा सेवा संकल्प फाउंडेशन वॉलंटियर">
 
                 </div>
 
@@ -802,8 +788,8 @@ JOIN CARDS
                     </h2>
 
                     <p>
-                        हमारे परिवार का हिस्सा बनें और समाज
-                        सेवा में अपनी भागीदारी निभाएं।
+                        हमारे सदस्य बनें और संगठन की गतिविधियों
+                        और योजनाओं का लाभ उठाएं।
                     </p>
 
                     <a href="member.html"
@@ -862,7 +848,7 @@ JOIN CARDS
 
                     <img
                         src="images/donation.jpg"
-                        alt="दान">
+                        alt="युवा सेवा संकल्प फाउंडेशन दान">
 
                 </div>
 
@@ -876,7 +862,7 @@ JOIN CARDS
 
 
 <!-- =====================================================
-ACTIVITIES
+     ACTIVITIES
 ===================================================== -->
 
 <section class="section activities-section">
@@ -894,9 +880,7 @@ ACTIVITIES
             </h2>
 
             <div class="title-line">
-
                 <i class="fa-solid fa-heart"></i>
-
             </div>
 
         </div>
@@ -913,11 +897,9 @@ ACTIVITIES
                     alt="शिक्षा सहायता कार्यक्रम">
 
                 <div>
-
                     <h3>
                         शिक्षा सहायता कार्यक्रम
                     </h3>
-
                 </div>
 
             </a>
@@ -931,11 +913,9 @@ ACTIVITIES
                     alt="स्वास्थ्य शिविर">
 
                 <div>
-
                     <h3>
                         स्वास्थ्य शिविर
                     </h3>
-
                 </div>
 
             </a>
@@ -949,11 +929,9 @@ ACTIVITIES
                     alt="वृक्षारोपण अभियान">
 
                 <div>
-
                     <h3>
                         वृक्षारोपण अभियान
                     </h3>
-
                 </div>
 
             </a>
@@ -967,11 +945,9 @@ ACTIVITIES
                     alt="जरूरतमंदों की सहायता">
 
                 <div>
-
                     <h3>
                         जरूरतमंदों की सहायता
                     </h3>
-
                 </div>
 
             </a>
@@ -985,11 +961,9 @@ ACTIVITIES
                     alt="रक्तदान शिविर">
 
                 <div>
-
                     <h3>
                         रक्तदान शिविर
                     </h3>
-
                 </div>
 
             </a>
@@ -1003,11 +977,9 @@ ACTIVITIES
                     alt="जागरूकता अभियान">
 
                 <div>
-
                     <h3>
                         जागरूकता अभियान
                     </h3>
-
                 </div>
 
             </a>
@@ -1034,7 +1006,7 @@ ACTIVITIES
 
 
 <!-- =====================================================
-NEWS / EVENTS / QUOTE
+     NEWS / EVENTS / QUOTE
 ===================================================== -->
 
 <section class="section information-section">
@@ -1069,7 +1041,7 @@ NEWS / EVENTS / QUOTE
 
                     <img
                         src="images/news-1.jpg"
-                        alt="स्वास्थ्य शिविर">
+                        alt="निःशुल्क स्वास्थ्य शिविर">
 
                     <div>
 
@@ -1095,7 +1067,7 @@ NEWS / EVENTS / QUOTE
 
                     <img
                         src="images/news-2.jpg"
-                        alt="वृक्षारोपण">
+                        alt="वृक्षारोपण अभियान">
 
                     <div>
 
@@ -1277,7 +1249,7 @@ NEWS / EVENTS / QUOTE
 
 
 <!-- =====================================================
-FINAL CTA
+     FINAL CTA
 ===================================================== -->
 
 <section class="final-cta">
@@ -1326,7 +1298,7 @@ FINAL CTA
 
 
 <!-- =====================================================
-FOOTER
+     FOOTER
 ===================================================== -->
 
 <footer class="footer">
@@ -1343,7 +1315,7 @@ FOOTER
 
                 <img
                     src="images/logo.png"
-                    alt="युवा सेवा संकल्प फाउंडेशन">
+                    alt="Yuva Seva Sankalp Foundation">
 
                 <span>
 
@@ -1359,11 +1331,8 @@ FOOTER
 
 
             <p>
-
                 सेवा ही संकल्प, संकल्प ही राष्ट्र निर्माण।
-                युवा शक्ति के साथ समाज सेवा की ओर
-                एक मजबूत कदम।
-
+                युवा शक्ति के साथ समाज सेवा की ओर एक मजबूत कदम।
             </p>
 
 
@@ -1435,8 +1404,20 @@ FOOTER
                 </li>
 
                 <li>
-                    <a href="news.html">
-                        समाचार
+                    <a href="login.php?role=member">
+                        सदस्य Login
+                    </a>
+                </li>
+
+                <li>
+                    <a href="login.php?role=volunteer">
+                        Volunteer Login
+                    </a>
+                </li>
+
+                <li>
+                    <a href="login.php?role=admin">
+                        Admin Login
                     </a>
                 </li>
 
@@ -1504,7 +1485,6 @@ FOOTER
                 संपर्क जानकारी
             </h3>
 
-
             <p>
 
                 <i class="fa-solid fa-location-dot"></i>
@@ -1531,8 +1511,8 @@ FOOTER
 
                 <i class="fa-solid fa-envelope"></i>
 
-                <a href="mailto:info.yssfoundation@gmail.com">
-                    info.yssfoundation@gmail.com
+                <a href="mailto:info@yuvasevasankalp.org">
+                    info@yuvasevasankalp.org
                 </a>
 
             </p>
@@ -1560,12 +1540,9 @@ FOOTER
             </h3>
 
             <p>
-
                 हमारे समाचार और नवीनतम अपडेट
                 प्राप्त करें।
-
             </p>
-
 
             <form action="#"
                   method="post">
@@ -1576,11 +1553,8 @@ FOOTER
                     placeholder="अपना ईमेल दर्ज करें"
                     required>
 
-
                 <button type="submit">
-
                     सब्सक्राइब करें
-
                 </button>
 
             </form>
@@ -1590,28 +1564,21 @@ FOOTER
     </div>
 
 
-    <!-- FOOTER BOTTOM -->
+    <!-- COPYRIGHT -->
 
     <div class="footer-bottom">
 
         <div class="container footer-bottom-inner">
 
             <p>
-
                 © 2026 युवा सेवा संकल्प फाउंडेशन |
                 सर्वाधिकार सुरक्षित
-
             </p>
 
-
             <p>
-
                 Designed with
-
                 <i class="fa-solid fa-heart"></i>
-
                 for Society
-
             </p>
 
         </div>
@@ -1622,7 +1589,7 @@ FOOTER
 
 
 <!-- =====================================================
-BACK TO TOP
+     BACK TO TOP
 ===================================================== -->
 
 <button
@@ -1636,16 +1603,17 @@ BACK TO TOP
 
 
 <!-- =====================================================
-JAVASCRIPT
+     JAVASCRIPT
 ===================================================== -->
 
 <script>
 
-document.addEventListener("DOMContentLoaded", function(){
+document.addEventListener("DOMContentLoaded", function () {
 
-    /* =========================
+
+    /* =================================================
        MOBILE MENU
-    ========================= */
+    ================================================= */
 
     const menuBtn =
         document.getElementById("mobileMenuBtn");
@@ -1654,9 +1622,9 @@ document.addEventListener("DOMContentLoaded", function(){
         document.getElementById("navMenu");
 
 
-    if(menuBtn && navMenu){
+    if (menuBtn && navMenu) {
 
-        menuBtn.addEventListener("click", function(){
+        menuBtn.addEventListener("click", function () {
 
             navMenu.classList.toggle("show");
 
@@ -1664,13 +1632,13 @@ document.addEventListener("DOMContentLoaded", function(){
                 menuBtn.querySelector("i");
 
 
-            if(navMenu.classList.contains("show")){
+            if (navMenu.classList.contains("show")) {
 
                 icon.classList.remove("fa-bars");
 
                 icon.classList.add("fa-xmark");
 
-            }else{
+            } else {
 
                 icon.classList.remove("fa-xmark");
 
@@ -1683,23 +1651,26 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
 
-    /* =========================
+    /* =================================================
        MOBILE DROPDOWN
-    ========================= */
+    ================================================= */
 
     const dropdowns =
         document.querySelectorAll(".dropdown > a");
 
 
-    dropdowns.forEach(function(dropdown){
+    dropdowns.forEach(function (dropdown) {
 
-        dropdown.addEventListener("click",function(event){
+        dropdown.addEventListener("click", function (event) {
 
-            if(window.innerWidth <= 900){
+            if (window.innerWidth <= 900) {
 
                 event.preventDefault();
 
-                this.parentElement.classList.toggle("open");
+                const parent =
+                    this.parentElement;
+
+                parent.classList.toggle("open");
 
             }
 
@@ -1708,9 +1679,9 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
 
-    /* =========================
+    /* =================================================
        SEARCH
-    ========================= */
+    ================================================= */
 
     const searchBtn =
         document.getElementById("searchBtn");
@@ -1719,26 +1690,26 @@ document.addEventListener("DOMContentLoaded", function(){
         document.getElementById("searchBox");
 
 
-    if(searchBtn && searchBox){
+    if (searchBtn && searchBox) {
 
-        searchBtn.addEventListener("click",function(){
+        searchBtn.addEventListener("click", function () {
 
             searchBox.classList.toggle("show");
 
 
-            if(searchBox.classList.contains("show")){
+            if (searchBox.classList.contains("show")) {
 
                 const input =
                     searchBox.querySelector("input");
 
 
-                if(input){
+                if (input) {
 
-                    setTimeout(function(){
+                    setTimeout(function () {
 
                         input.focus();
 
-                    },200);
+                    }, 200);
 
                 }
 
@@ -1749,21 +1720,21 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
 
-    /* =========================
+    /* =================================================
        BACK TO TOP
-    ========================= */
+    ================================================= */
 
     const backToTop =
         document.getElementById("backToTop");
 
 
-    window.addEventListener("scroll",function(){
+    window.addEventListener("scroll", function () {
 
-        if(window.scrollY > 500){
+        if (window.scrollY > 500) {
 
             backToTop.classList.add("show");
 
-        }else{
+        } else {
 
             backToTop.classList.remove("show");
 
@@ -1772,15 +1743,15 @@ document.addEventListener("DOMContentLoaded", function(){
     });
 
 
-    if(backToTop){
+    if (backToTop) {
 
-        backToTop.addEventListener("click",function(){
+        backToTop.addEventListener("click", function () {
 
             window.scrollTo({
 
-                top:0,
+                top: 0,
 
-                behavior:"smooth"
+                behavior: "smooth"
 
             });
 
@@ -1789,42 +1760,45 @@ document.addEventListener("DOMContentLoaded", function(){
     }
 
 
-    /* =========================
-       CLOSE MENU AFTER LINK
-    ========================= */
+    /* =================================================
+       SMOOTH HASH LINKS
+    ================================================= */
 
-    document.querySelectorAll(".nav-menu a")
-    .forEach(function(link){
+    document
+        .querySelectorAll('a[href^="#"]')
+        .forEach(function (anchor) {
 
-        link.addEventListener("click",function(){
+            anchor.addEventListener("click", function (event) {
 
-            if(window.innerWidth <= 900){
+                const targetId =
+                    this.getAttribute("href");
 
-                if(
-                    !this.parentElement.classList.contains("dropdown")
-                ){
 
-                    navMenu.classList.remove("show");
+                if (
+                    targetId &&
+                    targetId !== "#" &&
+                    document.querySelector(targetId)
+                ) {
 
-                    const icon =
-                        menuBtn.querySelector("i");
+                    event.preventDefault();
 
-                    icon.classList.remove("fa-xmark");
 
-                    icon.classList.add("fa-bars");
+                    document
+                        .querySelector(targetId)
+                        .scrollIntoView({
+                            behavior: "smooth"
+                        });
 
                 }
 
-            }
+            });
 
         });
 
-    });
 
-
-    /* =========================
+    /* =================================================
        HERO DOTS
-    ========================= */
+    ================================================= */
 
     const dots =
         document.querySelectorAll(".hero-dots .dot");
@@ -1833,11 +1807,11 @@ document.addEventListener("DOMContentLoaded", function(){
     let currentDot = 0;
 
 
-    if(dots.length){
+    if (dots.length > 0) {
 
-        setInterval(function(){
+        setInterval(function () {
 
-            dots.forEach(function(dot){
+            dots.forEach(function (dot) {
 
                 dot.classList.remove("active");
 
@@ -1847,7 +1821,7 @@ document.addEventListener("DOMContentLoaded", function(){
             currentDot++;
 
 
-            if(currentDot >= dots.length){
+            if (currentDot >= dots.length) {
 
                 currentDot = 0;
 
@@ -1857,7 +1831,8 @@ document.addEventListener("DOMContentLoaded", function(){
             dots[currentDot]
                 .classList.add("active");
 
-        },4000);
+
+        }, 4000);
 
     }
 
