@@ -5403,3 +5403,181 @@ body{
     }
 
 }
+/* =========================================================
+   FINAL NAVIGATION FIX
+   ========================================================= */
+
+.main-nav{
+    width:100% !important;
+    background:#123b66 !important;
+    position:relative !important;
+    z-index:9999 !important;
+}
+
+.main-nav > .container{
+    width:94% !important;
+    max-width:1200px !important;
+    margin:auto !important;
+}
+
+.main-nav > .container > ul{
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:stretch !important;
+    flex-wrap:nowrap !important;
+    list-style:none !important;
+    margin:0 !important;
+    padding:0 !important;
+    gap:0 !important;
+}
+
+/* Main menu */
+.main-nav > .container > ul > li{
+    position:relative !important;
+    display:block !important;
+    width:auto !important;
+    height:auto !important;
+    flex:0 0 auto !important;
+    margin:0 !important;
+    padding:0 !important;
+}
+
+/* Main links */
+.main-nav > .container > ul > li > a{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    width:auto !important;
+    height:56px !important;
+
+    padding:0 15px !important;
+
+    background:#123b66 !important;
+    color:#fff !important;
+
+    font-size:15px !important;
+    font-weight:700 !important;
+
+    text-decoration:none !important;
+    white-space:nowrap !important;
+}
+
+/* Home */
+.main-nav > .container > ul > li:first-child > a{
+    background:#ff7900 !important;
+}
+
+/* Active */
+.main-nav > .container > ul > li.active > a{
+    background:#24834b !important;
+}
+
+/* Hover */
+.main-nav > .container > ul > li:hover > a{
+    background:#24834b !important;
+}
+
+
+/* =========================================================
+   ONLY REAL DROPDOWN
+   ========================================================= */
+
+.main-nav > .container > ul > li.dropdown-parent > .dropdown{
+    position:absolute !important;
+    top:56px !important;
+    left:0 !important;
+
+    display:none !important;
+
+    width:245px !important;
+    min-width:245px !important;
+    max-width:245px !important;
+
+    flex-direction:column !important;
+
+    margin:0 !important;
+    padding:0 !important;
+
+    background:#fff !important;
+
+    border:1px solid #ddd !important;
+    border-top:3px solid #24834b !important;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.18) !important;
+
+    z-index:999999 !important;
+}
+
+/* Hover करने पर सिर्फ यही dropdown खुले */
+.main-nav > .container > ul > li.dropdown-parent:hover > .dropdown{
+    display:flex !important;
+}
+
+/* Dropdown items */
+.main-nav > .container > ul > li.dropdown-parent > .dropdown > li{
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    flex:none !important;
+    margin:0 !important;
+    padding:0 !important;
+}
+
+/* Dropdown links */
+.main-nav > .container > ul > li.dropdown-parent > .dropdown > li > a{
+    display:flex !important;
+    align-items:center !important;
+
+    width:100% !important;
+    min-height:52px !important;
+
+    padding:14px 20px !important;
+
+    background:#fff !important;
+    color:#263746 !important;
+
+    font-size:16px !important;
+    font-weight:600 !important;
+
+    text-decoration:none !important;
+
+    border-bottom:1px solid #e5e5e5 !important;
+    box-sizing:border-box !important;
+}
+
+.main-nav > .container > ul > li.dropdown-parent > .dropdown > li > a:hover{
+    background:#eef8f1 !important;
+    color:#24834b !important;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media(max-width:700px){
+
+    .main-nav > .container > ul{
+        display:block !important;
+    }
+
+    .main-nav > .container > ul > li{
+        width:100% !important;
+    }
+
+    .main-nav > .container > ul > li > a{
+        width:100% !important;
+        justify-content:flex-start !important;
+        height:48px !important;
+        padding:0 18px !important;
+    }
+
+    .main-nav > .container > ul > li.dropdown-parent > .dropdown{
+        position:static !important;
+        width:100% !important;
+        min-width:100% !important;
+        max-width:100% !important;
+        box-shadow:none !important;
+    }
+}
