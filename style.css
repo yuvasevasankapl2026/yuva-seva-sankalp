@@ -5152,3 +5152,254 @@ body{
     }
 
 }
+/* =========================================================
+   MAIN NAVIGATION - FINAL FIX
+========================================================= */
+
+.main-nav{
+    width:100%;
+    background:#073763 !important;
+    position:relative;
+    z-index:9999;
+}
+
+.main-nav > .container{
+    width:100%;
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 !important;
+}
+
+.main-nav > .container > ul{
+    width:100%;
+    display:flex !important;
+    flex-direction:row !important;
+    align-items:stretch !important;
+    justify-content:flex-start !important;
+    list-style:none !important;
+    margin:0 !important;
+    padding:0 !important;
+    gap:0 !important;
+}
+
+/* हर मुख्य menu item */
+.main-nav > .container > ul > li{
+    position:relative !important;
+    display:block !important;
+    width:auto !important;
+    height:auto !important;
+    margin:0 !important;
+    padding:0 !important;
+    flex:0 0 auto !important;
+}
+
+/* Main menu links */
+.main-nav > .container > ul > li > a{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+    gap:7px !important;
+
+    height:56px !important;
+    padding:0 16px !important;
+
+    background:#073763 !important;
+    color:#fff !important;
+
+    text-decoration:none !important;
+    white-space:nowrap !important;
+
+    font-size:15px !important;
+    font-weight:700 !important;
+}
+
+/* HOME */
+.main-nav > .container > ul > li:first-child > a{
+    background:#f36f21 !important;
+}
+
+/* Active menu */
+.main-nav > .container > ul > li.active > a{
+    background:#198754 !important;
+}
+
+/* Hover */
+.main-nav > .container > ul > li:hover > a{
+    background:#198754 !important;
+}
+
+
+/* =========================================================
+   ABOUT DROPDOWN
+========================================================= */
+
+.main-nav .dropdown{
+    position:absolute !important;
+
+    top:56px !important;
+    left:0 !important;
+
+    width:245px !important;
+    min-width:245px !important;
+    max-width:245px !important;
+
+    display:none !important;
+
+    flex-direction:column !important;
+
+    margin:0 !important;
+    padding:0 !important;
+
+    background:#fff !important;
+
+    border:1px solid #e1e6ea !important;
+    border-top:3px solid #198754 !important;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.18) !important;
+
+    z-index:99999 !important;
+}
+
+/* Hover पर dropdown */
+.main-nav > .container > ul > li:hover > .dropdown{
+    display:flex !important;
+}
+
+
+/* Dropdown items */
+.main-nav .dropdown li{
+    display:block !important;
+    width:100% !important;
+    height:auto !important;
+    margin:0 !important;
+    padding:0 !important;
+    flex:none !important;
+}
+
+
+/* Dropdown links */
+.main-nav .dropdown li a{
+    display:flex !important;
+    align-items:center !important;
+
+    width:100% !important;
+    min-height:52px !important;
+
+    padding:14px 20px !important;
+
+    background:#fff !important;
+    color:#263746 !important;
+
+    border-bottom:1px solid #e5e5e5 !important;
+
+    text-decoration:none !important;
+
+    font-size:16px !important;
+    font-weight:600 !important;
+
+    white-space:nowrap !important;
+}
+
+
+/* Dropdown hover */
+.main-nav .dropdown li a:hover{
+    background:#eef8f1 !important;
+    color:#198754 !important;
+    padding-left:25px !important;
+}
+
+
+/* आखिरी item की border हटाएँ */
+.main-nav .dropdown li:last-child a{
+    border-bottom:none !important;
+}
+
+
+/* =========================================================
+   MAIN MENU GAP / WHITE SPACE FIX
+========================================================= */
+
+.main-nav,
+.main-nav ul,
+.main-nav li,
+.main-nav a{
+    box-sizing:border-box !important;
+}
+
+.main-nav > .container > ul > li > a{
+    border:0 !important;
+}
+
+
+/* किसी menu item को खाली white न रहने दें */
+.main-nav > .container > ul > li:not(.dropdown-parent) > a{
+    background:#073763 !important;
+}
+
+
+/* =========================================================
+   DESKTOP MENU SIZE
+========================================================= */
+
+@media(min-width:1001px){
+
+    .main-nav > .container > ul > li > a{
+        padding-left:15px !important;
+        padding-right:15px !important;
+    }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media(max-width:1000px){
+
+    .main-nav > .container > ul > li > a{
+        padding-left:11px !important;
+        padding-right:11px !important;
+        font-size:14px !important;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:700px){
+
+    .main-nav > .container > ul{
+        display:block !important;
+    }
+
+    .main-nav > .container > ul > li{
+        width:100% !important;
+    }
+
+    .main-nav > .container > ul > li > a{
+        width:100% !important;
+        justify-content:flex-start !important;
+        height:48px !important;
+        padding:0 18px !important;
+    }
+
+    .main-nav .dropdown{
+        position:static !important;
+
+        width:100% !important;
+        min-width:100% !important;
+        max-width:100% !important;
+
+        box-shadow:none !important;
+        border-top:1px solid #198754 !important;
+    }
+
+    .main-nav > .container > ul > li:hover > .dropdown{
+        display:flex !important;
+    }
+
+}
