@@ -5581,3 +5581,198 @@ body{
         box-shadow:none !important;
     }
 }
+/* =====================================================
+   FINAL DESKTOP MENU FIX
+===================================================== */
+
+.main-nav{
+    width:100% !important;
+    background:#073763 !important;
+}
+
+.main-nav .container{
+    width:100% !important;
+    max-width:1400px !important;
+    margin:0 auto !important;
+    padding:0 10px !important;
+}
+
+.main-nav > .container > ul{
+    width:100% !important;
+    min-height:56px !important;
+
+    display:flex !important;
+    flex-direction:row !important;
+    flex-wrap:nowrap !important;
+
+    align-items:center !important;
+    justify-content:center !important;
+
+    list-style:none !important;
+    margin:0 !important;
+    padding:0 !important;
+
+    overflow:visible !important;
+}
+
+.main-nav > .container > ul > li{
+    position:relative !important;
+
+    display:block !important;
+    width:auto !important;
+
+    margin:0 !important;
+    padding:0 !important;
+
+    flex:0 0 auto !important;
+}
+
+.main-nav > .container > ul > li > a{
+    height:56px !important;
+
+    display:flex !important;
+    align-items:center !important;
+    justify-content:center !important;
+
+    gap:5px !important;
+
+    padding:0 11px !important;
+
+    white-space:nowrap !important;
+
+    font-size:14px !important;
+    font-weight:700 !important;
+
+    background:#073763 !important;
+    color:#fff !important;
+
+    text-decoration:none !important;
+}
+
+/* होम */
+.main-nav > .container > ul > li:first-child > a{
+    background:#f36f21 !important;
+}
+
+/* Active */
+.main-nav > .container > ul > li.active > a{
+    background:#198754 !important;
+}
+
+/* Hover */
+.main-nav > .container > ul > li:hover > a{
+    background:#198754 !important;
+}
+
+
+/* DROPDOWN */
+.main-nav .dropdown{
+    position:absolute !important;
+
+    top:56px !important;
+    left:0 !important;
+
+    width:240px !important;
+    min-width:240px !important;
+
+    display:none !important;
+    flex-direction:column !important;
+
+    margin:0 !important;
+    padding:0 !important;
+
+    background:#fff !important;
+
+    z-index:99999 !important;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.20) !important;
+}
+
+/* संस्था के बारे में hover */
+.main-nav > .container > ul > li:hover > .dropdown{
+    display:flex !important;
+}
+
+.main-nav .dropdown li{
+    display:block !important;
+    width:100% !important;
+}
+
+.main-nav .dropdown li a{
+    display:block !important;
+
+    width:100% !important;
+    min-height:50px !important;
+
+    padding:14px 18px !important;
+
+    background:#fff !important;
+    color:#263746 !important;
+
+    border-bottom:1px solid #e5e5e5 !important;
+
+    text-decoration:none !important;
+
+    white-space:nowrap !important;
+}
+
+.main-nav .dropdown li a:hover{
+    background:#eef8f1 !important;
+    color:#24834b !important;
+}
+
+
+/* =====================================================
+   LAPTOP / TABLET
+===================================================== */
+
+@media(max-width:1200px){
+
+    .main-nav > .container > ul > li > a{
+        padding:0 8px !important;
+        font-size:12px !important;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:700px){
+
+    .main-nav .container{
+        padding:0 !important;
+    }
+
+    .main-nav > .container > ul{
+        display:block !important;
+        min-height:auto !important;
+    }
+
+    .main-nav > .container > ul > li{
+        width:100% !important;
+    }
+
+    .main-nav > .container > ul > li > a{
+        width:100% !important;
+        height:48px !important;
+
+        justify-content:flex-start !important;
+
+        padding:0 18px !important;
+
+        font-size:14px !important;
+    }
+
+    .main-nav .dropdown{
+        position:static !important;
+
+        width:100% !important;
+        min-width:100% !important;
+
+        box-shadow:none !important;
+    }
+
+}
