@@ -13,8 +13,7 @@
 
     <title>Admin Login | युवा सेवा संकल्प फाउंडेशन</title>
 
-    <link rel="icon"
-          href="images/logo.png">
+    <link rel="icon" href="images/logo.png">
 
     <!-- Google Font -->
     <link rel="preconnect"
@@ -31,891 +30,1020 @@
     <link rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- Main CSS -->
-    <link rel="stylesheet"
-          href="style.css">
 
+<style>
 
-    <style>
+/* =====================================================
+   RESET
+===================================================== */
 
-        /* =====================================================
-           ADMIN LOGIN PAGE
-        ===================================================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        *{
-            box-sizing:border-box;
-            margin:0;
-            padding:0;
-        }
+html{
+    scroll-behavior:smooth;
+}
 
-        body{
-            font-family:
-                "Noto Sans Devanagari",
-                "Mangal",
-                Arial,
-                sans-serif;
+body{
+    font-family:
+        "Noto Sans Devanagari",
+        "Mangal",
+        Arial,
+        sans-serif;
 
-            min-height:100vh;
+    min-height:100vh;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #082e63 0%,
-                    #123b66 45%,
-                    #1d5d96 100%
-                );
+    background:
+        linear-gradient(
+            135deg,
+            #071f45 0%,
+            #0d3869 45%,
+            #1d5d96 100%
+        );
 
-            color:#263746;
-        }
+    color:#263746;
+}
 
 
-        /* =====================================================
-           PAGE WRAPPER
-        ===================================================== */
+/* =====================================================
+   PAGE
+===================================================== */
 
-        .admin-page{
-            min-height:100vh;
+.login-page{
 
-            display:flex;
-            align-items:center;
-            justify-content:center;
+    min-height:100vh;
 
-            padding:35px 18px;
+    display:flex;
 
-            position:relative;
-            overflow:hidden;
-        }
+    align-items:center;
+    justify-content:center;
 
+    padding:30px 18px;
 
-        /* Background circles */
+    position:relative;
 
-        .admin-page::before{
-            content:"";
+    overflow:hidden;
+}
 
-            position:absolute;
 
-            width:450px;
-            height:450px;
+/* Background decoration */
 
-            border-radius:50%;
+.login-page::before{
 
-            background:
-                rgba(255,255,255,.06);
+    content:"";
 
-            top:-180px;
-            right:-130px;
-        }
+    position:absolute;
 
+    width:500px;
+    height:500px;
 
-        .admin-page::after{
-            content:"";
+    border-radius:50%;
 
-            position:absolute;
+    background:
+        rgba(255,255,255,.045);
 
-            width:350px;
-            height:350px;
+    top:-260px;
+    right:-180px;
+}
 
-            border-radius:50%;
 
-            background:
-                rgba(255,121,0,.10);
+.login-page::after{
 
-            bottom:-160px;
-            left:-120px;
-        }
+    content:"";
 
+    position:absolute;
 
-        /* =====================================================
-           LOGIN CONTAINER
-        ===================================================== */
+    width:400px;
+    height:400px;
 
-        .admin-container{
+    border-radius:50%;
 
-            width:100%;
-            max-width:1050px;
+    background:
+        rgba(255,121,0,.07);
 
-            display:grid;
+    bottom:-220px;
+    left:-180px;
+}
 
-            grid-template-columns:
-                1fr 1fr;
 
-            background:#fff;
+/* =====================================================
+   MAIN CARD
+===================================================== */
 
-            border-radius:28px;
+.login-card{
 
-            overflow:hidden;
+    width:100%;
+    max-width:1080px;
 
-            box-shadow:
-                0 25px 70px
-                rgba(0,0,0,.25);
+    min-height:650px;
 
-            position:relative;
+    background:#fff;
 
-            z-index:2;
-        }
+    border-radius:28px;
 
+    overflow:hidden;
 
-        /* =====================================================
-           LEFT PANEL
-        ===================================================== */
+    display:grid;
 
-        .admin-info{
+    grid-template-columns:46% 54%;
 
-            padding:55px 45px;
+    position:relative;
 
-            background:
-                linear-gradient(
-                    145deg,
-                    #123b66,
-                    #1d5d96
-                );
+    z-index:5;
 
-            color:#fff;
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.28);
+}
 
-            position:relative;
 
-            overflow:hidden;
-        }
+/* =====================================================
+   LEFT SIDE
+===================================================== */
 
+.login-left{
 
-        .admin-info::before{
+    position:relative;
 
-            content:"";
+    padding:55px 48px;
 
-            position:absolute;
+    color:#fff;
 
-            width:220px;
-            height:220px;
+    overflow:hidden;
 
-            border-radius:50%;
+    background:
+        linear-gradient(
+            150deg,
+            #082e63 0%,
+            #123b66 50%,
+            #1d5d96 100%
+        );
+}
 
-            background:
-                rgba(255,255,255,.06);
 
-            right:-80px;
-            top:-70px;
-        }
+/* decorative circle */
 
+.login-left::before{
 
-        .admin-info::after{
+    content:"";
 
-            content:"";
+    position:absolute;
 
-            position:absolute;
+    width:320px;
+    height:320px;
 
-            width:180px;
-            height:180px;
+    border-radius:50%;
 
-            border-radius:50%;
+    right:-160px;
+    top:-120px;
 
-            background:
-                rgba(255,121,0,.12);
+    border:55px solid
+        rgba(255,255,255,.035);
+}
 
-            left:-90px;
-            bottom:-80px;
-        }
 
+/* orange glow */
 
-        .admin-logo{
+.login-left::after{
 
-            width:115px;
-            height:115px;
+    content:"";
 
-            object-fit:contain;
+    position:absolute;
 
-            background:#fff;
+    width:240px;
+    height:240px;
 
-            padding:8px;
+    border-radius:50%;
 
-            border-radius:50%;
+    left:-120px;
+    bottom:-120px;
 
-            display:block;
+    background:
+        rgba(255,121,0,.10);
+}
 
-            margin-bottom:25px;
 
-            position:relative;
-            z-index:2;
-        }
+/* =====================================================
+   BRAND
+===================================================== */
 
+.brand{
 
-        .admin-info h1{
+    position:relative;
 
-            font-size:34px;
+    z-index:2;
 
-            line-height:1.3;
+    display:flex;
 
-            margin-bottom:8px;
+    align-items:center;
 
-            font-weight:800;
+    gap:17px;
 
-            position:relative;
-            z-index:2;
-        }
+    margin-bottom:45px;
+}
 
 
-        .admin-info h1 span{
+.brand img{
 
-            color:#ffb15c;
-        }
+    width:90px;
+    height:90px;
 
+    object-fit:contain;
 
-        .admin-tagline{
+    background:#fff;
 
-            font-size:16px;
+    border-radius:50%;
 
-            font-weight:600;
+    padding:5px;
 
-            margin-bottom:28px;
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,.18);
+}
 
-            color:#e8f1f8;
 
-            position:relative;
-            z-index:2;
-        }
+.brand-text h1{
 
+    font-size:25px;
 
-        .admin-info-text{
+    line-height:1.35;
 
-            font-size:15px;
+    font-weight:800;
 
-            line-height:1.9;
+    color:#fff;
+}
 
-            color:#e0ebf3;
 
-            max-width:470px;
+.brand-text h1 span{
 
-            position:relative;
-            z-index:2;
-        }
+    color:#ff9a3d;
+}
 
 
-        /* =====================================================
-           ADMIN FEATURES
-        ===================================================== */
+.brand-text p{
 
-        .admin-features{
+    margin-top:4px;
 
-            margin-top:30px;
+    font-size:12px;
 
-            display:flex;
+    color:#dbe8f3;
 
-            flex-direction:column;
+    font-weight:600;
+}
 
-            gap:14px;
 
-            position:relative;
-            z-index:2;
-        }
+/* =====================================================
+   LEFT CONTENT
+===================================================== */
 
+.left-content{
 
-        .admin-feature{
+    position:relative;
 
-            display:flex;
+    z-index:2;
+}
 
-            align-items:center;
 
-            gap:12px;
-        }
+.left-badge{
 
+    display:inline-flex;
 
-        .admin-feature-icon{
+    align-items:center;
 
-            width:40px;
-            height:40px;
+    gap:8px;
 
-            border-radius:50%;
+    padding:8px 14px;
 
-            display:flex;
+    border-radius:30px;
 
-            align-items:center;
-            justify-content:center;
+    background:
+        rgba(255,255,255,.10);
 
-            background:
-                rgba(255,255,255,.12);
+    border:
+        1px solid
+        rgba(255,255,255,.15);
 
-            color:#ffb15c;
+    font-size:12px;
 
-            flex-shrink:0;
-        }
+    font-weight:700;
 
+    margin-bottom:20px;
+}
 
-        .admin-feature span{
 
-            font-size:14px;
+.left-content h2{
 
-            color:#eef5fa;
-        }
+    font-size:40px;
 
+    line-height:1.25;
 
-        /* =====================================================
-           RIGHT LOGIN PANEL
-        ===================================================== */
+    font-weight:800;
 
-        .admin-login{
+    margin-bottom:15px;
+}
 
-            padding:50px 45px;
 
-            display:flex;
+.left-content h2 span{
 
-            flex-direction:column;
+    color:#ff8a22;
+}
 
-            justify-content:center;
-        }
 
+.left-content > p{
 
-        .login-icon{
+    color:#dbe8f3;
 
-            width:70px;
-            height:70px;
+    font-size:14px;
 
-            border-radius:18px;
+    line-height:1.9;
 
-            display:flex;
+    max-width:450px;
+}
 
-            align-items:center;
-            justify-content:center;
 
-            background:#fff0e7;
+/* =====================================================
+   FEATURES
+===================================================== */
 
-            color:#ff7900;
+.features{
 
-            font-size:30px;
+    margin-top:30px;
 
-            margin-bottom:18px;
-        }
+    display:flex;
 
+    flex-direction:column;
 
-        .admin-login h2{
+    gap:15px;
+}
 
-            color:#123b66;
 
-            font-size:30px;
+.feature{
 
-            margin-bottom:7px;
+    display:flex;
 
-            font-weight:800;
-        }
+    align-items:center;
 
+    gap:13px;
+}
 
-        .login-subtitle{
 
-            color:#71808f;
+.feature-icon{
 
-            font-size:14px;
+    width:42px;
+    height:42px;
 
-            line-height:1.7;
+    border-radius:12px;
 
-            margin-bottom:28px;
-        }
+    display:flex;
 
+    align-items:center;
+    justify-content:center;
 
-        /* =====================================================
-           FORM
-        ===================================================== */
+    background:
+        rgba(255,255,255,.10);
 
-        .admin-form{
+    color:#ffad60;
 
-            width:100%;
-        }
+    flex-shrink:0;
+}
 
 
-        .admin-form-group{
+.feature-text strong{
 
-            margin-bottom:19px;
-        }
+    display:block;
 
+    font-size:13px;
 
-        .admin-form-group label{
+    color:#fff;
+}
 
-            display:block;
 
-            margin-bottom:7px;
+.feature-text span{
 
-            color:#263746;
+    display:block;
 
-            font-size:14px;
+    margin-top:2px;
 
-            font-weight:700;
-        }
+    font-size:10px;
 
+    color:#bcd0df;
+}
 
-        .input-box{
 
-            position:relative;
-        }
+/* =====================================================
+   RIGHT SIDE
+===================================================== */
 
+.login-right{
 
-        .input-box > i{
+    padding:55px 60px;
 
-            position:absolute;
+    display:flex;
 
-            left:15px;
+    flex-direction:column;
 
-            top:50%;
+    justify-content:center;
 
-            transform:translateY(-50%);
+    background:#fff;
+}
 
-            color:#71808f;
 
-            font-size:16px;
+/* =====================================================
+   LOGIN HEADER
+===================================================== */
 
-            pointer-events:none;
-        }
+.login-heading{
 
+    margin-bottom:28px;
+}
 
-        .input-box input{
 
-            width:100%;
+.login-icon{
 
-            height:52px;
+    width:62px;
+    height:62px;
 
-            border:1px solid #d9e3ec;
+    border-radius:17px;
 
-            border-radius:11px;
+    display:flex;
 
-            padding:
-                0 45px 0 45px;
+    align-items:center;
+    justify-content:center;
 
-            outline:none;
+    background:#fff1e7;
 
-            font-family:inherit;
+    color:#f47700;
 
-            font-size:14px;
+    font-size:27px;
 
-            color:#263746;
+    margin-bottom:18px;
+}
 
-            background:#f8fafc;
 
-            transition:.2s;
-        }
+.login-heading h2{
 
+    color:#123b66;
 
-        .input-box input:focus{
+    font-size:32px;
 
-            border-color:#1d5d96;
+    font-weight:800;
 
-            background:#fff;
+    margin-bottom:6px;
+}
 
-            box-shadow:
-                0 0 0 4px
-                rgba(29,93,150,.10);
-        }
 
+.login-heading p{
 
-        .password-toggle{
+    color:#728293;
 
-            position:absolute;
+    font-size:13px;
 
-            right:14px;
+    line-height:1.7;
+}
 
-            top:50%;
 
-            transform:translateY(-50%);
+/* =====================================================
+   FORM
+===================================================== */
 
-            border:0;
+.form-group{
 
-            background:transparent;
+    margin-bottom:19px;
+}
 
-            color:#71808f;
 
-            cursor:pointer;
+.form-group label{
 
-            font-size:16px;
+    display:block;
 
-            padding:5px;
-        }
+    color:#243746;
 
+    font-size:13px;
 
-        /* =====================================================
-           OPTIONS
-        ===================================================== */
+    font-weight:800;
 
-        .login-options{
+    margin-bottom:7px;
+}
 
-            display:flex;
 
-            align-items:center;
+.input-wrap{
 
-            justify-content:space-between;
+    position:relative;
+}
 
-            gap:10px;
 
-            margin:4px 0 22px;
-        }
+.input-wrap > i{
 
+    position:absolute;
 
-        .remember-me{
+    left:16px;
 
-            display:flex;
+    top:50%;
 
-            align-items:center;
+    transform:translateY(-50%);
 
-            gap:7px;
+    color:#7890a3;
 
-            color:#647484;
+    font-size:15px;
 
-            font-size:12px;
+    z-index:2;
+}
 
-            cursor:pointer;
-        }
 
+.input-wrap input{
 
-        .remember-me input{
+    width:100%;
 
-            accent-color:#123b66;
+    height:54px;
 
-        }
+    border:1px solid #d8e2eb;
 
+    border-radius:12px;
 
-        .forgot-password{
+    background:#f8fafc;
 
-            color:#1d5d96;
+    padding:
+        0 48px 0 46px;
 
-            font-size:12px;
+    outline:none;
 
-            font-weight:700;
+    font-family:inherit;
 
-            text-decoration:none;
-        }
+    font-size:14px;
 
+    color:#263746;
 
-        .forgot-password:hover{
+    transition:.25s;
+}
 
-            color:#ff7900;
-        }
 
+.input-wrap input::placeholder{
 
-        /* =====================================================
-           LOGIN BUTTON
-        ===================================================== */
+    color:#9aa8b5;
+}
 
-        .admin-submit{
 
-            width:100%;
+.input-wrap input:focus{
 
-            min-height:54px;
+    border-color:#1d5d96;
 
-            border:0;
+    background:#fff;
 
-            border-radius:11px;
+    box-shadow:
+        0 0 0 4px
+        rgba(29,93,150,.09);
+}
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #ff7900,
-                    #e86500
-                );
 
-            color:#fff;
+/* password button */
 
-            font-family:inherit;
+.password-btn{
 
-            font-size:15px;
+    position:absolute;
 
-            font-weight:800;
+    right:13px;
 
-            cursor:pointer;
+    top:50%;
 
-            display:flex;
+    transform:translateY(-50%);
 
-            align-items:center;
+    width:32px;
+    height:32px;
 
-            justify-content:center;
+    border:0;
 
-            gap:10px;
+    background:transparent;
 
-            transition:.25s;
+    color:#738596;
 
-            box-shadow:
-                0 8px 20px
-                rgba(255,121,0,.22);
-        }
+    cursor:pointer;
 
+    border-radius:8px;
 
-        .admin-submit:hover{
+    display:flex;
 
-            transform:translateY(-2px);
+    align-items:center;
+    justify-content:center;
+}
 
-            box-shadow:
-                0 12px 25px
-                rgba(255,121,0,.30);
-        }
 
+.password-btn:hover{
 
-        .admin-submit:active{
+    color:#123b66;
 
-            transform:translateY(0);
-        }
+    background:#eef3f7;
+}
 
 
-        /* =====================================================
-           RESULT MESSAGE
-        ===================================================== */
+/* =====================================================
+   OPTIONS
+===================================================== */
 
-        .login-result{
+.login-options{
 
-            min-height:22px;
+    display:flex;
 
-            margin-top:14px;
+    align-items:center;
 
-            text-align:center;
+    justify-content:space-between;
 
-            font-size:13px;
+    margin:
+        2px 0 22px;
+}
 
-            font-weight:700;
-        }
 
+.remember{
 
-        /* =====================================================
-           SECURITY NOTE
-        ===================================================== */
+    display:flex;
 
-        .security-note{
+    align-items:center;
 
-            margin-top:20px;
+    gap:7px;
 
-            padding:12px 14px;
+    font-size:12px;
 
-            border-radius:10px;
+    color:#667789;
 
-            background:#f3f7fb;
+    cursor:pointer;
+}
 
-            color:#647484;
 
-            font-size:11px;
+.remember input{
 
-            line-height:1.6;
+    width:15px;
+    height:15px;
 
-            display:flex;
+    accent-color:#123b66;
+}
 
-            gap:9px;
 
-            align-items:flex-start;
-        }
+.forgot{
 
+    border:0;
 
-        .security-note i{
+    background:none;
 
-            color:#24834b;
+    color:#1d5d96;
 
-            margin-top:2px;
-        }
+    font-family:inherit;
 
+    font-size:12px;
 
-        /* =====================================================
-           BACK HOME
-        ===================================================== */
+    font-weight:700;
 
-        .back-home{
+    cursor:pointer;
+}
 
-            display:flex;
 
-            align-items:center;
+.forgot:hover{
 
-            justify-content:center;
+    color:#ff7900;
+}
 
-            gap:7px;
 
-            margin-top:22px;
+/* =====================================================
+   LOGIN BUTTON
+===================================================== */
 
-            color:#123b66;
+.login-button{
 
-            font-size:13px;
+    width:100%;
 
-            font-weight:700;
+    height:55px;
 
-            text-decoration:none;
-        }
+    border:0;
 
+    border-radius:12px;
 
-        .back-home:hover{
+    background:
+        linear-gradient(
+            135deg,
+            #ff7900,
+            #e76500
+        );
 
-            color:#ff7900;
-        }
+    color:#fff;
 
+    font-family:inherit;
 
-        /* =====================================================
-           FOOTER TEXT
-        ===================================================== */
+    font-size:15px;
 
-        .admin-copyright{
+    font-weight:800;
 
-            position:absolute;
+    cursor:pointer;
 
-            bottom:14px;
+    display:flex;
 
-            left:0;
-            right:0;
+    align-items:center;
+    justify-content:center;
 
-            text-align:center;
+    gap:9px;
 
-            color:
-                rgba(255,255,255,.70);
+    box-shadow:
+        0 8px 22px
+        rgba(255,121,0,.22);
 
-            font-size:11px;
+    transition:.25s;
+}
 
-            z-index:3;
-        }
 
+.login-button:hover{
 
-        /* =====================================================
-           RESPONSIVE
-        ===================================================== */
+    transform:translateY(-2px);
 
-        @media(max-width:850px){
+    box-shadow:
+        0 12px 28px
+        rgba(255,121,0,.30);
+}
 
-            .admin-container{
 
-                max-width:600px;
+.login-button:active{
 
-                grid-template-columns:1fr;
-            }
+    transform:translateY(0);
+}
 
 
-            .admin-info{
+/* =====================================================
+   RESULT
+===================================================== */
 
-                padding:35px 30px;
+.login-result{
 
-                text-align:center;
-            }
+    min-height:21px;
 
+    text-align:center;
 
-            .admin-logo{
+    font-size:12px;
 
-                margin:
-                    0 auto 18px;
-            }
+    font-weight:700;
 
+    margin-top:12px;
+}
 
-            .admin-info h1{
 
-                font-size:29px;
-            }
+/* =====================================================
+   SECURITY
+===================================================== */
 
+.security-box{
 
-            .admin-features{
+    display:flex;
 
-                display:grid;
+    align-items:flex-start;
 
-                grid-template-columns:
-                    1fr 1fr;
+    gap:9px;
 
-                text-align:left;
-            }
+    margin-top:18px;
 
+    padding:12px 13px;
 
-            .admin-login{
+    background:#f3f7fa;
 
-                padding:38px 30px;
-            }
+    border:1px solid #e4ebf1;
 
+    border-radius:10px;
 
-            .login-icon{
+    color:#6d7c8b;
 
-                margin-left:auto;
-                margin-right:auto;
-            }
+    font-size:10px;
 
+    line-height:1.6;
+}
 
-            .admin-login h2,
-            .login-subtitle{
 
-                text-align:center;
-            }
+.security-box i{
 
-        }
+    color:#24834b;
 
+    margin-top:2px;
+}
 
-        @media(max-width:520px){
 
-            .admin-page{
+/* =====================================================
+   BACK LINK
+===================================================== */
 
-                padding:
-                    20px 12px 55px;
+.back-home{
 
-                align-items:flex-start;
-            }
+    margin-top:21px;
 
+    display:flex;
 
-            .admin-container{
+    justify-content:center;
 
-                border-radius:20px;
+    align-items:center;
 
-                margin-top:10px;
-            }
+    gap:7px;
 
+    color:#123b66;
 
-            .admin-info{
+    font-size:12px;
 
-                padding:30px 20px;
-            }
+    font-weight:800;
 
+    text-decoration:none;
+}
 
-            .admin-logo{
 
-                width:90px;
-                height:90px;
-            }
+.back-home:hover{
 
+    color:#ff7900;
+}
 
-            .admin-info h1{
 
-                font-size:25px;
-            }
+/* =====================================================
+   COPYRIGHT
+===================================================== */
 
+.copyright{
 
-            .admin-tagline{
+    position:absolute;
 
-                font-size:14px;
-            }
+    z-index:10;
 
+    bottom:10px;
 
-            .admin-info-text{
+    left:0;
+    right:0;
 
-                font-size:13px;
-            }
+    text-align:center;
 
+    color:
+        rgba(255,255,255,.65);
 
-            .admin-features{
+    font-size:10px;
+}
 
-                grid-template-columns:1fr;
 
-                gap:10px;
-            }
+/* =====================================================
+   TABLET
+===================================================== */
 
+@media(max-width:900px){
 
-            .admin-login{
+    .login-card{
 
-                padding:32px 20px;
-            }
+        max-width:620px;
 
+        grid-template-columns:1fr;
+    }
 
-            .admin-login h2{
 
-                font-size:25px;
-            }
+    .login-left{
 
+        padding:35px 35px;
+    }
 
-            .login-options{
 
-                align-items:flex-start;
+    .brand{
 
-                flex-direction:column;
-            }
+        margin-bottom:28px;
+    }
 
 
-            .admin-copyright{
+    .left-content h2{
 
-                bottom:8px;
+        font-size:32px;
+    }
 
-                padding:0 10px;
 
-                font-size:10px;
-            }
+    .features{
 
-        }
+        display:grid;
 
-    </style>
+        grid-template-columns:1fr 1fr;
+
+        gap:13px;
+    }
+
+
+    .login-right{
+
+        padding:40px 40px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:560px){
+
+    .login-page{
+
+        padding:
+            15px 10px 45px;
+
+        align-items:flex-start;
+    }
+
+
+    .login-card{
+
+        margin-top:8px;
+
+        border-radius:20px;
+    }
+
+
+    .login-left{
+
+        padding:28px 20px;
+    }
+
+
+    .brand{
+
+        gap:12px;
+
+        margin-bottom:25px;
+    }
+
+
+    .brand img{
+
+        width:70px;
+        height:70px;
+    }
+
+
+    .brand-text h1{
+
+        font-size:19px;
+    }
+
+
+    .brand-text p{
+
+        font-size:10px;
+    }
+
+
+    .left-content h2{
+
+        font-size:27px;
+    }
+
+
+    .left-content > p{
+
+        font-size:12px;
+
+        line-height:1.8;
+    }
+
+
+    .features{
+
+        grid-template-columns:1fr;
+
+        gap:11px;
+
+        margin-top:22px;
+    }
+
+
+    .feature-icon{
+
+        width:38px;
+        height:38px;
+    }
+
+
+    .login-right{
+
+        padding:32px 20px;
+    }
+
+
+    .login-heading h2{
+
+        font-size:27px;
+    }
+
+
+    .login-options{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:11px;
+    }
+
+
+    .copyright{
+
+        font-size:9px;
+    }
+
+}
+
+</style>
 
 </head>
 
@@ -923,162 +1051,219 @@
 <body>
 
 
-<div class="admin-page">
+<div class="login-page">
 
 
-    <div class="admin-container">
+    <main class="login-card">
 
 
         <!-- =================================================
-             LEFT INFORMATION
+             LEFT
         ================================================== -->
 
-        <div class="admin-info">
+        <section class="login-left">
 
 
-            <img
-                src="images/logo.png"
-                alt="युवा सेवा संकल्प फाउंडेशन लोगो"
-                class="admin-logo"
-            >
+            <div class="brand">
 
+                <img
+                    src="images/logo.png"
+                    alt="युवा सेवा संकल्प फाउंडेशन">
 
-            <h1>
-                युवा सेवा संकल्प
-                <span>फाउंडेशन</span>
-            </h1>
+                <div class="brand-text">
 
+                    <h1>
+                        युवा सेवा संकल्प
+                        <span>फाउंडेशन</span>
+                    </h1>
 
-            <p class="admin-tagline">
-                युवा शक्ति - राष्ट्र शक्ति
-            </p>
-
-
-            <p class="admin-info-text">
-
-                यह संस्था के प्रशासनिक क्षेत्र में प्रवेश
-                करने के लिए सुरक्षित Admin Login है।
-
-                कृपया केवल अधिकृत Administrator ही
-                अपने Login विवरण का उपयोग करें।
-
-            </p>
-
-
-            <div class="admin-features">
-
-
-                <div class="admin-feature">
-
-                    <div class="admin-feature-icon">
-                        <i class="fa-solid fa-shield-halved"></i>
-                    </div>
-
-                    <span>
-                        सुरक्षित प्रशासनिक प्रवेश
-                    </span>
+                    <p>
+                        युवा शक्ति - राष्ट्र शक्ति
+                    </p>
 
                 </div>
-
-
-                <div class="admin-feature">
-
-                    <div class="admin-feature-icon">
-                        <i class="fa-solid fa-users"></i>
-                    </div>
-
-                    <span>
-                        सदस्य एवं वॉलंटियर प्रबंधन
-                    </span>
-
-                </div>
-
-
-                <div class="admin-feature">
-
-                    <div class="admin-feature-icon">
-                        <i class="fa-solid fa-chart-line"></i>
-                    </div>
-
-                    <span>
-                        संस्था की गतिविधियों की निगरानी
-                    </span>
-
-                </div>
-
-
-                <div class="admin-feature">
-
-                    <div class="admin-feature-icon">
-                        <i class="fa-solid fa-database"></i>
-                    </div>
-
-                    <span>
-                        रिकॉर्ड एवं डेटा प्रबंधन
-                    </span>
-
-                </div>
-
 
             </div>
 
 
-        </div>
+            <div class="left-content">
+
+
+                <div class="left-badge">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    सुरक्षित प्रशासनिक क्षेत्र
+
+                </div>
+
+
+                <h2>
+
+                    Admin
+                    <br>
+
+                    <span>Control Panel</span>
+
+                </h2>
+
+
+                <p>
+
+                    युवा सेवा संकल्प फाउंडेशन के
+                    प्रशासनिक कार्यों को सुरक्षित और
+                    व्यवस्थित रूप से संचालित करने के लिए
+                    Admin Panel में प्रवेश करें।
+
+                </p>
+
+
+                <div class="features">
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+
+                        <div class="feature-text">
+
+                            <strong>
+                                सदस्य एवं वॉलंटियर
+                            </strong>
+
+                            <span>
+                                Registration management
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-calendar-days"></i>
+                        </div>
+
+                        <div class="feature-text">
+
+                            <strong>
+                                कार्यक्रम एवं समाचार
+                            </strong>
+
+                            <span>
+                                Events & News management
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+
+                        <div class="feature-text">
+
+                            <strong>
+                                संस्था की गतिविधियाँ
+                            </strong>
+
+                            <span>
+                                Activity overview
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="feature">
+
+                        <div class="feature-icon">
+                            <i class="fa-solid fa-database"></i>
+                        </div>
+
+                        <div class="feature-text">
+
+                            <strong>
+                                रिकॉर्ड प्रबंधन
+                            </strong>
+
+                            <span>
+                                Data & records
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
 
 
         <!-- =================================================
-             LOGIN
+             RIGHT
         ================================================== -->
 
-        <div class="admin-login">
+        <section class="login-right">
 
 
-            <div class="login-icon">
+            <div class="login-heading">
 
-                <i class="fa-solid fa-user-shield"></i>
+
+                <div class="login-icon">
+
+                    <i class="fa-solid fa-user-shield"></i>
+
+                </div>
+
+
+                <h2>
+                    Admin Login
+                </h2>
+
+
+                <p>
+                    केवल अधिकृत Administrator के लिए
+                    सुरक्षित प्रवेश।
+                </p>
 
             </div>
 
 
-            <h2>
-                Admin Login
-            </h2>
-
-
-            <p class="login-subtitle">
-
-                अपने प्रशासनिक Dashboard में प्रवेश करने
-                के लिए नीचे Login करें।
-
-            </p>
-
-
-            <form
-                class="admin-form"
-                id="adminLoginForm"
-                autocomplete="on"
-            >
+            <form id="adminLoginForm"
+                  autocomplete="on">
 
 
                 <!-- USERNAME -->
 
-                <div class="admin-form-group">
+                <div class="form-group">
 
                     <label for="adminUsername">
-                        Admin Username
+                        Username / Email
                     </label>
 
 
-                    <div class="input-box">
+                    <div class="input-wrap">
 
                         <i class="fa-solid fa-user"></i>
-
 
                         <input
                             type="text"
                             id="adminUsername"
                             name="username"
-                            placeholder="Admin Username"
+                            placeholder="Admin username या email"
                             autocomplete="username"
                             required
                         >
@@ -1090,316 +1275,6 @@
 
                 <!-- PASSWORD -->
 
-                <div class="admin-form-group">
+                <div class="form-group">
 
-                    <label for="adminPassword">
-                        Password
-                    </label>
-
-
-                    <div class="input-box">
-
-                        <i class="fa-solid fa-lock"></i>
-
-
-                        <input
-                            type="password"
-                            id="adminPassword"
-                            name="password"
-                            placeholder="अपना Password दर्ज करें"
-                            autocomplete="current-password"
-                            required
-                        >
-
-
-                        <button
-                            type="button"
-                            class="password-toggle"
-                            id="passwordToggle"
-                            aria-label="Password दिखाएँ"
-                        >
-
-                            <i class="fa-solid fa-eye"></i>
-
-                        </button>
-
-                    </div>
-
-                </div>
-
-
-                <!-- OPTIONS -->
-
-                <div class="login-options">
-
-
-                    <label class="remember-me">
-
-                        <input
-                            type="checkbox"
-                            id="rememberAdmin"
-                        >
-
-                        मुझे याद रखें
-
-                    </label>
-
-
-                    <a
-                        href="#"
-                        class="forgot-password"
-                        id="forgotPassword"
-                    >
-                        Password भूल गए?
-                    </a>
-
-
-                </div>
-
-
-                <!-- SUBMIT -->
-
-                <button
-                    type="submit"
-                    class="admin-submit"
-                >
-
-                    <i class="fa-solid fa-right-to-bracket"></i>
-
-                    Admin Login
-
-                </button>
-
-
-                <!-- RESULT -->
-
-                <p
-                    id="loginResult"
-                    class="login-result"
-                ></p>
-
-
-                <!-- SECURITY -->
-
-                <div class="security-note">
-
-                    <i class="fa-solid fa-circle-check"></i>
-
-                    <span>
-                        सुरक्षा कारणों से अपना Username और
-                        Password किसी अन्य व्यक्ति के साथ साझा न करें।
-                    </span>
-
-                </div>
-
-
-            </form>
-
-
-            <a
-                href="index.html"
-                class="back-home"
-            >
-
-                <i class="fa-solid fa-arrow-left"></i>
-
-                वापस वेबसाइट पर जाएँ
-
-            </a>
-
-
-        </div>
-
-    </div>
-
-
-    <div class="admin-copyright">
-
-        © 2026 युवा सेवा संकल्प फाउंडेशन |
-        सर्वाधिकार सुरक्षित
-
-    </div>
-
-
-</div>
-
-
-
-<script>
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function(){
-
-        /* =================================================
-           PASSWORD SHOW / HIDE
-        ================================================= */
-
-        const password =
-            document.getElementById(
-                "adminPassword"
-            );
-
-        const toggle =
-            document.getElementById(
-                "passwordToggle"
-            );
-
-
-        if(toggle && password){
-
-            toggle.addEventListener(
-                "click",
-                function(){
-
-                    const icon =
-                        toggle.querySelector("i");
-
-
-                    if(password.type === "password"){
-
-                        password.type = "text";
-
-                        icon.classList.remove(
-                            "fa-eye"
-                        );
-
-                        icon.classList.add(
-                            "fa-eye-slash"
-                        );
-
-                    }else{
-
-                        password.type = "password";
-
-                        icon.classList.remove(
-                            "fa-eye-slash"
-                        );
-
-                        icon.classList.add(
-                            "fa-eye"
-                        );
-
-                    }
-
-                }
-            );
-
-        }
-
-
-        /* =================================================
-           ADMIN LOGIN
-        ================================================= */
-
-        const form =
-            document.getElementById(
-                "adminLoginForm"
-            );
-
-        const result =
-            document.getElementById(
-                "loginResult"
-            );
-
-
-        if(form){
-
-            form.addEventListener(
-                "submit",
-                function(event){
-
-                    event.preventDefault();
-
-
-                    const username =
-                        document
-                        .getElementById(
-                            "adminUsername"
-                        )
-                        .value
-                        .trim();
-
-
-                    const passwordValue =
-                        document
-                        .getElementById(
-                            "adminPassword"
-                        )
-                        .value;
-
-
-                    if(!username ||
-                       !passwordValue){
-
-                        result.textContent =
-                            "❌ Username और Password दर्ज करें।";
-
-                        result.style.color =
-                            "#c62828";
-
-                        return;
-
-                    }
-
-
-                    /*
-                     * IMPORTANT:
-                     * यह केवल Login UI है।
-                     *
-                     * वास्तविक Admin Authentication
-                     * PHP/MySQL या किसी secure backend
-                     * से करना चाहिए।
-                     */
-
-
-                    result.textContent =
-                        "⚠️ Login system अभी backend से connect नहीं है।";
-
-                    result.style.color =
-                        "#e66b00";
-
-                }
-            );
-
-        }
-
-
-        /* =================================================
-           FORGOT PASSWORD
-        ================================================= */
-
-        const forgot =
-            document.getElementById(
-                "forgotPassword"
-            );
-
-
-        if(forgot){
-
-            forgot.addEventListener(
-                "click",
-                function(event){
-
-                    event.preventDefault();
-
-
-                    result.textContent =
-                        "कृपया Administrator से संपर्क करें।";
-
-                    result.style.color =
-                        "#123b66";
-
-                }
-            );
-
-        }
-
-    }
-);
-
-</script>
-
-
-</body>
-</html>
+                    <label for="adminPassword
