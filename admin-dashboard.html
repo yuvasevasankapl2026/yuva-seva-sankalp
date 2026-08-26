@@ -1,1191 +1,483 @@
 <!DOCTYPE html>
-
 <html lang="hi">
-
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+<title>Admin Dashboard | युवा सेवा संकल्प फाउंडेशन</title>
 
-    <title>
+<link rel="icon" href="images/logo.png">
 
-        एडमिन डैशबोर्ड |
-        युवा सेवा संकल्प फाउंडेशन
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    </title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <!-- MAIN CSS -->
+<style>
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+/* =====================================================
+   RESET
+===================================================== */
 
-</head>
-
-
-<body>
-
-
-<!-- =====================================
-     TOP BAR
-===================================== -->
-
-<div class="top-bar">
-
-    <div class="container">
-
-        <div class="left">
-
-            🔐 एडमिन पैनल
-
-        </div>
-
-
-        <div class="right">
-
-            <a href="index.html">
-
-                🌐 वेबसाइट देखें
-
-            </a>
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================
-     HEADER
-===================================== -->
-
-<header class="header">
-
-    <div class="header-content">
-
-
-        <img
-            src="images/logo.png"
-            class="logo"
-            alt="युवा सेवा संकल्प फाउंडेशन लोगो"
-        >
-
-
-        <div class="title">
-
-            <h1 class="main-title">
-
-                युवा सेवा संकल्प फाउंडेशन
-
-            </h1>
-
-
-            <p class="tagline">
-
-                युवा शक्ति, राष्ट्र शक्ति
-
-            </p>
-
-        </div>
-
-    </div>
-
-</header>
-
-
-<!-- =====================================
-     ADMIN DASHBOARD
-===================================== -->
-
-<section class="admin-dashboard">
-
-    <div class="dashboard-container">
-
-
-        <!-- DASHBOARD HEADING -->
-
-        <div class="dashboard-heading">
-
-            <div>
-
-                <h2>
-
-                    📊 एडमिन डैशबोर्ड
-
-                </h2>
-
-
-                <p>
-
-                    सदस्य, वॉलंटियर और
-                    संपर्क संदेशों का प्रबंधन करें।
-
-                </p>
-
-            </div>
-
-
-            <div class="dashboard-top-buttons">
-
-
-                <button
-                    type="button"
-                    class="password-btn"
-                    onclick="openPasswordModal()"
-                >
-
-                    🔐 पासवर्ड बदलें
-
-                </button>
-
-
-                <button
-                    type="button"
-                    class="logout-btn"
-                    onclick="logoutAdmin()"
-                >
-
-                    🚪 लॉगआउट करें
-
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- =====================================
-             NOTIFICATION
-        ===================================== -->
-
-        <div
-            id="dashboardNotification"
-            class="dashboard-notification"
-        >
-
-            🔔 नए आवेदनों की जानकारी यहाँ दिखाई देगी।
-
-        </div>
-
-
-        <!-- =====================================
-             STATISTICS CARDS
-        ===================================== -->
-
-        <div class="dashboard-cards">
-
-
-            <!-- TOTAL MEMBERS -->
-
-            <div class="dashboard-card">
-
-                <div class="dashboard-icon">
-
-                    👥
-
-                </div>
-
-
-                <h3 id="totalMembers">
-
-                    0
-
-                </h3>
-
-
-                <p>
-
-                    कुल सदस्य
-
-                </p>
-
-            </div>
-
-
-            <!-- NEW APPLICATIONS -->
-
-            <div class="dashboard-card">
-
-                <div class="dashboard-icon">
-
-                    📋
-
-                </div>
-
-
-                <h3 id="newApplications">
-
-                    0
-
-                </h3>
-
-
-                <p>
-
-                    नए आवेदन
-
-                </p>
-
-            </div>
-
-
-            <!-- APPROVED MEMBERS -->
-
-            <div class="dashboard-card">
-
-                <div class="dashboard-icon">
-
-                    ✅
-
-                </div>
-
-
-                <h3 id="approvedMembers">
-
-                    0
-
-                </h3>
-
-
-                <p>
-
-                    स्वीकृत सदस्य
-
-                </p>
-
-            </div>
-
-
-            <!-- PENDING MEMBERS -->
-
-            <div class="dashboard-card">
-
-                <div class="dashboard-icon">
-
-                    ⏳
-
-                </div>
-
-
-                <h3 id="pendingMembers">
-
-                    0
-
-                </h3>
-
-
-                <p>
-
-                    लंबित आवेदन
-
-                </p>
-
-            </div>
-
-
-            <!-- TOTAL VOLUNTEERS -->
-
-            <div class="dashboard-card">
-
-                <div class="dashboard-icon">
-
-                    🤝
-
-                </div>
-
-
-                <h3 id="totalVolunteers">
-
-                    0
-
-                </h3>
-
-
-                <p>
-
-                    कुल वॉलंटियर
-
-                </p>
-
-            </div>
-
-
-            <!-- TOTAL CONTACT MESSAGES -->
-
-            <div class="dashboard-card">
-
-                <div class="dashboard-icon">
-
-                    📩
-
-                </div>
-
-
-                <h3 id="totalContacts">
-
-                    0
-
-                </h3>
-
-
-                <p>
-
-                    कुल संपर्क संदेश
-
-                </p>
-
-            </div>
-
-        </div>
-
-
-        <!-- =====================================
-             MEMBER APPLICATIONS
-        ===================================== -->
-
-        <div class="dashboard-table-box">
-
-
-            <div class="table-heading">
-
-                <h3>
-
-                    👥 सदस्यता आवेदन
-
-                </h3>
-
-
-                <div class="table-filters">
-
-
-                    <input
-                        type="search"
-                        id="memberSearch"
-                        placeholder="Member ID, नाम या मोबाइल खोजें"
-                        autocomplete="off"
-                    >
-
-
-                    <input
-                        type="date"
-                        id="memberDateSearch"
-                        title="तारीख से खोजें"
-                    >
-
-                </div>
-
-            </div>
-
-
-            <div class="table-responsive">
-
-                <table>
-
-                    <thead>
-
-                        <tr>
-
-                            <th>
-
-                                क्रमांक
-
-                            </th>
-
-
-                            <th>
-
-                                Member ID
-
-                            </th>
-
-
-                            <th>
-
-                                नाम
-
-                            </th>
-
-
-                            <th>
-
-                                मोबाइल नंबर
-
-                            </th>
-
-
-                            <th>
-
-                                सदस्यता
-
-                            </th>
-
-
-                            <th>
-
-                                दिनांक
-
-                            </th>
-
-
-                            <th>
-
-                                स्थिति
-
-                            </th>
-
-
-                            <th>
-
-                                कार्य
-
-                            </th>
-
-                        </tr>
-
-                    </thead>
-
-
-                    <tbody id="memberTable">
-
-                    </tbody>
-
-                </table>
-
-            </div>
-
-        </div>
-
-
-        <!-- =====================================
-             CONTACT MESSAGES
-        ===================================== -->
-
-        <div class="dashboard-table-box">
-
-
-            <div class="table-heading">
-
-                <h3>
-
-                    📩 संपर्क संदेश
-
-                </h3>
-
-
-                <div class="table-filters">
-
-
-                    <input
-                        type="search"
-                        id="contactSearch"
-                        placeholder="नाम, मोबाइल या विषय खोजें"
-                        autocomplete="off"
-                    >
-
-
-                    <input
-                        type="date"
-                        id="contactDateSearch"
-                        title="तारीख से खोजें"
-                    >
-
-                </div>
-
-            </div>
-
-
-            <div class="table-responsive">
-
-                <table>
-
-                    <thead>
-
-                        <tr>
-
-                            <th>
-
-                                क्रमांक
-
-                            </th>
-
-
-                            <th>
-
-                                संदेश ID
-
-                            </th>
-
-
-                            <th>
-
-                                नाम
-
-                            </th>
-
-
-                            <th>
-
-                                मोबाइल नंबर
-
-                            </th>
-
-
-                            <th>
-
-                                ईमेल
-
-                            </th>
-
-
-                            <th>
-
-                                विषय
-
-                            </th>
-
-
-                            <th>
-
-                                संदेश
-
-                            </th>
-
-
-                            <th>
-
-                                दिनांक
-
-                            </th>
-
-
-                            <th>
-
-                                स्थिति
-
-                            </th>
-
-
-                            <th>
-
-                                कार्य
-
-                            </th>
-
-                        </tr>
-
-                    </thead>
-
-
-                    <tbody id="contactTable">
-
-                    </tbody>
-
-                </table>
-
-            </div>
-
-        </div>
-
-
-        <!-- =====================================
-             VOLUNTEER APPLICATIONS
-        ===================================== -->
-
-        <div class="dashboard-table-box">
-
-
-            <div class="table-heading">
-
-                <h3>
-
-                    🤝 वॉलंटियर आवेदन
-
-                </h3>
-
-
-                <div class="table-filters">
-
-
-                    <input
-                        type="search"
-                        id="volunteerSearch"
-                        placeholder="Volunteer ID, नाम या मोबाइल खोजें"
-                        autocomplete="off"
-                    >
-
-
-                    <input
-                        type="date"
-                        id="volunteerDateSearch"
-                        title="तारीख से खोजें"
-                    >
-
-                </div>
-
-            </div>
-
-
-            <div class="table-responsive">
-
-                <table>
-
-                    <thead>
-
-                        <tr>
-
-                            <th>
-
-                                क्रमांक
-
-                            </th>
-
-
-                            <th>
-
-                                Volunteer ID
-
-                            </th>
-
-
-                            <th>
-
-                                नाम
-
-                            </th>
-
-
-                            <th>
-
-                                मोबाइल नंबर
-
-                            </th>
-
-
-                            <th>
-
-                                सेवा क्षेत्र
-
-                            </th>
-
-
-                            <th>
-
-                                उपलब्धता
-
-                            </th>
-
-
-                            <th>
-
-                                दिनांक
-
-                            </th>
-
-
-                            <th>
-
-                                स्थिति
-
-                            </th>
-
-
-                            <th>
-
-                                कार्य
-
-                            </th>
-
-                        </tr>
-
-                    </thead>
-
-
-                    <tbody id="volunteerTable">
-
-                    </tbody>
-
-                </table>
-
-            </div>
-
-        </div>
-
-
-        <!-- =====================================
-             QUICK ACTIONS
-        ===================================== -->
-
-        <div class="quick-actions">
-
-
-            <a
-                href="membership.html"
-                class="quick-btn green-btn"
-            >
-
-                ➕ नया सदस्य जोड़ें
-
-            </a>
-
-
-            <a
-                href="certificate.html"
-                class="quick-btn purple-btn"
-            >
-
-                📜 सदस्यता प्रमाणपत्र
-
-            </a>
-
-
-            <a
-                href="id-card.html"
-                class="quick-btn purple-btn"
-            >
-
-                🪪 सदस्य ID कार्ड
-
-            </a>
-
-
-            <a
-                href="blood-donor-list.html"
-                class="quick-btn red-btn"
-            >
-
-                🩸 रक्तदाता सूची
-
-            </a>
-
-
-            <button
-                type="button"
-                class="quick-btn blue-btn"
-                onclick="printMemberList()"
-            >
-
-                🖨️ सदस्य सूची प्रिंट करें
-
-            </button>
-
-
-            <button
-                type="button"
-                class="quick-btn orange-btn"
-                onclick="downloadReport()"
-            >
-
-                📥 सदस्य रिपोर्ट
-
-            </button>
-
-
-            <button
-                type="button"
-                class="quick-btn orange-btn"
-                onclick="downloadVolunteerReport()"
-            >
-
-                📥 वॉलंटियर रिपोर्ट
-
-            </button>
-
-
-            <button
-                type="button"
-                class="quick-btn orange-btn"
-                onclick="downloadContactReport()"
-            >
-
-                📥 संपर्क रिपोर्ट
-
-            </button>
-
-
-            <button
-                type="button"
-                class="quick-btn red-btn"
-                onclick="clearAllDashboardData()"
-            >
-
-                🧹 सभी डेटा हटाएँ
-
-            </button>
-
-
-            <a
-                href="index.html"
-                class="quick-btn blue-btn"
-            >
-
-                🌐 वेबसाइट देखें
-
-            </a>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =====================================
-     VIEW MEMBER MODAL
-===================================== -->
-
-<div
-    id="memberViewModal"
-    class="dashboard-modal"
->
-
-    <div class="modal-content">
-
-
-        <button
-            type="button"
-            class="modal-close"
-            onclick="closeMemberView()"
-        >
-
-            ✖
-
-        </button>
-
-
-        <h2>
-
-            👁️ सदस्य की पूरी जानकारी
-
-        </h2>
-
-
-        <div
-            id="memberViewContent"
-        >
-
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================
-     EDIT MEMBER MODAL
-===================================== -->
-
-<div
-    id="memberEditModal"
-    class="dashboard-modal"
->
-
-    <div class="modal-content">
-
-
-        <button
-            type="button"
-            class="modal-close"
-            onclick="closeMemberEdit()"
-        >
-
-            ✖
-
-        </button>
-
-
-        <h2>
-
-            ✏️ सदस्य जानकारी बदलें
-
-        </h2>
-
-
-        <form
-            id="memberEditForm"
-        >
-
-
-            <input
-                type="hidden"
-                id="editMemberIndex"
-            >
-
-
-            <label>
-
-                सदस्य का नाम
-
-            </label>
-
-
-            <input
-                type="text"
-                id="editMemberName"
-                required
-            >
-
-
-            <label>
-
-                मोबाइल नंबर
-
-            </label>
-
-
-            <input
-                type="text"
-                id="editMemberMobile"
-                required
-            >
-
-
-            <label>
-
-                सदस्यता
-
-            </label>
-
-
-            <input
-                type="text"
-                id="editMemberMembership"
-            >
-
-
-            <label>
-
-                स्थिति
-
-            </label>
-
-
-            <select
-                id="editMemberStatus"
-            >
-
-                <option value="लंबित">
-
-                    लंबित
-
-                </option>
-
-
-                <option value="स्वीकृत">
-
-                    स्वीकृत
-
-                </option>
-
-
-                <option value="अस्वीकृत">
-
-                    अस्वीकृत
-
-                </option>
-
-            </select>
-
-
-            <button
-                type="submit"
-                class="save-btn"
-            >
-
-                💾 जानकारी सेव करें
-
-            </button>
-
-        </form>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================
-     PASSWORD MODAL
-===================================== -->
-
-<div
-    id="passwordModal"
-    class="dashboard-modal"
->
-
-    <div class="modal-content">
-
-
-        <button
-            type="button"
-            class="modal-close"
-            onclick="closePasswordModal()"
-        >
-
-            ✖
-
-        </button>
-
-
-        <h2>
-
-            🔐 एडमिन पासवर्ड बदलें
-
-        </h2>
-
-
-        <form
-            id="passwordChangeForm"
-        >
-
-
-            <label>
-
-                पुराना पासवर्ड
-
-            </label>
-
-
-            <input
-                type="password"
-                id="oldPassword"
-                required
-            >
-
-
-            <label>
-
-                नया पासवर्ड
-
-            </label>
-
-
-            <input
-                type="password"
-                id="newPassword"
-                minlength="4"
-                required
-            >
-
-
-            <label>
-
-                नया पासवर्ड दोबारा लिखें
-
-            </label>
-
-
-            <input
-                type="password"
-                id="confirmNewPassword"
-                minlength="4"
-                required
-            >
-
-
-            <button
-                type="submit"
-                class="save-btn"
-            >
-
-                🔐 पासवर्ड बदलें
-
-            </button>
-
-        </form>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================
-     FOOTER
-===================================== -->
-
-<footer>
-
-
-    <img
-        src="images/logo.png"
-        alt="युवा सेवा संकल्प फाउंडेशन लोगो"
-        width="70"
-    >
-
-
-    <h3>
-
-        युवा सेवा संकल्प फाउंडेशन
-
-    </h3>
-
-
-    <p>
-
-        युवा शक्ति, राष्ट्र शक्ति
-
-    </p>
-
-
-    <p>
-
-        © 2026 All Rights Reserved
-
-    </p>
-
-
-</footer>
-
-
-<!-- =====================================
-     DASHBOARD JAVASCRIPT
-===================================== -->
-
-<script
-    src="dashboard.js"
-></script>
-
-
-<!-- =====================================
-     ADMIN LOGOUT
-===================================== -->
-
-<script>
-
-function logoutAdmin() {
-
-    const confirmLogout = confirm(
-
-        "क्या आप एडमिन पैनल से लॉगआउट करना चाहते हैं?"
-
-    );
-
-
-    if (confirmLogout) {
-
-        localStorage.removeItem(
-
-            "adminLoggedIn"
-
-        );
-
-
-        window.location.href =
-
-        "admin-login.html";
-
-    }
-
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
 
-</script>
+body{
+    font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+    background:#f4f7fa;
+    color:#263746;
+}
 
 
-</body>
+/* =====================================================
+   TOPBAR
+===================================================== */
 
-</html>
+.topbar{
+    height:70px;
+    background:#082e63;
+    color:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    padding:0 28px;
+
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    box-shadow:0 4px 18px rgba(0,0,0,.12);
+}
+
+.brand{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.brand img{
+    width:48px;
+    height:48px;
+    object-fit:contain;
+    background:#fff;
+    border-radius:50%;
+    padding:3px;
+}
+
+.brand h1{
+    font-size:18px;
+    line-height:1.25;
+}
+
+.brand span{
+    color:#ff8a22;
+}
+
+.brand small{
+    display:block;
+    color:#c7d8e7;
+    font-size:9px;
+    margin-top:2px;
+}
+
+.top-actions{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.website-btn,
+.logout-btn{
+    border:0;
+    text-decoration:none;
+
+    display:flex;
+    align-items:center;
+    gap:7px;
+
+    padding:10px 15px;
+
+    border-radius:9px;
+
+    font-family:inherit;
+    font-size:11px;
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+.website-btn{
+    background:rgba(255,255,255,.1);
+    color:#fff;
+}
+
+.logout-btn{
+    background:#ff7900;
+    color:#fff;
+}
+
+
+/* =====================================================
+   LAYOUT
+===================================================== */
+
+.layout{
+    display:flex;
+    min-height:calc(100vh - 70px);
+}
+
+
+/* =====================================================
+   SIDEBAR
+===================================================== */
+
+.sidebar{
+    width:250px;
+    flex:0 0 250px;
+
+    background:#fff;
+
+    border-right:1px solid #e1e8ee;
+
+    padding:22px 14px;
+
+    position:sticky;
+    top:70px;
+
+    height:calc(100vh - 70px);
+
+    overflow-y:auto;
+}
+
+.sidebar-title{
+    padding:0 12px 12px;
+
+    color:#8a98a5;
+
+    font-size:10px;
+    font-weight:800;
+
+    text-transform:uppercase;
+}
+
+.menu{
+    list-style:none;
+}
+
+.menu li{
+    margin-bottom:5px;
+}
+
+.menu a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    padding:12px 13px;
+
+    border-radius:10px;
+
+    color:#526271;
+
+    text-decoration:none;
+
+    font-size:12px;
+    font-weight:700;
+
+    transition:.2s;
+}
+
+.menu a i{
+    width:20px;
+    text-align:center;
+    font-size:14px;
+}
+
+.menu a:hover{
+    background:#f1f5f8;
+    color:#123b66;
+}
+
+.menu a.active{
+    background:#123b66;
+    color:#fff;
+
+    box-shadow:
+    0 7px 18px rgba(18,59,102,.18);
+}
+
+.menu .orange i{
+    color:#ff7900;
+}
+
+.menu a.active i{
+    color:#fff;
+}
+
+
+/* =====================================================
+   MAIN
+===================================================== */
+
+.main{
+    flex:1;
+    padding:30px;
+    min-width:0;
+}
+
+
+/* =====================================================
+   WELCOME
+===================================================== */
+
+.welcome{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    margin-bottom:25px;
+}
+
+.welcome h2{
+    color:#123b66;
+    font-size:27px;
+    font-weight:800;
+}
+
+.welcome p{
+    margin-top:4px;
+    color:#71808f;
+    font-size:11px;
+}
+
+.admin-badge{
+    display:flex;
+    align-items:center;
+    gap:8px;
+
+    background:#fff;
+
+    border:1px solid #e0e7ed;
+
+    padding:10px 14px;
+
+    border-radius:10px;
+
+    color:#24834b;
+
+    font-size:10px;
+    font-weight:800;
+}
+
+.admin-badge i{
+    font-size:8px;
+}
+
+
+/* =====================================================
+   STAT CARDS
+===================================================== */
+
+.stats{
+    display:grid;
+
+    grid-template-columns:
+    repeat(4,1fr);
+
+    gap:18px;
+
+    margin-bottom:25px;
+}
+
+.stat-card{
+    background:#fff;
+
+    border:1px solid #e1e8ee;
+
+    border-radius:16px;
+
+    padding:20px;
+
+    display:flex;
+    align-items:center;
+
+    gap:15px;
+
+    box-shadow:0 5px 18px rgba(18,59,102,.04);
+
+    transition:.25s;
+}
+
+.stat-card:hover{
+    transform:translateY(-4px);
+
+    box-shadow:
+    0 12px 28px rgba(18,59,102,.10);
+}
+
+.stat-icon{
+    width:54px;
+    height:54px;
+
+    flex:0 0 54px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:14px;
+
+    font-size:21px;
+}
+
+.blue .stat-icon{
+    background:#eaf1fa;
+    color:#123b66;
+}
+
+.green .stat-icon{
+    background:#eaf7ed;
+    color:#24834b;
+}
+
+.orange .stat-icon{
+    background:#fff0e5;
+    color:#ff7900;
+}
+
+.red .stat-icon{
+    background:#fff0f0;
+    color:#d93636;
+}
+
+.stat-text span{
+    display:block;
+    color:#81909d;
+    font-size:10px;
+}
+
+.stat-text strong{
+    display:block;
+    margin-top:3px;
+    color:#123b66;
+    font-size:25px;
+    font-weight:800;
+}
+
+
+/* =====================================================
+   GRID
+===================================================== */
+
+.dashboard-grid{
+    display:grid;
+
+    grid-template-columns:
+    1.5fr 1fr;
+
+    gap:20px;
+}
+
+
+/* =====================================================
+   BOX
+===================================================== */
+
+.box{
+    background:#fff;
+
+    border:1px solid #e1e8ee;
+
+    border-radius:16px;
+
+    box-shadow:
+    0 5px 18px rgba(18,59,102,.04);
+
+    overflow:hidden;
+}
+
+.box-header{
+    padding:17px 20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    border-bottom:1px solid #edf1f4;
+}
+
+.box-header h3{
+    color:#123b66;
+    font-size:15px;
+}
+
+.view-all{
+    color:#ff7900;
+    font-size:10px;
+    font-weight:800;
+    text-decoration:none;
+}
+
+.box-body{
+    padding:20px;
+}
+
+
+/* =====================================================
+   QUICK ACTIONS
+===================================================== */
+
+.quick-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:12px;
+}
+
+.quick{
+    min-height:100px;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    gap:8px;
+
+    border:1px solid #e3e9ee;
+
+    border-radius:12px;
+
+    text-decoration:none;
+
+    color:#526271;
+
+    transition:.2s;
+}
+
+.quick i{
+    font-size:22px;
+    color:#123b66;
+}
+
+.quick span{
+    font-size:10px;
+    font-weight:700;
+}
+
+.quick:hover{
+    border-color:#ff7900;
+    transform:translateY(-3px);
+    box-shadow:0 8px
