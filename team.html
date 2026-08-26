@@ -1,0 +1,2008 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="युवा सेवा संकल्प फाउंडेशन की टीम, पदाधिकारी, कार्यकारिणी सदस्य और स्वयंसेवक।">
+
+<title>हमारी टीम | युवा सेवा संकल्प फाउंडेशन</title>
+
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<!-- Main CSS -->
+<link rel="stylesheet" href="style.css">
+
+
+<style>
+
+/* =========================================================
+   YUVA SEVA SANKALP FOUNDATION
+   TEAM PAGE
+========================================================= */
+
+.team-page{
+    margin:0;
+    background:#f5f8fb;
+    color:#263746;
+    font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+}
+
+.team-page *,
+.team-page *::before,
+.team-page *::after{
+    box-sizing:border-box;
+}
+
+.team-page a{
+    text-decoration:none;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.team-topbar{
+    background:#123b66;
+    color:#fff;
+    min-height:42px;
+}
+
+.team-topbar-inner{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+    min-height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.team-contact{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.team-contact span{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    font-size:13px;
+}
+
+.team-contact i{
+    color:#ffb15c;
+}
+
+.team-social{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.team-social a{
+    color:#fff;
+    transition:.2s;
+}
+
+.team-social a:hover{
+    color:#ff7900;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.team-header{
+    background:#fff;
+    border-bottom:1px solid #e3e9ef;
+}
+
+.team-header-inner{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+
+    min-height:135px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.team-brand{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.team-brand-logo{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+}
+
+.team-brand-text h1{
+    margin:0;
+    color:#123b66;
+    font-size:39px;
+    line-height:1.15;
+    font-weight:800;
+}
+
+.team-brand-text h1 span{
+    color:#ff7900;
+}
+
+.team-brand-text p{
+    margin:7px 0 0;
+    color:#123b66;
+    font-size:17px;
+    font-weight:700;
+}
+
+
+/* =========================================================
+   LOGIN CARDS
+========================================================= */
+
+.team-login{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.team-login-card{
+    min-width:170px;
+    min-height:66px;
+
+    padding:10px 14px;
+
+    background:#fff;
+    border:1px solid #dce4eb;
+    border-radius:12px;
+
+    display:flex;
+    align-items:center;
+    gap:11px;
+
+    color:#123b66;
+    transition:.25s;
+}
+
+.team-login-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 22px rgba(18,59,102,.12);
+}
+
+.team-login-icon{
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:21px;
+}
+
+.team-member .team-login-icon{
+    color:#24834b;
+    background:#eaf7ed;
+}
+
+.team-volunteer .team-login-icon{
+    color:#123b66;
+    background:#eaf1fa;
+}
+
+.team-admin{
+    background:#ff7900;
+    border-color:#ff7900;
+    color:#fff;
+}
+
+.team-admin .team-login-icon{
+    color:#fff;
+    background:rgba(255,255,255,.15);
+}
+
+.team-login-text{
+    display:flex;
+    flex-direction:column;
+}
+
+.team-login-text strong{
+    font-size:15px;
+}
+
+.team-login-text small{
+    font-size:10px;
+    margin-top:3px;
+    opacity:.75;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.team-nav{
+    background:#082e63;
+    min-height:56px;
+    position:relative;
+    z-index:999;
+}
+
+.team-nav-inner{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+
+    min-height:56px;
+
+    display:flex;
+    align-items:stretch;
+}
+
+.team-nav-link{
+    min-height:56px;
+    padding:0 17px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+    white-space:nowrap;
+
+    transition:.2s;
+}
+
+.team-nav-link:hover,
+.team-nav-link.active{
+    background:#ff7900;
+}
+
+.team-dropdown{
+    position:relative;
+}
+
+.team-dropdown-menu{
+    display:none;
+
+    position:absolute;
+    left:0;
+    top:56px;
+
+    width:220px;
+    background:#fff;
+
+    border-top:3px solid #ff7900;
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+
+.team-dropdown:hover .team-dropdown-menu{
+    display:block;
+}
+
+.team-dropdown-menu a{
+    display:block;
+    padding:12px 15px;
+
+    color:#263746;
+    font-size:13px;
+
+    border-bottom:1px solid #edf1f4;
+}
+
+.team-dropdown-menu a:hover{
+    color:#123b66;
+    background:#f3f7fa;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.team-breadcrumb{
+    background:#eef3f8;
+    border-bottom:1px solid #dfe7ee;
+}
+
+.team-breadcrumb-inner{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+
+    min-height:44px;
+
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    color:#69798a;
+    font-size:13px;
+}
+
+.team-breadcrumb a{
+    color:#123b66;
+    font-weight:700;
+}
+
+.team-breadcrumb i{
+    color:#ff7900;
+    font-size:10px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.team-hero{
+    width:92%;
+    max-width:1400px;
+
+    margin:35px auto 0;
+
+    padding:55px 40px;
+
+    border-radius:25px;
+
+    background:linear-gradient(
+        135deg,
+        #123b66 0%,
+        #1d5d96 60%,
+        #24834b 100%
+    );
+
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+
+    box-shadow:0 18px 40px rgba(18,59,102,.18);
+}
+
+.team-hero::before{
+    content:"";
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    right:-100px;
+    top:-130px;
+
+    background:rgba(255,255,255,.08);
+}
+
+.team-hero::after{
+    content:"";
+
+    position:absolute;
+
+    width:230px;
+    height:230px;
+
+    border-radius:50%;
+
+    left:-100px;
+    bottom:-130px;
+
+    background:rgba(255,121,0,.13);
+}
+
+.team-hero-content{
+    position:relative;
+    z-index:2;
+    max-width:850px;
+}
+
+.team-hero h1{
+    margin:0 0 10px;
+    font-size:48px;
+    font-weight:800;
+}
+
+.team-hero-line{
+    width:125px;
+    height:5px;
+
+    background:#ff7900;
+    border-radius:20px;
+
+    margin-bottom:20px;
+}
+
+.team-hero p{
+    margin:0;
+    font-size:19px;
+    line-height:1.8;
+    color:#f2f7fb;
+}
+
+.team-hero-badge{
+    margin-top:18px;
+
+    display:inline-flex;
+    align-items:center;
+    gap:9px;
+
+    padding:10px 18px;
+
+    border:1px solid rgba(255,255,255,.28);
+    border-radius:30px;
+
+    font-size:14px;
+    font-weight:700;
+}
+
+
+/* =========================================================
+   TEAM INTRO
+========================================================= */
+
+.team-intro{
+    width:92%;
+    max-width:1400px;
+
+    margin:35px auto;
+
+    display:grid;
+    grid-template-columns:1.4fr .8fr;
+
+    gap:30px;
+}
+
+.team-intro-text{
+    background:#fff;
+
+    border:1px solid #e0e7ed;
+    border-radius:20px;
+
+    padding:32px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.04);
+}
+
+.team-intro-text h2{
+    margin:0 0 15px;
+    color:#123b66;
+    font-size:29px;
+}
+
+.team-intro-text p{
+    margin:0 0 14px;
+    color:#526271;
+    font-size:16px;
+    line-height:1.9;
+}
+
+.team-values{
+    background:#f0faf3;
+
+    border:1px solid #d6eadb;
+    border-radius:20px;
+
+    padding:28px;
+}
+
+.team-values h3{
+    margin:0 0 18px;
+    color:#24834b;
+    font-size:23px;
+}
+
+.team-value{
+    display:flex;
+    align-items:center;
+    gap:12px;
+
+    padding:10px 0;
+    border-bottom:1px solid #dceee1;
+}
+
+.team-value:last-child{
+    border-bottom:0;
+}
+
+.team-value i{
+    width:40px;
+    height:40px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#24834b;
+    color:#fff;
+}
+
+.team-value strong{
+    color:#123b66;
+    font-size:15px;
+}
+
+.team-value span{
+    display:block;
+    margin-top:2px;
+    color:#71808f;
+    font-size:12px;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.team-section{
+    width:92%;
+    max-width:1400px;
+    margin:0 auto;
+    padding:15px 0 45px;
+}
+
+.team-heading{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.team-heading h2{
+    margin:0;
+    color:#123b66;
+    font-size:31px;
+}
+
+.team-heading p{
+    margin:8px auto 0;
+    max-width:750px;
+    color:#69798a;
+    font-size:14px;
+}
+
+
+/* =========================================================
+   FOUNDER CARD
+========================================================= */
+
+.founder-card{
+    max-width:1050px;
+    margin:auto;
+
+    background:#fff;
+
+    border:1px solid #dfe7ed;
+    border-radius:24px;
+
+    padding:30px;
+
+    display:grid;
+    grid-template-columns:240px 1fr;
+
+    gap:35px;
+    align-items:center;
+
+    box-shadow:0 10px 30px rgba(18,59,102,.07);
+}
+
+.founder-photo{
+    width:210px;
+    height:210px;
+
+    margin:auto;
+
+    border-radius:50%;
+    overflow:hidden;
+
+    border:7px solid #edf4f9;
+
+    background:#eaf1f6;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.founder-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.founder-photo i{
+    font-size:75px;
+    color:#7890a3;
+}
+
+.founder-info h3{
+    margin:0 0 5px;
+    color:#123b66;
+    font-size:29px;
+}
+
+.founder-designation{
+    display:inline-block;
+
+    padding:6px 14px;
+
+    border-radius:20px;
+
+    background:#fff0e7;
+    color:#e66b00;
+
+    font-size:13px;
+    font-weight:800;
+}
+
+.founder-info p{
+    margin:16px 0 0;
+    color:#5b6c7b;
+    font-size:15px;
+    line-height:1.8;
+}
+
+.founder-contact{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+
+    margin-top:18px;
+}
+
+.founder-contact span{
+    padding:8px 13px;
+
+    background:#f3f7fa;
+    border-radius:8px;
+
+    color:#123b66;
+    font-size:13px;
+    font-weight:700;
+}
+
+
+/* =========================================================
+   TEAM CARDS
+========================================================= */
+
+.team-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.member-card{
+    background:#fff;
+
+    border:1px solid #dfe7ed;
+    border-radius:20px;
+
+    overflow:hidden;
+    text-align:center;
+
+    transition:.25s;
+
+    box-shadow:0 6px 20px rgba(0,0,0,.04);
+}
+
+.member-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 35px rgba(18,59,102,.12);
+}
+
+.member-photo{
+    height:220px;
+
+    background:linear-gradient(135deg,#edf4f9,#e5edf3);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    position:relative;
+}
+
+.member-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.member-photo i{
+    font-size:70px;
+    color:#8195a5;
+}
+
+.member-card-body{
+    padding:20px 15px 18px;
+}
+
+.member-card h3{
+    margin:0;
+    color:#123b66;
+    font-size:20px;
+}
+
+.member-role{
+    display:inline-block;
+
+    margin-top:7px;
+    padding:5px 12px;
+
+    border-radius:20px;
+
+    background:#eaf7ed;
+    color:#24834b;
+
+    font-size:12px;
+    font-weight:800;
+}
+
+.member-card p{
+    margin:12px 0 0;
+    color:#71808f;
+    font-size:13px;
+    line-height:1.6;
+}
+
+.member-social{
+    display:flex;
+    justify-content:center;
+    gap:9px;
+    margin-top:15px;
+}
+
+.member-social a{
+    width:32px;
+    height:32px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#f0f4f7;
+    color:#123b66;
+
+    transition:.2s;
+}
+
+.member-social a:hover{
+    background:#123b66;
+    color:#fff;
+}
+
+
+/* =========================================================
+   DISTRICT TEAM
+========================================================= */
+
+.district-box{
+    background:#123b66;
+    border-radius:24px;
+    padding:35px;
+    color:#fff;
+}
+
+.district-box .team-heading h2{
+    color:#fff;
+}
+
+.district-box .team-heading p{
+    color:#dbe6ef;
+}
+
+.district-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+}
+
+.district-member{
+    background:rgba(255,255,255,.10);
+
+    border:1px solid rgba(255,255,255,.15);
+    border-radius:15px;
+
+    padding:20px;
+}
+
+.district-member i{
+    font-size:28px;
+    color:#ffb15c;
+}
+
+.district-member h3{
+    margin:12px 0 4px;
+    font-size:18px;
+}
+
+.district-member p{
+    margin:0;
+    color:#dce7ef;
+    font-size:13px;
+}
+
+
+/* =========================================================
+   JOIN CTA
+========================================================= */
+
+.team-join{
+    width:92%;
+    max-width:1400px;
+    margin:0 auto 60px;
+}
+
+.team-join-box{
+    padding:42px 30px;
+
+    background:#f1faf4;
+    border:1px solid #d5e8db;
+    border-radius:24px;
+
+    text-align:center;
+}
+
+.team-join-box h2{
+    margin:0 0 8px;
+    color:#24834b;
+    font-size:31px;
+}
+
+.team-join-box p{
+    max-width:720px;
+    margin:0 auto 22px;
+
+    color:#526271;
+    font-size:15px;
+    line-height:1.8;
+}
+
+.team-buttons{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.team-button{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:13px 23px;
+
+    border-radius:9px;
+    color:#fff;
+
+    font-size:14px;
+    font-weight:700;
+}
+
+.team-button.blue{
+    background:#123b66;
+}
+
+.team-button.orange{
+    background:#ff7900;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.team-footer{
+    background:#092e60;
+    color:#fff;
+    padding:45px 0 0;
+}
+
+.team-footer-inner{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr 1.3fr;
+    gap:35px;
+}
+
+.team-footer-logo{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+    margin-bottom:10px;
+}
+
+.team-footer h3,
+.team-footer h4{
+    margin:0 0 13px;
+    color:#fff;
+}
+
+.team-footer p{
+    margin:0 0 9px;
+    color:#dbe5ef;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.team-footer a{
+    display:block;
+    color:#dbe5ef;
+    font-size:13px;
+    margin-bottom:8px;
+}
+
+.team-footer a:hover{
+    color:#ff7900;
+}
+
+.team-footer-bottom{
+    margin-top:35px;
+    padding:17px 0;
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    text-align:center;
+    color:#dbe5ef;
+    font-size:12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1150px){
+
+    .team-header-inner{
+        flex-direction:column;
+        padding:18px 0;
+    }
+
+    .team-login{
+        width:100%;
+        justify-content:center;
+    }
+
+    .team-intro{
+        grid-template-columns:1fr;
+    }
+
+    .team-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .team-footer-inner{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:850px){
+
+    .team-contact span:first-child{
+        display:none;
+    }
+
+    .team-brand{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .team-brand-text h1{
+        font-size:31px;
+    }
+
+    .team-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .district-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .founder-card{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+    .founder-contact{
+        justify-content:center;
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    .team-login{
+        flex-direction:column;
+    }
+
+    .team-login-card{
+        width:100%;
+        max-width:350px;
+    }
+
+    .team-nav-inner{
+        width:100%;
+        overflow-x:auto;
+    }
+
+    .team-nav-link{
+        padding:0 12px;
+        font-size:12px;
+    }
+
+    .team-hero{
+        padding:35px 22px;
+    }
+
+    .team-hero h1{
+        font-size:35px;
+    }
+
+    .team-hero p{
+        font-size:15px;
+    }
+
+    .team-grid{
+        grid-template-columns:1fr;
+    }
+
+    .district-grid{
+        grid-template-columns:1fr;
+    }
+
+    .team-footer-inner{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+@media(max-width:430px){
+
+    .team-brand-text h1{
+        font-size:27px;
+    }
+
+    .team-hero h1{
+        font-size:30px;
+    }
+
+    .founder-photo{
+        width:170px;
+        height:170px;
+    }
+
+    .team-heading h2{
+        font-size:26px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="team-page">
+
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="team-topbar">
+
+    <div class="team-topbar-inner">
+
+        <div class="team-contact">
+
+            <span>
+                <i class="fa-solid fa-envelope"></i>
+                info.yssfoundation@gmail.com
+            </span>
+
+            <span>
+                <i class="fa-solid fa-location-dot"></i>
+                ग्राम नैपुरा, पोस्ट कौड़ाही,
+                जिला अम्बेडकर नगर, उत्तर प्रदेश – 224129
+            </span>
+
+        </div>
+
+
+        <div class="team-social">
+
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+
+            <span>
+                <i class="fa-solid fa-phone"></i>
+                9651731313
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="team-header">
+
+    <div class="team-header-inner">
+
+        <a href="index.html" class="team-brand">
+
+            <img src="images/logo.png"
+                 alt="युवा सेवा संकल्प फाउंडेशन"
+                 class="team-brand-logo">
+
+            <div class="team-brand-text">
+
+                <h1>
+                    युवा सेवा संकल्प
+                    <span>फाउंडेशन</span>
+                </h1>
+
+                <p>युवा शक्ति - राष्ट्र शक्ति</p>
+
+            </div>
+
+        </a>
+
+
+        <div class="team-login">
+
+            <a href="member-login.html"
+               class="team-login-card team-member">
+
+                <div class="team-login-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="team-login-text">
+                    <strong>सदस्य Login</strong>
+                    <small>अपने खाते में लॉगिन करें</small>
+                </div>
+
+            </a>
+
+
+            <a href="volunteer-login.html"
+               class="team-login-card team-volunteer">
+
+                <div class="team-login-icon">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+
+                <div class="team-login-text">
+                    <strong>Volunteer Login</strong>
+                    <small>सेवा करने के लिए जुड़ें</small>
+                </div>
+
+            </a>
+
+
+            <a href="admin-login.html"
+               class="team-login-card team-admin">
+
+                <div class="team-login-icon">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+
+                <div class="team-login-text">
+                    <strong>Admin Login</strong>
+                    <small>Admin Panel</small>
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="team-nav">
+
+    <div class="team-nav-inner">
+
+        <a href="index.html" class="team-nav-link">
+            <i class="fa-solid fa-house"></i>
+            होम
+        </a>
+
+
+        <div class="team-dropdown">
+
+            <a href="about.html" class="team-nav-link active">
+                संस्था के बारे में
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+
+            <div class="team-dropdown-menu">
+
+                <a href="about.html">हमारे बारे में</a>
+                <a href="mission.html">हमारा मिशन</a>
+                <a href="vision.html">हमारा विजन</a>
+                <a href="team.html">हमारी टीम</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="team-dropdown">
+
+            <a href="#" class="team-nav-link">
+                हमारे कार्य
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+
+            <div class="team-dropdown-menu">
+
+                <a href="education.html">शिक्षा</a>
+                <a href="health.html">स्वास्थ्य</a>
+                <a href="environment.html">पर्यावरण</a>
+                <a href="women.html">महिला सशक्तिकरण</a>
+                <a href="youth.html">युवा विकास</a>
+                <a href="social-service.html">समाज सेवा</a>
+
+            </div>
+
+        </div>
+
+
+        <a href="volunteer.html" class="team-nav-link">
+            वॉलंटियर
+        </a>
+
+        <a href="membership.html" class="team-nav-link">
+            सदस्यता
+        </a>
+
+        <a href="news.html" class="team-nav-link">
+            समाचार
+        </a>
+
+        <a href="events.html" class="team-nav-link">
+            आगामी कार्यक्रम
+        </a>
+
+        <a href="gallery.html" class="team-nav-link">
+            गैलरी
+        </a>
+
+        <a href="contact.html" class="team-nav-link">
+            संपर्क करें
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     BREADCRUMB
+===================================================== -->
+
+<div class="team-breadcrumb">
+
+    <div class="team-breadcrumb-inner">
+
+        <a href="index.html">होम</a>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <a href="about.html">संस्था के बारे में</a>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <strong>हमारी टीम</strong>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="team-hero">
+
+    <div class="team-hero-content">
+
+        <h1>हमारी टीम</h1>
+
+        <div class="team-hero-line"></div>
+
+        <p>
+            समर्पित लोगों की एक ऐसी टीम जो सेवा, सहयोग,
+            पारदर्शिता और जनभागीदारी की भावना के साथ
+            समाज एवं राष्ट्र निर्माण के लिए कार्य करने का संकल्प रखती है।
+        </p>
+
+        <div class="team-hero-badge">
+            <i class="fa-solid fa-people-group"></i>
+            एक टीम • एक संकल्प • एक लक्ष्य
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     TEAM INTRO
+===================================================== -->
+
+<section class="team-intro">
+
+    <div class="team-intro-text">
+
+        <h2>हमारी सबसे बड़ी शक्ति — हमारी टीम</h2>
+
+        <p>
+            युवा सेवा संकल्प फाउंडेशन का विश्वास है कि
+            समाज में बड़ा परिवर्तन केवल एक व्यक्ति के प्रयास से नहीं,
+            बल्कि एकजुट और समर्पित टीम के सहयोग से संभव होता है।
+        </p>
+
+        <p>
+            हमारी टीम में विभिन्न क्षेत्रों से जुड़े सदस्य,
+            सामाजिक कार्यकर्ता और स्वयंसेवक शामिल हो सकते हैं,
+            जो अपने समय, क्षमता और अनुभव को समाज सेवा से जोड़ते हैं।
+        </p>
+
+        <p>
+            हमारा प्रत्येक सदस्य मानवता, ईमानदारी,
+            अनुशासन और सेवा की भावना को प्राथमिकता देते हुए
+            संस्था के उद्देश्यों को आगे बढ़ाने का प्रयास करता है।
+        </p>
+
+    </div>
+
+
+    <div class="team-values">
+
+        <h3>हमारी कार्य संस्कृति</h3>
+
+        <div class="team-value">
+
+            <i class="fa-solid fa-handshake"></i>
+
+            <div>
+                <strong>सहयोग</strong>
+                <span>मिलकर आगे बढ़ने की भावना</span>
+            </div>
+
+        </div>
+
+
+        <div class="team-value">
+
+            <i class="fa-solid fa-shield-heart"></i>
+
+            <div>
+                <strong>ईमानदारी</strong>
+                <span>जनहित और जिम्मेदारी के साथ कार्य</span>
+            </div>
+
+        </div>
+
+
+        <div class="team-value">
+
+            <i class="fa-solid fa-eye"></i>
+
+            <div>
+                <strong>पारदर्शिता</strong>
+                <span>कार्यप्रणाली में स्पष्टता और विश्वास</span>
+            </div>
+
+        </div>
+
+
+        <div class="team-value">
+
+            <i class="fa-solid fa-heart"></i>
+
+            <div>
+                <strong>सेवा भावना</strong>
+                <span>मानवता और समाज हित सर्वोपरि</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOUNDER
+===================================================== -->
+
+<section class="team-section">
+
+    <div class="team-heading">
+
+        <h2>संस्थापक एवं नेतृत्व</h2>
+
+        <p>
+            संस्था को दिशा, उद्देश्य और सेवा के संकल्प के साथ आगे बढ़ाने वाला नेतृत्व।
+        </p>
+
+    </div>
+
+
+    <div class="founder-card">
+
+        <div class="founder-photo">
+
+            <!-- अपनी फोटो लगाने के लिए:
+            <img src="images/founder.jpg" alt="संस्थापक">
+            -->
+
+            <i class="fa-solid fa-user"></i>
+
+        </div>
+
+
+        <div class="founder-info">
+
+            <h3>संस्थापक का नाम</h3>
+
+            <span class="founder-designation">
+                संस्थापक / अध्यक्ष
+            </span>
+
+            <p>
+                युवा सेवा संकल्प फाउंडेशन के माध्यम से
+                समाज सेवा, युवा जागरूकता और सकारात्मक परिवर्तन
+                के लिए एक मजबूत जनभागीदारी मंच तैयार करने का संकल्प।
+                हमारा उद्देश्य लोगों को केवल सहायता देना नहीं,
+                बल्कि उन्हें जागरूक, सक्षम और आत्मनिर्भर बनने की दिशा में
+                प्रेरित करना है।
+            </p>
+
+            <div class="founder-contact">
+
+                <span>
+                    <i class="fa-solid fa-phone"></i>
+                    9651731313
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-envelope"></i>
+                    info.yssfoundation@gmail.com
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EXECUTIVE TEAM
+===================================================== -->
+
+<section class="team-section">
+
+    <div class="team-heading">
+
+        <h2>मुख्य कार्यकारिणी टीम</h2>
+
+        <p>
+            संस्था के विभिन्न कार्यों, योजनाओं और सामाजिक गतिविधियों
+            को व्यवस्थित रूप से आगे बढ़ाने वाली टीम।
+        </p>
+
+    </div>
+
+
+    <div class="team-grid">
+
+
+        <!-- MEMBER 1 -->
+
+        <div class="member-card">
+
+            <div class="member-photo">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="member-card-body">
+
+                <h3>सदस्य का नाम</h3>
+
+                <span class="member-role">
+                    उपाध्यक्ष
+                </span>
+
+                <p>
+                    संस्था के कार्यों और सामाजिक कार्यक्रमों में सक्रिय सहयोग।
+                </p>
+
+                <div class="member-social">
+
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fa-solid fa-envelope"></i></a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MEMBER 2 -->
+
+        <div class="member-card">
+
+            <div class="member-photo">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="member-card-body">
+
+                <h3>सदस्य का नाम</h3>
+
+                <span class="member-role">
+                    महासचिव
+                </span>
+
+                <p>
+                    संस्था की योजनाओं और प्रशासनिक कार्यों का समन्वय।
+                </p>
+
+                <div class="member-social">
+
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fa-solid fa-envelope"></i></a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MEMBER 3 -->
+
+        <div class="member-card">
+
+            <div class="member-photo">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="member-card-body">
+
+                <h3>सदस्य का नाम</h3>
+
+                <span class="member-role">
+                    कोषाध्यक्ष
+                </span>
+
+                <p>
+                    संस्था के वित्तीय और अभिलेख संबंधी कार्यों में सहयोग।
+                </p>
+
+                <div class="member-social">
+
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fa-solid fa-envelope"></i></a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- MEMBER 4 -->
+
+        <div class="member-card">
+
+            <div class="member-photo">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="member-card-body">
+
+                <h3>सदस्य का नाम</h3>
+
+                <span class="member-role">
+                    संगठन मंत्री
+                </span>
+
+                <p>
+                    सदस्यों और स्वयंसेवकों को जोड़ने तथा संगठन विस्तार में सहयोग।
+                </p>
+
+                <div class="member-social">
+
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fa-solid fa-envelope"></i></a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     OTHER TEAM
+===================================================== -->
+
+<section class="team-section">
+
+    <div class="team-heading">
+
+        <h2>हमारे समर्पित सदस्य</h2>
+
+        <p>
+            अलग-अलग जिम्मेदारियों के माध्यम से संस्था के उद्देश्यों को
+            जमीन पर साकार करने वाली हमारी टीम।
+        </p>
+
+    </div>
+
+
+    <div class="team-grid">
+
+
+        <div class="member-card">
+
+            <div class="member-photo">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="member-card-body">
+
+                <h3>सदस्य का नाम</h3>
+
+                <span class="member-role">
+                    शिक्षा संयोजक
+                </span>
+
+                <p>शिक्षा एवं छात्र सहायता गतिविधियों में सहयोग।</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="member-card">
+
+            <div class="member-photo">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="member-card-body">
+
+                <h3>सदस्य का नाम</h3>
+
+                <span class="member-role">
+                    स्वास्थ्य संयोजक
+                </span>
+
+                <p>स्वास्थ्य जागरूकता और सामाजिक सहायता कार्यक्रमों में सहयोग।</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="member-card">
+
+            <div class="member-photo">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="member-card-body">
+
+                <h3>सदस्य का नाम</h3>
+
+                <span class="member-role">
+                    युवा संयोजक
+                </span>
+
+                <p>युवाओं को सामाजिक और रचनात्मक गतिविधियों से जोड़ना।</p>
+
+            </div>
+
+        </div>
+
+
+        <div class="member-card">
+
+            <div class="member-photo">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="member-card-body">
+
+                <h3>सदस्य का नाम</h3>
+
+                <span class="member-role">
+                    महिला प्रकोष्ठ
+                </span>
+
+                <p>महिला जागरूकता और सशक्तिकरण गतिविधियों में सहयोग।</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     DISTRICT / LOCAL TEAM
+===================================================== -->
+
+<section class="team-section">
+
+    <div class="district-box">
+
+        <div class="team-heading">
+
+            <h2>स्थानीय एवं क्षेत्रीय टीम</h2>
+
+            <p>
+                स्थानीय स्तर पर समाज सेवा और जनभागीदारी को मजबूत बनाने वाली टीम।
+            </p>
+
+        </div>
+
+
+        <div class="district-grid">
+
+
+            <div class="district-member">
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                <h3>जिला संयोजक</h3>
+
+                <p>
+                    जिले में संस्था की गतिविधियों का समन्वय।
+                </p>
+
+            </div>
+
+
+            <div class="district-member">
+
+                <i class="fa-solid fa-people-group"></i>
+
+                <h3>ब्लॉक संयोजक</h3>
+
+                <p>
+                    स्थानीय टीम और कार्यक्रमों का सहयोग।
+                </p>
+
+            </div>
+
+
+            <div class="district-member">
+
+                <i class="fa-solid fa-hands-helping"></i>
+
+                <h3>वॉलंटियर टीम</h3>
+
+                <p>
+                    सेवा कार्यों में सक्रिय भागीदारी और सहयोग।
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     JOIN TEAM
+===================================================== -->
+
+<section class="team-join">
+
+    <div class="team-join-box">
+
+        <h2>क्या आप भी हमारी टीम का हिस्सा बनना चाहते हैं?</h2>
+
+        <p>
+            यदि आपके भीतर समाज सेवा की भावना है और आप
+            अपने समय, ज्ञान या क्षमता के माध्यम से सकारात्मक बदलाव
+            लाना चाहते हैं, तो युवा सेवा संकल्प फाउंडेशन से जुड़ें।
+        </p>
+
+
+        <div class="team-buttons">
+
+            <a href="membership.html"
+               class="team-button blue">
+
+                <i class="fa-solid fa-user-plus"></i>
+                सदस्य बनें
+
+            </a>
+
+
+            <a href="volunteer.html"
+               class="team-button orange">
+
+                <i class="fa-solid fa-handshake"></i>
+                Volunteer बनें
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="team-footer">
+
+    <div class="team-footer-inner">
+
+
+        <div>
+
+            <img src="images/logo.png"
+                 alt="YSS Foundation"
+                 class="team-footer-logo">
+
+            <h3>युवा सेवा संकल्प फाउंडेशन</h3>
+
+            <p>
+                सेवा, समर्पण और संस्कार के साथ
+                समाज एवं राष्ट्र निर्माण की दिशा में
+                सकारात्मक प्रयास।
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>महत्वपूर्ण लिंक</h4>
+
+            <a href="index.html">होम</a>
+            <a href="about.html">हमारे बारे में</a>
+            <a href="mission.html">हमारा मिशन</a>
+            <a href="vision.html">हमारा विजन</a>
+            <a href="team.html">हमारी टीम</a>
+            <a href="membership.html">सदस्यता</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>हमारे कार्य</h4>
+
+            <a href="education.html">शिक्षा</a>
+            <a href="health.html">स्वास्थ्य</a>
+            <a href="environment.html">पर्यावरण</a>
+            <a href="women.html">महिला सशक्तिकरण</a>
+            <a href="youth.html">युवा विकास</a>
+            <a href="social-service.html">समाज सेवा</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>संपर्क करें</h4>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                ग्राम नैपुरा, पोस्ट कौड़ाही,
+                जिला अम्बेडकर नगर,
+                उत्तर प्रदेश – 224129
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                9651731313
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                info.yssfoundation@gmail.com
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="team-footer-bottom">
+
+        © 2026 युवा सेवा संकल्प फाउंडेशन |
+        सर्वाधिकार सुरक्षित |
+        <strong>युवा शक्ति - राष्ट्र शक्ति</strong>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
