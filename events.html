@@ -1,0 +1,2285 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="युवा सेवा संकल्प फाउंडेशन के आगामी कार्यक्रम, समाज सेवा अभियान, शिक्षा, स्वास्थ्य, पर्यावरण और जनकल्याण कार्यक्रम।"
+    >
+
+    <title>
+        आगामी कार्यक्रम | युवा सेवा संकल्प फाउंडेशन
+    </title>
+
+
+    <!-- GOOGLE FONT -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- FONT AWESOME -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- MAIN CSS -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+
+    <style>
+
+        /* ==========================================
+           EVENTS PAGE
+        ========================================== */
+
+        .events-page{
+            margin:0;
+            background:#f5f8fb;
+            color:#263746;
+            font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+        }
+
+        .events-page *,
+        .events-page *::before,
+        .events-page *::after{
+            box-sizing:border-box;
+        }
+
+        .events-page a{
+            text-decoration:none;
+        }
+
+
+        /* ==========================================
+           TOP BAR
+        ========================================== */
+
+        .events-topbar{
+            background:#123b66;
+            color:#ffffff;
+            min-height:42px;
+        }
+
+        .events-topbar-inner{
+            width:92%;
+            max-width:1400px;
+            min-height:42px;
+            margin:auto;
+
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+
+            gap:20px;
+        }
+
+        .events-contact{
+            display:flex;
+            align-items:center;
+            gap:25px;
+        }
+
+        .events-contact span{
+            display:flex;
+            align-items:center;
+            gap:7px;
+
+            font-size:13px;
+        }
+
+        .events-contact i{
+            color:#ffb15c;
+        }
+
+        .events-social{
+            display:flex;
+            align-items:center;
+            gap:15px;
+        }
+
+        .events-social a{
+            color:#ffffff;
+            transition:.2s;
+        }
+
+        .events-social a:hover{
+            color:#ff7900;
+        }
+
+        .events-phone{
+            font-size:13px;
+        }
+
+
+        /* ==========================================
+           HEADER
+        ========================================== */
+
+        .events-header{
+            background:#ffffff;
+            border-bottom:1px solid #e3e9ef;
+        }
+
+        .events-header-inner{
+            width:92%;
+            max-width:1400px;
+            min-height:135px;
+            margin:auto;
+
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+
+            gap:30px;
+        }
+
+        .events-brand{
+            display:flex;
+            align-items:center;
+            gap:18px;
+        }
+
+        .events-brand-logo{
+            width:120px;
+            height:120px;
+            object-fit:contain;
+            flex-shrink:0;
+        }
+
+        .events-brand-text h1{
+            margin:0;
+            color:#123b66;
+            font-size:39px;
+            line-height:1.15;
+            font-weight:800;
+        }
+
+        .events-brand-text h1 span{
+            color:#ff7900;
+        }
+
+        .events-brand-text p{
+            margin:7px 0 0;
+            color:#123b66;
+            font-size:17px;
+            font-weight:700;
+        }
+
+
+        /* ==========================================
+           LOGIN BOXES
+        ========================================== */
+
+        .events-login{
+            display:flex;
+            align-items:center;
+            gap:12px;
+        }
+
+        .events-login-card{
+            min-width:170px;
+            min-height:66px;
+            padding:10px 14px;
+
+            background:#ffffff;
+            border:1px solid #dce4eb;
+            border-radius:12px;
+
+            display:flex;
+            align-items:center;
+            gap:11px;
+
+            color:#123b66;
+            transition:.25s;
+        }
+
+        .events-login-card:hover{
+            transform:translateY(-3px);
+            box-shadow:0 8px 22px rgba(18,59,102,.12);
+        }
+
+        .events-login-icon{
+            width:42px;
+            height:42px;
+            border-radius:50%;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            font-size:20px;
+        }
+
+        .events-member .events-login-icon{
+            color:#24834b;
+            background:#eaf7ed;
+        }
+
+        .events-volunteer .events-login-icon{
+            color:#123b66;
+            background:#eaf1fa;
+        }
+
+        .events-admin{
+            background:#ff7900;
+            border-color:#ff7900;
+            color:#ffffff;
+        }
+
+        .events-admin .events-login-icon{
+            color:#ffffff;
+            background:rgba(255,255,255,.16);
+        }
+
+        .events-login-text{
+            display:flex;
+            flex-direction:column;
+        }
+
+        .events-login-text strong{
+            font-size:15px;
+        }
+
+        .events-login-text small{
+            margin-top:3px;
+            font-size:10px;
+            opacity:.75;
+        }
+
+
+        /* ==========================================
+           NAVIGATION
+        ========================================== */
+
+        .events-nav{
+            background:#082e63;
+            min-height:56px;
+            position:relative;
+            z-index:999;
+        }
+
+        .events-nav-inner{
+            width:92%;
+            max-width:1400px;
+            min-height:56px;
+            margin:auto;
+
+            display:flex;
+            align-items:stretch;
+        }
+
+        .events-nav-link{
+            min-height:56px;
+            padding:0 17px;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:7px;
+
+            color:#ffffff;
+            font-size:14px;
+            font-weight:700;
+            white-space:nowrap;
+
+            transition:.2s;
+        }
+
+        .events-nav-link:hover,
+        .events-nav-link.active{
+            background:#ff7900;
+        }
+
+        .events-dropdown{
+            position:relative;
+        }
+
+        .events-dropdown-menu{
+            display:none;
+
+            position:absolute;
+            left:0;
+            top:56px;
+
+            width:225px;
+            background:#ffffff;
+
+            border-top:3px solid #ff7900;
+            box-shadow:0 12px 30px rgba(0,0,0,.18);
+        }
+
+        .events-dropdown:hover .events-dropdown-menu{
+            display:block;
+        }
+
+        .events-dropdown-menu a{
+            display:block;
+            padding:12px 15px;
+
+            color:#263746;
+            font-size:13px;
+
+            border-bottom:1px solid #edf1f4;
+        }
+
+        .events-dropdown-menu a:hover{
+            color:#123b66;
+            background:#f3f7fa;
+        }
+
+
+        /* ==========================================
+           BREADCRUMB
+        ========================================== */
+
+        .events-breadcrumb{
+            background:#eef3f8;
+            border-bottom:1px solid #dfe7ee;
+        }
+
+        .events-breadcrumb-inner{
+            width:92%;
+            max-width:1400px;
+            min-height:44px;
+            margin:auto;
+
+            display:flex;
+            align-items:center;
+            gap:9px;
+
+            color:#69798a;
+            font-size:13px;
+        }
+
+        .events-breadcrumb a{
+            color:#123b66;
+            font-weight:700;
+        }
+
+        .events-breadcrumb i{
+            color:#ff7900;
+            font-size:10px;
+        }
+
+
+        /* ==========================================
+           HERO
+        ========================================== */
+
+        .events-hero{
+            width:92%;
+            max-width:1400px;
+            margin:35px auto 0;
+
+            padding:55px 40px;
+            border-radius:25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #123b66 0%,
+                    #1d5d96 65%,
+                    #24834b 100%
+                );
+
+            color:#ffffff;
+            position:relative;
+            overflow:hidden;
+
+            box-shadow:0 18px 40px rgba(18,59,102,.18);
+        }
+
+        .events-hero::before{
+            content:"";
+            position:absolute;
+
+            width:300px;
+            height:300px;
+
+            border-radius:50%;
+
+            right:-100px;
+            top:-140px;
+
+            background:rgba(255,255,255,.08);
+        }
+
+        .events-hero::after{
+            content:"";
+            position:absolute;
+
+            width:230px;
+            height:230px;
+
+            border-radius:50%;
+
+            left:-100px;
+            bottom:-140px;
+
+            background:rgba(255,121,0,.14);
+        }
+
+        .events-hero-content{
+            position:relative;
+            z-index:2;
+            max-width:850px;
+        }
+
+        .events-hero h1{
+            margin:0 0 10px;
+            font-size:48px;
+            font-weight:800;
+        }
+
+        .events-hero-line{
+            width:125px;
+            height:5px;
+            margin-bottom:20px;
+
+            background:#ff7900;
+            border-radius:20px;
+        }
+
+        .events-hero p{
+            margin:0;
+            font-size:18px;
+            line-height:1.8;
+            color:#f2f7fb;
+        }
+
+        .events-hero-badge{
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+
+            margin-top:20px;
+            padding:10px 18px;
+
+            border:1px solid rgba(255,255,255,.30);
+            border-radius:30px;
+
+            font-weight:700;
+        }
+
+
+        /* ==========================================
+           FEATURED EVENT
+        ========================================== */
+
+        .featured-event{
+            width:92%;
+            max-width:1400px;
+            margin:35px auto;
+        }
+
+        .featured-event-box{
+            display:grid;
+            grid-template-columns:.8fr 1.5fr;
+            gap:0;
+
+            overflow:hidden;
+            background:#ffffff;
+
+            border:1px solid #dfe7ed;
+            border-radius:22px;
+
+            box-shadow:0 10px 30px rgba(18,59,102,.08);
+        }
+
+        .featured-date{
+            min-height:100%;
+            padding:35px 25px;
+
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+
+            text-align:center;
+
+            background:#ff7900;
+            color:#ffffff;
+        }
+
+        .featured-date .day{
+            font-size:56px;
+            line-height:1;
+            font-weight:800;
+        }
+
+        .featured-date .month{
+            margin-top:8px;
+            font-size:21px;
+            font-weight:800;
+        }
+
+        .featured-date .year{
+            margin-top:4px;
+            font-size:16px;
+            opacity:.9;
+        }
+
+        .featured-content{
+            padding:32px 35px;
+        }
+
+        .featured-label{
+            display:inline-block;
+            padding:6px 12px;
+            border-radius:20px;
+
+            background:#eaf7ed;
+            color:#24834b;
+
+            font-size:12px;
+            font-weight:800;
+        }
+
+        .featured-content h2{
+            margin:14px 0 10px;
+            color:#123b66;
+            font-size:30px;
+        }
+
+        .featured-content > p{
+            margin:0;
+            color:#5b6c7b;
+            font-size:15px;
+            line-height:1.8;
+        }
+
+        .featured-details{
+            margin-top:18px;
+
+            display:flex;
+            flex-wrap:wrap;
+            gap:18px;
+        }
+
+        .featured-details span{
+            display:flex;
+            align-items:center;
+            gap:7px;
+
+            color:#526271;
+            font-size:14px;
+            font-weight:600;
+        }
+
+        .featured-details i{
+            color:#ff7900;
+        }
+
+        .featured-buttons{
+            display:flex;
+            gap:10px;
+            flex-wrap:wrap;
+
+            margin-top:22px;
+        }
+
+        .event-button{
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            gap:8px;
+
+            padding:12px 20px;
+            border-radius:8px;
+
+            color:#ffffff;
+            font-size:14px;
+            font-weight:700;
+
+            transition:.2s;
+        }
+
+        .event-button:hover{
+            transform:translateY(-2px);
+        }
+
+        .event-button.blue{
+            background:#123b66;
+        }
+
+        .event-button.orange{
+            background:#ff7900;
+        }
+
+
+        /* ==========================================
+           SECTION HEADING
+        ========================================== */
+
+        .events-section{
+            width:92%;
+            max-width:1400px;
+            margin:0 auto;
+            padding:5px 0 45px;
+        }
+
+        .events-heading{
+            text-align:center;
+            margin-bottom:30px;
+        }
+
+        .events-heading h2{
+            margin:0;
+            color:#123b66;
+            font-size:32px;
+        }
+
+        .events-heading p{
+            max-width:750px;
+            margin:8px auto 0;
+
+            color:#69798a;
+            font-size:14px;
+            line-height:1.7;
+        }
+
+
+        /* ==========================================
+           EVENT CARDS
+        ========================================== */
+
+        .events-grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:20px;
+        }
+
+        .event-card{
+            background:#ffffff;
+
+            border:1px solid #dfe7ed;
+            border-radius:18px;
+
+            overflow:hidden;
+
+            box-shadow:0 6px 20px rgba(0,0,0,.04);
+
+            transition:.25s;
+        }
+
+        .event-card:hover{
+            transform:translateY(-6px);
+            box-shadow:0 16px 35px rgba(18,59,102,.12);
+        }
+
+        .event-card-top{
+            min-height:120px;
+            padding:20px;
+
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+
+            background:linear-gradient(135deg,#eaf2fb,#f7fbff);
+        }
+
+        .event-icon{
+            width:65px;
+            height:65px;
+
+            border-radius:17px;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            background:#123b66;
+            color:#ffffff;
+
+            font-size:28px;
+        }
+
+        .event-card:nth-child(2) .event-icon{
+            background:#24834b;
+        }
+
+        .event-card:nth-child(3) .event-icon{
+            background:#ff7900;
+        }
+
+        .event-card:nth-child(4) .event-icon{
+            background:#663399;
+        }
+
+        .event-card:nth-child(5) .event-icon{
+            background:#147b7b;
+        }
+
+        .event-card:nth-child(6) .event-icon{
+            background:#a64040;
+        }
+
+        .event-status{
+            padding:6px 11px;
+            border-radius:20px;
+
+            background:#eaf7ed;
+            color:#24834b;
+
+            font-size:11px;
+            font-weight:800;
+        }
+
+        .event-card-body{
+            padding:22px;
+        }
+
+        .event-card h3{
+            margin:0 0 10px;
+            color:#123b66;
+            font-size:21px;
+        }
+
+        .event-card p{
+            margin:0;
+            color:#69798a;
+            font-size:14px;
+            line-height:1.7;
+        }
+
+        .event-info{
+            margin-top:18px;
+            padding-top:15px;
+
+            border-top:1px solid #e8edf1;
+        }
+
+        .event-info div{
+            display:flex;
+            align-items:flex-start;
+            gap:9px;
+
+            margin-bottom:9px;
+
+            color:#526271;
+            font-size:13px;
+            line-height:1.5;
+        }
+
+        .event-info i{
+            width:16px;
+            margin-top:3px;
+            color:#ff7900;
+        }
+
+        .event-card-footer{
+            padding:0 22px 22px;
+        }
+
+        .event-card-footer a{
+            display:inline-flex;
+            align-items:center;
+            gap:7px;
+
+            color:#123b66;
+            font-size:14px;
+            font-weight:800;
+        }
+
+        .event-card-footer a:hover{
+            color:#ff7900;
+        }
+
+
+        /* ==========================================
+           EVENT CALENDAR BOX
+        ========================================== */
+
+        .calendar-section{
+            width:92%;
+            max-width:1400px;
+            margin:0 auto 50px;
+        }
+
+        .calendar-box{
+            padding:35px;
+            border-radius:22px;
+
+            background:#123b66;
+            color:#ffffff;
+        }
+
+        .calendar-box h2{
+            margin:0;
+            text-align:center;
+            font-size:30px;
+        }
+
+        .calendar-box > p{
+            margin:8px 0 25px;
+            text-align:center;
+            color:#dce8f3;
+            font-size:14px;
+        }
+
+        .calendar-grid{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:15px;
+        }
+
+        .calendar-item{
+            padding:18px;
+
+            border:1px solid rgba(255,255,255,.15);
+            border-radius:15px;
+
+            background:rgba(255,255,255,.07);
+        }
+
+        .calendar-item .calendar-date{
+            display:block;
+            color:#ffb15c;
+            font-size:14px;
+            font-weight:800;
+        }
+
+        .calendar-item h3{
+            margin:8px 0 5px;
+            font-size:17px;
+        }
+
+        .calendar-item p{
+            margin:0;
+            color:#dbe7f1;
+            font-size:12px;
+            line-height:1.6;
+        }
+
+
+        /* ==========================================
+           JOIN CTA
+        ========================================== */
+
+        .events-join{
+            width:92%;
+            max-width:1400px;
+            margin:0 auto 60px;
+        }
+
+        .events-join-box{
+            padding:40px;
+            text-align:center;
+
+            background:#f1faf4;
+            border:1px solid #d5e8db;
+            border-radius:22px;
+        }
+
+        .events-join-box h2{
+            margin:0 0 10px;
+            color:#24834b;
+            font-size:31px;
+        }
+
+        .events-join-box p{
+            max-width:750px;
+            margin:0 auto 20px;
+
+            color:#526271;
+            font-size:15px;
+            line-height:1.8;
+        }
+
+        .events-join-buttons{
+            display:flex;
+            justify-content:center;
+            flex-wrap:wrap;
+            gap:12px;
+        }
+
+
+        /* ==========================================
+           FOOTER
+        ========================================== */
+
+        .events-footer{
+            background:#092e60;
+            color:#ffffff;
+            padding:45px 0 0;
+        }
+
+        .events-footer-inner{
+            width:92%;
+            max-width:1400px;
+            margin:auto;
+
+            display:grid;
+            grid-template-columns:1.5fr 1fr 1fr 1.3fr;
+            gap:35px;
+        }
+
+        .events-footer-logo{
+            width:90px;
+            height:90px;
+            object-fit:contain;
+            margin-bottom:10px;
+        }
+
+        .events-footer h3,
+        .events-footer h4{
+            margin:0 0 13px;
+            color:#ffffff;
+        }
+
+        .events-footer p{
+            margin:0 0 9px;
+            color:#dbe5ef;
+            font-size:13px;
+            line-height:1.7;
+        }
+
+        .events-footer a{
+            display:block;
+            margin-bottom:8px;
+
+            color:#dbe5ef;
+            font-size:13px;
+        }
+
+        .events-footer a:hover{
+            color:#ff7900;
+        }
+
+        .events-footer-bottom{
+            margin-top:35px;
+            padding:17px 0;
+
+            border-top:1px solid rgba(255,255,255,.15);
+
+            text-align:center;
+            color:#dbe5ef;
+            font-size:12px;
+        }
+
+
+        /* ==========================================
+           RESPONSIVE
+        ========================================== */
+
+        @media(max-width:1150px){
+
+            .events-header-inner{
+                flex-direction:column;
+                padding:18px 0;
+            }
+
+            .events-login{
+                width:100%;
+                justify-content:center;
+            }
+
+            .events-grid{
+                grid-template-columns:repeat(2,1fr);
+            }
+
+            .calendar-grid{
+                grid-template-columns:repeat(2,1fr);
+            }
+
+            .events-footer-inner{
+                grid-template-columns:1fr 1fr;
+            }
+
+        }
+
+
+        @media(max-width:850px){
+
+            .events-contact span:first-child{
+                display:none;
+            }
+
+            .events-brand{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            .events-brand-text h1{
+                font-size:31px;
+            }
+
+            .featured-event-box{
+                grid-template-columns:1fr;
+            }
+
+            .featured-date{
+                padding:25px;
+            }
+
+        }
+
+
+        @media(max-width:650px){
+
+            .events-topbar-inner{
+                justify-content:center;
+            }
+
+            .events-contact{
+                gap:10px;
+            }
+
+            .events-contact span:nth-child(2){
+                display:none;
+            }
+
+            .events-social a{
+                display:none;
+            }
+
+            .events-login{
+                flex-direction:column;
+            }
+
+            .events-login-card{
+                width:100%;
+                max-width:350px;
+            }
+
+            .events-nav-inner{
+                width:100%;
+                overflow-x:auto;
+            }
+
+            .events-nav-link{
+                padding:0 12px;
+                font-size:12px;
+            }
+
+            .events-hero{
+                padding:35px 22px;
+            }
+
+            .events-hero h1{
+                font-size:35px;
+            }
+
+            .events-hero p{
+                font-size:15px;
+            }
+
+            .featured-content{
+                padding:25px 20px;
+            }
+
+            .featured-content h2{
+                font-size:25px;
+            }
+
+            .events-grid{
+                grid-template-columns:1fr;
+            }
+
+            .calendar-grid{
+                grid-template-columns:1fr;
+            }
+
+            .calendar-box{
+                padding:28px 18px;
+            }
+
+            .events-footer-inner{
+                grid-template-columns:1fr;
+            }
+
+        }
+
+
+        @media(max-width:430px){
+
+            .events-brand-text h1{
+                font-size:27px;
+            }
+
+            .events-hero h1{
+                font-size:30px;
+            }
+
+            .events-join-box{
+                padding:28px 18px;
+            }
+
+            .featured-details{
+                flex-direction:column;
+                gap:8px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="events-page">
+
+
+<!-- ==========================================
+     TOP BAR
+========================================== -->
+
+<div class="events-topbar">
+
+    <div class="events-topbar-inner">
+
+        <div class="events-contact">
+
+            <span>
+                <i class="fa-solid fa-envelope"></i>
+                info.yssfoundation@gmail.com
+            </span>
+
+            <span>
+                <i class="fa-solid fa-location-dot"></i>
+                ग्राम नैपुरा, पोस्ट कौड़ाही, जिला अम्बेडकर नगर, उत्तर प्रदेश – 224129
+            </span>
+
+        </div>
+
+
+        <div class="events-social">
+
+            <a href="#" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="#" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+
+            <a href="#" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <span class="events-phone">
+                <i class="fa-solid fa-phone"></i>
+                9651731313
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ==========================================
+     HEADER
+========================================== -->
+
+<header class="events-header">
+
+    <div class="events-header-inner">
+
+
+        <a href="index.html" class="events-brand">
+
+            <img
+                src="images/logo.png"
+                alt="युवा सेवा संकल्प फाउंडेशन"
+                class="events-brand-logo"
+            >
+
+
+            <div class="events-brand-text">
+
+                <h1>
+                    युवा सेवा संकल्प
+                    <span>फाउंडेशन</span>
+                </h1>
+
+                <p>
+                    युवा शक्ति - राष्ट्र शक्ति
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <div class="events-login">
+
+
+            <a
+                href="member-login.html"
+                class="events-login-card events-member"
+            >
+
+                <div class="events-login-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="events-login-text">
+
+                    <strong>
+                        सदस्य Login
+                    </strong>
+
+                    <small>
+                        अपने खाते में लॉगिन करें
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="volunteer-login.html"
+                class="events-login-card events-volunteer"
+            >
+
+                <div class="events-login-icon">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+
+                <div class="events-login-text">
+
+                    <strong>
+                        Volunteer Login
+                    </strong>
+
+                    <small>
+                        सेवा करने के लिए जुड़ें
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <a
+                href="admin-login.html"
+                class="events-login-card events-admin"
+            >
+
+                <div class="events-login-icon">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+
+                <div class="events-login-text">
+
+                    <strong>
+                        Admin Login
+                    </strong>
+
+                    <small>
+                        Admin Panel
+                    </small>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- ==========================================
+     NAVIGATION
+========================================== -->
+
+<nav class="events-nav">
+
+    <div class="events-nav-inner">
+
+
+        <a href="index.html" class="events-nav-link">
+
+            <i class="fa-solid fa-house"></i>
+            होम
+
+        </a>
+
+
+        <div class="events-dropdown">
+
+            <a
+                href="about.html"
+                class="events-nav-link"
+            >
+                संस्था के बारे में
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+
+
+            <div class="events-dropdown-menu">
+
+                <a href="about.html">
+                    हमारे बारे में
+                </a>
+
+                <a href="mission.html">
+                    हमारा मिशन
+                </a>
+
+                <a href="vision.html">
+                    हमारा विजन
+                </a>
+
+                <a href="team.html">
+                    हमारी टीम
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="events-dropdown">
+
+            <a
+                href="#"
+                class="events-nav-link"
+            >
+                हमारे कार्य
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+
+
+            <div class="events-dropdown-menu">
+
+                <a href="education.html">
+                    शिक्षा
+                </a>
+
+                <a href="health.html">
+                    स्वास्थ्य
+                </a>
+
+                <a href="environment.html">
+                    पर्यावरण
+                </a>
+
+                <a href="women.html">
+                    महिला सशक्तिकरण
+                </a>
+
+                <a href="youth.html">
+                    युवा विकास
+                </a>
+
+                <a href="social-service.html">
+                    समाज सेवा
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="volunteer.html"
+            class="events-nav-link"
+        >
+            वॉलंटियर
+        </a>
+
+
+        <a
+            href="membership.html"
+            class="events-nav-link"
+        >
+            सदस्यता
+        </a>
+
+
+        <a
+            href="news.html"
+            class="events-nav-link"
+        >
+            समाचार
+        </a>
+
+
+        <a
+            href="events.html"
+            class="events-nav-link active"
+        >
+            आगामी कार्यक्रम
+        </a>
+
+
+        <a
+            href="gallery.html"
+            class="events-nav-link"
+        >
+            गैलरी
+        </a>
+
+
+        <a
+            href="contact.html"
+            class="events-nav-link"
+        >
+            संपर्क करें
+        </a>
+
+
+    </div>
+
+</nav>
+
+
+<!-- ==========================================
+     BREADCRUMB
+========================================== -->
+
+<div class="events-breadcrumb">
+
+    <div class="events-breadcrumb-inner">
+
+        <a href="index.html">
+            होम
+        </a>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <strong>
+            आगामी कार्यक्रम
+        </strong>
+
+    </div>
+
+</div>
+
+
+<!-- ==========================================
+     HERO
+========================================== -->
+
+<section class="events-hero">
+
+    <div class="events-hero-content">
+
+        <h1>
+            आगामी कार्यक्रम
+        </h1>
+
+        <div class="events-hero-line"></div>
+
+        <p>
+            युवा सेवा संकल्प फाउंडेशन द्वारा आयोजित
+            समाज सेवा, शिक्षा, स्वास्थ्य, पर्यावरण,
+            युवा विकास और जनकल्याण से जुड़े आगामी
+            कार्यक्रमों की जानकारी यहाँ प्राप्त करें।
+        </p>
+
+        <div class="events-hero-badge">
+
+            <i class="fa-solid fa-calendar-days"></i>
+
+            सेवा से बदलाव की ओर एक कदम
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     FEATURED EVENT
+========================================== -->
+
+<section class="featured-event">
+
+    <div class="featured-event-box">
+
+
+        <div class="featured-date">
+
+            <span class="day">
+                जल्द
+            </span>
+
+            <span class="month">
+                घोषित होगा
+            </span>
+
+            <span class="year">
+                2026
+            </span>
+
+        </div>
+
+
+        <div class="featured-content">
+
+            <span class="featured-label">
+                विशेष आगामी कार्यक्रम
+            </span>
+
+            <h2>
+                वृक्षारोपण एवं पर्यावरण जागरूकता अभियान
+            </h2>
+
+            <p>
+                पर्यावरण संरक्षण और हरित भविष्य के लिए
+                अधिक से अधिक लोगों को वृक्षारोपण अभियान
+                से जोड़ने का प्रयास किया जाएगा।
+                कार्यक्रम की अंतिम तिथि और समय जल्द
+                संस्था द्वारा घोषित किया जाएगा।
+            </p>
+
+
+            <div class="featured-details">
+
+                <span>
+                    <i class="fa-solid fa-calendar"></i>
+                    तिथि: जल्द घोषित होगी
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-clock"></i>
+                    समय: जल्द घोषित होगा
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-location-dot"></i>
+                    स्थान: अम्बेडकर नगर, उत्तर प्रदेश
+                </span>
+
+            </div>
+
+
+            <div class="featured-buttons">
+
+                <a
+                    href="volunteer.html"
+                    class="event-button blue"
+                >
+                    <i class="fa-solid fa-handshake"></i>
+                    Volunteer बनें
+                </a>
+
+
+                <a
+                    href="membership.html"
+                    class="event-button orange"
+                >
+                    <i class="fa-solid fa-user-plus"></i>
+                    सदस्य बनें
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     UPCOMING EVENTS
+========================================== -->
+
+<section class="events-section">
+
+    <div class="events-heading">
+
+        <h2>
+            अन्य आगामी कार्यक्रम
+        </h2>
+
+        <p>
+            समाज के विभिन्न क्षेत्रों में सकारात्मक
+            परिवर्तन लाने के उद्देश्य से प्रस्तावित
+            कार्यक्रमों की जानकारी।
+        </p>
+
+    </div>
+
+
+    <div class="events-grid">
+
+
+        <!-- EVENT 1 -->
+
+        <div class="event-card">
+
+            <div class="event-card-top">
+
+                <div class="event-icon">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+
+                <span class="event-status">
+                    जल्द घोषित होगा
+                </span>
+
+            </div>
+
+
+            <div class="event-card-body">
+
+                <h3>
+                    शिक्षा जागरूकता कार्यक्रम
+                </h3>
+
+                <p>
+                    बच्चों और युवाओं में शिक्षा के महत्व
+                    तथा आगे बढ़ने के अवसरों के प्रति
+                    जागरूकता बढ़ाने का प्रयास।
+                </p>
+
+
+                <div class="event-info">
+
+                    <div>
+                        <i class="fa-solid fa-calendar"></i>
+                        तिथि: जल्द घोषित होगी
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-clock"></i>
+                        समय: जल्द घोषित होगा
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        स्थान: स्थानीय क्षेत्र, अम्बेडकर नगर
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="event-card-footer">
+
+                <a href="volunteer.html">
+                    कार्यक्रम से जुड़ें
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVENT 2 -->
+
+        <div class="event-card">
+
+            <div class="event-card-top">
+
+                <div class="event-icon">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+
+                <span class="event-status">
+                    जल्द घोषित होगा
+                </span>
+
+            </div>
+
+
+            <div class="event-card-body">
+
+                <h3>
+                    स्वास्थ्य जागरूकता अभियान
+                </h3>
+
+                <p>
+                    स्वास्थ्य के प्रति जागरूकता बढ़ाने
+                    और लोगों तक आवश्यक जानकारी पहुँचाने
+                    के उद्देश्य से जनजागरूकता कार्यक्रम।
+                </p>
+
+
+                <div class="event-info">
+
+                    <div>
+                        <i class="fa-solid fa-calendar"></i>
+                        तिथि: जल्द घोषित होगी
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-clock"></i>
+                        समय: जल्द घोषित होगा
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        स्थान: अम्बेडकर नगर, उत्तर प्रदेश
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="event-card-footer">
+
+                <a href="volunteer.html">
+                    कार्यक्रम से जुड़ें
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVENT 3 -->
+
+        <div class="event-card">
+
+            <div class="event-card-top">
+
+                <div class="event-icon">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+
+                <span class="event-status">
+                    जल्द घोषित होगा
+                </span>
+
+            </div>
+
+
+            <div class="event-card-body">
+
+                <h3>
+                    स्वच्छता एवं पर्यावरण अभियान
+                </h3>
+
+                <p>
+                    स्वच्छ समाज और सुरक्षित पर्यावरण के
+                    लिए जनभागीदारी, स्वच्छता जागरूकता
+                    और पर्यावरण संरक्षण अभियान।
+                </p>
+
+
+                <div class="event-info">
+
+                    <div>
+                        <i class="fa-solid fa-calendar"></i>
+                        तिथि: जल्द घोषित होगी
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-clock"></i>
+                        समय: जल्द घोषित होगा
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        स्थान: स्थानीय क्षेत्र
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="event-card-footer">
+
+                <a href="volunteer.html">
+                    कार्यक्रम से जुड़ें
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVENT 4 -->
+
+        <div class="event-card">
+
+            <div class="event-card-top">
+
+                <div class="event-icon">
+                    <i class="fa-solid fa-person-dress"></i>
+                </div>
+
+                <span class="event-status">
+                    जल्द घोषित होगा
+                </span>
+
+            </div>
+
+
+            <div class="event-card-body">
+
+                <h3>
+                    महिला सशक्तिकरण कार्यक्रम
+                </h3>
+
+                <p>
+                    महिलाओं को जागरूकता, कौशल विकास
+                    और आत्मनिर्भरता से जोड़ने के लिए
+                    विशेष कार्यक्रम आयोजित करने का प्रयास।
+                </p>
+
+
+                <div class="event-info">
+
+                    <div>
+                        <i class="fa-solid fa-calendar"></i>
+                        तिथि: जल्द घोषित होगी
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-clock"></i>
+                        समय: जल्द घोषित होगा
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        स्थान: अम्बेडकर नगर, उत्तर प्रदेश
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="event-card-footer">
+
+                <a href="volunteer.html">
+                    कार्यक्रम से जुड़ें
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVENT 5 -->
+
+        <div class="event-card">
+
+            <div class="event-card-top">
+
+                <div class="event-icon">
+                    <i class="fa-solid fa-people-group"></i>
+                </div>
+
+                <span class="event-status">
+                    जल्द घोषित होगा
+                </span>
+
+            </div>
+
+
+            <div class="event-card-body">
+
+                <h3>
+                    युवा नेतृत्व एवं विकास कार्यक्रम
+                </h3>
+
+                <p>
+                    युवाओं की प्रतिभा, नेतृत्व क्षमता,
+                    कौशल और समाज सेवा की भावना को
+                    मजबूत करने के लिए विशेष पहल।
+                </p>
+
+
+                <div class="event-info">
+
+                    <div>
+                        <i class="fa-solid fa-calendar"></i>
+                        तिथि: जल्द घोषित होगी
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-clock"></i>
+                        समय: जल्द घोषित होगा
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        स्थान: स्थानीय क्षेत्र
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="event-card-footer">
+
+                <a href="volunteer.html">
+                    कार्यक्रम से जुड़ें
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- EVENT 6 -->
+
+        <div class="event-card">
+
+            <div class="event-card-top">
+
+                <div class="event-icon">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                </div>
+
+                <span class="event-status">
+                    जल्द घोषित होगा
+                </span>
+
+            </div>
+
+
+            <div class="event-card-body">
+
+                <h3>
+                    विशेष समाज सेवा अभियान
+                </h3>
+
+                <p>
+                    जरूरतमंद और वंचित लोगों तक
+                    सहयोग पहुँचाने तथा सामाजिक
+                    सहभागिता को बढ़ाने का प्रयास।
+                </p>
+
+
+                <div class="event-info">
+
+                    <div>
+                        <i class="fa-solid fa-calendar"></i>
+                        तिथि: जल्द घोषित होगी
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-clock"></i>
+                        समय: जल्द घोषित होगा
+                    </div>
+
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        स्थान: आवश्यकता के अनुसार
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="event-card-footer">
+
+                <a href="volunteer.html">
+                    कार्यक्रम से जुड़ें
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     PROGRAM PLANNING
+========================================== -->
+
+<section class="calendar-section">
+
+    <div class="calendar-box">
+
+        <h2>
+            कार्यक्रम योजना
+        </h2>
+
+        <p>
+            आगामी गतिविधियों और सेवा कार्यक्रमों की
+            जानकारी संस्था द्वारा समय-समय पर अपडेट की जाएगी।
+        </p>
+
+
+        <div class="calendar-grid">
+
+
+            <div class="calendar-item">
+
+                <span class="calendar-date">
+                    कार्यक्रम 01
+                </span>
+
+                <h3>
+                    शिक्षा अभियान
+                </h3>
+
+                <p>
+                    शिक्षा जागरूकता एवं छात्र सहयोग।
+                </p>
+
+            </div>
+
+
+            <div class="calendar-item">
+
+                <span class="calendar-date">
+                    कार्यक्रम 02
+                </span>
+
+                <h3>
+                    स्वास्थ्य अभियान
+                </h3>
+
+                <p>
+                    स्वास्थ्य जागरूकता एवं जनसहयोग।
+                </p>
+
+            </div>
+
+
+            <div class="calendar-item">
+
+                <span class="calendar-date">
+                    कार्यक्रम 03
+                </span>
+
+                <h3>
+                    पर्यावरण अभियान
+                </h3>
+
+                <p>
+                    वृक्षारोपण एवं स्वच्छता जागरूकता।
+                </p>
+
+            </div>
+
+
+            <div class="calendar-item">
+
+                <span class="calendar-date">
+                    कार्यक्रम 04
+                </span>
+
+                <h3>
+                    समाज सेवा
+                </h3>
+
+                <p>
+                    जरूरतमंद लोगों के सहयोग हेतु अभियान।
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     JOIN CTA
+========================================== -->
+
+<section class="events-join">
+
+    <div class="events-join-box">
+
+        <h2>
+            आप भी हमारे कार्यक्रमों से जुड़ें
+        </h2>
+
+        <p>
+            आपका समय, आपकी प्रतिभा और आपका सहयोग
+            समाज में सकारात्मक बदलाव ला सकता है।
+            सदस्य या वॉलंटियर बनकर युवा सेवा संकल्प
+            फाउंडेशन के सेवा कार्यों में अपनी भागीदारी निभाएँ।
+        </p>
+
+
+        <div class="events-join-buttons">
+
+            <a
+                href="membership.html"
+                class="event-button blue"
+            >
+                <i class="fa-solid fa-user-plus"></i>
+                सदस्य बनें
+            </a>
+
+
+            <a
+                href="volunteer.html"
+                class="event-button orange"
+            >
+                <i class="fa-solid fa-handshake"></i>
+                Volunteer बनें
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ==========================================
+     FOOTER
+========================================== -->
+
+<footer class="events-footer">
+
+    <div class="events-footer-inner">
+
+
+        <div>
+
+            <img
+                src="images/logo.png"
+                alt="YSS Foundation"
+                class="events-footer-logo"
+            >
+
+            <h3>
+                युवा सेवा संकल्प फाउंडेशन
+            </h3>
+
+            <p>
+                सेवा, समर्पण और संस्कार के साथ
+                समाज एवं राष्ट्र निर्माण की दिशा में
+                सकारात्मक प्रयास।
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                महत्वपूर्ण लिंक
+            </h4>
+
+            <a href="index.html">होम</a>
+
+            <a href="about.html">हमारे बारे में</a>
+
+            <a href="mission.html">हमारा मिशन</a>
+
+            <a href="vision.html">हमारा विजन</a>
+
+            <a href="membership.html">सदस्यता</a>
+
+            <a href="contact.html">संपर्क करें</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                हमारे कार्य
+            </h4>
+
+            <a href="education.html">शिक्षा</a>
+
+            <a href="health.html">स्वास्थ्य</a>
+
+            <a href="environment.html">पर्यावरण</a>
+
+            <a href="women.html">महिला सशक्तिकरण</a>
+
+            <a href="youth.html">युवा विकास</a>
+
+            <a href="social-service.html">समाज सेवा</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                संपर्क करें
+            </h4>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                ग्राम नैपुरा, पोस्ट कौड़ाही,
+                जिला अम्बेडकर नगर,
+                उत्तर प्रदेश – 224129
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                9651731313
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                info.yssfoundation@gmail.com
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="events-footer-bottom">
+
+        © 2026 युवा सेवा संकल्प फाउंडेशन |
+        सर्वाधिकार सुरक्षित |
+        <strong>युवा शक्ति - राष्ट्र शक्ति</strong>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>
