@@ -1,38 +1,22 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
-
-<meta name="theme-color"
-      content="#082e63">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Admin Login | युवा सेवा संकल्प फाउंडेशन</title>
 
 <link rel="icon" href="images/logo.png">
 
-<link rel="preconnect"
-      href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
-
-/* =====================================================
-   RESET
-===================================================== */
 
 *{
     margin:0;
@@ -40,198 +24,84 @@
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
     min-height:100vh;
-
-    font-family:
-    "Noto Sans Devanagari",
-    "Mangal",
-    Arial,
-    sans-serif;
-
+    font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
     background:
-    radial-gradient(
-        circle at 10% 10%,
-        rgba(255,121,0,.15),
-        transparent 28%
-    ),
-    radial-gradient(
-        circle at 90% 90%,
-        rgba(36,131,75,.13),
-        transparent 30%
-    ),
-    linear-gradient(
-        135deg,
-        #041a38,
-        #082e63 50%,
-        #155586
-    );
-
-    color:#263746;
-}
-
-
-/* =====================================================
-   BACKGROUND CIRCLES
-===================================================== */
-
-.bg-circle{
-    position:fixed;
-    border-radius:50%;
-    pointer-events:none;
-}
-
-.bg-one{
-    width:430px;
-    height:430px;
-    top:-240px;
-    left:-200px;
-    border:75px solid rgba(255,255,255,.035);
-}
-
-.bg-two{
-    width:500px;
-    height:500px;
-    right:-300px;
-    bottom:-300px;
-    border:80px solid rgba(255,121,0,.04);
-}
-
-
-/* =====================================================
-   PAGE
-===================================================== */
-
-.page{
-    min-height:100vh;
-
+    radial-gradient(circle at 10% 10%,rgba(255,121,0,.16),transparent 28%),
+    radial-gradient(circle at 90% 90%,rgba(36,131,75,.14),transparent 30%),
+    linear-gradient(135deg,#041a38,#082e63 55%,#155586);
     display:flex;
     align-items:center;
     justify-content:center;
-
-    padding:30px 15px 55px;
-
-    position:relative;
-    z-index:2;
+    padding:20px;
 }
 
-
-/* =====================================================
-   MAIN CARD
-===================================================== */
-
-.login-card{
+.login-wrapper{
     width:100%;
     max-width:1080px;
-
-    display:grid;
-    grid-template-columns:44% 56%;
-
     background:#fff;
-
     border-radius:30px;
     overflow:hidden;
-
-    box-shadow:
-    0 35px 90px rgba(0,0,0,.35);
+    display:grid;
+    grid-template-columns:45% 55%;
+    box-shadow:0 35px 90px rgba(0,0,0,.35);
 }
 
+/* LEFT */
 
-/* =====================================================
-   LEFT PANEL
-===================================================== */
-
-.left-panel{
+.login-left{
     position:relative;
     overflow:hidden;
-
-    padding:48px 42px;
-
+    padding:50px 42px;
     color:#fff;
-
-    background:
-    linear-gradient(
-        145deg,
-        #061e42,
-        #0b3568 55%,
-        #1d5d96
-    );
+    background:linear-gradient(145deg,#061e42,#0b3568 55%,#1d5d96);
 }
 
-.left-panel::before{
+.login-left:before{
     content:"";
-
     position:absolute;
-
-    width:420px;
-    height:420px;
-
+    width:430px;
+    height:430px;
     border-radius:50%;
-
-    right:-260px;
-    top:-250px;
-
-    border:70px solid rgba(255,255,255,.035);
+    right:-280px;
+    top:-260px;
+    border:75px solid rgba(255,255,255,.04);
 }
 
-.left-panel::after{
+.login-left:after{
     content:"";
-
     position:absolute;
-
     width:260px;
     height:260px;
-
     border-radius:50%;
-
-    left:-170px;
-    bottom:-170px;
-
+    left:-180px;
+    bottom:-180px;
     background:rgba(255,121,0,.08);
 }
-
-
-/* =====================================================
-   BRAND
-===================================================== */
 
 .brand{
     position:relative;
     z-index:2;
-
     display:flex;
     align-items:center;
-
     gap:15px;
-
     text-decoration:none;
     color:#fff;
 }
 
 .brand img{
-    width:82px;
-    height:82px;
-
+    width:85px;
+    height:85px;
     object-fit:contain;
-
     background:#fff;
-
     padding:5px;
-
     border-radius:50%;
-
-    box-shadow:
-    0 10px 28px rgba(0,0,0,.2);
 }
 
 .brand h1{
     font-size:23px;
     line-height:1.35;
-
     font-weight:800;
 }
 
@@ -240,49 +110,33 @@ body{
 }
 
 .brand p{
-    margin-top:4px;
-
-    color:#cbdce9;
-
+    margin-top:5px;
+    color:#d0e0ec;
     font-size:11px;
-    font-weight:600;
 }
-
-
-/* =====================================================
-   LEFT CONTENT
-===================================================== */
 
 .left-content{
     position:relative;
     z-index:2;
-
-    margin-top:58px;
+    margin-top:65px;
 }
 
 .badge{
     display:inline-flex;
     align-items:center;
     gap:8px;
-
     padding:8px 14px;
-
     border-radius:30px;
-
     background:rgba(255,255,255,.08);
-
-    border:1px solid rgba(255,255,255,.14);
-
+    border:1px solid rgba(255,255,255,.15);
     font-size:10px;
     font-weight:800;
 }
 
 .left-content h2{
     margin-top:22px;
-
-    font-size:42px;
+    font-size:43px;
     line-height:1.25;
-
     font-weight:800;
 }
 
@@ -292,184 +146,111 @@ body{
 
 .left-content p{
     margin-top:15px;
-
-    color:#d0dfeb;
-
+    color:#d1e0eb;
     font-size:13px;
     line-height:1.9;
 }
 
-
-/* =====================================================
-   FEATURES
-===================================================== */
-
 .features{
-    margin-top:30px;
-
+    margin-top:32px;
     display:grid;
     grid-template-columns:1fr 1fr;
-
     gap:12px;
 }
 
 .feature{
-    min-height:76px;
-
+    min-height:78px;
     display:flex;
     align-items:center;
-
     gap:10px;
-
     padding:12px;
-
     border-radius:13px;
-
     background:rgba(255,255,255,.06);
-
     border:1px solid rgba(255,255,255,.09);
-
-    transition:.25s;
-}
-
-.feature:hover{
-    transform:translateY(-3px);
-
-    background:rgba(255,255,255,.10);
 }
 
 .feature-icon{
     width:38px;
     height:38px;
-
     flex:0 0 38px;
-
-    border-radius:10px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
+    border-radius:10px;
     color:#ffad63;
-
     background:rgba(255,121,0,.12);
 }
 
 .feature strong{
     display:block;
-
-    color:#fff;
-
     font-size:11px;
 }
 
 .feature small{
     display:block;
-
     margin-top:3px;
-
-    color:#a9bfd0;
-
+    color:#aac0d0;
     font-size:9px;
 }
 
+/* RIGHT */
 
-/* =====================================================
-   RIGHT PANEL
-===================================================== */
-
-.right-panel{
-    padding:55px 65px;
-
+.login-right{
+    padding:60px 65px;
     display:flex;
     flex-direction:column;
     justify-content:center;
-
-    background:#fff;
 }
-
-
-/* =====================================================
-   TOP ICON
-===================================================== */
 
 .login-top{
     display:flex;
     align-items:center;
     justify-content:space-between;
-
     margin-bottom:25px;
 }
 
 .login-icon{
     width:65px;
     height:65px;
-
     border-radius:18px;
-
     display:flex;
     align-items:center;
     justify-content:center;
-
     background:#fff1e7;
-
     color:#ff7900;
-
     font-size:27px;
 }
 
-.secure-status{
+.secure{
     display:flex;
     align-items:center;
     gap:7px;
-
     padding:7px 12px;
-
     border-radius:20px;
-
     background:#edf8f0;
-
     color:#24834b;
-
     font-size:10px;
-
     font-weight:800;
 }
 
-.secure-status i{
+.secure i{
     font-size:7px;
 }
 
-
-/* =====================================================
-   HEADING
-===================================================== */
-
-.heading h2{
+.login-right h2{
     color:#123b66;
-
     font-size:34px;
-
     font-weight:800;
 }
 
-.heading p{
+.subtitle{
     margin-top:7px;
-
     color:#71808f;
-
     font-size:12px;
-
-    line-height:1.7;
 }
 
-
-/* =====================================================
-   FORM
-===================================================== */
-
-form{
-    margin-top:27px;
+.form{
+    margin-top:28px;
 }
 
 .form-group{
@@ -478,13 +259,9 @@ form{
 
 .form-group label{
     display:block;
-
     margin-bottom:7px;
-
     color:#263746;
-
     font-size:12px;
-
     font-weight:800;
 }
 
@@ -494,89 +271,520 @@ form{
 
 .input-box > i{
     position:absolute;
-
     left:15px;
     top:50%;
-
     transform:translateY(-50%);
-
     color:#7c90a1;
-
-    font-size:14px;
 }
 
 .input-box input{
     width:100%;
     height:55px;
-
     padding:0 48px 0 43px;
-
     border:1px solid #dce5ed;
-
     border-radius:12px;
-
     outline:none;
-
     background:#f8fafc;
-
-    color:#263746;
-
     font-family:inherit;
-
     font-size:13px;
-
-    transition:.25s;
+    color:#263746;
 }
 
 .input-box input:focus{
     background:#fff;
-
     border-color:#1d5d96;
-
-    box-shadow:
-    0 0 0 4px rgba(29,93,150,.08);
+    box-shadow:0 0 0 4px rgba(29,93,150,.08);
 }
 
-.input-box input::placeholder{
-    color:#9ba9b5;
-}
-
-
-/* =====================================================
-   PASSWORD BUTTON
-===================================================== */
-
-.password-toggle{
+.password-btn{
     position:absolute;
-
-    right:9px;
+    right:8px;
     top:50%;
-
     transform:translateY(-50%);
-
-    width:36px;
-    height:36px;
-
+    width:38px;
+    height:38px;
     border:0;
-
-    border-radius:8px;
-
     background:transparent;
-
     color:#758899;
+    cursor:pointer;
+    border-radius:8px;
+}
 
+.password-btn:hover{
+    background:#eef3f7;
+}
+
+.options{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin:3px 0 22px;
+}
+
+.remember{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    color:#6b7c8b;
+    font-size:11px;
+}
+
+.remember input{
+    accent-color:#123b66;
+}
+
+.forgot{
+    border:0;
+    background:none;
+    color:#1d5d96;
+    font-family:inherit;
+    font-size:11px;
+    font-weight:800;
     cursor:pointer;
 }
 
-.password-toggle:hover{
-    background:#eef3f7;
+.login-btn{
+    width:100%;
+    height:56px;
+    border:0;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:9px;
+    background:linear-gradient(135deg,#ff7900,#e76600);
+    color:#fff;
+    font-family:inherit;
+    font-size:14px;
+    font-weight:800;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(255,121,0,.23);
+}
 
+.login-btn:hover{
+    transform:translateY(-2px);
+}
+
+.message{
+    min-height:22px;
+    margin-top:12px;
+    text-align:center;
+    font-size:11px;
+    font-weight:800;
+}
+
+.security{
+    display:flex;
+    gap:9px;
+    margin-top:18px;
+    padding:13px;
+    border:1px solid #e2eaf0;
+    border-radius:11px;
+    background:#f5f8fa;
+    color:#6e7d8b;
+    font-size:9px;
+    line-height:1.65;
+}
+
+.security i{
+    color:#24834b;
+}
+
+.back{
+    margin-top:22px;
+    text-align:center;
     color:#123b66;
+    text-decoration:none;
+    font-size:11px;
+    font-weight:800;
+}
+
+.back:hover{
+    color:#ff7900;
+}
+
+.copyright{
+    position:fixed;
+    bottom:10px;
+    color:rgba(255,255,255,.55);
+    font-size:9px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .login-wrapper{
+        max-width:620px;
+        grid-template-columns:1fr;
+    }
+
+    .login-left{
+        padding:38px 35px;
+    }
+
+    .left-content{
+        margin-top:40px;
+    }
+
+    .login-right{
+        padding:42px 40px;
+    }
+}
+
+@media(max-width:600px){
+
+    body{
+        padding:10px;
+    }
+
+    .login-wrapper{
+        border-radius:22px;
+    }
+
+    .login-left{
+        padding:28px 20px;
+    }
+
+    .brand img{
+        width:68px;
+        height:68px;
+    }
+
+    .brand h1{
+        font-size:18px;
+    }
+
+    .left-content{
+        margin-top:28px;
+    }
+
+    .left-content h2{
+        font-size:28px;
+    }
+
+    .features{
+        grid-template-columns:1fr;
+    }
+
+    .login-right{
+        padding:32px 20px;
+    }
+
+    .login-right h2{
+        font-size:28px;
+    }
+
+    .options{
+        flex-direction:column;
+        align-items:flex-start;
+        gap:10px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="login-wrapper">
+
+    <section class="login-left">
+
+        <a href="index.html" class="brand">
+
+            <img src="images/logo.png"
+                 alt="युवा सेवा संकल्प फाउंडेशन">
+
+            <div>
+
+                <h1>
+                    युवा सेवा संकल्प
+                    <span>फाउंडेशन</span>
+                </h1>
+
+                <p>
+                    युवा शक्ति - राष्ट्र शक्ति
+                </p>
+
+            </div>
+
+        </a>
+
+        <div class="left-content">
+
+            <div class="badge">
+                <i class="fa-solid fa-shield-halved"></i>
+                SECURE ADMINISTRATION
+            </div>
+
+            <h2>
+                संस्था का
+                <br>
+                <span>Control Center</span>
+            </h2>
+
+            <p>
+                युवा सेवा संकल्प फाउंडेशन के
+                प्रशासनिक कार्यों और सेवा गतिविधियों
+                को एक ही स्थान से व्यवस्थित करें।
+            </p>
+
+            <div class="features">
+
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div>
+                        <strong>Members</strong>
+                        <small>सदस्य प्रबंधन</small>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-handshake"></i>
+                    </div>
+                    <div>
+                        <strong>Volunteers</strong>
+                        <small>वॉलंटियर प्रबंधन</small>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+                    <div>
+                        <strong>Blood Donors</strong>
+                        <small>रक्तदाता रिकॉर्ड</small>
+                    </div>
+                </div>
+
+                <div class="feature">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-chart-pie"></i>
+                    </div>
+                    <div>
+                        <strong>Reports</strong>
+                        <small>रिपोर्ट एवं आँकड़े</small>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="login-right">
+
+        <div class="login-top">
+
+            <div class="login-icon">
+                <i class="fa-solid fa-user-shield"></i>
+            </div>
+
+            <div class="secure">
+                <i class="fa-solid fa-circle"></i>
+                Secure Login
+            </div>
+
+        </div>
+
+        <h2>
+            Admin Login
+        </h2>
+
+        <p class="subtitle">
+            अधिकृत Administrator अपने account से प्रवेश करें।
+        </p>
+
+        <form class="form"
+              id="adminLoginForm">
+
+            <div class="form-group">
+
+                <label>
+                    Username / Email
+                </label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-user"></i>
+
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Username या Email"
+                        required>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Password
+                </label>
+
+                <div class="input-box">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="अपना Password दर्ज करें"
+                        required>
+
+                    <button
+                        type="button"
+                        class="password-btn"
+                        id="showPassword">
+
+                        <i class="fa-solid fa-eye"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="options">
+
+                <label class="remember">
+
+                    <input type="checkbox">
+
+                    मुझे याद रखें
+
+                </label>
+
+                <button
+                    type="button"
+                    class="forgot"
+                    onclick="forgotPassword()">
+
+                    पासवर्ड भूल गए?
+
+                </button>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="login-btn">
+
+                <i class="fa-solid fa-right-to-bracket"></i>
+
+                Admin Panel में प्रवेश करें
+
+            </button>
+
+
+            <div
+                class="message"
+                id="message">
+            </div>
+
+
+            <div class="security">
+
+                <i class="fa-solid fa-shield-heart"></i>
+
+                <span>
+                    यह Admin क्षेत्र केवल अधिकृत
+                    उपयोगकर्ताओं के लिए है।
+                </span>
+
+            </div>
+
+        </form>
+
+
+        <a href="index.html" class="back">
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            मुख्य वेबसाइट पर वापस जाएँ
+
+        </a>
+
+    </section>
+
+</div>
+
+
+<div class="copyright">
+    © 2026 युवा सेवा संकल्प फाउंडेशन | सर्वाधिकार सुरक्षित
+</div>
+
+
+<script>
+
+const password =
+document.getElementById("password");
+
+const showPassword =
+document.getElementById("showPassword");
+
+showPassword.addEventListener("click",function(){
+
+    const icon =
+    showPassword.querySelector("i");
+
+    if(password.type === "password"){
+
+        password.type = "text";
+
+        icon.classList.remove("fa-eye");
+        icon.classList.add("fa-eye-slash");
+
+    }else{
+
+        password.type = "password";
+
+        icon.classList.remove("fa-eye-slash");
+        icon.classList.add("fa-eye");
+
+    }
+
+});
+
+
+function forgotPassword(){
+
+    alert(
+        "पासवर्ड reset करने के लिए Administrator से संपर्क करें।"
+    );
+
 }
 
 
-/* =====================================================
-   OPTIONS
-===================================================== */
+document
+.getElementById("adminLoginForm")
+.addEventListener("submit",function(e){
 
-.options{
+    e.preventDefault();
+
+    const message =
+    document.getElementById("message");
+
+    message.style.color="#198754";
+
+    message.innerHTML=
+    "✓ Login details submit हो गई हैं।";
+
+});
+
+</script>
+
+</body>
+</html>
