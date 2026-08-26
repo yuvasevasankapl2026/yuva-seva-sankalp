@@ -1,0 +1,2082 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="युवा सेवा संकल्प फाउंडेशन - समाज सेवा, जरूरतमंद सहायता, जनकल्याण, राहत कार्य और सामाजिक जागरूकता।">
+
+<title>समाज सेवा | युवा सेवा संकल्प फाउंडेशन</title>
+
+<!-- Google Font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<!-- Main CSS -->
+<link rel="stylesheet" href="style.css">
+
+
+<style>
+
+/* =========================================================
+   YUVA SEVA SANKALP FOUNDATION
+   SOCIAL SERVICE PAGE
+========================================================= */
+
+.social-page{
+    margin:0;
+    background:#f5f8fb;
+    color:#263746;
+    font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+}
+
+.social-page *,
+.social-page *::before,
+.social-page *::after{
+    box-sizing:border-box;
+}
+
+.social-page a{
+    text-decoration:none;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.social-topbar{
+    background:#123b66;
+    color:#fff;
+    min-height:42px;
+}
+
+.social-topbar-inner{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+    min-height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.social-contact{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.social-contact span{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    font-size:13px;
+}
+
+.social-contact i{
+    color:#ffb15c;
+}
+
+.social-social{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.social-social a{
+    color:#fff;
+    transition:.2s;
+}
+
+.social-social a:hover{
+    color:#ff7900;
+}
+
+.social-social span{
+    font-size:13px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.social-header{
+    background:#fff;
+    border-bottom:1px solid #e3e9ef;
+}
+
+.social-header-inner{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+
+    min-height:135px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.social-brand{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.social-brand-logo{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+}
+
+.social-brand-text h1{
+    margin:0;
+    color:#123b66;
+    font-size:39px;
+    line-height:1.15;
+    font-weight:800;
+}
+
+.social-brand-text h1 span{
+    color:#ff7900;
+}
+
+.social-brand-text p{
+    margin:7px 0 0;
+    color:#123b66;
+    font-size:17px;
+    font-weight:700;
+}
+
+
+/* =========================================================
+   LOGIN CARDS
+========================================================= */
+
+.social-login{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.social-login-card{
+    min-width:170px;
+    min-height:66px;
+    padding:10px 14px;
+
+    background:#fff;
+    border:1px solid #dce4eb;
+    border-radius:12px;
+
+    display:flex;
+    align-items:center;
+    gap:11px;
+
+    color:#123b66;
+    transition:.25s;
+}
+
+.social-login-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 22px rgba(18,59,102,.12);
+}
+
+.social-login-icon{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:21px;
+}
+
+.social-member .social-login-icon{
+    color:#24834b;
+    background:#eaf7ed;
+}
+
+.social-volunteer .social-login-icon{
+    color:#123b66;
+    background:#eaf1fa;
+}
+
+.social-admin{
+    background:#ff7900;
+    border-color:#ff7900;
+    color:#fff;
+}
+
+.social-admin .social-login-icon{
+    color:#fff;
+    background:rgba(255,255,255,.16);
+}
+
+.social-login-text{
+    display:flex;
+    flex-direction:column;
+}
+
+.social-login-text strong{
+    font-size:15px;
+}
+
+.social-login-text small{
+    font-size:10px;
+    margin-top:3px;
+    opacity:.75;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.social-nav{
+    background:#082e63;
+    min-height:56px;
+    position:relative;
+    z-index:999;
+}
+
+.social-nav-inner{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+
+    min-height:56px;
+
+    display:flex;
+    align-items:stretch;
+}
+
+.social-nav-link{
+    min-height:56px;
+    padding:0 17px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+    white-space:nowrap;
+
+    transition:.2s;
+}
+
+.social-nav-link:hover,
+.social-nav-link.active{
+    background:#ff7900;
+}
+
+.social-dropdown{
+    position:relative;
+}
+
+.social-dropdown-menu{
+    display:none;
+
+    position:absolute;
+    left:0;
+    top:56px;
+
+    width:220px;
+
+    background:#fff;
+    border-top:3px solid #ff7900;
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+
+.social-dropdown:hover .social-dropdown-menu{
+    display:block;
+}
+
+.social-dropdown-menu a{
+    display:block;
+    padding:12px 15px;
+    color:#263746;
+    font-size:13px;
+    border-bottom:1px solid #edf1f4;
+}
+
+.social-dropdown-menu a:hover{
+    color:#123b66;
+    background:#f3f7fa;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.social-breadcrumb{
+    background:#eef3f8;
+    border-bottom:1px solid #dfe7ee;
+}
+
+.social-breadcrumb-inner{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+
+    min-height:44px;
+
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    color:#69798a;
+    font-size:13px;
+}
+
+.social-breadcrumb a{
+    color:#123b66;
+    font-weight:700;
+}
+
+.social-breadcrumb i{
+    color:#ff7900;
+    font-size:10px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.social-hero{
+    width:92%;
+    max-width:1400px;
+
+    margin:35px auto 0;
+    padding:58px 45px;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #123b66 0%,
+            #1d5d96 58%,
+            #24834b 100%
+        );
+
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+
+    box-shadow:0 18px 40px rgba(18,59,102,.18);
+}
+
+.social-hero::before{
+    content:"";
+
+    position:absolute;
+
+    width:340px;
+    height:340px;
+
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:50%;
+
+    right:-130px;
+    top:-150px;
+}
+
+.social-hero::after{
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+    height:260px;
+
+    border-radius:50%;
+
+    left:-120px;
+    bottom:-140px;
+
+    background:rgba(255,121,0,.10);
+}
+
+.social-hero-content{
+    position:relative;
+    z-index:2;
+    max-width:850px;
+}
+
+.social-hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:8px 16px;
+    margin-bottom:15px;
+
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.22);
+    border-radius:30px;
+
+    font-size:14px;
+    font-weight:700;
+}
+
+.social-hero h1{
+    margin:0 0 12px;
+    font-size:50px;
+    font-weight:800;
+}
+
+.social-hero-line{
+    width:135px;
+    height:5px;
+
+    background:#ff7900;
+    border-radius:20px;
+
+    margin-bottom:20px;
+}
+
+.social-hero p{
+    margin:0;
+    max-width:850px;
+
+    color:#f1f6fa;
+    font-size:19px;
+    line-height:1.85;
+}
+
+.social-hero-quote{
+    margin-top:20px;
+
+    display:inline-block;
+
+    padding:10px 19px;
+
+    border-radius:30px;
+    background:rgba(255,255,255,.10);
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.social-intro{
+    width:92%;
+    max-width:1400px;
+
+    margin:35px auto;
+
+    display:grid;
+    grid-template-columns:1.35fr .8fr;
+    gap:30px;
+}
+
+.social-intro-box{
+    background:#fff;
+    border:1px solid #e0e7ed;
+    border-radius:20px;
+    padding:32px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.04);
+}
+
+.social-intro-box h2{
+    margin:0 0 15px;
+    color:#123b66;
+    font-size:29px;
+}
+
+.social-intro-box p{
+    margin:0 0 14px;
+    color:#526271;
+    font-size:16px;
+    line-height:1.9;
+}
+
+.social-value-box{
+    background:#fff8f2;
+    border:1px solid #ffe1c5;
+    border-radius:20px;
+    padding:30px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.social-value-icon{
+    width:80px;
+    height:80px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#ff7900;
+    color:#fff;
+
+    font-size:34px;
+    margin-bottom:16px;
+}
+
+.social-value-box h3{
+    margin:0 0 10px;
+    color:#123b66;
+    font-size:24px;
+}
+
+.social-value-box p{
+    margin:0;
+    color:#657586;
+    line-height:1.8;
+    font-size:14px;
+}
+
+
+/* =========================================================
+   SERVICE CARDS
+========================================================= */
+
+.social-services{
+    width:92%;
+    max-width:1400px;
+    margin:0 auto;
+    padding:10px 0 40px;
+}
+
+.social-section-title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.social-section-title h2{
+    margin:0;
+    color:#123b66;
+    font-size:32px;
+}
+
+.social-section-title p{
+    max-width:760px;
+    margin:8px auto 0;
+    color:#69798a;
+    font-size:14px;
+    line-height:1.7;
+}
+
+.social-service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.social-service-card{
+    background:#fff;
+    border:1px solid #dfe7ed;
+    border-radius:20px;
+    padding:27px;
+
+    box-shadow:0 6px 20px rgba(0,0,0,.04);
+    transition:.25s;
+}
+
+.social-service-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 35px rgba(18,59,102,.12);
+}
+
+.social-service-icon{
+    width:62px;
+    height:62px;
+
+    border-radius:17px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:27px;
+    margin-bottom:17px;
+}
+
+.social-service-card:nth-child(1) .social-service-icon{
+    background:#fff0e7;
+    color:#ff7900;
+}
+
+.social-service-card:nth-child(2) .social-service-icon{
+    background:#eaf7ed;
+    color:#24834b;
+}
+
+.social-service-card:nth-child(3) .social-service-icon{
+    background:#eaf1fa;
+    color:#123b66;
+}
+
+.social-service-card:nth-child(4) .social-service-icon{
+    background:#f1eafa;
+    color:#663399;
+}
+
+.social-service-card:nth-child(5) .social-service-icon{
+    background:#e8f7f7;
+    color:#147b7b;
+}
+
+.social-service-card:nth-child(6) .social-service-icon{
+    background:#fff5df;
+    color:#bc7900;
+}
+
+.social-service-card h3{
+    margin:0 0 9px;
+    color:#123b66;
+    font-size:21px;
+}
+
+.social-service-card p{
+    margin:0;
+    color:#68798a;
+    font-size:14px;
+    line-height:1.75;
+}
+
+.social-service-card ul{
+    margin:15px 0 0;
+    padding:0;
+    list-style:none;
+}
+
+.social-service-card li{
+    position:relative;
+    padding-left:22px;
+    margin:7px 0;
+
+    color:#526271;
+    font-size:13px;
+}
+
+.social-service-card li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:#24834b;
+    font-weight:800;
+}
+
+
+/* =========================================================
+   COMMUNITY SUPPORT
+========================================================= */
+
+.social-community{
+    width:92%;
+    max-width:1400px;
+    margin:0 auto;
+    padding:0 0 45px;
+}
+
+.social-community-box{
+    background:#123b66;
+    border-radius:24px;
+    padding:40px;
+
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+}
+
+.social-community-box::before{
+    content:"";
+    position:absolute;
+
+    width:240px;
+    height:240px;
+
+    border-radius:50%;
+    right:-80px;
+    top:-120px;
+
+    background:rgba(255,255,255,.06);
+}
+
+.social-community-content{
+    position:relative;
+    z-index:2;
+}
+
+.social-community-content h2{
+    margin:0 0 10px;
+    font-size:31px;
+}
+
+.social-community-content > p{
+    margin:0 auto 30px;
+    max-width:800px;
+
+    color:#dce8f3;
+    line-height:1.8;
+    font-size:15px;
+}
+
+.social-community-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.social-community-item{
+    padding:22px 15px;
+    text-align:center;
+
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:16px;
+}
+
+.social-community-item i{
+    font-size:28px;
+    color:#ffb15c;
+    margin-bottom:10px;
+}
+
+.social-community-item h3{
+    margin:0 0 5px;
+    font-size:17px;
+}
+
+.social-community-item p{
+    margin:0;
+    color:#d9e5ef;
+    font-size:12px;
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   WORK PROCESS
+========================================================= */
+
+.social-process{
+    width:92%;
+    max-width:1400px;
+    margin:0 auto;
+    padding:0 0 45px;
+}
+
+.social-process-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.social-process-item{
+    background:#fff;
+    border:1px solid #e0e7ed;
+    border-radius:18px;
+    padding:25px;
+    text-align:center;
+    position:relative;
+}
+
+.social-process-number{
+    width:55px;
+    height:55px;
+
+    margin:0 auto 15px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#ff7900;
+    color:#fff;
+
+    font-size:18px;
+    font-weight:800;
+}
+
+.social-process-item h3{
+    margin:0 0 8px;
+    color:#123b66;
+    font-size:18px;
+}
+
+.social-process-item p{
+    margin:0;
+    color:#71808f;
+    font-size:13px;
+    line-height:1.65;
+}
+
+
+/* =========================================================
+   VALUES
+========================================================= */
+
+.social-values{
+    width:92%;
+    max-width:1400px;
+    margin:0 auto 45px;
+}
+
+.social-values-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:16px;
+}
+
+.social-value-item{
+    background:#fff;
+    border:1px solid #dfe7ed;
+    border-radius:18px;
+    padding:23px;
+    text-align:center;
+}
+
+.social-value-item i{
+    font-size:30px;
+    color:#24834b;
+    margin-bottom:10px;
+}
+
+.social-value-item h3{
+    margin:0 0 7px;
+    color:#123b66;
+    font-size:19px;
+}
+
+.social-value-item p{
+    margin:0;
+    color:#71808f;
+    font-size:13px;
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   JOIN CTA
+========================================================= */
+
+.social-join{
+    width:92%;
+    max-width:1400px;
+    margin:0 auto 60px;
+}
+
+.social-join-box{
+    border-radius:24px;
+    padding:45px 25px;
+
+    background:linear-gradient(135deg,#f1faf4,#fff8f1);
+    border:1px solid #d8eadc;
+
+    text-align:center;
+}
+
+.social-join-icon{
+    width:70px;
+    height:70px;
+
+    margin:0 auto 15px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#24834b;
+    color:#fff;
+
+    font-size:30px;
+}
+
+.social-join-box h2{
+    margin:0 0 9px;
+    color:#24834b;
+    font-size:32px;
+}
+
+.social-join-box p{
+    max-width:760px;
+    margin:0 auto 22px;
+    color:#526271;
+    line-height:1.85;
+    font-size:15px;
+}
+
+.social-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.social-button{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:13px 23px;
+    border-radius:9px;
+
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+
+    transition:.2s;
+}
+
+.social-button:hover{
+    transform:translateY(-2px);
+}
+
+.social-button.blue{
+    background:#123b66;
+}
+
+.social-button.orange{
+    background:#ff7900;
+}
+
+.social-button.green{
+    background:#24834b;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.social-footer{
+    background:#092e60;
+    color:#fff;
+    padding:45px 0 0;
+}
+
+.social-footer-inner{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr 1.3fr;
+    gap:35px;
+}
+
+.social-footer-logo{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+    margin-bottom:10px;
+}
+
+.social-footer h3,
+.social-footer h4{
+    margin:0 0 13px;
+    color:#fff;
+}
+
+.social-footer p{
+    margin:0 0 9px;
+    color:#dbe5ef;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.social-footer a{
+    display:block;
+    color:#dbe5ef;
+    font-size:13px;
+    margin-bottom:8px;
+}
+
+.social-footer a:hover{
+    color:#ff7900;
+}
+
+.social-footer-bottom{
+    margin-top:35px;
+    padding:17px 0;
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    text-align:center;
+    color:#dbe5ef;
+    font-size:12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1150px){
+
+    .social-header-inner{
+        flex-direction:column;
+        padding:18px 0;
+    }
+
+    .social-login{
+        width:100%;
+        justify-content:center;
+    }
+
+    .social-intro{
+        grid-template-columns:1fr;
+    }
+
+    .social-community-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .social-footer-inner{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:850px){
+
+    .social-contact span:first-child{
+        display:none;
+    }
+
+    .social-brand{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .social-brand-text h1{
+        font-size:31px;
+    }
+
+    .social-service-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .social-process-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .social-values-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    .social-login{
+        flex-direction:column;
+    }
+
+    .social-login-card{
+        width:100%;
+        max-width:350px;
+    }
+
+    .social-nav-inner{
+        width:100%;
+        overflow-x:auto;
+    }
+
+    .social-nav-link{
+        padding:0 12px;
+        font-size:12px;
+    }
+
+    .social-hero{
+        padding:38px 22px;
+    }
+
+    .social-hero h1{
+        font-size:36px;
+    }
+
+    .social-hero p{
+        font-size:15px;
+    }
+
+    .social-service-grid{
+        grid-template-columns:1fr;
+    }
+
+    .social-community-grid{
+        grid-template-columns:1fr;
+    }
+
+    .social-footer-inner{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+@media(max-width:430px){
+
+    .social-brand-text h1{
+        font-size:27px;
+    }
+
+    .social-hero h1{
+        font-size:30px;
+    }
+
+    .social-process-grid,
+    .social-values-grid{
+        grid-template-columns:1fr;
+    }
+
+    .social-community-box{
+        padding:30px 18px;
+    }
+
+    .social-join-box{
+        padding:35px 18px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="social-page">
+
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="social-topbar">
+
+    <div class="social-topbar-inner">
+
+        <div class="social-contact">
+
+            <span>
+                <i class="fa-solid fa-envelope"></i>
+                info.yssfoundation@gmail.com
+            </span>
+
+            <span>
+                <i class="fa-solid fa-location-dot"></i>
+                ग्राम नैपुरा, पोस्ट कौड़ाही,
+                जिला अम्बेडकर नगर, उत्तर प्रदेश – 224129
+            </span>
+
+        </div>
+
+        <div class="social-social">
+
+            <a href="#" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="#" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+
+            <a href="#" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <span>
+                <i class="fa-solid fa-phone"></i>
+                9651731313
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="social-header">
+
+    <div class="social-header-inner">
+
+        <a href="index.html" class="social-brand">
+
+            <img
+            src="images/logo.png"
+            alt="युवा सेवा संकल्प फाउंडेशन"
+            class="social-brand-logo">
+
+            <div class="social-brand-text">
+
+                <h1>
+                    युवा सेवा संकल्प
+                    <span>फाउंडेशन</span>
+                </h1>
+
+                <p>युवा शक्ति - राष्ट्र शक्ति</p>
+
+            </div>
+
+        </a>
+
+
+        <div class="social-login">
+
+            <a href="member-login.html"
+               class="social-login-card social-member">
+
+                <div class="social-login-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="social-login-text">
+                    <strong>सदस्य Login</strong>
+                    <small>अपने खाते में लॉगिन करें</small>
+                </div>
+
+            </a>
+
+
+            <a href="volunteer-login.html"
+               class="social-login-card social-volunteer">
+
+                <div class="social-login-icon">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+
+                <div class="social-login-text">
+                    <strong>Volunteer Login</strong>
+                    <small>सेवा करने के लिए जुड़ें</small>
+                </div>
+
+            </a>
+
+
+            <a href="admin-login.html"
+               class="social-login-card social-admin">
+
+                <div class="social-login-icon">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+
+                <div class="social-login-text">
+                    <strong>Admin Login</strong>
+                    <small>Admin Panel</small>
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="social-nav">
+
+    <div class="social-nav-inner">
+
+        <a href="index.html" class="social-nav-link">
+            <i class="fa-solid fa-house"></i>
+            होम
+        </a>
+
+
+        <div class="social-dropdown">
+
+            <a href="about.html" class="social-nav-link">
+
+                संस्था के बारे में
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </a>
+
+            <div class="social-dropdown-menu">
+
+                <a href="about.html">हमारे बारे में</a>
+                <a href="mission.html">हमारा मिशन</a>
+                <a href="vision.html">हमारा विजन</a>
+                <a href="team.html">हमारी टीम</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="social-dropdown">
+
+            <a href="#" class="social-nav-link active">
+
+                हमारे कार्य
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </a>
+
+            <div class="social-dropdown-menu">
+
+                <a href="education.html">शिक्षा</a>
+                <a href="health.html">स्वास्थ्य</a>
+                <a href="environment.html">पर्यावरण</a>
+                <a href="women.html">महिला सशक्तिकरण</a>
+                <a href="youth.html">युवा विकास</a>
+                <a href="social-service.html">समाज सेवा</a>
+
+            </div>
+
+        </div>
+
+
+        <a href="volunteer.html" class="social-nav-link">
+            वॉलंटियर
+        </a>
+
+        <a href="membership.html" class="social-nav-link">
+            सदस्यता
+        </a>
+
+        <a href="news.html" class="social-nav-link">
+            समाचार
+        </a>
+
+        <a href="events.html" class="social-nav-link">
+            आगामी कार्यक्रम
+        </a>
+
+        <a href="gallery.html" class="social-nav-link">
+            गैलरी
+        </a>
+
+        <a href="contact.html" class="social-nav-link">
+            संपर्क करें
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     BREADCRUMB
+===================================================== -->
+
+<div class="social-breadcrumb">
+
+    <div class="social-breadcrumb-inner">
+
+        <a href="index.html">होम</a>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <span>हमारे कार्य</span>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <strong>समाज सेवा</strong>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="social-hero">
+
+    <div class="social-hero-content">
+
+        <div class="social-hero-badge">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+            मानवता • सेवा • सहयोग
+        </div>
+
+        <h1>समाज सेवा</h1>
+
+        <div class="social-hero-line"></div>
+
+        <p>
+            हमारा उद्देश्य समाज के जरूरतमंद, कमजोर और
+            वंचित लोगों तक सहयोग, सम्मान और उम्मीद पहुँचाना है।
+            हम मानते हैं कि समाज सेवा केवल सहायता नहीं,
+            बल्कि एक जिम्मेदारी और मानवता का सच्चा रूप है।
+        </p>
+
+        <div class="social-hero-quote">
+            <i class="fa-solid fa-heart"></i>
+            सेवा से ही समाज में सकारात्मक परिवर्तन
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="social-intro">
+
+    <div class="social-intro-box">
+
+        <h2>हमारी समाज सेवा की सोच</h2>
+
+        <p>
+            युवा सेवा संकल्प फाउंडेशन समाज के उन लोगों
+            तक पहुँचने का प्रयास करता है जिन्हें सहयोग,
+            मार्गदर्शन और अवसरों की आवश्यकता है।
+        </p>
+
+        <p>
+            हमारा प्रयास केवल तत्काल सहायता तक सीमित नहीं है।
+            हम सामाजिक जागरूकता, जनभागीदारी और सामूहिक
+            प्रयासों के माध्यम से लोगों को मजबूत और
+            आत्मनिर्भर बनाने की दिशा में कार्य करना चाहते हैं।
+        </p>
+
+        <p>
+            हमारा विश्वास है कि जब समाज का प्रत्येक सक्षम
+            व्यक्ति अपनी क्षमता के अनुसार सेवा में योगदान देता है,
+            तब एक संवेदनशील, मजबूत और बेहतर समाज का निर्माण होता है।
+        </p>
+
+    </div>
+
+
+    <div class="social-value-box">
+
+        <div class="social-value-icon">
+            <i class="fa-solid fa-hands-holding-child"></i>
+        </div>
+
+        <h3>हमारा सेवा संकल्प</h3>
+
+        <p>
+            जरूरत के समय सहयोग,
+            हर व्यक्ति के प्रति सम्मान,
+            और समाज के विकास में
+            जनभागीदारी को बढ़ावा देना।
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SERVICE AREAS
+===================================================== -->
+
+<section class="social-services">
+
+    <div class="social-section-title">
+
+        <h2>समाज सेवा के प्रमुख क्षेत्र</h2>
+
+        <p>
+            हम समाज की विभिन्न आवश्यकताओं को समझकर
+            सहयोग और जागरूकता के माध्यम से सकारात्मक
+            परिवर्तन लाने का प्रयास करते हैं।
+        </p>
+
+    </div>
+
+
+    <div class="social-service-grid">
+
+
+        <div class="social-service-card">
+
+            <div class="social-service-icon">
+                <i class="fa-solid fa-hand-holding-heart"></i>
+            </div>
+
+            <h3>जरूरतमंद सहायता</h3>
+
+            <p>
+                जरूरत के समय कमजोर और जरूरतमंद लोगों
+                तक सहयोग पहुँचाने का प्रयास।
+            </p>
+
+            <ul>
+                <li>जरूरत आधारित सहायता</li>
+                <li>सामाजिक सहयोग</li>
+                <li>जनसहभागिता</li>
+            </ul>
+
+        </div>
+
+
+        <div class="social-service-card">
+
+            <div class="social-service-icon">
+                <i class="fa-solid fa-plate-wheat"></i>
+            </div>
+
+            <h3>मानवीय सहयोग</h3>
+
+            <p>
+                कठिन परिस्थितियों में लोगों के साथ
+                खड़े होकर सहयोग और सहायता की भावना
+                को मजबूत करना।
+            </p>
+
+            <ul>
+                <li>सहायता अभियान</li>
+                <li>सामुदायिक सहयोग</li>
+                <li>मानवता की सेवा</li>
+            </ul>
+
+        </div>
+
+
+        <div class="social-service-card">
+
+            <div class="social-service-icon">
+                <i class="fa-solid fa-bullhorn"></i>
+            </div>
+
+            <h3>सामाजिक जागरूकता</h3>
+
+            <p>
+                समाज से जुड़े महत्वपूर्ण विषयों पर
+                लोगों को जागरूक और जिम्मेदार बनाने
+                के लिए अभियान।
+            </p>
+
+            <ul>
+                <li>जनजागरूकता अभियान</li>
+                <li>सामाजिक संदेश</li>
+                <li>समुदाय संवाद</li>
+            </ul>
+
+        </div>
+
+
+        <div class="social-service-card">
+
+            <div class="social-service-icon">
+                <i class="fa-solid fa-house-chimney-user"></i>
+            </div>
+
+            <h3>समुदाय विकास</h3>
+
+            <p>
+                स्थानीय समुदायों को जोड़कर उनके
+                विकास और समस्याओं के समाधान के लिए
+                सामूहिक प्रयास।
+            </p>
+
+            <ul>
+                <li>स्थानीय सहभागिता</li>
+                <li>समुदाय संवाद</li>
+                <li>विकास पहल</li>
+            </ul>
+
+        </div>
+
+
+        <div class="social-service-card">
+
+            <div class="social-service-icon">
+                <i class="fa-solid fa-people-group"></i>
+            </div>
+
+            <h3>जनभागीदारी</h3>
+
+            <p>
+                युवाओं, सदस्यों, स्वयंसेवकों और
+                समाज के लोगों को सेवा कार्यों से
+                जोड़ने का प्रयास।
+            </p>
+
+            <ul>
+                <li>स्वयंसेवक अभियान</li>
+                <li>सदस्य सहभागिता</li>
+                <li>सामूहिक सेवा</li>
+            </ul>
+
+        </div>
+
+
+        <div class="social-service-card">
+
+            <div class="social-service-icon">
+                <i class="fa-solid fa-life-ring"></i>
+            </div>
+
+            <h3>राहत एवं सहयोग</h3>
+
+            <p>
+                विशेष परिस्थितियों और सामाजिक
+                आवश्यकता के समय सहयोग एवं
+                राहत कार्यों में सहभागिता।
+            </p>
+
+            <ul>
+                <li>आपदा सहयोग</li>
+                <li>राहत पहल</li>
+                <li>सामुदायिक समर्थन</li>
+            </ul>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     COMMUNITY SUPPORT
+===================================================== -->
+
+<section class="social-community">
+
+    <div class="social-community-box">
+
+        <div class="social-community-content">
+
+            <div class="social-section-title">
+
+                <h2 style="color:#ffffff;">समाज के साथ, समाज के लिए</h2>
+
+                <p style="color:#dce8f3;">
+                    हमारी सेवा की शक्ति लोगों की भागीदारी,
+                    सहयोग और सामूहिक जिम्मेदारी में है।
+                </p>
+
+            </div>
+
+
+            <div class="social-community-grid">
+
+
+                <div class="social-community-item">
+
+                    <i class="fa-solid fa-users"></i>
+
+                    <h3>लोगों से जुड़ाव</h3>
+
+                    <p>
+                        स्थानीय जरूरतों और समस्याओं
+                        को समझने का प्रयास।
+                    </p>
+
+                </div>
+
+
+                <div class="social-community-item">
+
+                    <i class="fa-solid fa-handshake"></i>
+
+                    <h3>सहयोग</h3>
+
+                    <p>
+                        लोगों और संस्थाओं के साथ
+                        मिलकर सेवा कार्य।
+                    </p>
+
+                </div>
+
+
+                <div class="social-community-item">
+
+                    <i class="fa-solid fa-lightbulb"></i>
+
+                    <h3>जागरूकता</h3>
+
+                    <p>
+                        सही जानकारी और सामाजिक
+                        चेतना को बढ़ावा।
+                    </p>
+
+                </div>
+
+
+                <div class="social-community-item">
+
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+
+                    <h3>सकारात्मक परिवर्तन</h3>
+
+                    <p>
+                        छोटे प्रयासों से बड़े
+                        बदलाव की दिशा में कदम।
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROCESS
+===================================================== -->
+
+<section class="social-process">
+
+    <div class="social-section-title">
+
+        <h2>हमारी सेवा कार्य प्रणाली</h2>
+
+        <p>
+            प्रत्येक सेवा पहल को जरूरत, जिम्मेदारी और
+            जनभागीदारी को ध्यान में रखते हुए आगे बढ़ाने का प्रयास।
+        </p>
+
+    </div>
+
+
+    <div class="social-process-grid">
+
+
+        <div class="social-process-item">
+
+            <div class="social-process-number">01</div>
+
+            <h3>समस्या को समझना</h3>
+
+            <p>
+                समाज और समुदाय की आवश्यकता
+                को पहचानना।
+            </p>
+
+        </div>
+
+
+        <div class="social-process-item">
+
+            <div class="social-process-number">02</div>
+
+            <h3>योजना बनाना</h3>
+
+            <p>
+                उपलब्ध संसाधनों और आवश्यकता
+                के अनुसार कार्ययोजना।
+            </p>
+
+        </div>
+
+
+        <div class="social-process-item">
+
+            <div class="social-process-number">03</div>
+
+            <h3>लोगों को जोड़ना</h3>
+
+            <p>
+                सदस्य, स्वयंसेवक और समाज को
+                सेवा से जोड़ना।
+            </p>
+
+        </div>
+
+
+        <div class="social-process-item">
+
+            <div class="social-process-number">04</div>
+
+            <h3>सेवा एवं समीक्षा</h3>
+
+            <p>
+                सेवा कार्य करना और उसके
+                प्रभाव को समझना।
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     VALUES
+===================================================== -->
+
+<section class="social-values">
+
+    <div class="social-section-title">
+
+        <h2>हमारे सेवा मूल्य</h2>
+
+        <p>
+            यही मूल्य हमारे प्रत्येक सामाजिक कार्य और
+            जनसेवा की भावना को दिशा देते हैं।
+        </p>
+
+    </div>
+
+
+    <div class="social-values-grid">
+
+
+        <div class="social-value-item">
+
+            <i class="fa-solid fa-heart"></i>
+
+            <h3>मानवता</h3>
+
+            <p>
+                हर व्यक्ति के प्रति संवेदनशीलता
+                और सम्मान।
+            </p>
+
+        </div>
+
+
+        <div class="social-value-item">
+
+            <i class="fa-solid fa-handshake"></i>
+
+            <h3>सहयोग</h3>
+
+            <p>
+                मिलकर काम करने और एक-दूसरे
+                की मदद की भावना।
+            </p>
+
+        </div>
+
+
+        <div class="social-value-item">
+
+            <i class="fa-solid fa-eye"></i>
+
+            <h3>पारदर्शिता</h3>
+
+            <p>
+                सेवा कार्यों में जिम्मेदारी
+                और स्पष्टता का प्रयास।
+            </p>
+
+        </div>
+
+
+        <div class="social-value-item">
+
+            <i class="fa-solid fa-seedling"></i>
+
+            <h3>सकारात्मक परिवर्तन</h3>
+
+            <p>
+                समाज के बेहतर भविष्य के लिए
+                निरंतर प्रयास।
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     JOIN CTA
+===================================================== -->
+
+<section class="social-join">
+
+    <div class="social-join-box">
+
+        <div class="social-join-icon">
+            <i class="fa-solid fa-hands-helping"></i>
+        </div>
+
+        <h2>आप भी समाज सेवा से जुड़ें</h2>
+
+        <p>
+            आपका थोड़ा सा समय, आपकी क्षमता और आपका सहयोग
+            किसी के जीवन में उम्मीद और सकारात्मक बदलाव ला सकता है।
+            आइए, मिलकर समाज सेवा को एक मजबूत जनभागीदारी
+            और सकारात्मक परिवर्तन का माध्यम बनाएं।
+        </p>
+
+
+        <div class="social-buttons">
+
+            <a href="membership.html"
+               class="social-button blue">
+
+                <i class="fa-solid fa-user-plus"></i>
+                सदस्य बनें
+
+            </a>
+
+
+            <a href="volunteer.html"
+               class="social-button orange">
+
+                <i class="fa-solid fa-handshake"></i>
+                Volunteer बनें
+
+            </a>
+
+
+            <a href="contact.html"
+               class="social-button green">
+
+                <i class="fa-solid fa-envelope"></i>
+                संपर्क करें
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="social-footer">
+
+    <div class="social-footer-inner">
+
+
+        <div>
+
+            <img
+            src="images/logo.png"
+            alt="YSS Foundation"
+            class="social-footer-logo">
+
+            <h3>युवा सेवा संकल्प फाउंडेशन</h3>
+
+            <p>
+                सेवा, समर्पण और संस्कार के साथ
+                समाज एवं राष्ट्र निर्माण की दिशा में
+                सकारात्मक प्रयास।
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>महत्वपूर्ण लिंक</h4>
+
+            <a href="index.html">होम</a>
+            <a href="about.html">हमारे बारे में</a>
+            <a href="mission.html">हमारा मिशन</a>
+            <a href="vision.html">हमारा विजन</a>
+            <a href="team.html">हमारी टीम</a>
+            <a href="membership.html">सदस्यता</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>हमारे कार्य</h4>
+
+            <a href="education.html">शिक्षा</a>
+            <a href="health.html">स्वास्थ्य</a>
+            <a href="environment.html">पर्यावरण</a>
+            <a href="women.html">महिला सशक्तिकरण</a>
+            <a href="youth.html">युवा विकास</a>
+            <a href="social-service.html">समाज सेवा</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>संपर्क करें</h4>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                ग्राम नैपुरा, पोस्ट कौड़ाही,
+                जिला अम्बेडकर नगर,
+                उत्तर प्रदेश – 224129
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                9651731313
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                info.yssfoundation@gmail.com
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="social-footer-bottom">
+
+        © 2026 युवा सेवा संकल्प फाउंडेशन |
+        सर्वाधिकार सुरक्षित |
+        <strong>युवा शक्ति - राष्ट्र शक्ति</strong>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
