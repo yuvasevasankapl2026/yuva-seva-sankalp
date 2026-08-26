@@ -1,45 +1,42 @@
 <!DOCTYPE html>
 <html lang="hi">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<title>Volunteer Login | युवा सेवा संकल्प फाउंडेशन</title>
 
-<meta name="description"
-      content="युवा सेवा संकल्प फाउंडेशन वॉलंटियर लॉगिन पेज">
+<link rel="icon" href="images/logo.png">
 
-<title>
-    Volunteer Login | युवा सेवा संकल्प फाउंडेशन
-</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-
-<!-- GOOGLE FONT -->
-
-<link rel="preconnect"
-      href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet">
-
-
-<!-- FONT AWESOME -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
 
-/* =====================================================
-   RESET
-===================================================== */
+/* =========================================================
+   YSS VOLUNTEER LOGIN
+   ALL-IN-ONE PROFESSIONAL PAGE
+========================================================= */
+
+:root{
+    --blue:#123b66;
+    --blue2:#1d5d96;
+    --navy:#071f40;
+    --orange:#ff7900;
+    --green:#24834b;
+    --red:#d93636;
+    --text:#263746;
+    --muted:#708090;
+    --light:#f4f7fa;
+    --white:#ffffff;
+    --border:#dfe7ed;
+    --shadow:0 25px 70px rgba(7,31,64,.16);
+}
 
 *{
     margin:0;
@@ -47,324 +44,303 @@
     box-sizing:border-box;
 }
 
-:root{
-    --blue:#123b66;
-    --blue2:#1d5d96;
-    --orange:#ff7900;
-    --green:#24834b;
-    --red:#d93636;
-    --dark:#082e63;
-    --text:#263746;
-    --muted:#71808f;
-    --light:#f4f7fa;
-    --white:#ffffff;
-    --border:#dfe7ed;
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    margin:0;
-    background:var(--light);
+    min-height:100vh;
+    font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+    background:
+        radial-gradient(circle at 5% 10%,rgba(255,121,0,.10),transparent 25%),
+        radial-gradient(circle at 95% 90%,rgba(36,131,75,.10),transparent 25%),
+        var(--light);
     color:var(--text);
-
-    font-family:
-        "Noto Sans Devanagari",
-        "Mangal",
-        Arial,
-        sans-serif;
 }
 
 a{
     text-decoration:none;
 }
 
-
-/* =====================================================
-   TOP BAR
-===================================================== */
-
-.vol-topbar{
-    background:var(--blue);
-    color:#fff;
-    min-height:42px;
+button,
+input{
+    font-family:inherit;
 }
 
-.vol-topbar-inner{
-    width:92%;
-    max-width:1400px;
-    margin:auto;
 
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.topbar{
     min-height:42px;
+    background:var(--navy);
+    color:#fff;
+}
+
+.topbar-inner{
+    width:92%;
+    max-width:1450px;
+    min-height:42px;
+    margin:auto;
 
     display:flex;
     align-items:center;
     justify-content:space-between;
-
     gap:20px;
 }
 
-.vol-contact{
+.top-contact{
     display:flex;
+    gap:24px;
     align-items:center;
-    gap:25px;
 }
 
-.vol-contact span{
+.top-contact span,
+.top-right span{
     display:flex;
     align-items:center;
     gap:7px;
-
-    font-size:12px;
+    font-size:11px;
 }
 
-.vol-contact i,
-.vol-social i{
-    color:#ffb15c;
+.topbar i{
+    color:#ffad63;
 }
 
-.vol-social{
+.top-right{
     display:flex;
     align-items:center;
-    gap:14px;
+    gap:15px;
 }
 
-.vol-social a{
+.socials{
+    display:flex;
+    gap:12px;
+}
+
+.socials a{
     color:#fff;
     transition:.2s;
 }
 
-.vol-social a:hover{
+.socials a:hover{
     color:var(--orange);
 }
 
-.vol-phone{
-    color:#fff;
-    font-size:12px;
-}
 
+/* =========================================================
+   MAIN HEADER
+========================================================= */
 
-/* =====================================================
-   HEADER
-===================================================== */
-
-.vol-header{
+.header{
     background:#fff;
-    border-bottom:1px solid #e2e8ed;
+    border-bottom:1px solid var(--border);
 }
 
-.vol-header-inner{
+.header-inner{
     width:92%;
-    max-width:1400px;
-    min-height:135px;
-
+    max-width:1450px;
+    min-height:125px;
     margin:auto;
 
     display:flex;
     align-items:center;
     justify-content:space-between;
-
-    gap:30px;
+    gap:25px;
 }
 
-.vol-brand{
+.brand{
     display:flex;
     align-items:center;
-    gap:18px;
-
+    gap:16px;
     color:var(--blue);
 }
 
-.vol-logo{
-    width:110px;
-    height:110px;
-
+.brand img{
+    width:100px;
+    height:100px;
     object-fit:contain;
 }
 
-.vol-brand h1{
-    font-size:36px;
+.brand h1{
+    font-size:34px;
     line-height:1.2;
     font-weight:800;
 }
 
-.vol-brand h1 span{
+.brand h1 span{
     color:var(--orange);
 }
 
-.vol-brand p{
-    margin-top:6px;
-
+.brand p{
+    margin-top:5px;
     color:var(--blue);
-
-    font-size:16px;
+    font-size:14px;
     font-weight:700;
 }
 
 
-/* =====================================================
-   HEADER LOGIN CARDS
-===================================================== */
+/* =========================================================
+   PORTAL SWITCHER
+========================================================= */
 
-.vol-login-cards{
+.portal-switcher{
     display:flex;
-    gap:10px;
+    gap:9px;
 }
 
-.login-card{
-    min-width:160px;
+.portal{
+    min-width:145px;
+    min-height:58px;
 
-    padding:10px 13px;
+    padding:8px 11px;
 
     display:flex;
     align-items:center;
-    gap:10px;
+    gap:9px;
 
-    border-radius:11px;
-
-    border:1px solid #dce4eb;
-
-    color:var(--blue);
+    border:1px solid var(--border);
+    border-radius:12px;
 
     background:#fff;
+    color:var(--blue);
 
     transition:.25s;
 }
 
-.login-card:hover{
+.portal:hover{
     transform:translateY(-3px);
-
-    box-shadow:
-        0 9px 22px rgba(18,59,102,.12);
+    box-shadow:0 10px 25px rgba(18,59,102,.10);
 }
 
-.login-card-icon{
-    width:42px;
-    height:42px;
+.portal-icon{
+    width:39px;
+    height:39px;
+    flex:0 0 39px;
 
-    flex:0 0 42px;
-
-    border-radius:50%;
+    border-radius:11px;
 
     display:flex;
     align-items:center;
     justify-content:center;
 }
 
-.member-card .login-card-icon{
+.portal strong{
+    display:block;
+    font-size:11px;
+}
+
+.portal small{
+    display:block;
+    margin-top:2px;
+    font-size:8px;
+    color:var(--muted);
+}
+
+.portal.member .portal-icon{
     background:#eaf7ed;
     color:var(--green);
 }
 
-.volunteer-card{
+.portal.volunteer{
     background:var(--blue);
     color:#fff;
     border-color:var(--blue);
 }
 
-.volunteer-card .login-card-icon{
-    background:rgba(255,255,255,.15);
+.portal.volunteer .portal-icon{
+    background:rgba(255,255,255,.14);
     color:#fff;
 }
 
-.admin-card{
+.portal.volunteer small{
+    color:#dbe7f0;
+}
+
+.portal.admin{
     background:var(--orange);
     color:#fff;
     border-color:var(--orange);
 }
 
-.admin-card .login-card-icon{
-    background:rgba(255,255,255,.15);
+.portal.admin .portal-icon{
+    background:rgba(255,255,255,.16);
     color:#fff;
 }
 
-.login-card strong{
-    display:block;
-    font-size:12px;
-}
-
-.login-card small{
-    display:block;
-    margin-top:3px;
-    font-size:8px;
-    opacity:.75;
+.portal.admin small{
+    color:#fff;
 }
 
 
-/* =====================================================
-   NAVIGATION
-===================================================== */
+/* =========================================================
+   NAV
+========================================================= */
 
-.vol-nav{
-    background:var(--dark);
-    min-height:55px;
+.nav{
+    background:var(--blue);
+    min-height:52px;
 }
 
-.vol-nav-inner{
+.nav-inner{
     width:92%;
-    max-width:1400px;
-
-    min-height:55px;
-
+    max-width:1450px;
+    min-height:52px;
     margin:auto;
 
     display:flex;
-    align-items:stretch;
-
     overflow-x:auto;
 }
 
-.vol-nav-link{
-    min-height:55px;
-
+.nav a{
+    min-height:52px;
     padding:0 16px;
 
     display:flex;
     align-items:center;
     justify-content:center;
-
-    gap:7px;
+    gap:6px;
 
     color:#fff;
-
-    font-size:12px;
-    font-weight:700;
-
     white-space:nowrap;
+
+    font-size:11px;
+    font-weight:700;
 
     transition:.2s;
 }
 
-.vol-nav-link:hover,
-.vol-nav-link.active{
+.nav a:hover,
+.nav a.active{
     background:var(--orange);
 }
 
 
-/* =====================================================
-   BREADCRUMB
-===================================================== */
+/* =========================================================
+   PAGE
+========================================================= */
 
-.breadcrumb{
-    background:#eef3f8;
-
-    border-bottom:1px solid #dfe7ee;
+.page{
+    width:92%;
+    max-width:1250px;
+    margin:32px auto 65px;
 }
 
-.breadcrumb-inner{
-    width:92%;
-    max-width:1400px;
 
-    min-height:45px;
+/* =========================================================
+   BREADCRUMB
+========================================================= */
 
-    margin:auto;
+.breadcrumb{
+    margin-bottom:20px;
 
     display:flex;
     align-items:center;
+    gap:8px;
 
-    gap:9px;
-
-    color:#69798a;
-
-    font-size:11px;
+    color:#788694;
+    font-size:10px;
 }
 
 .breadcrumb a{
@@ -377,322 +353,417 @@ a{
 }
 
 
-/* =====================================================
-   LOGIN SECTION
-===================================================== */
+/* =========================================================
+   LOGIN CARD
+========================================================= */
 
-.login-section{
-    width:92%;
-    max-width:1150px;
-
-    margin:45px auto 65px;
-}
-
-.login-wrapper{
+.login-card{
     display:grid;
-
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:1.02fr .98fr;
 
     background:#fff;
 
     border:1px solid var(--border);
-
-    border-radius:25px;
+    border-radius:28px;
 
     overflow:hidden;
 
-    box-shadow:
-        0 20px 55px rgba(18,59,102,.11);
+    box-shadow:var(--shadow);
 }
 
 
-/* =====================================================
-   LEFT PANEL
-===================================================== */
+/* =========================================================
+   LEFT HERO
+========================================================= */
 
-.login-left{
+.hero{
     position:relative;
+    overflow:hidden;
 
-    padding:55px 45px;
+    padding:55px 48px;
 
     color:#fff;
 
-    overflow:hidden;
-
     background:
         linear-gradient(
-            135deg,
-            #123b66,
-            #1d5d96 60%,
-            #24834b
+            145deg,
+            #071f40 0%,
+            #123b66 48%,
+            #1d5d96 75%,
+            #24834b 100%
         );
 }
 
-.login-left:before{
+.hero:before{
     content:"";
 
     position:absolute;
 
-    width:350px;
-    height:350px;
+    width:420px;
+    height:420px;
 
+    right:-210px;
+    top:-210px;
+
+    border:65px solid rgba(255,255,255,.045);
     border-radius:50%;
-
-    right:-170px;
-    top:-170px;
-
-    background:
-        rgba(255,255,255,.07);
 }
 
-.login-left:after{
+.hero:after{
     content:"";
 
     position:absolute;
 
-    width:230px;
-    height:230px;
+    width:300px;
+    height:300px;
+
+    left:-180px;
+    bottom:-180px;
 
     border-radius:50%;
 
-    left:-120px;
-    bottom:-120px;
-
-    background:
-        rgba(255,121,0,.12);
+    background:rgba(255,121,0,.09);
 }
 
-.login-left-content{
+.hero-content{
     position:relative;
     z-index:2;
 }
 
-.login-badge{
-    width:72px;
-    height:72px;
-
-    border-radius:20px;
-
-    display:flex;
+.secure-badge{
+    display:inline-flex;
     align-items:center;
-    justify-content:center;
+    gap:7px;
 
-    background:
-        rgba(255,255,255,.13);
+    padding:8px 13px;
 
-    font-size:31px;
+    border:1px solid rgba(255,255,255,.18);
+    border-radius:30px;
 
-    margin-bottom:25px;
-}
+    background:rgba(255,255,255,.08);
 
-.login-left h2{
-    font-size:38px;
-    line-height:1.3;
-
+    font-size:9px;
     font-weight:800;
-
-    margin-bottom:15px;
+    letter-spacing:.3px;
 }
 
-.login-left p{
-    color:#e5eef5;
+.hero-logo{
+    width:82px;
+    height:82px;
 
-    font-size:14px;
+    margin:25px 0 18px;
 
+    padding:5px;
+
+    object-fit:contain;
+
+    border-radius:50%;
+
+    background:#fff;
+}
+
+.hero h2{
+    font-size:36px;
+    line-height:1.3;
+    font-weight:800;
+}
+
+.hero h2 span{
+    color:#ff963e;
+}
+
+.hero-text{
+    margin-top:13px;
+
+    max-width:480px;
+
+    color:#dce9f2;
+
+    font-size:13px;
     line-height:1.9;
 }
 
+
+/* =========================================================
+   HERO STATS
+========================================================= */
+
+.hero-stats{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+
+    gap:10px;
+
+    margin-top:30px;
+}
+
+.hero-stat{
+    padding:13px 9px;
+
+    border:1px solid rgba(255,255,255,.10);
+    border-radius:12px;
+
+    background:rgba(255,255,255,.06);
+
+    text-align:center;
+}
+
+.hero-stat i{
+    color:#ffad63;
+    font-size:17px;
+}
+
+.hero-stat strong{
+    display:block;
+    margin-top:5px;
+    font-size:17px;
+}
+
+.hero-stat small{
+    color:#b9ccda;
+    font-size:8px;
+}
+
+
+/* =========================================================
+   BENEFITS
+========================================================= */
+
 .benefits{
-    margin-top:32px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
 
-    display:flex;
-    flex-direction:column;
+    gap:10px;
 
-    gap:14px;
+    margin-top:20px;
 }
 
 .benefit{
     display:flex;
     align-items:center;
+    gap:9px;
 
-    gap:11px;
+    padding:10px;
 
-    font-size:12px;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:10px;
+
+    background:rgba(255,255,255,.045);
+
+    font-size:9px;
 }
 
-.benefit-icon{
-    width:38px;
-    height:38px;
+.benefit i{
+    width:30px;
+    height:30px;
 
-    flex:0 0 38px;
+    flex:0 0 30px;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    border-radius:10px;
+    border-radius:8px;
 
-    background:
-        rgba(255,255,255,.13);
+    background:rgba(255,255,255,.10);
+
+    color:#ffad63;
 }
 
 
-/* =====================================================
-   RIGHT LOGIN
-===================================================== */
+/* =========================================================
+   RIGHT FORM
+========================================================= */
 
-.login-right{
-    padding:55px 50px;
+.form-side{
+    padding:50px 48px;
 
     display:flex;
     flex-direction:column;
-
     justify-content:center;
 }
 
-.login-heading h2{
+.form-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+
+    margin-bottom:20px;
+}
+
+.form-icon{
+    width:58px;
+    height:58px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:16px;
+
+    background:#edf3f8;
+
     color:var(--blue);
 
-    font-size:30px;
+    font-size:23px;
+}
 
+.online{
+    display:flex;
+    align-items:center;
+    gap:6px;
+
+    padding:7px 10px;
+
+    border-radius:20px;
+
+    background:#edf8f0;
+
+    color:var(--green);
+
+    font-size:8px;
     font-weight:800;
 }
 
-.login-heading p{
-    margin-top:7px;
+.online i{
+    font-size:6px;
+}
+
+.form-side h2{
+    color:var(--blue);
+    font-size:28px;
+    font-weight:800;
+}
+
+.form-subtitle{
+    margin-top:5px;
 
     color:var(--muted);
 
-    font-size:12px;
+    font-size:11px;
+    line-height:1.7;
 }
 
 
-/* =====================================================
+/* =========================================================
    FORM
-===================================================== */
+========================================================= */
 
 .form{
-    margin-top:28px;
+    margin-top:23px;
 }
 
-.form-group{
-    margin-bottom:18px;
+.group{
+    margin-bottom:16px;
 }
 
-.form-group label{
+.group label{
     display:block;
 
-    margin-bottom:7px;
+    margin-bottom:6px;
 
-    color:var(--blue);
+    color:var(--text);
 
-    font-size:12px;
+    font-size:10px;
     font-weight:800;
 }
 
-.input-box{
+.input{
     position:relative;
 }
 
-.input-box > i{
+.input > i{
     position:absolute;
 
-    left:15px;
+    left:14px;
     top:50%;
 
-    transform:
-        translateY(-50%);
+    transform:translateY(-50%);
 
-    color:#81909e;
+    color:#80909e;
+
+    font-size:14px;
 }
 
-.input-box input{
+.input input{
     width:100%;
+    height:50px;
 
-    height:53px;
+    padding:0 45px;
 
-    padding:
-        0 47px 0 45px;
-
-    border:
-        1px solid #d7e1e9;
-
+    border:1px solid #d8e2ea;
     border-radius:10px;
 
     outline:none;
 
-    background:#fff;
-
     color:var(--text);
 
-    font-family:inherit;
+    background:#fbfcfd;
 
-    font-size:13px;
+    font-family:inherit;
+    font-size:12px;
 
     transition:.2s;
 }
 
-.input-box input:focus{
+.input input:focus{
+    background:#fff;
+
     border-color:var(--blue2);
 
     box-shadow:
-        0 0 0 4px
-        rgba(29,93,150,.09);
+        0 0 0 4px rgba(29,93,150,.08);
 }
 
-.password-btn{
+.eye{
     position:absolute;
 
-    right:8px;
+    right:7px;
     top:50%;
 
-    transform:
-        translateY(-50%);
+    transform:translateY(-50%);
 
-    width:38px;
-    height:38px;
+    width:36px;
+    height:36px;
 
     border:0;
+
+    border-radius:8px;
 
     background:transparent;
 
     color:#71808f;
 
     cursor:pointer;
-
-    border-radius:8px;
 }
 
-.password-btn:hover{
-    background:#f0f4f7;
+.eye:hover{
+    background:#eef3f7;
 }
 
 
-/* =====================================================
+/* =========================================================
    OPTIONS
-===================================================== */
+========================================================= */
 
 .options{
-    margin:
-        3px 0 22px;
-
     display:flex;
-
+    align-items:center;
     justify-content:space-between;
 
-    align-items:center;
+    margin:4px 0 18px;
 }
 
 .remember{
     display:flex;
-
     align-items:center;
+    gap:6px;
 
-    gap:7px;
+    color:#687887;
 
-    color:#647484;
+    font-size:9px;
 
-    font-size:10px;
+    cursor:pointer;
 }
 
 .remember input{
@@ -700,26 +771,34 @@ a{
 }
 
 .forgot{
+    border:0;
+    background:none;
+
     color:var(--blue2);
 
-    font-size:10px;
-
+    font-family:inherit;
+    font-size:9px;
     font-weight:800;
+
+    cursor:pointer;
 }
 
 
-/* =====================================================
+/* =========================================================
    LOGIN BUTTON
-===================================================== */
+========================================================= */
 
 .login-btn{
     width:100%;
-
-    min-height:54px;
+    height:52px;
 
     border:0;
-
     border-radius:10px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
 
     background:
         linear-gradient(
@@ -731,88 +810,116 @@ a{
     color:#fff;
 
     font-family:inherit;
-
-    font-size:14px;
-
+    font-size:13px;
     font-weight:800;
 
     cursor:pointer;
 
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:8px;
+    box-shadow:
+        0 10px 24px rgba(18,59,102,.16);
 
     transition:.25s;
 }
 
 .login-btn:hover{
-    transform:
-        translateY(-2px);
+    transform:translateY(-2px);
 
     box-shadow:
-        0 10px 22px
-        rgba(18,59,102,.18);
+        0 14px 30px rgba(18,59,102,.22);
 }
 
 .login-btn.loading{
-    opacity:.75;
     pointer-events:none;
+    opacity:.72;
 }
 
 
-/* =====================================================
+/* =========================================================
    RESULT
-===================================================== */
+========================================================= */
 
-.login-result{
-    min-height:22px;
+.result{
+    min-height:20px;
 
-    margin-top:12px;
+    margin-top:10px;
 
     text-align:center;
 
-    font-size:11px;
-
+    font-size:9px;
     font-weight:800;
 }
 
+.result.success{
+    color:var(--green);
+}
 
-/* =====================================================
-   DEMO DETAILS
-===================================================== */
+.result.error{
+    color:var(--red);
+}
 
-.demo-box{
-    margin-top:18px;
 
-    padding:12px 14px;
+/* =========================================================
+   SECURITY
+========================================================= */
 
-    border-radius:10px;
+.security{
+    display:flex;
+    align-items:flex-start;
+    gap:8px;
 
-    background:#f4f8fb;
+    margin-top:15px;
 
-    border:1px solid #dfe7ed;
+    padding:11px;
 
-    font-size:10px;
+    border:1px solid #e2e9ee;
+    border-radius:9px;
 
-    color:#647484;
+    background:#f7f9fa;
+
+    color:#73818d;
+
+    font-size:8px;
+    line-height:1.6;
+}
+
+.security i{
+    color:var(--green);
+    margin-top:2px;
+}
+
+
+/* =========================================================
+   DEMO
+========================================================= */
+
+.demo{
+    margin-top:10px;
+
+    padding:10px;
+
+    border-radius:9px;
+
+    background:#fff8ef;
+
+    border:1px solid #ffe0bd;
+
+    color:#80501f;
+
+    font-size:8px;
 
     line-height:1.7;
 }
 
-.demo-box strong{
-    color:var(--blue);
+.demo strong{
+    color:#b55b00;
 }
 
-.demo-box code{
-    padding:3px 6px;
+.demo code{
+    padding:2px 5px;
 
-    border-radius:5px;
+    border-radius:4px;
 
-    background:#e8eef3;
+    background:#fff;
 
     color:var(--blue);
 
@@ -820,47 +927,41 @@ a{
 }
 
 
-/* =====================================================
+/* =========================================================
    REGISTER
-===================================================== */
+========================================================= */
 
 .register{
-    margin-top:22px;
+    margin-top:18px;
 
-    padding-top:20px;
+    padding-top:17px;
 
-    border-top:
-        1px solid #e4eaef;
+    border-top:1px solid #e5ebef;
 
     text-align:center;
 }
 
 .register p{
-    margin-bottom:11px;
+    margin-bottom:9px;
 
-    color:#71808f;
+    color:var(--muted);
 
-    font-size:11px;
+    font-size:9px;
 }
 
 .register a{
     display:inline-flex;
-
     align-items:center;
+    gap:6px;
 
-    gap:7px;
+    padding:9px 16px;
 
-    padding:10px 18px;
-
-    border:
-        1px solid var(--orange);
-
+    border:1px solid var(--orange);
     border-radius:8px;
 
     color:var(--orange);
 
-    font-size:11px;
-
+    font-size:9px;
     font-weight:800;
 
     transition:.2s;
@@ -868,65 +969,55 @@ a{
 
 .register a:hover{
     background:var(--orange);
-
     color:#fff;
 }
 
 
-/* =====================================================
+/* =========================================================
    FOOTER
-===================================================== */
+========================================================= */
 
 .footer{
-    background:#092e60;
-
+    background:var(--navy);
     color:#fff;
 
-    padding:
-        40px 0 0;
+    padding:35px 0 0;
 }
 
 .footer-inner{
     width:92%;
-    max-width:1400px;
-
+    max-width:1450px;
     margin:auto;
 
     display:grid;
+    grid-template-columns:1.5fr 1fr 1fr 1.2fr;
 
-    grid-template-columns:
-        1.5fr 1fr 1fr 1.3fr;
-
-    gap:35px;
+    gap:30px;
 }
 
 .footer-logo{
-    width:80px;
-    height:80px;
-
+    width:65px;
+    height:65px;
     object-fit:contain;
-
-    margin-bottom:10px;
+    margin-bottom:8px;
 }
 
 .footer h3,
 .footer h4{
-    margin-bottom:12px;
+    margin-bottom:10px;
+    font-size:13px;
 }
 
 .footer p,
 .footer a{
-    color:#d9e5ee;
-
-    font-size:11px;
-
-    line-height:1.7;
+    color:#d7e2eb;
+    font-size:9px;
+    line-height:1.8;
 }
 
 .footer a{
     display:block;
-
-    margin-bottom:7px;
+    margin-bottom:5px;
 }
 
 .footer a:hover{
@@ -934,137 +1025,128 @@ a{
 }
 
 .footer-bottom{
-    margin-top:30px;
+    margin-top:25px;
+    padding:14px;
 
-    padding:16px;
-
-    border-top:
-        1px solid
-        rgba(255,255,255,.15);
+    border-top:1px solid rgba(255,255,255,.12);
 
     text-align:center;
 
-    color:#d9e5ee;
+    color:#cbd8e2;
 
-    font-size:10px;
+    font-size:8px;
 }
 
 
-/* =====================================================
+/* =========================================================
    RESPONSIVE
-===================================================== */
+========================================================= */
 
 @media(max-width:1150px){
 
-    .vol-header-inner{
+    .header-inner{
         flex-direction:column;
-
         padding:18px 0;
     }
 
-    .vol-login-cards{
+    .portal-switcher{
         width:100%;
-
         justify-content:center;
     }
 
     .footer-inner{
-        grid-template-columns:
-            1fr 1fr;
+        grid-template-columns:1fr 1fr;
     }
 
 }
-
 
 @media(max-width:850px){
 
-    .vol-contact span:first-child{
-        display:none;
-    }
-
-    .login-wrapper{
+    .login-card{
         grid-template-columns:1fr;
     }
 
-    .login-left{
+    .hero{
         padding:42px 32px;
     }
 
-    .login-right{
+    .form-side{
         padding:42px 32px;
+    }
+
+    .top-contact span:first-child{
+        display:none;
     }
 
 }
 
-
 @media(max-width:650px){
 
-    .vol-topbar-inner{
-        justify-content:center;
-    }
-
-    .vol-contact{
+    .top-contact{
         display:none;
     }
 
-    .vol-social{
-        width:100%;
+    .topbar-inner{
         justify-content:center;
     }
 
-    .vol-brand{
+    .brand{
         flex-direction:column;
-
         text-align:center;
     }
 
-    .vol-brand h1{
-        font-size:28px;
+    .brand img{
+        width:85px;
+        height:85px;
     }
 
-    .vol-brand p{
-        font-size:14px;
+    .brand h1{
+        font-size:26px;
     }
 
-    .vol-login-cards{
+    .brand p{
+        font-size:12px;
+    }
+
+    .portal-switcher{
         flex-direction:column;
         align-items:center;
     }
 
-    .login-card{
+    .portal{
         width:100%;
-        max-width:340px;
+        max-width:330px;
     }
 
-    .login-section{
+    .page{
         width:94%;
-
-        margin:
-            25px auto 45px;
+        margin-top:22px;
     }
 
-    .login-left{
-        padding:35px 22px;
+    .hero{
+        padding:34px 22px;
     }
 
-    .login-left h2{
+    .hero h2{
         font-size:29px;
     }
 
-    .login-right{
-        padding:35px 20px;
+    .hero-stats{
+        grid-template-columns:1fr 1fr 1fr;
     }
 
-    .login-heading h2{
-        font-size:26px;
+    .benefits{
+        grid-template-columns:1fr;
+    }
+
+    .form-side{
+        padding:34px 20px;
     }
 
     .options{
         flex-direction:column;
-
         align-items:flex-start;
-
-        gap:10px;
+        gap:9px;
     }
 
     .footer-inner{
@@ -1073,26 +1155,22 @@ a{
 
 }
 
+@media(max-width:400px){
 
-@media(max-width:420px){
-
-    .vol-logo{
-        width:90px;
-        height:90px;
+    .hero-stats{
+        grid-template-columns:1fr;
     }
 
-    .vol-brand h1{
-        font-size:24px;
-    }
-
-    .login-left h2{
-        font-size:26px;
+    .hero-stat{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:8px;
     }
 
 }
 
 </style>
-
 </head>
 
 
@@ -1103,58 +1181,49 @@ a{
      TOP BAR
 ===================================================== -->
 
-<div class="vol-topbar">
+<div class="topbar">
 
-    <div class="vol-topbar-inner">
+    <div class="topbar-inner">
 
-        <div class="vol-contact">
+        <div class="top-contact">
 
             <span>
-
                 <i class="fa-solid fa-envelope"></i>
-
                 info.yssfoundation@gmail.com
-
             </span>
 
-
             <span>
-
                 <i class="fa-solid fa-location-dot"></i>
-
-                ग्राम नैपुरा, पोस्ट कौड़ाही,
-                जिला अम्बेडकर नगर,
-                उत्तर प्रदेश – 224129
-
+                अम्बेडकर नगर, उत्तर प्रदेश
             </span>
 
         </div>
 
+        <div class="top-right">
 
-        <div class="vol-social">
+            <div class="socials">
 
-            <a href="#">
-                <i class="fab fa-facebook-f"></i>
-            </a>
+                <a href="#">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
 
-            <a href="#">
-                <i class="fab fa-instagram"></i>
-            </a>
+                <a href="#">
+                    <i class="fab fa-instagram"></i>
+                </a>
 
-            <a href="#">
-                <i class="fab fa-youtube"></i>
-            </a>
+                <a href="#">
+                    <i class="fab fa-youtube"></i>
+                </a>
 
-            <a href="#">
-                <i class="fab fa-whatsapp"></i>
-            </a>
+                <a href="#">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
 
-            <span class="vol-phone">
+            </div>
 
+            <span>
                 <i class="fa-solid fa-phone"></i>
-
                 9651731313
-
             </span>
 
         </div>
@@ -1164,36 +1233,26 @@ a{
 </div>
 
 
-
 <!-- =====================================================
      HEADER
 ===================================================== -->
 
-<header class="vol-header">
+<header class="header">
 
-    <div class="vol-header-inner">
+    <div class="header-inner">
 
-
-        <a
-            href="index.html"
-            class="vol-brand">
-
+        <a href="index.html" class="brand">
 
             <img
                 src="images/logo.png"
-                alt="युवा सेवा संकल्प फाउंडेशन"
-                class="vol-logo">
-
+                alt="युवा सेवा संकल्प फाउंडेशन">
 
             <div>
 
                 <h1>
-
                     युवा सेवा संकल्प
                     <span>फाउंडेशन</span>
-
                 </h1>
-
 
                 <p>
                     युवा शक्ति - राष्ट्र शक्ति
@@ -1204,17 +1263,869 @@ a{
         </a>
 
 
-
-        <div class="vol-login-cards">
-
+        <div class="portal-switcher">
 
             <a
                 href="member-login.html"
-                class="login-card member-card">
+                class="portal member">
 
-
-                <div class="login-card-icon">
-
+                <div class="portal-icon">
                     <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div>
+                    <strong>सदस्य Login</strong>
+                    <small>Member Portal</small>
+                </div>
+
+            </a>
+
+
+            <a
+                href="volunteer-login.html"
+                class="portal volunteer">
+
+                <div class="portal-icon">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+
+                <div>
+                    <strong>Volunteer Login</strong>
+                    <small>Volunteer Portal</small>
+                </div>
+
+            </a>
+
+
+            <a
+                href="admin-login.html"
+                class="portal admin">
+
+                <div class="portal-icon">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+
+                <div>
+                    <strong>Admin Login</strong>
+                    <small>Admin Panel</small>
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="nav">
+
+    <div class="nav-inner">
+
+        <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            होम
+        </a>
+
+        <a href="about.html">
+            संस्था के बारे में
+        </a>
+
+        <a href="volunteer.html" class="active">
+            वॉलंटियर
+        </a>
+
+        <a href="membership.html">
+            सदस्यता
+        </a>
+
+        <a href="news.html">
+            समाचार
+        </a>
+
+        <a href="events.html">
+            आगामी कार्यक्रम
+        </a>
+
+        <a href="gallery.html">
+            गैलरी
+        </a>
+
+        <a href="contact.html">
+            संपर्क करें
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     PAGE
+===================================================== -->
+
+<main class="page">
+
+
+    <div class="breadcrumb">
+
+        <a href="index.html">होम</a>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <a href="volunteer.html">वॉलंटियर</a>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <strong>Volunteer Login</strong>
+
+    </div>
+
+
+    <section class="login-card">
+
+
+        <!-- =================================================
+             LEFT
+        ================================================== -->
+
+        <div class="hero">
+
+            <div class="hero-content">
+
+
+                <div class="secure-badge">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    SECURE VOLUNTEER PORTAL
 
                 </div>
+
+
+                <img
+                    src="images/logo.png"
+                    alt="YSS Foundation"
+                    class="hero-logo">
+
+
+                <h2>
+
+                    स्वागत है,
+                    <br>
+
+                    <span>हमारे Volunteer!</span>
+
+                </h2>
+
+
+                <p class="hero-text">
+
+                    युवा सेवा संकल्प फाउंडेशन के साथ
+                    समाज सेवा की यात्रा को आगे बढ़ाएँ।
+                    अपने सेवा कार्य, कार्यक्रम, उपलब्धियाँ
+                    और महत्वपूर्ण सूचनाएँ एक ही स्थान पर देखें।
+
+                </p>
+
+
+                <div class="hero-stats">
+
+                    <div class="hero-stat">
+
+                        <i class="fa-solid fa-handshake"></i>
+
+                        <strong>सेवा</strong>
+
+                        <small>Service</small>
+
+                    </div>
+
+
+                    <div class="hero-stat">
+
+                        <i class="fa-solid fa-users"></i>
+
+                        <strong>टीम</strong>
+
+                        <small>Team</small>
+
+                    </div>
+
+
+                    <div class="hero-stat">
+
+                        <i class="fa-solid fa-award"></i>
+
+                        <strong>सम्मान</strong>
+
+                        <small>Achievement</small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="benefits">
+
+
+                    <div class="benefit">
+
+                        <i class="fa-solid fa-user-check"></i>
+
+                        <span>
+                            Volunteer Profile
+                        </span>
+
+                    </div>
+
+
+                    <div class="benefit">
+
+                        <i class="fa-solid fa-calendar-days"></i>
+
+                        <span>
+                            कार्यक्रम एवं Events
+                        </span>
+
+                    </div>
+
+
+                    <div class="benefit">
+
+                        <i class="fa-solid fa-list-check"></i>
+
+                        <span>
+                            Assigned Tasks
+                        </span>
+
+                    </div>
+
+
+                    <div class="benefit">
+
+                        <i class="fa-solid fa-certificate"></i>
+
+                        <span>
+                            Certificates
+                        </span>
+
+                    </div>
+
+
+                    <div class="benefit">
+
+                        <i class="fa-solid fa-trophy"></i>
+
+                        <span>
+                            Achievements
+                        </span>
+
+                    </div>
+
+
+                    <div class="benefit">
+
+                        <i class="fa-solid fa-bullhorn"></i>
+
+                        <span>
+                            Notices & Updates
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             RIGHT FORM
+        ================================================== -->
+
+        <div class="form-side">
+
+
+            <div class="form-top">
+
+                <div class="form-icon">
+
+                    <i class="fa-solid fa-user-shield"></i>
+
+                </div>
+
+
+                <div class="online">
+
+                    <i class="fa-solid fa-circle"></i>
+
+                    SECURE LOGIN
+
+                </div>
+
+            </div>
+
+
+            <h2>
+                Volunteer Login
+            </h2>
+
+
+            <p class="form-subtitle">
+
+                अपनी Volunteer ID और Password से
+                सुरक्षित रूप से अपने Dashboard में प्रवेश करें।
+
+            </p>
+
+
+            <form
+                class="form"
+                id="volunteerLoginForm">
+
+
+                <!-- ID -->
+
+                <div class="group">
+
+                    <label for="volunteerId">
+
+                        Volunteer ID / Mobile Number
+
+                    </label>
+
+
+                    <div class="input">
+
+                        <i class="fa-solid fa-id-card"></i>
+
+                        <input
+                            type="text"
+                            id="volunteerId"
+                            placeholder="YSS-VOL-0001 या मोबाइल नंबर"
+                            autocomplete="username"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PASSWORD -->
+
+                <div class="group">
+
+                    <label for="password">
+
+                        Password
+
+                    </label>
+
+
+                    <div class="input">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="password"
+                            placeholder="अपना Password दर्ज करें"
+                            autocomplete="current-password"
+                            required>
+
+
+                        <button
+                            type="button"
+                            class="eye"
+                            id="eyeButton">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- OPTIONS -->
+
+                <div class="options">
+
+                    <label class="remember">
+
+                        <input
+                            type="checkbox"
+                            id="remember">
+
+                        मुझे याद रखें
+
+                    </label>
+
+
+                    <button
+                        type="button"
+                        class="forgot"
+                        id="forgotButton">
+
+                        पासवर्ड भूल गए?
+
+                    </button>
+
+                </div>
+
+
+                <!-- LOGIN -->
+
+                <button
+                    type="submit"
+                    class="login-btn"
+                    id="loginButton">
+
+                    <i class="fa-solid fa-right-to-bracket"></i>
+
+                    Volunteer Dashboard में प्रवेश करें
+
+                </button>
+
+
+                <!-- RESULT -->
+
+                <div
+                    id="result"
+                    class="result">
+                </div>
+
+
+                <!-- SECURITY -->
+
+                <div class="security">
+
+                    <i class="fa-solid fa-shield-heart"></i>
+
+                    <span>
+
+                        यह Volunteer Portal केवल अधिकृत
+                        Volunteers के लिए है। अपनी Login
+                        जानकारी किसी अन्य व्यक्ति के साथ साझा न करें।
+
+                    </span>
+
+                </div>
+
+
+                <!-- DEMO -->
+
+                <div class="demo">
+
+                    <strong>
+                        Demo Login
+                    </strong>
+
+                    <br>
+
+                    Volunteer ID:
+                    <code>YSS-VOL-0001</code>
+
+                    <br>
+
+                    Password:
+                    <code>YSS@2026</code>
+
+                </div>
+
+
+            </form>
+
+
+            <!-- REGISTER -->
+
+            <div class="register">
+
+                <p>
+                    अभी तक Volunteer नहीं बने हैं?
+                </p>
+
+
+                <a href="volunteer.html">
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                    Volunteer के रूप में जुड़ें
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="footer-inner">
+
+
+        <div>
+
+            <img
+                src="images/logo.png"
+                alt="युवा सेवा संकल्प फाउंडेशन"
+                class="footer-logo">
+
+            <h3>
+                युवा सेवा संकल्प फाउंडेशन
+            </h3>
+
+            <p>
+
+                सेवा, समर्पण और संस्कार के साथ
+                समाज एवं राष्ट्र निर्माण की दिशा
+                में सकारात्मक प्रयास।
+
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                महत्वपूर्ण लिंक
+            </h4>
+
+            <a href="index.html">होम</a>
+
+            <a href="about.html">हमारे बारे में</a>
+
+            <a href="mission.html">हमारा मिशन</a>
+
+            <a href="membership.html">सदस्यता</a>
+
+            <a href="contact.html">संपर्क करें</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                हमारे कार्य
+            </h4>
+
+            <a href="education.html">शिक्षा</a>
+
+            <a href="health.html">स्वास्थ्य</a>
+
+            <a href="environment.html">पर्यावरण</a>
+
+            <a href="women.html">महिला सशक्तिकरण</a>
+
+            <a href="youth.html">युवा विकास</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                संपर्क करें
+            </h4>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                9651731313
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                info.yssfoundation@gmail.com
+            </p>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                अम्बेडकर नगर, उत्तर प्रदेश
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 युवा सेवा संकल्प फाउंडेशन |
+        सर्वाधिकार सुरक्षित |
+        <strong>युवा शक्ति - राष्ट्र शक्ति</strong>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+/* =========================================================
+   PASSWORD SHOW / HIDE
+========================================================= */
+
+const password =
+    document.getElementById("password");
+
+const eyeButton =
+    document.getElementById("eyeButton");
+
+eyeButton.addEventListener(
+    "click",
+    function(){
+
+        const icon =
+            eyeButton.querySelector("i");
+
+        if(password.type === "password"){
+
+            password.type = "text";
+
+            icon.classList.remove("fa-eye");
+            icon.classList.add("fa-eye-slash");
+
+        }else{
+
+            password.type = "password";
+
+            icon.classList.remove("fa-eye-slash");
+            icon.classList.add("fa-eye");
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   FORGOT PASSWORD
+========================================================= */
+
+document
+.getElementById("forgotButton")
+.addEventListener(
+    "click",
+    function(){
+
+        alert(
+            "पासवर्ड Reset करने के लिए युवा सेवा संकल्प फाउंडेशन के Administrator से संपर्क करें।"
+        );
+
+    }
+);
+
+
+/* =========================================================
+   LOGIN SYSTEM
+========================================================= */
+
+const loginForm =
+    document.getElementById(
+        "volunteerLoginForm"
+    );
+
+const loginButton =
+    document.getElementById(
+        "loginButton"
+    );
+
+const result =
+    document.getElementById(
+        "result"
+    );
+
+
+loginForm.addEventListener(
+    "submit",
+    function(event){
+
+        event.preventDefault();
+
+
+        const volunteerId =
+            document
+            .getElementById("volunteerId")
+            .value
+            .trim();
+
+
+        const enteredPassword =
+            document
+            .getElementById("password")
+            .value
+            .trim();
+
+
+        /* =============================================
+           DEMO ACCOUNT
+        ============================================== */
+
+        const demoId =
+            "YSS-VOL-0001";
+
+        const demoPassword =
+            "YSS@2026";
+
+
+        /* =============================================
+           VALIDATION
+        ============================================== */
+
+        if(
+            volunteerId === "" ||
+            enteredPassword === ""
+        ){
+
+            result.className =
+                "result error";
+
+            result.innerHTML =
+                "❌ कृपया Volunteer ID और Password भरें।";
+
+            return;
+
+        }
+
+
+        /* =============================================
+           LOGIN CHECK
+        ============================================== */
+
+        if(
+            volunteerId === demoId &&
+            enteredPassword === demoPassword
+        ){
+
+            loginButton.classList.add(
+                "loading"
+            );
+
+            loginButton.innerHTML =
+                '<i class="fa-solid fa-spinner fa-spin"></i> Login हो रहा है...';
+
+
+            result.className =
+                "result success";
+
+            result.innerHTML =
+                "✓ Login सफल! आपका Dashboard खोला जा रहा है...";
+
+
+            /* SESSION */
+
+            sessionStorage.setItem(
+                "volunteerLoggedIn",
+                "true"
+            );
+
+            sessionStorage.setItem(
+                "volunteerId",
+                volunteerId
+            );
+
+
+            /* REMEMBER */
+
+            if(
+                document
+                .getElementById("remember")
+                .checked
+            ){
+
+                localStorage.setItem(
+                    "volunteerId",
+                    volunteerId
+                );
+
+            }
+
+
+            /* DASHBOARD */
+
+            setTimeout(
+                function(){
+
+                    window.location.href =
+                        "volunteer-dashboard.html";
+
+                },
+                800
+            );
+
+
+        }else{
+
+            result.className =
+                "result error";
+
+            result.innerHTML =
+                "❌ Volunteer ID या Password गलत है।";
+
+
+            loginButton.classList.remove(
+                "loading"
+            );
+
+            loginButton.innerHTML =
+                '<i class="fa-solid fa-right-to-bracket"></i> Volunteer Dashboard में प्रवेश करें';
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   LOAD REMEMBERED ID
+========================================================= */
+
+window.addEventListener(
+    "DOMContentLoaded",
+    function(){
+
+        const savedId =
+            localStorage.getItem(
+                "volunteerId"
+            );
+
+        if(savedId){
+
+            document
+            .getElementById("volunteerId")
+            .value = savedId;
+
+            document
+            .getElementById("remember")
+            .checked = true;
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>
