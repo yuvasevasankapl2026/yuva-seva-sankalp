@@ -2,40 +2,714 @@
 <html lang="hi">
 
 <head>
-
     <meta charset="UTF-8">
-
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>दान करें | युवा सेवा संकल्प फाउंडेशन</title>
 
     <meta name="description"
-          content="युवा सेवा संकल्प फाउंडेशन के सेवा कार्यों में अपना सहयोग दें। शिक्षा, स्वास्थ्य, पर्यावरण और समाज सेवा के लिए दान करें।">
+        content="युवा सेवा संकल्प फाउंडेशन के सेवा कार्यों में अपना योगदान दें।">
 
     <link rel="icon" href="images/logo.png">
 
-    <!-- GOOGLE FONT -->
+    <link rel="stylesheet" href="style.css">
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+    <style>
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+        /* =========================================
+           DONATE PAGE ONLY
+           STYLE.CSS KO CHANGE KARNE KI JARURAT NAHI
+        ========================================= */
 
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet">
+        .donate-page{
+            background:#f4f7fb;
+            padding-bottom:70px;
+        }
 
-    <!-- FONT AWESOME -->
+        .donate-hero{
+            position:relative;
+            overflow:hidden;
+            padding:80px 20px;
+            background:linear-gradient(135deg,#0d3158,#175b96);
+            color:#fff;
+            text-align:center;
+        }
 
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+        .donate-hero::before{
+            content:"";
+            position:absolute;
+            width:350px;
+            height:350px;
+            border-radius:50%;
+            background:rgba(255,255,255,.06);
+            top:-180px;
+            left:-100px;
+        }
 
-    <!-- MAIN CSS -->
+        .donate-hero::after{
+            content:"";
+            position:absolute;
+            width:400px;
+            height:400px;
+            border-radius:50%;
+            background:rgba(255,121,0,.12);
+            bottom:-250px;
+            right:-100px;
+        }
 
-    <link rel="stylesheet"
-          href="style.css">
+        .donate-hero-content{
+            position:relative;
+            z-index:2;
+            max-width:800px;
+            margin:auto;
+        }
+
+        .donate-badge{
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+            background:rgba(255,255,255,.13);
+            border:1px solid rgba(255,255,255,.22);
+            padding:9px 18px;
+            border-radius:50px;
+            font-size:15px;
+            margin-bottom:18px;
+        }
+
+        .donate-hero h1{
+            color:#fff;
+            font-size:48px;
+            line-height:1.3;
+            margin:0 0 15px;
+        }
+
+        .donate-hero h1 span{
+            color:#ffb35c;
+        }
+
+        .donate-hero p{
+            max-width:650px;
+            margin:auto;
+            font-size:17px;
+            line-height:1.9;
+            color:#edf5ff;
+        }
+
+        .donate-breadcrumb{
+            margin-top:22px;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            gap:10px;
+            font-size:14px;
+        }
+
+        .donate-breadcrumb a{
+            color:#fff;
+            text-decoration:none;
+        }
+
+        .donate-breadcrumb i{
+            color:#ffb35c;
+        }
+
+
+        /* =========================================
+           INTRO
+        ========================================= */
+
+        .donate-intro{
+            max-width:1180px;
+            margin:0 auto;
+            padding:70px 20px 30px;
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:35px;
+            align-items:center;
+        }
+
+        .donate-intro-left{
+            background:#fff;
+            padding:42px;
+            border-radius:22px;
+            box-shadow:0 12px 35px rgba(17,59,102,.09);
+            border:1px solid #e7edf4;
+        }
+
+        .donate-small-title{
+            color:#ff7900;
+            font-weight:800;
+            display:block;
+            margin-bottom:10px;
+        }
+
+        .donate-intro-left h2{
+            color:#123b66;
+            font-size:34px;
+            line-height:1.4;
+            margin:0 0 18px;
+        }
+
+        .donate-intro-left p{
+            color:#647484;
+            line-height:1.9;
+            font-size:16px;
+            margin-bottom:18px;
+        }
+
+        .donate-points{
+            display:grid;
+            gap:13px;
+            margin-top:25px;
+        }
+
+        .donate-point{
+            display:flex;
+            align-items:center;
+            gap:12px;
+            font-weight:600;
+            color:#263746;
+        }
+
+        .donate-point i{
+            width:40px;
+            height:40px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:#eaf7ef;
+            color:#24834b;
+            border-radius:50%;
+        }
+
+        .donate-impact-card{
+            min-height:430px;
+            border-radius:22px;
+            padding:40px;
+            background:linear-gradient(135deg,#ff7900,#e85f00);
+            color:#fff;
+            position:relative;
+            overflow:hidden;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+        }
+
+        .donate-impact-card::before{
+            content:"❤";
+            position:absolute;
+            right:-25px;
+            bottom:-65px;
+            font-size:280px;
+            color:rgba(255,255,255,.08);
+        }
+
+        .donate-impact-card > *{
+            position:relative;
+            z-index:1;
+        }
+
+        .impact-icon{
+            width:75px;
+            height:75px;
+            border-radius:50%;
+            background:rgba(255,255,255,.17);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:32px;
+            margin-bottom:20px;
+        }
+
+        .donate-impact-card h2{
+            color:#fff;
+            font-size:32px;
+            line-height:1.4;
+            margin-bottom:15px;
+        }
+
+        .donate-impact-card p{
+            color:#fff;
+            line-height:1.9;
+            font-size:16px;
+        }
+
+
+        /* =========================================
+           DONATION FORM
+        ========================================= */
+
+        .donation-section{
+            max-width:1180px;
+            margin:25px auto 0;
+            padding:20px;
+        }
+
+        .donation-wrapper{
+            display:grid;
+            grid-template-columns:360px 1fr;
+            background:#fff;
+            border-radius:25px;
+            overflow:hidden;
+            box-shadow:0 15px 45px rgba(18,59,102,.12);
+        }
+
+        .donation-sidebar{
+            background:linear-gradient(180deg,#123b66,#0d2c4d);
+            padding:42px 30px;
+            color:#fff;
+        }
+
+        .donation-sidebar h2{
+            color:#fff;
+            font-size:28px;
+            margin:0 0 15px;
+        }
+
+        .donation-sidebar p{
+            color:#dbe9f6;
+            line-height:1.8;
+            margin-bottom:30px;
+        }
+
+        .donation-step{
+            display:flex;
+            gap:14px;
+            margin-bottom:24px;
+        }
+
+        .step-number{
+            min-width:40px;
+            height:40px;
+            border-radius:50%;
+            background:#ff7900;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-weight:800;
+        }
+
+        .donation-step strong{
+            display:block;
+            color:#fff;
+            margin-bottom:4px;
+        }
+
+        .donation-step span{
+            color:#cbddeb;
+            font-size:14px;
+            line-height:1.5;
+        }
+
+        .secure-box{
+            margin-top:25px;
+            padding:18px;
+            border-radius:14px;
+            background:rgba(255,255,255,.08);
+            border:1px solid rgba(255,255,255,.12);
+            font-size:14px;
+            line-height:1.7;
+        }
+
+        .secure-box i{
+            color:#ffb35c;
+            margin-right:7px;
+        }
+
+
+        .donation-form-area{
+            padding:42px;
+        }
+
+        .donation-form-area h2{
+            color:#123b66;
+            margin:0 0 6px;
+            font-size:30px;
+        }
+
+        .donation-form-area > p{
+            color:#647484;
+            margin-bottom:28px;
+        }
+
+        .donate-form{
+            width:100%;
+        }
+
+        .form-section-title{
+            font-size:17px;
+            font-weight:800;
+            color:#123b66;
+            margin:28px 0 14px;
+            padding-bottom:10px;
+            border-bottom:1px solid #e7edf3;
+        }
+
+        .form-section-title:first-child{
+            margin-top:0;
+        }
+
+        .amount-options{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:12px;
+            margin-bottom:15px;
+        }
+
+        .amount-btn{
+            border:2px solid #dce5ed;
+            background:#fff;
+            color:#123b66;
+            min-height:54px;
+            border-radius:10px;
+            font-size:16px;
+            font-weight:800;
+            cursor:pointer;
+            transition:.25s;
+        }
+
+        .amount-btn:hover,
+        .amount-btn.active{
+            border-color:#ff7900;
+            background:#fff5eb;
+            color:#e86600;
+        }
+
+        .custom-amount{
+            margin-top:10px;
+        }
+
+        .custom-amount label,
+        .form-group label{
+            display:block;
+            font-size:15px;
+            font-weight:700;
+            color:#263746;
+            margin-bottom:8px;
+        }
+
+        .custom-amount input,
+        .form-group input,
+        .form-group select,
+        .form-group textarea{
+            width:100%;
+            box-sizing:border-box;
+            border:1.5px solid #d6e0e9;
+            background:#fff;
+            border-radius:10px;
+            min-height:52px;
+            padding:12px 15px;
+            outline:none;
+            font-family:inherit;
+            font-size:15px;
+            color:#263746;
+            transition:.25s;
+        }
+
+        .form-group textarea{
+            min-height:110px;
+            resize:vertical;
+        }
+
+        .custom-amount input:focus,
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus{
+            border-color:#1d5d96;
+            box-shadow:0 0 0 4px rgba(29,93,150,.09);
+        }
+
+        .form-row{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:18px;
+            margin-bottom:18px;
+        }
+
+        .form-group{
+            margin-bottom:18px;
+        }
+
+        .purpose-options{
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:12px;
+        }
+
+        .purpose-option{
+            position:relative;
+        }
+
+        .purpose-option input{
+            position:absolute;
+            opacity:0;
+        }
+
+        .purpose-option label{
+            display:flex;
+            align-items:center;
+            gap:10px;
+            min-height:55px;
+            padding:10px 15px;
+            box-sizing:border-box;
+            border:1.5px solid #dce5ed;
+            border-radius:10px;
+            cursor:pointer;
+            font-weight:700;
+            color:#263746;
+            transition:.25s;
+        }
+
+        .purpose-option label i{
+            color:#ff7900;
+        }
+
+        .purpose-option input:checked + label{
+            border-color:#ff7900;
+            background:#fff7f0;
+            color:#c95500;
+        }
+
+        .payment-box{
+            display:flex;
+            align-items:center;
+            gap:12px;
+            padding:16px;
+            background:#f5f9fc;
+            border-radius:12px;
+            color:#123b66;
+            font-weight:600;
+            margin-bottom:20px;
+        }
+
+        .payment-box i{
+            font-size:23px;
+            color:#24834b;
+        }
+
+        .donate-agree{
+            display:flex;
+            align-items:flex-start;
+            gap:10px;
+            margin:20px 0;
+            line-height:1.6;
+            color:#526270;
+            font-size:14px;
+        }
+
+        .donate-agree input{
+            width:18px;
+            height:18px;
+            min-width:18px;
+            margin-top:3px;
+            accent-color:#24834b;
+        }
+
+        .donate-submit{
+            width:100%;
+            border:none;
+            background:linear-gradient(135deg,#ff7900,#e76200);
+            color:#fff;
+            min-height:58px;
+            border-radius:12px;
+            cursor:pointer;
+            font-family:inherit;
+            font-size:17px;
+            font-weight:800;
+            transition:.25s;
+            box-shadow:0 10px 20px rgba(255,121,0,.2);
+        }
+
+        .donate-submit:hover{
+            transform:translateY(-2px);
+            box-shadow:0 14px 25px rgba(255,121,0,.28);
+        }
+
+        .donate-result{
+            display:none;
+            margin-top:18px;
+            padding:15px;
+            border-radius:10px;
+            font-weight:600;
+            line-height:1.7;
+        }
+
+        .donate-result.success{
+            display:block;
+            background:#eaf8ef;
+            color:#18733b;
+            border:1px solid #bfe7cc;
+        }
+
+
+        /* =========================================
+           IMPACT CARDS
+        ========================================= */
+
+        .donation-impact-section{
+            max-width:1180px;
+            margin:55px auto 0;
+            padding:0 20px;
+        }
+
+        .impact-heading{
+            text-align:center;
+            margin-bottom:28px;
+        }
+
+        .impact-heading span{
+            color:#ff7900;
+            font-weight:800;
+        }
+
+        .impact-heading h2{
+            color:#123b66;
+            font-size:32px;
+            margin:8px 0 0;
+        }
+
+        .impact-grid{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:18px;
+        }
+
+        .impact-card{
+            background:#fff;
+            padding:28px 18px;
+            text-align:center;
+            border-radius:18px;
+            box-shadow:0 8px 25px rgba(18,59,102,.07);
+            border:1px solid #e8eef3;
+        }
+
+        .impact-card i{
+            width:58px;
+            height:58px;
+            border-radius:50%;
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            background:#eef5fb;
+            color:#1d5d96;
+            font-size:24px;
+            margin-bottom:12px;
+        }
+
+        .impact-card strong{
+            display:block;
+            color:#123b66;
+            font-size:25px;
+            margin-bottom:5px;
+        }
+
+        .impact-card span{
+            color:#647484;
+            font-size:14px;
+        }
+
+
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+
+        @media(max-width:1000px){
+
+            .donation-wrapper{
+                grid-template-columns:1fr;
+            }
+
+            .donation-sidebar{
+                padding:35px;
+            }
+
+            .impact-grid{
+                grid-template-columns:repeat(2,1fr);
+            }
+
+        }
+
+        @media(max-width:800px){
+
+            .donate-intro{
+                grid-template-columns:1fr;
+            }
+
+            .donate-hero h1{
+                font-size:35px;
+            }
+
+            .donation-form-area{
+                padding:28px 20px;
+            }
+
+            .form-row{
+                grid-template-columns:1fr;
+                gap:0;
+            }
+
+            .amount-options{
+                grid-template-columns:repeat(2,1fr);
+            }
+
+        }
+
+        @media(max-width:500px){
+
+            .donate-hero{
+                padding:60px 15px;
+            }
+
+            .donate-hero h1{
+                font-size:29px;
+            }
+
+            .donate-intro{
+                padding:40px 15px 20px;
+            }
+
+            .donate-intro-left,
+            .donate-impact-card{
+                padding:28px 20px;
+            }
+
+            .donate-intro-left h2,
+            .donate-impact-card h2{
+                font-size:26px;
+            }
+
+            .donation-section{
+                padding:12px;
+            }
+
+            .donation-sidebar{
+                padding:30px 20px;
+            }
+
+            .donation-form-area h2{
+                font-size:25px;
+            }
+
+            .purpose-options{
+                grid-template-columns:1fr;
+            }
+
+            .impact-grid{
+                grid-template-columns:1fr 1fr;
+                gap:12px;
+            }
+
+            .impact-card{
+                padding:20px 10px;
+            }
+
+            .impact-card strong{
+                font-size:20px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
@@ -54,60 +728,25 @@
         <div class="top-contact">
 
             <a href="tel:+919651731313">
-
                 <i class="fa-solid fa-phone"></i>
-
                 +91 9651 731 313
-
             </a>
 
-
             <a href="mailto:info.yssfoundation@gmail.com">
-
                 <i class="fa-solid fa-envelope"></i>
-
                 info.yssfoundation@gmail.com
-
             </a>
 
         </div>
-
 
         <div class="top-social">
 
             <span>हमसे जुड़ें:</span>
 
-
-            <a href="#"
-               aria-label="Facebook">
-
-                <i class="fa-brands fa-facebook-f"></i>
-
-            </a>
-
-
-            <a href="#"
-               aria-label="Instagram">
-
-                <i class="fa-brands fa-instagram"></i>
-
-            </a>
-
-
-            <a href="#"
-               aria-label="YouTube">
-
-                <i class="fa-brands fa-youtube"></i>
-
-            </a>
-
-
-            <a href="#"
-               aria-label="WhatsApp">
-
-                <i class="fa-brands fa-whatsapp"></i>
-
-            </a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
 
         </div>
 
@@ -124,40 +763,27 @@
 
     <div class="container header-inner">
 
-
-        <a href="index.html"
-           class="brand">
+        <a href="index.html" class="brand">
 
             <img src="images/logo.png"
-                 alt="युवा सेवा संकल्प फाउंडेशन लोगो">
-
+                 alt="युवा सेवा संकल्प फाउंडेशन">
 
             <div class="brand-text">
 
                 <h1>
-
                     युवा सेवा
                     <span>संकल्प</span>
                     <strong>फाउंडेशन</strong>
-
                 </h1>
 
-
-                <p>
-
-                    युवा शक्ति - राष्ट्र शक्ति
-
-                </p>
+                <p>युवा शक्ति - राष्ट्र शक्ति</p>
 
             </div>
 
         </a>
 
 
-        <!-- HEADER ACTIONS -->
-
         <div class="header-actions">
-
 
             <a href="member-login.html"
                class="header-action member-action">
@@ -165,13 +791,8 @@
                 <i class="fa-solid fa-user"></i>
 
                 <span>
-
                     <b>सदस्य Login</b>
-
-                    <small>
-                        अपने खाते में जाएँ
-                    </small>
-
+                    <small>अपने खाते में जाएँ</small>
                 </span>
 
             </a>
@@ -183,13 +804,8 @@
                 <i class="fa-solid fa-hands-helping"></i>
 
                 <span>
-
                     <b>Volunteer Login</b>
-
-                    <small>
-                        सेवा गतिविधियाँ
-                    </small>
-
+                    <small>सेवा गतिविधियाँ</small>
                 </span>
 
             </a>
@@ -201,17 +817,11 @@
                 <i class="fa-solid fa-user-shield"></i>
 
                 <span>
-
                     <b>Admin Login</b>
-
-                    <small>
-                        Admin Panel
-                    </small>
-
+                    <small>Admin Panel</small>
                 </span>
 
             </a>
-
 
         </div>
 
@@ -228,7 +838,6 @@
 
     <div class="container nav-inner">
 
-
         <button class="mobile-menu-btn"
                 id="mobileMenuBtn"
                 aria-label="Menu">
@@ -238,169 +847,61 @@
         </button>
 
 
-        <ul class="nav-menu"
-            id="navMenu">
-
+        <ul class="nav-menu" id="navMenu">
 
             <li>
-
                 <a href="index.html">
-
                     <i class="fa-solid fa-house"></i>
-
                     होम
-
                 </a>
-
             </li>
 
-
-            <!-- ABOUT DROPDOWN -->
 
             <li class="dropdown">
 
                 <a href="#">
-
                     संस्था के बारे में
-
                     <i class="fa-solid fa-chevron-down"></i>
-
                 </a>
-
 
                 <ul class="dropdown-menu">
 
-
-                    <li>
-                        <a href="about.html">
-                            हमारे बारे में
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a href="mission.html">
-                            हमारा मिशन
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a href="vision.html">
-                            हमारा विजन
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a href="team.html">
-                            हमारी टीम
-                        </a>
-                    </li>
-
+                    <li><a href="about.html">हमारे बारे में</a></li>
+                    <li><a href="mission.html">हमारा मिशन</a></li>
+                    <li><a href="vision.html">हमारा विजन</a></li>
+                    <li><a href="team.html">हमारी टीम</a></li>
 
                 </ul>
 
             </li>
 
-
-            <!-- WORK DROPDOWN -->
 
             <li class="dropdown">
 
                 <a href="#">
-
                     हमारे कार्य
-
                     <i class="fa-solid fa-chevron-down"></i>
-
                 </a>
-
 
                 <ul class="dropdown-menu">
 
-
-                    <li>
-                        <a href="education.html">
-                            शिक्षा
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a href="health.html">
-                            स्वास्थ्य
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a href="environment.html">
-                            पर्यावरण
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a href="social-service.html">
-                            समाज सेवा
-                        </a>
-                    </li>
-
-
-                    <li>
-                        <a href="blood-donation.html">
-                            रक्तदान
-                        </a>
-                    </li>
-
+                    <li><a href="education.html">शिक्षा</a></li>
+                    <li><a href="health.html">स्वास्थ्य</a></li>
+                    <li><a href="environment.html">पर्यावरण</a></li>
+                    <li><a href="social-service.html">समाज सेवा</a></li>
+                    <li><a href="blood-donation.html">रक्तदान</a></li>
 
                 </ul>
 
             </li>
 
 
-            <li>
-                <a href="volunteer.html">
-                    वॉलंटियर
-                </a>
-            </li>
-
-
-            <li>
-                <a href="membership.html">
-                    सदस्य बनें
-                </a>
-            </li>
-
-
-            <li>
-                <a href="news.html">
-                    समाचार
-                </a>
-            </li>
-
-
-            <li>
-                <a href="events.html">
-                    आगामी कार्यक्रम
-                </a>
-            </li>
-
-
-            <li>
-                <a href="gallery.html">
-                    गैलरी
-                </a>
-            </li>
-
-
-            <li>
-                <a href="contact.html">
-                    संपर्क करें
-                </a>
-            </li>
-
+            <li><a href="volunteer.html">वॉलंटियर</a></li>
+            <li><a href="membership.html">सदस्य बनें</a></li>
+            <li><a href="news.html">समाचार</a></li>
+            <li><a href="events.html">आगामी कार्यक्रम</a></li>
+            <li><a href="gallery.html">गैलरी</a></li>
+            <li><a href="contact.html">संपर्क करें</a></li>
 
         </ul>
 
@@ -410,501 +911,356 @@
 
 
 <!-- =========================================
-     PAGE HERO
+     DONATE PAGE
 ========================================= -->
 
-<section class="page-hero">
-
-    <div class="container">
-
-        <div class="page-hero-content">
+<main class="donate-page">
 
 
-            <span>
+    <!-- HERO -->
 
+    <section class="donate-hero">
+
+        <div class="donate-hero-content">
+
+            <div class="donate-badge">
                 <i class="fa-solid fa-heart"></i>
-
-                आपका सहयोग, किसी का भविष्य
-
-            </span>
-
+                आपका सहयोग, किसी की नई उम्मीद
+            </div>
 
             <h1>
-
-                आपका छोटा सा सहयोग
-
-                <strong>
-                    बड़ा बदलाव ला सकता है
-                </strong>
-
+                आइए, मिलकर <span>बदलाव लाएं</span>
             </h1>
 
-
             <p>
-
-                शिक्षा, स्वास्थ्य, पर्यावरण, रक्तदान और समाज सेवा
-                के कार्यों में अपना बहुमूल्य सहयोग देकर बदलाव की
-                इस यात्रा का हिस्सा बनें।
-
+                आपका छोटा सा सहयोग शिक्षा, स्वास्थ्य, पर्यावरण और
+                समाज सेवा के कार्यों में एक बड़ा बदलाव ला सकता है।
             </p>
 
+            <div class="donate-breadcrumb">
 
-            <div class="page-breadcrumb">
-
-                <a href="index.html">
-
-                    होम
-
-                </a>
-
+                <a href="index.html">होम</a>
 
                 <i class="fa-solid fa-angle-right"></i>
 
-
-                <span>
-
-                    दान करें
-
-                </span>
+                <span>दान करें</span>
 
             </div>
 
-
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- =========================================
-     DONATION IMPACT
-========================================= -->
+    <!-- INTRO -->
 
-<section class="section">
+    <section class="donate-intro">
 
-    <div class="container">
+        <div class="donate-intro-left">
 
-
-        <div class="section-title">
-
-            <span>
-
-                आपका सहयोग
-
+            <span class="donate-small-title">
+                आपका सहयोग हमारी ताकत
             </span>
 
-
             <h2>
-
-                आपका दान कहाँ उपयोग हो सकता है?
-
+                एक छोटा योगदान,
+                किसी के जीवन में बड़ा बदलाव
             </h2>
 
+            <p>
+                युवा सेवा संकल्प फाउंडेशन समाज के विभिन्न क्षेत्रों में
+                सेवा कार्य करने के उद्देश्य से कार्य कर रहा है।
+            </p>
 
-            <div class="title-line">
+            <p>
+                आपका सहयोग जरूरतमंद लोगों तक सहायता पहुँचाने के
+                हमारे संकल्प को और मजबूत बनाएगा।
+            </p>
 
-                <i class="fa-solid fa-heart"></i>
+            <div class="donate-points">
 
-            </div>
-
-        </div>
-
-
-        <div class="work-grid">
-
-
-            <div class="work-card education-card">
-
-                <div class="work-icon">
-
-                    <i class="fa-solid fa-book-open"></i>
-
+                <div class="donate-point">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    शिक्षा एवं युवा विकास
                 </div>
 
-
-                <h3>
-
-                    शिक्षा
-
-                </h3>
-
-
-                <p>
-
-                    जरूरतमंद बच्चों की शिक्षा और
-                    शैक्षणिक सहायता के लिए सहयोग।
-
-                </p>
-
-            </div>
-
-
-            <div class="work-card health-card">
-
-                <div class="work-icon">
-
+                <div class="donate-point">
                     <i class="fa-solid fa-heart-pulse"></i>
-
+                    स्वास्थ्य एवं जनकल्याण
                 </div>
 
-
-                <h3>
-
-                    स्वास्थ्य
-
-                </h3>
-
-
-                <p>
-
-                    स्वास्थ्य जागरूकता और सेवा
-                    कार्यक्रमों में सहयोग।
-
-                </p>
-
-            </div>
-
-
-            <div class="work-card environment-card">
-
-                <div class="work-icon">
-
+                <div class="donate-point">
                     <i class="fa-solid fa-tree"></i>
-
+                    पर्यावरण संरक्षण
                 </div>
 
-
-                <h3>
-
-                    पर्यावरण
-
-                </h3>
-
-
-                <p>
-
-                    वृक्षारोपण और पर्यावरण
-                    संरक्षण गतिविधियों में सहयोग।
-
-                </p>
-
-            </div>
-
-
-            <div class="work-card social-card">
-
-                <div class="work-icon">
-
-                    <i class="fa-solid fa-people-group"></i>
-
+                <div class="donate-point">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                    जरूरतमंदों की सहायता
                 </div>
 
-
-                <h3>
-
-                    समाज सेवा
-
-                </h3>
-
-
-                <p>
-
-                    जरूरतमंद परिवारों और
-                    सामाजिक सेवा कार्यों में सहयोग।
-
-                </p>
-
             </div>
-
-
-            <div class="work-card blood-card">
-
-                <div class="work-icon">
-
-                    <i class="fa-solid fa-droplet"></i>
-
-                </div>
-
-
-                <h3>
-
-                    रक्तदान अभियान
-
-                </h3>
-
-
-                <p>
-
-                    रक्तदान जागरूकता और
-                    सेवा अभियानों में सहयोग।
-
-                </p>
-
-            </div>
-
 
         </div>
 
-    </div>
 
-</section>
+        <div class="donate-impact-card">
 
-
-<!-- =========================================
-     DONATION FORM
-========================================= -->
-
-<section class="section donate-form-section"
-         id="donateFormSection">
-
-    <div class="container">
-
-
-        <div class="section-title">
-
-            <span>
-
-                सहयोग फॉर्म
-
-            </span>
-
+            <div class="impact-icon">
+                <i class="fa-solid fa-heart"></i>
+            </div>
 
             <h2>
-
-                अपना सहयोग दर्ज करें
-
+                सेवा में आपका
+                अमूल्य योगदान
             </h2>
 
-
-            <div class="title-line">
-
-                <i class="fa-solid fa-hand-holding-heart"></i>
-
-            </div>
+            <p>
+                दान की राशि सेवा कार्यों और सामाजिक गतिविधियों के लिए
+                उपयोग की जा सकती है। आइए, मानवता और समाज के हित में
+                एक कदम आगे बढ़ाएं।
+            </p>
 
         </div>
 
-
-        <div class="blood-registration-grid">
-
-
-            <!-- LEFT INFO -->
-
-            <div class="blood-registration-info">
+    </section>
 
 
-                <span>
+    <!-- DONATION FORM -->
 
-                    ❤️ सेवा में आपका सहयोग
+    <section class="donation-section">
 
-                </span>
+        <div class="donation-wrapper">
 
+
+            <!-- LEFT SIDE -->
+
+            <aside class="donation-sidebar">
 
                 <h2>
-
-                    आइए, मिलकर बदलाव लाएँ
-
+                    दान प्रक्रिया
                 </h2>
 
-
                 <p>
-
-                    आपका सहयोग संस्था के सामाजिक और जनहित
-                    से जुड़े कार्यों को आगे बढ़ाने में महत्वपूर्ण
-                    भूमिका निभा सकता है।
-
+                    कुछ आसान जानकारी भरकर अपना योगदान दर्ज करें।
                 </p>
 
 
-                <div class="blood-info-list">
+                <div class="donation-step">
 
-
-                    <div>
-
-                        <i class="fa-solid fa-shield-heart"></i>
-
-                        <span>
-
-                            सुरक्षित जानकारी
-
-                        </span>
-
-                    </div>
-
+                    <div class="step-number">1</div>
 
                     <div>
-
-                        <i class="fa-solid fa-file-circle-check"></i>
-
-                        <span>
-
-                            सहयोग का रिकॉर्ड
-
-                        </span>
-
+                        <strong>राशि चुनें</strong>
+                        <span>अपनी इच्छा अनुसार दान राशि चुनें।</span>
                     </div>
-
-
-                    <div>
-
-                        <i class="fa-solid fa-heart"></i>
-
-                        <span>
-
-                            समाज सेवा में भागीदारी
-
-                        </span>
-
-                    </div>
-
-
-                    <div>
-
-                        <i class="fa-solid fa-users"></i>
-
-                        <span>
-
-                            बदलाव की यात्रा में सहयोग
-
-                        </span>
-
-                    </div>
-
 
                 </div>
 
 
-                <p style="margin-top:25px;">
+                <div class="donation-step">
 
-                    <strong>
-                        धन्यवाद!
-                    </strong>
+                    <div class="step-number">2</div>
 
-                    आपका हर सहयोग समाज में सकारात्मक बदलाव
-                    लाने की दिशा में एक महत्वपूर्ण कदम है।
+                    <div>
+                        <strong>अपनी जानकारी भरें</strong>
+                        <span>सही संपर्क विवरण दर्ज करें।</span>
+                    </div>
 
+                </div>
+
+
+                <div class="donation-step">
+
+                    <div class="step-number">3</div>
+
+                    <div>
+                        <strong>योगदान दर्ज करें</strong>
+                        <span>फॉर्म जमा करने के बाद आपका विवरण सुरक्षित होगा।</span>
+                    </div>
+
+                </div>
+
+
+                <div class="secure-box">
+
+                    <i class="fa-solid fa-shield-heart"></i>
+
+                    आपकी जानकारी इस demo page में browser के
+                    local storage में सुरक्षित रूप से दर्ज की जाएगी।
+
+                </div>
+
+            </aside>
+
+
+            <!-- FORM -->
+
+            <div class="donation-form-area">
+
+                <h2>अपना सहयोग दर्ज करें</h2>
+
+                <p>
+                    कृपया नीचे दी गई जानकारी सही-सही भरें।
                 </p>
 
 
-            </div>
+                <form class="donate-form" id="donateForm">
 
 
-            <!-- DONATION FORM BOX -->
+                    <!-- AMOUNT -->
 
-            <div class="blood-form-box">
-
-
-                <h3>
-
-                    ❤️ दान सहयोग फॉर्म
-
-                </h3>
+                    <div class="form-section-title">
+                        1. दान राशि चुनें *
+                    </div>
 
 
-                <form id="donationForm">
+                    <div class="amount-options">
+
+                        <button type="button"
+                                class="amount-btn"
+                                data-amount="50">
+                            ₹50
+                        </button>
+
+                        <button type="button"
+                                class="amount-btn"
+                                data-amount="100">
+                            ₹100
+                        </button>
+
+                        <button type="button"
+                                class="amount-btn"
+                                data-amount="500">
+                            ₹500
+                        </button>
+
+                        <button type="button"
+                                class="amount-btn"
+                                data-amount="1100">
+                            ₹1100
+                        </button>
+
+                        <button type="button"
+                                class="amount-btn"
+                                data-amount="2100">
+                            ₹2100
+                        </button>
+
+                        <button type="button"
+                                class="amount-btn"
+                                data-amount="5100">
+                            ₹5100
+                        </button>
+
+                    </div>
 
 
-                    <!-- STEP 1 -->
+                    <div class="custom-amount">
 
-                    <div class="form-group">
-
-                        <label>
-
-                            1. दान राशि चुनें *
-
+                        <label for="donationAmount">
+                            या अपनी राशि दर्ज करें
                         </label>
-
-
-                        <div class="donation-amounts">
-
-
-                            <button type="button"
-                                    class="amount-btn"
-                                    data-amount="501">
-
-                                ₹501
-
-                            </button>
-
-
-                            <button type="button"
-                                    class="amount-btn"
-                                    data-amount="1100">
-
-                                ₹1100
-
-                            </button>
-
-
-                            <button type="button"
-                                    class="amount-btn"
-                                    data-amount="2100">
-
-                                ₹2100
-
-                            </button>
-
-
-                            <button type="button"
-                                    class="amount-btn"
-                                    data-amount="5100">
-
-                                ₹5100
-
-                            </button>
-
-
-                        </div>
-
 
                         <input type="number"
                                id="donationAmount"
                                min="1"
-                               placeholder="या अपनी राशि दर्ज करें"
+                               placeholder="जैसे ₹1000"
                                required>
 
                     </div>
 
 
-                    <!-- STEP 2 -->
+                    <!-- PURPOSE -->
 
-                    <div class="form-group">
-
-                        <label for="donorFullName">
-
-                            2. पूरा नाम *
-
-                        </label>
+                    <div class="form-section-title">
+                        2. सहयोग का उद्देश्य चुनें
+                    </div>
 
 
-                        <input type="text"
-                               id="donorFullName"
-                               placeholder="अपना पूरा नाम लिखें"
-                               required>
+                    <div class="purpose-options">
+
+                        <div class="purpose-option">
+
+                            <input type="radio"
+                                   name="purpose"
+                                   id="purpose1"
+                                   value="शिक्षा"
+                                   checked>
+
+                            <label for="purpose1">
+                                <i class="fa-solid fa-graduation-cap"></i>
+                                शिक्षा
+                            </label>
+
+                        </div>
+
+
+                        <div class="purpose-option">
+
+                            <input type="radio"
+                                   name="purpose"
+                                   id="purpose2"
+                                   value="स्वास्थ्य">
+
+                            <label for="purpose2">
+                                <i class="fa-solid fa-heart-pulse"></i>
+                                स्वास्थ्य
+                            </label>
+
+                        </div>
+
+
+                        <div class="purpose-option">
+
+                            <input type="radio"
+                                   name="purpose"
+                                   id="purpose3"
+                                   value="पर्यावरण">
+
+                            <label for="purpose3">
+                                <i class="fa-solid fa-tree"></i>
+                                पर्यावरण
+                            </label>
+
+                        </div>
+
+
+                        <div class="purpose-option">
+
+                            <input type="radio"
+                                   name="purpose"
+                                   id="purpose4"
+                                   value="समाज सेवा">
+
+                            <label for="purpose4">
+                                <i class="fa-solid fa-hand-holding-heart"></i>
+                                समाज सेवा
+                            </label>
+
+                        </div>
 
                     </div>
 
 
-                    <!-- STEP 3 -->
+                    <!-- PERSONAL DETAILS -->
+
+                    <div class="form-section-title">
+                        3. आपकी जानकारी
+                    </div>
+
 
                     <div class="form-row">
 
-
                         <div class="form-group">
 
-                            <label for="donorPhone">
-
-                                3. मोबाइल नंबर *
-
+                            <label for="donorName">
+                                पूरा नाम *
                             </label>
 
-
-                            <input type="tel"
-                                   id="donorPhone"
-                                   maxlength="10"
-                                   inputmode="numeric"
-                                   placeholder="10 अंकों का नंबर"
+                            <input type="text"
+                                   id="donorName"
+                                   placeholder="अपना पूरा नाम लिखें"
                                    required>
 
                         </div>
@@ -912,12 +1268,29 @@
 
                         <div class="form-group">
 
-                            <label for="donorEmail">
-
-                                4. ईमेल
-
+                            <label for="donorMobile">
+                                मोबाइल नंबर *
                             </label>
 
+                            <input type="tel"
+                                   id="donorMobile"
+                                   maxlength="10"
+                                   inputmode="numeric"
+                                   placeholder="10 अंकों का मोबाइल नंबर"
+                                   required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="donorEmail">
+                                ईमेल
+                            </label>
 
                             <input type="email"
                                    id="donorEmail"
@@ -926,40 +1299,11 @@
                         </div>
 
 
-                    </div>
-
-
-                    <!-- STEP 4 -->
-
-                    <div class="form-group">
-
-                        <label for="donorAddress">
-
-                            5. पूरा पता *
-
-                        </label>
-
-
-                        <textarea id="donorAddress"
-                                  placeholder="अपना पूरा पता लिखें"
-                                  required></textarea>
-
-                    </div>
-
-
-                    <!-- STEP 5 -->
-
-                    <div class="form-row">
-
-
                         <div class="form-group">
 
                             <label for="donorState">
-
-                                6. राज्य *
-
+                                राज्य *
                             </label>
-
 
                             <input type="text"
                                    id="donorState"
@@ -968,15 +1312,16 @@
 
                         </div>
 
+                    </div>
+
+
+                    <div class="form-row">
 
                         <div class="form-group">
 
                             <label for="donorCity">
-
-                                7. शहर / जिला *
-
+                                शहर / जिला *
                             </label>
-
 
                             <input type="text"
                                    id="donorCity"
@@ -986,474 +1331,156 @@
                         </div>
 
 
-                    </div>
-
-
-                    <!-- STEP 6 -->
-
-                    <div class="form-row">
-
-
                         <div class="form-group">
 
-                            <label for="donorPincode">
-
-                                8. पिन कोड
-
+                            <label for="donorPin">
+                                पिन कोड
                             </label>
 
-
                             <input type="text"
-                                   id="donorPincode"
+                                   id="donorPin"
                                    maxlength="6"
                                    inputmode="numeric"
                                    placeholder="6 अंकों का पिन कोड">
 
                         </div>
 
-
-                        <div class="form-group">
-
-                            <label for="donationPurpose">
-
-                                9. दान का उद्देश्य *
-
-                            </label>
-
-
-                            <select id="donationPurpose"
-                                    required>
-
-                                <option value="">
-
-                                    उद्देश्य चुनें
-
-                                </option>
-
-                                <option value="शिक्षा">
-
-                                    📚 शिक्षा
-
-                                </option>
-
-                                <option value="स्वास्थ्य">
-
-                                    🏥 स्वास्थ्य
-
-                                </option>
-
-                                <option value="पर्यावरण">
-
-                                    🌳 पर्यावरण
-
-                                </option>
-
-                                <option value="समाज सेवा">
-
-                                    🤝 समाज सेवा
-
-                                </option>
-
-                                <option value="रक्तदान अभियान">
-
-                                    🩸 रक्तदान अभियान
-
-                                </option>
-
-                                <option value="जहाँ सबसे अधिक आवश्यकता हो">
-
-                                    ❤️ जहाँ सबसे अधिक आवश्यकता हो
-
-                                </option>
-
-                            </select>
-
-                        </div>
-
-
                     </div>
 
-
-                    <!-- STEP 7 -->
 
                     <div class="form-group">
 
-                        <label for="donorMessage">
-
-                            10. संदेश / सुझाव
-
+                        <label for="donorAddress">
+                            पूरा पता
                         </label>
 
-
-                        <textarea id="donorMessage"
-                                  placeholder="यदि आप कोई संदेश देना चाहते हैं तो लिखें"></textarea>
+                        <textarea id="donorAddress"
+                                  placeholder="अपना पूरा पता लिखें"></textarea>
 
                     </div>
 
 
-                    <!-- STEP 8 -->
+                    <!-- PAYMENT -->
 
-                    <div class="blood-agreement">
+                    <div class="form-section-title">
+                        4. भुगतान
+                    </div>
 
+
+                    <div class="payment-box">
+
+                        <i class="fa-solid fa-circle-info"></i>
+
+                        अभी यह Demo Registration Form है।
+                        Payment Gateway जोड़ने के बाद यहां वास्तविक भुगतान जोड़ा जा सकता है।
+
+                    </div>
+
+
+                    <!-- AGREEMENT -->
+
+                    <label class="donate-agree">
 
                         <input type="checkbox"
-                               id="donorAgree"
+                               id="donateAgree"
                                required>
 
+                        <span>
+                            मैं पुष्टि करता/करती हूँ कि मेरे द्वारा दी गई जानकारी
+                            सही है और मैं स्वेच्छा से संस्था के सेवा कार्यों के लिए
+                            अपना सहयोग दर्ज कर रहा/रही हूँ।
+                        </span>
 
-                        <label for="donorAgree">
+                    </label>
 
-                            11. मैं पुष्टि करता/करती हूँ कि मेरे द्वारा
-                            दी गई जानकारी सही है और मैं स्वेच्छा से
-                            संस्था के सेवा कार्यों में अपना सहयोग देना चाहता/चाहती हूँ।
-
-                        </label>
-
-
-                    </div>
-
-
-                    <!-- SUBMIT -->
 
                     <button type="submit"
-                            class="blood-submit-btn">
+                            class="donate-submit">
 
-                        <i class="fa-solid fa-arrow-right"></i>
-
-                        जानकारी Review करें
+                        <i class="fa-solid fa-heart"></i>
+                        सहयोग दर्ज करें
 
                     </button>
 
 
-                    <p id="donationResult"
-                       class="blood-result"></p>
+                    <div id="donateResult"
+                         class="donate-result">
+                    </div>
 
 
                 </form>
 
-
             </div>
 
         </div>
 
-    </div>
-
-</section>
+    </section>
 
 
-<!-- =========================================
-     DONATION REVIEW
-========================================= -->
+    <!-- IMPACT -->
 
-<section class="section"
-         id="donationReview"
-         style="display:none;">
+    <section class="donation-impact-section">
 
-    <div class="container">
+        <div class="impact-heading">
 
+            <span>मिलकर करेंगे बदलाव</span>
 
-        <div class="section-title">
-
-            <span>
-
-                सहयोग विवरण
-
-            </span>
-
-
-            <h2>
-
-                आपकी जानकारी Review करें
-
-            </h2>
+            <h2>आपका सहयोग, हमारी सेवा शक्ति</h2>
 
         </div>
-
-
-        <div class="blood-form-box"
-             style="max-width:800px; margin:auto;">
-
-
-            <div id="reviewContent">
-
-            </div>
-
-
-            <div class="final-buttons"
-                 style="margin-top:25px;">
-
-
-                <button type="button"
-                        id="editDonation"
-                        class="btn btn-primary">
-
-                    <i class="fa-solid fa-pen"></i>
-
-                    जानकारी बदलें
-
-                </button>
-
-
-                <button type="button"
-                        id="confirmDonation"
-                        class="btn btn-orange">
-
-                    <i class="fa-solid fa-heart"></i>
-
-                    सहयोग Confirm करें
-
-                </button>
-
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     TRUST SECTION
-========================================= -->
-
-<section class="impact-section">
-
-    <div class="container">
 
 
         <div class="impact-grid">
 
+            <div class="impact-card">
 
-            <div class="impact-title">
+                <i class="fa-solid fa-graduation-cap"></i>
 
-                <h2>
+                <strong>शिक्षा</strong>
 
-                    आपका विश्वास
-                    <br>
-                    हमारी जिम्मेदारी
-
-                </h2>
+                <span>उज्जवल भविष्य की ओर</span>
 
             </div>
 
 
-            <div class="impact-item">
+            <div class="impact-card">
 
-                <i class="fa-solid fa-heart"></i>
+                <i class="fa-solid fa-heart-pulse"></i>
 
-                <strong>
+                <strong>स्वास्थ्य</strong>
 
-                    सेवा
-
-                </strong>
-
-                <span>
-
-                    समाज के लिए सहयोग
-
-                </span>
+                <span>स्वस्थ समाज का संकल्प</span>
 
             </div>
 
 
-            <div class="impact-item">
+            <div class="impact-card">
 
-                <i class="fa-solid fa-shield-halved"></i>
+                <i class="fa-solid fa-tree"></i>
 
-                <strong>
+                <strong>पर्यावरण</strong>
 
-                    सुरक्षित
-
-                </strong>
-
-                <span>
-
-                    जानकारी की जिम्मेदारी
-
-                </span>
+                <span>हरित भारत की पहल</span>
 
             </div>
 
 
-            <div class="impact-item">
+            <div class="impact-card">
 
-                <i class="fa-solid fa-handshake"></i>
+                <i class="fa-solid fa-hand-holding-heart"></i>
 
-                <strong>
+                <strong>सेवा</strong>
 
-                    विश्वास
-
-                </strong>
-
-                <span>
-
-                    मिलकर बदलाव
-
-                </span>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     FAQ
-========================================= -->
-
-<section class="section">
-
-    <div class="container">
-
-
-        <div class="section-title">
-
-            <span>
-
-                सहायता
-
-            </span>
-
-
-            <h2>
-
-                अक्सर पूछे जाने वाले प्रश्न
-
-            </h2>
-
-
-            <div class="title-line">
-
-                <i class="fa-solid fa-circle-question"></i>
+                <span>मानवता के लिए सहयोग</span>
 
             </div>
 
         </div>
 
-
-        <div class="eligibility-grid">
-
-
-            <div class="eligibility-card good">
-
-                <div class="eligibility-card-title">
-
-                    <i class="fa-solid fa-question"></i>
-
-                    <h3>
-
-                        दान की जानकारी कैसे दर्ज करें?
-
-                    </h3>
-
-                </div>
+    </section>
 
 
-                <p>
-
-                    ऊपर दिए गए फॉर्म में क्रम से अपनी राशि और
-                    व्यक्तिगत जानकारी भरें, फिर Review करके Confirm करें।
-
-                </p>
-
-            </div>
-
-
-            <div class="eligibility-card caution">
-
-                <div class="eligibility-card-title">
-
-                    <i class="fa-solid fa-circle-info"></i>
-
-                    <h3>
-
-                        क्या अभी Online Payment हो रहा है?
-
-                    </h3>
-
-                </div>
-
-
-                <p>
-
-                    इस पेज पर अभी सहयोग की जानकारी दर्ज होती है।
-                    वास्तविक Online Payment के लिए आगे सुरक्षित
-                    Payment Gateway जोड़ा जा सकता है।
-
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- =========================================
-     FINAL CTA
-========================================= -->
-
-<section class="final-cta">
-
-    <div class="container final-cta-inner">
-
-
-        <div>
-
-            <span>
-
-                आपका एक सहयोग, किसी की नई उम्मीद
-
-            </span>
-
-
-            <h2>
-
-                आइए, मिलकर बदलाव लाएँ
-
-            </h2>
-
-        </div>
-
-
-        <div class="final-buttons">
-
-
-            <a href="#donateFormSection"
-               class="btn btn-green">
-
-                <i class="fa-solid fa-heart"></i>
-
-                अभी सहयोग करें
-
-            </a>
-
-
-            <a href="contact.html"
-               class="btn btn-orange">
-
-                <i class="fa-solid fa-phone"></i>
-
-                संपर्क करें
-
-            </a>
-
-
-        </div>
-
-    </div>
-
-</section>
+</main>
 
 
 <!-- =========================================
@@ -1467,93 +1494,38 @@
 
         <div class="footer-column footer-about">
 
-
-            <a href="index.html"
-               class="footer-logo">
+            <a href="index.html" class="footer-logo">
 
                 <img src="images/logo.png"
                      alt="युवा सेवा संकल्प फाउंडेशन">
 
-
                 <span>
-
                     युवा सेवा संकल्प
-
-                    <strong>
-
-                        फाउंडेशन
-
-                    </strong>
-
+                    <strong>फाउंडेशन</strong>
                 </span>
 
             </a>
 
-
             <p>
-
                 सेवा ही संकल्प, संकल्प ही राष्ट्र निर्माण।
                 युवा शक्ति के साथ समाज सेवा की ओर एक मजबूत कदम।
-
             </p>
-
 
         </div>
 
 
         <div class="footer-column">
 
-            <h3>
-
-                त्वरित लिंक
-
-            </h3>
-
+            <h3>त्वरित लिंक</h3>
 
             <ul>
 
-
-                <li>
-                    <a href="index.html">
-                        होम
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="about.html">
-                        हमारे बारे में
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="mission.html">
-                        हमारा मिशन
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="membership.html">
-                        सदस्य बनें
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="volunteer.html">
-                        वॉलंटियर बनें
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="donate.html">
-                        दान करें
-                    </a>
-                </li>
-
+                <li><a href="index.html">होम</a></li>
+                <li><a href="about.html">हमारे बारे में</a></li>
+                <li><a href="membership.html">सदस्य बनें</a></li>
+                <li><a href="volunteer.html">वॉलंटियर बनें</a></li>
+                <li><a href="blood-donation.html">रक्तदान</a></li>
+                <li><a href="contact.html">संपर्क करें</a></li>
 
             </ul>
 
@@ -1562,50 +1534,15 @@
 
         <div class="footer-column">
 
-            <h3>
-
-                हमारे कार्य
-
-            </h3>
-
+            <h3>हमारे कार्य</h3>
 
             <ul>
 
-
-                <li>
-                    <a href="education.html">
-                        शिक्षा
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="health.html">
-                        स्वास्थ्य
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="environment.html">
-                        पर्यावरण
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="social-service.html">
-                        समाज सेवा
-                    </a>
-                </li>
-
-
-                <li>
-                    <a href="blood-donation.html">
-                        रक्तदान
-                    </a>
-                </li>
-
+                <li><a href="education.html">शिक्षा</a></li>
+                <li><a href="health.html">स्वास्थ्य</a></li>
+                <li><a href="environment.html">पर्यावरण</a></li>
+                <li><a href="social-service.html">समाज सेवा</a></li>
+                <li><a href="blood-donation.html">रक्तदान</a></li>
 
             </ul>
 
@@ -1614,48 +1551,22 @@
 
         <div class="footer-column footer-contact">
 
-
-            <h3>
-
-                संपर्क जानकारी
-
-            </h3>
-
+            <h3>संपर्क जानकारी</h3>
 
             <p>
-
                 <i class="fa-solid fa-location-dot"></i>
-
                 उत्तर प्रदेश, भारत
-
             </p>
 
-
             <p>
-
                 <i class="fa-solid fa-phone"></i>
-
-                <a href="tel:+919651731313">
-
-                    +91 9651 731 313
-
-                </a>
-
+                +91 9651 731 313
             </p>
-
 
             <p>
-
                 <i class="fa-solid fa-envelope"></i>
-
-                <a href="mailto:info.yssfoundation@gmail.com">
-
-                    info.yssfoundation@gmail.com
-
-                </a>
-
+                info.yssfoundation@gmail.com
             </p>
-
 
         </div>
 
@@ -1666,21 +1577,13 @@
 
         <div class="container footer-bottom-inner">
 
-
             <p>
-
-                © 2026 युवा सेवा संकल्प फाउंडेशन |
-                सर्वाधिकार सुरक्षित
-
+                © 2026 युवा सेवा संकल्प फाउंडेशन | सर्वाधिकार सुरक्षित
             </p>
 
-
             <p>
-
                 युवा शक्ति - राष्ट्र शक्ति
-
             </p>
-
 
         </div>
 
@@ -1711,33 +1614,25 @@
 document.addEventListener("DOMContentLoaded", function () {
 
 
-    /* =====================================
-       MOBILE MENU
-    ===================================== */
+    /* MOBILE MENU */
 
-    const menuBtn =
-        document.getElementById("mobileMenuBtn");
+    const menuBtn = document.getElementById("mobileMenuBtn");
+    const navMenu = document.getElementById("navMenu");
 
-    const navMenu =
-        document.getElementById("navMenu");
+    if(menuBtn && navMenu){
 
-
-    if (menuBtn && navMenu) {
-
-        menuBtn.addEventListener("click", function () {
+        menuBtn.addEventListener("click", function(){
 
             navMenu.classList.toggle("show");
 
-            const icon =
-                menuBtn.querySelector("i");
+            const icon = menuBtn.querySelector("i");
 
-
-            if (navMenu.classList.contains("show")) {
+            if(navMenu.classList.contains("show")){
 
                 icon.classList.remove("fa-bars");
                 icon.classList.add("fa-xmark");
 
-            } else {
+            }else{
 
                 icon.classList.remove("fa-xmark");
                 icon.classList.add("fa-bars");
@@ -1749,34 +1644,27 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================
-       MOBILE DROPDOWN
-    ===================================== */
+    /* MOBILE DROPDOWN */
 
-    document
-        .querySelectorAll(".dropdown > a")
-        .forEach(function (dropdown) {
+    document.querySelectorAll(".dropdown > a")
+    .forEach(function(dropdown){
 
-            dropdown.addEventListener("click", function (event) {
+        dropdown.addEventListener("click", function(event){
 
-                if (window.innerWidth <= 900) {
+            if(window.innerWidth <= 900){
 
-                    event.preventDefault();
+                event.preventDefault();
 
-                    this.parentElement
-                        .classList
-                        .toggle("open");
+                this.parentElement.classList.toggle("open");
 
-                }
-
-            });
+            }
 
         });
 
+    });
 
-    /* =====================================
-       DONATION AMOUNT BUTTONS
-    ===================================== */
+
+    /* AMOUNT BUTTONS */
 
     const amountButtons =
         document.querySelectorAll(".amount-btn");
@@ -1785,437 +1673,249 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("donationAmount");
 
 
-    amountButtons.forEach(function (button) {
+    amountButtons.forEach(function(button){
 
-        button.addEventListener("click", function () {
+        button.addEventListener("click", function(){
 
-            amountButtons.forEach(function (btn) {
+            amountButtons.forEach(function(btn){
 
                 btn.classList.remove("active");
 
             });
 
-
             this.classList.add("active");
 
-
             donationAmount.value =
-                this.dataset.amount;
+                this.getAttribute("data-amount");
 
         });
 
     });
 
 
-    /* =====================================
-       DONATION FORM
-    ===================================== */
+    donationAmount.addEventListener("input", function(){
 
-    const donationForm =
-        document.getElementById("donationForm");
+        amountButtons.forEach(function(btn){
 
+            btn.classList.remove("active");
 
-    const donationReview =
-        document.getElementById("donationReview");
+        });
 
+    });
 
-    const reviewContent =
-        document.getElementById("reviewContent");
 
+    /* DONATION FORM */
 
-    const donationResult =
-        document.getElementById("donationResult");
+    const donateForm =
+        document.getElementById("donateForm");
 
+    const donateResult =
+        document.getElementById("donateResult");
 
-    let currentDonation = null;
 
+    if(donateForm){
 
-    if (donationForm) {
+        donateForm.addEventListener("submit", function(event){
 
-        donationForm.addEventListener(
-            "submit",
-            function (event) {
+            event.preventDefault();
 
-                event.preventDefault();
 
+            const amount =
+                donationAmount.value.trim();
 
-                const amount =
-                    donationAmount.value.trim();
+            const name =
+                document.getElementById("donorName")
+                .value.trim();
 
+            const mobile =
+                document.getElementById("donorMobile")
+                .value.trim();
 
-                const name =
-                    document.getElementById("donorFullName")
-                    .value.trim();
+            const email =
+                document.getElementById("donorEmail")
+                .value.trim();
 
+            const state =
+                document.getElementById("donorState")
+                .value.trim();
 
-                const mobile =
-                    document.getElementById("donorPhone")
-                    .value.trim();
+            const city =
+                document.getElementById("donorCity")
+                .value.trim();
 
+            const pin =
+                document.getElementById("donorPin")
+                .value.trim();
 
-                const email =
-                    document.getElementById("donorEmail")
-                    .value.trim();
+            const address =
+                document.getElementById("donorAddress")
+                .value.trim();
 
+            const purpose =
+                document.querySelector(
+                    'input[name="purpose"]:checked'
+                ).value;
 
-                const address =
-                    document.getElementById("donorAddress")
-                    .value.trim();
 
+            if(!amount || Number(amount) <= 0){
 
-                const state =
-                    document.getElementById("donorState")
-                    .value.trim();
+                alert("कृपया सही दान राशि दर्ज करें।");
 
-
-                const city =
-                    document.getElementById("donorCity")
-                    .value.trim();
-
-
-                const pincode =
-                    document.getElementById("donorPincode")
-                    .value.trim();
-
-
-                const purpose =
-                    document.getElementById("donationPurpose")
-                    .value;
-
-
-                const message =
-                    document.getElementById("donorMessage")
-                    .value.trim();
-
-
-                if (!amount || Number(amount) <= 0) {
-
-                    donationResult.innerHTML =
-                        "❌ कृपया सही दान राशि दर्ज करें।";
-
-                    donationResult.style.color =
-                        "#c62828";
-
-                    return;
-
-                }
-
-
-                if (!/^[0-9]{10}$/.test(mobile)) {
-
-                    donationResult.innerHTML =
-                        "❌ कृपया सही 10 अंकों का मोबाइल नंबर दर्ज करें।";
-
-                    donationResult.style.color =
-                        "#c62828";
-
-                    return;
-
-                }
-
-
-                if (
-                    pincode !== "" &&
-                    !/^[0-9]{6}$/.test(pincode)
-                ) {
-
-                    donationResult.innerHTML =
-                        "❌ कृपया सही 6 अंकों का पिन कोड दर्ज करें।";
-
-                    donationResult.style.color =
-                        "#c62828";
-
-                    return;
-
-                }
-
-
-                currentDonation = {
-
-                    donationId:
-
-                        "YSSF-DON-" +
-
-                        new Date()
-                        .getFullYear() +
-
-                        "-" +
-
-                        String(Date.now())
-                        .slice(-6),
-
-
-                    amount: amount,
-
-                    name: name,
-
-                    mobile: mobile,
-
-                    email: email,
-
-                    address: address,
-
-                    state: state,
-
-                    city: city,
-
-                    pincode: pincode,
-
-                    purpose: purpose,
-
-                    message: message,
-
-                    date:
-
-                        new Date()
-                        .toLocaleDateString("hi-IN")
-
-                };
-
-
-                reviewContent.innerHTML =
-
-                    "<div class='donation-review-box'>" +
-
-                    "<p><strong>सहयोग ID:</strong> " +
-                    currentDonation.donationId +
-                    "</p>" +
-
-                    "<p><strong>दान राशि:</strong> ₹" +
-                    currentDonation.amount +
-                    "</p>" +
-
-                    "<p><strong>नाम:</strong> " +
-                    currentDonation.name +
-                    "</p>" +
-
-                    "<p><strong>मोबाइल:</strong> " +
-                    currentDonation.mobile +
-                    "</p>" +
-
-                    "<p><strong>ईमेल:</strong> " +
-                    (currentDonation.email || "नहीं दिया गया") +
-                    "</p>" +
-
-                    "<p><strong>पता:</strong> " +
-                    currentDonation.address +
-                    "</p>" +
-
-                    "<p><strong>राज्य:</strong> " +
-                    currentDonation.state +
-                    "</p>" +
-
-                    "<p><strong>शहर / जिला:</strong> " +
-                    currentDonation.city +
-                    "</p>" +
-
-                    "<p><strong>पिन कोड:</strong> " +
-                    (currentDonation.pincode || "नहीं दिया गया") +
-                    "</p>" +
-
-                    "<p><strong>उद्देश्य:</strong> " +
-                    currentDonation.purpose +
-                    "</p>" +
-
-                    "<p><strong>संदेश:</strong> " +
-                    (currentDonation.message || "कोई संदेश नहीं") +
-                    "</p>" +
-
-                    "</div>";
-
-
-                donationReview.style.display =
-                    "block";
-
-
-                donationReview.scrollIntoView({
-
-                    behavior: "smooth"
-
-                });
-
+                return;
 
             }
 
-        );
+
+            if(!/^[0-9]{10}$/.test(mobile)){
+
+                alert("कृपया सही 10 अंकों का मोबाइल नंबर दर्ज करें।");
+
+                return;
+
+            }
+
+
+            if(pin && !/^[0-9]{6}$/.test(pin)){
+
+                alert("कृपया सही 6 अंकों का पिन कोड दर्ज करें।");
+
+                return;
+
+            }
+
+
+            let donations =
+                JSON.parse(
+                    localStorage.getItem("yssfDonations")
+                ) || [];
+
+
+            const donationId =
+                "YSSF-DN-2026-" +
+                String(donations.length + 1)
+                .padStart(5,"0");
+
+
+            const donationData = {
+
+                donationId: donationId,
+
+                amount: amount,
+
+                purpose: purpose,
+
+                name: name,
+
+                mobile: mobile,
+
+                email: email,
+
+                state: state,
+
+                city: city,
+
+                pin: pin,
+
+                address: address,
+
+                status: "पंजीकृत",
+
+                date:
+                    new Date().toLocaleDateString(
+                        "hi-IN"
+                    )
+
+            };
+
+
+            donations.push(donationData);
+
+
+            localStorage.setItem(
+                "yssfDonations",
+                JSON.stringify(donations)
+            );
+
+
+            donateResult.className =
+                "donate-result success";
+
+
+            donateResult.innerHTML =
+                "❤️ धन्यवाद <strong>" +
+                name +
+                "</strong>! आपका ₹" +
+                amount +
+                " का सहयोग सफलतापूर्वक दर्ज हो गया है।" +
+                "<br><br>" +
+                "आपकी Contribution ID: <strong>" +
+                donationId +
+                "</strong>";
+
+
+            donateForm.reset();
+
+
+            amountButtons.forEach(function(btn){
+
+                btn.classList.remove("active");
+
+            });
+
+
+            window.scrollTo({
+
+                top:
+                    donateResult.getBoundingClientRect().top +
+                    window.pageYOffset - 150,
+
+                behavior:"smooth"
+
+            });
+
+        });
 
     }
 
 
-    /* =====================================
-       EDIT DONATION
-    ===================================== */
-
-    const editDonation =
-        document.getElementById("editDonation");
-
-
-    if (editDonation) {
-
-        editDonation.addEventListener(
-            "click",
-            function () {
-
-                donationReview.style.display =
-                    "none";
-
-
-                document
-                    .getElementById("donateFormSection")
-                    .scrollIntoView({
-
-                        behavior: "smooth"
-
-                    });
-
-            }
-
-        );
-
-    }
-
-
-    /* =====================================
-       CONFIRM DONATION
-    ===================================== */
-
-    const confirmDonation =
-        document.getElementById("confirmDonation");
-
-
-    if (confirmDonation) {
-
-        confirmDonation.addEventListener(
-            "click",
-            function () {
-
-                if (!currentDonation) {
-
-                    return;
-
-                }
-
-
-                let donations =
-
-                    JSON.parse(
-                        localStorage.getItem("donations")
-                    ) || [];
-
-
-                currentDonation.status =
-                    "सहयोग जानकारी दर्ज";
-
-
-
-                donations.push(
-                    currentDonation
-                );
-
-
-                localStorage.setItem(
-                    "donations",
-                    JSON.stringify(donations)
-                );
-
-
-                reviewContent.innerHTML =
-
-                    "<div style='text-align:center; padding:25px;'>" +
-
-                    "<div style='font-size:60px;'>❤️</div>" +
-
-                    "<h2>आपका सहयोग दर्ज हो गया!</h2>" +
-
-                    "<p>धन्यवाद <strong>" +
-                    currentDonation.name +
-                    "</strong>, समाज सेवा के लिए सहयोग देने हेतु।</p>" +
-
-                    "<p><strong>सहयोग ID:</strong> " +
-                    currentDonation.donationId +
-                    "</p>" +
-
-                    "<p><strong>राशि:</strong> ₹" +
-                    currentDonation.amount +
-                    "</p>" +
-
-                    "<p>भविष्य में सुरक्षित Payment सुविधा जोड़ने के बाद इसी प्रक्रिया को Online Payment से जोड़ा जा सकता है।</p>" +
-
-                    "</div>";
-
-
-                document
-                    .getElementById("editDonation")
-                    .style.display = "none";
-
-
-                confirmDonation.style.display =
-                    "none";
-
-
-                donationForm.reset();
-
-
-                amountButtons.forEach(function (btn) {
-
-                    btn.classList.remove("active");
-
-                });
-
-
-                currentDonation = null;
-
-
-            }
-
-        );
-
-    }
-
-
-    /* =====================================
-       BACK TO TOP
-    ===================================== */
+    /* BACK TO TOP */
 
     const backToTop =
         document.getElementById("backToTop");
 
 
-    window.addEventListener("scroll", function () {
+    window.addEventListener("scroll", function(){
 
-        if (!backToTop) return;
+        if(backToTop){
 
+            if(window.scrollY > 500){
 
-        if (window.scrollY > 500) {
+                backToTop.classList.add("show");
 
-            backToTop.classList.add("show");
+            }else{
 
-        } else {
+                backToTop.classList.remove("show");
 
-            backToTop.classList.remove("show");
+            }
 
         }
 
     });
 
 
-    if (backToTop) {
+    if(backToTop){
 
-        backToTop.addEventListener(
-            "click",
-            function () {
+        backToTop.addEventListener("click", function(){
 
-                window.scrollTo({
+            window.scrollTo({
 
-                    top: 0,
+                top:0,
 
-                    behavior: "smooth"
+                behavior:"smooth"
 
-                });
+            });
 
-            }
-
-        );
+        });
 
     }
 
@@ -2224,7 +1924,5 @@ document.addEventListener("DOMContentLoaded", function () {
 
 </script>
 
-
 </body>
-
 </html>
