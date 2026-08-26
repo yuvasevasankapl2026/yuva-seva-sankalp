@@ -1,363 +1,1379 @@
 <!DOCTYPE html>
 <html lang="hi">
-
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="युवा सेवा संकल्प फाउंडेशन - हमारे बारे में, दृष्टिकोण, मिशन और समाज सेवा के उद्देश्य।">
+
+    <meta name="keywords"
+          content="Yuva Seva Sankalp Foundation, युवा सेवा संकल्प फाउंडेशन, NGO, समाज सेवा">
 
     <title>हमारे बारे में | युवा सेवा संकल्प फाउंडेशन</title>
 
-    <!-- CSS -->
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- FONT AWESOME -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+
+        /* =====================================================
+           ABOUT PAGE
+        ===================================================== */
+
+        .about-page{
+            background:#f5f8fb;
+            color:#263746;
+        }
+
+        /* Breadcrumb */
+        .about-breadcrumb{
+            background:#eef3f8;
+            border-bottom:1px solid #dce5ed;
+        }
+
+        .about-breadcrumb .container{
+            padding:14px 20px;
+            display:flex;
+            align-items:center;
+            gap:10px;
+            font-size:14px;
+            color:#667789;
+        }
+
+        .about-breadcrumb a{
+            color:#123b66;
+            text-decoration:none;
+            font-weight:600;
+        }
+
+        .about-breadcrumb i{
+            font-size:11px;
+            color:#ff7900;
+        }
+
+        /* Main About */
+        .about-main{
+            padding:65px 0 30px;
+        }
+
+        .about-grid{
+            display:grid;
+            grid-template-columns:1.35fr .8fr .95fr;
+            gap:35px;
+            align-items:start;
+        }
+
+        /* Left Content */
+        .about-content h1{
+            margin:0 0 18px;
+            font-size:46px;
+            line-height:1.15;
+            color:#123b66;
+            font-weight:800;
+        }
+
+        .about-content h1::after{
+            content:"";
+            display:block;
+            width:145px;
+            height:5px;
+            margin-top:13px;
+            border-radius:20px;
+            background:linear-gradient(
+                90deg,
+                #123b66 0%,
+                #ff7900 55%,
+                #24834b 100%
+            );
+        }
+
+        .about-content p{
+            font-size:17px;
+            line-height:1.9;
+            margin:0 0 18px;
+            color:#405263;
+        }
+
+        .about-intro{
+            font-size:18px !important;
+            font-weight:600;
+            color:#243b53 !important;
+        }
+
+        /* Objectives */
+        .objectives{
+            margin-top:25px;
+            padding-top:22px;
+            border-top:1px solid #d8e2eb;
+        }
+
+        .objectives h2{
+            margin:0 0 18px;
+            color:#24834b;
+            font-size:23px;
+        }
+
+        .objective-list{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:12px 20px;
+        }
+
+        .objective-item{
+            display:flex;
+            align-items:flex-start;
+            gap:12px;
+            font-size:15px;
+            line-height:1.5;
+        }
+
+        .objective-icon{
+            width:36px;
+            height:36px;
+            min-width:36px;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:#eaf5ed;
+            color:#24834b;
+            font-size:16px;
+        }
+
+        /* Logo */
+        .about-logo-box{
+            background:#fff;
+            border-radius:24px;
+            padding:30px 20px;
+            box-shadow:0 15px 40px rgba(18,59,102,.10);
+            border:1px solid #e1e9ef;
+            text-align:center;
+        }
+
+        .about-logo-box img{
+            width:100%;
+            max-width:340px;
+            height:auto;
+            display:block;
+            margin:auto;
+        }
+
+        .logo-tagline{
+            margin-top:18px;
+            color:#123b66;
+            font-size:18px;
+            font-weight:800;
+        }
+
+        .logo-tagline span{
+            color:#ff7900;
+        }
+
+        /* Right Cards */
+        .about-cards{
+            display:flex;
+            flex-direction:column;
+            gap:14px;
+        }
+
+        .about-card{
+            background:#fff;
+            padding:22px;
+            border-radius:16px;
+            border:1px solid #dce6ee;
+            display:flex;
+            gap:16px;
+            align-items:flex-start;
+            box-shadow:0 8px 25px rgba(0,0,0,.04);
+            transition:.25s ease;
+        }
+
+        .about-card:hover{
+            transform:translateY(-3px);
+            box-shadow:0 15px 30px rgba(18,59,102,.10);
+        }
+
+        .about-card-icon{
+            width:52px;
+            height:52px;
+            min-width:52px;
+            border-radius:14px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:22px;
+            color:#fff;
+        }
+
+        .vision-card .about-card-icon{
+            background:#24834b;
+        }
+
+        .mission-card .about-card-icon{
+            background:#1d5d96;
+        }
+
+        .sankalp-card .about-card-icon{
+            background:#ff7900;
+        }
+
+        .team-card .about-card-icon{
+            background:#663399;
+        }
+
+        .about-card h3{
+            margin:0 0 7px;
+            color:#123b66;
+            font-size:19px;
+        }
+
+        .about-card p{
+            margin:0;
+            font-size:14px;
+            line-height:1.65;
+            color:#607080;
+        }
+
+        /* =====================================================
+           SERVICE AREAS
+        ===================================================== */
+
+        .service-section{
+            padding:35px 0;
+        }
+
+        .section-heading{
+            text-align:center;
+            margin-bottom:28px;
+        }
+
+        .section-heading h2{
+            margin:0;
+            color:#123b66;
+            font-size:32px;
+        }
+
+        .section-heading p{
+            margin:8px auto 0;
+            max-width:700px;
+            color:#69798a;
+            font-size:15px;
+        }
+
+        .service-grid{
+            display:grid;
+            grid-template-columns:repeat(6,1fr);
+            gap:15px;
+        }
+
+        .service-box{
+            background:#fff;
+            border:1px solid #e0e8ee;
+            border-radius:17px;
+            padding:22px 14px;
+            text-align:center;
+            transition:.25s ease;
+        }
+
+        .service-box:hover{
+            transform:translateY(-5px);
+            box-shadow:0 15px 30px rgba(18,59,102,.10);
+        }
+
+        .service-icon{
+            width:58px;
+            height:58px;
+            margin:0 auto 12px;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:24px;
+        }
+
+        .service-box:nth-child(1) .service-icon{
+            background:#e7f1ff;
+            color:#1d5d96;
+        }
+
+        .service-box:nth-child(2) .service-icon{
+            background:#eaf7ed;
+            color:#24834b;
+        }
+
+        .service-box:nth-child(3) .service-icon{
+            background:#edf8e9;
+            color:#4b8b24;
+        }
+
+        .service-box:nth-child(4) .service-icon{
+            background:#fff0e7;
+            color:#ff7900;
+        }
+
+        .service-box:nth-child(5) .service-icon{
+            background:#f2eafa;
+            color:#663399;
+        }
+
+        .service-box:nth-child(6) .service-icon{
+            background:#e7f4f4;
+            color:#147b7b;
+        }
+
+        .service-box h3{
+            margin:0 0 7px;
+            font-size:17px;
+            color:#123b66;
+        }
+
+        .service-box p{
+            margin:0;
+            color:#71808f;
+            font-size:13px;
+            line-height:1.5;
+        }
+
+        /* =====================================================
+           IMPACT STATS
+        ===================================================== */
+
+        .impact-section{
+            padding:35px 0;
+        }
+
+        .impact-wrapper{
+            background:linear-gradient(
+                135deg,
+                #123b66,
+                #1d5d96
+            );
+            border-radius:20px;
+            padding:30px 20px;
+            box-shadow:0 15px 35px rgba(18,59,102,.18);
+        }
+
+        .impact-grid{
+            display:grid;
+            grid-template-columns:repeat(6,1fr);
+        }
+
+        .impact-item{
+            text-align:center;
+            color:#fff;
+            padding:5px 12px;
+            border-right:1px solid rgba(255,255,255,.25);
+        }
+
+        .impact-item:last-child{
+            border-right:0;
+        }
+
+        .impact-item i{
+            display:block;
+            font-size:30px;
+            margin-bottom:8px;
+            color:#fff;
+        }
+
+        .impact-number{
+            display:block;
+            font-size:28px;
+            font-weight:800;
+        }
+
+        .impact-label{
+            display:block;
+            margin-top:4px;
+            font-size:13px;
+            opacity:.9;
+        }
+
+        /* =====================================================
+           CTA
+        ===================================================== */
+
+        .about-cta{
+            margin:35px 0 60px;
+        }
+
+        .cta-box{
+            min-height:210px;
+            border-radius:22px;
+            padding:35px 45px;
+            background:
+                linear-gradient(
+                    90deg,
+                    rgba(244,250,246,.98),
+                    rgba(255,255,255,.92)
+                );
+            border:1px solid #d8e8df;
+            position:relative;
+            overflow:hidden;
+        }
+
+        .cta-content{
+            position:relative;
+            z-index:2;
+            max-width:650px;
+        }
+
+        .cta-content h2{
+            margin:0 0 10px;
+            color:#24834b;
+            font-size:31px;
+        }
+
+        .cta-content .tagline{
+            color:#123b66;
+            font-size:18px;
+            font-weight:800;
+            margin-bottom:10px;
+        }
+
+        .cta-content p{
+            margin:0 0 20px;
+            color:#526271;
+            font-size:15px;
+        }
+
+        .cta-buttons{
+            display:flex;
+            gap:12px;
+            flex-wrap:wrap;
+        }
+
+        .cta-btn{
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+            padding:12px 22px;
+            border-radius:9px;
+            text-decoration:none;
+            font-weight:700;
+            transition:.2s ease;
+        }
+
+        .cta-primary{
+            background:#123b66;
+            color:#fff;
+        }
+
+        .cta-secondary{
+            background:#ff7900;
+            color:#fff;
+        }
+
+        .cta-btn:hover{
+            transform:translateY(-2px);
+        }
+
+        /* =====================================================
+           MOBILE
+        ===================================================== */
+
+        @media(max-width:1100px){
+
+            .about-grid{
+                grid-template-columns:1fr 1fr;
+            }
+
+            .about-content{
+                grid-column:1/-1;
+            }
+
+            .about-cards{
+                grid-column:1/-1;
+                display:grid;
+                grid-template-columns:1fr 1fr;
+            }
+
+            .service-grid{
+                grid-template-columns:repeat(3,1fr);
+            }
+
+            .impact-grid{
+                grid-template-columns:repeat(3,1fr);
+                row-gap:25px;
+            }
+
+            .impact-item:nth-child(3){
+                border-right:0;
+            }
+
+        }
+
+        @media(max-width:700px){
+
+            .about-main{
+                padding:35px 0 20px;
+            }
+
+            .about-grid{
+                grid-template-columns:1fr;
+                gap:20px;
+            }
+
+            .about-content{
+                grid-column:auto;
+            }
+
+            .about-content h1{
+                font-size:34px;
+            }
+
+            .about-content p{
+                font-size:15px;
+            }
+
+            .objective-list{
+                grid-template-columns:1fr;
+            }
+
+            .about-cards{
+                grid-column:auto;
+                grid-template-columns:1fr;
+            }
+
+            .service-grid{
+                grid-template-columns:1fr 1fr;
+                gap:10px;
+            }
+
+            .service-box{
+                padding:18px 10px;
+            }
+
+            .impact-wrapper{
+                padding:22px 10px;
+            }
+
+            .impact-grid{
+                grid-template-columns:1fr 1fr;
+                row-gap:22px;
+            }
+
+            .impact-item{
+                border-right:0;
+                border-bottom:1px solid rgba(255,255,255,.2);
+                padding-bottom:15px;
+            }
+
+            .impact-item:nth-last-child(-n+2){
+                border-bottom:0;
+            }
+
+            .impact-number{
+                font-size:22px;
+            }
+
+            .cta-box{
+                padding:28px 20px;
+            }
+
+            .cta-content h2{
+                font-size:25px;
+            }
+
+        }
+
+        @media(max-width:450px){
+
+            .service-grid{
+                grid-template-columns:1fr;
+            }
+
+            .about-breadcrumb .container{
+                font-size:12px;
+            }
+
+            .about-logo-box{
+                padding:20px 12px;
+            }
+
+        }
+
+    </style>
 </head>
 
-<body>
+
+<body class="about-page">
 
 
-    <!-- =========================================
-         TOP BAR
-    ========================================== -->
-    <div class="top-bar">
-        <div class="container top-bar-inner">
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
 
-            <div>
-                <i class="fa-solid fa-phone"></i>
-                +91 9651 731 313
-            </div>
+<div class="top-bar">
 
-            <div>
+    <div class="container">
+
+        <div class="top-left">
+
+            <span>
                 <i class="fa-solid fa-envelope"></i>
                 info.yssfoundation@gmail.com
-            </div>
+            </span>
 
-            <div>
+            <span>
                 <i class="fa-solid fa-location-dot"></i>
-                उत्तर प्रदेश, भारत
-            </div>
+                ग्राम नैपुरा, पोस्ट कौड़ाही,
+                जिला अम्बेडकर नगर, उत्तर प्रदेश – 224129
+            </span>
 
         </div>
+
+        <div class="top-right">
+
+            <a href="#" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="#" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+
+            <a href="#" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <span class="phone">
+                <i class="fa-solid fa-phone"></i>
+                9651731313
+            </span>
+
+        </div>
+
     </div>
 
+</div>
 
-    <!-- =========================================
-         HEADER
-    ========================================== -->
-    <header class="main-header">
 
-        <div class="container header-inner">
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-            <!-- LOGO -->
-            <div class="logo-area">
+<header class="main-header">
 
-                <img src="images/logo.png"
-                    alt="युवा सेवा संकल्प फाउंडेशन">
+    <div class="container header-inner">
 
-                <div class="logo-text">
+        <a href="index.html" class="brand">
 
-                    <h1>
-                        युवा सेवा <span>संकल्प</span><br>
-                        <b>फाउंडेशन</b>
-                    </h1>
+            <img src="images/logo.png"
+                 alt="युवा सेवा संकल्प फाउंडेशन Logo">
 
-                    <p>युवा शक्ति - राष्ट्र शक्ति</p>
+            <div class="brand-text">
 
-                </div>
+                <h1>
+                    युवा सेवा संकल्प
+                    <span>फाउंडेशन</span>
+                </h1>
+
+                <p>युवा शक्ति - राष्ट्र शक्ति</p>
 
             </div>
 
+        </a>
 
-            <!-- HEADER BUTTONS -->
-            <div class="header-buttons">
 
-                <a href="member-login.html" class="header-btn">
-                    <i class="fa-solid fa-user"></i>
-                    <span>सदस्य Login</span>
+        <div class="header-login">
+
+            <a href="member-login.html"
+               class="login-card member-login">
+
+                <i class="fa-solid fa-user"></i>
+
+                <span>
+                    <strong>सदस्य Login</strong>
+                    <small>अपने खाते में लॉगिन करें</small>
+                </span>
+
+            </a>
+
+
+            <a href="volunteer-login.html"
+               class="login-card volunteer-login">
+
+                <i class="fa-solid fa-handshake"></i>
+
+                <span>
+                    <strong>Volunteer Login</strong>
+                    <small>सेवा करने के लिए जुड़ें</small>
+                </span>
+
+            </a>
+
+
+            <a href="admin-login.html"
+               class="login-card admin-login">
+
+                <i class="fa-solid fa-user-shield"></i>
+
+                <span>
+                    <strong>Admin Login</strong>
+                    <small>Admin Panel</small>
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="main-nav">
+
+    <div class="container nav-inner">
+
+        <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            होम
+        </a>
+
+
+        <div class="nav-dropdown active">
+
+            <a href="about.html">
+                संस्था के बारे में
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+
+            <div class="dropdown-menu">
+
+                <a href="about.html">
+                    हमारे बारे में
                 </a>
 
-                <a href="donate.html" class="header-btn">
-                    <i class="fa-solid fa-hand-holding-heart"></i>
-                    <span>सहयोग करें</span>
+                <a href="mission.html">
+                    हमारा मिशन
+                </a>
+
+                <a href="vision.html">
+                    हमारा विजन
+                </a>
+
+                <a href="team.html">
+                    हमारी टीम
                 </a>
 
             </div>
 
         </div>
 
-    </header>
 
+        <div class="nav-dropdown">
 
-    <!-- =========================================
-         NAVIGATION
-    ========================================== -->
-    <nav class="main-nav">
+            <a href="#">
+                हमारे कार्य
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
 
-        <div class="container">
+            <div class="dropdown-menu">
 
-            <ul>
+                <a href="education.html">शिक्षा</a>
 
-                <!-- HOME -->
-                <li>
-                    <a href="index.html">
-                        <i class="fa-solid fa-house"></i>
-                        होम
-                    </a>
-                </li>
+                <a href="health.html">स्वास्थ्य</a>
 
+                <a href="environment.html">पर्यावरण</a>
 
-                <!-- ABOUT DROPDOWN -->
-                <li class="active dropdown-parent">
+                <a href="women.html">
+                    महिला सशक्तिकरण
+                </a>
 
-                    <a href="#">
-                        संस्था के बारे में
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </a>
+                <a href="youth.html">
+                    युवा विकास
+                </a>
 
-                    <ul class="dropdown">
+                <a href="social-service.html">
+                    समाज सेवा
+                </a>
 
-                        <li>
-                            <a href="about.html">
-                                हमारे बारे में
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="mission.html">
-                                हमारा मिशन
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="vision.html">
-                                हमारा विजन
-                            </a>
-                        </li>
-
-                        <li>
-                            <a href="team.html">
-                                हमारी टीम
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </li>
-
-
-                <!-- WORK -->
-                <li>
-                    <a href="work.html">
-                        हमारे कार्य
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </a>
-                </li>
-
-
-                <!-- VOLUNTEER -->
-                <li>
-                    <a href="volunteer.html">
-                        वॉलंटियर
-                    </a>
-                </li>
-
-
-                <!-- BLOOD DONATION -->
-                <li>
-                    <a href="blood-donation.html">
-                        रक्तदाता
-                    </a>
-                </li>
-
-
-                <!-- NEWS -->
-                <li>
-                    <a href="news.html">
-                        समाचार
-                    </a>
-                </li>
-
-
-                <!-- PROGRAMS -->
-                <li>
-                    <a href="programs.html">
-                        आगामी कार्यक्रम
-                    </a>
-                </li>
-
-
-                <!-- GALLERY -->
-                <li>
-                    <a href="gallery.html">
-                        गैलरी
-                    </a>
-                </li>
-
-
-                <!-- CONTACT -->
-                <li>
-                    <a href="contact.html">
-                        संपर्क
-                    </a>
-                </li>
-
-            </ul>
+            </div>
 
         </div>
 
-    </nav>
+
+        <a href="volunteer.html">
+            वॉलंटियर
+        </a>
+
+        <a href="membership.html">
+            सदस्यता
+        </a>
+
+        <a href="news.html">
+            समाचार
+        </a>
+
+        <a href="events.html">
+            आगामी कार्यक्रम
+        </a>
+
+        <a href="gallery.html">
+            गैलरी
+        </a>
+
+        <a href="contact.html">
+            संपर्क करें
+        </a>
 
 
-    <!-- =========================================
-         PAGE BANNER
-    ========================================== -->
-    <section class="about-banner">
+        <button class="nav-search"
+                type="button"
+                aria-label="Search">
 
-        <div class="container">
+            <i class="fa-solid fa-magnifying-glass"></i>
 
-            <div class="about-banner-content">
+        </button>
 
-                <!-- BREADCRUMB -->
-                <div class="breadcrumb">
+    </div>
 
-                    <a href="index.html">
-                        <i class="fa-solid fa-house"></i>
-                        होम
-                    </a>
+</nav>
 
-                    <span>›</span>
 
-                    <span>संस्था के बारे में</span>
+<!-- =====================================================
+     BREADCRUMB
+===================================================== -->
 
-                    <span>›</span>
+<section class="about-breadcrumb">
 
-                    <strong>हमारे बारे में</strong>
+    <div class="container">
+
+        <a href="index.html">
+            होम
+        </a>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <span>संस्था के बारे में</span>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <strong>हमारे बारे में</strong>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ABOUT MAIN
+===================================================== -->
+
+<main>
+
+<section class="about-main">
+
+    <div class="container about-grid">
+
+
+        <!-- LEFT -->
+        <div class="about-content">
+
+            <h1>हमारे बारे में</h1>
+
+
+            <p class="about-intro">
+                युवा सेवा संकल्प फाउंडेशन एक सामाजिक संस्था है,
+                जिसका उद्देश्य समाज में सकारात्मक परिवर्तन लाना
+                और जरूरतमंद लोगों तक सेवा एवं सहयोग पहुँचाना है।
+            </p>
+
+
+            <p>
+                हमारा उद्देश्य शिक्षा, स्वास्थ्य, पर्यावरण संरक्षण,
+                महिला सशक्तिकरण, युवा विकास और समाज सेवा के
+                विभिन्न क्षेत्रों में कार्य करते हुए एक बेहतर,
+                स्वस्थ, शिक्षित और सशक्त समाज का निर्माण करना है।
+            </p>
+
+
+            <p>
+                हम मानते हैं कि युवाओं की ऊर्जा, क्षमता और
+                सकारात्मक सोच को समाज सेवा से जोड़कर
+                राष्ट्र निर्माण की दिशा में महत्वपूर्ण परिवर्तन
+                लाया जा सकता है।
+            </p>
+
+
+            <p>
+                इसी संकल्प के साथ फाउंडेशन समाज के विभिन्न
+                वर्गों के साथ मिलकर सेवा, जागरूकता और
+                जनभागीदारी के माध्यम से कार्य करने के लिए
+                प्रतिबद्ध है।
+            </p>
+
+
+            <!-- Objectives -->
+
+            <div class="objectives">
+
+                <h2>
+                    हमारे मुख्य उद्देश्य
+                </h2>
+
+
+                <div class="objective-list">
+
+                    <div class="objective-item">
+
+                        <span class="objective-icon">
+                            <i class="fa-solid fa-book-open"></i>
+                        </span>
+
+                        <span>
+                            गुणवत्तापूर्ण शिक्षा के
+                            प्रचार-प्रसार में सहयोग
+                        </span>
+
+                    </div>
+
+
+                    <div class="objective-item">
+
+                        <span class="objective-icon">
+                            <i class="fa-solid fa-person-dress"></i>
+                        </span>
+
+                        <span>
+                            महिला सशक्तिकरण एवं
+                            जागरूकता को बढ़ावा देना
+                        </span>
+
+                    </div>
+
+
+                    <div class="objective-item">
+
+                        <span class="objective-icon">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </span>
+
+                        <span>
+                            स्वास्थ्य सेवाओं एवं
+                            स्वास्थ्य जागरूकता में सहयोग
+                        </span>
+
+                    </div>
+
+
+                    <div class="objective-item">
+
+                        <span class="objective-icon">
+                            <i class="fa-solid fa-user-graduate"></i>
+                        </span>
+
+                        <span>
+                            युवाओं के कौशल एवं
+                            नेतृत्व विकास को बढ़ावा देना
+                        </span>
+
+                    </div>
+
+
+                    <div class="objective-item">
+
+                        <span class="objective-icon">
+                            <i class="fa-solid fa-tree"></i>
+                        </span>
+
+                        <span>
+                            पर्यावरण संरक्षण एवं
+                            वृक्षारोपण अभियान
+                        </span>
+
+                    </div>
+
+
+                    <div class="objective-item">
+
+                        <span class="objective-icon">
+                            <i class="fa-solid fa-hand-holding-heart"></i>
+                        </span>
+
+                        <span>
+                            जरूरतमंद एवं कमजोर वर्गों
+                            की सहायता करना
+                        </span>
+
+                    </div>
 
                 </div>
 
+            </div>
 
-                <!-- TITLE -->
-                <h2>हमारे बारे में</h2>
+        </div>
 
 
-                <!-- TITLE DESIGN -->
-                <div class="title-line">
-                    <span></span>
-                    <i class="fa-solid fa-leaf"></i>
-                    <span></span>
+        <!-- CENTER LOGO -->
+
+        <div class="about-logo-box">
+
+            <img src="images/logo.png"
+                 alt="Yuva Seva Sankalp Foundation">
+
+            <div class="logo-tagline">
+
+                युवा शक्ति -
+                <span>राष्ट्र शक्ति</span>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT CARDS -->
+
+        <div class="about-cards">
+
+
+            <div class="about-card vision-card">
+
+                <div class="about-card-icon">
+
+                    <i class="fa-solid fa-eye"></i>
+
                 </div>
 
+                <div>
 
-                <!-- DESCRIPTION -->
+                    <h3>हमारा दृष्टिकोण</h3>
+
+                    <p>
+                        ऐसा समाज जहाँ हर व्यक्ति
+                        शिक्षित, स्वस्थ, सशक्त और
+                        आत्मनिर्भर हो।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="about-card mission-card">
+
+                <div class="about-card-icon">
+
+                    <i class="fa-solid fa-bullseye"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>हमारा मिशन</h3>
+
+                    <p>
+                        सामाजिक सेवा, जन-जागरूकता
+                        और युवा सहभागिता के माध्यम
+                        से समाज एवं राष्ट्र निर्माण में
+                        योगदान देना।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="about-card sankalp-card">
+
+                <div class="about-card-icon">
+
+                    <i class="fa-solid fa-handshake"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>हमारा संकल्प</h3>
+
+                    <p>
+                        सेवा, समर्पण और संस्कार के साथ
+                        समाज के हर वर्ग तक सकारात्मक
+                        परिवर्तन पहुँचाना।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="about-card team-card">
+
+                <div class="about-card-icon">
+
+                    <i class="fa-solid fa-people-group"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>हमारी टीम</h3>
+
+                    <p>
+                        कार्यकर्ताओं, स्वयंसेवकों,
+                        सदस्यों और सहयोगियों की
+                        सामूहिक शक्ति से समाज सेवा।
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SERVICE AREAS
+===================================================== -->
+
+<section class="service-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <h2>हमारे प्रमुख कार्य क्षेत्र</h2>
+
+            <p>
+                समाज के विभिन्न क्षेत्रों में सेवा,
+                जागरूकता और जनभागीदारी को बढ़ावा देना।
+            </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+
+            <div class="service-box">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+
+                <h3>शिक्षा</h3>
+
                 <p>
-                    सेवा, संस्कार और सामाजिक जिम्मेदारी के साथ
-                    एक बेहतर समाज और मजबूत राष्ट्र के निर्माण की ओर
-                    हमारा संकल्प।
+                    शिक्षा, छात्र सहायता,
+                    जागरूकता और मार्गदर्शन
+                </p>
+
+            </div>
+
+
+            <div class="service-box">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+
+                <h3>स्वास्थ्य</h3>
+
+                <p>
+                    स्वास्थ्य जागरूकता,
+                    स्वास्थ्य शिविर एवं सहयोग
+                </p>
+
+            </div>
+
+
+            <div class="service-box">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+
+                <h3>पर्यावरण</h3>
+
+                <p>
+                    वृक्षारोपण, स्वच्छता और
+                    पर्यावरण संरक्षण
+                </p>
+
+            </div>
+
+
+            <div class="service-box">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-person-dress"></i>
+                </div>
+
+                <h3>महिला सशक्तिकरण</h3>
+
+                <p>
+                    जागरूकता, कौशल विकास और
+                    आत्मनिर्भरता
+                </p>
+
+            </div>
+
+
+            <div class="service-box">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-people-group"></i>
+                </div>
+
+                <h3>युवा विकास</h3>
+
+                <p>
+                    कौशल, नेतृत्व और
+                    सामाजिक सहभागिता
+                </p>
+
+            </div>
+
+
+            <div class="service-box">
+
+                <div class="service-icon">
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+                </div>
+
+                <h3>समाज सेवा</h3>
+
+                <p>
+                    जरूरतमंद लोगों की सहायता
+                    और सामाजिक सहयोग
                 </p>
 
             </div>
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- =========================================
-         ABOUT MAIN CONTENT
-    ========================================== -->
-    <section class="about-main">
+<!-- =====================================================
+     IMPACT
+===================================================== -->
 
-        <div class="container">
+<section class="impact-section">
 
-            <div class="about-main-grid">
+    <div class="container">
+
+        <div class="impact-wrapper">
+
+            <div class="impact-grid">
 
 
-                <!-- ================= PHOTO ================= -->
-                <div class="about-photo">
+                <div class="impact-item">
 
-                    <img src="images/about.jpg"
-                        alt="सेवा ही संकल्प - युवा सेवा संकल्प फाउंडेशन">
+                    <i class="fa-solid fa-users"></i>
 
-                    <!-- PHOTO BOX -->
-                    <div class="about-photo-box">
+                    <span class="impact-number">
+                        5000+
+                    </span>
 
-                        <div class="about-photo-icon">
-                            <i class="fa-solid fa-heart"></i>
-                        </div>
-
-                        <div>
-                            <strong>सेवा ही संकल्प</strong>
-                            <small>समाज सेवा हमारा उद्देश्य</small>
-                        </div>
-
-                    </div>
+                    <span class="impact-label">
+                        सक्रिय सदस्य
+                    </span>
 
                 </div>
 
 
-                <!-- ================= ABOUT TEXT ================= -->
-                <div class="about-text">
+                <div class="impact-item">
 
-                    <div class="green-small-title">
-                        हमारी पहचान
-                    </div>
+                    <i class="fa-solid fa-handshake"></i>
 
+                    <span class="impact-number">
+                        200+
+                    </span>
 
-                    <h2>
-                        युवा सेवा संकल्प फाउंडेशन
-                    </h2>
+                    <span class="impact-label">
+                        सेवा प्रकल्प
+                    </span>
 
-
-                    <div class="green-line"></div>
-
-
-                    <p>
-                        <strong>युवा सेवा संकल्प फाउंडेशन</strong>
-                        एक सामाजिक संस्था है, जिसका उद्देश्य समाज के
-                        प्रत्येक वर्ग तक सेवा, सहयोग और जागरूकता पहुँचाना है।
-                    </p>
+                </div>
 
 
-                    <p>
-                        हम शिक्षा, स्वास्थ्य, पर्यावरण संरक्षण, समाज सेवा,
-                        युवा सशक्तिकरण और जन-जागरूकता जैसे क्षेत्रों में
-                        निरंतर कार्य करने के लिए प्रतिबद्ध हैं।
-                    </p>
+                <div class="impact-item">
+
+                    <i class="fa-solid fa-people-group"></i>
+
+                    <span class="impact-number">
+                        50+
+                    </span>
+
+                    <span class="impact-label">
+                        स्वयंसेवक
+                    </span>
+
+                </div>
 
 
-                    <p>
-                        हमारा विश्वास है कि जब युवा अपनी शक्ति, समय और
-                        प्रतिभा को समाज के हित में लगाते हैं, तब एक
-                        सकारात्मक और मजबूत समाज का निर्माण संभव होता है।
-                    </p>
+                <div class="impact-item">
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                    <span class="impact-number">
+                        10000+
+                    </span>
+
+                    <span class="impact-label">
+                        वृक्षारोपण
+                    </span>
+
+                </div>
 
 
-                    <!-- CHECK POINTS -->
-                    <div class="about-checks">
+                <div class="impact-item">
 
-                        <div>
-                            <i class="fa-solid fa-circle-check"></i>
-                            सेवा भावना
-                        </div>
+                    <i class="fa-solid fa-droplet"></i>
 
-                        <div>
-                            <i class="fa-solid fa-circle-check"></i>
-                            युवा सशक्तिकरण
-                        </div>
+                    <span class="impact-number">
+                        300+
+                    </span>
 
-                        <div>
-                            <i class="fa-solid fa-circle-check"></i>
-                            शिक्षा एवं स्वास्थ्य
-                        </div>
+                    <span class="impact-label">
+                        रक्तदान शिविर
+                    </span>
 
-                        <div>
-                            <i class="fa-solid fa-circle-check"></i>
-                            पर्यावरण संरक्षण
-                        </div>
+                </div>
 
-                    </div>
+
+                <div class="impact-item">
+
+                    <i class="fa-solid fa-award"></i>
+
+                    <span class="impact-number">
+                        10+
+                    </span>
+
+                    <span class="impact-label">
+                        पुरस्कार एवं सम्मान
+                    </span>
 
                 </div>
 
@@ -365,56 +1381,56 @@
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 
-    <!-- =========================================
-         ABOUT CTA
-    ========================================== -->
-    <section class="about-cta">
+<!-- =====================================================
+     CTA
+===================================================== -->
 
-        <div class="container">
+<section class="about-cta">
 
-            <div class="about-cta-content">
+    <div class="container">
 
-                <div>
+        <div class="cta-box">
 
-                    <div class="green-small-title cta-small-title">
-                        युवा शक्ति - राष्ट्र शक्ति
-                    </div>
+            <div class="cta-content">
 
-                    <h2>
-                        आइए, एक बेहतर समाज का निर्माण करें
-                    </h2>
+                <h2>
+                    हम सब का एक ही संकल्प
+                </h2>
 
-                    <p>
-                        आपका छोटा सा सहयोग किसी के जीवन में
-                        बड़ा बदलाव ला सकता है। आइए हम सभी मिलकर
-                        सेवा और सामाजिक विकास की इस यात्रा में
-                        अपनी भागीदारी निभाएँ।
-                    </p>
-
+                <div class="tagline">
+                    “सेवा ही संकल्प, संकल्प ही परिवर्तन”
                 </div>
 
+                <p>
+                    आइए, हाथ मिलाएँ और एक बेहतर समाज
+                    एवं सशक्त भारत के निर्माण में अपना
+                    योगदान दें।
+                </p>
 
-                <!-- BUTTONS -->
                 <div class="cta-buttons">
 
-                    <a href="member-registration.html"
-                        class="cta-orange">
+                    <a href="membership.html"
+                       class="cta-btn cta-primary">
+
+                        <i class="fa-solid fa-user-plus"></i>
 
                         सदस्य बनें
-                        <i class="fa-solid fa-users"></i>
 
                     </a>
 
 
                     <a href="volunteer.html"
-                        class="cta-white">
+                       class="cta-btn cta-secondary">
 
-                        वॉलंटियर बनें
                         <i class="fa-solid fa-handshake"></i>
 
+                        वॉलंटियर बनें
+
                     </a>
 
                 </div>
@@ -423,127 +1439,174 @@
 
         </div>
 
-    </section>
+    </div>
+
+</section>
+
+</main>
 
 
-    <!-- =========================================
-         FOOTER
-    ========================================== -->
-    <footer class="footer">
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
-        <div class="container">
+<footer class="footer">
 
-            <div class="footer-grid">
+    <div class="container">
 
-
-                <!-- FOUNDATION -->
-                <div class="footer-about">
-
-                    <h3>
-                        युवा सेवा संकल्प फाउंडेशन
-                    </h3>
-
-                    <p>
-                        युवा शक्ति को समाज सेवा से जोड़कर
-                        बेहतर समाज और मजबूत राष्ट्र के निर्माण
-                        के लिए समर्पित।
-                    </p>
-
-                </div>
+        <div class="footer-grid">
 
 
-                <!-- IMPORTANT LINKS -->
-                <div>
+            <div class="footer-about">
 
-                    <h3>महत्वपूर्ण लिंक</h3>
+                <img src="images/logo.png"
+                     alt="YSS Foundation Logo"
+                     width="100">
 
-                    <a href="index.html">
-                        होम
-                    </a>
+                <h3>
+                    युवा सेवा संकल्प फाउंडेशन
+                </h3>
 
-                    <a href="about.html">
-                        हमारे बारे में
-                    </a>
-
-                    <a href="mission.html">
-                        हमारा मिशन
-                    </a>
-
-                    <a href="vision.html">
-                        हमारा विजन
-                    </a>
-
-                    <a href="team.html">
-                        हमारी टीम
-                    </a>
-
-                </div>
-
-
-                <!-- WORK AREA -->
-                <div>
-
-                    <h3>हमारे कार्य क्षेत्र</h3>
-
-                    <p>✓ शिक्षा</p>
-                    <p>✓ स्वास्थ्य</p>
-                    <p>✓ पर्यावरण संरक्षण</p>
-                    <p>✓ समाज सेवा</p>
-                    <p>✓ युवा सशक्तिकरण</p>
-
-                </div>
-
-
-                <!-- CONTACT -->
-                <div>
-
-                    <h3>संपर्क जानकारी</h3>
-
-                    <p>
-                        <i class="fa-solid fa-phone"></i>
-                        +91 9651 731 313
-                    </p>
-
-                    <p>
-                        <i class="fa-solid fa-envelope"></i>
-                        info.yssfoundation@gmail.com
-                    </p>
-
-                    <p>
-                        <i class="fa-solid fa-location-dot"></i>
-                        उत्तर प्रदेश, भारत
-                    </p>
-
-                </div>
-
+                <p>
+                    सेवा, समर्पण और संस्कार के साथ
+                    समाज एवं राष्ट्र निर्माण की दिशा में
+                    सकारात्मक प्रयास।
+                </p>
 
             </div>
 
 
-            <!-- FOOTER BOTTOM -->
-            <div class="footer-bottom">
+            <div>
 
+                <h4>महत्वपूर्ण लिंक</h4>
+
+                <a href="about.html">हमारे बारे में</a>
+                <a href="membership.html">सदस्यता</a>
+                <a href="volunteer.html">वॉलंटियर</a>
+                <a href="gallery.html">गैलरी</a>
+                <a href="contact.html">संपर्क करें</a>
+
+            </div>
+
+
+            <div>
+
+                <h4>हमारे कार्य</h4>
+
+                <a href="education.html">शिक्षा</a>
+                <a href="health.html">स्वास्थ्य</a>
+                <a href="environment.html">पर्यावरण</a>
+                <a href="women.html">महिला सशक्तिकरण</a>
+                <a href="youth.html">युवा विकास</a>
+
+            </div>
+
+
+            <div>
+
+                <h4>संपर्क करें</h4>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    ग्राम नैपुरा, पोस्ट कौड़ाही,
+                    जिला अम्बेडकर नगर,
+                    उत्तर प्रदेश – 224129
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    9651731313
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    info.yssfoundation@gmail.com
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <p>
                 © 2026 युवा सेवा संकल्प फाउंडेशन |
                 सर्वाधिकार सुरक्षित
+            </p>
 
-            </div>
+            <p>
+                <strong>
+                    युवा शक्ति - राष्ट्र शक्ति
+                </strong>
+            </p>
 
         </div>
 
-    </footer>
+    </div>
+
+</footer>
 
 
-    <!-- =========================================
-         WHATSAPP FLOAT BUTTON
-    ========================================== -->
-    <a href="https://wa.me/919651731313"
-        class="whatsapp-float"
-        target="_blank"
-        aria-label="WhatsApp">
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
-        <i class="fa-brands fa-whatsapp"></i>
+<script>
 
-    </a>
+document.addEventListener("DOMContentLoaded", function(){
+
+    /* Mobile dropdown */
+    const dropdowns =
+        document.querySelectorAll(".nav-dropdown > a");
+
+    dropdowns.forEach(function(drop){
+
+        drop.addEventListener("click", function(e){
+
+            if(window.innerWidth <= 900){
+
+                e.preventDefault();
+
+                const parent =
+                    this.parentElement;
+
+                parent.classList.toggle("open");
+
+            }
+
+        });
+
+    });
+
+
+    /* Search button */
+
+    const searchBtn =
+        document.querySelector(".nav-search");
+
+    if(searchBtn){
+
+        searchBtn.addEventListener("click", function(){
+
+            const query =
+                prompt("क्या खोजना चाहते हैं?");
+
+            if(query && query.trim() !== ""){
+
+                window.location.href =
+                    "search.html?q=" +
+                    encodeURIComponent(query);
+
+            }
+
+        });
+
+    }
+
+});
+
+</script>
 
 
 </body>
