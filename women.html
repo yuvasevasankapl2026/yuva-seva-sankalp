@@ -1,0 +1,1825 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="युवा सेवा संकल्प फाउंडेशन - महिला सशक्तिकरण, शिक्षा, कौशल विकास, आत्मनिर्भरता और महिला जागरूकता के लिए कार्य।">
+
+<title>महिला सशक्तिकरण | युवा सेवा संकल्प फाउंडेशन</title>
+
+
+<!-- GOOGLE FONT -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+
+<!-- FONT AWESOME -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+<link rel="stylesheet" href="style.css">
+
+
+<style>
+
+/* =========================================================
+   WOMEN EMPOWERMENT PAGE
+========================================================= */
+
+.women-page{
+    margin:0;
+    background:#f8f7fb;
+    color:#263746;
+    font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+}
+
+.women-page *,
+.women-page *::before,
+.women-page *::after{
+    box-sizing:border-box;
+}
+
+.women-page a{
+    text-decoration:none;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.women-topbar{
+    background:#123b66;
+    color:#fff;
+}
+
+.women-topbar-inner{
+    width:92%;
+    max-width:1400px;
+    min-height:42px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+.women-contact{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.women-contact span{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    font-size:13px;
+}
+
+.women-contact i{
+    color:#ffb15c;
+}
+
+.women-social{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.women-social a{
+    color:#fff;
+    transition:.2s;
+}
+
+.women-social a:hover{
+    color:#ff7900;
+}
+
+.women-phone{
+    font-size:13px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.women-header{
+    background:#fff;
+    border-bottom:1px solid #e3e9ef;
+}
+
+.women-header-inner{
+    width:92%;
+    max-width:1400px;
+    min-height:135px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:30px;
+}
+
+.women-brand{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.women-brand-logo{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+}
+
+.women-brand-text h1{
+    margin:0;
+    color:#123b66;
+    font-size:39px;
+    line-height:1.15;
+    font-weight:800;
+}
+
+.women-brand-text h1 span{
+    color:#ff7900;
+}
+
+.women-brand-text p{
+    margin:7px 0 0;
+    color:#123b66;
+    font-size:17px;
+    font-weight:700;
+}
+
+
+/* =========================================================
+   LOGIN CARDS
+========================================================= */
+
+.women-login{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.women-login-card{
+    min-width:170px;
+    min-height:66px;
+    padding:10px 14px;
+
+    background:#fff;
+    border:1px solid #dce4eb;
+    border-radius:12px;
+
+    display:flex;
+    align-items:center;
+    gap:11px;
+
+    color:#123b66;
+    transition:.25s;
+}
+
+.women-login-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 22px rgba(18,59,102,.12);
+}
+
+.women-login-icon{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:20px;
+}
+
+.women-member .women-login-icon{
+    background:#eaf7ed;
+    color:#24834b;
+}
+
+.women-volunteer .women-login-icon{
+    background:#eaf1fa;
+    color:#123b66;
+}
+
+.women-admin{
+    background:#ff7900;
+    border-color:#ff7900;
+    color:#fff;
+}
+
+.women-admin .women-login-icon{
+    background:rgba(255,255,255,.15);
+    color:#fff;
+}
+
+.women-login-text{
+    display:flex;
+    flex-direction:column;
+}
+
+.women-login-text strong{
+    font-size:15px;
+}
+
+.women-login-text small{
+    font-size:10px;
+    margin-top:3px;
+    opacity:.75;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.women-nav{
+    background:#082e63;
+    min-height:56px;
+    position:relative;
+    z-index:999;
+}
+
+.women-nav-inner{
+    width:92%;
+    max-width:1400px;
+    min-height:56px;
+    margin:auto;
+
+    display:flex;
+    align-items:stretch;
+}
+
+.women-nav-link{
+    min-height:56px;
+    padding:0 17px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+    white-space:nowrap;
+
+    transition:.2s;
+}
+
+.women-nav-link:hover,
+.women-nav-link.active{
+    background:#ff7900;
+}
+
+.women-dropdown{
+    position:relative;
+}
+
+.women-dropdown-menu{
+    display:none;
+    position:absolute;
+
+    top:56px;
+    left:0;
+
+    width:230px;
+    background:#fff;
+
+    border-top:3px solid #ff7900;
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+
+.women-dropdown:hover .women-dropdown-menu{
+    display:block;
+}
+
+.women-dropdown-menu a{
+    display:block;
+    padding:12px 15px;
+
+    color:#263746;
+    font-size:13px;
+
+    border-bottom:1px solid #edf1f4;
+}
+
+.women-dropdown-menu a:hover{
+    background:#f5f7fa;
+    color:#ff7900;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.women-breadcrumb{
+    background:#f1eef8;
+    border-bottom:1px solid #e2ddea;
+}
+
+.women-breadcrumb-inner{
+    width:92%;
+    max-width:1400px;
+    min-height:44px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    color:#69798a;
+    font-size:13px;
+}
+
+.women-breadcrumb a{
+    color:#123b66;
+    font-weight:700;
+}
+
+.women-breadcrumb i{
+    color:#b05bb5;
+    font-size:10px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.women-hero{
+    width:92%;
+    max-width:1400px;
+    margin:35px auto 0;
+
+    padding:60px 45px;
+    border-radius:25px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #663399 0%,
+        #8b4da3 50%,
+        #c86d8b 100%
+    );
+
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+
+    box-shadow:0 18px 40px rgba(102,51,153,.18);
+}
+
+.women-hero::before{
+    content:"";
+    position:absolute;
+
+    width:330px;
+    height:330px;
+
+    border-radius:50%;
+
+    top:-150px;
+    right:-100px;
+
+    background:rgba(255,255,255,.10);
+}
+
+.women-hero::after{
+    content:"";
+    position:absolute;
+
+    width:250px;
+    height:250px;
+
+    border-radius:50%;
+
+    left:-100px;
+    bottom:-150px;
+
+    background:rgba(255,255,255,.08);
+}
+
+.women-hero-content{
+    position:relative;
+    z-index:2;
+    max-width:850px;
+}
+
+.women-hero-icon{
+    width:75px;
+    height:75px;
+    border-radius:20px;
+
+    background:rgba(255,255,255,.15);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:34px;
+    margin-bottom:18px;
+}
+
+.women-hero h1{
+    margin:0 0 10px;
+    font-size:48px;
+    font-weight:800;
+}
+
+.women-hero-line{
+    width:125px;
+    height:5px;
+
+    background:#ffd166;
+    border-radius:20px;
+
+    margin-bottom:20px;
+}
+
+.women-hero p{
+    margin:0;
+    font-size:19px;
+    line-height:1.8;
+    color:#fff;
+}
+
+.women-hero-tag{
+    display:inline-block;
+    margin-top:20px;
+    padding:9px 18px;
+
+    border:1px solid rgba(255,255,255,.35);
+    border-radius:30px;
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.women-intro{
+    width:92%;
+    max-width:1400px;
+    margin:35px auto;
+
+    display:grid;
+    grid-template-columns:1.4fr .8fr;
+    gap:30px;
+}
+
+.women-intro-text{
+    background:#fff;
+    border:1px solid #e5dfeb;
+    border-radius:20px;
+
+    padding:32px;
+    box-shadow:0 8px 25px rgba(0,0,0,.04);
+}
+
+.women-intro-text h2{
+    margin:0 0 15px;
+    color:#663399;
+    font-size:29px;
+}
+
+.women-intro-text p{
+    margin:0 0 14px;
+    color:#526271;
+    font-size:16px;
+    line-height:1.9;
+}
+
+.women-highlight{
+    background:#fbf2f7;
+    border:1px solid #f0dce6;
+    border-radius:20px;
+
+    padding:30px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+}
+
+.women-highlight-icon{
+    width:78px;
+    height:78px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#8b4da3;
+    color:#fff;
+
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.women-highlight h3{
+    margin:0 0 8px;
+    color:#663399;
+    font-size:23px;
+}
+
+.women-highlight p{
+    margin:0;
+    color:#617181;
+    line-height:1.7;
+    font-size:14px;
+}
+
+
+/* =========================================================
+   FOCUS AREAS
+========================================================= */
+
+.women-focus{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+    padding:20px 0 45px;
+}
+
+.women-heading{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.women-heading h2{
+    margin:0;
+    color:#663399;
+    font-size:31px;
+}
+
+.women-heading p{
+    max-width:750px;
+    margin:8px auto 0;
+
+    color:#69798a;
+    font-size:14px;
+}
+
+.women-card-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.women-card{
+    background:#fff;
+    border:1px solid #e6e0ea;
+    border-radius:18px;
+
+    padding:25px;
+
+    transition:.25s;
+    box-shadow:0 6px 20px rgba(0,0,0,.04);
+}
+
+.women-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 15px 32px rgba(102,51,153,.12);
+}
+
+.women-card-icon{
+    width:58px;
+    height:58px;
+
+    border-radius:16px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#f3eafa;
+    color:#8b4da3;
+
+    font-size:25px;
+    margin-bottom:15px;
+}
+
+.women-card h3{
+    margin:0 0 8px;
+    color:#663399;
+    font-size:20px;
+}
+
+.women-card p{
+    margin:0;
+    color:#68798a;
+    font-size:14px;
+    line-height:1.7;
+}
+
+.women-card ul{
+    margin:14px 0 0;
+    padding:0;
+    list-style:none;
+}
+
+.women-card li{
+    position:relative;
+    padding-left:21px;
+    margin:7px 0;
+
+    color:#526271;
+    font-size:13px;
+}
+
+.women-card li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+
+    color:#b05bb5;
+    font-weight:800;
+}
+
+
+/* =========================================================
+   JOURNEY
+========================================================= */
+
+.women-journey{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+    padding:10px 0 45px;
+}
+
+.women-journey-box{
+    background:#663399;
+    color:#fff;
+
+    border-radius:22px;
+    padding:35px;
+}
+
+.women-journey-title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.women-journey-title h2{
+    margin:0;
+    font-size:30px;
+}
+
+.women-journey-title p{
+    margin:8px 0 0;
+    color:#eadff0;
+    font-size:14px;
+}
+
+.women-journey-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:15px;
+}
+
+.women-step{
+    text-align:center;
+    padding:10px;
+}
+
+.women-step-number{
+    width:54px;
+    height:54px;
+
+    margin:0 auto 11px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#ff7900;
+    color:#fff;
+
+    font-size:18px;
+    font-weight:800;
+}
+
+.women-step h3{
+    margin:0 0 5px;
+    font-size:16px;
+}
+
+.women-step p{
+    margin:0;
+    color:#eadff0;
+    font-size:12px;
+    line-height:1.5;
+}
+
+
+/* =========================================================
+   VALUES
+========================================================= */
+
+.women-values{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+    padding:0 0 45px;
+}
+
+.women-value-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.women-value{
+    background:#fff;
+    border:1px solid #e6e0ea;
+    border-radius:17px;
+
+    padding:24px 18px;
+    text-align:center;
+}
+
+.women-value i{
+    display:block;
+    color:#b05bb5;
+    font-size:29px;
+    margin-bottom:10px;
+}
+
+.women-value strong{
+    display:block;
+    color:#663399;
+    font-size:20px;
+}
+
+.women-value span{
+    display:block;
+    margin-top:5px;
+    color:#71808f;
+    font-size:13px;
+}
+
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.women-join{
+    width:92%;
+    max-width:1400px;
+    margin:0 auto 60px;
+}
+
+.women-join-box{
+    padding:42px 25px;
+    text-align:center;
+
+    border-radius:22px;
+
+    background:#fbf2f7;
+    border:1px solid #f0dce6;
+}
+
+.women-join-box h2{
+    margin:0 0 9px;
+    color:#663399;
+    font-size:31px;
+}
+
+.women-join-box p{
+    max-width:750px;
+    margin:0 auto 22px;
+
+    color:#526271;
+    font-size:15px;
+    line-height:1.8;
+}
+
+.women-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.women-button{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:12px 23px;
+    border-radius:8px;
+
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+
+    transition:.2s;
+}
+
+.women-button:hover{
+    transform:translateY(-2px);
+}
+
+.women-button.purple{
+    background:#663399;
+}
+
+.women-button.orange{
+    background:#ff7900;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.women-footer{
+    background:#092e60;
+    color:#fff;
+    padding:45px 0 0;
+}
+
+.women-footer-inner{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr 1.3fr;
+    gap:35px;
+}
+
+.women-footer-logo{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+    margin-bottom:10px;
+}
+
+.women-footer h3,
+.women-footer h4{
+    margin:0 0 13px;
+    color:#fff;
+}
+
+.women-footer p{
+    margin:0 0 9px;
+    color:#dbe5ef;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.women-footer a{
+    display:block;
+    color:#dbe5ef;
+    font-size:13px;
+    margin-bottom:8px;
+}
+
+.women-footer a:hover{
+    color:#ff7900;
+}
+
+.women-footer-bottom{
+    margin-top:35px;
+    padding:17px 0;
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    text-align:center;
+    color:#dbe5ef;
+    font-size:12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1150px){
+
+    .women-header-inner{
+        flex-direction:column;
+        padding:18px 0;
+    }
+
+    .women-login{
+        width:100%;
+        justify-content:center;
+    }
+
+    .women-intro{
+        grid-template-columns:1fr;
+    }
+
+    .women-journey-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .women-footer-inner{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:850px){
+
+    .women-contact span:first-child{
+        display:none;
+    }
+
+    .women-brand{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .women-brand-text h1{
+        font-size:31px;
+    }
+
+    .women-card-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .women-value-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    .women-login{
+        flex-direction:column;
+    }
+
+    .women-login-card{
+        width:100%;
+        max-width:350px;
+    }
+
+    .women-nav-inner{
+        width:100%;
+        overflow-x:auto;
+    }
+
+    .women-nav-link{
+        padding:0 12px;
+        font-size:12px;
+    }
+
+    .women-hero{
+        padding:38px 22px;
+    }
+
+    .women-hero h1{
+        font-size:35px;
+    }
+
+    .women-hero p{
+        font-size:15px;
+    }
+
+    .women-card-grid{
+        grid-template-columns:1fr;
+    }
+
+    .women-journey-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .women-footer-inner{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+@media(max-width:430px){
+
+    .women-brand-text h1{
+        font-size:27px;
+    }
+
+    .women-hero h1{
+        font-size:30px;
+    }
+
+    .women-journey-grid,
+    .women-value-grid{
+        grid-template-columns:1fr;
+    }
+
+    .women-join-box{
+        padding:30px 18px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="women-page">
+
+
+<!-- TOP BAR -->
+
+<div class="women-topbar">
+
+<div class="women-topbar-inner">
+
+    <div class="women-contact">
+
+        <span>
+            <i class="fa-solid fa-envelope"></i>
+            info.yssfoundation@gmail.com
+        </span>
+
+        <span>
+            <i class="fa-solid fa-location-dot"></i>
+            ग्राम नैपुरा, पोस्ट कौड़ाही,
+            जिला अम्बेडकर नगर, उत्तर प्रदेश – 224129
+        </span>
+
+    </div>
+
+
+    <div class="women-social">
+
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-whatsapp"></i></a>
+
+        <span class="women-phone">
+            <i class="fa-solid fa-phone"></i>
+            9651731313
+        </span>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- HEADER -->
+
+<header class="women-header">
+
+<div class="women-header-inner">
+
+    <a href="index.html" class="women-brand">
+
+        <img src="images/logo.png"
+        alt="युवा सेवा संकल्प फाउंडेशन"
+        class="women-brand-logo">
+
+        <div class="women-brand-text">
+
+            <h1>
+                युवा सेवा संकल्प
+                <span>फाउंडेशन</span>
+            </h1>
+
+            <p>युवा शक्ति - राष्ट्र शक्ति</p>
+
+        </div>
+
+    </a>
+
+
+    <div class="women-login">
+
+        <a href="member-login.html"
+        class="women-login-card women-member">
+
+            <div class="women-login-icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="women-login-text">
+                <strong>सदस्य Login</strong>
+                <small>अपने खाते में लॉगिन करें</small>
+            </div>
+
+        </a>
+
+
+        <a href="volunteer-login.html"
+        class="women-login-card women-volunteer">
+
+            <div class="women-login-icon">
+                <i class="fa-solid fa-handshake"></i>
+            </div>
+
+            <div class="women-login-text">
+                <strong>Volunteer Login</strong>
+                <small>सेवा करने के लिए जुड़ें</small>
+            </div>
+
+        </a>
+
+
+        <a href="admin-login.html"
+        class="women-login-card women-admin">
+
+            <div class="women-login-icon">
+                <i class="fa-solid fa-user-shield"></i>
+            </div>
+
+            <div class="women-login-text">
+                <strong>Admin Login</strong>
+                <small>Admin Panel</small>
+            </div>
+
+        </a>
+
+    </div>
+
+</div>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav class="women-nav">
+
+<div class="women-nav-inner">
+
+    <a href="index.html" class="women-nav-link">
+        <i class="fa-solid fa-house"></i>
+        होम
+    </a>
+
+
+    <div class="women-dropdown">
+
+        <a href="about.html" class="women-nav-link">
+            संस्था के बारे में
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
+
+        <div class="women-dropdown-menu">
+
+            <a href="about.html">हमारे बारे में</a>
+            <a href="mission.html">हमारा मिशन</a>
+            <a href="vision.html">हमारा विजन</a>
+            <a href="team.html">हमारी टीम</a>
+
+        </div>
+
+    </div>
+
+
+    <div class="women-dropdown">
+
+        <a href="#" class="women-nav-link active">
+            हमारे कार्य
+            <i class="fa-solid fa-chevron-down"></i>
+        </a>
+
+        <div class="women-dropdown-menu">
+
+            <a href="education.html">शिक्षा</a>
+            <a href="health.html">स्वास्थ्य</a>
+            <a href="environment.html">पर्यावरण</a>
+            <a href="women.html">महिला सशक्तिकरण</a>
+            <a href="youth.html">युवा विकास</a>
+            <a href="social-service.html">समाज सेवा</a>
+
+        </div>
+
+    </div>
+
+
+    <a href="volunteer.html" class="women-nav-link">
+        वॉलंटियर
+    </a>
+
+    <a href="membership.html" class="women-nav-link">
+        सदस्यता
+    </a>
+
+    <a href="news.html" class="women-nav-link">
+        समाचार
+    </a>
+
+    <a href="events.html" class="women-nav-link">
+        आगामी कार्यक्रम
+    </a>
+
+    <a href="gallery.html" class="women-nav-link">
+        गैलरी
+    </a>
+
+    <a href="contact.html" class="women-nav-link">
+        संपर्क करें
+    </a>
+
+</div>
+
+</nav>
+
+
+<!-- BREADCRUMB -->
+
+<div class="women-breadcrumb">
+
+<div class="women-breadcrumb-inner">
+
+    <a href="index.html">होम</a>
+
+    <i class="fa-solid fa-angle-right"></i>
+
+    <a href="#">हमारे कार्य</a>
+
+    <i class="fa-solid fa-angle-right"></i>
+
+    <strong>महिला सशक्तिकरण</strong>
+
+</div>
+
+</div>
+
+
+<!-- HERO -->
+
+<section class="women-hero">
+
+<div class="women-hero-content">
+
+    <div class="women-hero-icon">
+        <i class="fa-solid fa-person-dress"></i>
+    </div>
+
+    <h1>महिला सशक्तिकरण</h1>
+
+    <div class="women-hero-line"></div>
+
+    <p>
+        शिक्षा, जागरूकता, कौशल और आत्मनिर्भरता के माध्यम से
+        महिलाओं को सशक्त बनाकर समान अवसर और सम्मानपूर्ण
+        समाज के निर्माण की दिशा में हमारा प्रयास।
+    </p>
+
+    <div class="women-hero-tag">
+        सशक्त नारी • सशक्त परिवार • सशक्त समाज
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- INTRO -->
+
+<section class="women-intro">
+
+<div class="women-intro-text">
+
+    <h2>
+        हमारा महिला सशक्तिकरण प्रयास
+    </h2>
+
+    <p>
+        युवा सेवा संकल्प फाउंडेशन का मानना है कि
+        किसी भी समाज की वास्तविक प्रगति तभी संभव है
+        जब महिलाओं को शिक्षा, सम्मान, सुरक्षा और
+        आगे बढ़ने के समान अवसर प्राप्त हों।
+    </p>
+
+    <p>
+        हमारा प्रयास महिलाओं और बालिकाओं को
+        जागरूकता, शिक्षा, कौशल विकास और
+        आत्मनिर्भरता के अवसरों से जोड़ना है।
+    </p>
+
+    <p>
+        हम समाज में महिलाओं के प्रति सम्मान,
+        समानता और सकारात्मक सोच को बढ़ावा देने
+        के लिए जनजागरूकता और सामाजिक भागीदारी
+        के साथ कार्य करने के लिए प्रतिबद्ध हैं।
+    </p>
+
+</div>
+
+
+<div class="women-highlight">
+
+    <div class="women-highlight-icon">
+        <i class="fa-solid fa-female"></i>
+    </div>
+
+    <h3>हमारा संकल्प</h3>
+
+    <p>
+        हर महिला और बालिका को अपने सपनों को
+        साकार करने के लिए ज्ञान, आत्मविश्वास,
+        सम्मान और अवसरों से जोड़ने का प्रयास।
+    </p>
+
+</div>
+
+</section>
+
+
+<!-- FOCUS AREAS -->
+
+<section class="women-focus">
+
+<div class="women-heading">
+
+    <h2>हमारे प्रमुख कार्य क्षेत्र</h2>
+
+    <p>
+        महिला सशक्तिकरण केवल सहायता नहीं,
+        बल्कि महिलाओं को आत्मविश्वासी, जागरूक
+        और आत्मनिर्भर बनाने की दिशा में प्रयास है।
+    </p>
+
+</div>
+
+
+<div class="women-card-grid">
+
+
+    <div class="women-card">
+
+        <div class="women-card-icon">
+            <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+
+        <h3>महिला शिक्षा</h3>
+
+        <p>
+            महिलाओं और बालिकाओं को शिक्षा के
+            महत्व से जोड़ने तथा आगे बढ़ने के
+            अवसरों के प्रति जागरूक करना।
+        </p>
+
+        <ul>
+            <li>शिक्षा जागरूकता</li>
+            <li>बालिका शिक्षा प्रोत्साहन</li>
+            <li>मार्गदर्शन सहायता</li>
+        </ul>
+
+    </div>
+
+
+    <div class="women-card">
+
+        <div class="women-card-icon">
+            <i class="fa-solid fa-laptop"></i>
+        </div>
+
+        <h3>कौशल विकास</h3>
+
+        <p>
+            महिलाओं को नए कौशल और रोजगारोन्मुख
+            प्रशिक्षण की जानकारी एवं अवसरों से
+            जोड़ने का प्रयास।
+        </p>
+
+        <ul>
+            <li>डिजिटल जागरूकता</li>
+            <li>व्यावसायिक कौशल</li>
+            <li>रोजगार मार्गदर्शन</li>
+        </ul>
+
+    </div>
+
+
+    <div class="women-card">
+
+        <div class="women-card-icon">
+            <i class="fa-solid fa-hand-holding-dollar"></i>
+        </div>
+
+        <h3>आत्मनिर्भरता</h3>
+
+        <p>
+            महिलाओं को आर्थिक रूप से सक्षम और
+            आत्मनिर्भर बनने की दिशा में प्रेरित
+            और जागरूक करना।
+        </p>
+
+        <ul>
+            <li>स्वरोजगार जागरूकता</li>
+            <li>उद्यमिता प्रोत्साहन</li>
+            <li>आर्थिक जानकारी</li>
+        </ul>
+
+    </div>
+
+
+    <div class="women-card">
+
+        <div class="women-card-icon">
+            <i class="fa-solid fa-scale-balanced"></i>
+        </div>
+
+        <h3>अधिकार जागरूकता</h3>
+
+        <p>
+            महिलाओं को उनके अधिकारों और उपलब्ध
+            सहायता एवं सरकारी योजनाओं के प्रति
+            जागरूक करने का प्रयास।
+        </p>
+
+        <ul>
+            <li>कानूनी जागरूकता</li>
+            <li>महिला अधिकार</li>
+            <li>सरकारी योजनाओं की जानकारी</li>
+        </ul>
+
+    </div>
+
+
+    <div class="women-card">
+
+        <div class="women-card-icon">
+            <i class="fa-solid fa-heart-pulse"></i>
+        </div>
+
+        <h3>स्वास्थ्य जागरूकता</h3>
+
+        <p>
+            महिलाओं के स्वास्थ्य, पोषण और
+            स्वच्छता के प्रति जागरूकता बढ़ाने
+            की दिशा में सामाजिक प्रयास।
+        </p>
+
+        <ul>
+            <li>स्वास्थ्य जागरूकता</li>
+            <li>पोषण जानकारी</li>
+            <li>स्वच्छता अभियान</li>
+        </ul>
+
+    </div>
+
+
+    <div class="women-card">
+
+        <div class="women-card-icon">
+            <i class="fa-solid fa-people-group"></i>
+        </div>
+
+        <h3>नेतृत्व विकास</h3>
+
+        <p>
+            महिलाओं को समाज और समुदाय में
+            नेतृत्व की भूमिका निभाने के लिए
+            आत्मविश्वास और प्रेरणा देना।
+        </p>
+
+        <ul>
+            <li>नेतृत्व प्रशिक्षण</li>
+            <li>सामुदायिक भागीदारी</li>
+            <li>आत्मविश्वास विकास</li>
+        </ul>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+<!-- JOURNEY -->
+
+<section class="women-journey">
+
+<div class="women-journey-box">
+
+    <div class="women-journey-title">
+
+        <h2>सशक्तिकरण की हमारी यात्रा</h2>
+
+        <p>
+            जागरूकता से आत्मनिर्भरता तक एक सकारात्मक बदलाव की दिशा।
+        </p>
+
+    </div>
+
+
+    <div class="women-journey-grid">
+
+
+        <div class="women-step">
+
+            <div class="women-step-number">01</div>
+
+            <h3>जागरूकता</h3>
+
+            <p>
+                जानकारी और अधिकारों के प्रति जागरूकता।
+            </p>
+
+        </div>
+
+
+        <div class="women-step">
+
+            <div class="women-step-number">02</div>
+
+            <h3>शिक्षा</h3>
+
+            <p>
+                सीखने और आगे बढ़ने के अवसर।
+            </p>
+
+        </div>
+
+
+        <div class="women-step">
+
+            <div class="women-step-number">03</div>
+
+            <h3>कौशल</h3>
+
+            <p>
+                नई क्षमताओं और कौशल का विकास।
+            </p>
+
+        </div>
+
+
+        <div class="women-step">
+
+            <div class="women-step-number">04</div>
+
+            <h3>आत्मविश्वास</h3>
+
+            <p>
+                स्वयं निर्णय लेने की क्षमता को बढ़ावा।
+            </p>
+
+        </div>
+
+
+        <div class="women-step">
+
+            <div class="women-step-number">05</div>
+
+            <h3>आत्मनिर्भरता</h3>
+
+            <p>
+                सम्मान के साथ सशक्त भविष्य की ओर।
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- VALUES -->
+
+<section class="women-values">
+
+<div class="women-heading">
+
+    <h2>हमारे मूल उद्देश्य</h2>
+
+    <p>
+        एक ऐसा समाज जहाँ हर महिला सम्मान, समानता
+        और आत्मविश्वास के साथ आगे बढ़ सके।
+    </p>
+
+</div>
+
+
+<div class="women-value-grid">
+
+
+    <div class="women-value">
+
+        <i class="fa-solid fa-handshake"></i>
+
+        <strong>सम्मान</strong>
+
+        <span>
+            हर महिला के सम्मान की भावना
+        </span>
+
+    </div>
+
+
+    <div class="women-value">
+
+        <i class="fa-solid fa-scale-balanced"></i>
+
+        <strong>समानता</strong>
+
+        <span>
+            समान अवसर और सहभागिता
+        </span>
+
+    </div>
+
+
+    <div class="women-value">
+
+        <i class="fa-solid fa-lightbulb"></i>
+
+        <strong>जागरूकता</strong>
+
+        <span>
+            ज्ञान और सही जानकारी का प्रसार
+        </span>
+
+    </div>
+
+
+    <div class="women-value">
+
+        <i class="fa-solid fa-arrow-trend-up"></i>
+
+        <strong>प्रगति</strong>
+
+        <span>
+            आत्मनिर्भर और सशक्त भविष्य
+        </span>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+<!-- JOIN CTA -->
+
+<section class="women-join">
+
+<div class="women-join-box">
+
+    <h2>महिला सशक्तिकरण अभियान से जुड़ें</h2>
+
+    <p>
+        आपका सहयोग, आपका समय और आपकी भागीदारी
+        किसी महिला या बालिका के जीवन में सकारात्मक
+        बदलाव का माध्यम बन सकती है।
+        आइए मिलकर सशक्त और सम्मानपूर्ण समाज का निर्माण करें।
+    </p>
+
+
+    <div class="women-buttons">
+
+        <a href="membership.html"
+        class="women-button purple">
+
+            <i class="fa-solid fa-user-plus"></i>
+            सदस्य बनें
+
+        </a>
+
+
+        <a href="volunteer.html"
+        class="women-button orange">
+
+            <i class="fa-solid fa-handshake"></i>
+            Volunteer बनें
+
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="women-footer">
+
+<div class="women-footer-inner">
+
+
+    <div>
+
+        <img src="images/logo.png"
+        alt="YSS Foundation"
+        class="women-footer-logo">
+
+        <h3>युवा सेवा संकल्प फाउंडेशन</h3>
+
+        <p>
+            सेवा, समर्पण और संस्कार के साथ
+            समाज एवं राष्ट्र निर्माण की दिशा में
+            सकारात्मक प्रयास।
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <h4>महत्वपूर्ण लिंक</h4>
+
+        <a href="index.html">होम</a>
+        <a href="about.html">हमारे बारे में</a>
+        <a href="mission.html">हमारा मिशन</a>
+        <a href="vision.html">हमारा विजन</a>
+        <a href="membership.html">सदस्यता</a>
+        <a href="contact.html">संपर्क करें</a>
+
+    </div>
+
+
+    <div>
+
+        <h4>हमारे कार्य</h4>
+
+        <a href="education.html">शिक्षा</a>
+        <a href="health.html">स्वास्थ्य</a>
+        <a href="environment.html">पर्यावरण</a>
+        <a href="women.html">महिला सशक्तिकरण</a>
+        <a href="youth.html">युवा विकास</a>
+        <a href="social-service.html">समाज सेवा</a>
+
+    </div>
+
+
+    <div>
+
+        <h4>संपर्क करें</h4>
+
+        <p>
+            <i class="fa-solid fa-location-dot"></i>
+            ग्राम नैपुरा, पोस्ट कौड़ाही,
+            जिला अम्बेडकर नगर,
+            उत्तर प्रदेश – 224129
+        </p>
+
+        <p>
+            <i class="fa-solid fa-phone"></i>
+            9651731313
+        </p>
+
+        <p>
+            <i class="fa-solid fa-envelope"></i>
+            info.yssfoundation@gmail.com
+        </p>
+
+    </div>
+
+
+</div>
+
+
+<div class="women-footer-bottom">
+
+    © 2026 युवा सेवा संकल्प फाउंडेशन |
+    सर्वाधिकार सुरक्षित |
+    <strong>युवा शक्ति - राष्ट्र शक्ति</strong>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>
