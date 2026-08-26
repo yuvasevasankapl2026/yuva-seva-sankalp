@@ -1,0 +1,1905 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="युवा सेवा संकल्प फाउंडेशन - पर्यावरण संरक्षण, वृक्षारोपण, जल संरक्षण, स्वच्छता और हरित भविष्य के लिए सामाजिक पहल।">
+
+<title>पर्यावरण संरक्षण | युवा सेवा संकल्प फाउंडेशन</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* =========================================================
+   YUVA SEVA SANKALP FOUNDATION
+   ENVIRONMENT PAGE
+========================================================= */
+
+.environment-page{
+    margin:0;
+    background:#f5f8fb;
+    color:#263746;
+    font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+}
+
+.environment-page *,
+.environment-page *::before,
+.environment-page *::after{
+    box-sizing:border-box;
+}
+
+.environment-page a{
+    text-decoration:none;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.env-topbar{
+    background:#123b66;
+    color:#fff;
+    min-height:42px;
+}
+
+.env-topbar-inner{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+    min-height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.env-contact{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.env-contact span{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    font-size:13px;
+}
+
+.env-contact i{
+    color:#ffb15c;
+}
+
+.env-social{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.env-social a{
+    color:#fff;
+}
+
+.env-social a:hover{
+    color:#ff7900;
+}
+
+.env-phone{
+    font-size:13px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.env-header{
+    background:#fff;
+    border-bottom:1px solid #e3e9ef;
+}
+
+.env-header-inner{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+    min-height:135px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.env-brand{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.env-brand-logo{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+}
+
+.env-brand-text h1{
+    margin:0;
+    color:#123b66;
+    font-size:39px;
+    line-height:1.15;
+    font-weight:800;
+}
+
+.env-brand-text h1 span{
+    color:#ff7900;
+}
+
+.env-brand-text p{
+    margin:7px 0 0;
+    color:#123b66;
+    font-size:17px;
+    font-weight:700;
+}
+
+
+/* =========================================================
+   LOGIN CARDS
+========================================================= */
+
+.env-login{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.env-login-card{
+    min-width:170px;
+    min-height:66px;
+    padding:10px 14px;
+
+    background:#fff;
+    border:1px solid #dce4eb;
+    border-radius:12px;
+
+    display:flex;
+    align-items:center;
+    gap:11px;
+
+    color:#123b66;
+    transition:.25s;
+}
+
+.env-login-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 22px rgba(18,59,102,.12);
+}
+
+.env-login-icon{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:21px;
+}
+
+.env-member .env-login-icon{
+    color:#24834b;
+    background:#eaf7ed;
+}
+
+.env-volunteer .env-login-icon{
+    color:#123b66;
+    background:#eaf1fa;
+}
+
+.env-admin{
+    background:#ff7900;
+    border-color:#ff7900;
+    color:#fff;
+}
+
+.env-admin .env-login-icon{
+    color:#fff;
+    background:rgba(255,255,255,.15);
+}
+
+.env-login-text{
+    display:flex;
+    flex-direction:column;
+}
+
+.env-login-text strong{
+    font-size:15px;
+}
+
+.env-login-text small{
+    font-size:10px;
+    margin-top:3px;
+    opacity:.75;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.env-nav{
+    background:#082e63;
+    min-height:56px;
+    position:relative;
+    z-index:999;
+}
+
+.env-nav-inner{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+
+    min-height:56px;
+    display:flex;
+    align-items:stretch;
+}
+
+.env-nav-link{
+    min-height:56px;
+    padding:0 17px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+    white-space:nowrap;
+
+    transition:.2s;
+}
+
+.env-nav-link:hover,
+.env-nav-link.active{
+    background:#24834b;
+}
+
+.env-dropdown{
+    position:relative;
+}
+
+.env-dropdown-menu{
+    display:none;
+
+    position:absolute;
+    left:0;
+    top:56px;
+
+    width:230px;
+    background:#fff;
+
+    border-top:3px solid #24834b;
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+
+.env-dropdown:hover .env-dropdown-menu{
+    display:block;
+}
+
+.env-dropdown-menu a{
+    display:block;
+    padding:12px 15px;
+
+    color:#263746;
+    font-size:13px;
+
+    border-bottom:1px solid #edf1f4;
+}
+
+.env-dropdown-menu a:hover{
+    color:#24834b;
+    background:#f1f8f3;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.env-breadcrumb{
+    background:#eef3f8;
+    border-bottom:1px solid #dfe7ee;
+}
+
+.env-breadcrumb-inner{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+
+    min-height:44px;
+
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    color:#69798a;
+    font-size:13px;
+}
+
+.env-breadcrumb a{
+    color:#123b66;
+    font-weight:700;
+}
+
+.env-breadcrumb i{
+    color:#24834b;
+    font-size:10px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.env-hero{
+    width:92%;
+    max-width:1400px;
+    margin:35px auto 0;
+
+    padding:60px 45px;
+    border-radius:26px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #123b66 0%,
+            #24834b 55%,
+            #4b8b24 100%
+        );
+
+    color:#fff;
+    position:relative;
+    overflow:hidden;
+
+    box-shadow:0 18px 40px rgba(18,59,102,.18);
+}
+
+.env-hero::before{
+    content:"";
+
+    position:absolute;
+    width:340px;
+    height:340px;
+
+    border-radius:50%;
+    right:-100px;
+    top:-150px;
+
+    background:rgba(255,255,255,.08);
+}
+
+.env-hero::after{
+    content:"";
+
+    position:absolute;
+    width:250px;
+    height:250px;
+
+    border-radius:50%;
+    left:-100px;
+    bottom:-150px;
+
+    background:rgba(255,255,255,.07);
+}
+
+.env-hero-content{
+    position:relative;
+    z-index:2;
+    max-width:900px;
+}
+
+.env-hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:8px 16px;
+    border-radius:30px;
+
+    background:rgba(255,255,255,.13);
+    border:1px solid rgba(255,255,255,.22);
+
+    font-size:14px;
+    font-weight:700;
+}
+
+.env-hero h1{
+    margin:18px 0 10px;
+    font-size:48px;
+    font-weight:800;
+}
+
+.env-hero-line{
+    width:130px;
+    height:5px;
+
+    border-radius:20px;
+    background:#ff7900;
+
+    margin-bottom:20px;
+}
+
+.env-hero p{
+    margin:0;
+    font-size:19px;
+    line-height:1.8;
+    color:#f3f8f4;
+}
+
+.env-hero-quote{
+    margin-top:20px;
+    display:inline-block;
+
+    padding:10px 20px;
+    border-radius:30px;
+
+    background:rgba(0,0,0,.12);
+    border:1px solid rgba(255,255,255,.20);
+
+    font-weight:700;
+}
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.env-intro{
+    width:92%;
+    max-width:1400px;
+    margin:35px auto;
+
+    display:grid;
+    grid-template-columns:1.4fr .8fr;
+    gap:30px;
+}
+
+.env-intro-text{
+    background:#fff;
+    border:1px solid #e0e7ed;
+    border-radius:20px;
+
+    padding:32px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.04);
+}
+
+.env-intro-text h2{
+    margin:0 0 15px;
+    color:#123b66;
+    font-size:30px;
+}
+
+.env-intro-text p{
+    margin:0 0 14px;
+    color:#526271;
+    font-size:16px;
+    line-height:1.9;
+}
+
+.env-green-box{
+    background:linear-gradient(145deg,#effaf2,#e5f5e9);
+    border:1px solid #d1e8d7;
+    border-radius:20px;
+
+    padding:30px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+}
+
+.env-green-icon{
+    width:80px;
+    height:80px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#24834b;
+    color:#fff;
+    font-size:34px;
+
+    margin-bottom:15px;
+}
+
+.env-green-box h3{
+    margin:0 0 8px;
+    color:#123b66;
+    font-size:24px;
+}
+
+.env-green-box p{
+    margin:0;
+    color:#617181;
+    font-size:14px;
+    line-height:1.8;
+}
+
+
+/* =========================================================
+   ENVIRONMENT PILLARS
+========================================================= */
+
+.env-pillars{
+    width:92%;
+    max-width:1400px;
+    margin:0 auto;
+    padding:10px 0 45px;
+}
+
+.env-heading{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.env-heading h2{
+    margin:0;
+    color:#123b66;
+    font-size:32px;
+}
+
+.env-heading p{
+    margin:8px auto 0;
+    max-width:760px;
+
+    color:#69798a;
+    font-size:14px;
+    line-height:1.7;
+}
+
+.env-card-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.env-card{
+    background:#fff;
+    border:1px solid #dfe7ed;
+    border-radius:18px;
+
+    padding:26px;
+    transition:.25s;
+
+    box-shadow:0 6px 20px rgba(0,0,0,.04);
+}
+
+.env-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 16px 35px rgba(36,131,75,.12);
+}
+
+.env-card-icon{
+    width:60px;
+    height:60px;
+
+    border-radius:16px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:25px;
+    margin-bottom:16px;
+}
+
+.env-card:nth-child(1) .env-card-icon{
+    background:#e9f7ec;
+    color:#24834b;
+}
+
+.env-card:nth-child(2) .env-card-icon{
+    background:#e8f1fb;
+    color:#1d5d96;
+}
+
+.env-card:nth-child(3) .env-card-icon{
+    background:#edf8e8;
+    color:#4b8b24;
+}
+
+.env-card:nth-child(4) .env-card-icon{
+    background:#fff1e7;
+    color:#ff7900;
+}
+
+.env-card:nth-child(5) .env-card-icon{
+    background:#e7f5f4;
+    color:#147b7b;
+}
+
+.env-card:nth-child(6) .env-card-icon{
+    background:#f2eafa;
+    color:#663399;
+}
+
+.env-card h3{
+    margin:0 0 9px;
+    color:#123b66;
+    font-size:21px;
+}
+
+.env-card p{
+    margin:0;
+    color:#68798a;
+    font-size:14px;
+    line-height:1.7;
+}
+
+.env-card ul{
+    list-style:none;
+    padding:0;
+    margin:15px 0 0;
+}
+
+.env-card li{
+    position:relative;
+    padding-left:21px;
+    margin:7px 0;
+
+    color:#526271;
+    font-size:13px;
+}
+
+.env-card li::before{
+    content:"✓";
+
+    position:absolute;
+    left:0;
+
+    color:#24834b;
+    font-weight:800;
+}
+
+
+/* =========================================================
+   GREEN CAMPAIGN
+========================================================= */
+
+.env-campaign{
+    width:92%;
+    max-width:1400px;
+    margin:0 auto;
+    padding:0 0 45px;
+}
+
+.env-campaign-box{
+    background:#123b66;
+    border-radius:24px;
+
+    padding:38px;
+    color:#fff;
+
+    display:grid;
+    grid-template-columns:1fr 1.7fr;
+    gap:35px;
+    align-items:center;
+}
+
+.env-campaign-icon{
+    width:150px;
+    height:150px;
+
+    margin:auto;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:rgba(255,255,255,.10);
+    border:2px solid rgba(255,255,255,.15);
+
+    font-size:65px;
+    color:#8ed39a;
+}
+
+.env-campaign-content h2{
+    margin:0 0 10px;
+    font-size:31px;
+}
+
+.env-campaign-content p{
+    margin:0 0 18px;
+    color:#dce8e0;
+    font-size:15px;
+    line-height:1.8;
+}
+
+.env-campaign-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+}
+
+.env-campaign-list div{
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    font-size:14px;
+    font-weight:600;
+}
+
+.env-campaign-list i{
+    color:#ffb15c;
+}
+
+
+/* =========================================================
+   HOW WE WORK
+========================================================= */
+
+.env-process{
+    width:92%;
+    max-width:1400px;
+    margin:0 auto;
+    padding:0 0 45px;
+}
+
+.env-process-box{
+    background:#fff;
+    border:1px solid #dfe7ed;
+    border-radius:22px;
+    padding:35px;
+}
+
+.env-process-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:15px;
+    margin-top:28px;
+}
+
+.env-step{
+    text-align:center;
+    position:relative;
+}
+
+.env-step-number{
+    width:58px;
+    height:58px;
+    margin:0 auto 12px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#24834b;
+    color:#fff;
+
+    font-size:17px;
+    font-weight:800;
+}
+
+.env-step h3{
+    margin:0 0 5px;
+    color:#123b66;
+    font-size:16px;
+}
+
+.env-step p{
+    margin:0;
+    color:#71808f;
+    font-size:12px;
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   GREEN PROMISE
+========================================================= */
+
+.env-promise{
+    width:92%;
+    max-width:1400px;
+    margin:0 auto 55px;
+}
+
+.env-promise-box{
+    background:#f0faf3;
+    border:1px solid #d4e9da;
+    border-radius:24px;
+
+    padding:40px;
+    text-align:center;
+}
+
+.env-promise-box h2{
+    margin:0 0 10px;
+    color:#24834b;
+    font-size:32px;
+}
+
+.env-promise-box p{
+    max-width:780px;
+    margin:0 auto 22px;
+
+    color:#526271;
+    font-size:15px;
+    line-height:1.8;
+}
+
+.env-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.env-button{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:13px 23px;
+    border-radius:9px;
+
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+
+    transition:.2s;
+}
+
+.env-button:hover{
+    transform:translateY(-2px);
+}
+
+.env-button.green{
+    background:#24834b;
+}
+
+.env-button.orange{
+    background:#ff7900;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.env-footer{
+    background:#092e60;
+    color:#fff;
+    padding:45px 0 0;
+}
+
+.env-footer-inner{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr 1.3fr;
+    gap:35px;
+}
+
+.env-footer-logo{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+    margin-bottom:10px;
+}
+
+.env-footer h3,
+.env-footer h4{
+    margin:0 0 13px;
+    color:#fff;
+}
+
+.env-footer p{
+    margin:0 0 9px;
+    color:#dbe5ef;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.env-footer a{
+    display:block;
+    color:#dbe5ef;
+    font-size:13px;
+    margin-bottom:8px;
+}
+
+.env-footer a:hover{
+    color:#72c681;
+}
+
+.env-footer-bottom{
+    margin-top:35px;
+    padding:17px 0;
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    text-align:center;
+    color:#dbe5ef;
+    font-size:12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1150px){
+
+    .env-header-inner{
+        flex-direction:column;
+        padding:18px 0;
+    }
+
+    .env-login{
+        width:100%;
+        justify-content:center;
+    }
+
+    .env-intro{
+        grid-template-columns:1fr;
+    }
+
+    .env-process-grid{
+        grid-template-columns:repeat(3,1fr);
+        row-gap:25px;
+    }
+
+    .env-footer-inner{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:850px){
+
+    .env-contact span:first-child{
+        display:none;
+    }
+
+    .env-brand{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .env-brand-text h1{
+        font-size:31px;
+    }
+
+    .env-card-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .env-campaign-box{
+        grid-template-columns:1fr;
+        text-align:center;
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    .env-login{
+        flex-direction:column;
+    }
+
+    .env-login-card{
+        width:100%;
+        max-width:350px;
+    }
+
+    .env-nav-inner{
+        width:100%;
+        overflow-x:auto;
+    }
+
+    .env-nav-link{
+        padding:0 12px;
+        font-size:12px;
+    }
+
+    .env-hero{
+        padding:38px 22px;
+    }
+
+    .env-hero h1{
+        font-size:35px;
+    }
+
+    .env-hero p{
+        font-size:15px;
+    }
+
+    .env-card-grid{
+        grid-template-columns:1fr;
+    }
+
+    .env-process-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .env-campaign-list{
+        grid-template-columns:1fr;
+        text-align:left;
+    }
+
+    .env-footer-inner{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+@media(max-width:430px){
+
+    .env-brand-text h1{
+        font-size:27px;
+    }
+
+    .env-hero h1{
+        font-size:30px;
+    }
+
+    .env-process-grid{
+        grid-template-columns:1fr;
+    }
+
+    .env-promise-box{
+        padding:28px 18px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body class="environment-page">
+
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="env-topbar">
+
+    <div class="env-topbar-inner">
+
+        <div class="env-contact">
+
+            <span>
+                <i class="fa-solid fa-envelope"></i>
+                info.yssfoundation@gmail.com
+            </span>
+
+            <span>
+                <i class="fa-solid fa-location-dot"></i>
+                ग्राम नैपुरा, पोस्ट कौड़ाही,
+                जिला अम्बेडकर नगर, उत्तर प्रदेश – 224129
+            </span>
+
+        </div>
+
+
+        <div class="env-social">
+
+            <a href="#">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="#">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="#">
+                <i class="fab fa-youtube"></i>
+            </a>
+
+            <a href="#">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <span class="env-phone">
+                <i class="fa-solid fa-phone"></i>
+                9651731313
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="env-header">
+
+    <div class="env-header-inner">
+
+        <a href="index.html" class="env-brand">
+
+            <img
+                src="images/logo.png"
+                alt="युवा सेवा संकल्प फाउंडेशन"
+                class="env-brand-logo">
+
+            <div class="env-brand-text">
+
+                <h1>
+                    युवा सेवा संकल्प
+                    <span>फाउंडेशन</span>
+                </h1>
+
+                <p>युवा शक्ति - राष्ट्र शक्ति</p>
+
+            </div>
+
+        </a>
+
+
+        <div class="env-login">
+
+            <a href="member-login.html"
+               class="env-login-card env-member">
+
+                <div class="env-login-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="env-login-text">
+                    <strong>सदस्य Login</strong>
+                    <small>अपने खाते में लॉगिन करें</small>
+                </div>
+
+            </a>
+
+
+            <a href="volunteer-login.html"
+               class="env-login-card env-volunteer">
+
+                <div class="env-login-icon">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+
+                <div class="env-login-text">
+                    <strong>Volunteer Login</strong>
+                    <small>सेवा करने के लिए जुड़ें</small>
+                </div>
+
+            </a>
+
+
+            <a href="admin-login.html"
+               class="env-login-card env-admin">
+
+                <div class="env-login-icon">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+
+                <div class="env-login-text">
+                    <strong>Admin Login</strong>
+                    <small>Admin Panel</small>
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="env-nav">
+
+    <div class="env-nav-inner">
+
+        <a href="index.html"
+           class="env-nav-link">
+
+            <i class="fa-solid fa-house"></i>
+            होम
+
+        </a>
+
+
+        <div class="env-dropdown">
+
+            <a href="about.html"
+               class="env-nav-link">
+
+                संस्था के बारे में
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </a>
+
+            <div class="env-dropdown-menu">
+
+                <a href="about.html">हमारे बारे में</a>
+                <a href="mission.html">हमारा मिशन</a>
+                <a href="vision.html">हमारा विजन</a>
+                <a href="team.html">हमारी टीम</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="env-dropdown">
+
+            <a href="#"
+               class="env-nav-link active">
+
+                हमारे कार्य
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </a>
+
+            <div class="env-dropdown-menu">
+
+                <a href="education.html">शिक्षा</a>
+                <a href="health.html">स्वास्थ्य</a>
+                <a href="environment.html">पर्यावरण</a>
+                <a href="women.html">महिला सशक्तिकरण</a>
+                <a href="youth.html">युवा विकास</a>
+                <a href="social-service.html">समाज सेवा</a>
+
+            </div>
+
+        </div>
+
+
+        <a href="volunteer.html"
+           class="env-nav-link">
+            वॉलंटियर
+        </a>
+
+        <a href="membership.html"
+           class="env-nav-link">
+            सदस्यता
+        </a>
+
+        <a href="news.html"
+           class="env-nav-link">
+            समाचार
+        </a>
+
+        <a href="events.html"
+           class="env-nav-link">
+            आगामी कार्यक्रम
+        </a>
+
+        <a href="gallery.html"
+           class="env-nav-link">
+            गैलरी
+        </a>
+
+        <a href="contact.html"
+           class="env-nav-link">
+            संपर्क करें
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     BREADCRUMB
+===================================================== -->
+
+<div class="env-breadcrumb">
+
+    <div class="env-breadcrumb-inner">
+
+        <a href="index.html">होम</a>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <span>हमारे कार्य</span>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <strong>पर्यावरण संरक्षण</strong>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="env-hero">
+
+    <div class="env-hero-content">
+
+        <div class="env-hero-badge">
+            <i class="fa-solid fa-leaf"></i>
+            Green Future Initiative
+        </div>
+
+        <h1>पर्यावरण संरक्षण</h1>
+
+        <div class="env-hero-line"></div>
+
+        <p>
+            स्वच्छ, हरित और सुरक्षित भविष्य के लिए
+            प्रकृति के संरक्षण, वृक्षारोपण, जल बचत और
+            पर्यावरण जागरूकता को जनभागीदारी से आगे बढ़ाना।
+        </p>
+
+        <div class="env-hero-quote">
+            🌱 आज एक पौधा, कल एक सुरक्षित भविष्य
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="env-intro">
+
+    <div class="env-intro-text">
+
+        <h2>
+            हमारा पर्यावरणीय संकल्प
+        </h2>
+
+        <p>
+            युवा सेवा संकल्प फाउंडेशन का मानना है कि
+            स्वस्थ जीवन और मजबूत समाज के लिए स्वच्छ
+            पर्यावरण अत्यंत आवश्यक है।
+        </p>
+
+        <p>
+            हमारा प्रयास लोगों को प्रकृति के प्रति
+            जागरूक बनाना और उन्हें पर्यावरण संरक्षण के
+            छोटे-छोटे लेकिन प्रभावी कार्यों से जोड़ना है।
+        </p>
+
+        <p>
+            वृक्षारोपण, स्वच्छता, जल संरक्षण, प्लास्टिक
+            के प्रति जागरूकता और सामुदायिक भागीदारी के
+            माध्यम से हम एक हरित और जिम्मेदार समाज की
+            दिशा में सकारात्मक प्रयास करना चाहते हैं।
+        </p>
+
+    </div>
+
+
+    <div class="env-green-box">
+
+        <div class="env-green-icon">
+            <i class="fa-solid fa-seedling"></i>
+        </div>
+
+        <h3>हरित भारत का संकल्प</h3>
+
+        <p>
+            प्रकृति की रक्षा केवल एक अभियान नहीं,
+            बल्कि आने वाली पीढ़ियों के प्रति हमारी
+            जिम्मेदारी है।
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ENVIRONMENT PILLARS
+===================================================== -->
+
+<section class="env-pillars">
+
+    <div class="env-heading">
+
+        <h2>पर्यावरण संरक्षण के प्रमुख क्षेत्र</h2>
+
+        <p>
+            हमारा उद्देश्य केवल जागरूकता फैलाना नहीं,
+            बल्कि लोगों को पर्यावरण के लिए वास्तविक
+            और सकारात्मक कार्यों से जोड़ना है।
+        </p>
+
+    </div>
+
+
+    <div class="env-card-grid">
+
+
+        <!-- TREE -->
+
+        <div class="env-card">
+
+            <div class="env-card-icon">
+                <i class="fa-solid fa-tree"></i>
+            </div>
+
+            <h3>वृक्षारोपण</h3>
+
+            <p>
+                अधिक से अधिक पौधे लगाने और उनकी देखभाल
+                के प्रति लोगों को जिम्मेदार बनाना।
+            </p>
+
+            <ul>
+                <li>वृक्षारोपण अभियान</li>
+                <li>पौधों की देखभाल</li>
+                <li>हरित क्षेत्र बढ़ाने का प्रयास</li>
+            </ul>
+
+        </div>
+
+
+        <!-- WATER -->
+
+        <div class="env-card">
+
+            <div class="env-card-icon">
+                <i class="fa-solid fa-droplet"></i>
+            </div>
+
+            <h3>जल संरक्षण</h3>
+
+            <p>
+                जल के महत्व को समझाते हुए उसके
+                जिम्मेदार उपयोग और संरक्षण के लिए
+                जागरूकता फैलाना।
+            </p>
+
+            <ul>
+                <li>जल बचाओ जागरूकता</li>
+                <li>वर्षा जल संरक्षण</li>
+                <li>जल प्रदूषण के प्रति जागरूकता</li>
+            </ul>
+
+        </div>
+
+
+        <!-- CLEANLINESS -->
+
+        <div class="env-card">
+
+            <div class="env-card-icon">
+                <i class="fa-solid fa-broom"></i>
+            </div>
+
+            <h3>स्वच्छता अभियान</h3>
+
+            <p>
+                स्वच्छ गांव, स्वच्छ सड़क और स्वच्छ
+                सार्वजनिक स्थानों के लिए सामुदायिक
+                भागीदारी को बढ़ावा देना।
+            </p>
+
+            <ul>
+                <li>स्वच्छता अभियान</li>
+                <li>सार्वजनिक स्थानों की सफाई</li>
+                <li>स्वच्छता जागरूकता</li>
+            </ul>
+
+        </div>
+
+
+        <!-- PLASTIC -->
+
+        <div class="env-card">
+
+            <div class="env-card-icon">
+                <i class="fa-solid fa-recycle"></i>
+            </div>
+
+            <h3>प्लास्टिक जागरूकता</h3>
+
+            <p>
+                प्लास्टिक के अत्यधिक उपयोग से होने वाले
+                पर्यावरणीय नुकसान के प्रति समाज को
+                जागरूक करना।
+            </p>
+
+            <ul>
+                <li>कम प्लास्टिक उपयोग</li>
+                <li>पुन: उपयोग की जागरूकता</li>
+                <li>स्वच्छ विकल्पों को बढ़ावा</li>
+            </ul>
+
+        </div>
+
+
+        <!-- CLIMATE -->
+
+        <div class="env-card">
+
+            <div class="env-card-icon">
+                <i class="fa-solid fa-cloud-sun"></i>
+            </div>
+
+            <h3>जलवायु जागरूकता</h3>
+
+            <p>
+                बदलते पर्यावरण और जलवायु के प्रति
+                लोगों को जिम्मेदार जीवनशैली अपनाने
+                के लिए प्रेरित करना।
+            </p>
+
+            <ul>
+                <li>पर्यावरण शिक्षा</li>
+                <li>जागरूकता कार्यक्रम</li>
+                <li>हरित जीवनशैली</li>
+            </ul>
+
+        </div>
+
+
+        <!-- COMMUNITY -->
+
+        <div class="env-card">
+
+            <div class="env-card-icon">
+                <i class="fa-solid fa-people-group"></i>
+            </div>
+
+            <h3>जनभागीदारी</h3>
+
+            <p>
+                युवाओं, सदस्यों और स्थानीय समुदाय को
+                पर्यावरण संरक्षण की गतिविधियों से
+                सक्रिय रूप से जोड़ना।
+            </p>
+
+            <ul>
+                <li>Volunteer अभियान</li>
+                <li>सामुदायिक कार्यक्रम</li>
+                <li>युवा पर्यावरण नेतृत्व</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GREEN CAMPAIGN
+===================================================== -->
+
+<section class="env-campaign">
+
+    <div class="env-campaign-box">
+
+        <div class="env-campaign-icon">
+            <i class="fa-solid fa-earth-asia"></i>
+        </div>
+
+
+        <div class="env-campaign-content">
+
+            <h2>हमारा हरित अभियान</h2>
+
+            <p>
+                हम चाहते हैं कि पर्यावरण संरक्षण केवल
+                एक दिन का कार्यक्रम न रहे, बल्कि प्रत्येक
+                व्यक्ति की दैनिक जिम्मेदारी बने। इसलिए
+                हमारे अभियान जागरूकता, भागीदारी और
+                निरंतर प्रयास पर आधारित हैं।
+            </p>
+
+
+            <div class="env-campaign-list">
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    वृक्षारोपण एवं पौध संरक्षण
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    स्वच्छता एवं जनजागरूकता
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    जल संरक्षण का संदेश
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-check"></i>
+                    युवाओं की सक्रिय भागीदारी
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROCESS
+===================================================== -->
+
+<section class="env-process">
+
+    <div class="env-process-box">
+
+        <div class="env-heading">
+
+            <h2>हम पर्यावरण अभियान कैसे चलाते हैं?</h2>
+
+            <p>
+                आवश्यकता की पहचान से लेकर जनभागीदारी
+                और समीक्षा तक हमारा प्रयास एक व्यवस्थित
+                और जिम्मेदार प्रक्रिया पर आधारित है।
+            </p>
+
+        </div>
+
+
+        <div class="env-process-grid">
+
+
+            <div class="env-step">
+
+                <div class="env-step-number">01</div>
+
+                <h3>क्षेत्र पहचान</h3>
+
+                <p>
+                    स्थानीय पर्यावरणीय जरूरतों को समझना।
+                </p>
+
+            </div>
+
+
+            <div class="env-step">
+
+                <div class="env-step-number">02</div>
+
+                <h3>योजना</h3>
+
+                <p>
+                    अभियान और कार्ययोजना तैयार करना।
+                </p>
+
+            </div>
+
+
+            <div class="env-step">
+
+                <div class="env-step-number">03</div>
+
+                <h3>जनभागीदारी</h3>
+
+                <p>
+                    युवाओं और समुदाय को जोड़ना।
+                </p>
+
+            </div>
+
+
+            <div class="env-step">
+
+                <div class="env-step-number">04</div>
+
+                <h3>अभियान</h3>
+
+                <p>
+                    वृक्षारोपण और जागरूकता कार्यक्रम।
+                </p>
+
+            </div>
+
+
+            <div class="env-step">
+
+                <div class="env-step-number">05</div>
+
+                <h3>देखभाल</h3>
+
+                <p>
+                    कार्यों की समीक्षा और निरंतर प्रयास।
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROMISE
+===================================================== -->
+
+<section class="env-promise">
+
+    <div class="env-promise-box">
+
+        <h2>आइए, धरती के लिए अपना संकल्प लें</h2>
+
+        <p>
+            एक पौधा लगाना, पानी बचाना, स्वच्छता अपनाना
+            और प्रकृति के प्रति जिम्मेदार होना—ये छोटे
+            कदम मिलकर एक बड़े और सुरक्षित भविष्य का
+            निर्माण कर सकते हैं।
+        </p>
+
+
+        <div class="env-buttons">
+
+            <a href="volunteer.html"
+               class="env-button green">
+
+                <i class="fa-solid fa-handshake"></i>
+                पर्यावरण Volunteer बनें
+
+            </a>
+
+
+            <a href="membership.html"
+               class="env-button orange">
+
+                <i class="fa-solid fa-user-plus"></i>
+                सदस्य बनें
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="env-footer">
+
+    <div class="env-footer-inner">
+
+
+        <div>
+
+            <img
+                src="images/logo.png"
+                alt="YSS Foundation"
+                class="env-footer-logo">
+
+            <h3>
+                युवा सेवा संकल्प फाउंडेशन
+            </h3>
+
+            <p>
+                सेवा, समर्पण और संस्कार के साथ
+                समाज एवं राष्ट्र निर्माण की दिशा में
+                सकारात्मक प्रयास।
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>महत्वपूर्ण लिंक</h4>
+
+            <a href="index.html">होम</a>
+            <a href="about.html">हमारे बारे में</a>
+            <a href="mission.html">हमारा मिशन</a>
+            <a href="vision.html">हमारा विजन</a>
+            <a href="membership.html">सदस्यता</a>
+            <a href="contact.html">संपर्क करें</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>हमारे कार्य</h4>
+
+            <a href="education.html">शिक्षा</a>
+            <a href="health.html">स्वास्थ्य</a>
+            <a href="environment.html">पर्यावरण संरक्षण</a>
+            <a href="women.html">महिला सशक्तिकरण</a>
+            <a href="youth.html">युवा विकास</a>
+            <a href="social-service.html">समाज सेवा</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>संपर्क करें</h4>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                ग्राम नैपुरा, पोस्ट कौड़ाही,
+                जिला अम्बेडकर नगर,
+                उत्तर प्रदेश – 224129
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                9651731313
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                info.yssfoundation@gmail.com
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="env-footer-bottom">
+
+        © 2026 युवा सेवा संकल्प फाउंडेशन |
+        सर्वाधिकार सुरक्षित |
+        <strong>युवा शक्ति - राष्ट्र शक्ति</strong>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
