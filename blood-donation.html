@@ -1,51 +1,78 @@
 <!DOCTYPE html>
-
 <html lang="hi">
 
 <head>
-
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>
+    <title>रक्तदान | युवा सेवा संकल्प फाउंडेशन</title>
 
-        रक्तदान पंजीकरण | युवा सेवा संकल्प फाउंडेशन
+    <meta name="description"
+          content="युवा सेवा संकल्प फाउंडेशन के साथ रक्तदान अभियान से जुड़ें और जरूरतमंद लोगों की मदद करें।">
 
-    </title>
+    <link rel="icon" href="images/logo.png">
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
 
-    <!-- MAIN CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
+    <link rel="stylesheet" href="style.css">
 </head>
 
 
 <body>
 
 
-<!-- =====================================
+<!-- =========================================
      TOP BAR
-===================================== -->
+========================================= -->
 
 <div class="top-bar">
 
-    <div class="container">
+    <div class="container top-bar-inner">
 
-        <div class="left">
+        <div class="top-contact">
 
-            📧 yuvasevasankalp2026@gmail.com
+            <a href="tel:+919651731313">
+                <i class="fa-solid fa-phone"></i>
+                +91 9651 731 313
+            </a>
 
-            |
+            <a href="mailto:info.yssfoundation@gmail.com">
+                <i class="fa-solid fa-envelope"></i>
+                info.yssfoundation@gmail.com
+            </a>
 
-            📞 +91 9651731313
+        </div>
+
+
+        <div class="top-social">
+
+            <span>हमसे जुड़ें:</span>
+
+            <a href="#" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="#" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+
+            <a href="#" aria-label="WhatsApp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
 
         </div>
 
@@ -54,397 +81,1294 @@
 </div>
 
 
-<!-- =====================================
+<!-- =========================================
      HEADER
-===================================== -->
+========================================= -->
 
-<header class="header">
+<header class="main-header">
 
-    <div class="header-content">
+    <div class="container header-inner">
+
+        <a href="index.html" class="brand">
+
+            <img src="images/logo.png"
+                 alt="युवा सेवा संकल्प फाउंडेशन">
+
+            <div class="brand-text">
+
+                <h1>
+                    युवा सेवा
+                    <span>संकल्प</span>
+                    <strong>फाउंडेशन</strong>
+                </h1>
+
+                <p>
+                    युवा शक्ति - राष्ट्र शक्ति
+                </p>
+
+            </div>
+
+        </a>
 
 
-        <img
-            src="images/logo.png"
-            class="logo"
-            alt="युवा सेवा संकल्प फाउंडेशन लोगो"
-        >
+        <div class="header-actions">
+
+            <a href="member-login.html"
+               class="header-action member-action">
+
+                <i class="fa-solid fa-user"></i>
+
+                <span>
+                    <b>सदस्य Login</b>
+                    <small>अपने खाते में जाएँ</small>
+                </span>
+
+            </a>
 
 
-        <div class="title">
+            <a href="volunteer-login.html"
+               class="header-action volunteer-action">
+
+                <i class="fa-solid fa-hands-helping"></i>
+
+                <span>
+                    <b>Volunteer Login</b>
+                    <small>सेवा गतिविधियाँ</small>
+                </span>
+
+            </a>
 
 
-            <h1 class="main-title">
+            <a href="admin-login.html"
+               class="donate-button admin-login-button">
 
-                युवा सेवा संकल्प फाउंडेशन
+                <i class="fa-solid fa-user-shield"></i>
 
-            </h1>
+                <span>
+                    <b>Admin Login</b>
+                    <small>Admin Panel</small>
+                </span>
 
-
-            <p class="tagline">
-
-                युवा शक्ति, राष्ट्र शक्ति
-
-            </p>
-
+            </a>
 
         </div>
-
 
     </div>
 
 </header>
 
 
-<!-- =====================================
-     BLOOD DONATION REGISTRATION
-===================================== -->
+<!-- =========================================
+     NAVIGATION
+========================================= -->
 
-<section class="blood-donation-section">
+<nav class="main-nav">
 
+    <div class="container nav-inner">
 
-    <div class="blood-donation-box">
+        <button class="mobile-menu-btn"
+                id="mobileMenuBtn"
+                aria-label="Menu">
 
+            <i class="fa-solid fa-bars"></i>
 
-        <h2>
+        </button>
 
-            🩸 रक्तदान पंजीकरण
 
-        </h2>
+        <ul class="nav-menu" id="navMenu">
 
+            <li>
+                <a href="index.html">
+                    <i class="fa-solid fa-house"></i>
+                    होम
+                </a>
+            </li>
 
-        <p class="blood-intro">
 
-            रक्तदान महादान है। जरूरतमंद लोगों की सहायता के लिए
-            रक्तदाता के रूप में अपना पंजीकरण करें।
+            <li class="dropdown">
 
-        </p>
+                <a href="#">
+                    संस्था के बारे में
+                    <i class="fa-solid fa-chevron-down"></i>
+                </a>
 
+                <ul class="dropdown-menu">
 
-        <form id="bloodDonationForm">
+                    <li>
+                        <a href="about.html">हमारे बारे में</a>
+                    </li>
 
+                    <li>
+                        <a href="mission.html">हमारा मिशन</a>
+                    </li>
 
-            <!-- FULL NAME -->
+                    <li>
+                        <a href="vision.html">हमारा विजन</a>
+                    </li>
 
-            <div class="form-group">
+                    <li>
+                        <a href="team.html">हमारी टीम</a>
+                    </li>
 
+                </ul>
 
-                <label for="donorName">
+            </li>
 
-                    पूरा नाम
 
-                </label>
+            <li class="dropdown">
 
+                <a href="#">
+                    हमारे कार्य
+                    <i class="fa-solid fa-chevron-down"></i>
+                </a>
 
-                <input
-                    type="text"
-                    id="donorName"
-                    placeholder="अपना पूरा नाम लिखें"
-                    required
-                >
+                <ul class="dropdown-menu">
 
+                    <li>
+                        <a href="education.html">शिक्षा</a>
+                    </li>
 
-            </div>
+                    <li>
+                        <a href="health.html">स्वास्थ्य</a>
+                    </li>
 
+                    <li>
+                        <a href="environment.html">पर्यावरण</a>
+                    </li>
 
-            <!-- MOBILE NUMBER -->
+                    <li>
+                        <a href="social-service.html">समाज सेवा</a>
+                    </li>
 
-            <div class="form-group">
+                    <li>
+                        <a href="blood-donation.html"
+                           class="active">रक्तदान</a>
+                    </li>
 
+                </ul>
 
-                <label for="donorMobile">
+            </li>
 
-                    मोबाइल नंबर
 
-                </label>
+            <li>
+                <a href="volunteer.html">
+                    वॉलंटियर
+                </a>
+            </li>
 
 
-                <input
-                    type="tel"
-                    id="donorMobile"
-                    placeholder="10 अंकों का मोबाइल नंबर"
-                    maxlength="10"
-                    pattern="[0-9]{10}"
-                    required
-                >
+            <li>
+                <a href="membership.html">
+                    सदस्य बनें
+                </a>
+            </li>
 
 
-            </div>
+            <li>
+                <a href="news.html">
+                    समाचार
+                </a>
+            </li>
 
 
-            <!-- BLOOD GROUP -->
+            <li>
+                <a href="events.html">
+                    आगामी कार्यक्रम
+                </a>
+            </li>
 
-            <div class="form-group">
 
+            <li>
+                <a href="gallery.html">
+                    गैलरी
+                </a>
+            </li>
 
-                <label for="bloodGroup">
 
-                    रक्त समूह
+            <li>
+                <a href="contact.html">
+                    संपर्क करें
+                </a>
+            </li>
 
-                </label>
-
-
-                <select
-                    id="bloodGroup"
-                    required
-                >
-
-
-                    <option value="">
-
-                        रक्त समूह चुनें
-
-                    </option>
-
-
-                    <option value="A+">
-
-                        A+
-
-                    </option>
-
-
-                    <option value="A-">
-
-                        A-
-
-                    </option>
-
-
-                    <option value="B+">
-
-                        B+
-
-                    </option>
-
-
-                    <option value="B-">
-
-                        B-
-
-                    </option>
-
-
-                    <option value="AB+">
-
-                        AB+
-
-                    </option>
-
-
-                    <option value="AB-">
-
-                        AB-
-
-                    </option>
-
-
-                    <option value="O+">
-
-                        O+
-
-                    </option>
-
-
-                    <option value="O-">
-
-                        O-
-
-                    </option>
-
-
-                </select>
-
-
-            </div>
-
-
-            <!-- AGE -->
-
-            <div class="form-group">
-
-
-                <label for="donorAge">
-
-                    उम्र
-
-                </label>
-
-
-                <input
-                    type="number"
-                    id="donorAge"
-                    placeholder="अपनी उम्र लिखें"
-                    min="18"
-                    max="65"
-                    required
-                >
-
-
-            </div>
-
-
-            <!-- ADDRESS -->
-
-            <div class="form-group">
-
-
-                <label for="donorAddress">
-
-                    पूरा पता
-
-                </label>
-
-
-                <textarea
-                    id="donorAddress"
-                    placeholder="गाँव, पोस्ट, तहसील, जिला और राज्य लिखें"
-                    rows="4"
-                    required
-                ></textarea>
-
-
-            </div>
-
-
-            <!-- LAST BLOOD DONATION -->
-
-            <div class="form-group">
-
-
-                <label for="lastDonation">
-
-                    अंतिम रक्तदान की तारीख
-
-                </label>
-
-
-                <input
-                    type="date"
-                    id="lastDonation"
-                >
-
-
-                <small>
-
-                    अगर पहले कभी रक्तदान नहीं किया है,
-                    तो इसे खाली छोड़ दें।
-
-                </small>
-
-
-            </div>
-
-
-            <!-- CONSENT -->
-
-            <div class="blood-consent">
-
-
-                <input
-                    type="checkbox"
-                    id="donorConsent"
-                    required
-                >
-
-
-                <label for="donorConsent">
-
-                    मैं अपनी जानकारी रक्तदान से संबंधित
-                    संपर्क और सहायता के लिए उपयोग करने की
-                    सहमति देता/देती हूँ।
-
-                </label>
-
-
-            </div>
-
-
-            <!-- MESSAGE -->
-
-            <p
-                id="bloodMessage"
-                class="blood-message"
-            ></p>
-
-
-            <!-- SUBMIT BUTTON -->
-
-            <button
-                type="submit"
-                class="blood-submit-btn"
-            >
-
-                🩸 रक्तदाता के रूप में पंजीकरण करें
-
-            </button>
-
-
-        </form>
-
-
-        <!-- BACK HOME -->
-
-        <a
-            href="index.html"
-            class="back-home"
-        >
-
-            ← होम पेज पर जाएँ
-
-        </a>
-
+        </ul>
 
     </div>
 
+</nav>
+
+
+<!-- =========================================
+     PAGE HERO
+========================================= -->
+
+<section class="page-hero blood-page-hero">
+
+    <div class="container">
+
+        <div class="page-hero-content">
+
+            <span>
+                <i class="fa-solid fa-droplet"></i>
+                रक्तदान महादान
+            </span>
+
+            <h1>
+                रक्तदान से बचाएँ
+                <strong>किसी की जिंदगी</strong>
+            </h1>
+
+            <p>
+                आपका एक छोटा सा रक्तदान किसी जरूरतमंद व्यक्ति
+                के लिए जीवन का सबसे बड़ा उपहार बन सकता है।
+            </p>
+
+
+            <div class="page-breadcrumb">
+
+                <a href="index.html">
+                    होम
+                </a>
+
+                <i class="fa-solid fa-angle-right"></i>
+
+                <span>
+                    रक्तदान
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
 
 </section>
 
 
-<!-- =====================================
+<!-- =========================================
+     INTRODUCTION
+========================================= -->
+
+<section class="section blood-intro-section">
+
+    <div class="container">
+
+        <div class="blood-intro-grid">
+
+            <div class="blood-intro-image">
+
+                <div class="blood-image-icon">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                </div>
+
+            </div>
+
+
+            <div class="blood-intro-content">
+
+                <span class="section-tag">
+                    जीवन बचाने का संकल्प
+                </span>
+
+                <h2>
+                    रक्तदान क्यों जरूरी है?
+                </h2>
+
+                <p>
+                    दुर्घटना, गंभीर बीमारी, ऑपरेशन और अनेक
+                    आपातकालीन परिस्थितियों में मरीजों को रक्त
+                    की आवश्यकता होती है।
+                </p>
+
+                <p>
+                    रक्त का कोई कृत्रिम विकल्प नहीं है। इसलिए
+                    स्वस्थ लोगों द्वारा किया गया स्वैच्छिक रक्तदान
+                    जरूरतमंद लोगों के लिए अत्यंत महत्वपूर्ण है।
+                </p>
+
+
+                <div class="blood-highlight-grid">
+
+                    <div class="blood-highlight">
+
+                        <i class="fa-solid fa-heart"></i>
+
+                        <span>
+                            जीवन बचाने में सहयोग
+                        </span>
+
+                    </div>
+
+
+                    <div class="blood-highlight">
+
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+
+                        <span>
+                            मानवता की सेवा
+                        </span>
+
+                    </div>
+
+
+                    <div class="blood-highlight">
+
+                        <i class="fa-solid fa-people-group"></i>
+
+                        <span>
+                            समाज के लिए योगदान
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <a href="#bloodRegistration"
+                   class="btn btn-primary">
+
+                    <i class="fa-solid fa-droplet"></i>
+                    रक्तदाता के रूप में जुड़ें
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     BLOOD FACTS
+========================================= -->
+
+<section class="blood-facts-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>
+                रक्तदान का संदेश
+            </span>
+
+            <h2>
+                आपका रक्त, किसी की उम्मीद
+            </h2>
+
+            <div class="title-line">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+
+        </div>
+
+
+        <div class="blood-facts-grid">
+
+            <div class="blood-fact-card">
+
+                <div class="blood-fact-icon">
+
+                    <i class="fa-solid fa-heart-pulse"></i>
+
+                </div>
+
+                <h3>
+                    जीवन की रक्षा
+                </h3>
+
+                <p>
+                    रक्त की आवश्यकता वाले मरीजों की सहायता
+                    में आपका योगदान महत्वपूर्ण हो सकता है।
+                </p>
+
+            </div>
+
+
+            <div class="blood-fact-card">
+
+                <div class="blood-fact-icon">
+
+                    <i class="fa-solid fa-users"></i>
+
+                </div>
+
+                <h3>
+                    मानवता की सेवा
+                </h3>
+
+                <p>
+                    स्वैच्छिक रक्तदान समाज के प्रति जिम्मेदारी
+                    और मानवता की सच्ची सेवा है।
+                </p>
+
+            </div>
+
+
+            <div class="blood-fact-card">
+
+                <div class="blood-fact-icon">
+
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+
+                </div>
+
+                <h3>
+                    जरूरत के समय साथ
+                </h3>
+
+                <p>
+                    आपका पंजीकरण आवश्यकता के समय
+                    रक्त सहायता अभियान से जुड़ने में मदद करेगा।
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     ELIGIBILITY
+========================================= -->
+
+<section class="section blood-eligibility-section">
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <span>
+                जानकारी
+            </span>
+
+            <h2>
+                रक्तदान से पहले ध्यान रखें
+            </h2>
+
+            <div class="title-line">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+        </div>
+
+
+        <div class="eligibility-grid">
+
+
+            <div class="eligibility-card good">
+
+                <div class="eligibility-card-title">
+
+                    <i class="fa-solid fa-check"></i>
+
+                    <h3>
+                        सामान्य आवश्यकताएँ
+                    </h3>
+
+                </div>
+
+                <ul>
+
+                    <li>
+                        रक्तदाता स्वस्थ होना चाहिए।
+                    </li>
+
+                    <li>
+                        रक्तदान के समय मान्य पहचान आवश्यक हो सकती है।
+                    </li>
+
+                    <li>
+                        अंतिम पात्रता जांच स्वास्थ्यकर्मी द्वारा की जाती है।
+                    </li>
+
+                    <li>
+                        रक्तदान से पहले आवश्यक स्वास्थ्य जांच की जाती है।
+                    </li>
+
+                    <li>
+                        रक्तदान मान्यता प्राप्त रक्तदान केंद्र
+                        या स्वास्थ्य शिविर के नियमों के अनुसार करें।
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="eligibility-card caution">
+
+                <div class="eligibility-card-title">
+
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+                    <h3>
+                        महत्वपूर्ण सावधानी
+                    </h3>
+
+                </div>
+
+                <ul>
+
+                    <li>
+                        अस्वस्थ महसूस होने पर रक्तदान न करें।
+                    </li>
+
+                    <li>
+                        अपनी स्वास्थ्य स्थिति सही-सही बताएं।
+                    </li>
+
+                    <li>
+                        किसी बीमारी या दवा की स्थिति में
+                        स्वास्थ्यकर्मी से जानकारी लें।
+                    </li>
+
+                    <li>
+                        अंतिम निर्णय रक्तदान केंद्र की
+                        चिकित्सा टीम का होगा।
+                    </li>
+
+                    <li>
+                        आपातकालीन स्थिति में स्थानीय अस्पताल
+                        या अधिकृत रक्त बैंक से संपर्क करें।
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     DONOR REGISTRATION
+========================================= -->
+
+<section class="blood-registration-section"
+         id="bloodRegistration">
+
+    <div class="container">
+
+        <div class="blood-registration-grid">
+
+
+            <!-- LEFT -->
+
+            <div class="blood-registration-info">
+
+                <span>
+                    🩸 रक्तदाता पंजीकरण
+                </span>
+
+                <h2>
+                    जीवन बचाने के अभियान से जुड़ें
+                </h2>
+
+                <p>
+                    अपना विवरण दर्ज करें। आवश्यकता पड़ने पर
+                    संस्था के रक्तदान अभियान से संपर्क किया जा सकता है।
+                </p>
+
+
+                <div class="blood-info-list">
+
+                    <div>
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                        <span>
+                            सरल पंजीकरण प्रक्रिया
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="fa-solid fa-shield-heart"></i>
+
+                        <span>
+                            सेवा और मानवता का संकल्प
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="fa-solid fa-phone-volume"></i>
+
+                        <span>
+                            आवश्यकता पड़ने पर संपर्क
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <div class="blood-form-box">
+
+                <h3>
+                    रक्तदाता पंजीकरण फॉर्म
+                </h3>
+
+
+                <form id="bloodDonorForm">
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="donorName">
+                                पूरा नाम *
+                            </label>
+
+                            <input type="text"
+                                   id="donorName"
+                                   placeholder="अपना पूरा नाम लिखें"
+                                   required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="donorMobile">
+                                मोबाइल नंबर *
+                            </label>
+
+                            <input type="tel"
+                                   id="donorMobile"
+                                   placeholder="10 अंकों का नंबर"
+                                   maxlength="10"
+                                   inputmode="numeric"
+                                   required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="donorEmail">
+                                ईमेल
+                            </label>
+
+                            <input type="email"
+                                   id="donorEmail"
+                                   placeholder="ईमेल दर्ज करें">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="donorBloodGroup">
+                                रक्त समूह *
+                            </label>
+
+                            <select id="donorBloodGroup" required>
+
+                                <option value="">
+                                    रक्त समूह चुनें
+                                </option>
+
+                                <option>A+</option>
+                                <option>A-</option>
+                                <option>B+</option>
+                                <option>B-</option>
+                                <option>AB+</option>
+                                <option>AB-</option>
+                                <option>O+</option>
+                                <option>O-</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="donorCity">
+                                शहर / जिला *
+                            </label>
+
+                            <input type="text"
+                                   id="donorCity"
+                                   placeholder="अपना शहर या जिला"
+                                   required>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="donorState">
+                                राज्य *
+                            </label>
+
+                            <input type="text"
+                                   id="donorState"
+                                   placeholder="अपना राज्य"
+                                   required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="donorMessage">
+                            अतिरिक्त संदेश
+                        </label>
+
+                        <textarea id="donorMessage"
+                                  placeholder="यदि कुछ बताना चाहते हैं तो लिखें"></textarea>
+
+                    </div>
+
+
+                    <div class="blood-agreement">
+
+                        <input type="checkbox"
+                               id="donorAgree"
+                               required>
+
+                        <label for="donorAgree">
+                            मैं अपनी जानकारी सही होने की पुष्टि करता/करती हूँ
+                            और रक्तदान संबंधी अंतिम पात्रता जांच
+                            अधिकृत स्वास्थ्यकर्मी द्वारा किए जाने के लिए सहमत हूँ।
+                        </label>
+
+                    </div>
+
+
+                    <button type="submit"
+                            class="blood-submit-btn">
+
+                        <i class="fa-solid fa-heart"></i>
+
+                        रक्तदाता के रूप में पंजीकरण करें
+
+                    </button>
+
+
+                    <p id="bloodResult"
+                       class="blood-result"></p>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     FINAL CTA
+========================================= -->
+
+<section class="final-cta blood-final-cta">
+
+    <div class="container final-cta-inner">
+
+        <div>
+
+            <span>
+                रक्तदान महादान
+            </span>
+
+            <h2>
+                आपका रक्त, किसी की जिंदगी बचा सकता है
+            </h2>
+
+        </div>
+
+
+        <div class="final-buttons">
+
+            <a href="#bloodRegistration"
+               class="btn btn-green">
+
+                <i class="fa-solid fa-droplet"></i>
+                रक्तदाता बनें
+
+            </a>
+
+
+            <a href="contact.html"
+               class="btn btn-orange">
+
+                <i class="fa-solid fa-phone"></i>
+                संपर्क करें
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
      FOOTER
-===================================== -->
+========================================= -->
 
-<footer>
+<footer class="footer">
 
-
-    <img
-        src="images/logo.png"
-        alt="युवा सेवा संकल्प फाउंडेशन लोगो"
-        width="70"
-    >
+    <div class="container footer-grid">
 
 
-    <h3>
+        <div class="footer-column footer-about">
 
-        युवा सेवा संकल्प फाउंडेशन
+            <a href="index.html"
+               class="footer-logo">
 
-    </h3>
+                <img src="images/logo.png"
+                     alt="युवा सेवा संकल्प फाउंडेशन">
+
+                <span>
+
+                    युवा सेवा संकल्प
+
+                    <strong>
+                        फाउंडेशन
+                    </strong>
+
+                </span>
+
+            </a>
 
 
-    <p>
+            <p>
+                सेवा ही संकल्प, संकल्प ही राष्ट्र निर्माण।
+                युवा शक्ति के साथ समाज सेवा की ओर एक मजबूत कदम।
+            </p>
 
-        युवा शक्ति, राष्ट्र शक्ति
-
-    </p>
+        </div>
 
 
-    <p>
+        <div class="footer-column">
 
-        © 2026 All Rights Reserved
+            <h3>
+                त्वरित लिंक
+            </h3>
 
-    </p>
+            <ul>
 
+                <li>
+                    <a href="index.html">होम</a>
+                </li>
+
+                <li>
+                    <a href="about.html">हमारे बारे में</a>
+                </li>
+
+                <li>
+                    <a href="mission.html">हमारा मिशन</a>
+                </li>
+
+                <li>
+                    <a href="vision.html">हमारा विजन</a>
+                </li>
+
+                <li>
+                    <a href="team.html">हमारी टीम</a>
+                </li>
+
+                <li>
+                    <a href="membership.html">सदस्य बनें</a>
+                </li>
+
+                <li>
+                    <a href="volunteer.html">वॉलंटियर बनें</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="footer-column">
+
+            <h3>
+                हमारे कार्य
+            </h3>
+
+            <ul>
+
+                <li>
+                    <a href="education.html">शिक्षा</a>
+                </li>
+
+                <li>
+                    <a href="health.html">स्वास्थ्य</a>
+                </li>
+
+                <li>
+                    <a href="environment.html">पर्यावरण</a>
+                </li>
+
+                <li>
+                    <a href="social-service.html">समाज सेवा</a>
+                </li>
+
+                <li>
+                    <a href="blood-donation.html">रक्तदान</a>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="footer-column footer-contact">
+
+            <h3>
+                संपर्क जानकारी
+            </h3>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                उत्तर प्रदेश, भारत
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+
+                <a href="tel:+919651731313">
+                    +91 9651 731 313
+                </a>
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+
+                <a href="mailto:info.yssfoundation@gmail.com">
+                    info.yssfoundation@gmail.com
+                </a>
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <div class="container footer-bottom-inner">
+
+            <p>
+                © 2026 युवा सेवा संकल्प फाउंडेशन |
+                सर्वाधिकार सुरक्षित
+            </p>
+
+            <p>
+                युवा शक्ति - राष्ट्र शक्ति
+            </p>
+
+        </div>
+
+    </div>
 
 </footer>
 
 
-<!-- =====================================
-     BLOOD DONATION JAVASCRIPT
-===================================== -->
+<!-- =========================================
+     BACK TO TOP
+========================================= -->
 
-<script src="blood-donation.js"></script>
+<button id="backToTop"
+        class="back-to-top"
+        aria-label="ऊपर जाएँ">
+
+    <i class="fa-solid fa-arrow-up"></i>
+
+</button>
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* MOBILE MENU */
+
+    const menuBtn =
+        document.getElementById("mobileMenuBtn");
+
+    const navMenu =
+        document.getElementById("navMenu");
+
+
+    if (menuBtn && navMenu) {
+
+        menuBtn.addEventListener("click", function () {
+
+            navMenu.classList.toggle("show");
+
+            const icon =
+                menuBtn.querySelector("i");
+
+
+            if (navMenu.classList.contains("show")) {
+
+                icon.classList.remove("fa-bars");
+                icon.classList.add("fa-xmark");
+
+            } else {
+
+                icon.classList.remove("fa-xmark");
+                icon.classList.add("fa-bars");
+
+            }
+
+        });
+
+    }
+
+
+    /* MOBILE DROPDOWN */
+
+    document
+        .querySelectorAll(".dropdown > a")
+        .forEach(function (dropdown) {
+
+            dropdown.addEventListener("click", function (event) {
+
+                if (window.innerWidth <= 900) {
+
+                    event.preventDefault();
+
+                    this.parentElement
+                        .classList
+                        .toggle("open");
+
+                }
+
+            });
+
+        });
+
+
+    /* BLOOD DONOR REGISTRATION */
+
+    const bloodDonorForm =
+        document.getElementById("bloodDonorForm");
+
+
+    if (bloodDonorForm) {
+
+        bloodDonorForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById("donorName")
+                    .value
+                    .trim();
+
+
+                const mobile =
+                    document.getElementById("donorMobile")
+                    .value
+                    .trim();
+
+
+                const email =
+                    document.getElementById("donorEmail")
+                    .value
+                    .trim();
+
+
+                const bloodGroup =
+                    document.getElementById("donorBloodGroup")
+                    .value;
+
+
+                const city =
+                    document.getElementById("donorCity")
+                    .value
+                    .trim();
+
+
+                const state =
+                    document.getElementById("donorState")
+                    .value
+                    .trim();
+
+
+                const message =
+                    document.getElementById("donorMessage")
+                    .value
+                    .trim();
+
+
+                const result =
+                    document.getElementById("bloodResult");
+
+
+                if (!/^[0-9]{10}$/.test(mobile)) {
+
+                    result.innerHTML =
+                        "❌ कृपया सही 10 अंकों का मोबाइल नंबर दर्ज करें।";
+
+                    result.style.color = "#c62828";
+
+                    return;
+
+                }
+
+
+                let donors =
+                    JSON.parse(
+                        localStorage.getItem("bloodDonors")
+                    ) || [];
+
+
+                const donorId =
+                    "YSSF-BD-2026-" +
+                    String(donors.length + 1)
+                    .padStart(4, "0");
+
+
+                const donor = {
+
+                    donorId: donorId,
+
+                    name: name,
+
+                    mobile: mobile,
+
+                    email: email,
+
+                    bloodGroup: bloodGroup,
+
+                    city: city,
+
+                    state: state,
+
+                    message: message,
+
+                    status: "पंजीकृत",
+
+                    registrationDate:
+                        new Date()
+                        .toLocaleDateString("hi-IN")
+
+                };
+
+
+                donors.push(donor);
+
+
+                localStorage.setItem(
+                    "bloodDonors",
+                    JSON.stringify(donors)
+                );
+
+
+                result.innerHTML =
+                    "✅ आपका रक्तदाता पंजीकरण सफलतापूर्वक हो गया।" +
+                    "<br>आपकी Donor ID: <strong>" +
+                    donorId +
+                    "</strong>";
+
+
+                result.style.color = "#198754";
+
+
+                bloodDonorForm.reset();
+
+            }
+        );
+
+    }
+
+
+    /* BACK TO TOP */
+
+    const backToTop =
+        document.getElementById("backToTop");
+
+
+    window.addEventListener("scroll", function () {
+
+        if (backToTop) {
+
+            if (window.scrollY > 500) {
+
+                backToTop.classList.add("show");
+
+            } else {
+
+                backToTop.classList.remove("show");
+
+            }
+
+        }
+
+    });
+
+
+    if (backToTop) {
+
+        backToTop.addEventListener("click", function () {
+
+            window.scrollTo({
+
+                top: 0,
+
+                behavior: "smooth"
+
+            });
+
+        });
+
+    }
+
+
+});
+
+</script>
 
 
 </body>
-
 </html>
