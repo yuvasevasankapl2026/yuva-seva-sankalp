@@ -1,0 +1,2254 @@
+```html
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="युवा सेवा संकल्प फाउंडेशन - हमारा मिशन, समाज सेवा, शिक्षा, स्वास्थ्य, पर्यावरण, महिला सशक्तिकरण और युवा विकास।">
+
+<title>हमारा मिशन | युवा सेवा संकल्प फाउंडेशन</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+
+
+<style>
+
+/* =========================================================
+   YSS FOUNDATION
+   MISSION PAGE
+========================================================= */
+
+.mission-page{
+    margin:0;
+    background:#f5f8fb;
+    color:#263746;
+    font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+}
+
+.mission-page *,
+.mission-page *::before,
+.mission-page *::after{
+    box-sizing:border-box;
+}
+
+.mission-page a{
+    text-decoration:none;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.mission-topbar{
+    background:#123b66;
+    color:#fff;
+    min-height:42px;
+}
+
+.mission-topbar-inner{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+
+    min-height:42px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+.mission-contact{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.mission-contact span{
+    display:flex;
+    align-items:center;
+    gap:7px;
+
+    font-size:13px;
+}
+
+.mission-contact i{
+    color:#ffb15c;
+}
+
+.mission-social{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+
+.mission-social a{
+    color:#fff;
+}
+
+.mission-social a:hover{
+    color:#ff7900;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.mission-header{
+    background:#fff;
+    border-bottom:1px solid #e3e9ef;
+}
+
+.mission-header-inner{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+
+    min-height:135px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:30px;
+}
+
+.mission-brand{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.mission-brand-logo{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+}
+
+.mission-brand-text h1{
+    margin:0;
+
+    color:#123b66;
+
+    font-size:39px;
+    line-height:1.15;
+
+    font-weight:800;
+}
+
+.mission-brand-text h1 span{
+    color:#ff7900;
+}
+
+.mission-brand-text p{
+    margin:7px 0 0;
+
+    color:#123b66;
+
+    font-size:17px;
+    font-weight:700;
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+.mission-login{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.mission-login-card{
+    min-width:170px;
+    min-height:66px;
+
+    padding:10px 14px;
+
+    background:#fff;
+
+    border:1px solid #dce4eb;
+    border-radius:12px;
+
+    display:flex;
+    align-items:center;
+    gap:11px;
+
+    color:#123b66;
+
+    transition:.25s;
+}
+
+.mission-login-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 22px rgba(18,59,102,.12);
+}
+
+.mission-login-icon{
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:21px;
+}
+
+.mission-member .mission-login-icon{
+    color:#24834b;
+    background:#eaf7ed;
+}
+
+.mission-volunteer .mission-login-icon{
+    color:#123b66;
+    background:#eaf1fa;
+}
+
+.mission-admin{
+    background:#ff7900;
+    border-color:#ff7900;
+    color:#fff;
+}
+
+.mission-admin .mission-login-icon{
+    color:#fff;
+    background:rgba(255,255,255,.15);
+}
+
+.mission-login-text{
+    display:flex;
+    flex-direction:column;
+}
+
+.mission-login-text strong{
+    font-size:15px;
+}
+
+.mission-login-text small{
+    font-size:10px;
+    margin-top:3px;
+    opacity:.75;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.mission-nav{
+    background:#082e63;
+    min-height:56px;
+
+    position:relative;
+    z-index:999;
+}
+
+.mission-nav-inner{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+
+    min-height:56px;
+
+    display:flex;
+    align-items:stretch;
+}
+
+.mission-nav-link{
+    min-height:56px;
+
+    padding:0 17px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:7px;
+
+    color:#fff;
+
+    font-size:14px;
+    font-weight:700;
+
+    white-space:nowrap;
+
+    transition:.2s;
+}
+
+.mission-nav-link:hover,
+.mission-nav-link.active{
+    background:#ff7900;
+}
+
+.mission-dropdown{
+    position:relative;
+}
+
+.mission-dropdown-menu{
+    display:none;
+
+    position:absolute;
+
+    left:0;
+    top:56px;
+
+    width:220px;
+
+    background:#fff;
+
+    border-top:3px solid #ff7900;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+
+.mission-dropdown:hover .mission-dropdown-menu{
+    display:block;
+}
+
+.mission-dropdown-menu a{
+    display:block;
+
+    padding:12px 15px;
+
+    color:#263746;
+
+    font-size:13px;
+
+    border-bottom:1px solid #edf1f4;
+}
+
+.mission-dropdown-menu a:hover{
+    color:#123b66;
+    background:#f3f7fa;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.mission-breadcrumb{
+    background:#eef3f8;
+    border-bottom:1px solid #dfe7ee;
+}
+
+.mission-breadcrumb-inner{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+
+    min-height:44px;
+
+    display:flex;
+    align-items:center;
+
+    gap:9px;
+
+    color:#69798a;
+
+    font-size:13px;
+}
+
+.mission-breadcrumb a{
+    color:#123b66;
+    font-weight:700;
+}
+
+.mission-breadcrumb i{
+    color:#ff7900;
+    font-size:10px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.mission-hero{
+    width:92%;
+    max-width:1400px;
+
+    margin:35px auto 0;
+
+    padding:55px 40px;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #123b66 0%,
+            #1d5d96 65%,
+            #24834b 100%
+        );
+
+    color:#fff;
+
+    position:relative;
+    overflow:hidden;
+
+    box-shadow:
+        0 18px 40px rgba(18,59,102,.18);
+}
+
+.mission-hero::before{
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    right:-100px;
+    top:-130px;
+
+    background:rgba(255,255,255,.08);
+}
+
+.mission-hero::after{
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    left:-100px;
+    bottom:-130px;
+
+    background:rgba(255,121,0,.12);
+}
+
+.mission-hero-content{
+    position:relative;
+    z-index:2;
+
+    max-width:850px;
+}
+
+.mission-hero h1{
+    margin:0 0 10px;
+
+    font-size:48px;
+
+    font-weight:800;
+}
+
+.mission-hero-line{
+    width:125px;
+    height:5px;
+
+    background:#ff7900;
+
+    border-radius:20px;
+
+    margin-bottom:20px;
+}
+
+.mission-hero p{
+    margin:0;
+
+    font-size:19px;
+
+    line-height:1.8;
+
+    color:#f2f7fb;
+}
+
+.mission-quote{
+    margin-top:18px;
+
+    display:inline-block;
+
+    padding:9px 18px;
+
+    border:1px solid rgba(255,255,255,.3);
+
+    border-radius:30px;
+
+    font-weight:700;
+
+    color:#fff;
+}
+
+
+/* =========================================================
+   MISSION INTRO
+========================================================= */
+
+.mission-intro{
+    width:92%;
+    max-width:1400px;
+
+    margin:35px auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1.4fr .8fr;
+
+    gap:30px;
+
+    align-items:stretch;
+}
+
+.mission-intro-text{
+    background:#fff;
+
+    border:1px solid #e0e7ed;
+
+    border-radius:20px;
+
+    padding:32px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.04);
+}
+
+.mission-intro-text h2{
+    margin:0 0 15px;
+
+    color:#123b66;
+
+    font-size:29px;
+}
+
+.mission-intro-text p{
+    margin:0 0 14px;
+
+    color:#526271;
+
+    font-size:16px;
+
+    line-height:1.9;
+}
+
+.mission-highlight{
+    background:#f0faf3;
+
+    border:1px solid #d6eadb;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+}
+
+.mission-highlight-icon{
+    width:75px;
+    height:75px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#24834b;
+
+    color:#fff;
+
+    font-size:32px;
+
+    margin-bottom:15px;
+}
+
+.mission-highlight h3{
+    margin:0 0 8px;
+
+    color:#123b66;
+
+    font-size:22px;
+}
+
+.mission-highlight p{
+    margin:0;
+
+    color:#617181;
+
+    line-height:1.7;
+
+    font-size:14px;
+}
+
+
+/* =========================================================
+   MISSION AREAS
+========================================================= */
+
+.mission-areas{
+    width:92%;
+    max-width:1400px;
+
+    margin:0 auto;
+
+    padding:20px 0 40px;
+}
+
+.mission-heading{
+    text-align:center;
+
+    margin-bottom:30px;
+}
+
+.mission-heading h2{
+    margin:0;
+
+    color:#123b66;
+
+    font-size:31px;
+}
+
+.mission-heading p{
+    margin:7px auto 0;
+
+    max-width:700px;
+
+    color:#69798a;
+
+    font-size:14px;
+}
+
+.mission-card-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap:18px;
+}
+
+.mission-card{
+    background:#fff;
+
+    border:1px solid #dfe7ed;
+
+    border-radius:18px;
+
+    padding:25px;
+
+    transition:.25s;
+
+    box-shadow:0 6px 20px rgba(0,0,0,.04);
+}
+
+.mission-card:hover{
+    transform:translateY(-5px);
+
+    box-shadow:
+        0 15px 32px rgba(18,59,102,.10);
+}
+
+.mission-card-icon{
+    width:58px;
+    height:58px;
+
+    border-radius:15px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#eaf2fb;
+
+    color:#123b66;
+
+    font-size:25px;
+
+    margin-bottom:15px;
+}
+
+.mission-card h3{
+    margin:0 0 8px;
+
+    color:#123b66;
+
+    font-size:20px;
+}
+
+.mission-card p{
+    margin:0;
+
+    color:#68798a;
+
+    font-size:14px;
+
+    line-height:1.7;
+}
+
+.mission-card ul{
+    margin:13px 0 0;
+    padding:0;
+    list-style:none;
+}
+
+.mission-card li{
+    position:relative;
+
+    padding-left:20px;
+
+    margin:6px 0;
+
+    color:#526271;
+
+    font-size:13px;
+}
+
+.mission-card li::before{
+    content:"✓";
+
+    position:absolute;
+
+    left:0;
+
+    color:#24834b;
+
+    font-weight:800;
+}
+
+
+/* =========================================================
+   HOW WE WORK
+========================================================= */
+
+.mission-process{
+    width:92%;
+    max-width:1400px;
+
+    margin:0 auto;
+
+    padding:20px 0 45px;
+}
+
+.mission-process-box{
+    background:#123b66;
+
+    border-radius:22px;
+
+    padding:35px;
+
+    color:#fff;
+}
+
+.mission-process-title{
+    text-align:center;
+
+    margin-bottom:30px;
+}
+
+.mission-process-title h2{
+    margin:0;
+
+    font-size:30px;
+}
+
+.mission-process-title p{
+    margin:7px 0 0;
+
+    color:#dce8f3;
+
+    font-size:14px;
+}
+
+.mission-process-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(5,1fr);
+
+    gap:15px;
+}
+
+.mission-step{
+    text-align:center;
+
+    padding:10px;
+}
+
+.mission-step-number{
+    width:52px;
+    height:52px;
+
+    margin:0 auto 10px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#ff7900;
+
+    color:#fff;
+
+    font-size:18px;
+
+    font-weight:800;
+}
+
+.mission-step h3{
+    margin:0 0 5px;
+
+    font-size:16px;
+}
+
+.mission-step p{
+    margin:0;
+
+    color:#d8e4ee;
+
+    font-size:12px;
+
+    line-height:1.5;
+}
+
+
+/* =========================================================
+   GOALS
+========================================================= */
+
+.mission-goals{
+    width:92%;
+    max-width:1400px;
+
+    margin:0 auto;
+
+    padding:0 0 45px;
+}
+
+.mission-goal-grid{
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:15px;
+}
+
+.mission-goal{
+    background:#fff;
+
+    border:1px solid #e0e7ed;
+
+    border-radius:16px;
+
+    padding:22px;
+
+    text-align:center;
+}
+
+.mission-goal i{
+    color:#24834b;
+
+    font-size:27px;
+
+    margin-bottom:9px;
+}
+
+.mission-goal strong{
+    display:block;
+
+    color:#123b66;
+
+    font-size:25px;
+}
+
+.mission-goal span{
+    display:block;
+
+    margin-top:4px;
+
+    color:#71808f;
+
+    font-size:13px;
+}
+
+
+/* =========================================================
+   JOIN CTA
+========================================================= */
+
+.mission-join{
+    width:92%;
+    max-width:1400px;
+
+    margin:0 auto 60px;
+}
+
+.mission-join-box{
+    border-radius:22px;
+
+    padding:40px;
+
+    background:#f1faf4;
+
+    border:1px solid #d5e8db;
+
+    text-align:center;
+}
+
+.mission-join-box h2{
+    margin:0 0 8px;
+
+    color:#24834b;
+
+    font-size:31px;
+}
+
+.mission-join-box p{
+    max-width:700px;
+
+    margin:0 auto 20px;
+
+    color:#526271;
+
+    line-height:1.8;
+
+    font-size:15px;
+}
+
+.mission-buttons{
+    display:flex;
+
+    justify-content:center;
+
+    gap:10px;
+
+    flex-wrap:wrap;
+}
+
+.mission-button{
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:12px 22px;
+
+    border-radius:8px;
+
+    color:#fff;
+
+    font-size:14px;
+
+    font-weight:700;
+}
+
+.mission-button.blue{
+    background:#123b66;
+}
+
+.mission-button.orange{
+    background:#ff7900;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.mission-footer{
+    background:#092e60;
+
+    color:#fff;
+
+    padding:45px 0 0;
+}
+
+.mission-footer-inner{
+    width:92%;
+    max-width:1400px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:
+        1.5fr 1fr 1fr 1.3fr;
+
+    gap:35px;
+}
+
+.mission-footer-logo{
+    width:90px;
+    height:90px;
+
+    object-fit:contain;
+
+    margin-bottom:10px;
+}
+
+.mission-footer h3,
+.mission-footer h4{
+    margin:0 0 13px;
+
+    color:#fff;
+}
+
+.mission-footer p{
+    margin:0 0 9px;
+
+    color:#dbe5ef;
+
+    font-size:13px;
+
+    line-height:1.7;
+}
+
+.mission-footer a{
+    display:block;
+
+    color:#dbe5ef;
+
+    font-size:13px;
+
+    margin-bottom:8px;
+}
+
+.mission-footer a:hover{
+    color:#ff7900;
+}
+
+.mission-footer-bottom{
+    margin-top:35px;
+
+    padding:17px 0;
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    text-align:center;
+
+    color:#dbe5ef;
+
+    font-size:12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1150px){
+
+    .mission-header-inner{
+        flex-direction:column;
+
+        padding:18px 0;
+    }
+
+    .mission-login{
+        width:100%;
+
+        justify-content:center;
+    }
+
+    .mission-intro{
+        grid-template-columns:1fr;
+    }
+
+    .mission-process-grid{
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+
+    .mission-footer-inner{
+        grid-template-columns:
+            1fr 1fr;
+    }
+}
+
+
+@media(max-width:850px){
+
+    .mission-contact span:first-child{
+        display:none;
+    }
+
+    .mission-brand{
+        flex-direction:column;
+
+        text-align:center;
+    }
+
+    .mission-brand-text h1{
+        font-size:31px;
+    }
+
+    .mission-card-grid{
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .mission-goal-grid{
+        grid-template-columns:
+            1fr 1fr;
+    }
+}
+
+
+@media(max-width:650px){
+
+    .mission-login{
+        flex-direction:column;
+    }
+
+    .mission-login-card{
+        width:100%;
+        max-width:350px;
+    }
+
+    .mission-nav-inner{
+        width:100%;
+
+        overflow-x:auto;
+    }
+
+    .mission-nav-link{
+        padding:0 12px;
+
+        font-size:12px;
+    }
+
+    .mission-hero{
+        padding:35px 22px;
+    }
+
+    .mission-hero h1{
+        font-size:35px;
+    }
+
+    .mission-hero p{
+        font-size:15px;
+    }
+
+    .mission-card-grid{
+        grid-template-columns:1fr;
+    }
+
+    .mission-process-grid{
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .mission-goal-grid{
+        grid-template-columns:
+            1fr 1fr;
+    }
+
+    .mission-footer-inner{
+        grid-template-columns:1fr;
+    }
+}
+
+
+@media(max-width:430px){
+
+    .mission-brand-text h1{
+        font-size:27px;
+    }
+
+    .mission-hero h1{
+        font-size:30px;
+    }
+
+    .mission-process-grid,
+    .mission-goal-grid{
+        grid-template-columns:1fr;
+    }
+
+    .mission-join-box{
+        padding:28px 18px;
+    }
+}
+
+</style>
+</head>
+
+
+<body class="mission-page">
+
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="mission-topbar">
+
+<div class="mission-topbar-inner">
+
+    <div class="mission-contact">
+
+        <span>
+            <i class="fa-solid fa-envelope"></i>
+            info.yssfoundation@gmail.com
+        </span>
+
+        <span>
+            <i class="fa-solid fa-location-dot"></i>
+            ग्राम नैपुरा, पोस्ट कौड़ाही,
+            जिला अम्बेडकर नगर, उत्तर प्रदेश – 224129
+        </span>
+
+    </div>
+
+
+    <div class="mission-social">
+
+        <a href="#">
+            <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="#">
+            <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="#">
+            <i class="fab fa-youtube"></i>
+        </a>
+
+        <a href="#">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <span>
+            <i class="fa-solid fa-phone"></i>
+            9651731313
+        </span>
+
+    </div>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="mission-header">
+
+<div class="mission-header-inner">
+
+
+    <a href="index.html" class="mission-brand">
+
+        <img
+        src="images/logo.png"
+        alt="युवा सेवा संकल्प फाउंडेशन"
+        class="mission-brand-logo">
+
+
+        <div class="mission-brand-text">
+
+            <h1>
+                युवा सेवा संकल्प
+                <span>फाउंडेशन</span>
+            </h1>
+
+            <p>
+                युवा शक्ति - राष्ट्र शक्ति
+            </p>
+
+        </div>
+
+    </a>
+
+
+    <div class="mission-login">
+
+
+        <a href="member-login.html"
+           class="mission-login-card mission-member">
+
+            <div class="mission-login-icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="mission-login-text">
+
+                <strong>
+                    सदस्य Login
+                </strong>
+
+                <small>
+                    अपने खाते में लॉगिन करें
+                </small>
+
+            </div>
+
+        </a>
+
+
+        <a href="volunteer-login.html"
+           class="mission-login-card mission-volunteer">
+
+            <div class="mission-login-icon">
+                <i class="fa-solid fa-handshake"></i>
+            </div>
+
+            <div class="mission-login-text">
+
+                <strong>
+                    Volunteer Login
+                </strong>
+
+                <small>
+                    सेवा करने के लिए जुड़ें
+                </small>
+
+            </div>
+
+        </a>
+
+
+        <a href="admin-login.html"
+           class="mission-login-card mission-admin">
+
+            <div class="mission-login-icon">
+                <i class="fa-solid fa-user-shield"></i>
+            </div>
+
+            <div class="mission-login-text">
+
+                <strong>
+                    Admin Login
+                </strong>
+
+                <small>
+                    Admin Panel
+                </small>
+
+            </div>
+
+        </a>
+
+
+    </div>
+
+</div>
+
+</header>
+
+
+<!-- =====================================================
+     NAV
+===================================================== -->
+
+<nav class="mission-nav">
+
+<div class="mission-nav-inner">
+
+
+    <a href="index.html"
+       class="mission-nav-link">
+
+        <i class="fa-solid fa-house"></i>
+        होम
+
+    </a>
+
+
+    <div class="mission-dropdown">
+
+        <a href="about.html"
+           class="mission-nav-link active">
+
+            संस्था के बारे में
+            <i class="fa-solid fa-chevron-down"></i>
+
+        </a>
+
+
+        <div class="mission-dropdown-menu">
+
+            <a href="about.html">
+                हमारे बारे में
+            </a>
+
+            <a href="mission.html">
+                हमारा मिशन
+            </a>
+
+            <a href="vision.html">
+                हमारा विजन
+            </a>
+
+            <a href="team.html">
+                हमारी टीम
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="mission-dropdown">
+
+        <a href="#"
+           class="mission-nav-link">
+
+            हमारे कार्य
+            <i class="fa-solid fa-chevron-down"></i>
+
+        </a>
+
+
+        <div class="mission-dropdown-menu">
+
+            <a href="education.html">
+                शिक्षा
+            </a>
+
+            <a href="health.html">
+                स्वास्थ्य
+            </a>
+
+            <a href="environment.html">
+                पर्यावरण
+            </a>
+
+            <a href="women.html">
+                महिला सशक्तिकरण
+            </a>
+
+            <a href="youth.html">
+                युवा विकास
+            </a>
+
+            <a href="social-service.html">
+                समाज सेवा
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <a href="volunteer.html"
+       class="mission-nav-link">
+        वॉलंटियर
+    </a>
+
+
+    <a href="membership.html"
+       class="mission-nav-link">
+        सदस्यता
+    </a>
+
+
+    <a href="news.html"
+       class="mission-nav-link">
+        समाचार
+    </a>
+
+
+    <a href="events.html"
+       class="mission-nav-link">
+        आगामी कार्यक्रम
+    </a>
+
+
+    <a href="gallery.html"
+       class="mission-nav-link">
+        गैलरी
+    </a>
+
+
+    <a href="contact.html"
+       class="mission-nav-link">
+        संपर्क करें
+    </a>
+
+
+</div>
+
+</nav>
+
+
+<!-- =====================================================
+     BREADCRUMB
+===================================================== -->
+
+<div class="mission-breadcrumb">
+
+<div class="mission-breadcrumb-inner">
+
+    <a href="index.html">
+        होम
+    </a>
+
+    <i class="fa-solid fa-angle-right"></i>
+
+    <a href="about.html">
+        संस्था के बारे में
+    </a>
+
+    <i class="fa-solid fa-angle-right"></i>
+
+    <strong>
+        हमारा मिशन
+    </strong>
+
+</div>
+
+</div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="mission-hero">
+
+<div class="mission-hero-content">
+
+    <h1>
+        हमारा मिशन
+    </h1>
+
+    <div class="mission-hero-line"></div>
+
+    <p>
+        सेवा, समर्पण और जनभागीदारी के माध्यम से
+        एक शिक्षित, स्वस्थ, स्वावलंबी और सशक्त समाज
+        का निर्माण करना।
+    </p>
+
+    <div class="mission-quote">
+        युवा शक्ति - राष्ट्र शक्ति
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="mission-intro">
+
+
+<div class="mission-intro-text">
+
+    <h2>
+        युवा सेवा संकल्प फाउंडेशन का मिशन
+    </h2>
+
+    <p>
+        हमारा मिशन समाज के प्रत्येक वर्ग तक
+        सकारात्मक परिवर्तन और सेवा की पहुँच
+        सुनिश्चित करना है।
+    </p>
+
+    <p>
+        हम शिक्षा, स्वास्थ्य, पर्यावरण संरक्षण,
+        महिला सशक्तिकरण, युवा विकास और
+        जरूरतमंद लोगों की सहायता जैसे क्षेत्रों
+        में जनभागीदारी के साथ कार्य करने के लिए
+        प्रतिबद्ध हैं।
+    </p>
+
+    <p>
+        हमारा विश्वास है कि जब युवा अपनी ऊर्जा,
+        प्रतिभा और समय को समाज सेवा से जोड़ते हैं,
+        तब छोटे-छोटे प्रयास भी बड़े सामाजिक
+        परिवर्तन का आधार बन सकते हैं।
+    </p>
+
+</div>
+
+
+<div class="mission-highlight">
+
+    <div class="mission-highlight-icon">
+        <i class="fa-solid fa-bullseye"></i>
+    </div>
+
+    <h3>
+        हमारा संकल्प
+    </h3>
+
+    <p>
+        हर सेवा कार्य को ईमानदारी, पारदर्शिता,
+        संवेदनशीलता और जनहित की भावना के साथ
+        आगे बढ़ाना।
+    </p>
+
+</div>
+
+
+</section>
+
+
+<!-- =====================================================
+     MISSION AREAS
+===================================================== -->
+
+<section class="mission-areas">
+
+<div class="mission-heading">
+
+    <h2>
+        मिशन के प्रमुख क्षेत्र
+    </h2>
+
+    <p>
+        हमारे मिशन का उद्देश्य केवल सहायता देना नहीं,
+        बल्कि लोगों को सक्षम और आत्मनिर्भर बनाना है।
+    </p>
+
+</div>
+
+
+<div class="mission-card-grid">
+
+
+    <!-- EDUCATION -->
+
+    <div class="mission-card">
+
+        <div class="mission-card-icon">
+            <i class="fa-solid fa-book-open"></i>
+        </div>
+
+        <h3>
+            शिक्षा
+        </h3>
+
+        <p>
+            शिक्षा को सामाजिक विकास की मजबूत
+            नींव मानते हुए बच्चों और युवाओं को
+            सीखने एवं आगे बढ़ने के अवसर उपलब्ध
+            कराने का प्रयास।
+        </p>
+
+        <ul>
+
+            <li>
+                शिक्षा जागरूकता
+            </li>
+
+            <li>
+                छात्र सहायता
+            </li>
+
+            <li>
+                मार्गदर्शन एवं कौशल विकास
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- HEALTH -->
+
+    <div class="mission-card">
+
+        <div class="mission-card-icon">
+            <i class="fa-solid fa-heart-pulse"></i>
+        </div>
+
+        <h3>
+            स्वास्थ्य
+        </h3>
+
+        <p>
+            स्वास्थ्य के प्रति जागरूकता बढ़ाना
+            और जरूरतमंद समुदायों तक स्वास्थ्य
+            सहायता एवं जानकारी पहुँचाने में
+            सहयोग करना।
+        </p>
+
+        <ul>
+
+            <li>
+                स्वास्थ्य जागरूकता
+            </li>
+
+            <li>
+                स्वास्थ्य शिविर
+            </li>
+
+            <li>
+                रक्तदान जागरूकता
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- ENVIRONMENT -->
+
+    <div class="mission-card">
+
+        <div class="mission-card-icon">
+            <i class="fa-solid fa-seedling"></i>
+        </div>
+
+        <h3>
+            पर्यावरण संरक्षण
+        </h3>
+
+        <p>
+            प्रकृति की रक्षा, स्वच्छ वातावरण और
+            आने वाली पीढ़ियों के लिए सुरक्षित
+            पर्यावरण निर्माण में जनभागीदारी।
+        </p>
+
+        <ul>
+
+            <li>
+                वृक्षारोपण
+            </li>
+
+            <li>
+                स्वच्छता जागरूकता
+            </li>
+
+            <li>
+                पर्यावरण अभियान
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- WOMEN -->
+
+    <div class="mission-card">
+
+        <div class="mission-card-icon">
+            <i class="fa-solid fa-person-dress"></i>
+        </div>
+
+        <h3>
+            महिला सशक्तिकरण
+        </h3>
+
+        <p>
+            महिलाओं को शिक्षा, जागरूकता,
+            कौशल और आत्मनिर्भरता के अवसरों
+            से जोड़ने की दिशा में प्रयास।
+        </p>
+
+        <ul>
+
+            <li>
+                जागरूकता कार्यक्रम
+            </li>
+
+            <li>
+                कौशल विकास
+            </li>
+
+            <li>
+                आत्मनिर्भरता को बढ़ावा
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- YOUTH -->
+
+    <div class="mission-card">
+
+        <div class="mission-card-icon">
+            <i class="fa-solid fa-people-group"></i>
+        </div>
+
+        <h3>
+            युवा विकास
+        </h3>
+
+        <p>
+            युवाओं की ऊर्जा और प्रतिभा को
+            सकारात्मक दिशा देकर नेतृत्व और
+            समाज सेवा से जोड़ना।
+        </p>
+
+        <ul>
+
+            <li>
+                युवा नेतृत्व
+            </li>
+
+            <li>
+                स्वयंसेवा
+            </li>
+
+            <li>
+                कौशल विकास
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- SOCIAL SERVICE -->
+
+    <div class="mission-card">
+
+        <div class="mission-card-icon">
+            <i class="fa-solid fa-hand-holding-heart"></i>
+        </div>
+
+        <h3>
+            समाज सेवा
+        </h3>
+
+        <p>
+            जरूरतमंद, कमजोर और वंचित वर्गों
+            तक सहयोग पहुँचाकर सामाजिक
+            सहभागिता और मानवता की भावना
+            को मजबूत करना।
+        </p>
+
+        <ul>
+
+            <li>
+                जरूरतमंद सहायता
+            </li>
+
+            <li>
+                सामाजिक जागरूकता
+            </li>
+
+            <li>
+                आपदा एवं राहत सहयोग
+            </li>
+
+        </ul>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     HOW WE WORK
+===================================================== -->
+
+<section class="mission-process">
+
+<div class="mission-process-box">
+
+
+    <div class="mission-process-title">
+
+        <h2>
+            हम कैसे कार्य करते हैं?
+        </h2>
+
+        <p>
+            योजना से लेकर प्रभाव तक प्रत्येक चरण में
+            जिम्मेदारी और जनभागीदारी पर हमारा जोर है।
+        </p>
+
+    </div>
+
+
+    <div class="mission-process-grid">
+
+
+        <div class="mission-step">
+
+            <div class="mission-step-number">
+                01
+            </div>
+
+            <h3>
+                आवश्यकता पहचान
+            </h3>
+
+            <p>
+                स्थानीय जरूरतों को समझना।
+            </p>
+
+        </div>
+
+
+        <div class="mission-step">
+
+            <div class="mission-step-number">
+                02
+            </div>
+
+            <h3>
+                योजना
+            </h3>
+
+            <p>
+                उद्देश्य और कार्ययोजना तैयार करना।
+            </p>
+
+        </div>
+
+
+        <div class="mission-step">
+
+            <div class="mission-step-number">
+                03
+            </div>
+
+            <h3>
+                जनभागीदारी
+            </h3>
+
+            <p>
+                सदस्य और स्वयंसेवकों को जोड़ना।
+            </p>
+
+        </div>
+
+
+        <div class="mission-step">
+
+            <div class="mission-step-number">
+                04
+            </div>
+
+            <h3>
+                सेवा कार्य
+            </h3>
+
+            <p>
+                योजनाबद्ध तरीके से कार्यक्रम करना।
+            </p>
+
+        </div>
+
+
+        <div class="mission-step">
+
+            <div class="mission-step-number">
+                05
+            </div>
+
+            <h3>
+                प्रभाव मूल्यांकन
+            </h3>
+
+            <p>
+                कार्य के परिणामों की समीक्षा करना।
+            </p>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     GOALS
+===================================================== -->
+
+<section class="mission-goals">
+
+<div class="mission-heading">
+
+    <h2>
+        हमारे मिशन के लक्ष्य
+    </h2>
+
+    <p>
+        समाज सेवा को प्रभावी, पारदर्शी और
+        निरंतर बनाने की दिशा में हमारा प्रयास।
+    </p>
+
+</div>
+
+
+<div class="mission-goal-grid">
+
+
+    <div class="mission-goal">
+
+        <i class="fa-solid fa-graduation-cap"></i>
+
+        <strong>
+            शिक्षा
+        </strong>
+
+        <span>
+            शिक्षा के अवसरों को बढ़ावा देना
+        </span>
+
+    </div>
+
+
+    <div class="mission-goal">
+
+        <i class="fa-solid fa-heart"></i>
+
+        <strong>
+            स्वास्थ्य
+        </strong>
+
+        <span>
+            स्वास्थ्य जागरूकता बढ़ाना
+        </span>
+
+    </div>
+
+
+    <div class="mission-goal">
+
+        <i class="fa-solid fa-leaf"></i>
+
+        <strong>
+            प्रकृति
+        </strong>
+
+        <span>
+            पर्यावरण संरक्षण करना
+        </span>
+
+    </div>
+
+
+    <div class="mission-goal">
+
+        <i class="fa-solid fa-users"></i>
+
+        <strong>
+            युवा शक्ति
+        </strong>
+
+        <span>
+            युवाओं को सेवा से जोड़ना
+        </span>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     JOIN
+===================================================== -->
+
+<section class="mission-join">
+
+<div class="mission-join-box">
+
+    <h2>
+        आप भी हमारे मिशन से जुड़ें
+    </h2>
+
+    <p>
+        आपका समय, आपकी क्षमता और आपका सहयोग
+        किसी जरूरतमंद के जीवन में सकारात्मक
+        बदलाव ला सकता है। आइए मिलकर सेवा को
+        एक जनआंदोलन बनाएं।
+    </p>
+
+
+    <div class="mission-buttons">
+
+        <a href="membership.html"
+           class="mission-button blue">
+
+            <i class="fa-solid fa-user-plus"></i>
+
+            सदस्य बनें
+
+        </a>
+
+
+        <a href="volunteer.html"
+           class="mission-button orange">
+
+            <i class="fa-solid fa-handshake"></i>
+
+            Volunteer बनें
+
+        </a>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="mission-footer">
+
+<div class="mission-footer-inner">
+
+
+    <div>
+
+        <img
+        src="images/logo.png"
+        alt="YSS Foundation"
+        class="mission-footer-logo">
+
+        <h3>
+            युवा सेवा संकल्प फाउंडेशन
+        </h3>
+
+        <p>
+            सेवा, समर्पण और संस्कार के साथ
+            समाज एवं राष्ट्र निर्माण की दिशा में
+            सकारात्मक प्रयास।
+        </p>
+
+    </div>
+
+
+    <div>
+
+        <h4>
+            महत्वपूर्ण लिंक
+        </h4>
+
+        <a href="index.html">
+            होम
+        </a>
+
+        <a href="about.html">
+            हमारे बारे में
+        </a>
+
+        <a href="mission.html">
+            हमारा मिशन
+        </a>
+
+        <a href="membership.html">
+            सदस्यता
+        </a>
+
+        <a href="contact.html">
+            संपर्क करें
+        </a>
+
+    </div>
+
+
+    <div>
+
+        <h4>
+            हमारे कार्य
+        </h4>
+
+        <a href="education.html">
+            शिक्षा
+        </a>
+
+        <a href="health.html">
+            स्वास्थ्य
+        </a>
+
+        <a href="environment.html">
+            पर्यावरण
+        </a>
+
+        <a href="women.html">
+            महिला सशक्तिकरण
+        </a>
+
+        <a href="youth.html">
+            युवा विकास
+        </a>
+
+    </div>
+
+
+    <div>
+
+        <h4>
+            संपर्क करें
+        </h4>
+
+        <p>
+            <i class="fa-solid fa-location-dot"></i>
+            ग्राम नैपुरा, पोस्ट कौड़ाही,
+            जिला अम्बेडकर नगर,
+            उत्तर प्रदेश – 224129
+        </p>
+
+        <p>
+            <i class="fa-solid fa-phone"></i>
+            9651731313
+        </p>
+
+        <p>
+            <i class="fa-solid fa-envelope"></i>
+            info.yssfoundation@gmail.com
+        </p>
+
+    </div>
+
+
+</div>
+
+
+<div class="mission-footer-bottom">
+
+    © 2026 युवा सेवा संकल्प फाउंडेशन |
+    सर्वाधिकार सुरक्षित |
+    <strong>युवा शक्ति - राष्ट्र शक्ति</strong>
+
+</div>
+
+</footer>
+
+
+</body>
+</html>
+```
