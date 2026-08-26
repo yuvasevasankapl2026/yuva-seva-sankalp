@@ -5,39 +5,922 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-    <title>
-        एडमिन लॉगिन | युवा सेवा संकल्प फाउंडेशन
-    </title>
+    <meta name="description"
+          content="युवा सेवा संकल्प फाउंडेशन एडमिन लॉगिन">
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+    <title>Admin Login | युवा सेवा संकल्प फाउंडेशन</title>
+
+
+    <!-- Google Font -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <!-- Font Awesome -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- Main CSS -->
+
+    <link rel="stylesheet"
+          href="style.css">
+
+
+    <style>
+
+        /* =====================================================
+           ADMIN LOGIN PAGE
+        ===================================================== */
+
+        .admin-login-page{
+            margin:0;
+            background:#f5f8fb;
+            color:#263746;
+            font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+        }
+
+        .admin-login-page *,
+        .admin-login-page *::before,
+        .admin-login-page *::after{
+            box-sizing:border-box;
+        }
+
+        .admin-login-page a{
+            text-decoration:none;
+        }
+
+
+        /* =====================================================
+           TOP BAR
+        ===================================================== */
+
+        .admin-topbar{
+            background:#123b66;
+            color:#fff;
+            min-height:42px;
+        }
+
+        .admin-topbar-inner{
+            width:92%;
+            max-width:1400px;
+            margin:auto;
+            min-height:42px;
+
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:20px;
+        }
+
+        .admin-contact{
+            display:flex;
+            align-items:center;
+            gap:25px;
+        }
+
+        .admin-contact span{
+            display:flex;
+            align-items:center;
+            gap:7px;
+            font-size:13px;
+        }
+
+        .admin-contact i{
+            color:#ffb15c;
+        }
+
+        .admin-social{
+            display:flex;
+            align-items:center;
+            gap:15px;
+        }
+
+        .admin-social a{
+            color:#fff;
+            transition:.2s;
+        }
+
+        .admin-social a:hover{
+            color:#ff7900;
+        }
+
+        .admin-social span{
+            font-size:13px;
+            white-space:nowrap;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .admin-header{
+            background:#fff;
+            border-bottom:1px solid #e3e9ef;
+        }
+
+        .admin-header-inner{
+            width:92%;
+            max-width:1400px;
+            margin:auto;
+            min-height:135px;
+
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:30px;
+        }
+
+        .admin-brand{
+            display:flex;
+            align-items:center;
+            gap:18px;
+        }
+
+        .admin-brand-logo{
+            width:120px;
+            height:120px;
+            object-fit:contain;
+            flex-shrink:0;
+        }
+
+        .admin-brand-text h1{
+            margin:0;
+            color:#123b66;
+            font-size:39px;
+            line-height:1.15;
+            font-weight:800;
+        }
+
+        .admin-brand-text h1 span{
+            color:#ff7900;
+        }
+
+        .admin-brand-text p{
+            margin:7px 0 0;
+            color:#123b66;
+            font-size:17px;
+            font-weight:700;
+        }
+
+
+        /* =====================================================
+           HEADER LOGIN CARDS
+        ===================================================== */
+
+        .admin-header-login{
+            display:flex;
+            align-items:center;
+            gap:12px;
+        }
+
+        .admin-header-card{
+            min-width:170px;
+            min-height:66px;
+            padding:10px 14px;
+
+            background:#fff;
+            border:1px solid #dce4eb;
+            border-radius:12px;
+
+            display:flex;
+            align-items:center;
+            gap:11px;
+
+            color:#123b66;
+            transition:.25s;
+        }
+
+        .admin-header-card:hover{
+            transform:translateY(-3px);
+            box-shadow:0 8px 22px rgba(18,59,102,.12);
+        }
+
+        .admin-card-icon{
+            width:42px;
+            height:42px;
+            border-radius:50%;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            font-size:21px;
+        }
+
+        .admin-member .admin-card-icon{
+            color:#24834b;
+            background:#eaf7ed;
+        }
+
+        .admin-volunteer .admin-card-icon{
+            color:#123b66;
+            background:#eaf1fa;
+        }
+
+        .admin-current{
+            background:#ff7900;
+            border-color:#ff7900;
+            color:#fff;
+        }
+
+        .admin-current .admin-card-icon{
+            color:#fff;
+            background:rgba(255,255,255,.15);
+        }
+
+        .admin-card-text{
+            display:flex;
+            flex-direction:column;
+        }
+
+        .admin-card-text strong{
+            font-size:15px;
+        }
+
+        .admin-card-text small{
+            font-size:10px;
+            margin-top:3px;
+            opacity:.78;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        .admin-nav{
+            background:#082e63;
+            min-height:56px;
+            position:relative;
+            z-index:999;
+        }
+
+        .admin-nav-inner{
+            width:92%;
+            max-width:1400px;
+            margin:auto;
+
+            min-height:56px;
+
+            display:flex;
+            align-items:stretch;
+        }
+
+        .admin-nav-link{
+            min-height:56px;
+            padding:0 17px;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            gap:7px;
+
+            color:#fff;
+            font-size:14px;
+            font-weight:700;
+
+            white-space:nowrap;
+            transition:.2s;
+        }
+
+        .admin-nav-link:hover{
+            background:#ff7900;
+        }
+
+        .admin-dropdown{
+            position:relative;
+        }
+
+        .admin-dropdown-menu{
+            display:none;
+            position:absolute;
+
+            left:0;
+            top:56px;
+
+            width:220px;
+
+            background:#fff;
+            border-top:3px solid #ff7900;
+
+            box-shadow:0 12px 30px rgba(0,0,0,.18);
+        }
+
+        .admin-dropdown:hover .admin-dropdown-menu{
+            display:block;
+        }
+
+        .admin-dropdown-menu a{
+            display:block;
+            padding:12px 15px;
+
+            color:#263746;
+            font-size:13px;
+
+            border-bottom:1px solid #edf1f4;
+        }
+
+        .admin-dropdown-menu a:hover{
+            color:#123b66;
+            background:#f3f7fa;
+        }
+
+
+        /* =====================================================
+           BREADCRUMB
+        ===================================================== */
+
+        .admin-breadcrumb{
+            background:#eef3f8;
+            border-bottom:1px solid #dfe7ee;
+        }
+
+        .admin-breadcrumb-inner{
+            width:92%;
+            max-width:1400px;
+            margin:auto;
+
+            min-height:44px;
+
+            display:flex;
+            align-items:center;
+            gap:9px;
+
+            color:#69798a;
+            font-size:13px;
+        }
+
+        .admin-breadcrumb a{
+            color:#123b66;
+            font-weight:700;
+        }
+
+        .admin-breadcrumb i{
+            color:#ff7900;
+            font-size:10px;
+        }
+
+
+        /* =====================================================
+           LOGIN SECTION
+        ===================================================== */
+
+        .admin-main-login{
+            width:92%;
+            max-width:1100px;
+            margin:45px auto 65px;
+        }
+
+        .admin-login-box{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+
+            min-height:560px;
+
+            background:#fff;
+            border:1px solid #dfe7ed;
+
+            border-radius:24px;
+            overflow:hidden;
+
+            box-shadow:0 18px 45px rgba(18,59,102,.10);
+        }
+
+
+        /* LEFT */
+
+        .admin-login-info{
+            padding:55px 45px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #092e60 0%,
+                    #123b66 60%,
+                    #ff7900 150%
+                );
+
+            color:#fff;
+
+            position:relative;
+            overflow:hidden;
+        }
+
+        .admin-login-info::before{
+            content:"";
+
+            position:absolute;
+
+            width:310px;
+            height:310px;
+
+            border-radius:50%;
+
+            background:rgba(255,255,255,.06);
+
+            right:-130px;
+            top:-120px;
+        }
+
+        .admin-login-info::after{
+            content:"";
+
+            position:absolute;
+
+            width:220px;
+            height:220px;
+
+            border-radius:50%;
+
+            background:rgba(255,121,0,.15);
+
+            left:-100px;
+            bottom:-100px;
+        }
+
+        .admin-info-content{
+            position:relative;
+            z-index:2;
+        }
+
+        .admin-security-icon{
+            width:78px;
+            height:78px;
+
+            border-radius:20px;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            background:rgba(255,255,255,.13);
+
+            font-size:34px;
+
+            margin-bottom:25px;
+        }
+
+        .admin-login-info h1{
+            margin:0 0 15px;
+            font-size:38px;
+            line-height:1.25;
+            font-weight:800;
+        }
+
+        .admin-login-info p{
+            margin:0;
+            color:#e7eef5;
+            font-size:16px;
+            line-height:1.8;
+        }
+
+        .admin-security-list{
+            margin-top:35px;
+
+            display:flex;
+            flex-direction:column;
+            gap:15px;
+        }
+
+        .admin-security-item{
+            display:flex;
+            align-items:center;
+            gap:12px;
+
+            font-size:14px;
+        }
+
+        .admin-security-item i{
+            width:35px;
+            height:35px;
+
+            border-radius:50%;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            background:rgba(255,255,255,.13);
+        }
+
+
+        /* RIGHT */
+
+        .admin-login-form{
+            padding:55px 50px;
+
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+        }
+
+        .admin-form-heading{
+            margin-bottom:25px;
+        }
+
+        .admin-form-heading h2{
+            margin:0 0 8px;
+            color:#123b66;
+            font-size:30px;
+        }
+
+        .admin-form-heading p{
+            margin:0;
+            color:#71808f;
+            font-size:14px;
+        }
+
+        .admin-form-group{
+            margin-bottom:18px;
+        }
+
+        .admin-form-group label{
+            display:block;
+            margin-bottom:7px;
+
+            color:#123b66;
+            font-size:14px;
+            font-weight:700;
+        }
+
+        .admin-input{
+            position:relative;
+        }
+
+        .admin-input > i{
+            position:absolute;
+            left:16px;
+            top:50%;
+
+            transform:translateY(-50%);
+
+            color:#8292a1;
+        }
+
+        .admin-input input{
+            width:100%;
+            height:53px;
+
+            padding:0 48px 0 46px;
+
+            border:1px solid #d8e2ea;
+            border-radius:10px;
+
+            outline:none;
+
+            font-family:inherit;
+            font-size:14px;
+
+            transition:.2s;
+        }
+
+        .admin-input input:focus{
+            border-color:#123b66;
+
+            box-shadow:
+                0 0 0 3px rgba(18,59,102,.10);
+        }
+
+        .admin-password-toggle{
+            position:absolute;
+
+            right:14px;
+            top:50%;
+
+            transform:translateY(-50%);
+
+            border:0;
+            background:transparent;
+
+            color:#71808f;
+            font-size:16px;
+
+            cursor:pointer;
+        }
+
+        .admin-options{
+            margin:3px 0 22px;
+
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+
+            gap:10px;
+
+            font-size:13px;
+        }
+
+        .admin-remember{
+            display:flex;
+            align-items:center;
+            gap:7px;
+
+            color:#647484;
+        }
+
+        .admin-remember input{
+            accent-color:#123b66;
+        }
+
+        .admin-forgot{
+            color:#1d5d96;
+            font-weight:700;
+        }
+
+        .admin-submit{
+            width:100%;
+            min-height:54px;
+
+            border:0;
+            border-radius:10px;
+
+            background:#ff7900;
+            color:#fff;
+
+            font-family:inherit;
+            font-size:16px;
+            font-weight:800;
+
+            cursor:pointer;
+            transition:.25s;
+        }
+
+        .admin-submit:hover{
+            background:#e76d00;
+            transform:translateY(-2px);
+
+            box-shadow:
+                0 10px 20px rgba(255,121,0,.22);
+        }
+
+        .admin-result{
+            min-height:20px;
+
+            margin:15px 0 0;
+
+            text-align:center;
+
+            font-size:13px;
+            font-weight:700;
+        }
+
+        .admin-warning{
+            margin-top:25px;
+            padding:14px;
+
+            border-radius:10px;
+
+            background:#fff7ed;
+            border:1px solid #ffe0c2;
+
+            color:#8a4a00;
+
+            font-size:12px;
+            line-height:1.6;
+        }
+
+        .admin-warning i{
+            margin-right:5px;
+            color:#ff7900;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .admin-footer{
+            background:#092e60;
+            color:#fff;
+            padding:45px 0 0;
+        }
+
+        .admin-footer-inner{
+            width:92%;
+            max-width:1400px;
+            margin:auto;
+
+            display:grid;
+            grid-template-columns:1.5fr 1fr 1fr 1.3fr;
+            gap:35px;
+        }
+
+        .admin-footer-logo{
+            width:90px;
+            height:90px;
+            object-fit:contain;
+            margin-bottom:10px;
+        }
+
+        .admin-footer h3,
+        .admin-footer h4{
+            margin:0 0 13px;
+        }
+
+        .admin-footer p{
+            margin:0 0 9px;
+            color:#dbe5ef;
+            font-size:13px;
+            line-height:1.7;
+        }
+
+        .admin-footer a{
+            display:block;
+            color:#dbe5ef;
+            font-size:13px;
+            margin-bottom:8px;
+        }
+
+        .admin-footer a:hover{
+            color:#ff7900;
+        }
+
+        .admin-footer-bottom{
+            margin-top:35px;
+            padding:17px 0;
+
+            border-top:1px solid rgba(255,255,255,.15);
+
+            text-align:center;
+
+            color:#dbe5ef;
+            font-size:12px;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media(max-width:1150px){
+
+            .admin-header-inner{
+                flex-direction:column;
+                padding:18px 0;
+            }
+
+            .admin-header-login{
+                width:100%;
+                justify-content:center;
+            }
+
+            .admin-footer-inner{
+                grid-template-columns:1fr 1fr;
+            }
+
+        }
+
+
+        @media(max-width:850px){
+
+            .admin-contact span:first-child{
+                display:none;
+            }
+
+            .admin-brand{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            .admin-brand-text h1{
+                font-size:31px;
+            }
+
+            .admin-login-box{
+                grid-template-columns:1fr;
+            }
+
+            .admin-login-info{
+                padding:40px 30px;
+            }
+
+            .admin-login-form{
+                padding:40px 30px;
+            }
+
+        }
+
+
+        @media(max-width:650px){
+
+            .admin-contact{
+                display:none;
+            }
+
+            .admin-topbar-inner{
+                justify-content:center;
+            }
+
+            .admin-header-login{
+                flex-direction:column;
+            }
+
+            .admin-header-card{
+                width:100%;
+                max-width:350px;
+            }
+
+            .admin-nav-inner{
+                width:100%;
+                overflow-x:auto;
+            }
+
+            .admin-nav-link{
+                padding:0 12px;
+                font-size:12px;
+            }
+
+            .admin-main-login{
+                width:94%;
+                margin:25px auto 45px;
+            }
+
+            .admin-login-info h1{
+                font-size:31px;
+            }
+
+            .admin-login-form{
+                padding:35px 20px;
+            }
+
+            .admin-options{
+                flex-direction:column;
+                align-items:flex-start;
+            }
+
+            .admin-footer-inner{
+                grid-template-columns:1fr;
+            }
+
+        }
+
+    </style>
 
 </head>
 
 
-<body>
+<body class="admin-login-page">
 
 
 <!-- TOP BAR -->
 
-<div class="top-bar">
+<div class="admin-topbar">
 
-    <div class="container">
+    <div class="admin-topbar-inner">
 
-        <div class="left">
+        <div class="admin-contact">
 
-            📧 yuvasevasankalp2026@gmail.com
+            <span>
+                <i class="fa-solid fa-envelope"></i>
+                info.yssfoundation@gmail.com
+            </span>
 
-            |
+            <span>
+                <i class="fa-solid fa-location-dot"></i>
+                ग्राम नैपुरा, पोस्ट कौड़ाही, जिला अम्बेडकर नगर, उत्तर प्रदेश – 224129
+            </span>
 
-            📞 +91 9651731313
+        </div>
+
+
+        <div class="admin-social">
+
+            <a href="#">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="#">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="#">
+                <i class="fab fa-youtube"></i>
+            </a>
+
+            <a href="#">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <span>
+                <i class="fa-solid fa-phone"></i>
+                9651731313
+            </span>
 
         </div>
 
@@ -48,31 +931,85 @@
 
 <!-- HEADER -->
 
-<header class="header">
+<header class="admin-header">
 
-    <div class="header-content">
+    <div class="admin-header-inner">
 
-        <img
-            src="images/logo.png"
-            class="logo"
-            alt="युवा सेवा संकल्प फाउंडेशन लोगो"
-        >
+        <a href="index.html"
+           class="admin-brand">
+
+            <img src="images/logo.png"
+                 alt="युवा सेवा संकल्प फाउंडेशन"
+                 class="admin-brand-logo">
+
+            <div class="admin-brand-text">
+
+                <h1>
+                    युवा सेवा संकल्प
+                    <span>फाउंडेशन</span>
+                </h1>
+
+                <p>युवा शक्ति - राष्ट्र शक्ति</p>
+
+            </div>
+
+        </a>
 
 
-        <div class="title">
+        <div class="admin-header-login">
 
-            <h1 class="main-title">
+            <a href="member-login.html"
+               class="admin-header-card admin-member">
 
-                युवा सेवा संकल्प फाउंडेशन
+                <div class="admin-card-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
 
-            </h1>
+                <div class="admin-card-text">
+
+                    <strong>सदस्य Login</strong>
+
+                    <small>अपने खाते में लॉगिन करें</small>
+
+                </div>
+
+            </a>
 
 
-            <p class="tagline">
+            <a href="volunteer-login.html"
+               class="admin-header-card admin-volunteer">
 
-                युवा शक्ति, राष्ट्र शक्ति
+                <div class="admin-card-icon">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
 
-            </p>
+                <div class="admin-card-text">
+
+                    <strong>Volunteer Login</strong>
+
+                    <small>Volunteer खाते में लॉगिन करें</small>
+
+                </div>
+
+            </a>
+
+
+            <a href="admin-login.html"
+               class="admin-header-card admin-current">
+
+                <div class="admin-card-icon">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+
+                <div class="admin-card-text">
+
+                    <strong>Admin Login</strong>
+
+                    <small>Admin Panel</small>
+
+                </div>
+
+            </a>
 
         </div>
 
@@ -81,97 +1018,315 @@
 </header>
 
 
+<!-- NAVIGATION -->
+
+<nav class="admin-nav">
+
+    <div class="admin-nav-inner">
+
+        <a href="index.html"
+           class="admin-nav-link">
+            <i class="fa-solid fa-house"></i>
+            होम
+        </a>
+
+
+        <div class="admin-dropdown">
+
+            <a href="about.html"
+               class="admin-nav-link">
+
+                संस्था के बारे में
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </a>
+
+            <div class="admin-dropdown-menu">
+
+                <a href="about.html">हमारे बारे में</a>
+                <a href="mission.html">हमारा मिशन</a>
+                <a href="vision.html">हमारा विजन</a>
+                <a href="team.html">हमारी टीम</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="admin-dropdown">
+
+            <a href="#"
+               class="admin-nav-link">
+
+                हमारे कार्य
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </a>
+
+            <div class="admin-dropdown-menu">
+
+                <a href="education.html">शिक्षा</a>
+                <a href="health.html">स्वास्थ्य</a>
+                <a href="environment.html">पर्यावरण</a>
+                <a href="women.html">महिला सशक्तिकरण</a>
+                <a href="youth.html">युवा विकास</a>
+                <a href="social-service.html">समाज सेवा</a>
+
+            </div>
+
+        </div>
+
+
+        <a href="volunteer.html"
+           class="admin-nav-link">
+            वॉलंटियर
+        </a>
+
+        <a href="membership.html"
+           class="admin-nav-link">
+            सदस्यता
+        </a>
+
+        <a href="news.html"
+           class="admin-nav-link">
+            समाचार
+        </a>
+
+        <a href="events.html"
+           class="admin-nav-link">
+            आगामी कार्यक्रम
+        </a>
+
+        <a href="gallery.html"
+           class="admin-nav-link">
+            गैलरी
+        </a>
+
+        <a href="contact.html"
+           class="admin-nav-link">
+            संपर्क करें
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- BREADCRUMB -->
+
+<div class="admin-breadcrumb">
+
+    <div class="admin-breadcrumb-inner">
+
+        <a href="index.html">होम</a>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <strong>Admin Login</strong>
+
+    </div>
+
+</div>
+
+
 <!-- ADMIN LOGIN -->
 
-<section class="admin-login-section">
+<section class="admin-main-login">
 
     <div class="admin-login-box">
 
-        <h2>
 
-            एडमिन लॉगिन
+        <!-- LEFT -->
 
-        </h2>
+        <div class="admin-login-info">
 
+            <div class="admin-info-content">
 
-        <p>
-
-            एडमिन पैनल में प्रवेश करने के लिए
-            अपनी जानकारी भरें।
-
-        </p>
+                <div class="admin-security-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
 
 
-        <form id="adminLoginForm">
+                <h1>
+                    Admin
+                    <br>
+                    Control Panel
+                </h1>
 
 
-            <div class="form-group">
-
-                <label>
-
-                    एडमिन यूज़रनेम
-
-                </label>
+                <p>
+                    युवा सेवा संकल्प फाउंडेशन के
+                    प्रशासनिक कार्यों को सुरक्षित रूप से
+                    संचालित करने के लिए लॉगिन करें।
+                </p>
 
 
-                <input
-                    type="text"
-                    id="adminUsername"
-                    placeholder="यूज़रनेम लिखें"
-                    required
-                >
+                <div class="admin-security-list">
+
+                    <div class="admin-security-item">
+
+                        <i class="fa-solid fa-users-gear"></i>
+
+                        <span>
+                            सदस्य एवं वॉलंटियर प्रबंधन
+                        </span>
+
+                    </div>
+
+
+                    <div class="admin-security-item">
+
+                        <i class="fa-solid fa-calendar-days"></i>
+
+                        <span>
+                            कार्यक्रम एवं समाचार प्रबंधन
+                        </span>
+
+                    </div>
+
+
+                    <div class="admin-security-item">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                        <span>
+                            संस्था की गतिविधियों की निगरानी
+                        </span>
+
+                    </div>
+
+
+                    <div class="admin-security-item">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <span>
+                            सुरक्षित प्रशासनिक पहुँच
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT -->
+
+        <div class="admin-login-form">
+
+            <div class="admin-form-heading">
+
+                <h2>Admin Login</h2>
+
+                <p>
+                    केवल अधिकृत Administrator के लिए।
+                </p>
 
             </div>
 
 
-            <div class="form-group">
-
-                <label>
-
-                    पासवर्ड
-
-                </label>
+            <form id="adminLoginForm">
 
 
-                <input
-                    type="password"
-                    id="adminPassword"
-                    placeholder="पासवर्ड लिखें"
-                    required
-                >
+                <div class="admin-form-group">
+
+                    <label for="adminUsername">
+                        Username / Email
+                    </label>
+
+                    <div class="admin-input">
+
+                        <i class="fa-solid fa-user"></i>
+
+                        <input type="text"
+                               id="adminUsername"
+                               placeholder="Username या Email लिखें"
+                               required>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-form-group">
+
+                    <label for="adminPassword">
+                        Password
+                    </label>
+
+                    <div class="admin-input">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input type="password"
+                               id="adminPassword"
+                               placeholder="अपना Password लिखें"
+                               required>
+
+                        <button type="button"
+                                class="admin-password-toggle"
+                                id="adminTogglePassword">
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="admin-options">
+
+                    <label class="admin-remember">
+
+                        <input type="checkbox"
+                               id="adminRemember">
+
+                        <span>मुझे याद रखें</span>
+
+                    </label>
+
+
+                    <a href="#"
+                       class="admin-forgot">
+
+                        पासवर्ड भूल गए?
+
+                    </a>
+
+                </div>
+
+
+                <button type="submit"
+                        class="admin-submit">
+
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    Secure Login
+
+                </button>
+
+
+                <p id="adminResult"
+                   class="admin-result"></p>
+
+
+            </form>
+
+
+            <div class="admin-warning">
+
+                <i class="fa-solid fa-triangle-exclamation"></i>
+
+                यह पेज केवल संस्था के अधिकृत Administrator
+                के उपयोग के लिए है। अनधिकृत प्रवेश की अनुमति नहीं है।
 
             </div>
 
-
-            <p
-                id="loginMessage"
-                class="login-message"
-            >
-
-            </p>
-
-
-            <button
-                type="submit"
-                class="admin-login-btn"
-            >
-
-                लॉगिन करें
-
-            </button>
-
-
-        </form>
-
-
-        <a
-            href="index.html"
-            class="back-home"
-        >
-
-            ← होम पेज पर जाएँ
-
-        </a>
+        </div>
 
     </div>
 
@@ -180,39 +1335,210 @@
 
 <!-- FOOTER -->
 
-<footer>
+<footer class="admin-footer">
 
-    <img
-        src="images/logo.png"
-        alt="युवा सेवा संकल्प फाउंडेशन लोगो"
-        width="70"
-    >
+    <div class="admin-footer-inner">
 
 
-    <h3>
+        <div>
 
-        युवा सेवा संकल्प फाउंडेशन
+            <img src="images/logo.png"
+                 alt="YSS Foundation"
+                 class="admin-footer-logo">
 
-    </h3>
+            <h3>
+                युवा सेवा संकल्प फाउंडेशन
+            </h3>
+
+            <p>
+                सेवा, समर्पण और संस्कार के साथ
+                समाज एवं राष्ट्र निर्माण की दिशा में
+                सकारात्मक प्रयास।
+            </p>
+
+        </div>
 
 
-    <p>
+        <div>
 
-        युवा शक्ति, राष्ट्र शक्ति
+            <h4>महत्वपूर्ण लिंक</h4>
 
-    </p>
+            <a href="index.html">होम</a>
+            <a href="about.html">हमारे बारे में</a>
+            <a href="mission.html">हमारा मिशन</a>
+            <a href="vision.html">हमारा विजन</a>
+            <a href="membership.html">सदस्यता</a>
+
+        </div>
 
 
-    <p>
+        <div>
 
-        © 2026 All Rights Reserved
+            <h4>हमारे कार्य</h4>
 
-    </p>
+            <a href="education.html">शिक्षा</a>
+            <a href="health.html">स्वास्थ्य</a>
+            <a href="environment.html">पर्यावरण</a>
+            <a href="women.html">महिला सशक्तिकरण</a>
+            <a href="youth.html">युवा विकास</a>
+            <a href="social-service.html">समाज सेवा</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>संपर्क करें</h4>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                ग्राम नैपुरा, पोस्ट कौड़ाही,
+                जिला अम्बेडकर नगर,
+                उत्तर प्रदेश – 224129
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                9651731313
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                info.yssfoundation@gmail.com
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="admin-footer-bottom">
+
+        © 2026 युवा सेवा संकल्प फाउंडेशन |
+        सर्वाधिकार सुरक्षित |
+        <strong>युवा शक्ति - राष्ट्र शक्ति</strong>
+
+    </div>
 
 </footer>
 
 
-<script src="admin.js"></script>
+<!-- JAVASCRIPT -->
+
+<script>
+
+    const adminPassword =
+        document.getElementById("adminPassword");
+
+    const adminTogglePassword =
+        document.getElementById("adminTogglePassword");
+
+
+    adminTogglePassword.addEventListener(
+        "click",
+        function(){
+
+            if(adminPassword.type === "password"){
+
+                adminPassword.type = "text";
+
+                adminTogglePassword.innerHTML =
+                '<i class="fa-solid fa-eye-slash"></i>';
+
+            }else{
+
+                adminPassword.type = "password";
+
+                adminTogglePassword.innerHTML =
+                '<i class="fa-solid fa-eye"></i>';
+
+            }
+
+        }
+    );
+
+
+    document
+    .getElementById("adminLoginForm")
+    .addEventListener(
+
+        "submit",
+
+        function(event){
+
+            event.preventDefault();
+
+
+            const username =
+                document
+                .getElementById("adminUsername")
+                .value
+                .trim();
+
+
+            const password =
+                document
+                .getElementById("adminPassword")
+                .value
+                .trim();
+
+
+            const result =
+                document
+                .getElementById("adminResult");
+
+
+            if(username === "" || password === ""){
+
+                result.innerHTML =
+                "❌ कृपया Username और Password भरें।";
+
+                result.style.color =
+                "#d93025";
+
+                return;
+
+            }
+
+
+            result.innerHTML =
+            "⏳ सुरक्षित रूप से Login किया जा रहा है...";
+
+            result.style.color =
+            "#123b66";
+
+
+            setTimeout(
+
+                function(){
+
+                    result.innerHTML =
+                    "✅ Admin Login सफल! Dashboard तैयार किया जा रहा है।";
+
+                    result.style.color =
+                    "#24834b";
+
+
+                    /*
+                    Dashboard बनने के बाद:
+
+                    window.location.href =
+                    "admin-dashboard.html";
+
+                    */
+
+                },
+
+                900
+
+            );
+
+        }
+
+    );
+
+</script>
 
 
 </body>
