@@ -1,0 +1,1765 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="युवा सेवा संकल्प फाउंडेशन - युवा विकास, कौशल विकास, नेतृत्व, रोजगार जागरूकता और स्वयंसेवा।">
+
+    <title>युवा विकास | युवा सेवा संकल्प फाउंडेशन</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+
+        /* =====================================================
+           YUVA VIKAS PAGE
+        ===================================================== */
+
+        .youth-page{
+            margin:0;
+            background:#f5f8fb;
+            color:#263746;
+            font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+        }
+
+        .youth-page *,
+        .youth-page *::before,
+        .youth-page *::after{
+            box-sizing:border-box;
+        }
+
+        .youth-page a{
+            text-decoration:none;
+        }
+
+
+        /* =====================================================
+           TOP BAR
+        ===================================================== */
+
+        .youth-topbar{
+            background:#123b66;
+            color:#fff;
+        }
+
+        .youth-topbar-inner{
+            width:92%;
+            max-width:1400px;
+            min-height:42px;
+            margin:auto;
+
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:20px;
+        }
+
+        .youth-contact{
+            display:flex;
+            align-items:center;
+            gap:24px;
+        }
+
+        .youth-contact span{
+            display:flex;
+            align-items:center;
+            gap:7px;
+            font-size:13px;
+        }
+
+        .youth-contact i{
+            color:#ffb15c;
+        }
+
+        .youth-social{
+            display:flex;
+            align-items:center;
+            gap:14px;
+        }
+
+        .youth-social a{
+            color:#fff;
+        }
+
+        .youth-social a:hover{
+            color:#ff7900;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .youth-header{
+            background:#fff;
+            border-bottom:1px solid #e2e9ef;
+        }
+
+        .youth-header-inner{
+            width:92%;
+            max-width:1400px;
+            min-height:135px;
+            margin:auto;
+
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:25px;
+        }
+
+        .youth-brand{
+            display:flex;
+            align-items:center;
+            gap:18px;
+        }
+
+        .youth-brand-logo{
+            width:120px;
+            height:120px;
+            object-fit:contain;
+        }
+
+        .youth-brand-text h1{
+            margin:0;
+            color:#123b66;
+            font-size:39px;
+            line-height:1.15;
+            font-weight:800;
+        }
+
+        .youth-brand-text h1 span{
+            color:#ff7900;
+        }
+
+        .youth-brand-text p{
+            margin:7px 0 0;
+            color:#123b66;
+            font-size:17px;
+            font-weight:700;
+        }
+
+
+        /* =====================================================
+           LOGIN CARDS
+        ===================================================== */
+
+        .youth-login{
+            display:flex;
+            align-items:center;
+            gap:12px;
+        }
+
+        .youth-login-card{
+            min-width:170px;
+            min-height:66px;
+            padding:10px 14px;
+
+            background:#fff;
+            border:1px solid #dce4eb;
+            border-radius:12px;
+
+            display:flex;
+            align-items:center;
+            gap:11px;
+
+            color:#123b66;
+            transition:.25s;
+        }
+
+        .youth-login-card:hover{
+            transform:translateY(-3px);
+            box-shadow:0 8px 22px rgba(18,59,102,.12);
+        }
+
+        .youth-login-icon{
+            width:42px;
+            height:42px;
+            border-radius:50%;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            font-size:20px;
+        }
+
+        .youth-member .youth-login-icon{
+            color:#24834b;
+            background:#eaf7ed;
+        }
+
+        .youth-volunteer .youth-login-icon{
+            color:#123b66;
+            background:#eaf1fa;
+        }
+
+        .youth-admin{
+            background:#ff7900;
+            color:#fff;
+            border-color:#ff7900;
+        }
+
+        .youth-admin .youth-login-icon{
+            color:#fff;
+            background:rgba(255,255,255,.16);
+        }
+
+        .youth-login-text{
+            display:flex;
+            flex-direction:column;
+        }
+
+        .youth-login-text strong{
+            font-size:15px;
+        }
+
+        .youth-login-text small{
+            margin-top:3px;
+            font-size:10px;
+            opacity:.75;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        .youth-nav{
+            background:#082e63;
+            min-height:56px;
+            position:relative;
+            z-index:999;
+        }
+
+        .youth-nav-inner{
+            width:92%;
+            max-width:1400px;
+            min-height:56px;
+            margin:auto;
+
+            display:flex;
+            align-items:stretch;
+        }
+
+        .youth-nav-link{
+            min-height:56px;
+            padding:0 17px;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:7px;
+
+            color:#fff;
+            font-size:14px;
+            font-weight:700;
+            white-space:nowrap;
+
+            transition:.2s;
+        }
+
+        .youth-nav-link:hover,
+        .youth-nav-link.active{
+            background:#ff7900;
+        }
+
+        .youth-dropdown{
+            position:relative;
+        }
+
+        .youth-dropdown-menu{
+            display:none;
+
+            position:absolute;
+            left:0;
+            top:56px;
+
+            width:220px;
+            background:#fff;
+
+            border-top:3px solid #ff7900;
+            box-shadow:0 12px 30px rgba(0,0,0,.18);
+        }
+
+        .youth-dropdown:hover .youth-dropdown-menu{
+            display:block;
+        }
+
+        .youth-dropdown-menu a{
+            display:block;
+            padding:12px 15px;
+
+            color:#263746;
+            font-size:13px;
+
+            border-bottom:1px solid #edf1f4;
+        }
+
+        .youth-dropdown-menu a:hover{
+            color:#123b66;
+            background:#f3f7fa;
+        }
+
+
+        /* =====================================================
+           BREADCRUMB
+        ===================================================== */
+
+        .youth-breadcrumb{
+            background:#eef3f8;
+            border-bottom:1px solid #dfe7ee;
+        }
+
+        .youth-breadcrumb-inner{
+            width:92%;
+            max-width:1400px;
+            min-height:44px;
+            margin:auto;
+
+            display:flex;
+            align-items:center;
+            gap:9px;
+
+            color:#69798a;
+            font-size:13px;
+        }
+
+        .youth-breadcrumb a{
+            color:#123b66;
+            font-weight:700;
+        }
+
+        .youth-breadcrumb i{
+            color:#ff7900;
+            font-size:10px;
+        }
+
+
+        /* =====================================================
+           HERO
+        ===================================================== */
+
+        .youth-hero{
+            width:92%;
+            max-width:1400px;
+            margin:35px auto 0;
+
+            padding:55px 45px;
+            border-radius:25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #123b66 0%,
+                    #1d5d96 55%,
+                    #24834b 100%
+                );
+
+            color:#fff;
+            position:relative;
+            overflow:hidden;
+
+            box-shadow:0 18px 40px rgba(18,59,102,.18);
+        }
+
+        .youth-hero::before{
+            content:"";
+            position:absolute;
+
+            width:330px;
+            height:330px;
+            border-radius:50%;
+
+            right:-120px;
+            top:-150px;
+
+            background:rgba(255,255,255,.08);
+        }
+
+        .youth-hero::after{
+            content:"";
+            position:absolute;
+
+            width:240px;
+            height:240px;
+            border-radius:50%;
+
+            left:-100px;
+            bottom:-130px;
+
+            background:rgba(255,121,0,.14);
+        }
+
+        .youth-hero-content{
+            position:relative;
+            z-index:2;
+            max-width:850px;
+        }
+
+        .youth-hero h1{
+            margin:0 0 10px;
+            font-size:48px;
+            font-weight:800;
+        }
+
+        .youth-hero-line{
+            width:130px;
+            height:5px;
+            border-radius:20px;
+            background:#ff7900;
+            margin-bottom:20px;
+        }
+
+        .youth-hero p{
+            margin:0;
+            font-size:19px;
+            line-height:1.8;
+            color:#eef6fb;
+        }
+
+        .youth-hero-tag{
+            display:inline-flex;
+            align-items:center;
+            gap:9px;
+
+            margin-top:20px;
+            padding:10px 18px;
+
+            border:1px solid rgba(255,255,255,.30);
+            border-radius:30px;
+
+            font-weight:700;
+        }
+
+
+        /* =====================================================
+           INTRO
+        ===================================================== */
+
+        .youth-intro{
+            width:92%;
+            max-width:1400px;
+            margin:35px auto;
+
+            display:grid;
+            grid-template-columns:1.4fr .8fr;
+            gap:30px;
+        }
+
+        .youth-intro-content{
+            background:#fff;
+            padding:32px;
+            border-radius:20px;
+
+            border:1px solid #e0e7ed;
+            box-shadow:0 8px 25px rgba(0,0,0,.04);
+        }
+
+        .youth-intro-content h2{
+            margin:0 0 15px;
+            color:#123b66;
+            font-size:29px;
+        }
+
+        .youth-intro-content p{
+            margin:0 0 14px;
+            color:#526271;
+            font-size:16px;
+            line-height:1.9;
+        }
+
+        .youth-power{
+            background:#f0faf3;
+            border:1px solid #d6eadb;
+            border-radius:20px;
+            padding:30px;
+
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+            text-align:center;
+        }
+
+        .youth-power-icon{
+            width:80px;
+            height:80px;
+            border-radius:50%;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            background:#24834b;
+            color:#fff;
+            font-size:34px;
+            margin-bottom:15px;
+        }
+
+        .youth-power h3{
+            margin:0 0 8px;
+            color:#123b66;
+            font-size:23px;
+        }
+
+        .youth-power p{
+            margin:0;
+            color:#617181;
+            font-size:14px;
+            line-height:1.7;
+        }
+
+
+        /* =====================================================
+           DEVELOPMENT CARDS
+        ===================================================== */
+
+        .youth-development{
+            width:92%;
+            max-width:1400px;
+            margin:0 auto;
+            padding:15px 0 45px;
+        }
+
+        .youth-heading{
+            text-align:center;
+            margin-bottom:30px;
+        }
+
+        .youth-heading h2{
+            margin:0;
+            color:#123b66;
+            font-size:31px;
+        }
+
+        .youth-heading p{
+            max-width:750px;
+            margin:8px auto 0;
+            color:#69798a;
+            font-size:14px;
+        }
+
+        .youth-card-grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:18px;
+        }
+
+        .youth-card{
+            background:#fff;
+            border:1px solid #dfe7ed;
+            border-radius:18px;
+            padding:25px;
+
+            box-shadow:0 6px 20px rgba(0,0,0,.04);
+            transition:.25s;
+        }
+
+        .youth-card:hover{
+            transform:translateY(-5px);
+            box-shadow:0 15px 32px rgba(18,59,102,.10);
+        }
+
+        .youth-card-icon{
+            width:60px;
+            height:60px;
+            border-radius:16px;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            background:#eaf2fb;
+            color:#123b66;
+
+            font-size:26px;
+            margin-bottom:15px;
+        }
+
+        .youth-card:nth-child(2) .youth-card-icon{
+            background:#eaf7ed;
+            color:#24834b;
+        }
+
+        .youth-card:nth-child(3) .youth-card-icon{
+            background:#fff0e7;
+            color:#ff7900;
+        }
+
+        .youth-card:nth-child(4) .youth-card-icon{
+            background:#f1ebfa;
+            color:#663399;
+        }
+
+        .youth-card:nth-child(5) .youth-card-icon{
+            background:#e7f4f4;
+            color:#147b7b;
+        }
+
+        .youth-card:nth-child(6) .youth-card-icon{
+            background:#fff7df;
+            color:#b77b00;
+        }
+
+        .youth-card h3{
+            margin:0 0 8px;
+            color:#123b66;
+            font-size:20px;
+        }
+
+        .youth-card p{
+            margin:0;
+            color:#68798a;
+            font-size:14px;
+            line-height:1.7;
+        }
+
+        .youth-card ul{
+            list-style:none;
+            padding:0;
+            margin:14px 0 0;
+        }
+
+        .youth-card li{
+            position:relative;
+            padding-left:20px;
+            margin:6px 0;
+
+            color:#526271;
+            font-size:13px;
+        }
+
+        .youth-card li::before{
+            content:"✓";
+            position:absolute;
+            left:0;
+            color:#24834b;
+            font-weight:800;
+        }
+
+
+        /* =====================================================
+           YOUTH JOURNEY
+        ===================================================== */
+
+        .youth-journey{
+            width:92%;
+            max-width:1400px;
+            margin:0 auto;
+            padding:0 0 45px;
+        }
+
+        .youth-journey-box{
+            background:#123b66;
+            color:#fff;
+            padding:35px;
+            border-radius:22px;
+        }
+
+        .youth-journey-title{
+            text-align:center;
+            margin-bottom:30px;
+        }
+
+        .youth-journey-title h2{
+            margin:0;
+            font-size:30px;
+        }
+
+        .youth-journey-title p{
+            margin:8px 0 0;
+            color:#dce8f3;
+            font-size:14px;
+        }
+
+        .youth-journey-grid{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:18px;
+        }
+
+        .youth-step{
+            text-align:center;
+            padding:12px;
+        }
+
+        .youth-step-number{
+            width:58px;
+            height:58px;
+            margin:0 auto 12px;
+            border-radius:50%;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            background:#ff7900;
+            color:#fff;
+
+            font-size:19px;
+            font-weight:800;
+        }
+
+        .youth-step h3{
+            margin:0 0 6px;
+            font-size:17px;
+        }
+
+        .youth-step p{
+            margin:0;
+            color:#d8e4ee;
+            font-size:12px;
+            line-height:1.6;
+        }
+
+
+        /* =====================================================
+           YOUTH VALUES
+        ===================================================== */
+
+        .youth-values{
+            width:92%;
+            max-width:1400px;
+            margin:0 auto;
+            padding:0 0 45px;
+        }
+
+        .youth-values-grid{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:16px;
+        }
+
+        .youth-value{
+            background:#fff;
+            border:1px solid #e0e7ed;
+            border-radius:17px;
+            padding:25px 18px;
+            text-align:center;
+        }
+
+        .youth-value i{
+            font-size:29px;
+            color:#24834b;
+            margin-bottom:10px;
+        }
+
+        .youth-value strong{
+            display:block;
+            color:#123b66;
+            font-size:19px;
+        }
+
+        .youth-value span{
+            display:block;
+            margin-top:6px;
+            color:#71808f;
+            font-size:13px;
+            line-height:1.5;
+        }
+
+
+        /* =====================================================
+           JOIN CTA
+        ===================================================== */
+
+        .youth-join{
+            width:92%;
+            max-width:1400px;
+            margin:0 auto 60px;
+        }
+
+        .youth-join-box{
+            padding:42px;
+            border-radius:22px;
+            text-align:center;
+
+            background:#f1faf4;
+            border:1px solid #d5e8db;
+        }
+
+        .youth-join-box h2{
+            margin:0 0 9px;
+            color:#24834b;
+            font-size:31px;
+        }
+
+        .youth-join-box p{
+            max-width:720px;
+            margin:0 auto 22px;
+            color:#526271;
+            font-size:15px;
+            line-height:1.8;
+        }
+
+        .youth-buttons{
+            display:flex;
+            justify-content:center;
+            gap:12px;
+            flex-wrap:wrap;
+        }
+
+        .youth-button{
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+            padding:13px 23px;
+            border-radius:8px;
+            color:#fff;
+            font-size:14px;
+            font-weight:700;
+        }
+
+        .youth-button.blue{
+            background:#123b66;
+        }
+
+        .youth-button.orange{
+            background:#ff7900;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .youth-footer{
+            background:#092e60;
+            color:#fff;
+            padding:45px 0 0;
+        }
+
+        .youth-footer-inner{
+            width:92%;
+            max-width:1400px;
+            margin:auto;
+
+            display:grid;
+            grid-template-columns:1.5fr 1fr 1fr 1.3fr;
+            gap:35px;
+        }
+
+        .youth-footer-logo{
+            width:90px;
+            height:90px;
+            object-fit:contain;
+            margin-bottom:10px;
+        }
+
+        .youth-footer h3,
+        .youth-footer h4{
+            margin:0 0 13px;
+        }
+
+        .youth-footer p{
+            margin:0 0 9px;
+            color:#dbe5ef;
+            font-size:13px;
+            line-height:1.7;
+        }
+
+        .youth-footer a{
+            display:block;
+            color:#dbe5ef;
+            font-size:13px;
+            margin-bottom:8px;
+        }
+
+        .youth-footer a:hover{
+            color:#ff7900;
+        }
+
+        .youth-footer-bottom{
+            margin-top:35px;
+            padding:17px 0;
+            border-top:1px solid rgba(255,255,255,.15);
+
+            text-align:center;
+            color:#dbe5ef;
+            font-size:12px;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media(max-width:1150px){
+
+            .youth-header-inner{
+                flex-direction:column;
+                padding:18px 0;
+            }
+
+            .youth-login{
+                width:100%;
+                justify-content:center;
+            }
+
+            .youth-intro{
+                grid-template-columns:1fr;
+            }
+
+            .youth-footer-inner{
+                grid-template-columns:1fr 1fr;
+            }
+
+        }
+
+
+        @media(max-width:850px){
+
+            .youth-contact span:first-child{
+                display:none;
+            }
+
+            .youth-brand{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            .youth-brand-text h1{
+                font-size:31px;
+            }
+
+            .youth-card-grid{
+                grid-template-columns:1fr 1fr;
+            }
+
+            .youth-journey-grid{
+                grid-template-columns:1fr 1fr;
+            }
+
+            .youth-values-grid{
+                grid-template-columns:1fr 1fr;
+            }
+
+        }
+
+
+        @media(max-width:650px){
+
+            .youth-login{
+                flex-direction:column;
+            }
+
+            .youth-login-card{
+                width:100%;
+                max-width:350px;
+            }
+
+            .youth-nav-inner{
+                width:100%;
+                overflow-x:auto;
+            }
+
+            .youth-nav-link{
+                padding:0 12px;
+                font-size:12px;
+            }
+
+            .youth-hero{
+                padding:35px 22px;
+            }
+
+            .youth-hero h1{
+                font-size:35px;
+            }
+
+            .youth-hero p{
+                font-size:15px;
+            }
+
+            .youth-card-grid{
+                grid-template-columns:1fr;
+            }
+
+        }
+
+
+        @media(max-width:430px){
+
+            .youth-brand-text h1{
+                font-size:27px;
+            }
+
+            .youth-hero h1{
+                font-size:30px;
+            }
+
+            .youth-journey-grid,
+            .youth-values-grid{
+                grid-template-columns:1fr;
+            }
+
+            .youth-join-box{
+                padding:28px 18px;
+            }
+
+            .youth-footer-inner{
+                grid-template-columns:1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="youth-page">
+
+
+<!-- TOP BAR -->
+
+<div class="youth-topbar">
+
+    <div class="youth-topbar-inner">
+
+        <div class="youth-contact">
+
+            <span>
+                <i class="fa-solid fa-envelope"></i>
+                info.yssfoundation@gmail.com
+            </span>
+
+            <span>
+                <i class="fa-solid fa-location-dot"></i>
+                ग्राम नैपुरा, पोस्ट कौड़ाही,
+                जिला अम्बेडकर नगर, उत्तर प्रदेश – 224129
+            </span>
+
+        </div>
+
+        <div class="youth-social">
+
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+
+            <span>
+                <i class="fa-solid fa-phone"></i>
+                9651731313
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- HEADER -->
+
+<header class="youth-header">
+
+    <div class="youth-header-inner">
+
+        <a href="index.html" class="youth-brand">
+
+            <img src="images/logo.png"
+                alt="युवा सेवा संकल्प फाउंडेशन"
+                class="youth-brand-logo">
+
+            <div class="youth-brand-text">
+
+                <h1>
+                    युवा सेवा संकल्प
+                    <span>फाउंडेशन</span>
+                </h1>
+
+                <p>युवा शक्ति - राष्ट्र शक्ति</p>
+
+            </div>
+
+        </a>
+
+
+        <div class="youth-login">
+
+            <a href="member-login.html"
+                class="youth-login-card youth-member">
+
+                <div class="youth-login-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="youth-login-text">
+                    <strong>सदस्य Login</strong>
+                    <small>अपने खाते में लॉगिन करें</small>
+                </div>
+
+            </a>
+
+
+            <a href="volunteer-login.html"
+                class="youth-login-card youth-volunteer">
+
+                <div class="youth-login-icon">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+
+                <div class="youth-login-text">
+                    <strong>Volunteer Login</strong>
+                    <small>सेवा करने के लिए जुड़ें</small>
+                </div>
+
+            </a>
+
+
+            <a href="admin-login.html"
+                class="youth-login-card youth-admin">
+
+                <div class="youth-login-icon">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+
+                <div class="youth-login-text">
+                    <strong>Admin Login</strong>
+                    <small>Admin Panel</small>
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- NAVIGATION -->
+
+<nav class="youth-nav">
+
+    <div class="youth-nav-inner">
+
+        <a href="index.html" class="youth-nav-link">
+            <i class="fa-solid fa-house"></i>
+            होम
+        </a>
+
+
+        <div class="youth-dropdown">
+
+            <a href="about.html" class="youth-nav-link">
+                संस्था के बारे में
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+
+            <div class="youth-dropdown-menu">
+                <a href="about.html">हमारे बारे में</a>
+                <a href="mission.html">हमारा मिशन</a>
+                <a href="vision.html">हमारा विजन</a>
+                <a href="team.html">हमारी टीम</a>
+            </div>
+
+        </div>
+
+
+        <div class="youth-dropdown">
+
+            <a href="#" class="youth-nav-link active">
+                हमारे कार्य
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+
+            <div class="youth-dropdown-menu">
+                <a href="education.html">शिक्षा</a>
+                <a href="health.html">स्वास्थ्य</a>
+                <a href="environment.html">पर्यावरण</a>
+                <a href="women.html">महिला सशक्तिकरण</a>
+                <a href="youth.html">युवा विकास</a>
+                <a href="social-service.html">समाज सेवा</a>
+            </div>
+
+        </div>
+
+
+        <a href="volunteer.html" class="youth-nav-link">
+            वॉलंटियर
+        </a>
+
+        <a href="membership.html" class="youth-nav-link">
+            सदस्यता
+        </a>
+
+        <a href="news.html" class="youth-nav-link">
+            समाचार
+        </a>
+
+        <a href="events.html" class="youth-nav-link">
+            आगामी कार्यक्रम
+        </a>
+
+        <a href="gallery.html" class="youth-nav-link">
+            गैलरी
+        </a>
+
+        <a href="contact.html" class="youth-nav-link">
+            संपर्क करें
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- BREADCRUMB -->
+
+<div class="youth-breadcrumb">
+
+    <div class="youth-breadcrumb-inner">
+
+        <a href="index.html">होम</a>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <span>हमारे कार्य</span>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <strong>युवा विकास</strong>
+
+    </div>
+
+</div>
+
+
+<!-- HERO -->
+
+<section class="youth-hero">
+
+    <div class="youth-hero-content">
+
+        <h1>युवा विकास</h1>
+
+        <div class="youth-hero-line"></div>
+
+        <p>
+            युवाओं की ऊर्जा, प्रतिभा और क्षमता को
+            सकारात्मक दिशा देकर उन्हें नेतृत्व,
+            कौशल, रोजगार जागरूकता और समाज सेवा
+            से जोड़ना हमारा प्रमुख उद्देश्य है।
+        </p>
+
+        <div class="youth-hero-tag">
+            <i class="fa-solid fa-bolt"></i>
+            युवा शक्ति - राष्ट्र शक्ति
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- INTRO -->
+
+<section class="youth-intro">
+
+    <div class="youth-intro-content">
+
+        <h2>युवा ही परिवर्तन की सबसे बड़ी शक्ति हैं</h2>
+
+        <p>
+            युवा सेवा संकल्प फाउंडेशन का विश्वास है कि
+            देश और समाज का भविष्य युवाओं की सोच,
+            शिक्षा, कौशल और नेतृत्व क्षमता से जुड़ा है।
+        </p>
+
+        <p>
+            हमारा प्रयास युवाओं को केवल अवसरों की
+            जानकारी देना नहीं, बल्कि उन्हें समाज के
+            प्रति जिम्मेदार, आत्मविश्वासी और सक्रिय
+            नागरिक बनने के लिए प्रेरित करना है।
+        </p>
+
+        <p>
+            हम युवाओं को कौशल विकास, नेतृत्व,
+            स्वयंसेवा, सामाजिक जागरूकता और
+            सकारात्मक गतिविधियों से जोड़ने का
+            प्रयास करते हैं।
+        </p>
+
+    </div>
+
+
+    <div class="youth-power">
+
+        <div class="youth-power-icon">
+            <i class="fa-solid fa-people-group"></i>
+        </div>
+
+        <h3>युवा शक्ति</h3>
+
+        <p>
+            सही दिशा, सही अवसर और मजबूत संकल्प के साथ
+            युवा समाज और राष्ट्र में बड़ा सकारात्मक
+            परिवर्तन ला सकते हैं।
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- DEVELOPMENT AREAS -->
+
+<section class="youth-development">
+
+    <div class="youth-heading">
+
+        <h2>युवा विकास के प्रमुख क्षेत्र</h2>
+
+        <p>
+            युवाओं के सर्वांगीण विकास के लिए
+            ज्ञान, कौशल, नेतृत्व और सेवा की भावना
+            को एक साथ आगे बढ़ाने का प्रयास।
+        </p>
+
+    </div>
+
+
+    <div class="youth-card-grid">
+
+
+        <div class="youth-card">
+
+            <div class="youth-card-icon">
+                <i class="fa-solid fa-lightbulb"></i>
+            </div>
+
+            <h3>कौशल विकास</h3>
+
+            <p>
+                युवाओं को नई क्षमताओं और उपयोगी
+                कौशलों के प्रति जागरूक करना।
+            </p>
+
+            <ul>
+                <li>डिजिटल जागरूकता</li>
+                <li>व्यक्तित्व विकास</li>
+                <li>करियर मार्गदर्शन</li>
+            </ul>
+
+        </div>
+
+
+        <div class="youth-card">
+
+            <div class="youth-card-icon">
+                <i class="fa-solid fa-user-tie"></i>
+            </div>
+
+            <h3>नेतृत्व विकास</h3>
+
+            <p>
+                युवाओं में जिम्मेदारी, निर्णय क्षमता
+                और नेतृत्व की भावना विकसित करना।
+            </p>
+
+            <ul>
+                <li>युवा नेतृत्व</li>
+                <li>टीमवर्क</li>
+                <li>जिम्मेदारी की भावना</li>
+            </ul>
+
+        </div>
+
+
+        <div class="youth-card">
+
+            <div class="youth-card-icon">
+                <i class="fa-solid fa-briefcase"></i>
+            </div>
+
+            <h3>रोजगार जागरूकता</h3>
+
+            <p>
+                युवाओं को करियर, रोजगार और
+                स्वरोजगार के अवसरों के प्रति
+                जागरूक करना।
+            </p>
+
+            <ul>
+                <li>करियर जानकारी</li>
+                <li>स्वरोजगार जागरूकता</li>
+                <li>मार्गदर्शन</li>
+            </ul>
+
+        </div>
+
+
+        <div class="youth-card">
+
+            <div class="youth-card-icon">
+                <i class="fa-solid fa-handshake-angle"></i>
+            </div>
+
+            <h3>स्वयंसेवा</h3>
+
+            <p>
+                युवाओं को समाज सेवा और जनहित के
+                कार्यों में सक्रिय भागीदारी के लिए
+                प्रेरित करना।
+            </p>
+
+            <ul>
+                <li>सेवा अभियान</li>
+                <li>सामुदायिक सहयोग</li>
+                <li>जनभागीदारी</li>
+            </ul>
+
+        </div>
+
+
+        <div class="youth-card">
+
+            <div class="youth-card-icon">
+                <i class="fa-solid fa-comments"></i>
+            </div>
+
+            <h3>जागरूकता</h3>
+
+            <p>
+                सामाजिक, शैक्षिक और राष्ट्रीय
+                विषयों पर युवाओं में सकारात्मक
+                जागरूकता बढ़ाना।
+            </p>
+
+            <ul>
+                <li>सामाजिक जागरूकता</li>
+                <li>नागरिक जिम्मेदारी</li>
+                <li>राष्ट्रीय चेतना</li>
+            </ul>
+
+        </div>
+
+
+        <div class="youth-card">
+
+            <div class="youth-card-icon">
+                <i class="fa-solid fa-trophy"></i>
+            </div>
+
+            <h3>प्रतिभा प्रोत्साहन</h3>
+
+            <p>
+                युवाओं की प्रतिभा और सकारात्मक
+                उपलब्धियों को पहचानने और प्रोत्साहित
+                करने का प्रयास।
+            </p>
+
+            <ul>
+                <li>प्रतिभा पहचान</li>
+                <li>सम्मान एवं प्रोत्साहन</li>
+                <li>रचनात्मक गतिविधियां</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- YOUTH JOURNEY -->
+
+<section class="youth-journey">
+
+    <div class="youth-journey-box">
+
+        <div class="youth-journey-title">
+
+            <h2>युवा विकास की यात्रा</h2>
+
+            <p>
+                एक जागरूक युवा से एक जिम्मेदार और
+                समाज के लिए सक्रिय नागरिक तक।
+            </p>
+
+        </div>
+
+
+        <div class="youth-journey-grid">
+
+
+            <div class="youth-step">
+
+                <div class="youth-step-number">01</div>
+
+                <h3>जुड़ें</h3>
+
+                <p>
+                    फाउंडेशन की सकारात्मक गतिविधियों
+                    से जुड़ें।
+                </p>
+
+            </div>
+
+
+            <div class="youth-step">
+
+                <div class="youth-step-number">02</div>
+
+                <h3>सीखें</h3>
+
+                <p>
+                    ज्ञान, कौशल और अनुभव प्राप्त करें।
+                </p>
+
+            </div>
+
+
+            <div class="youth-step">
+
+                <div class="youth-step-number">03</div>
+
+                <h3>नेतृत्व करें</h3>
+
+                <p>
+                    जिम्मेदारी लेकर सकारात्मक पहल करें।
+                </p>
+
+            </div>
+
+
+            <div class="youth-step">
+
+                <div class="youth-step-number">04</div>
+
+                <h3>बदलाव लाएं</h3>
+
+                <p>
+                    समाज और राष्ट्र निर्माण में योगदान दें।
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- VALUES -->
+
+<section class="youth-values">
+
+    <div class="youth-heading">
+
+        <h2>हम युवाओं में क्या विकसित करना चाहते हैं?</h2>
+
+    </div>
+
+
+    <div class="youth-values-grid">
+
+        <div class="youth-value">
+
+            <i class="fa-solid fa-brain"></i>
+
+            <strong>आत्मविश्वास</strong>
+
+            <span>
+                अपनी क्षमता को पहचानने और आगे बढ़ने का विश्वास।
+            </span>
+
+        </div>
+
+
+        <div class="youth-value">
+
+            <i class="fa-solid fa-star"></i>
+
+            <strong>सकारात्मक सोच</strong>
+
+            <span>
+                चुनौतियों में भी समाधान और अवसर खोजने की दृष्टि।
+            </span>
+
+        </div>
+
+
+        <div class="youth-value">
+
+            <i class="fa-solid fa-shield-heart"></i>
+
+            <strong>जिम्मेदारी</strong>
+
+            <span>
+                समाज, परिवार और राष्ट्र के प्रति कर्तव्य की भावना।
+            </span>
+
+        </div>
+
+
+        <div class="youth-value">
+
+            <i class="fa-solid fa-fire"></i>
+
+            <strong>संकल्प</strong>
+
+            <span>
+                लक्ष्य के प्रति निरंतर मेहनत और दृढ़ निश्चय।
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- JOIN CTA -->
+
+<section class="youth-join">
+
+    <div class="youth-join-box">
+
+        <h2>युवा बदलाव की शुरुआत बनें</h2>
+
+        <p>
+            आपका एक छोटा कदम समाज में बड़े परिवर्तन की
+            शुरुआत कर सकता है। युवा सेवा संकल्प फाउंडेशन
+            से जुड़कर अपनी ऊर्जा और क्षमता को सेवा,
+            विकास और राष्ट्र निर्माण की दिशा में लगाएं।
+        </p>
+
+
+        <div class="youth-buttons">
+
+            <a href="membership.html"
+                class="youth-button blue">
+
+                <i class="fa-solid fa-user-plus"></i>
+                सदस्य बनें
+
+            </a>
+
+
+            <a href="volunteer.html"
+                class="youth-button orange">
+
+                <i class="fa-solid fa-handshake"></i>
+                Volunteer बनें
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer class="youth-footer">
+
+    <div class="youth-footer-inner">
+
+
+        <div>
+
+            <img src="images/logo.png"
+                alt="YSS Foundation"
+                class="youth-footer-logo">
+
+            <h3>युवा सेवा संकल्प फाउंडेशन</h3>
+
+            <p>
+                सेवा, समर्पण और संस्कार के साथ
+                समाज एवं राष्ट्र निर्माण की दिशा में
+                सकारात्मक प्रयास।
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>महत्वपूर्ण लिंक</h4>
+
+            <a href="index.html">होम</a>
+            <a href="about.html">हमारे बारे में</a>
+            <a href="mission.html">हमारा मिशन</a>
+            <a href="vision.html">हमारा विजन</a>
+            <a href="membership.html">सदस्यता</a>
+            <a href="contact.html">संपर्क करें</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>हमारे कार्य</h4>
+
+            <a href="education.html">शिक्षा</a>
+            <a href="health.html">स्वास्थ्य</a>
+            <a href="environment.html">पर्यावरण</a>
+            <a href="women.html">महिला सशक्तिकरण</a>
+            <a href="youth.html">युवा विकास</a>
+            <a href="social-service.html">समाज सेवा</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>संपर्क करें</h4>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                ग्राम नैपुरा, पोस्ट कौड़ाही,
+                जिला अम्बेडकर नगर,
+                उत्तर प्रदेश – 224129
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                9651731313
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                info.yssfoundation@gmail.com
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="youth-footer-bottom">
+
+        © 2026 युवा सेवा संकल्प फाउंडेशन |
+        सर्वाधिकार सुरक्षित |
+        <strong>युवा शक्ति - राष्ट्र शक्ति</strong>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
