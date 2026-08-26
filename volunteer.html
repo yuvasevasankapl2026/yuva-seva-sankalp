@@ -1,46 +1,1153 @@
 <!DOCTYPE html>
-
 <html lang="hi">
 
 <head>
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="युवा सेवा संकल्प फाउंडेशन - वॉलंटियर पंजीकरण फॉर्म">
 
     <title>
         वॉलंटियर पंजीकरण | युवा सेवा संकल्प फाउंडेशन
     </title>
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+
+    <!-- GOOGLE FONT -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- MAIN CSS -->
+
+    <link rel="stylesheet"
+          href="style.css">
+
+
+<style>
+
+/* =========================================================
+   YUVA SEVA SANKALP FOUNDATION
+   VOLUNTEER REGISTRATION PAGE
+========================================================= */
+
+.volunteer-page{
+    margin:0;
+    background:#f5f8fb;
+    color:#263746;
+    font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+}
+
+.volunteer-page *,
+.volunteer-page *::before,
+.volunteer-page *::after{
+    box-sizing:border-box;
+}
+
+.volunteer-page a{
+    text-decoration:none;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.vol-topbar{
+    background:#123b66;
+    color:#ffffff;
+}
+
+.vol-topbar-inner{
+    width:92%;
+    max-width:1400px;
+    min-height:44px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:20px;
+}
+
+.vol-contact{
+    display:flex;
+    align-items:center;
+    gap:22px;
+}
+
+.vol-contact span{
+    display:flex;
+    align-items:center;
+    gap:7px;
+
+    font-size:13px;
+}
+
+.vol-contact i{
+    color:#ffb15c;
+}
+
+.vol-social{
+    display:flex;
+    align-items:center;
+    gap:14px;
+}
+
+.vol-social a{
+    color:#ffffff;
+    transition:.2s;
+}
+
+.vol-social a:hover{
+    color:#ff7900;
+}
+
+.vol-phone{
+    display:flex;
+    align-items:center;
+    gap:7px;
+
+    font-size:13px;
+    font-weight:700;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.vol-header{
+    background:#ffffff;
+    border-bottom:1px solid #e3e9ef;
+}
+
+.vol-header-inner{
+    width:92%;
+    max-width:1400px;
+    min-height:135px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    gap:30px;
+}
+
+.vol-brand{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.vol-logo{
+    width:115px;
+    height:115px;
+    object-fit:contain;
+}
+
+.vol-brand-text h1{
+    margin:0;
+
+    color:#123b66;
+
+    font-size:38px;
+    line-height:1.2;
+
+    font-weight:800;
+}
+
+.vol-brand-text h1 span{
+    color:#ff7900;
+}
+
+.vol-brand-text p{
+    margin:7px 0 0;
+
+    color:#24834b;
+
+    font-size:17px;
+    font-weight:700;
+}
+
+
+/* =========================================================
+   HEADER LOGIN
+========================================================= */
+
+.vol-login{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.vol-login-card{
+    min-width:165px;
+    min-height:65px;
+
+    padding:10px 13px;
+
+    border:1px solid #dce4eb;
+    border-radius:12px;
+
+    background:#ffffff;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    color:#123b66;
+
+    transition:.25s;
+}
+
+.vol-login-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 25px rgba(18,59,102,.12);
+}
+
+.vol-login-icon{
+    width:42px;
+    height:42px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:19px;
+}
+
+.vol-member .vol-login-icon{
+    background:#eaf7ed;
+    color:#24834b;
+}
+
+.vol-volunteer{
+    background:#eaf2fb;
+}
+
+.vol-volunteer .vol-login-icon{
+    background:#123b66;
+    color:#ffffff;
+}
+
+.vol-admin{
+    background:#ff7900;
+    color:#ffffff;
+    border-color:#ff7900;
+}
+
+.vol-admin .vol-login-icon{
+    background:rgba(255,255,255,.18);
+    color:#ffffff;
+}
+
+.vol-login-text{
+    display:flex;
+    flex-direction:column;
+}
+
+.vol-login-text strong{
+    font-size:14px;
+}
+
+.vol-login-text small{
+    margin-top:3px;
+    font-size:10px;
+    opacity:.75;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.vol-nav{
+    background:#082e63;
+    min-height:56px;
+
+    position:relative;
+    z-index:999;
+}
+
+.vol-nav-inner{
+    width:92%;
+    max-width:1400px;
+    min-height:56px;
+    margin:auto;
+
+    display:flex;
+    align-items:stretch;
+}
+
+.vol-nav-link{
+    min-height:56px;
+
+    padding:0 16px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    gap:7px;
+
+    color:#ffffff;
+
+    font-size:14px;
+    font-weight:700;
+
+    white-space:nowrap;
+
+    transition:.2s;
+}
+
+.vol-nav-link:hover,
+.vol-nav-link.active{
+    background:#ff7900;
+}
+
+.vol-dropdown{
+    position:relative;
+}
+
+.vol-dropdown-menu{
+    display:none;
+
+    position:absolute;
+
+    top:56px;
+    left:0;
+
+    width:220px;
+
+    background:#ffffff;
+
+    border-top:3px solid #ff7900;
+
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+
+.vol-dropdown:hover .vol-dropdown-menu{
+    display:block;
+}
+
+.vol-dropdown-menu a{
+    display:block;
+
+    padding:12px 15px;
+
+    color:#263746;
+
+    font-size:13px;
+
+    border-bottom:1px solid #edf1f4;
+}
+
+.vol-dropdown-menu a:hover{
+    color:#123b66;
+    background:#f4f7fa;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.vol-breadcrumb{
+    background:#eef3f8;
+    border-bottom:1px solid #dfe7ee;
+}
+
+.vol-breadcrumb-inner{
+    width:92%;
+    max-width:1400px;
+    min-height:46px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    font-size:13px;
+    color:#69798a;
+}
+
+.vol-breadcrumb a{
+    color:#123b66;
+    font-weight:700;
+}
+
+.vol-breadcrumb i{
+    color:#ff7900;
+    font-size:10px;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.vol-hero{
+    width:92%;
+    max-width:1400px;
+
+    margin:32px auto 0;
+
+    padding:42px 40px;
+
+    border-radius:24px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #123b66,
+        #1d5d96,
+        #24834b
+    );
+
+    color:#ffffff;
+
+    position:relative;
+    overflow:hidden;
+
+    box-shadow:0 18px 40px rgba(18,59,102,.16);
+}
+
+.vol-hero::before{
+    content:"";
+
+    position:absolute;
+
+    width:300px;
+    height:300px;
+
+    border-radius:50%;
+
+    right:-110px;
+    top:-140px;
+
+    background:rgba(255,255,255,.08);
+}
+
+.vol-hero::after{
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    border-radius:50%;
+
+    left:-80px;
+    bottom:-130px;
+
+    background:rgba(255,121,0,.14);
+}
+
+.vol-hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.vol-hero h1{
+    margin:0 0 10px;
+
+    font-size:42px;
+    font-weight:800;
+}
+
+.vol-hero p{
+    max-width:800px;
+
+    margin:0;
+
+    font-size:17px;
+    line-height:1.8;
+
+    color:#f2f7fb;
+}
+
+
+/* =========================================================
+   MAIN FORM
+========================================================= */
+
+.vol-main{
+    width:92%;
+    max-width:1150px;
+
+    margin:35px auto 60px;
+}
+
+.vol-form-box{
+    background:#ffffff;
+
+    border:1px solid #e0e7ed;
+    border-radius:24px;
+
+    padding:35px;
+
+    box-shadow:0 12px 35px rgba(18,59,102,.07);
+}
+
+.vol-form-heading{
+    margin-bottom:28px;
+}
+
+.vol-form-heading h2{
+    margin:0 0 7px;
+
+    color:#123b66;
+
+    font-size:28px;
+}
+
+.vol-form-heading p{
+    margin:0;
+
+    color:#69798a;
+
+    font-size:14px;
+}
+
+
+/* =========================================================
+   FORM SECTION
+========================================================= */
+
+.vol-section-title{
+    margin:30px 0 18px;
+
+    padding-bottom:10px;
+
+    border-bottom:2px solid #edf1f4;
+
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    color:#123b66;
+
+    font-size:20px;
+    font-weight:800;
+}
+
+.vol-section-title i{
+    width:40px;
+    height:40px;
+
+    border-radius:10px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#eaf2fb;
+
+    color:#123b66;
+}
+
+.vol-grid{
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:18px;
+}
+
+.vol-form-group{
+    display:flex;
+    flex-direction:column;
+}
+
+.vol-full{
+    grid-column:1 / -1;
+}
+
+.vol-form-group label{
+    margin-bottom:7px;
+
+    color:#263746;
+
+    font-size:14px;
+    font-weight:700;
+}
+
+.vol-required{
+    color:#e53935;
+}
+
+.vol-form-group input,
+.vol-form-group select,
+.vol-form-group textarea{
+    width:100%;
+
+    padding:13px 14px;
+
+    border:1px solid #d9e3eb;
+    border-radius:9px;
+
+    outline:none;
+
+    background:#ffffff;
+
+    color:#263746;
+
+    font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+
+    font-size:14px;
+
+    transition:.2s;
+}
+
+.vol-form-group textarea{
+    min-height:115px;
+    resize:vertical;
+}
+
+.vol-form-group input:focus,
+.vol-form-group select:focus,
+.vol-form-group textarea:focus{
+    border-color:#1d5d96;
+
+    box-shadow:0 0 0 3px rgba(29,93,150,.10);
+}
+
+.vol-help{
+    margin-top:5px;
+
+    color:#8a99a7;
+
+    font-size:11px;
+}
+
+
+/* =========================================================
+   PHOTO
+========================================================= */
+
+.vol-photo-box{
+    display:flex;
+    align-items:center;
+    gap:18px;
+
+    padding:18px;
+
+    background:#f7fafc;
+
+    border:1px dashed #b9c9d7;
+
+    border-radius:15px;
+}
+
+.vol-photo-preview{
+    width:100px;
+    height:100px;
+
+    border-radius:50%;
+
+    background:#eaf2fb;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    overflow:hidden;
+
+    color:#123b66;
+
+    font-size:38px;
+
+    border:3px solid #ffffff;
+
+    box-shadow:0 4px 15px rgba(18,59,102,.10);
+}
+
+.vol-photo-preview img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.vol-photo-content strong{
+    display:block;
+
+    color:#123b66;
+
+    margin-bottom:5px;
+}
+
+.vol-photo-content p{
+    margin:0 0 10px;
+
+    color:#71808f;
+
+    font-size:12px;
+}
+
+
+/* =========================================================
+   AGREEMENT
+========================================================= */
+
+.vol-agreement{
+    margin-top:28px;
+
+    padding:18px;
+
+    background:#f8fbfd;
+
+    border:1px solid #e0e9ef;
+
+    border-radius:12px;
+
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+}
+
+.vol-agreement input{
+    width:18px;
+    height:18px;
+
+    margin-top:3px;
+
+    accent-color:#24834b;
+}
+
+.vol-agreement label{
+    color:#526271;
+
+    font-size:13px;
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.vol-submit-row{
+    margin-top:25px;
+
+    display:flex;
+    align-items:center;
+    gap:15px;
+
+    flex-wrap:wrap;
+}
+
+.vol-submit{
+    border:0;
+
+    padding:14px 28px;
+
+    border-radius:9px;
+
+    background:#123b66;
+
+    color:#ffffff;
+
+    font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+
+    font-size:16px;
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:.25s;
+}
+
+.vol-submit:hover{
+    background:#ff7900;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 22px rgba(255,121,0,.20);
+}
+
+.vol-reset{
+    padding:13px 22px;
+
+    border-radius:9px;
+
+    border:1px solid #d9e3eb;
+
+    background:#ffffff;
+
+    color:#526271;
+
+    font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+
+    font-weight:700;
+
+    cursor:pointer;
+}
+
+
+/* =========================================================
+   RESULT
+========================================================= */
+
+.vol-result{
+    display:none;
+
+    margin-top:25px;
+
+    padding:18px;
+
+    border-radius:12px;
+
+    font-size:15px;
+    line-height:1.8;
+}
+
+.vol-result.success{
+    display:block;
+
+    background:#edf9f0;
+
+    color:#18723a;
+
+    border:1px solid #ccebd4;
+}
+
+.vol-result.error{
+    display:block;
+
+    background:#fff0f0;
+
+    color:#c62828;
+
+    border:1px solid #f2caca;
+}
+
+
+/* =========================================================
+   INFO BOX
+========================================================= */
+
+.vol-info-box{
+    margin-top:25px;
+
+    padding:20px;
+
+    background:#fff8ee;
+
+    border:1px solid #f3dfbd;
+
+    border-radius:15px;
+
+    display:flex;
+    gap:14px;
+}
+
+.vol-info-box i{
+    color:#ff7900;
+
+    font-size:24px;
+}
+
+.vol-info-box strong{
+    display:block;
+
+    margin-bottom:5px;
+
+    color:#123b66;
+}
+
+.vol-info-box p{
+    margin:0;
+
+    color:#6c7782;
+
+    font-size:13px;
+    line-height:1.7;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.vol-footer{
+    background:#092e60;
+
+    color:#ffffff;
+
+    padding:42px 0 0;
+}
+
+.vol-footer-inner{
+    width:92%;
+    max-width:1400px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1.4fr 1fr 1fr 1.3fr;
+
+    gap:30px;
+}
+
+.vol-footer-logo{
+    width:85px;
+    height:85px;
+
+    object-fit:contain;
+
+    margin-bottom:10px;
+}
+
+.vol-footer h3,
+.vol-footer h4{
+    margin:0 0 13px;
+}
+
+.vol-footer p{
+    margin:0 0 9px;
+
+    color:#dbe5ef;
+
+    font-size:13px;
+    line-height:1.7;
+}
+
+.vol-footer a{
+    display:block;
+
+    margin-bottom:8px;
+
+    color:#dbe5ef;
+
+    font-size:13px;
+}
+
+.vol-footer a:hover{
+    color:#ff7900;
+}
+
+.vol-footer-bottom{
+    margin-top:32px;
+
+    padding:16px 15px;
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    text-align:center;
+
+    color:#dbe5ef;
+
+    font-size:12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1150px){
+
+    .vol-header-inner{
+        flex-direction:column;
+
+        padding:18px 0;
+    }
+
+    .vol-login{
+        justify-content:center;
+        width:100%;
+    }
+
+    .vol-footer-inner{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:850px){
+
+    .vol-contact span:first-child{
+        display:none;
+    }
+
+    .vol-brand{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .vol-brand-text h1{
+        font-size:31px;
+    }
+
+}
+
+
+@media(max-width:650px){
+
+    .vol-topbar-inner{
+        justify-content:center;
+    }
+
+    .vol-contact span:nth-child(2){
+        display:none;
+    }
+
+    .vol-login{
+        flex-direction:column;
+    }
+
+    .vol-login-card{
+        width:100%;
+        max-width:360px;
+    }
+
+    .vol-nav-inner{
+        width:100%;
+        overflow-x:auto;
+    }
+
+    .vol-nav-link{
+        padding:0 12px;
+        font-size:12px;
+    }
+
+    .vol-hero{
+        padding:32px 22px;
+    }
+
+    .vol-hero h1{
+        font-size:32px;
+    }
+
+    .vol-hero p{
+        font-size:14px;
+    }
+
+    .vol-form-box{
+        padding:22px 16px;
+    }
+
+    .vol-grid{
+        grid-template-columns:1fr;
+    }
+
+    .vol-full{
+        grid-column:auto;
+    }
+
+    .vol-photo-box{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .vol-footer-inner{
+        grid-template-columns:1fr;
+    }
+
+}
+
+
+@media(max-width:430px){
+
+    .vol-brand-text h1{
+        font-size:26px;
+    }
+
+    .vol-logo{
+        width:95px;
+        height:95px;
+    }
+
+    .vol-hero h1{
+        font-size:28px;
+    }
+
+    .vol-form-heading h2{
+        font-size:23px;
+    }
+
+}
+
+</style>
 
 </head>
 
 
-<body>
+<body class="volunteer-page">
 
 
-<!-- =====================================
+<!-- =====================================================
      TOP BAR
-===================================== -->
+===================================================== -->
 
-<div class="top-bar">
+<div class="vol-topbar">
 
-    <div class="container">
+    <div class="vol-topbar-inner">
 
-        <div class="left">
+        <div class="vol-contact">
 
-            📧 yuvasevasankalp2026@gmail.com
+            <span>
+                <i class="fa-solid fa-envelope"></i>
+                info.yssfoundation@gmail.com
+            </span>
 
-            |
+            <span>
+                <i class="fa-solid fa-location-dot"></i>
+                ग्राम नैपुरा, पोस्ट कौड़ाही,
+                जिला अम्बेडकर नगर, उत्तर प्रदेश – 224129
+            </span>
 
-            📞 +91 9651731313
+        </div>
+
+
+        <div class="vol-social">
+
+            <a href="#" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="#" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+
+            <a href="#" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <span class="vol-phone">
+                <i class="fa-solid fa-phone"></i>
+                9651731313
+            </span>
 
         </div>
 
@@ -49,35 +1156,109 @@
 </div>
 
 
-<!-- =====================================
+<!-- =====================================================
      HEADER
-===================================== -->
+===================================================== -->
 
-<header class="header">
+<header class="vol-header">
 
-    <div class="header-content">
-
-        <img
-            src="images/logo.png"
-            class="logo"
-            alt="युवा सेवा संकल्प फाउंडेशन लोगो"
-        >
+    <div class="vol-header-inner">
 
 
-        <div class="title">
+        <a href="index.html"
+           class="vol-brand">
 
-            <h1 class="main-title">
+            <img
+                src="images/logo.png"
+                alt="युवा सेवा संकल्प फाउंडेशन"
+                class="vol-logo"
+            >
 
-                युवा सेवा संकल्प फाउंडेशन
 
-            </h1>
+            <div class="vol-brand-text">
+
+                <h1>
+                    युवा सेवा संकल्प
+                    <span>फाउंडेशन</span>
+                </h1>
+
+                <p>
+                    युवा शक्ति - राष्ट्र शक्ति
+                </p>
+
+            </div>
+
+        </a>
 
 
-            <p class="tagline">
+        <div class="vol-login">
 
-                युवा शक्ति, राष्ट्र शक्ति
 
-            </p>
+            <a href="member-login.html"
+               class="vol-login-card vol-member">
+
+                <div class="vol-login-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="vol-login-text">
+
+                    <strong>
+                        सदस्य Login
+                    </strong>
+
+                    <small>
+                        अपने खाते में लॉगिन करें
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <a href="volunteer-login.html"
+               class="vol-login-card vol-volunteer">
+
+                <div class="vol-login-icon">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+
+                <div class="vol-login-text">
+
+                    <strong>
+                        Volunteer Login
+                    </strong>
+
+                    <small>
+                        अपना Volunteer खाता खोलें
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <a href="admin-login.html"
+               class="vol-login-card vol-admin">
+
+                <div class="vol-login-icon">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+
+                <div class="vol-login-text">
+
+                    <strong>
+                        Admin Login
+                    </strong>
+
+                    <small>
+                        Admin Panel
+                    </small>
+
+                </div>
+
+            </a>
+
 
         </div>
 
@@ -86,270 +1267,670 @@
 </header>
 
 
-<!-- =====================================
-     VOLUNTEER REGISTRATION
-===================================== -->
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
-<section class="volunteer-section">
+<nav class="vol-nav">
 
-    <div class="volunteer-box">
-
-
-        <h2>
-
-            🤝 वॉलंटियर पंजीकरण
-
-        </h2>
+    <div class="vol-nav-inner">
 
 
-        <p class="volunteer-text">
+        <a href="index.html"
+           class="vol-nav-link">
 
-            समाज सेवा और राष्ट्र निर्माण में
-            अपना योगदान देने के लिए वॉलंटियर बनें।
+            <i class="fa-solid fa-house"></i>
+            होम
 
+        </a>
+
+
+        <div class="vol-dropdown">
+
+            <a href="about.html"
+               class="vol-nav-link">
+
+                संस्था के बारे में
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </a>
+
+
+            <div class="vol-dropdown-menu">
+
+                <a href="about.html">
+                    हमारे बारे में
+                </a>
+
+                <a href="mission.html">
+                    हमारा मिशन
+                </a>
+
+                <a href="vision.html">
+                    हमारा विजन
+                </a>
+
+                <a href="team.html">
+                    हमारी टीम
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="vol-dropdown">
+
+            <a href="#"
+               class="vol-nav-link">
+
+                हमारे कार्य
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </a>
+
+
+            <div class="vol-dropdown-menu">
+
+                <a href="education.html">
+                    शिक्षा
+                </a>
+
+                <a href="health.html">
+                    स्वास्थ्य
+                </a>
+
+                <a href="environment.html">
+                    पर्यावरण
+                </a>
+
+                <a href="women.html">
+                    महिला सशक्तिकरण
+                </a>
+
+                <a href="youth.html">
+                    युवा विकास
+                </a>
+
+                <a href="social-service.html">
+                    समाज सेवा
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <a href="volunteer.html"
+           class="vol-nav-link active">
+            वॉलंटियर
+        </a>
+
+
+        <a href="membership.html"
+           class="vol-nav-link">
+            सदस्यता
+        </a>
+
+
+        <a href="news.html"
+           class="vol-nav-link">
+            समाचार
+        </a>
+
+
+        <a href="events.html"
+           class="vol-nav-link">
+            आगामी कार्यक्रम
+        </a>
+
+
+        <a href="gallery.html"
+           class="vol-nav-link">
+            गैलरी
+        </a>
+
+
+        <a href="contact.html"
+           class="vol-nav-link">
+            संपर्क करें
+        </a>
+
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     BREADCRUMB
+===================================================== -->
+
+<div class="vol-breadcrumb">
+
+    <div class="vol-breadcrumb-inner">
+
+        <a href="index.html">
+            होम
+        </a>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <strong>
+            वॉलंटियर पंजीकरण
+        </strong>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="vol-hero">
+
+    <div class="vol-hero-content">
+
+        <h1>
+            <i class="fa-solid fa-handshake"></i>
+            वॉलंटियर बनें
+        </h1>
+
+        <p>
+            समाज सेवा और राष्ट्र निर्माण में अपना योगदान देने के लिए
+            युवा सेवा संकल्प फाउंडेशन से जुड़ें। आपका समय, प्रतिभा
+            और सेवा भावना किसी के जीवन में सकारात्मक बदलाव ला सकती है।
         </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     VOLUNTEER FORM
+===================================================== -->
+
+<main class="vol-main">
+
+    <div class="vol-form-box">
+
+
+        <div class="vol-form-heading">
+
+            <h2>
+                वॉलंटियर पंजीकरण फॉर्म
+            </h2>
+
+            <p>
+                कृपया सभी आवश्यक जानकारी सही-सही भरें।
+                <span class="vol-required">*</span> वाले फील्ड अनिवार्य हैं।
+            </p>
+
+        </div>
 
 
         <form id="volunteerForm">
 
 
-            <!-- FULL NAME -->
+            <!-- PHOTO -->
 
-            <div class="form-group">
+            <div class="vol-section-title">
 
-                <label for="volunteerName">
+                <i class="fa-solid fa-camera"></i>
 
-                    पूरा नाम *
-
-                </label>
-
-
-                <input
-                    type="text"
-                    id="volunteerName"
-                    placeholder="अपना पूरा नाम लिखें"
-                    required
-                >
+                फोटो
 
             </div>
 
 
-            <!-- MOBILE -->
+            <div class="vol-photo-box">
 
-            <div class="form-group">
+                <div class="vol-photo-preview"
+                     id="photoPreview">
 
-                <label for="volunteerMobile">
+                    <i class="fa-solid fa-user"></i>
 
-                    मोबाइल नंबर *
-
-                </label>
+                </div>
 
 
-                <input
-                    type="tel"
-                    id="volunteerMobile"
-                    placeholder="10 अंकों का मोबाइल नंबर"
-                    maxlength="10"
-                    inputmode="numeric"
-                    required
-                >
+                <div class="vol-photo-content">
+
+                    <strong>
+                        अपनी पासपोर्ट साइज फोटो चुनें
+                    </strong>
+
+                    <p>
+                        JPG, JPEG या PNG फोटो अपलोड करें।
+                    </p>
+
+                    <input
+                        type="file"
+                        id="volunteerPhoto"
+                        accept="image/*"
+                    >
+
+                </div>
 
             </div>
 
 
-            <!-- EMAIL -->
+            <!-- PERSONAL DETAILS -->
 
-            <div class="form-group">
+            <div class="vol-section-title">
 
-                <label for="volunteerEmail">
+                <i class="fa-solid fa-user"></i>
 
-                    ईमेल
+                व्यक्तिगत जानकारी
 
-                </label>
+            </div>
 
 
-                <input
-                    type="email"
-                    id="volunteerEmail"
-                    placeholder="अपना ईमेल लिखें"
-                >
+            <div class="vol-grid">
+
+
+                <div class="vol-form-group">
+
+                    <label>
+                        पूरा नाम
+                        <span class="vol-required">*</span>
+                    </label>
+
+                    <input
+                        type="text"
+                        id="volunteerName"
+                        placeholder="अपना पूरा नाम लिखें"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="vol-form-group">
+
+                    <label>
+                        पिता / पति का नाम
+                    </label>
+
+                    <input
+                        type="text"
+                        id="volunteerFather"
+                        placeholder="पिता / पति का नाम लिखें"
+                    >
+
+                </div>
+
+
+                <div class="vol-form-group">
+
+                    <label>
+                        जन्म तिथि
+                        <span class="vol-required">*</span>
+                    </label>
+
+                    <input
+                        type="date"
+                        id="volunteerDOB"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="vol-form-group">
+
+                    <label>
+                        लिंग
+                        <span class="vol-required">*</span>
+                    </label>
+
+                    <select
+                        id="volunteerGender"
+                        required
+                    >
+
+                        <option value="">
+                            चयन करें
+                        </option>
+
+                        <option value="पुरुष">
+                            पुरुष
+                        </option>
+
+                        <option value="महिला">
+                            महिला
+                        </option>
+
+                        <option value="अन्य">
+                            अन्य
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="vol-form-group">
+
+                    <label>
+                        मोबाइल नंबर
+                        <span class="vol-required">*</span>
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="volunteerMobile"
+                        placeholder="10 अंकों का मोबाइल नंबर"
+                        maxlength="10"
+                        inputmode="numeric"
+                        required
+                    >
+
+                    <span class="vol-help">
+                        उदाहरण: 9651731313
+                    </span>
+
+                </div>
+
+
+                <div class="vol-form-group">
+
+                    <label>
+                        ईमेल
+                    </label>
+
+                    <input
+                        type="email"
+                        id="volunteerEmail"
+                        placeholder="अपना ईमेल लिखें"
+                    >
+
+                </div>
 
             </div>
 
 
             <!-- ADDRESS -->
 
-            <div class="form-group">
+            <div class="vol-section-title">
 
-                <label for="volunteerAddress">
+                <i class="fa-solid fa-location-dot"></i>
 
-                    पता *
-
-                </label>
-
-
-                <textarea
-                    id="volunteerAddress"
-                    placeholder="अपना पूरा पता लिखें"
-                    required
-                ></textarea>
+                पता का विवरण
 
             </div>
 
 
-            <!-- SERVICE AREA -->
-
-            <div class="form-group">
-
-                <label for="volunteerService">
-
-                    आप किस क्षेत्र में सेवा करना चाहते हैं? *
-
-                </label>
+            <div class="vol-grid">
 
 
-                <select
-                    id="volunteerService"
-                    required
-                >
+                <div class="vol-form-group vol-full">
 
-                    <option value="">
+                    <label>
+                        पूरा पता
+                        <span class="vol-required">*</span>
+                    </label>
 
-                        सेवा क्षेत्र चुनें
+                    <textarea
+                        id="volunteerAddress"
+                        placeholder="ग्राम / मोहल्ला, पोस्ट आदि लिखें"
+                        required
+                    ></textarea>
 
-                    </option>
-
-
-                    <option value="शिक्षा">
-
-                        📚 शिक्षा
-
-                    </option>
+                </div>
 
 
-                    <option value="स्वास्थ्य">
+                <div class="vol-form-group">
 
-                        🏥 स्वास्थ्य
+                    <label>
+                        जिला
+                        <span class="vol-required">*</span>
+                    </label>
 
-                    </option>
+                    <input
+                        type="text"
+                        id="volunteerDistrict"
+                        placeholder="जिला लिखें"
+                        required
+                    >
 
-
-                    <option value="पर्यावरण">
-
-                        🌳 पर्यावरण
-
-                    </option>
-
-
-                    <option value="समाज सेवा">
-
-                        🤝 समाज सेवा
-
-                    </option>
+                </div>
 
 
-                    <option value="महिला सशक्तिकरण">
+                <div class="vol-form-group">
 
-                        👩 महिला सशक्तिकरण
+                    <label>
+                        राज्य
+                        <span class="vol-required">*</span>
+                    </label>
 
-                    </option>
+                    <input
+                        type="text"
+                        id="volunteerState"
+                        placeholder="राज्य लिखें"
+                        value="उत्तर प्रदेश"
+                        required
+                    >
+
+                </div>
 
 
-                    <option value="युवा विकास">
+                <div class="vol-form-group">
 
-                        👥 युवा विकास
+                    <label>
+                        पिन कोड
+                        <span class="vol-required">*</span>
+                    </label>
 
-                    </option>
+                    <input
+                        type="tel"
+                        id="volunteerPincode"
+                        placeholder="6 अंकों का पिन कोड"
+                        maxlength="6"
+                        inputmode="numeric"
+                        required
+                    >
+
+                </div>
 
 
-                    <option value="अन्य">
+                <div class="vol-form-group">
 
-                        अन्य
+                    <label>
+                        पहचान का प्रकार
+                    </label>
 
-                    </option>
+                    <select id="volunteerIdType">
 
-                </select>
+                        <option value="">
+                            चयन करें
+                        </option>
+
+                        <option value="Aadhaar Card">
+                            Aadhaar Card
+                        </option>
+
+                        <option value="Voter ID">
+                            Voter ID
+                        </option>
+
+                        <option value="Driving Licence">
+                            Driving Licence
+                        </option>
+
+                        <option value="अन्य">
+                            अन्य
+                        </option>
+
+                    </select>
+
+                </div>
 
             </div>
 
 
-            <!-- AVAILABILITY -->
+            <!-- SERVICE DETAILS -->
 
-            <div class="form-group">
+            <div class="vol-section-title">
 
-                <label for="volunteerAvailability">
+                <i class="fa-solid fa-hand-holding-heart"></i>
 
-                    आप कब सेवा दे सकते हैं? *
-
-                </label>
-
-
-                <select
-                    id="volunteerAvailability"
-                    required
-                >
-
-                    <option value="">
-
-                        समय चुनें
-
-                    </option>
-
-
-                    <option value="सप्ताहांत">
-
-                        सप्ताहांत
-
-                    </option>
-
-
-                    <option value="सप्ताह में कुछ दिन">
-
-                        सप्ताह में कुछ दिन
-
-                    </option>
-
-
-                    <option value="कार्यक्रम के समय">
-
-                        कार्यक्रम के समय
-
-                    </option>
-
-
-                    <option value="आवश्यकतानुसार">
-
-                        आवश्यकतानुसार
-
-                    </option>
-
-                </select>
+                सेवा से संबंधित जानकारी
 
             </div>
 
 
-            <!-- MESSAGE -->
-
-            <div class="form-group">
-
-                <label for="volunteerMessage">
-
-                    संदेश / अनुभव
-
-                </label>
+            <div class="vol-grid">
 
 
-                <textarea
-                    id="volunteerMessage"
-                    placeholder="यदि कोई अनुभव या संदेश हो तो लिखें"
-                ></textarea>
+                <div class="vol-form-group">
+
+                    <label>
+                        सेवा क्षेत्र
+                        <span class="vol-required">*</span>
+                    </label>
+
+                    <select
+                        id="volunteerService"
+                        required
+                    >
+
+                        <option value="">
+                            सेवा क्षेत्र चुनें
+                        </option>
+
+                        <option value="शिक्षा">
+                            शिक्षा
+                        </option>
+
+                        <option value="स्वास्थ्य">
+                            स्वास्थ्य
+                        </option>
+
+                        <option value="पर्यावरण">
+                            पर्यावरण
+                        </option>
+
+                        <option value="महिला सशक्तिकरण">
+                            महिला सशक्तिकरण
+                        </option>
+
+                        <option value="युवा विकास">
+                            युवा विकास
+                        </option>
+
+                        <option value="समाज सेवा">
+                            समाज सेवा
+                        </option>
+
+                        <option value="अन्य">
+                            अन्य
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="vol-form-group">
+
+                    <label>
+                        आप कब सेवा दे सकते हैं?
+                        <span class="vol-required">*</span>
+                    </label>
+
+                    <select
+                        id="volunteerAvailability"
+                        required
+                    >
+
+                        <option value="">
+                            समय चुनें
+                        </option>
+
+                        <option value="सप्ताहांत">
+                            सप्ताहांत
+                        </option>
+
+                        <option value="सप्ताह में कुछ दिन">
+                            सप्ताह में कुछ दिन
+                        </option>
+
+                        <option value="कार्यक्रम के समय">
+                            कार्यक्रम के समय
+                        </option>
+
+                        <option value="आवश्यकतानुसार">
+                            आवश्यकतानुसार
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="vol-form-group">
+
+                    <label>
+                        शिक्षा / योग्यता
+                    </label>
+
+                    <input
+                        type="text"
+                        id="volunteerEducation"
+                        placeholder="अपनी शैक्षिक योग्यता लिखें"
+                    >
+
+                </div>
+
+
+                <div class="vol-form-group">
+
+                    <label>
+                        विशेष कौशल
+                    </label>
+
+                    <input
+                        type="text"
+                        id="volunteerSkills"
+                        placeholder="जैसे: कंप्यूटर, शिक्षण, आयोजन आदि"
+                    >
+
+                </div>
+
+
+                <div class="vol-form-group vol-full">
+
+                    <label>
+                        समाज सेवा का अनुभव / संदेश
+                    </label>
+
+                    <textarea
+                        id="volunteerMessage"
+                        placeholder="यदि आपके पास समाज सेवा का कोई अनुभव या संदेश है तो लिखें"
+                    ></textarea>
+
+                </div>
 
             </div>
 
 
-            <!-- AGREEMENT -->
+            <!-- DECLARATION -->
 
-            <div class="volunteer-agreement">
+            <div class="vol-section-title">
+
+                <i class="fa-solid fa-file-signature"></i>
+
+                घोषणा
+
+            </div>
+
+
+            <div class="vol-agreement">
 
                 <input
                     type="checkbox"
@@ -360,95 +1941,240 @@
 
                 <label for="volunteerAgree">
 
-                    मैं संस्था के नियमों का पालन करने
-                    और समाज सेवा में सहयोग देने के लिए
-                    सहमत हूँ।
+                    मैं घोषणा करता/करती हूँ कि मेरे द्वारा दी गई जानकारी
+                    मेरी जानकारी के अनुसार सही है। मैं युवा सेवा संकल्प
+                    फाउंडेशन के नियमों का पालन करने और संस्था के
+                    समाज सेवा कार्यों में ईमानदारी एवं जिम्मेदारी से
+                    सहयोग करने के लिए सहमत हूँ।
 
                 </label>
 
             </div>
 
 
-            <!-- SUBMIT BUTTON -->
+            <!-- BUTTON -->
 
-            <button
-                type="submit"
-                class="volunteer-btn"
-            >
+            <div class="vol-submit-row">
 
-                🤝 वॉलंटियर के रूप में जुड़ें
+                <button
+                    type="submit"
+                    class="vol-submit"
+                >
 
-            </button>
+                    <i class="fa-solid fa-user-plus"></i>
+
+                    वॉलंटियर के रूप में पंजीकरण करें
+
+                </button>
 
 
-            <!-- MESSAGE -->
+                <button
+                    type="reset"
+                    class="vol-reset"
+                    id="resetButton"
+                >
 
-            <p
+                    <i class="fa-solid fa-rotate-left"></i>
+
+                    फॉर्म साफ करें
+
+                </button>
+
+            </div>
+
+
+            <!-- RESULT -->
+
+            <div
                 id="volunteerResult"
-                class="volunteer-result"
-            ></p>
+                class="vol-result"
+            ></div>
 
 
         </form>
 
 
-        <a
-            href="index.html"
-            class="back-home"
-        >
+        <div class="vol-info-box">
 
-            ← होम पेज पर जाएँ
+            <i class="fa-solid fa-circle-info"></i>
 
-        </a>
+            <div>
+
+                <strong>
+                    महत्वपूर्ण सूचना
+                </strong>
+
+                <p>
+                    पंजीकरण के बाद आपकी Volunteer ID स्वतः बनाई जाएगी।
+                    संस्था द्वारा जानकारी की समीक्षा के बाद आगे की प्रक्रिया
+                    की जा सकती है।
+                </p>
+
+            </div>
+
+        </div>
 
 
     </div>
 
-</section>
+</main>
 
 
-<!-- =====================================
+<!-- =====================================================
      FOOTER
-===================================== -->
+===================================================== -->
 
-<footer>
+<footer class="vol-footer">
 
-    <img
-        src="images/logo.png"
-        alt="युवा सेवा संकल्प फाउंडेशन लोगो"
-        width="70"
-    >
+    <div class="vol-footer-inner">
 
 
-    <h3>
+        <div>
 
-        युवा सेवा संकल्प फाउंडेशन
+            <img
+                src="images/logo.png"
+                alt="युवा सेवा संकल्प फाउंडेशन"
+                class="vol-footer-logo"
+            >
 
-    </h3>
+            <h3>
+                युवा सेवा संकल्प फाउंडेशन
+            </h3>
+
+            <p>
+                सेवा, समर्पण और संस्कार के साथ
+                समाज एवं राष्ट्र निर्माण की दिशा में
+                सकारात्मक प्रयास।
+            </p>
+
+        </div>
 
 
-    <p>
+        <div>
 
-        युवा शक्ति, राष्ट्र शक्ति
+            <h4>
+                महत्वपूर्ण लिंक
+            </h4>
 
-    </p>
+            <a href="index.html">होम</a>
+            <a href="about.html">हमारे बारे में</a>
+            <a href="mission.html">हमारा मिशन</a>
+            <a href="vision.html">हमारा विजन</a>
+            <a href="membership.html">सदस्यता</a>
+
+        </div>
 
 
-    <p>
+        <div>
 
-        © 2026 All Rights Reserved
+            <h4>
+                हमारे कार्य
+            </h4>
 
-    </p>
+            <a href="education.html">शिक्षा</a>
+            <a href="health.html">स्वास्थ्य</a>
+            <a href="environment.html">पर्यावरण</a>
+            <a href="women.html">महिला सशक्तिकरण</a>
+            <a href="youth.html">युवा विकास</a>
+            <a href="social-service.html">समाज सेवा</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                संपर्क करें
+            </h4>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                ग्राम नैपुरा, पोस्ट कौड़ाही,
+                जिला अम्बेडकर नगर,
+                उत्तर प्रदेश – 224129
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                9651731313
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                info.yssfoundation@gmail.com
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="vol-footer-bottom">
+
+        © 2026 युवा सेवा संकल्प फाउंडेशन |
+        सर्वाधिकार सुरक्षित |
+        <strong>युवा शक्ति - राष्ट्र शक्ति</strong>
+
+    </div>
 
 </footer>
 
 
-<!-- =====================================
-     VOLUNTEER JAVASCRIPT
-===================================== -->
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script>
 
+
+/* PHOTO PREVIEW */
+
+document
+.getElementById("volunteerPhoto")
+.addEventListener(
+
+    "change",
+
+    function(){
+
+        const file = this.files[0];
+
+        const preview =
+
+        document
+        .getElementById("photoPreview");
+
+
+        if(file){
+
+            const reader = new FileReader();
+
+
+            reader.onload = function(event){
+
+                preview.innerHTML =
+
+                '<img src="' +
+
+                event.target.result +
+
+                '" alt="Volunteer Photo">';
+
+            };
+
+
+            reader.readAsDataURL(file);
+
+        }
+
+    }
+
+);
+
+
+
+/* FORM SUBMIT */
 
 document
 .getElementById("volunteerForm")
@@ -456,7 +2182,7 @@ document
 
     "submit",
 
-    function(event) {
+    function(event){
 
 
         event.preventDefault();
@@ -478,40 +2204,10 @@ document
         .trim();
 
 
-        const email =
+        const pincode =
 
         document
-        .getElementById("volunteerEmail")
-        .value
-        .trim();
-
-
-        const address =
-
-        document
-        .getElementById("volunteerAddress")
-        .value
-        .trim();
-
-
-        const service =
-
-        document
-        .getElementById("volunteerService")
-        .value;
-
-
-        const availability =
-
-        document
-        .getElementById("volunteerAvailability")
-        .value;
-
-
-        const message =
-
-        document
-        .getElementById("volunteerMessage")
+        .getElementById("volunteerPincode")
         .value
         .trim();
 
@@ -524,30 +2220,55 @@ document
 
         /* MOBILE VALIDATION */
 
-        if (
+        if(
 
             !/^[0-9]{10}$/.test(mobile)
 
-        ) {
+        ){
+
+            result.className =
+
+            "vol-result error";
 
 
             result.innerHTML =
 
-            "❌ कृपया सही 10 अंकों का मोबाइल नंबर लिखें।";
+            '<i class="fa-solid fa-circle-xmark"></i> ' +
 
-
-            result.style.color =
-
-            "red";
+            'कृपया सही 10 अंकों का मोबाइल नंबर लिखें।';
 
 
             return;
 
+        }
+
+
+        /* PINCODE VALIDATION */
+
+        if(
+
+            !/^[0-9]{6}$/.test(pincode)
+
+        ){
+
+            result.className =
+
+            "vol-result error";
+
+
+            result.innerHTML =
+
+            '<i class="fa-solid fa-circle-xmark"></i> ' +
+
+            'कृपया सही 6 अंकों का पिन कोड लिखें।';
+
+
+            return;
 
         }
 
 
-        /* LOCAL STORAGE */
+        /* GET LOCAL STORAGE DATA */
 
         let volunteers =
 
@@ -555,7 +2276,7 @@ document
 
             localStorage.getItem(
 
-                "volunteers"
+                "yssfVolunteers"
 
             )
 
@@ -564,9 +2285,20 @@ document
 
         /* VOLUNTEER ID */
 
+        const year =
+
+        new Date()
+
+        .getFullYear();
+
+
         const volunteerId =
 
-        "YSSF-VOL-2026-" +
+        "YSSF-VOL-" +
+
+        year +
+
+        "-" +
 
         String(
 
@@ -581,53 +2313,127 @@ document
         );
 
 
-        /* SAVE DATA */
+        /* CREATE VOLUNTEER DATA */
 
         const volunteer = {
 
 
             volunteerId:
-
             volunteerId,
 
 
             name:
-
             name,
 
 
-            mobile:
+            father:
 
+            document
+            .getElementById("volunteerFather")
+            .value
+            .trim(),
+
+
+            dob:
+
+            document
+            .getElementById("volunteerDOB")
+            .value,
+
+
+            gender:
+
+            document
+            .getElementById("volunteerGender")
+            .value,
+
+
+            mobile:
             mobile,
 
 
             email:
 
-            email,
+            document
+            .getElementById("volunteerEmail")
+            .value
+            .trim(),
 
 
             address:
 
-            address,
+            document
+            .getElementById("volunteerAddress")
+            .value
+            .trim(),
+
+
+            district:
+
+            document
+            .getElementById("volunteerDistrict")
+            .value
+            .trim(),
+
+
+            state:
+
+            document
+            .getElementById("volunteerState")
+            .value
+            .trim(),
+
+
+            pincode:
+            pincode,
+
+
+            idType:
+
+            document
+            .getElementById("volunteerIdType")
+            .value,
 
 
             service:
 
-            service,
+            document
+            .getElementById("volunteerService")
+            .value,
 
 
             availability:
 
-            availability,
+            document
+            .getElementById("volunteerAvailability")
+            .value,
+
+
+            education:
+
+            document
+            .getElementById("volunteerEducation")
+            .value
+            .trim(),
+
+
+            skills:
+
+            document
+            .getElementById("volunteerSkills")
+            .value
+            .trim(),
 
 
             message:
 
-            message,
+            document
+            .getElementById("volunteerMessage")
+            .value
+            .trim(),
 
 
             status:
-
             "लंबित",
 
 
@@ -641,9 +2447,10 @@ document
 
             )
 
-
         };
 
+
+        /* SAVE */
 
         volunteers.push(
 
@@ -654,7 +2461,7 @@ document
 
         localStorage.setItem(
 
-            "volunteers",
+            "yssfVolunteers",
 
             JSON.stringify(
 
@@ -665,34 +2472,98 @@ document
         );
 
 
-        /* SUCCESS MESSAGE */
+        /* SUCCESS */
+
+        result.className =
+
+        "vol-result success";
+
 
         result.innerHTML =
 
-        "✅ आपका वॉलंटियर पंजीकरण सफल हो गया।" +
+        '<strong>' +
 
-        "<br>" +
+        '<i class="fa-solid fa-circle-check"></i> ' +
 
-        "आपकी Volunteer ID: " +
+        'पंजीकरण सफल हुआ!</strong>' +
 
-        "<strong>" +
+        '<br>' +
+
+        'धन्यवाद <strong>' +
+
+        name +
+
+        '</strong>, आपका वॉलंटियर पंजीकरण सफलतापूर्वक दर्ज हो गया है।' +
+
+        '<br>' +
+
+        'आपकी Volunteer ID: ' +
+
+        '<strong>' +
 
         volunteerId +
 
-        "</strong>";
+        '</strong>' +
+
+        '<br>' +
+
+        'स्थिति: <strong>लंबित</strong>';
 
 
-        result.style.color =
-
-        "green";
-
-
-        /* FORM RESET */
+        /* RESET FORM */
 
         document
         .getElementById("volunteerForm")
         .reset();
 
+
+        /* RESET PHOTO */
+
+        document
+        .getElementById("photoPreview")
+        .innerHTML =
+
+        '<i class="fa-solid fa-user"></i>';
+
+
+        /* SCROLL RESULT */
+
+        result.scrollIntoView({
+
+            behavior:"smooth",
+
+            block:"center"
+
+        });
+
+
+    }
+
+);
+
+
+/* RESET RESULT */
+
+document
+.getElementById("resetButton")
+.addEventListener(
+
+    "click",
+
+    function(){
+
+        document
+        .getElementById("volunteerResult")
+        .className =
+
+        "vol-result";
+
+
+        document
+        .getElementById("photoPreview")
+        .innerHTML =
+
+        '<i class="fa-solid fa-user"></i>';
 
     }
 
