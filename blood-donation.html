@@ -8,14 +8,15 @@
     <title>रक्तदान | युवा सेवा संकल्प फाउंडेशन</title>
 
     <meta name="description"
-        content="युवा सेवा संकल्प फाउंडेशन के रक्तदान अभियान से जुड़ें और जरूरतमंद लोगों की सहायता करें।">
+        content="युवा सेवा संकल्प फाउंडेशन के साथ रक्तदाता के रूप में जुड़ें और जरूरतमंद लोगों की सहायता करें।">
 
     <link rel="icon" href="images/logo.png">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet"
@@ -23,12 +24,773 @@
 
     <link rel="stylesheet" href="style.css">
 
+
+    <!-- =========================================
+         BLOOD DONATION PAGE EXTRA STYLE
+         style.css बदलने की जरूरत नहीं
+    ========================================= -->
+
+    <style>
+
+        *{
+            box-sizing:border-box;
+        }
+
+        .blood-page{
+            background:#f5f7fb;
+        }
+
+        /* HERO */
+
+        .blood-hero{
+            position:relative;
+            overflow:hidden;
+            padding:80px 0;
+            background:linear-gradient(135deg,#7b0b16,#b51226,#8e0d1b);
+            color:#fff;
+        }
+
+        .blood-hero::before{
+            content:"";
+            position:absolute;
+            width:450px;
+            height:450px;
+            border-radius:50%;
+            background:rgba(255,255,255,.06);
+            right:-150px;
+            top:-180px;
+        }
+
+        .blood-hero::after{
+            content:"";
+            position:absolute;
+            width:300px;
+            height:300px;
+            border-radius:50%;
+            border:50px solid rgba(255,255,255,.04);
+            left:-130px;
+            bottom:-150px;
+        }
+
+        .blood-hero .container{
+            position:relative;
+            z-index:2;
+        }
+
+        .blood-hero-content{
+            max-width:850px;
+            margin:auto;
+            text-align:center;
+        }
+
+        .blood-hero-badge{
+            display:inline-flex;
+            align-items:center;
+            gap:10px;
+            padding:10px 20px;
+            background:rgba(255,255,255,.15);
+            border:1px solid rgba(255,255,255,.25);
+            border-radius:50px;
+            margin-bottom:20px;
+            font-weight:700;
+        }
+
+        .blood-hero h1{
+            margin:0 0 15px;
+            font-size:48px;
+            line-height:1.3;
+        }
+
+        .blood-hero h1 span{
+            color:#ffd3d8;
+        }
+
+        .blood-hero p{
+            max-width:700px;
+            margin:0 auto;
+            font-size:18px;
+            line-height:1.9;
+            color:rgba(255,255,255,.92);
+        }
+
+        .blood-breadcrumb{
+            margin-top:25px;
+            font-size:15px;
+        }
+
+        .blood-breadcrumb a{
+            color:#fff;
+            text-decoration:none;
+        }
+
+        .blood-breadcrumb i{
+            margin:0 8px;
+            opacity:.7;
+        }
+
+
+        /* TOP INTRO */
+
+        .blood-intro{
+            padding:70px 0;
+            background:#fff;
+        }
+
+        .blood-intro-grid{
+            display:grid;
+            grid-template-columns:1fr 1.2fr;
+            gap:50px;
+            align-items:center;
+        }
+
+        .blood-visual{
+            min-height:380px;
+            border-radius:25px;
+            background:linear-gradient(135deg,#9e1020,#d51d32);
+            position:relative;
+            overflow:hidden;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            box-shadow:0 20px 45px rgba(128,0,20,.22);
+        }
+
+        .blood-visual::before{
+            content:"";
+            position:absolute;
+            width:260px;
+            height:260px;
+            border-radius:50%;
+            border:45px solid rgba(255,255,255,.10);
+            top:-90px;
+            right:-80px;
+        }
+
+        .blood-visual::after{
+            content:"";
+            position:absolute;
+            width:180px;
+            height:180px;
+            border-radius:50%;
+            background:rgba(255,255,255,.06);
+            bottom:-70px;
+            left:-50px;
+        }
+
+        .blood-main-icon{
+            width:160px;
+            height:160px;
+            border-radius:50%;
+            background:#fff;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:70px;
+            color:#c7192c;
+            box-shadow:0 15px 35px rgba(0,0,0,.20);
+            position:relative;
+            z-index:2;
+        }
+
+        .blood-tag{
+            display:inline-block;
+            padding:8px 15px;
+            background:#fff0f2;
+            color:#b51226;
+            border-radius:30px;
+            font-weight:700;
+            margin-bottom:14px;
+        }
+
+        .blood-intro-text h2{
+            margin:0 0 18px;
+            color:#173f6b;
+            font-size:34px;
+        }
+
+        .blood-intro-text p{
+            color:#647484;
+            line-height:1.9;
+            margin-bottom:15px;
+        }
+
+        .blood-points{
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:12px;
+            margin-top:25px;
+        }
+
+        .blood-point{
+            background:#f7f9fc;
+            border:1px solid #e4eaf1;
+            border-radius:12px;
+            padding:14px;
+            display:flex;
+            align-items:center;
+            gap:10px;
+            color:#263746;
+            font-weight:600;
+        }
+
+        .blood-point i{
+            color:#c7192c;
+            font-size:18px;
+        }
+
+
+        /* STATS */
+
+        .blood-stats-section{
+            padding:70px 0;
+            background:#f5f7fb;
+        }
+
+        .blood-section-heading{
+            text-align:center;
+            margin-bottom:40px;
+        }
+
+        .blood-section-heading span{
+            display:inline-block;
+            color:#c7192c;
+            font-weight:700;
+            margin-bottom:8px;
+        }
+
+        .blood-section-heading h2{
+            margin:0;
+            color:#173f6b;
+            font-size:34px;
+        }
+
+        .blood-section-heading p{
+            max-width:650px;
+            margin:12px auto 0;
+            color:#647484;
+            line-height:1.8;
+        }
+
+        .blood-cards{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:25px;
+        }
+
+        .blood-card{
+            background:#fff;
+            border-radius:18px;
+            padding:30px 25px;
+            text-align:center;
+            box-shadow:0 10px 30px rgba(31,52,74,.08);
+            border:1px solid #e7edf3;
+            transition:.3s;
+        }
+
+        .blood-card:hover{
+            transform:translateY(-7px);
+            box-shadow:0 18px 40px rgba(31,52,74,.13);
+        }
+
+        .blood-card-icon{
+            width:70px;
+            height:70px;
+            margin:0 auto 18px;
+            border-radius:50%;
+            background:#fff0f2;
+            color:#c7192c;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:28px;
+        }
+
+        .blood-card h3{
+            margin:0 0 10px;
+            color:#173f6b;
+            font-size:21px;
+        }
+
+        .blood-card p{
+            margin:0;
+            color:#647484;
+            line-height:1.8;
+        }
+
+
+        /* REGISTRATION SECTION */
+
+        .blood-register-section{
+            padding:80px 0;
+            background:#fff;
+        }
+
+        .blood-register-wrapper{
+            display:grid;
+            grid-template-columns:.85fr 1.15fr;
+            background:#fff;
+            border-radius:25px;
+            overflow:hidden;
+            box-shadow:0 18px 55px rgba(31,52,74,.13);
+            border:1px solid #e3e9ef;
+        }
+
+        /* LEFT */
+
+        .blood-register-info{
+            background:linear-gradient(160deg,#8e0d1b,#c7192c);
+            color:#fff;
+            padding:50px 40px;
+            position:relative;
+            overflow:hidden;
+        }
+
+        .blood-register-info::before{
+            content:"";
+            position:absolute;
+            width:250px;
+            height:250px;
+            border-radius:50%;
+            border:45px solid rgba(255,255,255,.07);
+            top:-120px;
+            right:-120px;
+        }
+
+        .blood-register-info::after{
+            content:"";
+            position:absolute;
+            width:200px;
+            height:200px;
+            border-radius:50%;
+            background:rgba(255,255,255,.05);
+            bottom:-100px;
+            left:-80px;
+        }
+
+        .blood-register-info > *{
+            position:relative;
+            z-index:2;
+        }
+
+        .blood-register-info .mini-title{
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+            background:rgba(255,255,255,.14);
+            padding:8px 14px;
+            border-radius:30px;
+            font-weight:700;
+        }
+
+        .blood-register-info h2{
+            margin:22px 0 15px;
+            font-size:34px;
+            line-height:1.4;
+        }
+
+        .blood-register-info > p{
+            line-height:1.9;
+            color:rgba(255,255,255,.90);
+            margin-bottom:30px;
+        }
+
+        .blood-info-list{
+            display:flex;
+            flex-direction:column;
+            gap:16px;
+        }
+
+        .blood-info-item{
+            display:flex;
+            gap:13px;
+            align-items:flex-start;
+        }
+
+        .blood-info-item i{
+            width:42px;
+            height:42px;
+            flex:none;
+            border-radius:50%;
+            background:rgba(255,255,255,.15);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        .blood-info-item strong{
+            display:block;
+            margin-bottom:3px;
+        }
+
+        .blood-info-item span{
+            color:rgba(255,255,255,.80);
+            font-size:14px;
+            line-height:1.6;
+        }
+
+
+        /* FORM */
+
+        .blood-form-area{
+            padding:45px;
+            background:#fff;
+        }
+
+        .blood-form-top{
+            margin-bottom:28px;
+        }
+
+        .blood-form-top h2{
+            margin:0 0 8px;
+            color:#173f6b;
+            font-size:30px;
+        }
+
+        .blood-form-top p{
+            margin:0;
+            color:#647484;
+        }
+
+        .blood-form{
+            width:100%;
+        }
+
+        .blood-form-row{
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:20px;
+        }
+
+        .blood-form-group{
+            margin-bottom:20px;
+        }
+
+        .blood-form-group label{
+            display:block;
+            margin-bottom:8px;
+            font-weight:700;
+            color:#263746;
+            font-size:15px;
+        }
+
+        .blood-form-group label span{
+            color:#c7192c;
+        }
+
+        .blood-form-group input,
+        .blood-form-group select,
+        .blood-form-group textarea{
+            width:100%;
+            border:1px solid #d8e1e9;
+            background:#f9fbfd;
+            border-radius:10px;
+            padding:14px 15px;
+            font-size:15px;
+            font-family:"Noto Sans Devanagari",Arial,sans-serif;
+            color:#263746;
+            outline:none;
+            transition:.25s;
+        }
+
+        .blood-form-group input{
+            height:52px;
+        }
+
+        .blood-form-group select{
+            height:52px;
+        }
+
+        .blood-form-group textarea{
+            height:110px;
+            resize:vertical;
+        }
+
+        .blood-form-group input:focus,
+        .blood-form-group select:focus,
+        .blood-form-group textarea:focus{
+            border-color:#c7192c;
+            background:#fff;
+            box-shadow:0 0 0 3px rgba(199,25,44,.08);
+        }
+
+        .blood-agree{
+            display:flex;
+            align-items:flex-start;
+            gap:10px;
+            padding:14px;
+            background:#fff6f7;
+            border:1px solid #ffd9de;
+            border-radius:10px;
+            margin:5px 0 20px;
+        }
+
+        .blood-agree input{
+            width:18px;
+            height:18px;
+            margin-top:3px;
+            accent-color:#c7192c;
+            flex:none;
+        }
+
+        .blood-agree label{
+            color:#566675;
+            line-height:1.7;
+            font-size:14px;
+        }
+
+        .blood-submit{
+            width:100%;
+            border:none;
+            cursor:pointer;
+            padding:16px 20px;
+            border-radius:10px;
+            background:linear-gradient(135deg,#b51226,#d51d32);
+            color:#fff;
+            font-size:17px;
+            font-weight:700;
+            font-family:"Noto Sans Devanagari",Arial,sans-serif;
+            transition:.3s;
+            box-shadow:0 10px 20px rgba(181,18,38,.20);
+        }
+
+        .blood-submit:hover{
+            transform:translateY(-2px);
+            box-shadow:0 14px 25px rgba(181,18,38,.28);
+        }
+
+        .blood-submit i{
+            margin-right:7px;
+        }
+
+        .blood-result{
+            display:none;
+            margin-top:18px;
+            padding:15px;
+            border-radius:10px;
+            line-height:1.8;
+            font-weight:600;
+        }
+
+        .blood-result.success{
+            display:block;
+            background:#eaf8ef;
+            border:1px solid #bce7c9;
+            color:#198754;
+        }
+
+        .blood-result.error{
+            display:block;
+            background:#fff0f0;
+            border:1px solid #ffd0d0;
+            color:#c62828;
+        }
+
+
+        /* IMPORTANT */
+
+        .blood-note-section{
+            padding:70px 0;
+            background:#f5f7fb;
+        }
+
+        .blood-note-grid{
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:25px;
+        }
+
+        .blood-note-box{
+            background:#fff;
+            border-radius:18px;
+            padding:30px;
+            border:1px solid #e3eaf0;
+        }
+
+        .blood-note-box.good{
+            border-top:5px solid #198754;
+        }
+
+        .blood-note-box.caution{
+            border-top:5px solid #e39b19;
+        }
+
+        .blood-note-box h3{
+            margin:0 0 18px;
+            color:#173f6b;
+            display:flex;
+            align-items:center;
+            gap:10px;
+        }
+
+        .blood-note-box.good h3 i{
+            color:#198754;
+        }
+
+        .blood-note-box.caution h3 i{
+            color:#e39b19;
+        }
+
+        .blood-note-box ul{
+            margin:0;
+            padding-left:20px;
+            color:#647484;
+        }
+
+        .blood-note-box li{
+            margin-bottom:10px;
+            line-height:1.7;
+        }
+
+
+        /* FINAL CTA */
+
+        .blood-final{
+            padding:65px 0;
+            background:linear-gradient(135deg,#173f6b,#235d99);
+            color:#fff;
+        }
+
+        .blood-final-inner{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:30px;
+        }
+
+        .blood-final span{
+            color:#cde4ff;
+            font-weight:700;
+        }
+
+        .blood-final h2{
+            margin:8px 0 0;
+            font-size:32px;
+        }
+
+        .blood-final-buttons{
+            display:flex;
+            gap:12px;
+            flex-wrap:wrap;
+        }
+
+        .blood-final-btn{
+            text-decoration:none;
+            padding:14px 22px;
+            border-radius:8px;
+            font-weight:700;
+            transition:.3s;
+        }
+
+        .blood-final-btn.red{
+            background:#d51d32;
+            color:#fff;
+        }
+
+        .blood-final-btn.white{
+            background:#fff;
+            color:#173f6b;
+        }
+
+        .blood-final-btn:hover{
+            transform:translateY(-3px);
+        }
+
+
+        /* MOBILE */
+
+        @media(max-width:1000px){
+
+            .blood-intro-grid{
+                grid-template-columns:1fr;
+            }
+
+            .blood-register-wrapper{
+                grid-template-columns:1fr;
+            }
+
+            .blood-cards{
+                grid-template-columns:1fr;
+            }
+
+        }
+
+        @media(max-width:700px){
+
+            .blood-hero{
+                padding:60px 0;
+            }
+
+            .blood-hero h1{
+                font-size:34px;
+            }
+
+            .blood-intro{
+                padding:50px 0;
+            }
+
+            .blood-intro-text h2,
+            .blood-section-heading h2{
+                font-size:28px;
+            }
+
+            .blood-visual{
+                min-height:280px;
+            }
+
+            .blood-main-icon{
+                width:120px;
+                height:120px;
+                font-size:55px;
+            }
+
+            .blood-points{
+                grid-template-columns:1fr;
+            }
+
+            .blood-register-info,
+            .blood-form-area{
+                padding:30px 20px;
+            }
+
+            .blood-register-info h2{
+                font-size:28px;
+            }
+
+            .blood-form-top h2{
+                font-size:25px;
+            }
+
+            .blood-form-row{
+                grid-template-columns:1fr;
+                gap:0;
+            }
+
+            .blood-note-grid{
+                grid-template-columns:1fr;
+            }
+
+            .blood-final-inner{
+                flex-direction:column;
+                align-items:flex-start;
+            }
+
+            .blood-final h2{
+                font-size:27px;
+            }
+
+        }
+
+    </style>
+
 </head>
 
-<body>
+
+<body class="blood-page">
 
 
-<!-- ================= TOP BAR ================= -->
+<!-- =========================================
+     TOP BAR
+========================================= -->
 
 <div class="top-bar">
 
@@ -45,11 +807,6 @@
                 <i class="fa-solid fa-envelope"></i>
                 info.yssfoundation@gmail.com
             </a>
-
-            <span>
-                <i class="fa-solid fa-location-dot"></i>
-                उत्तर प्रदेश, भारत
-            </span>
 
         </div>
 
@@ -69,7 +826,9 @@
 </div>
 
 
-<!-- ================= HEADER ================= -->
+<!-- =========================================
+     HEADER
+========================================= -->
 
 <header class="main-header">
 
@@ -142,14 +901,17 @@
 </header>
 
 
-<!-- ================= NAVIGATION ================= -->
+<!-- =========================================
+     NAVIGATION
+========================================= -->
 
 <nav class="main-nav">
 
     <div class="container nav-inner">
 
         <button class="mobile-menu-btn"
-            id="mobileMenuBtn">
+            id="mobileMenuBtn"
+            aria-label="Menu">
 
             <i class="fa-solid fa-bars"></i>
 
@@ -198,23 +960,36 @@
                     <li><a href="health.html">स्वास्थ्य</a></li>
                     <li><a href="environment.html">पर्यावरण</a></li>
                     <li><a href="social-service.html">समाज सेवा</a></li>
-                    <li>
-                        <a href="blood-donation.html" class="active">
-                            रक्तदान
-                        </a>
-                    </li>
+                    <li><a href="blood-donation.html" class="active">रक्तदान</a></li>
 
                 </ul>
 
             </li>
 
 
-            <li><a href="volunteer.html">वॉलंटियर</a></li>
-            <li><a href="membership.html">सदस्य बनें</a></li>
-            <li><a href="news.html">समाचार</a></li>
-            <li><a href="events.html">आगामी कार्यक्रम</a></li>
-            <li><a href="gallery.html">गैलरी</a></li>
-            <li><a href="contact.html">संपर्क करें</a></li>
+            <li>
+                <a href="volunteer.html">वॉलंटियर</a>
+            </li>
+
+            <li>
+                <a href="membership.html">सदस्य बनें</a>
+            </li>
+
+            <li>
+                <a href="news.html">समाचार</a>
+            </li>
+
+            <li>
+                <a href="events.html">आगामी कार्यक्रम</a>
+            </li>
+
+            <li>
+                <a href="gallery.html">गैलरी</a>
+            </li>
+
+            <li>
+                <a href="contact.html">संपर्क करें</a>
+            </li>
 
         </ul>
 
@@ -223,30 +998,36 @@
 </nav>
 
 
-<!-- ================= HERO ================= -->
+<!-- =========================================
+     HERO
+========================================= -->
 
-<section class="page-hero">
+<section class="blood-hero">
 
     <div class="container">
 
-        <div class="page-hero-content">
+        <div class="blood-hero-content">
 
-            <span>
+            <div class="blood-hero-badge">
+
                 <i class="fa-solid fa-droplet"></i>
-                जीवन बचाने का महाअभियान
-            </span>
+                रक्तदान महादान
+
+            </div>
 
             <h1>
-                रक्तदान करें,
-                <strong>किसी को जीवन दें</strong>
+                आपका रक्त,
+                <span>किसी की जिंदगी</span>
+                बचा सकता है
             </h1>
 
             <p>
-                आपका एक छोटा सा रक्तदान किसी जरूरतमंद व्यक्ति
-                के जीवन में उम्मीद की नई किरण बन सकता है।
+                रक्तदान मानवता की सबसे बड़ी सेवाओं में से एक है।
+                आइए, जरूरतमंद लोगों के लिए जीवन बचाने के इस अभियान
+                में हमारे साथ जुड़ें।
             </p>
 
-            <div class="page-breadcrumb">
+            <div class="blood-breadcrumb">
 
                 <a href="index.html">होम</a>
 
@@ -263,88 +1044,149 @@
 </section>
 
 
-<!-- ================= INTRO ================= -->
+<!-- =========================================
+     INTRO
+========================================= -->
 
-<section class="section">
+<section class="blood-intro">
 
     <div class="container">
 
-        <div class="section-title">
+        <div class="blood-intro-grid">
 
-            <span>रक्तदान महादान</span>
+            <div class="blood-visual">
 
-            <h2>आपका रक्त, किसी की जिंदगी</h2>
+                <div class="blood-main-icon">
+                    <i class="fa-solid fa-droplet"></i>
+                </div>
 
-            <div class="title-line">
-                <i class="fa-solid fa-heart"></i>
+            </div>
+
+
+            <div class="blood-intro-text">
+
+                <span class="blood-tag">
+                    जीवन बचाने का संकल्प
+                </span>
+
+                <h2>
+                    रक्तदान क्यों महत्वपूर्ण है?
+                </h2>
+
+                <p>
+                    दुर्घटना, ऑपरेशन, गंभीर बीमारी और आपातकालीन
+                    परिस्थितियों में अनेक मरीजों को रक्त की आवश्यकता होती है।
+                    ऐसे समय में रक्तदाता किसी व्यक्ति के लिए उम्मीद बन सकता है।
+                </p>
+
+                <p>
+                    आपका स्वैच्छिक रक्तदान जरूरत के समय किसी की
+                    जिंदगी बचाने में महत्वपूर्ण योगदान दे सकता है।
+                </p>
+
+
+                <div class="blood-points">
+
+                    <div class="blood-point">
+                        <i class="fa-solid fa-heart"></i>
+                        जीवन बचाने में सहयोग
+                    </div>
+
+                    <div class="blood-point">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                        मानवता की सेवा
+                    </div>
+
+                    <div class="blood-point">
+                        <i class="fa-solid fa-users"></i>
+                        समाज के लिए योगदान
+                    </div>
+
+                    <div class="blood-point">
+                        <i class="fa-solid fa-shield-heart"></i>
+                        सेवा का मजबूत संकल्प
+                    </div>
+
+                </div>
+
             </div>
 
         </div>
 
+    </div>
 
-        <div class="work-grid">
+</section>
 
 
-            <div class="work-card">
+<!-- =========================================
+     CARDS
+========================================= -->
 
-                <div class="work-icon">
+<section class="blood-stats-section">
+
+    <div class="container">
+
+        <div class="blood-section-heading">
+
+            <span>रक्तदान का संदेश</span>
+
+            <h2>
+                आपका एक कदम, किसी के लिए नई उम्मीद
+            </h2>
+
+            <p>
+                रक्तदाता के रूप में जुड़कर आप जरूरत के समय
+                मानवता की सेवा में अपना योगदान दे सकते हैं।
+            </p>
+
+        </div>
+
+
+        <div class="blood-cards">
+
+            <div class="blood-card">
+
+                <div class="blood-card-icon">
                     <i class="fa-solid fa-heart-pulse"></i>
                 </div>
 
-                <h3>जीवन बचाएँ</h3>
+                <h3>जीवन की रक्षा</h3>
 
                 <p>
-                    जरूरत के समय रक्त की उपलब्धता
-                    किसी व्यक्ति का जीवन बचाने में महत्वपूर्ण
-                    भूमिका निभा सकती है।
+                    जरूरतमंद मरीजों की सहायता के लिए आपका
+                    योगदान महत्वपूर्ण हो सकता है।
                 </p>
 
             </div>
 
 
-            <div class="work-card">
+            <div class="blood-card">
 
-                <div class="work-icon">
+                <div class="blood-card-icon">
                     <i class="fa-solid fa-hand-holding-heart"></i>
                 </div>
 
                 <h3>मानवता की सेवा</h3>
 
                 <p>
-                    स्वैच्छिक रक्तदान मानवता के प्रति
-                    हमारी जिम्मेदारी और सेवा भावना का प्रतीक है।
+                    स्वैच्छिक रक्तदान समाज और मानवता के
+                    प्रति जिम्मेदारी का एक सुंदर उदाहरण है।
                 </p>
 
             </div>
 
 
-            <div class="work-card">
+            <div class="blood-card">
 
-                <div class="work-icon">
-                    <i class="fa-solid fa-users"></i>
+                <div class="blood-card-icon">
+                    <i class="fa-solid fa-people-group"></i>
                 </div>
 
-                <h3>समाज का सहयोग</h3>
+                <h3>सेवा से जुड़ें</h3>
 
                 <p>
-                    रक्तदाता बनकर आप जरूरतमंद लोगों और
-                    उनके परिवारों की सहायता के लिए तैयार रहते हैं।
-                </p>
-
-            </div>
-
-
-            <div class="work-card">
-
-                <div class="work-icon">
-                    <i class="fa-solid fa-heart"></i>
-                </div>
-
-                <h3>उम्मीद का उपहार</h3>
-
-                <p>
-                    आपका रक्तदान किसी अनजान व्यक्ति के लिए
-                    जीवन का सबसे अनमोल उपहार हो सकता है।
+                    रक्तदाता पंजीकरण के माध्यम से संस्था के
+                    रक्त सहायता अभियान से जुड़ें।
                 </p>
 
             </div>
@@ -356,232 +1198,297 @@
 </section>
 
 
-<!-- ================= BLOOD GROUP ================= -->
+<!-- =========================================
+     REGISTRATION FORM
+========================================= -->
 
-<section class="section information-section">
-
-    <div class="container">
-
-        <div class="section-title">
-
-            <span>रक्त समूह</span>
-
-            <h2>हर रक्त समूह महत्वपूर्ण है</h2>
-
-            <div class="title-line">
-                <i class="fa-solid fa-droplet"></i>
-            </div>
-
-        </div>
-
-
-        <div class="work-grid">
-
-            <div class="work-card">
-                <div class="work-icon"><strong>A+</strong></div>
-                <h3>A Positive</h3>
-                <p>रक्तदान अभियान में आपका योगदान महत्वपूर्ण है।</p>
-            </div>
-
-            <div class="work-card">
-                <div class="work-icon"><strong>A-</strong></div>
-                <h3>A Negative</h3>
-                <p>दुर्लभ रक्त समूहों के दाताओं का सहयोग विशेष महत्वपूर्ण है।</p>
-            </div>
-
-            <div class="work-card">
-                <div class="work-icon"><strong>B+</strong></div>
-                <h3>B Positive</h3>
-                <p>जरूरतमंद मरीजों की सहायता के लिए पंजीकरण करें।</p>
-            </div>
-
-            <div class="work-card">
-                <div class="work-icon"><strong>B-</strong></div>
-                <h3>B Negative</h3>
-                <p>आपका रक्त किसी जरूरतमंद के लिए बहुत महत्वपूर्ण हो सकता है।</p>
-            </div>
-
-            <div class="work-card">
-                <div class="work-icon"><strong>AB+</strong></div>
-                <h3>AB Positive</h3>
-                <p>रक्तदाता नेटवर्क का हिस्सा बनकर सेवा करें।</p>
-            </div>
-
-            <div class="work-card">
-                <div class="work-icon"><strong>O+</strong></div>
-                <h3>O Positive</h3>
-                <p>समय पर रक्त सहायता उपलब्ध कराने में सहयोग करें।</p>
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<!-- ================= REGISTRATION ================= -->
-
-<section class="section" id="bloodRegistration">
+<section class="blood-register-section" id="bloodRegistration">
 
     <div class="container">
 
-        <div class="section-title">
-
-            <span>आज ही जुड़ें</span>
-
-            <h2>रक्तदाता पंजीकरण फॉर्म</h2>
-
-            <p>
-                नीचे अपना विवरण भरें और हमारे रक्तदाता सेवा अभियान से जुड़ें।
-            </p>
-
-            <div class="title-line">
-                <i class="fa-solid fa-user-plus"></i>
-            </div>
-
-        </div>
+        <div class="blood-register-wrapper">
 
 
-        <div class="form-container">
+            <!-- LEFT -->
 
-            <form id="bloodDonorForm">
+            <div class="blood-register-info">
 
-
-                <div class="form-group">
-
-                    <label for="donorName">
-                        पूरा नाम *
-                    </label>
-
-                    <input type="text"
-                        id="donorName"
-                        placeholder="अपना पूरा नाम लिखें"
-                        required>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="donorMobile">
-                        मोबाइल नंबर *
-                    </label>
-
-                    <input type="tel"
-                        id="donorMobile"
-                        placeholder="10 अंकों का मोबाइल नंबर"
-                        maxlength="10"
-                        inputmode="numeric"
-                        required>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="donorEmail">
-                        ईमेल
-                    </label>
-
-                    <input type="email"
-                        id="donorEmail"
-                        placeholder="अपना ईमेल दर्ज करें">
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="donorBloodGroup">
-                        रक्त समूह *
-                    </label>
-
-                    <select id="donorBloodGroup" required>
-
-                        <option value="">रक्त समूह चुनें</option>
-                        <option value="A+">A+</option>
-                        <option value="A-">A-</option>
-                        <option value="B+">B+</option>
-                        <option value="B-">B-</option>
-                        <option value="AB+">AB+</option>
-                        <option value="AB-">AB-</option>
-                        <option value="O+">O+</option>
-                        <option value="O-">O-</option>
-
-                    </select>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="donorCity">
-                        शहर / जिला *
-                    </label>
-
-                    <input type="text"
-                        id="donorCity"
-                        placeholder="अपना शहर या जिला लिखें"
-                        required>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="donorState">
-                        राज्य *
-                    </label>
-
-                    <input type="text"
-                        id="donorState"
-                        placeholder="अपना राज्य लिखें"
-                        required>
-
-                </div>
-
-
-                <div class="form-group">
-
-                    <label for="donorMessage">
-                        संदेश
-                    </label>
-
-                    <textarea id="donorMessage"
-                        placeholder="यदि कुछ बताना चाहते हैं तो लिखें"></textarea>
-
-                </div>
-
-
-                <div class="volunteer-agreement">
-
-                    <input type="checkbox"
-                        id="donorAgree"
-                        required>
-
-                    <label for="donorAgree">
-                        मैं पुष्टि करता/करती हूँ कि मेरे द्वारा दी गई
-                        जानकारी सही है और अंतिम रक्तदान पात्रता
-                        अधिकृत स्वास्थ्यकर्मी द्वारा निर्धारित की जाएगी।
-                    </label>
-
-                </div>
-
-
-                <button type="submit" class="volunteer-btn">
+                <div class="mini-title">
 
                     <i class="fa-solid fa-droplet"></i>
+                    रक्तदाता पंजीकरण
 
-                    रक्तदाता के रूप में पंजीकरण करें
+                </div>
 
-                </button>
+                <h2>
+                    जीवन बचाने के अभियान से जुड़ें
+                </h2>
+
+                <p>
+                    नीचे अपना विवरण भरें। आपका पंजीकरण सफल होने
+                    के बाद आपको एक Donor ID दी जाएगी।
+                </p>
 
 
-                <p id="bloodResult"
-                    class="volunteer-result"></p>
+                <div class="blood-info-list">
 
-            </form>
+                    <div class="blood-info-item">
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                        <div>
+
+                            <strong>सरल पंजीकरण</strong>
+
+                            <span>
+                                कुछ आवश्यक जानकारी भरकर
+                                आसानी से पंजीकरण करें।
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="blood-info-item">
+
+                        <i class="fa-solid fa-heart"></i>
+
+                        <div>
+
+                            <strong>मानवता की सेवा</strong>
+
+                            <span>
+                                जरूरतमंद लोगों की सहायता के
+                                लिए अपना योगदान दें।
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="blood-info-item">
+
+                        <i class="fa-solid fa-phone-volume"></i>
+
+                        <div>
+
+                            <strong>आवश्यकता पर संपर्क</strong>
+
+                            <span>
+                                रक्त सहायता अभियान की आवश्यकता
+                                होने पर संपर्क किया जा सकता है।
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- FORM -->
+
+            <div class="blood-form-area">
+
+                <div class="blood-form-top">
+
+                    <h2>
+                        रक्तदाता पंजीकरण फॉर्म
+                    </h2>
+
+                    <p>
+                        कृपया अपनी सही जानकारी भरें।
+                    </p>
+
+                </div>
+
+
+                <form class="blood-form" id="bloodDonorForm">
+
+
+                    <div class="blood-form-row">
+
+                        <div class="blood-form-group">
+
+                            <label>
+                                पूरा नाम <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="donorName"
+                                placeholder="अपना पूरा नाम लिखें"
+                                required>
+
+                        </div>
+
+
+                        <div class="blood-form-group">
+
+                            <label>
+                                मोबाइल नंबर <span>*</span>
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="donorMobile"
+                                placeholder="10 अंकों का मोबाइल नंबर"
+                                maxlength="10"
+                                inputmode="numeric"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="blood-form-row">
+
+                        <div class="blood-form-group">
+
+                            <label>
+                                ईमेल पता
+                            </label>
+
+                            <input
+                                type="email"
+                                id="donorEmail"
+                                placeholder="अपना ईमेल दर्ज करें">
+
+                        </div>
+
+
+                        <div class="blood-form-group">
+
+                            <label>
+                                रक्त समूह <span>*</span>
+                            </label>
+
+                            <select id="donorBloodGroup" required>
+
+                                <option value="">
+                                    रक्त समूह चुनें
+                                </option>
+
+                                <option value="A+">A+</option>
+                                <option value="A-">A-</option>
+                                <option value="B+">B+</option>
+                                <option value="B-">B-</option>
+                                <option value="AB+">AB+</option>
+                                <option value="AB-">AB-</option>
+                                <option value="O+">O+</option>
+                                <option value="O-">O-</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="blood-form-row">
+
+                        <div class="blood-form-group">
+
+                            <label>
+                                राज्य <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="donorState"
+                                placeholder="अपना राज्य लिखें"
+                                required>
+
+                        </div>
+
+
+                        <div class="blood-form-group">
+
+                            <label>
+                                शहर / जिला <span>*</span>
+                            </label>
+
+                            <input
+                                type="text"
+                                id="donorCity"
+                                placeholder="अपना शहर या जिला लिखें"
+                                required>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="blood-form-group">
+
+                        <label>
+                            पता <span>*</span>
+                        </label>
+
+                        <textarea
+                            id="donorAddress"
+                            placeholder="अपना पूरा पता लिखें"
+                            required></textarea>
+
+                    </div>
+
+
+                    <div class="blood-form-group">
+
+                        <label>
+                            अतिरिक्त संदेश
+                        </label>
+
+                        <textarea
+                            id="donorMessage"
+                            placeholder="यदि आप कुछ बताना चाहते हैं तो यहाँ लिखें"></textarea>
+
+                    </div>
+
+
+                    <div class="blood-agree">
+
+                        <input
+                            type="checkbox"
+                            id="donorAgree"
+                            required>
+
+                        <label for="donorAgree">
+
+                            मैं पुष्टि करता/करती हूँ कि मेरे द्वारा दी गई
+                            जानकारी सही है। रक्तदान की अंतिम पात्रता जांच
+                            अधिकृत स्वास्थ्यकर्मी या रक्तदान केंद्र द्वारा
+                            की जाएगी।
+
+                        </label>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="blood-submit">
+
+                        <i class="fa-solid fa-heart"></i>
+
+                        रक्तदाता के रूप में पंजीकरण करें
+
+                    </button>
+
+
+                    <div
+                        id="bloodResult"
+                        class="blood-result">
+                    </div>
+
+                </form>
+
+            </div>
 
         </div>
 
@@ -590,27 +1497,125 @@
 </section>
 
 
-<!-- ================= CTA ================= -->
+<!-- =========================================
+     IMPORTANT INFORMATION
+========================================= -->
 
-<section class="final-cta">
+<section class="blood-note-section">
 
-    <div class="container final-cta-inner">
+    <div class="container">
 
-        <div>
+        <div class="blood-section-heading">
 
-            <span>एक कदम मानवता के नाम</span>
+            <span>महत्वपूर्ण जानकारी</span>
 
             <h2>
-                आपका रक्त किसी की जिंदगी बचा सकता है
+                रक्तदान से पहले ध्यान रखें
             </h2>
 
         </div>
 
 
-        <div class="final-buttons">
+        <div class="blood-note-grid">
 
-            <a href="#bloodRegistration"
-                class="btn btn-green">
+
+            <div class="blood-note-box good">
+
+                <h3>
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    सामान्य जानकारी
+
+                </h3>
+
+                <ul>
+
+                    <li>रक्तदाता का स्वस्थ होना आवश्यक है।</li>
+
+                    <li>
+                        रक्तदान से पहले आवश्यक स्वास्थ्य जांच की जा सकती है।
+                    </li>
+
+                    <li>
+                        मान्य पहचान पत्र की आवश्यकता हो सकती है।
+                    </li>
+
+                    <li>
+                        अंतिम पात्रता का निर्णय अधिकृत स्वास्थ्यकर्मी करेंगे।
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div class="blood-note-box caution">
+
+                <h3>
+
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+
+                    महत्वपूर्ण सावधानी
+
+                </h3>
+
+                <ul>
+
+                    <li>
+                        अस्वस्थ महसूस होने पर रक्तदान न करें।
+                    </li>
+
+                    <li>
+                        अपनी स्वास्थ्य संबंधी जानकारी सही-सही बताएं।
+                    </li>
+
+                    <li>
+                        किसी बीमारी या दवा की स्थिति में स्वास्थ्यकर्मी
+                        से जानकारी लें।
+                    </li>
+
+                    <li>
+                        अंतिम निर्णय संबंधित चिकित्सा टीम का होगा।
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     FINAL CTA
+========================================= -->
+
+<section class="blood-final">
+
+    <div class="container blood-final-inner">
+
+        <div>
+
+            <span>
+                रक्तदान महादान
+            </span>
+
+            <h2>
+                आइए, मिलकर किसी की जिंदगी बचाने में सहयोग करें
+            </h2>
+
+        </div>
+
+
+        <div class="blood-final-buttons">
+
+            <a
+                href="#bloodRegistration"
+                class="blood-final-btn red">
 
                 <i class="fa-solid fa-droplet"></i>
                 रक्तदाता बनें
@@ -618,8 +1623,9 @@
             </a>
 
 
-            <a href="contact.html"
-                class="btn btn-orange">
+            <a
+                href="contact.html"
+                class="blood-final-btn white">
 
                 <i class="fa-solid fa-phone"></i>
                 संपर्क करें
@@ -633,25 +1639,33 @@
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+<!-- =========================================
+     FOOTER
+========================================= -->
 
 <footer class="footer">
 
     <div class="container footer-grid">
 
+
         <div class="footer-column footer-about">
 
             <a href="index.html" class="footer-logo">
 
-                <img src="images/logo.png"
+                <img
+                    src="images/logo.png"
                     alt="युवा सेवा संकल्प फाउंडेशन">
 
                 <span>
+
                     युवा सेवा संकल्प
+
                     <strong>फाउंडेशन</strong>
+
                 </span>
 
             </a>
+
 
             <p>
                 सेवा ही संकल्प, संकल्प ही राष्ट्र निर्माण।
@@ -666,12 +1680,14 @@
             <h3>त्वरित लिंक</h3>
 
             <ul>
+
                 <li><a href="index.html">होम</a></li>
                 <li><a href="about.html">हमारे बारे में</a></li>
                 <li><a href="mission.html">हमारा मिशन</a></li>
                 <li><a href="vision.html">हमारा विजन</a></li>
-                <li><a href="team.html">हमारी टीम</a></li>
                 <li><a href="membership.html">सदस्य बनें</a></li>
+                <li><a href="volunteer.html">वॉलंटियर बनें</a></li>
+
             </ul>
 
         </div>
@@ -682,11 +1698,13 @@
             <h3>हमारे कार्य</h3>
 
             <ul>
+
                 <li><a href="education.html">शिक्षा</a></li>
                 <li><a href="health.html">स्वास्थ्य</a></li>
                 <li><a href="environment.html">पर्यावरण</a></li>
                 <li><a href="social-service.html">समाज सेवा</a></li>
                 <li><a href="blood-donation.html">रक्तदान</a></li>
+
             </ul>
 
         </div>
@@ -697,22 +1715,33 @@
             <h3>संपर्क जानकारी</h3>
 
             <p>
+
                 <i class="fa-solid fa-location-dot"></i>
+
                 उत्तर प्रदेश, भारत
+
             </p>
 
+
             <p>
+
                 <i class="fa-solid fa-phone"></i>
+
                 <a href="tel:+919651731313">
                     +91 9651 731 313
                 </a>
+
             </p>
 
+
             <p>
+
                 <i class="fa-solid fa-envelope"></i>
+
                 <a href="mailto:info.yssfoundation@gmail.com">
                     info.yssfoundation@gmail.com
                 </a>
+
             </p>
 
         </div>
@@ -740,21 +1769,30 @@
 </footer>
 
 
-<!-- ================= BACK TO TOP ================= -->
+<!-- =========================================
+     BACK TO TOP
+========================================= -->
 
-<button id="backToTop"
-    class="back-to-top">
+<button
+    id="backToTop"
+    class="back-to-top"
+    aria-label="ऊपर जाएँ">
 
     <i class="fa-solid fa-arrow-up"></i>
 
 </button>
 
 
-<!-- ================= JAVASCRIPT ================= -->
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
 
 <script>
 
 document.addEventListener("DOMContentLoaded", function () {
+
+
+    /* MOBILE MENU */
 
     const menuBtn =
         document.getElementById("mobileMenuBtn");
@@ -771,6 +1809,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             const icon =
                 menuBtn.querySelector("i");
+
 
             if (navMenu.classList.contains("show")) {
 
@@ -789,6 +1828,8 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
+    /* MOBILE DROPDOWN */
+
     document
         .querySelectorAll(".dropdown > a")
         .forEach(function (dropdown) {
@@ -799,9 +1840,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     event.preventDefault();
 
-                    this.parentElement
-                        .classList
-                        .toggle("open");
+                    this.parentElement.classList.toggle("open");
 
                 }
 
@@ -810,117 +1849,176 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
-    const form =
+    /* BLOOD DONOR FORM */
+
+    const bloodDonorForm =
         document.getElementById("bloodDonorForm");
 
 
-    if (form) {
-
-        form.addEventListener("submit", function (event) {
-
-            event.preventDefault();
-
-            const mobile =
-                document.getElementById("donorMobile")
-                .value
-                .trim();
-
-            const result =
-                document.getElementById("bloodResult");
+    const bloodResult =
+        document.getElementById("bloodResult");
 
 
-            if (!/^[0-9]{10}$/.test(mobile)) {
+    if (bloodDonorForm) {
 
-                result.innerHTML =
-                    "❌ कृपया सही 10 अंकों का मोबाइल नंबर दर्ज करें।";
+        bloodDonorForm.addEventListener(
+            "submit",
+            function (event) {
 
-                result.style.color = "red";
+                event.preventDefault();
 
-                return;
+
+                const name =
+                    document.getElementById("donorName")
+                    .value.trim();
+
+
+                const mobile =
+                    document.getElementById("donorMobile")
+                    .value.trim();
+
+
+                const email =
+                    document.getElementById("donorEmail")
+                    .value.trim();
+
+
+                const bloodGroup =
+                    document.getElementById("donorBloodGroup")
+                    .value;
+
+
+                const state =
+                    document.getElementById("donorState")
+                    .value.trim();
+
+
+                const city =
+                    document.getElementById("donorCity")
+                    .value.trim();
+
+
+                const address =
+                    document.getElementById("donorAddress")
+                    .value.trim();
+
+
+                const message =
+                    document.getElementById("donorMessage")
+                    .value.trim();
+
+
+                if (!/^[0-9]{10}$/.test(mobile)) {
+
+                    bloodResult.className =
+                        "blood-result error";
+
+                    bloodResult.innerHTML =
+                        "<i class='fa-solid fa-circle-xmark'></i> " +
+                        "कृपया सही 10 अंकों का मोबाइल नंबर दर्ज करें।";
+
+                    return;
+
+                }
+
+
+                let donors = [];
+
+
+                try {
+
+                    donors =
+                        JSON.parse(
+                            localStorage.getItem("bloodDonors")
+                        ) || [];
+
+                } catch (error) {
+
+                    donors = [];
+
+                }
+
+
+                const donorId =
+                    "YSSF-BD-" +
+                    new Date().getFullYear() +
+                    "-" +
+                    String(donors.length + 1).padStart(4, "0");
+
+
+                const donor = {
+
+                    donorId: donorId,
+
+                    name: name,
+
+                    mobile: mobile,
+
+                    email: email,
+
+                    bloodGroup: bloodGroup,
+
+                    state: state,
+
+                    city: city,
+
+                    address: address,
+
+                    message: message,
+
+                    status: "पंजीकृत",
+
+                    registrationDate:
+                        new Date().toLocaleDateString(
+                            "hi-IN"
+                        )
+
+                };
+
+
+                donors.push(donor);
+
+
+                localStorage.setItem(
+                    "bloodDonors",
+                    JSON.stringify(donors)
+                );
+
+
+                bloodResult.className =
+                    "blood-result success";
+
+
+                bloodResult.innerHTML =
+                    "<strong>" +
+                    "<i class='fa-solid fa-circle-check'></i> " +
+                    "पंजीकरण सफल रहा!" +
+                    "</strong><br>" +
+
+                    "धन्यवाद <strong>" +
+                    name +
+                    "</strong>, आप रक्तदाता के रूप में सफलतापूर्वक पंजीकृत हो गए हैं।" +
+
+                    "<br>आपकी Donor ID: <strong>" +
+                    donorId +
+                    "</strong>";
+
+
+                bloodDonorForm.reset();
+
+
+                bloodResult.scrollIntoView({
+                    behavior:"smooth",
+                    block:"center"
+                });
 
             }
-
-
-            let donors =
-                JSON.parse(
-                    localStorage.getItem("bloodDonors")
-                ) || [];
-
-
-            const donorId =
-                "YSSF-BD-2026-" +
-                String(donors.length + 1).padStart(4, "0");
-
-
-            const donor = {
-
-                donorId: donorId,
-
-                name:
-                    document.getElementById("donorName")
-                    .value
-                    .trim(),
-
-                mobile: mobile,
-
-                email:
-                    document.getElementById("donorEmail")
-                    .value
-                    .trim(),
-
-                bloodGroup:
-                    document.getElementById("donorBloodGroup")
-                    .value,
-
-                city:
-                    document.getElementById("donorCity")
-                    .value
-                    .trim(),
-
-                state:
-                    document.getElementById("donorState")
-                    .value
-                    .trim(),
-
-                message:
-                    document.getElementById("donorMessage")
-                    .value
-                    .trim(),
-
-                status: "पंजीकृत",
-
-                registrationDate:
-                    new Date()
-                    .toLocaleDateString("hi-IN")
-
-            };
-
-
-            donors.push(donor);
-
-
-            localStorage.setItem(
-                "bloodDonors",
-                JSON.stringify(donors)
-            );
-
-
-            result.innerHTML =
-                "✅ आपका पंजीकरण सफलतापूर्वक हो गया।<br>" +
-                "आपकी Donor ID: <strong>" +
-                donorId +
-                "</strong>";
-
-
-            result.style.color = "green";
-
-
-            form.reset();
-
-        });
+        );
 
     }
 
+
+    /* BACK TO TOP */
 
     const backToTop =
         document.getElementById("backToTop");
@@ -950,13 +2048,17 @@ document.addEventListener("DOMContentLoaded", function () {
         backToTop.addEventListener("click", function () {
 
             window.scrollTo({
-                top: 0,
-                behavior: "smooth"
+
+                top:0,
+
+                behavior:"smooth"
+
             });
 
         });
 
     }
+
 
 });
 
