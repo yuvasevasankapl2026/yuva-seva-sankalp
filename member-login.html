@@ -5,39 +5,1349 @@
 
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="युवा सेवा संकल्प फाउंडेशन सदस्य लॉगिन पेज">
 
     <title>
-        सदस्य लॉगिन | युवा सेवा संकल्प फाउंडेशन
+        सदस्य Login | युवा सेवा संकल्प फाउंडेशन
     </title>
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+
+    <!-- GOOGLE FONT -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- MAIN CSS -->
+
+    <link rel="stylesheet"
+          href="style.css">
+
+
+    <style>
+
+        /* =====================================================
+           MEMBER LOGIN PAGE
+           युवा सेवा संकल्प फाउंडेशन
+        ===================================================== */
+
+        :root{
+            --member-blue:#123b66;
+            --member-blue-light:#1d5d96;
+            --member-orange:#ff7900;
+            --member-green:#24834b;
+            --member-dark:#092e60;
+            --member-text:#263746;
+            --member-muted:#68798a;
+            --member-light:#f5f8fb;
+            --member-white:#ffffff;
+            --member-border:#dfe7ed;
+        }
+
+
+        *{
+            box-sizing:border-box;
+        }
+
+
+        body.member-page{
+            margin:0;
+            padding:0;
+            background:var(--member-light);
+            color:var(--member-text);
+            font-family:
+                "Noto Sans Devanagari",
+                "Mangal",
+                Arial,
+                sans-serif;
+        }
+
+
+        .member-page a{
+            text-decoration:none;
+        }
+
+
+        /* =====================================================
+           TOP BAR
+        ===================================================== */
+
+        .member-topbar{
+            background:var(--member-blue);
+            color:#ffffff;
+        }
+
+
+        .member-topbar-inner{
+            width:92%;
+            max-width:1400px;
+            min-height:42px;
+            margin:auto;
+
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+
+            gap:20px;
+        }
+
+
+        .member-contact{
+            display:flex;
+            align-items:center;
+            gap:25px;
+        }
+
+
+        .member-contact span{
+            display:flex;
+            align-items:center;
+            gap:7px;
+
+            font-size:13px;
+        }
+
+
+        .member-contact i{
+            color:#ffb15c;
+        }
+
+
+        .member-social{
+            display:flex;
+            align-items:center;
+            gap:14px;
+        }
+
+
+        .member-social a{
+            color:#ffffff;
+            font-size:14px;
+            transition:.2s ease;
+        }
+
+
+        .member-social a:hover{
+            color:var(--member-orange);
+        }
+
+
+        .member-phone{
+            display:flex;
+            align-items:center;
+            gap:7px;
+
+            font-size:13px;
+            font-weight:600;
+        }
+
+
+        .member-phone i{
+            color:#ffb15c;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .member-header{
+            background:#ffffff;
+            border-bottom:1px solid #e3e9ef;
+        }
+
+
+        .member-header-inner{
+            width:92%;
+            max-width:1400px;
+            min-height:135px;
+            margin:auto;
+
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+
+            gap:30px;
+        }
+
+
+        .member-brand{
+            display:flex;
+            align-items:center;
+            gap:18px;
+
+            color:var(--member-blue);
+        }
+
+
+        .member-brand-logo{
+            width:112px;
+            height:112px;
+            object-fit:contain;
+            flex-shrink:0;
+        }
+
+
+        .member-brand-text h1{
+            margin:0;
+
+            color:var(--member-blue);
+
+            font-size:38px;
+            line-height:1.2;
+
+            font-weight:800;
+        }
+
+
+        .member-brand-text h1 span{
+            color:var(--member-orange);
+        }
+
+
+        .member-brand-text p{
+            margin:7px 0 0;
+
+            color:var(--member-blue);
+
+            font-size:17px;
+            font-weight:700;
+        }
+
+
+        /* =====================================================
+           HEADER LOGIN CARDS
+        ===================================================== */
+
+        .member-header-actions{
+            display:flex;
+            align-items:center;
+            gap:12px;
+        }
+
+
+        .member-header-card{
+            min-width:165px;
+            min-height:64px;
+
+            padding:10px 13px;
+
+            background:#ffffff;
+
+            border:1px solid #dce4eb;
+            border-radius:12px;
+
+            display:flex;
+            align-items:center;
+            gap:10px;
+
+            color:var(--member-blue);
+
+            transition:.25s ease;
+        }
+
+
+        .member-header-card:hover{
+            transform:translateY(-3px);
+            box-shadow:0 10px 25px rgba(18,59,102,.12);
+        }
+
+
+        .member-header-card-icon{
+            width:42px;
+            height:42px;
+
+            flex-shrink:0;
+
+            border-radius:50%;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            font-size:18px;
+        }
+
+
+        .member-header-card.member-current{
+            border-color:var(--member-orange);
+            background:#fffaf5;
+        }
+
+
+        .member-current .member-header-card-icon{
+            background:#fff0e3;
+            color:var(--member-orange);
+        }
+
+
+        .member-volunteer-card .member-header-card-icon{
+            background:#eaf7ed;
+            color:var(--member-green);
+        }
+
+
+        .member-admin-card{
+            background:var(--member-orange);
+            border-color:var(--member-orange);
+            color:#ffffff;
+        }
+
+
+        .member-admin-card .member-header-card-icon{
+            background:rgba(255,255,255,.16);
+            color:#ffffff;
+        }
+
+
+        .member-header-card-text{
+            display:flex;
+            flex-direction:column;
+        }
+
+
+        .member-header-card-text strong{
+            font-size:14px;
+            line-height:1.3;
+        }
+
+
+        .member-header-card-text small{
+            margin-top:3px;
+            font-size:10px;
+            opacity:.75;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        .member-nav{
+            background:#082e63;
+            min-height:56px;
+
+            position:relative;
+            z-index:100;
+        }
+
+
+        .member-nav-inner{
+            width:92%;
+            max-width:1400px;
+            min-height:56px;
+            margin:auto;
+
+            display:flex;
+            align-items:stretch;
+        }
+
+
+        .member-nav-link{
+            min-height:56px;
+
+            padding:0 17px;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            gap:7px;
+
+            color:#ffffff;
+
+            font-size:14px;
+            font-weight:700;
+
+            white-space:nowrap;
+
+            transition:.2s ease;
+        }
+
+
+        .member-nav-link:hover,
+        .member-nav-link.active{
+            background:var(--member-orange);
+            color:#ffffff;
+        }
+
+
+        .member-dropdown{
+            position:relative;
+        }
+
+
+        .member-dropdown-menu{
+            display:none;
+
+            position:absolute;
+
+            top:56px;
+            left:0;
+
+            width:220px;
+
+            background:#ffffff;
+
+            border-top:3px solid var(--member-orange);
+
+            box-shadow:0 12px 30px rgba(0,0,0,.18);
+        }
+
+
+        .member-dropdown:hover .member-dropdown-menu{
+            display:block;
+        }
+
+
+        .member-dropdown-menu a{
+            display:block;
+
+            padding:12px 15px;
+
+            color:var(--member-text);
+
+            font-size:13px;
+
+            border-bottom:1px solid #edf1f4;
+
+            transition:.2s ease;
+        }
+
+
+        .member-dropdown-menu a:hover{
+            background:#f3f7fa;
+            color:var(--member-blue);
+        }
+
+
+        /* =====================================================
+           BREADCRUMB
+        ===================================================== */
+
+        .member-breadcrumb{
+            background:#eef3f8;
+            border-bottom:1px solid #dfe7ee;
+        }
+
+
+        .member-breadcrumb-inner{
+            width:92%;
+            max-width:1400px;
+            min-height:46px;
+            margin:auto;
+
+            display:flex;
+            align-items:center;
+
+            gap:10px;
+
+            color:#69798a;
+            font-size:13px;
+        }
+
+
+        .member-breadcrumb a{
+            color:var(--member-blue);
+            font-weight:700;
+        }
+
+
+        .member-breadcrumb i{
+            color:var(--member-orange);
+            font-size:10px;
+        }
+
+
+        /* =====================================================
+           LOGIN SECTION
+        ===================================================== */
+
+        .member-login-section{
+            width:92%;
+            max-width:1180px;
+
+            margin:45px auto 65px;
+        }
+
+
+        .member-login-wrapper{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+
+            background:#ffffff;
+
+            border:1px solid var(--member-border);
+            border-radius:25px;
+
+            overflow:hidden;
+
+            box-shadow:0 18px 50px rgba(18,59,102,.10);
+        }
+
+
+        /* LEFT PANEL */
+
+        .member-login-info{
+            position:relative;
+
+            padding:55px 48px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #123b66 0%,
+                    #1d5d96 65%,
+                    #24834b 100%
+                );
+
+            color:#ffffff;
+
+            overflow:hidden;
+        }
+
+
+        .member-login-info::before{
+            content:"";
+
+            position:absolute;
+
+            width:280px;
+            height:280px;
+
+            border-radius:50%;
+
+            right:-100px;
+            top:-110px;
+
+            background:rgba(255,255,255,.08);
+        }
+
+
+        .member-login-info::after{
+            content:"";
+
+            position:absolute;
+
+            width:220px;
+            height:220px;
+
+            border-radius:50%;
+
+            left:-100px;
+            bottom:-100px;
+
+            background:rgba(255,121,0,.15);
+        }
+
+
+        .member-login-info-content{
+            position:relative;
+            z-index:2;
+        }
+
+
+        .member-login-badge{
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+
+            padding:8px 15px;
+
+            border-radius:30px;
+
+            background:rgba(255,255,255,.12);
+
+            border:1px solid rgba(255,255,255,.22);
+
+            font-size:13px;
+            font-weight:700;
+        }
+
+
+        .member-login-info h2{
+            margin:24px 0 12px;
+
+            font-size:38px;
+            line-height:1.3;
+        }
+
+
+        .member-login-info p{
+            margin:0;
+
+            color:#e5eef6;
+
+            font-size:16px;
+            line-height:1.9;
+        }
+
+
+        .member-benefits{
+            margin-top:30px;
+
+            display:flex;
+            flex-direction:column;
+            gap:15px;
+        }
+
+
+        .member-benefit{
+            display:flex;
+            align-items:flex-start;
+            gap:12px;
+        }
+
+
+        .member-benefit-icon{
+            width:42px;
+            height:42px;
+
+            flex-shrink:0;
+
+            border-radius:12px;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            background:rgba(255,255,255,.12);
+
+            color:#ffffff;
+        }
+
+
+        .member-benefit strong{
+            display:block;
+
+            margin-bottom:3px;
+
+            font-size:15px;
+        }
+
+
+        .member-benefit span{
+            color:#dbe8f3;
+
+            font-size:12px;
+            line-height:1.5;
+        }
+
+
+        /* RIGHT LOGIN FORM */
+
+        .member-login-form-area{
+            padding:48px;
+        }
+
+
+        .member-login-form-area h2{
+            margin:0;
+
+            color:var(--member-blue);
+
+            font-size:30px;
+        }
+
+
+        .member-login-form-area > p{
+            margin:8px 0 28px;
+
+            color:var(--member-muted);
+
+            font-size:14px;
+            line-height:1.7;
+        }
+
+
+        .member-form-group{
+            margin-bottom:18px;
+        }
+
+
+        .member-form-group label{
+            display:block;
+
+            margin-bottom:8px;
+
+            color:var(--member-text);
+
+            font-size:14px;
+            font-weight:700;
+        }
+
+
+        .member-input-box{
+            position:relative;
+        }
+
+
+        .member-input-box > i{
+            position:absolute;
+
+            left:16px;
+            top:50%;
+
+            transform:translateY(-50%);
+
+            color:#7a8a99;
+            font-size:16px;
+        }
+
+
+        .member-input-box input{
+            width:100%;
+            height:52px;
+
+            padding:0 48px 0 48px;
+
+            border:1px solid #d6e0e8;
+            border-radius:10px;
+
+            outline:none;
+
+            color:var(--member-text);
+
+            font-family:inherit;
+            font-size:14px;
+
+            background:#ffffff;
+
+            transition:.2s ease;
+        }
+
+
+        .member-input-box input:focus{
+            border-color:var(--member-blue-light);
+
+            box-shadow:
+                0 0 0 4px
+                rgba(29,93,150,.10);
+        }
+
+
+        .member-password-toggle{
+            position:absolute;
+
+            right:13px;
+            top:50%;
+
+            transform:translateY(-50%);
+
+            width:35px;
+            height:35px;
+
+            border:0;
+            background:transparent;
+
+            color:#71808f;
+
+            cursor:pointer;
+
+            font-size:16px;
+        }
+
+
+        .member-form-options{
+            margin:5px 0 22px;
+
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+
+            gap:15px;
+        }
+
+
+        .member-remember{
+            display:flex;
+            align-items:center;
+            gap:7px;
+
+            color:#607080;
+
+            font-size:12px;
+
+            cursor:pointer;
+        }
+
+
+        .member-remember input{
+            accent-color:var(--member-blue);
+        }
+
+
+        .member-forgot{
+            color:var(--member-orange);
+
+            font-size:12px;
+            font-weight:700;
+        }
+
+
+        .member-submit-btn{
+            width:100%;
+            min-height:53px;
+
+            border:0;
+            border-radius:10px;
+
+            background:var(--member-blue);
+
+            color:#ffffff;
+
+            font-family:inherit;
+            font-size:16px;
+            font-weight:800;
+
+            cursor:pointer;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:9px;
+
+            transition:.25s ease;
+        }
+
+
+        .member-submit-btn:hover{
+            background:var(--member-blue-light);
+            transform:translateY(-2px);
+        }
+
+
+        .member-result{
+            display:none;
+
+            margin:16px 0 0;
+
+            padding:12px 14px;
+
+            border-radius:8px;
+
+            font-size:13px;
+            line-height:1.6;
+        }
+
+
+        .member-result.success{
+            display:block;
+
+            background:#eaf7ed;
+            border:1px solid #cce9d4;
+
+            color:#1e6b39;
+        }
+
+
+        .member-result.error{
+            display:block;
+
+            background:#fff0f0;
+            border:1px solid #f1cccc;
+
+            color:#b52626;
+        }
+
+
+        .member-register-box{
+            margin-top:24px;
+            padding-top:22px;
+
+            border-top:1px solid #e5ebf0;
+
+            text-align:center;
+        }
+
+
+        .member-register-box p{
+            margin:0 0 12px;
+
+            color:#68798a;
+
+            font-size:13px;
+        }
+
+
+        .member-register-btn{
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            gap:8px;
+
+            padding:11px 20px;
+
+            border:1px solid var(--member-orange);
+            border-radius:8px;
+
+            color:var(--member-orange);
+
+            font-size:13px;
+            font-weight:800;
+
+            transition:.2s ease;
+        }
+
+
+        .member-register-btn:hover{
+            background:var(--member-orange);
+            color:#ffffff;
+        }
+
+
+        /* =====================================================
+           QUICK LINKS
+        ===================================================== */
+
+        .member-help-section{
+            width:92%;
+            max-width:1180px;
+
+            margin:0 auto 60px;
+        }
+
+
+        .member-help-grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:18px;
+        }
+
+
+        .member-help-card{
+            background:#ffffff;
+
+            border:1px solid var(--member-border);
+            border-radius:17px;
+
+            padding:24px;
+
+            display:flex;
+            align-items:flex-start;
+            gap:15px;
+
+            box-shadow:0 7px 20px rgba(0,0,0,.035);
+
+            transition:.25s ease;
+        }
+
+
+        .member-help-card:hover{
+            transform:translateY(-4px);
+
+            box-shadow:
+                0 15px 30px
+                rgba(18,59,102,.09);
+        }
+
+
+        .member-help-icon{
+            width:50px;
+            height:50px;
+
+            flex-shrink:0;
+
+            border-radius:14px;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            background:#eaf1fa;
+
+            color:var(--member-blue);
+
+            font-size:21px;
+        }
+
+
+        .member-help-card:nth-child(2)
+        .member-help-icon{
+            background:#fff0e3;
+            color:var(--member-orange);
+        }
+
+
+        .member-help-card:nth-child(3)
+        .member-help-icon{
+            background:#eaf7ed;
+            color:var(--member-green);
+        }
+
+
+        .member-help-card h3{
+            margin:0 0 5px;
+
+            color:var(--member-blue);
+
+            font-size:17px;
+        }
+
+
+        .member-help-card p{
+            margin:0;
+
+            color:#71808f;
+
+            font-size:12px;
+            line-height:1.6;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .member-footer{
+            background:var(--member-dark);
+
+            color:#ffffff;
+
+            padding:45px 0 0;
+        }
+
+
+        .member-footer-inner{
+            width:92%;
+            max-width:1400px;
+
+            margin:auto;
+
+            display:grid;
+
+            grid-template-columns:
+                1.5fr 1fr 1fr 1.3fr;
+
+            gap:35px;
+        }
+
+
+        .member-footer-logo{
+            width:90px;
+            height:90px;
+
+            object-fit:contain;
+
+            margin-bottom:10px;
+        }
+
+
+        .member-footer h3,
+        .member-footer h4{
+            margin:0 0 13px;
+
+            color:#ffffff;
+        }
+
+
+        .member-footer p{
+            margin:0 0 10px;
+
+            color:#dbe5ef;
+
+            font-size:13px;
+            line-height:1.7;
+        }
+
+
+        .member-footer a{
+            display:block;
+
+            margin-bottom:9px;
+
+            color:#dbe5ef;
+
+            font-size:13px;
+        }
+
+
+        .member-footer a:hover{
+            color:var(--member-orange);
+        }
+
+
+        .member-footer-contact i{
+            width:20px;
+            color:#ffb15c;
+        }
+
+
+        .member-footer-bottom{
+            margin-top:35px;
+
+            padding:17px 20px;
+
+            border-top:
+                1px solid
+                rgba(255,255,255,.15);
+
+            text-align:center;
+
+            color:#dbe5ef;
+
+            font-size:12px;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media(max-width:1200px){
+
+            .member-header-inner{
+                flex-direction:column;
+
+                padding:18px 0;
+            }
+
+
+            .member-header-actions{
+                width:100%;
+                justify-content:center;
+            }
+
+
+            .member-login-wrapper{
+                grid-template-columns:1fr;
+            }
+
+
+            .member-footer-inner{
+                grid-template-columns:1fr 1fr;
+            }
+
+        }
+
+
+        @media(max-width:900px){
+
+            .member-contact span:first-child{
+                display:none;
+            }
+
+
+            .member-login-info{
+                padding:42px 35px;
+            }
+
+
+            .member-help-grid{
+                grid-template-columns:1fr;
+            }
+
+
+            .member-nav-inner{
+                width:100%;
+                overflow-x:auto;
+            }
+
+
+            .member-nav-link{
+                padding:0 14px;
+                font-size:12px;
+            }
+
+        }
+
+
+        @media(max-width:700px){
+
+            .member-topbar-inner{
+                justify-content:center;
+            }
+
+
+            .member-contact{
+                display:none;
+            }
+
+
+            .member-brand{
+                flex-direction:column;
+                text-align:center;
+            }
+
+
+            .member-brand-logo{
+                width:95px;
+                height:95px;
+            }
+
+
+            .member-brand-text h1{
+                font-size:29px;
+            }
+
+
+            .member-header-actions{
+                flex-direction:column;
+            }
+
+
+            .member-header-card{
+                width:100%;
+                max-width:350px;
+            }
+
+
+            .member-login-section{
+                margin-top:25px;
+            }
+
+
+            .member-login-info,
+            .member-login-form-area{
+                padding:32px 22px;
+            }
+
+
+            .member-login-info h2{
+                font-size:30px;
+            }
+
+
+            .member-login-form-area h2{
+                font-size:26px;
+            }
+
+
+            .member-footer-inner{
+                grid-template-columns:1fr;
+            }
+
+        }
+
+
+        @media(max-width:450px){
+
+            .member-brand-text h1{
+                font-size:25px;
+            }
+
+
+            .member-brand-text p{
+                font-size:14px;
+            }
+
+
+            .member-login-info h2{
+                font-size:27px;
+            }
+
+
+            .member-form-options{
+                flex-direction:column;
+                align-items:flex-start;
+            }
+
+
+            .member-breadcrumb-inner{
+                font-size:11px;
+                gap:7px;
+            }
+
+        }
+
+    </style>
 
 </head>
 
 
-<body>
+<body class="member-page">
 
 
-<!-- TOP BAR -->
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
 
-<div class="top-bar">
+<div class="member-topbar">
 
-    <div class="container">
+    <div class="member-topbar-inner">
 
-        <div class="left">
 
-            📧 yuvasevasankalp2026@gmail.com
+        <div class="member-contact">
 
-            |
+            <span>
 
-            📞 +91 9651731313
+                <i class="fa-solid fa-envelope"></i>
+
+                info.yssfoundation@gmail.com
+
+            </span>
+
+
+            <span>
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                ग्राम नैपुरा, पोस्ट कौड़ाही,
+                जिला अम्बेडकर नगर, उत्तर प्रदेश – 224129
+
+            </span>
+
+        </div>
+
+
+        <div class="member-social">
+
+            <a href="#"
+               aria-label="Facebook">
+
+                <i class="fab fa-facebook-f"></i>
+
+            </a>
+
+
+            <a href="#"
+               aria-label="Instagram">
+
+                <i class="fab fa-instagram"></i>
+
+            </a>
+
+
+            <a href="#"
+               aria-label="YouTube">
+
+                <i class="fab fa-youtube"></i>
+
+            </a>
+
+
+            <a href="#"
+               aria-label="WhatsApp">
+
+                <i class="fab fa-whatsapp"></i>
+
+            </a>
+
+
+            <span class="member-phone">
+
+                <i class="fa-solid fa-phone"></i>
+
+                9651731313
+
+            </span>
 
         </div>
 
@@ -46,33 +1356,126 @@
 </div>
 
 
-<!-- HEADER -->
 
-<header class="header">
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
-    <div class="header-content">
+<header class="member-header">
 
-        <img
-            src="images/logo.png"
-            class="logo"
-            alt="लोगो"
-        >
+    <div class="member-header-inner">
 
 
-        <div class="title">
+        <a href="index.html"
+           class="member-brand">
 
-            <h1 class="main-title">
+            <img
+                src="images/logo.png"
+                alt="युवा सेवा संकल्प फाउंडेशन लोगो"
+                class="member-brand-logo"
+            >
 
-                युवा सेवा संकल्प फाउंडेशन
 
-            </h1>
+            <div class="member-brand-text">
+
+                <h1>
+
+                    युवा सेवा संकल्प
+                    <span>फाउंडेशन</span>
+
+                </h1>
 
 
-            <p class="tagline">
+                <p>
 
-                युवा शक्ति, राष्ट्र शक्ति
+                    युवा शक्ति - राष्ट्र शक्ति
 
-            </p>
+                </p>
+
+            </div>
+
+        </a>
+
+
+
+        <div class="member-header-actions">
+
+
+            <a href="member-login.html"
+               class="member-header-card member-current">
+
+                <div class="member-header-card-icon">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+
+                <div class="member-header-card-text">
+
+                    <strong>
+                        सदस्य Login
+                    </strong>
+
+                    <small>
+                        अपने खाते में लॉगिन करें
+                    </small>
+
+                </div>
+
+            </a>
+
+
+
+            <a href="volunteer-login.html"
+               class="member-header-card member-volunteer-card">
+
+                <div class="member-header-card-icon">
+
+                    <i class="fa-solid fa-handshake"></i>
+
+                </div>
+
+
+                <div class="member-header-card-text">
+
+                    <strong>
+                        Volunteer Login
+                    </strong>
+
+                    <small>
+                        सेवा करने के लिए जुड़ें
+                    </small>
+
+                </div>
+
+            </a>
+
+
+
+            <a href="admin-login.html"
+               class="member-header-card member-admin-card">
+
+                <div class="member-header-card-icon">
+
+                    <i class="fa-solid fa-user-shield"></i>
+
+                </div>
+
+
+                <div class="member-header-card-text">
+
+                    <strong>
+                        Admin Login
+                    </strong>
+
+                    <small>
+                        Admin Panel
+                    </small>
+
+                </div>
+
+            </a>
 
         </div>
 
@@ -81,251 +1484,909 @@
 </header>
 
 
-<!-- MEMBER LOGIN -->
 
-<section class="admin-login-section">
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
-    <div class="admin-login-box">
+<nav class="member-nav">
 
+    <div class="member-nav-inner">
 
-        <h2>
 
-            सदस्य लॉगिन
+        <a href="index.html"
+           class="member-nav-link">
 
-        </h2>
+            <i class="fa-solid fa-house"></i>
 
-
-        <p>
-
-            Member ID और मोबाइल नंबर डालकर लॉगिन करें।
-
-        </p>
-
-
-        <!-- LOGIN FORM -->
-
-        <form id="memberLoginForm">
-
-
-            <div class="form-group">
-
-                <label for="memberId">
-
-                    Member ID
-
-                </label>
-
-
-                <input
-                    type="text"
-                    id="memberId"
-                    placeholder="जैसे: YSSF-2026-0001"
-                    required
-                >
-
-            </div>
-
-
-            <div class="form-group">
-
-                <label for="memberMobile">
-
-                    पासवर्ड / मोबाइल नंबर
-
-                </label>
-
-
-                <input
-                    type="password"
-                    id="memberMobile"
-                    placeholder="10 अंकों का मोबाइल नंबर"
-                    maxlength="10"
-                    required
-                >
-
-            </div>
-
-
-            <p
-                id="memberMessage"
-                class="login-message"
-            ></p>
-
-
-            <button
-                type="submit"
-                class="admin-login-btn"
-            >
-
-                🔐 लॉगिन करें
-
-            </button>
-
-
-        </form>
-
-
-        <!-- MEMBER PROFILE -->
-
-        <div
-            id="memberProfile"
-            style="display:none;"
-        >
-
-
-            <h2>
-
-                सदस्य प्रोफाइल
-
-            </h2>
-
-
-            <p>
-
-                <strong>
-
-                    Member ID:
-
-                </strong>
-
-                <span id="profileMemberId">
-
-                </span>
-
-            </p>
-
-
-            <p>
-
-                <strong>
-
-                    नाम:
-
-                </strong>
-
-                <span id="profileName">
-
-                </span>
-
-            </p>
-
-
-            <p>
-
-                <strong>
-
-                    मोबाइल नंबर:
-
-                </strong>
-
-                <span id="profileMobile">
-
-                </span>
-
-            </p>
-
-
-            <p>
-
-                <strong>
-
-                    सदस्यता:
-
-                </strong>
-
-                <span id="profileMembership">
-
-                </span>
-
-            </p>
-
-
-            <p>
-
-                <strong>
-
-                    स्थिति:
-
-                </strong>
-
-                <span id="profileStatus">
-
-                </span>
-
-            </p>
-
-
-            <button
-                type="button"
-                class="admin-login-btn"
-                onclick="memberLogout()"
-            >
-
-                लॉगआउट करें
-
-            </button>
-
-
-        </div>
-
-
-        <br>
-
-
-        <a
-            href="index.html"
-            class="back-home"
-        >
-
-            ← होम पेज पर जाएँ
+            होम
 
         </a>
 
 
+
+        <div class="member-dropdown">
+
+            <a href="about.html"
+               class="member-nav-link">
+
+                संस्था के बारे में
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </a>
+
+
+            <div class="member-dropdown-menu">
+
+                <a href="about.html">
+                    हमारे बारे में
+                </a>
+
+                <a href="mission.html">
+                    हमारा मिशन
+                </a>
+
+                <a href="vision.html">
+                    हमारा विजन
+                </a>
+
+                <a href="team.html">
+                    हमारी टीम
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="member-dropdown">
+
+            <a href="#"
+               class="member-nav-link">
+
+                हमारे कार्य
+
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </a>
+
+
+            <div class="member-dropdown-menu">
+
+                <a href="education.html">
+                    शिक्षा
+                </a>
+
+                <a href="health.html">
+                    स्वास्थ्य
+                </a>
+
+                <a href="environment.html">
+                    पर्यावरण
+                </a>
+
+                <a href="women.html">
+                    महिला सशक्तिकरण
+                </a>
+
+                <a href="youth.html">
+                    युवा विकास
+                </a>
+
+                <a href="social-service.html">
+                    समाज सेवा
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <a href="volunteer.html"
+           class="member-nav-link">
+
+            वॉलंटियर
+
+        </a>
+
+
+        <a href="membership.html"
+           class="member-nav-link active">
+
+            सदस्यता
+
+        </a>
+
+
+        <a href="news.html"
+           class="member-nav-link">
+
+            समाचार
+
+        </a>
+
+
+        <a href="events.html"
+           class="member-nav-link">
+
+            आगामी कार्यक्रम
+
+        </a>
+
+
+        <a href="gallery.html"
+           class="member-nav-link">
+
+            गैलरी
+
+        </a>
+
+
+        <a href="contact.html"
+           class="member-nav-link">
+
+            संपर्क करें
+
+        </a>
+
     </div>
 
-</section>
+</nav>
 
 
-<!-- FOOTER -->
 
-<footer>
+<!-- =====================================================
+     BREADCRUMB
+===================================================== -->
+
+<div class="member-breadcrumb">
+
+    <div class="member-breadcrumb-inner">
+
+        <a href="index.html">
+            होम
+        </a>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <a href="membership.html">
+            सदस्यता
+        </a>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <strong>
+            सदस्य Login
+        </strong>
+
+    </div>
+
+</div>
 
 
-    <img
-        src="images/logo.png"
-        alt="लोगो"
-        width="70"
-    >
+
+<!-- =====================================================
+     MEMBER LOGIN
+===================================================== -->
+
+<main>
 
 
-    <h3>
-
-        युवा सेवा संकल्प फाउंडेशन
-
-    </h3>
+    <section class="member-login-section">
 
 
-    <p>
-
-        युवा शक्ति, राष्ट्र शक्ति
-
-    </p>
+        <div class="member-login-wrapper">
 
 
-    <p>
+            <!-- LEFT INFORMATION -->
 
-        © 2026 All Rights Reserved
+            <div class="member-login-info">
 
-    </p>
+                <div class="member-login-info-content">
+
+
+                    <div class="member-login-badge">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        सुरक्षित सदस्य पोर्टल
+
+                    </div>
+
+
+                    <h2>
+
+                        आपका सदस्य
+                        <br>
+                        डैशबोर्ड
+
+                    </h2>
+
+
+                    <p>
+
+                        युवा सेवा संकल्प फाउंडेशन के सदस्य
+                        अपने खाते में लॉगिन करके सदस्यता से
+                        संबंधित जानकारी और गतिविधियों को
+                        देख सकते हैं।
+
+                    </p>
+
+
+                    <div class="member-benefits">
+
+
+                        <div class="member-benefit">
+
+                            <div class="member-benefit-icon">
+
+                                <i class="fa-solid fa-id-card"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    सदस्य प्रोफाइल
+                                </strong>
+
+                                <span>
+                                    अपनी सदस्यता जानकारी देखें।
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="member-benefit">
+
+                            <div class="member-benefit-icon">
+
+                                <i class="fa-solid fa-calendar-check"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    कार्यक्रम जानकारी
+                                </strong>
+
+                                <span>
+                                    संस्था के कार्यक्रमों से जुड़े रहें।
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="member-benefit">
+
+                            <div class="member-benefit-icon">
+
+                                <i class="fa-solid fa-bullhorn"></i>
+
+                            </div>
+
+
+                            <div>
+
+                                <strong>
+                                    महत्वपूर्ण सूचनाएं
+                                </strong>
+
+                                <span>
+                                    संस्था की नवीनतम जानकारी प्राप्त करें।
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- RIGHT LOGIN FORM -->
+
+            <div class="member-login-form-area">
+
+
+                <h2>
+                    सदस्य Login
+                </h2>
+
+
+                <p>
+
+                    अपनी Member ID या मोबाइल नंबर और
+                    पासवर्ड दर्ज करके लॉगिन करें।
+
+                </p>
+
+
+                <form id="memberLoginForm">
+
+
+                    <!-- MEMBER ID / MOBILE -->
+
+                    <div class="member-form-group">
+
+                        <label for="memberLoginId">
+
+                            Member ID / मोबाइल नंबर
+
+                        </label>
+
+
+                        <div class="member-input-box">
+
+                            <i class="fa-solid fa-user"></i>
+
+                            <input
+                                type="text"
+                                id="memberLoginId"
+                                placeholder="Member ID या 10 अंकों का मोबाइल नंबर"
+                                autocomplete="username"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="member-form-group">
+
+                        <label for="memberPassword">
+
+                            पासवर्ड
+
+                        </label>
+
+
+                        <div class="member-input-box">
+
+                            <i class="fa-solid fa-lock"></i>
+
+                            <input
+                                type="password"
+                                id="memberPassword"
+                                placeholder="अपना पासवर्ड दर्ज करें"
+                                autocomplete="current-password"
+                                required
+                            >
+
+
+                            <button
+                                type="button"
+                                class="member-password-toggle"
+                                id="memberPasswordToggle"
+                                aria-label="पासवर्ड दिखाएं"
+                            >
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- OPTIONS -->
+
+                    <div class="member-form-options">
+
+
+                        <label class="member-remember">
+
+                            <input
+                                type="checkbox"
+                                id="rememberMember"
+                            >
+
+                            मुझे याद रखें
+
+                        </label>
+
+
+                        <a href="#"
+                           class="member-forgot">
+
+                            पासवर्ड भूल गए?
+
+                        </a>
+
+                    </div>
+
+
+
+                    <!-- LOGIN BUTTON -->
+
+                    <button
+                        type="submit"
+                        class="member-submit-btn"
+                    >
+
+                        <i class="fa-solid fa-right-to-bracket"></i>
+
+                        सदस्य Login करें
+
+                    </button>
+
+
+
+                    <!-- RESULT -->
+
+                    <div
+                        id="memberLoginResult"
+                        class="member-result"
+                    ></div>
+
+
+                </form>
+
+
+
+                <!-- REGISTER -->
+
+                <div class="member-register-box">
+
+                    <p>
+
+                        अभी तक सदस्य नहीं हैं?
+
+                    </p>
+
+
+                    <a href="membership.html"
+                       class="member-register-btn">
+
+                        <i class="fa-solid fa-user-plus"></i>
+
+                        सदस्यता के लिए आवेदन करें
+
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         HELP SECTION
+    ================================================== -->
+
+    <section class="member-help-section">
+
+        <div class="member-help-grid">
+
+
+            <div class="member-help-card">
+
+                <div class="member-help-icon">
+
+                    <i class="fa-solid fa-id-card"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        Member ID नहीं है?
+                    </h3>
+
+                    <p>
+                        सदस्यता पंजीकरण के बाद आपको
+                        Member ID प्रदान की जाएगी।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="member-help-card">
+
+                <div class="member-help-icon">
+
+                    <i class="fa-solid fa-key"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        पासवर्ड सहायता
+                    </h3>
+
+                    <p>
+                        पासवर्ड संबंधी सहायता के लिए
+                        संस्था से संपर्क करें।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="member-help-card">
+
+                <div class="member-help-icon">
+
+                    <i class="fa-solid fa-headset"></i>
+
+                </div>
+
+
+                <div>
+
+                    <h3>
+                        सहायता चाहिए?
+                    </h3>
+
+                    <p>
+                        मोबाइल नंबर 9651731313 पर
+                        संस्था से संपर्क करें।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="member-footer">
+
+
+    <div class="member-footer-inner">
+
+
+        <!-- ABOUT -->
+
+        <div>
+
+            <img
+                src="images/logo.png"
+                alt="युवा सेवा संकल्प फाउंडेशन"
+                class="member-footer-logo"
+            >
+
+
+            <h3>
+                युवा सेवा संकल्प फाउंडेशन
+            </h3>
+
+
+            <p>
+
+                सेवा, समर्पण और संस्कार के साथ
+                समाज एवं राष्ट्र निर्माण की दिशा में
+                सकारात्मक प्रयास।
+
+            </p>
+
+        </div>
+
+
+
+        <!-- LINKS -->
+
+        <div>
+
+            <h4>
+                महत्वपूर्ण लिंक
+            </h4>
+
+
+            <a href="index.html">
+                होम
+            </a>
+
+            <a href="about.html">
+                हमारे बारे में
+            </a>
+
+            <a href="mission.html">
+                हमारा मिशन
+            </a>
+
+            <a href="vision.html">
+                हमारा विजन
+            </a>
+
+            <a href="membership.html">
+                सदस्यता
+            </a>
+
+            <a href="contact.html">
+                संपर्क करें
+            </a>
+
+        </div>
+
+
+
+        <!-- SERVICES -->
+
+        <div>
+
+            <h4>
+                हमारे कार्य
+            </h4>
+
+
+            <a href="education.html">
+                शिक्षा
+            </a>
+
+            <a href="health.html">
+                स्वास्थ्य
+            </a>
+
+            <a href="environment.html">
+                पर्यावरण
+            </a>
+
+            <a href="women.html">
+                महिला सशक्तिकरण
+            </a>
+
+            <a href="youth.html">
+                युवा विकास
+            </a>
+
+            <a href="social-service.html">
+                समाज सेवा
+            </a>
+
+        </div>
+
+
+
+        <!-- CONTACT -->
+
+        <div class="member-footer-contact">
+
+            <h4>
+                संपर्क करें
+            </h4>
+
+
+            <p>
+
+                <i class="fa-solid fa-location-dot"></i>
+
+                ग्राम नैपुरा, पोस्ट कौड़ाही,
+                जिला अम्बेडकर नगर,
+                उत्तर प्रदेश – 224129
+
+            </p>
+
+
+            <p>
+
+                <i class="fa-solid fa-phone"></i>
+
+                9651731313
+
+            </p>
+
+
+            <p>
+
+                <i class="fa-solid fa-envelope"></i>
+
+                info.yssfoundation@gmail.com
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="member-footer-bottom">
+
+        © 2026 युवा सेवा संकल्प फाउंडेशन |
+        सर्वाधिकार सुरक्षित |
+        <strong>युवा शक्ति - राष्ट्र शक्ति</strong>
+
+    </div>
 
 
 </footer>
 
 
-<!-- JAVASCRIPT -->
 
-<script src="member-login.js"></script>
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    /* PASSWORD SHOW / HIDE */
+
+    const passwordInput =
+        document.getElementById("memberPassword");
+
+    const passwordToggle =
+        document.getElementById("memberPasswordToggle");
+
+
+    passwordToggle.addEventListener(
+        "click",
+        function(){
+
+            const icon =
+                passwordToggle.querySelector("i");
+
+
+            if(passwordInput.type === "password"){
+
+                passwordInput.type = "text";
+
+                icon.classList.remove(
+                    "fa-eye"
+                );
+
+                icon.classList.add(
+                    "fa-eye-slash"
+                );
+
+            }
+
+            else{
+
+                passwordInput.type = "password";
+
+                icon.classList.remove(
+                    "fa-eye-slash"
+                );
+
+                icon.classList.add(
+                    "fa-eye"
+                );
+
+            }
+
+        }
+    );
+
+
+
+    /* LOGIN FORM */
+
+    const loginForm =
+        document.getElementById(
+            "memberLoginForm"
+        );
+
+
+    const loginResult =
+        document.getElementById(
+            "memberLoginResult"
+        );
+
+
+    loginForm.addEventListener(
+        "submit",
+        function(event){
+
+            event.preventDefault();
+
+
+            const loginId =
+                document
+                .getElementById(
+                    "memberLoginId"
+                )
+                .value
+                .trim();
+
+
+            const password =
+                document
+                .getElementById(
+                    "memberPassword"
+                )
+                .value
+                .trim();
+
+
+            loginResult.className =
+                "member-result";
+
+
+            /* EMPTY CHECK */
+
+            if(
+                loginId === "" ||
+                password === ""
+            ){
+
+                loginResult.innerHTML =
+                    "❌ कृपया सभी आवश्यक जानकारी भरें।";
+
+                loginResult.classList.add(
+                    "error"
+                );
+
+                return;
+
+            }
+
+
+            /*
+             NOTE:
+
+             अभी यह Demo Login है।
+
+             जब आपकी वेबसाइट में असली
+             Member Database / Admin Panel
+             जोड़ा जाएगा, तब यही फॉर्म
+             वास्तविक सदस्य जानकारी से
+             Login कराएगा।
+            */
+
+
+            loginResult.innerHTML =
+                "✅ जानकारी सफलतापूर्वक दर्ज हो गई। " +
+                "Member Login System को Database से जोड़ने के बाद " +
+                "आपका वास्तविक सदस्य सत्यापन किया जाएगा।";
+
+
+            loginResult.classList.add(
+                "success"
+            );
+
+        }
+    );
+
+</script>
 
 
 </body>
