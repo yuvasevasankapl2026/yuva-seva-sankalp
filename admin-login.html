@@ -1,68 +1,34 @@
 <!DOCTYPE html>
 <html lang="hi">
-
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="युवा सेवा संकल्प फाउंडेशन - सुरक्षित Admin Login">
+<meta name="theme-color"
+      content="#082e63">
 
-    <meta name="theme-color"
-          content="#082e63">
+<title>Admin Login | युवा सेवा संकल्प फाउंडेशन</title>
 
-    <title>Admin Login | युवा सेवा संकल्प फाउंडेशन</title>
+<link rel="icon" href="images/logo.png">
 
-    <link rel="icon" href="images/logo.png">
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
 
-    <!-- GOOGLE FONT -->
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet">
-
-    <!-- FONT AWESOME -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 
 <style>
-
-/* =====================================================
-   YSS FOUNDATION
-   PREMIUM ADMIN LOGIN
-===================================================== */
-
-:root{
-
-    --blue:#082e63;
-    --blue2:#123b66;
-    --blue3:#1d5d96;
-
-    --orange:#ff7900;
-    --orange2:#e76600;
-
-    --green:#24834b;
-
-    --white:#ffffff;
-
-    --text:#263746;
-    --muted:#71808f;
-
-    --border:#dce5ed;
-
-    --light:#f5f8fb;
-
-}
-
 
 /* =====================================================
    RESET
@@ -74,102 +40,65 @@
     box-sizing:border-box;
 }
 
-
 html{
     scroll-behavior:smooth;
 }
 
-
 body{
-
     min-height:100vh;
 
     font-family:
-        "Noto Sans Devanagari",
-        "Mangal",
-        Arial,
-        sans-serif;
+    "Noto Sans Devanagari",
+    "Mangal",
+    Arial,
+    sans-serif;
 
     background:
-        radial-gradient(
-            circle at 15% 15%,
-            rgba(255,121,0,.13),
-            transparent 28%
-        ),
+    radial-gradient(
+        circle at 10% 10%,
+        rgba(255,121,0,.15),
+        transparent 28%
+    ),
+    radial-gradient(
+        circle at 90% 90%,
+        rgba(36,131,75,.13),
+        transparent 30%
+    ),
+    linear-gradient(
+        135deg,
+        #041a38,
+        #082e63 50%,
+        #155586
+    );
 
-        radial-gradient(
-            circle at 85% 80%,
-            rgba(36,131,75,.12),
-            transparent 28%
-        ),
-
-        linear-gradient(
-            135deg,
-            #041b3b,
-            #082e63 48%,
-            #124b7d
-        );
-
-    color:var(--text);
-
-    overflow-x:hidden;
+    color:#263746;
 }
 
 
 /* =====================================================
-   BACKGROUND
+   BACKGROUND CIRCLES
 ===================================================== */
 
 .bg-circle{
-
     position:fixed;
-
     border-radius:50%;
-
     pointer-events:none;
-
-    z-index:0;
 }
 
-
-.bg-circle.one{
-
-    width:420px;
-    height:420px;
-
-    top:-210px;
-    left:-180px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.08);
+.bg-one{
+    width:430px;
+    height:430px;
+    top:-240px;
+    left:-200px;
+    border:75px solid rgba(255,255,255,.035);
 }
 
-
-.bg-circle.two{
-
-    width:520px;
-    height:520px;
-
-    right:-260px;
-    bottom:-250px;
-
-    border:
-        70px solid
-        rgba(255,121,0,.045);
-}
-
-
-.bg-circle.three{
-
-    width:180px;
-    height:180px;
-
-    right:14%;
-    top:8%;
-
-    background:
-        rgba(255,255,255,.025);
+.bg-two{
+    width:500px;
+    height:500px;
+    right:-300px;
+    bottom:-300px;
+    border:80px solid rgba(255,121,0,.04);
 }
 
 
@@ -177,50 +106,38 @@ body{
    PAGE
 ===================================================== */
 
-.admin-page{
-
+.page{
     min-height:100vh;
 
-    position:relative;
-
-    z-index:1;
-
     display:flex;
-
     align-items:center;
-
     justify-content:center;
 
-    padding:35px 18px 55px;
+    padding:30px 15px 55px;
+
+    position:relative;
+    z-index:2;
 }
 
 
 /* =====================================================
-   MAIN CONTAINER
+   MAIN CARD
 ===================================================== */
 
-.admin-shell{
-
+.login-card{
     width:100%;
-
-    max-width:1180px;
-
-    min-height:680px;
+    max-width:1080px;
 
     display:grid;
-
-    grid-template-columns:
-        43% 57%;
+    grid-template-columns:44% 56%;
 
     background:#fff;
 
     border-radius:30px;
-
     overflow:hidden;
 
     box-shadow:
-        0 35px 90px
-        rgba(0,0,0,.30);
+    0 35px 90px rgba(0,0,0,.35);
 }
 
 
@@ -228,62 +145,53 @@ body{
    LEFT PANEL
 ===================================================== */
 
-.admin-brand-panel{
-
+.left-panel{
     position:relative;
-
     overflow:hidden;
 
-    padding:50px 45px;
+    padding:48px 42px;
 
     color:#fff;
 
     background:
-        linear-gradient(
-            145deg,
-            #061f45 0%,
-            #0b3568 48%,
-            #1b5a90 100%
-        );
+    linear-gradient(
+        145deg,
+        #061e42,
+        #0b3568 55%,
+        #1d5d96
+    );
 }
 
-
-.admin-brand-panel::before{
-
+.left-panel::before{
     content:"";
 
     position:absolute;
 
-    width:430px;
-    height:430px;
+    width:420px;
+    height:420px;
 
     border-radius:50%;
 
-    top:-270px;
-    right:-250px;
+    right:-260px;
+    top:-250px;
 
-    border:
-        75px solid
-        rgba(255,255,255,.035);
+    border:70px solid rgba(255,255,255,.035);
 }
 
-
-.admin-brand-panel::after{
-
+.left-panel::after{
     content:"";
 
     position:absolute;
 
-    width:300px;
-    height:300px;
+    width:260px;
+    height:260px;
 
     border-radius:50%;
 
-    left:-190px;
-    bottom:-190px;
+    left:-170px;
+    bottom:-170px;
 
-    background:
-        rgba(255,121,0,.07);
+    background:rgba(255,121,0,.08);
 }
 
 
@@ -291,24 +199,22 @@ body{
    BRAND
 ===================================================== */
 
-.admin-brand{
-
+.brand{
     position:relative;
-
     z-index:2;
 
     display:flex;
-
     align-items:center;
 
-    gap:16px;
+    gap:15px;
+
+    text-decoration:none;
+    color:#fff;
 }
 
-
-.admin-brand img{
-
-    width:86px;
-    height:86px;
+.brand img{
+    width:82px;
+    height:82px;
 
     object-fit:contain;
 
@@ -319,35 +225,26 @@ body{
     border-radius:50%;
 
     box-shadow:
-        0 10px 30px
-        rgba(0,0,0,.20);
+    0 10px 28px rgba(0,0,0,.2);
 }
 
-
-.admin-brand-text h1{
-
-    font-size:25px;
-
-    line-height:1.3;
+.brand h1{
+    font-size:23px;
+    line-height:1.35;
 
     font-weight:800;
 }
 
-
-.admin-brand-text h1 span{
-
-    color:#ff9a3d;
+.brand h1 span{
+    color:#ff9a42;
 }
 
+.brand p{
+    margin-top:4px;
 
-.admin-brand-text p{
-
-    margin-top:5px;
-
-    color:#c9d9e8;
+    color:#cbdce9;
 
     font-size:11px;
-
     font-weight:600;
 }
 
@@ -356,166 +253,124 @@ body{
    LEFT CONTENT
 ===================================================== */
 
-.admin-intro{
-
+.left-content{
     position:relative;
-
     z-index:2;
 
-    margin-top:65px;
+    margin-top:58px;
 }
 
-
-.admin-badge{
-
+.badge{
     display:inline-flex;
-
     align-items:center;
-
     gap:8px;
 
     padding:8px 14px;
 
     border-radius:30px;
 
-    background:
-        rgba(255,255,255,.08);
+    background:rgba(255,255,255,.08);
 
-    border:
-        1px solid
-        rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.14);
 
-    color:#f7fbff;
-
-    font-size:11px;
-
-    font-weight:700;
+    font-size:10px;
+    font-weight:800;
 }
 
-
-.admin-intro h2{
-
+.left-content h2{
     margin-top:22px;
 
-    font-size:43px;
-
-    line-height:1.22;
+    font-size:42px;
+    line-height:1.25;
 
     font-weight:800;
 }
 
-
-.admin-intro h2 span{
-
-    color:#ff8a20;
+.left-content h2 span{
+    color:#ff8620;
 }
 
+.left-content p{
+    margin-top:15px;
 
-.admin-intro p{
-
-    margin-top:16px;
-
-    max-width:430px;
-
-    color:#d2e0ec;
+    color:#d0dfeb;
 
     font-size:13px;
-
     line-height:1.9;
 }
 
 
 /* =====================================================
-   ADMIN FEATURES
+   FEATURES
 ===================================================== */
 
-.admin-features{
-
-    margin-top:32px;
+.features{
+    margin-top:30px;
 
     display:grid;
-
     grid-template-columns:1fr 1fr;
 
-    gap:14px;
+    gap:12px;
 }
 
-
-.admin-feature{
-
-    min-height:82px;
-
-    padding:14px;
+.feature{
+    min-height:76px;
 
     display:flex;
-
     align-items:center;
 
-    gap:11px;
+    gap:10px;
 
-    border-radius:14px;
+    padding:12px;
 
-    background:
-        rgba(255,255,255,.065);
+    border-radius:13px;
 
-    border:
-        1px solid
-        rgba(255,255,255,.08);
+    background:rgba(255,255,255,.06);
+
+    border:1px solid rgba(255,255,255,.09);
 
     transition:.25s;
 }
 
+.feature:hover{
+    transform:translateY(-3px);
 
-.admin-feature:hover{
-
-    background:
-        rgba(255,255,255,.10);
-
-    transform:translateY(-2px);
+    background:rgba(255,255,255,.10);
 }
 
+.feature-icon{
+    width:38px;
+    height:38px;
 
-.admin-feature-icon{
+    flex:0 0 38px;
 
-    width:39px;
-    height:39px;
-
-    flex:0 0 39px;
-
-    border-radius:11px;
+    border-radius:10px;
 
     display:flex;
-
     align-items:center;
     justify-content:center;
 
-    color:#ffac61;
+    color:#ffad63;
 
-    background:
-        rgba(255,121,0,.10);
+    background:rgba(255,121,0,.12);
 }
 
-
-.admin-feature strong{
-
+.feature strong{
     display:block;
 
-    font-size:11px;
-
     color:#fff;
+
+    font-size:11px;
 }
 
-
-.admin-feature small{
-
+.feature small{
     display:block;
 
     margin-top:3px;
 
-    color:#abc1d3;
+    color:#a9bfd0;
 
     font-size:9px;
-
 }
 
 
@@ -523,14 +378,11 @@ body{
    RIGHT PANEL
 ===================================================== */
 
-.admin-login-panel{
-
+.right-panel{
     padding:55px 65px;
 
     display:flex;
-
     flex-direction:column;
-
     justify-content:center;
 
     background:#fff;
@@ -538,71 +390,54 @@ body{
 
 
 /* =====================================================
-   LOGIN TOP
+   TOP ICON
 ===================================================== */
 
 .login-top{
-
     display:flex;
-
     align-items:center;
-
     justify-content:space-between;
 
-    margin-bottom:28px;
+    margin-bottom:25px;
 }
 
-
-.login-icon-box{
-
+.login-icon{
     width:65px;
     height:65px;
 
     border-radius:18px;
 
     display:flex;
-
     align-items:center;
     justify-content:center;
 
-    color:var(--orange);
+    background:#fff1e7;
 
-    background:
-        linear-gradient(
-            135deg,
-            #fff4ec,
-            #ffeadb
-        );
+    color:#ff7900;
 
     font-size:27px;
 }
 
-
 .secure-status{
-
     display:flex;
-
     align-items:center;
-
     gap:7px;
 
-    padding:7px 11px;
+    padding:7px 12px;
 
     border-radius:20px;
 
-    color:var(--green);
-
     background:#edf8f0;
+
+    color:#24834b;
 
     font-size:10px;
 
     font-weight:800;
 }
 
-
 .secure-status i{
-
-    font-size:8px;
+    font-size:7px;
 }
 
 
@@ -610,21 +445,18 @@ body{
    HEADING
 ===================================================== */
 
-.login-heading h2{
+.heading h2{
+    color:#123b66;
 
-    color:var(--blue2);
-
-    font-size:33px;
+    font-size:34px;
 
     font-weight:800;
 }
 
+.heading p{
+    margin-top:7px;
 
-.login-heading p{
-
-    margin-top:6px;
-
-    color:var(--muted);
+    color:#71808f;
 
     font-size:12px;
 
@@ -636,20 +468,15 @@ body{
    FORM
 ===================================================== */
 
-.login-form{
-
-    margin-top:28px;
+form{
+    margin-top:27px;
 }
 
-
 .form-group{
-
     margin-bottom:19px;
 }
 
-
 .form-group label{
-
     display:block;
 
     margin-bottom:7px;
@@ -661,40 +488,30 @@ body{
     font-weight:800;
 }
 
-
 .input-box{
-
     position:relative;
 }
 
-
-.input-box > .left-icon{
-
+.input-box > i{
     position:absolute;
 
     left:15px;
     top:50%;
 
-    transform:
-        translateY(-50%);
+    transform:translateY(-50%);
 
-    color:#7d91a2;
+    color:#7c90a1;
 
     font-size:14px;
-
-    pointer-events:none;
 }
 
-
 .input-box input{
-
     width:100%;
-
     height:55px;
 
-    border:
-        1px solid
-        var(--border);
+    padding:0 48px 0 43px;
+
+    border:1px solid #dce5ed;
 
     border-radius:12px;
 
@@ -708,37 +525,58 @@ body{
 
     font-size:13px;
 
-    padding:
-        0 48px 0 43px;
-
     transition:.25s;
 }
 
-
-.input-box input:hover{
-
-    border-color:#c7d4df;
-}
-
-
 .input-box input:focus{
-
     background:#fff;
 
     border-color:#1d5d96;
 
     box-shadow:
-        0 0 0 4px
-        rgba(29,93,150,.08);
+    0 0 0 4px rgba(29,93,150,.08);
 }
 
-
 .input-box input::placeholder{
-
-    color:#9aa8b5;
+    color:#9ba9b5;
 }
 
 
 /* =====================================================
-   PASSWORD TOGGLE
-=====================================================
+   PASSWORD BUTTON
+===================================================== */
+
+.password-toggle{
+    position:absolute;
+
+    right:9px;
+    top:50%;
+
+    transform:translateY(-50%);
+
+    width:36px;
+    height:36px;
+
+    border:0;
+
+    border-radius:8px;
+
+    background:transparent;
+
+    color:#758899;
+
+    cursor:pointer;
+}
+
+.password-toggle:hover{
+    background:#eef3f7;
+
+    color:#123b66;
+}
+
+
+/* =====================================================
+   OPTIONS
+===================================================== */
+
+.options{
