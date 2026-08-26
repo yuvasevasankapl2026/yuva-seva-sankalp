@@ -1,0 +1,2079 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="युवा सेवा संकल्प फाउंडेशन - फोटो गैलरी और सामाजिक कार्यक्रमों की झलक।">
+
+    <title>फोटो गैलरी | युवा सेवा संकल्प फाउंडेशन</title>
+
+
+    <!-- GOOGLE FONT -->
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+
+    <!-- FONT AWESOME -->
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- MAIN WEBSITE CSS -->
+
+    <link rel="stylesheet"
+          href="style.css">
+
+
+    <style>
+
+        /* =====================================================
+           GALLERY PAGE
+        ===================================================== */
+
+        .gallery-page{
+            margin:0;
+            background:#f5f8fb;
+            color:#263746;
+            font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+        }
+
+        .gallery-page *,
+        .gallery-page *::before,
+        .gallery-page *::after{
+            box-sizing:border-box;
+        }
+
+        .gallery-page a{
+            text-decoration:none;
+        }
+
+
+        /* =====================================================
+           TOP BAR
+        ===================================================== */
+
+        .mission-topbar{
+            background:#123b66;
+            color:#fff;
+            min-height:42px;
+        }
+
+        .mission-topbar-inner{
+            width:92%;
+            max-width:1400px;
+            margin:auto;
+            min-height:42px;
+
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+
+            gap:20px;
+        }
+
+        .mission-contact{
+            display:flex;
+            align-items:center;
+            gap:25px;
+        }
+
+        .mission-contact span{
+            display:flex;
+            align-items:center;
+            gap:7px;
+            font-size:13px;
+        }
+
+        .mission-contact i{
+            color:#ffb15c;
+        }
+
+        .mission-social{
+            display:flex;
+            align-items:center;
+            gap:15px;
+        }
+
+        .mission-social a{
+            color:#fff;
+        }
+
+        .mission-social a:hover{
+            color:#ff7900;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .mission-header{
+            background:#fff;
+            border-bottom:1px solid #e3e9ef;
+        }
+
+        .mission-header-inner{
+            width:92%;
+            max-width:1400px;
+            margin:auto;
+
+            min-height:135px;
+
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+
+            gap:30px;
+        }
+
+        .mission-brand{
+            display:flex;
+            align-items:center;
+            gap:18px;
+        }
+
+        .mission-brand-logo{
+            width:120px;
+            height:120px;
+            object-fit:contain;
+        }
+
+        .mission-brand-text h1{
+            margin:0;
+            color:#123b66;
+            font-size:39px;
+            line-height:1.15;
+            font-weight:800;
+        }
+
+        .mission-brand-text h1 span{
+            color:#ff7900;
+        }
+
+        .mission-brand-text p{
+            margin:7px 0 0;
+            color:#123b66;
+            font-size:17px;
+            font-weight:700;
+        }
+
+
+        /* =====================================================
+           LOGIN CARDS
+        ===================================================== */
+
+        .mission-login{
+            display:flex;
+            align-items:center;
+            gap:12px;
+        }
+
+        .mission-login-card{
+            min-width:170px;
+            min-height:66px;
+
+            padding:10px 14px;
+
+            background:#fff;
+
+            border:1px solid #dce4eb;
+            border-radius:12px;
+
+            display:flex;
+            align-items:center;
+            gap:11px;
+
+            color:#123b66;
+
+            transition:.25s;
+        }
+
+        .mission-login-card:hover{
+            transform:translateY(-3px);
+            box-shadow:0 8px 22px rgba(18,59,102,.12);
+        }
+
+        .mission-login-icon{
+            width:42px;
+            height:42px;
+
+            border-radius:50%;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            font-size:21px;
+        }
+
+        .mission-member .mission-login-icon{
+            color:#24834b;
+            background:#eaf7ed;
+        }
+
+        .mission-volunteer .mission-login-icon{
+            color:#123b66;
+            background:#eaf1fa;
+        }
+
+        .mission-admin{
+            background:#ff7900;
+            border-color:#ff7900;
+            color:#fff;
+        }
+
+        .mission-admin .mission-login-icon{
+            color:#fff;
+            background:rgba(255,255,255,.15);
+        }
+
+        .mission-login-text{
+            display:flex;
+            flex-direction:column;
+        }
+
+        .mission-login-text strong{
+            font-size:15px;
+        }
+
+        .mission-login-text small{
+            font-size:10px;
+            margin-top:3px;
+            opacity:.75;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        .mission-nav{
+            background:#082e63;
+            min-height:56px;
+            position:relative;
+            z-index:999;
+        }
+
+        .mission-nav-inner{
+            width:92%;
+            max-width:1400px;
+            margin:auto;
+
+            min-height:56px;
+
+            display:flex;
+            align-items:stretch;
+        }
+
+        .mission-nav-link{
+            min-height:56px;
+
+            padding:0 17px;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            gap:7px;
+
+            color:#fff;
+
+            font-size:14px;
+            font-weight:700;
+
+            white-space:nowrap;
+
+            transition:.2s;
+        }
+
+        .mission-nav-link:hover,
+        .mission-nav-link.active{
+            background:#ff7900;
+        }
+
+        .mission-dropdown{
+            position:relative;
+        }
+
+        .mission-dropdown-menu{
+            display:none;
+
+            position:absolute;
+
+            left:0;
+            top:56px;
+
+            width:220px;
+
+            background:#fff;
+
+            border-top:3px solid #ff7900;
+
+            box-shadow:0 12px 30px rgba(0,0,0,.18);
+        }
+
+        .mission-dropdown:hover .mission-dropdown-menu{
+            display:block;
+        }
+
+        .mission-dropdown-menu a{
+            display:block;
+
+            padding:12px 15px;
+
+            color:#263746;
+
+            font-size:13px;
+
+            border-bottom:1px solid #edf1f4;
+        }
+
+        .mission-dropdown-menu a:hover{
+            color:#123b66;
+            background:#f3f7fa;
+        }
+
+
+        /* =====================================================
+           BREADCRUMB
+        ===================================================== */
+
+        .mission-breadcrumb{
+            background:#eef3f8;
+            border-bottom:1px solid #dfe7ee;
+        }
+
+        .mission-breadcrumb-inner{
+            width:92%;
+            max-width:1400px;
+            margin:auto;
+
+            min-height:44px;
+
+            display:flex;
+            align-items:center;
+
+            gap:9px;
+
+            color:#69798a;
+
+            font-size:13px;
+        }
+
+        .mission-breadcrumb a{
+            color:#123b66;
+            font-weight:700;
+        }
+
+        .mission-breadcrumb i{
+            color:#ff7900;
+            font-size:10px;
+        }
+
+
+        /* =====================================================
+           GALLERY HERO
+        ===================================================== */
+
+        .gallery-hero{
+            width:92%;
+            max-width:1400px;
+
+            margin:35px auto 0;
+
+            padding:55px 40px;
+
+            border-radius:25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #123b66 0%,
+                    #1d5d96 60%,
+                    #24834b 100%
+                );
+
+            color:#fff;
+
+            position:relative;
+            overflow:hidden;
+
+            box-shadow:
+                0 18px 40px rgba(18,59,102,.18);
+        }
+
+        .gallery-hero::before{
+            content:"";
+
+            position:absolute;
+
+            width:330px;
+            height:330px;
+
+            border-radius:50%;
+
+            right:-100px;
+            top:-140px;
+
+            background:rgba(255,255,255,.08);
+        }
+
+        .gallery-hero::after{
+            content:"";
+
+            position:absolute;
+
+            width:250px;
+            height:250px;
+
+            border-radius:50%;
+
+            left:-100px;
+            bottom:-150px;
+
+            background:rgba(255,121,0,.16);
+        }
+
+        .gallery-hero-content{
+            position:relative;
+            z-index:2;
+
+            max-width:850px;
+        }
+
+        .gallery-hero-icon{
+            width:70px;
+            height:70px;
+
+            border-radius:18px;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            background:rgba(255,255,255,.15);
+
+            font-size:32px;
+
+            margin-bottom:18px;
+        }
+
+        .gallery-hero h1{
+            margin:0 0 10px;
+
+            font-size:48px;
+
+            font-weight:800;
+        }
+
+        .gallery-hero-line{
+            width:130px;
+            height:5px;
+
+            background:#ff7900;
+
+            border-radius:20px;
+
+            margin-bottom:18px;
+        }
+
+        .gallery-hero p{
+            margin:0;
+
+            font-size:18px;
+            line-height:1.8;
+
+            color:#f2f7fb;
+        }
+
+
+        /* =====================================================
+           GALLERY INTRO
+        ===================================================== */
+
+        .gallery-intro{
+            width:92%;
+            max-width:1000px;
+
+            margin:32px auto;
+
+            text-align:center;
+        }
+
+        .gallery-intro h2{
+            margin:0 0 8px;
+
+            color:#123b66;
+
+            font-size:30px;
+        }
+
+        .gallery-intro p{
+            margin:0 auto;
+
+            max-width:800px;
+
+            color:#657789;
+
+            font-size:15px;
+            line-height:1.8;
+        }
+
+
+        /* =====================================================
+           FILTER BUTTONS
+        ===================================================== */
+
+        .gallery-filter{
+            width:92%;
+            max-width:1400px;
+
+            margin:0 auto 28px;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            flex-wrap:wrap;
+
+            gap:10px;
+        }
+
+        .filter-btn{
+            border:1px solid #dce5ed;
+
+            background:#fff;
+
+            color:#123b66;
+
+            padding:10px 18px;
+
+            border-radius:30px;
+
+            cursor:pointer;
+
+            font-family:inherit;
+
+            font-size:14px;
+            font-weight:700;
+
+            transition:.25s;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active{
+            background:#ff7900;
+            color:#fff;
+            border-color:#ff7900;
+        }
+
+
+        /* =====================================================
+           GALLERY GRID
+        ===================================================== */
+
+        .gallery-section{
+            width:92%;
+            max-width:1400px;
+
+            margin:0 auto;
+
+            padding-bottom:55px;
+        }
+
+        .gallery-grid{
+            display:grid;
+
+            grid-template-columns:
+                repeat(3,1fr);
+
+            gap:22px;
+        }
+
+        .gallery-item{
+            background:#fff;
+
+            border:1px solid #e0e7ed;
+
+            border-radius:18px;
+
+            overflow:hidden;
+
+            box-shadow:
+                0 8px 22px rgba(0,0,0,.05);
+
+            transition:.3s;
+        }
+
+        .gallery-item:hover{
+            transform:translateY(-6px);
+
+            box-shadow:
+                0 18px 35px rgba(18,59,102,.13);
+        }
+
+        .gallery-image{
+            height:250px;
+
+            position:relative;
+
+            overflow:hidden;
+
+            background:#dfe8ef;
+        }
+
+        .gallery-image img{
+            width:100%;
+            height:100%;
+
+            object-fit:cover;
+
+            display:block;
+
+            transition:.4s;
+        }
+
+        .gallery-item:hover .gallery-image img{
+            transform:scale(1.08);
+        }
+
+        .gallery-overlay{
+            position:absolute;
+
+            inset:0;
+
+            background:
+                linear-gradient(
+                    to top,
+                    rgba(0,0,0,.65),
+                    rgba(0,0,0,.05)
+                );
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            opacity:0;
+
+            transition:.3s;
+        }
+
+        .gallery-item:hover .gallery-overlay{
+            opacity:1;
+        }
+
+        .gallery-view{
+            width:55px;
+            height:55px;
+
+            border-radius:50%;
+
+            border:0;
+
+            background:#ff7900;
+            color:#fff;
+
+            font-size:21px;
+
+            cursor:pointer;
+        }
+
+        .gallery-content{
+            padding:18px;
+        }
+
+        .gallery-category{
+            display:inline-flex;
+
+            align-items:center;
+            gap:6px;
+
+            padding:5px 10px;
+
+            border-radius:20px;
+
+            background:#edf4fb;
+
+            color:#123b66;
+
+            font-size:12px;
+            font-weight:700;
+
+            margin-bottom:9px;
+        }
+
+        .gallery-content h3{
+            margin:0 0 6px;
+
+            color:#123b66;
+
+            font-size:19px;
+        }
+
+        .gallery-content p{
+            margin:0;
+
+            color:#71808f;
+
+            font-size:13px;
+
+            line-height:1.65;
+        }
+
+
+        /* =====================================================
+           PLACEHOLDER IMAGE
+           अपनी फोटो images/gallery/ में लगाएँ
+        ===================================================== */
+
+        .photo-placeholder{
+            width:100%;
+            height:100%;
+
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            justify-content:center;
+
+            color:#fff;
+
+            font-size:55px;
+        }
+
+        .photo-placeholder span{
+            font-size:15px;
+            font-weight:700;
+            margin-top:12px;
+        }
+
+        .education-photo{
+            background:linear-gradient(135deg,#1d5d96,#3c82bf);
+        }
+
+        .health-photo{
+            background:linear-gradient(135deg,#d83b4a,#f06c77);
+        }
+
+        .environment-photo{
+            background:linear-gradient(135deg,#24834b,#4ca86c);
+        }
+
+        .women-photo{
+            background:linear-gradient(135deg,#9b4d96,#c66bbf);
+        }
+
+        .youth-photo{
+            background:linear-gradient(135deg,#ff7900,#ff9e43);
+        }
+
+        .social-photo{
+            background:linear-gradient(135deg,#123b66,#24834b);
+        }
+
+
+        /* =====================================================
+           GALLERY NOTE
+        ===================================================== */
+
+        .gallery-note{
+            width:92%;
+            max-width:1400px;
+
+            margin:0 auto 55px;
+
+            padding:25px;
+
+            background:#f0faf3;
+
+            border:1px solid #d5e8db;
+
+            border-radius:18px;
+
+            display:flex;
+            align-items:center;
+            gap:18px;
+        }
+
+        .gallery-note-icon{
+            width:60px;
+            height:60px;
+
+            min-width:60px;
+
+            border-radius:50%;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            background:#24834b;
+            color:#fff;
+
+            font-size:25px;
+        }
+
+        .gallery-note h3{
+            margin:0 0 5px;
+
+            color:#123b66;
+
+            font-size:19px;
+        }
+
+        .gallery-note p{
+            margin:0;
+
+            color:#617181;
+
+            font-size:14px;
+            line-height:1.7;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .mission-footer{
+            background:#092e60;
+
+            color:#fff;
+
+            padding:45px 0 0;
+        }
+
+        .mission-footer-inner{
+            width:92%;
+            max-width:1400px;
+
+            margin:auto;
+
+            display:grid;
+
+            grid-template-columns:
+                1.5fr 1fr 1fr 1.3fr;
+
+            gap:35px;
+        }
+
+        .mission-footer-logo{
+            width:90px;
+            height:90px;
+
+            object-fit:contain;
+
+            margin-bottom:10px;
+        }
+
+        .mission-footer h3,
+        .mission-footer h4{
+            margin:0 0 13px;
+            color:#fff;
+        }
+
+        .mission-footer p{
+            margin:0 0 9px;
+
+            color:#dbe5ef;
+
+            font-size:13px;
+
+            line-height:1.7;
+        }
+
+        .mission-footer a{
+            display:block;
+
+            color:#dbe5ef;
+
+            font-size:13px;
+
+            margin-bottom:8px;
+        }
+
+        .mission-footer a:hover{
+            color:#ff7900;
+        }
+
+        .mission-footer-bottom{
+            margin-top:35px;
+
+            padding:17px 0;
+
+            border-top:
+                1px solid rgba(255,255,255,.15);
+
+            text-align:center;
+
+            color:#dbe5ef;
+
+            font-size:12px;
+        }
+
+
+        /* =====================================================
+           IMAGE MODAL
+        ===================================================== */
+
+        .gallery-modal{
+            display:none;
+
+            position:fixed;
+
+            z-index:99999;
+
+            left:0;
+            top:0;
+
+            width:100%;
+            height:100%;
+
+            background:rgba(0,0,0,.88);
+
+            padding:30px;
+        }
+
+        .gallery-modal.show{
+            display:flex;
+
+            align-items:center;
+            justify-content:center;
+        }
+
+        .modal-image{
+            max-width:90%;
+            max-height:85vh;
+
+            border-radius:10px;
+
+            box-shadow:
+                0 10px 40px rgba(0,0,0,.5);
+        }
+
+        .modal-close{
+            position:absolute;
+
+            top:20px;
+            right:28px;
+
+            width:45px;
+            height:45px;
+
+            border:0;
+
+            border-radius:50%;
+
+            background:#ff7900;
+
+            color:#fff;
+
+            font-size:25px;
+
+            cursor:pointer;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media(max-width:1150px){
+
+            .mission-header-inner{
+                flex-direction:column;
+                padding:18px 0;
+            }
+
+            .mission-login{
+                width:100%;
+                justify-content:center;
+            }
+
+            .gallery-grid{
+                grid-template-columns:
+                    repeat(2,1fr);
+            }
+
+            .mission-footer-inner{
+                grid-template-columns:
+                    1fr 1fr;
+            }
+
+        }
+
+
+        @media(max-width:850px){
+
+            .mission-contact span:first-child{
+                display:none;
+            }
+
+            .mission-brand{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            .mission-brand-text h1{
+                font-size:31px;
+            }
+
+        }
+
+
+        @media(max-width:650px){
+
+            .mission-topbar-inner{
+                justify-content:center;
+            }
+
+            .mission-contact{
+                display:none;
+            }
+
+            .mission-login{
+                flex-direction:column;
+            }
+
+            .mission-login-card{
+                width:100%;
+                max-width:350px;
+            }
+
+            .mission-nav-inner{
+                width:100%;
+                overflow-x:auto;
+            }
+
+            .mission-nav-link{
+                padding:0 12px;
+                font-size:12px;
+            }
+
+            .gallery-hero{
+                padding:35px 22px;
+            }
+
+            .gallery-hero h1{
+                font-size:35px;
+            }
+
+            .gallery-hero p{
+                font-size:15px;
+            }
+
+            .gallery-grid{
+                grid-template-columns:1fr;
+            }
+
+            .gallery-image{
+                height:230px;
+            }
+
+            .gallery-note{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            .mission-footer-inner{
+                grid-template-columns:1fr;
+            }
+
+        }
+
+
+        @media(max-width:430px){
+
+            .mission-brand-text h1{
+                font-size:27px;
+            }
+
+            .gallery-hero h1{
+                font-size:30px;
+            }
+
+            .gallery-intro h2{
+                font-size:25px;
+            }
+
+            .filter-btn{
+                font-size:12px;
+                padding:9px 13px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="gallery-page">
+
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="mission-topbar">
+
+    <div class="mission-topbar-inner">
+
+        <div class="mission-contact">
+
+            <span>
+                <i class="fa-solid fa-envelope"></i>
+                info.yssfoundation@gmail.com
+            </span>
+
+            <span>
+                <i class="fa-solid fa-location-dot"></i>
+                ग्राम नैपुरा, पोस्ट कौड़ाही,
+                जिला अम्बेडकर नगर, उत्तर प्रदेश – 224129
+            </span>
+
+        </div>
+
+
+        <div class="mission-social">
+
+            <a href="#" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="#" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+
+            <a href="#" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <span>
+                <i class="fa-solid fa-phone"></i>
+                9651731313
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="mission-header">
+
+    <div class="mission-header-inner">
+
+
+        <a href="index.html"
+           class="mission-brand">
+
+            <img
+                src="images/logo.png"
+                alt="युवा सेवा संकल्प फाउंडेशन"
+                class="mission-brand-logo"
+            >
+
+            <div class="mission-brand-text">
+
+                <h1>
+                    युवा सेवा संकल्प
+                    <span>फाउंडेशन</span>
+                </h1>
+
+                <p>
+                    युवा शक्ति - राष्ट्र शक्ति
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <div class="mission-login">
+
+
+            <a href="member-login.html"
+               class="mission-login-card mission-member">
+
+                <div class="mission-login-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="mission-login-text">
+
+                    <strong>
+                        सदस्य Login
+                    </strong>
+
+                    <small>
+                        अपने खाते में लॉगिन करें
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <a href="volunteer-login.html"
+               class="mission-login-card mission-volunteer">
+
+                <div class="mission-login-icon">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+
+                <div class="mission-login-text">
+
+                    <strong>
+                        Volunteer Login
+                    </strong>
+
+                    <small>
+                        सेवा करने के लिए जुड़ें
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <a href="admin-login.html"
+               class="mission-login-card mission-admin">
+
+                <div class="mission-login-icon">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+
+                <div class="mission-login-text">
+
+                    <strong>
+                        Admin Login
+                    </strong>
+
+                    <small>
+                        Admin Panel
+                    </small>
+
+                </div>
+
+            </a>
+
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="mission-nav">
+
+    <div class="mission-nav-inner">
+
+
+        <a href="index.html"
+           class="mission-nav-link">
+
+            <i class="fa-solid fa-house"></i>
+            होम
+
+        </a>
+
+
+        <div class="mission-dropdown">
+
+            <a href="about.html"
+               class="mission-nav-link">
+
+                संस्था के बारे में
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </a>
+
+            <div class="mission-dropdown-menu">
+
+                <a href="about.html">
+                    हमारे बारे में
+                </a>
+
+                <a href="mission.html">
+                    हमारा मिशन
+                </a>
+
+                <a href="vision.html">
+                    हमारा विजन
+                </a>
+
+                <a href="team.html">
+                    हमारी टीम
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="mission-dropdown">
+
+            <a href="#"
+               class="mission-nav-link">
+
+                हमारे कार्य
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </a>
+
+            <div class="mission-dropdown-menu">
+
+                <a href="education.html">शिक्षा</a>
+
+                <a href="health.html">स्वास्थ्य</a>
+
+                <a href="environment.html">पर्यावरण</a>
+
+                <a href="women.html">
+                    महिला सशक्तिकरण
+                </a>
+
+                <a href="youth.html">
+                    युवा विकास
+                </a>
+
+                <a href="social-service.html">
+                    समाज सेवा
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <a href="volunteer.html"
+           class="mission-nav-link">
+            वॉलंटियर
+        </a>
+
+
+        <a href="membership.html"
+           class="mission-nav-link">
+            सदस्यता
+        </a>
+
+
+        <a href="news.html"
+           class="mission-nav-link">
+            समाचार
+        </a>
+
+
+        <a href="events.html"
+           class="mission-nav-link">
+            आगामी कार्यक्रम
+        </a>
+
+
+        <a href="gallery.html"
+           class="mission-nav-link active">
+            <i class="fa-solid fa-images"></i>
+            गैलरी
+        </a>
+
+
+        <a href="contact.html"
+           class="mission-nav-link">
+            संपर्क करें
+        </a>
+
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     BREADCRUMB
+===================================================== -->
+
+<div class="mission-breadcrumb">
+
+    <div class="mission-breadcrumb-inner">
+
+        <a href="index.html">
+            होम
+        </a>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <strong>
+            फोटो गैलरी
+        </strong>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     GALLERY HERO
+===================================================== -->
+
+<section class="gallery-hero">
+
+    <div class="gallery-hero-content">
+
+        <div class="gallery-hero-icon">
+            <i class="fa-solid fa-camera"></i>
+        </div>
+
+        <h1>
+            फोटो गैलरी
+        </h1>
+
+        <div class="gallery-hero-line"></div>
+
+        <p>
+            युवा सेवा संकल्प फाउंडेशन द्वारा आयोजित
+            विभिन्न सामाजिक, शैक्षिक, स्वास्थ्य,
+            पर्यावरण एवं जनसेवा कार्यक्रमों की
+            यादगार झलकियाँ।
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="gallery-intro">
+
+    <h2>
+        सेवा के पलों की झलक
+    </h2>
+
+    <p>
+        हमारा हर कार्यक्रम समाज के साथ जुड़ने और
+        सकारात्मक परिवर्तन की दिशा में एक प्रयास है।
+        यहाँ संस्था के विभिन्न सेवा कार्यों एवं
+        कार्यक्रमों की तस्वीरें प्रदर्शित की जा सकती हैं।
+    </p>
+
+</section>
+
+
+<!-- =====================================================
+     FILTER
+===================================================== -->
+
+<div class="gallery-filter">
+
+    <button class="filter-btn active"
+            data-filter="all">
+        सभी फोटो
+    </button>
+
+    <button class="filter-btn"
+            data-filter="education">
+        📚 शिक्षा
+    </button>
+
+    <button class="filter-btn"
+            data-filter="health">
+        🏥 स्वास्थ्य
+    </button>
+
+    <button class="filter-btn"
+            data-filter="environment">
+        🌳 पर्यावरण
+    </button>
+
+    <button class="filter-btn"
+            data-filter="women">
+        👩 महिला
+    </button>
+
+    <button class="filter-btn"
+            data-filter="youth">
+        👥 युवा
+    </button>
+
+    <button class="filter-btn"
+            data-filter="social">
+        🤝 समाज सेवा
+    </button>
+
+</div>
+
+
+<!-- =====================================================
+     GALLERY GRID
+===================================================== -->
+
+<section class="gallery-section">
+
+    <div class="gallery-grid">
+
+
+        <!-- PHOTO 1 -->
+
+        <div class="gallery-item"
+             data-category="education">
+
+            <div class="gallery-image">
+
+                <!-- अपनी फोटो लगाने के लिए:
+                <img src="images/gallery/education-1.jpg"
+                     alt="शिक्षा कार्यक्रम">
+                -->
+
+                <div class="photo-placeholder education-photo">
+
+                    <i class="fa-solid fa-book-open"></i>
+
+                    <span>
+                        शिक्षा कार्यक्रम फोटो
+                    </span>
+
+                </div>
+
+                <div class="gallery-overlay">
+
+                    <button class="gallery-view"
+                            aria-label="फोटो देखें">
+
+                        <i class="fa-solid fa-expand"></i>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="gallery-content">
+
+                <span class="gallery-category">
+                    <i class="fa-solid fa-book"></i>
+                    शिक्षा
+                </span>
+
+                <h3>
+                    शिक्षा जागरूकता कार्यक्रम
+                </h3>
+
+                <p>
+                    बच्चों और युवाओं को शिक्षा के
+                    प्रति प्रेरित करने का प्रयास।
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 2 -->
+
+        <div class="gallery-item"
+             data-category="health">
+
+            <div class="gallery-image">
+
+                <div class="photo-placeholder health-photo">
+
+                    <i class="fa-solid fa-heart-pulse"></i>
+
+                    <span>
+                        स्वास्थ्य शिविर फोटो
+                    </span>
+
+                </div>
+
+                <div class="gallery-overlay">
+
+                    <button class="gallery-view">
+                        <i class="fa-solid fa-expand"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="gallery-content">
+
+                <span class="gallery-category">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                    स्वास्थ्य
+                </span>
+
+                <h3>
+                    स्वास्थ्य जागरूकता अभियान
+                </h3>
+
+                <p>
+                    समाज में स्वास्थ्य के प्रति
+                    जागरूकता फैलाने का प्रयास।
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 3 -->
+
+        <div class="gallery-item"
+             data-category="environment">
+
+            <div class="gallery-image">
+
+                <div class="photo-placeholder environment-photo">
+
+                    <i class="fa-solid fa-tree"></i>
+
+                    <span>
+                        वृक्षारोपण कार्यक्रम फोटो
+                    </span>
+
+                </div>
+
+                <div class="gallery-overlay">
+
+                    <button class="gallery-view">
+                        <i class="fa-solid fa-expand"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="gallery-content">
+
+                <span class="gallery-category">
+                    <i class="fa-solid fa-seedling"></i>
+                    पर्यावरण
+                </span>
+
+                <h3>
+                    वृक्षारोपण अभियान
+                </h3>
+
+                <p>
+                    हरित और स्वच्छ पर्यावरण के लिए
+                    वृक्षारोपण कार्यक्रम।
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 4 -->
+
+        <div class="gallery-item"
+             data-category="women">
+
+            <div class="gallery-image">
+
+                <div class="photo-placeholder women-photo">
+
+                    <i class="fa-solid fa-person-dress"></i>
+
+                    <span>
+                        महिला कार्यक्रम फोटो
+                    </span>
+
+                </div>
+
+                <div class="gallery-overlay">
+
+                    <button class="gallery-view">
+                        <i class="fa-solid fa-expand"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="gallery-content">
+
+                <span class="gallery-category">
+                    <i class="fa-solid fa-person-dress"></i>
+                    महिला सशक्तिकरण
+                </span>
+
+                <h3>
+                    महिला जागरूकता कार्यक्रम
+                </h3>
+
+                <p>
+                    महिलाओं को जागरूकता और
+                    आत्मनिर्भरता से जोड़ने का प्रयास।
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 5 -->
+
+        <div class="gallery-item"
+             data-category="youth">
+
+            <div class="gallery-image">
+
+                <div class="photo-placeholder youth-photo">
+
+                    <i class="fa-solid fa-people-group"></i>
+
+                    <span>
+                        युवा कार्यक्रम फोटो
+                    </span>
+
+                </div>
+
+                <div class="gallery-overlay">
+
+                    <button class="gallery-view">
+                        <i class="fa-solid fa-expand"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="gallery-content">
+
+                <span class="gallery-category">
+                    <i class="fa-solid fa-users"></i>
+                    युवा विकास
+                </span>
+
+                <h3>
+                    युवा प्रेरणा एवं नेतृत्व
+                </h3>
+
+                <p>
+                    युवाओं की शक्ति को समाज सेवा
+                    और राष्ट्र निर्माण से जोड़ना।
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- PHOTO 6 -->
+
+        <div class="gallery-item"
+             data-category="social">
+
+            <div class="gallery-image">
+
+                <div class="photo-placeholder social-photo">
+
+                    <i class="fa-solid fa-hand-holding-heart"></i>
+
+                    <span>
+                        समाज सेवा कार्यक्रम फोटो
+                    </span>
+
+                </div>
+
+                <div class="gallery-overlay">
+
+                    <button class="gallery-view">
+                        <i class="fa-solid fa-expand"></i>
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="gallery-content">
+
+                <span class="gallery-category">
+                    <i class="fa-solid fa-handshake-angle"></i>
+                    समाज सेवा
+                </span>
+
+                <h3>
+                    जरूरतमंद सहायता कार्यक्रम
+                </h3>
+
+                <p>
+                    जरूरतमंद और वंचित लोगों तक
+                    सहायता एवं सहयोग पहुँचाना।
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     NOTE
+===================================================== -->
+
+<section class="gallery-note">
+
+    <div class="gallery-note-icon">
+        <i class="fa-solid fa-images"></i>
+    </div>
+
+    <div>
+
+        <h3>
+            अपनी कार्यक्रम की तस्वीरें यहाँ जोड़ें
+        </h3>
+
+        <p>
+            आप अपनी असली फोटो को
+            <strong>images/gallery/</strong>
+            फोल्डर में रखकर ऊपर दिए गए
+            फोटो स्थान पर लगा सकते हैं।
+            इससे आपकी संस्था की गैलरी वास्तविक
+            कार्यक्रमों की तस्वीरों के साथ दिखाई देगी।
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="mission-footer">
+
+    <div class="mission-footer-inner">
+
+
+        <div>
+
+            <img
+                src="images/logo.png"
+                alt="YSS Foundation"
+                class="mission-footer-logo"
+            >
+
+            <h3>
+                युवा सेवा संकल्प फाउंडेशन
+            </h3>
+
+            <p>
+                सेवा, समर्पण और संस्कार के साथ
+                समाज एवं राष्ट्र निर्माण की दिशा में
+                सकारात्मक प्रयास।
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                महत्वपूर्ण लिंक
+            </h4>
+
+            <a href="index.html">
+                होम
+            </a>
+
+            <a href="about.html">
+                हमारे बारे में
+            </a>
+
+            <a href="mission.html">
+                हमारा मिशन
+            </a>
+
+            <a href="vision.html">
+                हमारा विजन
+            </a>
+
+            <a href="membership.html">
+                सदस्यता
+            </a>
+
+            <a href="contact.html">
+                संपर्क करें
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                हमारे कार्य
+            </h4>
+
+            <a href="education.html">
+                शिक्षा
+            </a>
+
+            <a href="health.html">
+                स्वास्थ्य
+            </a>
+
+            <a href="environment.html">
+                पर्यावरण
+            </a>
+
+            <a href="women.html">
+                महिला सशक्तिकरण
+            </a>
+
+            <a href="youth.html">
+                युवा विकास
+            </a>
+
+            <a href="social-service.html">
+                समाज सेवा
+            </a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                संपर्क करें
+            </h4>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                ग्राम नैपुरा, पोस्ट कौड़ाही,
+                जिला अम्बेडकर नगर,
+                उत्तर प्रदेश – 224129
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                9651731313
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                info.yssfoundation@gmail.com
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="mission-footer-bottom">
+
+        © 2026 युवा सेवा संकल्प फाउंडेशन |
+        सर्वाधिकार सुरक्षित |
+        <strong>युवा शक्ति - राष्ट्र शक्ति</strong>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     FILTER JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    const filterButtons =
+        document.querySelectorAll(".filter-btn");
+
+    const galleryItems =
+        document.querySelectorAll(".gallery-item");
+
+
+    filterButtons.forEach(function(button){
+
+        button.addEventListener(
+            "click",
+            function(){
+
+                const filter =
+                    button.getAttribute("data-filter");
+
+
+                filterButtons.forEach(function(btn){
+
+                    btn.classList.remove("active");
+
+                });
+
+
+                button.classList.add("active");
+
+
+                galleryItems.forEach(function(item){
+
+                    const category =
+                        item.getAttribute("data-category");
+
+
+                    if(
+                        filter === "all" ||
+                        category === filter
+                    ){
+
+                        item.style.display = "block";
+
+                    }
+
+                    else{
+
+                        item.style.display = "none";
+
+                    }
+
+                });
+
+            }
+
+        );
+
+    });
+
+</script>
+
+
+</body>
+
+</html>
