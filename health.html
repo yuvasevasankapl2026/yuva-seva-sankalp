@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="युवा सेवा संकल्प फाउंडेशन - स्वास्थ्य जागरूकता, स्वास्थ्य शिविर, रक्तदान, स्वच्छता और जनस्वास्थ्य सेवा।">
+
+    <title>स्वास्थ्य सेवा | युवा सेवा संकल्प फाउंडेशन</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+
+        /* =========================================================
+           युवा सेवा संकल्प फाउंडेशन
+           HEALTH PAGE
+        ========================================================= */
+
+        .health-page{
+            margin:0;
+            background:#f5f8fb;
+            color:#263746;
+            font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+        }
+
+        .health-page *,
+        .health-page *::before,
+        .health-page *::after{
+            box-sizing:border-box;
+        }
+
+        .health-page a{
+            text-decoration:none;
+        }
+
+
+        /* =========================================================
+           TOP BAR
+        ========================================================= */
+
+        .health-topbar{
+            background:#123b66;
+            color:#fff;
+            min-height:42px;
+        }
+
+        .health-topbar-inner{
+            width:92%;
+            max-width:1400px;
+            margin:auto;
+            min-height:42px;
+
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:20px;
+        }
+
+        .health-contact{
+            display:flex;
+            align-items:center;
+            gap:25px;
+        }
+
+        .health-contact span{
+            display:flex;
+            align-items:center;
+            gap:7px;
+            font-size:13px;
+        }
+
+        .health-contact i{
+            color:#ffb15c;
+        }
+
+        .health-social{
+            display:flex;
+            align-items:center;
+            gap:15px;
+        }
+
+        .health-social a{
+            color:#fff;
+        }
+
+        .health-social a:hover{
+            color:#ff7900;
+        }
+
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        .health-header{
+            background:#fff;
+            border-bottom:1px solid #e3e9ef;
+        }
+
+        .health-header-inner{
+            width:92%;
+            max-width:1400px;
+            margin:auto;
+            min-height:135px;
+
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:30px;
+        }
+
+        .health-brand{
+            display:flex;
+            align-items:center;
+            gap:18px;
+        }
+
+        .health-brand-logo{
+            width:120px;
+            height:120px;
+            object-fit:contain;
+        }
+
+        .health-brand-text h1{
+            margin:0;
+            color:#123b66;
+            font-size:39px;
+            line-height:1.15;
+            font-weight:800;
+        }
+
+        .health-brand-text h1 span{
+            color:#ff7900;
+        }
+
+        .health-brand-text p{
+            margin:7px 0 0;
+            color:#123b66;
+            font-size:17px;
+            font-weight:700;
+        }
+
+
+        /* =========================================================
+           LOGIN CARDS
+        ========================================================= */
+
+        .health-login{
+            display:flex;
+            align-items:center;
+            gap:12px;
+        }
+
+        .health-login-card{
+            min-width:170px;
+            min-height:66px;
+            padding:10px 14px;
+
+            background:#fff;
+            border:1px solid #dce4eb;
+            border-radius:12px;
+
+            display:flex;
+            align-items:center;
+            gap:11px;
+
+            color:#123b66;
+            transition:.25s;
+        }
+
+        .health-login-card:hover{
+            transform:translateY(-3px);
+            box-shadow:0 8px 22px rgba(18,59,102,.12);
+        }
+
+        .health-login-icon{
+            width:42px;
+            height:42px;
+            border-radius:50%;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            font-size:21px;
+        }
+
+        .health-member .health-login-icon{
+            color:#24834b;
+            background:#eaf7ed;
+        }
+
+        .health-volunteer .health-login-icon{
+            color:#123b66;
+            background:#eaf1fa;
+        }
+
+        .health-admin{
+            background:#ff7900;
+            border-color:#ff7900;
+            color:#fff;
+        }
+
+        .health-admin .health-login-icon{
+            color:#fff;
+            background:rgba(255,255,255,.15);
+        }
+
+        .health-login-text{
+            display:flex;
+            flex-direction:column;
+        }
+
+        .health-login-text strong{
+            font-size:15px;
+        }
+
+        .health-login-text small{
+            font-size:10px;
+            margin-top:3px;
+            opacity:.75;
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
+
+        .health-nav{
+            background:#082e63;
+            min-height:56px;
+            position:relative;
+            z-index:999;
+        }
+
+        .health-nav-inner{
+            width:92%;
+            max-width:1400px;
+            margin:auto;
+
+            min-height:56px;
+            display:flex;
+            align-items:stretch;
+        }
+
+        .health-nav-link{
+            min-height:56px;
+            padding:0 17px;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:7px;
+
+            color:#fff;
+            font-size:14px;
+            font-weight:700;
+            white-space:nowrap;
+            transition:.2s;
+        }
+
+        .health-nav-link:hover,
+        .health-nav-link.active{
+            background:#ff7900;
+        }
+
+        .health-dropdown{
+            position:relative;
+        }
+
+        .health-dropdown-menu{
+            display:none;
+            position:absolute;
+            left:0;
+            top:56px;
+
+            width:220px;
+            background:#fff;
+            border-top:3px solid #ff7900;
+            box-shadow:0 12px 30px rgba(0,0,0,.18);
+        }
+
+        .health-dropdown:hover .health-dropdown-menu{
+            display:block;
+        }
+
+        .health-dropdown-menu a{
+            display:block;
+            padding:12px 15px;
+            color:#263746;
+            font-size:13px;
+            border-bottom:1px solid #edf1f4;
+        }
+
+        .health-dropdown-menu a:hover{
+            color:#123b66;
+            background:#f3f7fa;
+        }
+
+
+        /* =========================================================
+           BREADCRUMB
+        ========================================================= */
+
+        .health-breadcrumb{
+            background:#eef3f8;
+            border-bottom:1px solid #dfe7ee;
+        }
+
+        .health-breadcrumb-inner{
+            width:92%;
+            max-width:1400px;
+            margin:auto;
+
+            min-height:44px;
+            display:flex;
+            align-items:center;
+            gap:9px;
+
+            color:#69798a;
+            font-size:13px;
+        }
+
+        .health-breadcrumb a{
+            color:#123b66;
+            font-weight:700;
+        }
+
+        .health-breadcrumb i{
+            color:#ff7900;
+            font-size:10px;
+        }
+
+
+        /* =========================================================
+           HEALTH HERO
+        ========================================================= */
+
+        .health-hero{
+            width:92%;
+            max-width:1400px;
+            margin:35px auto 0;
+
+            padding:58px 45px;
+            border-radius:25px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #123b66 0%,
+                    #1d5d96 52%,
+                    #24834b 100%
+                );
+
+            color:#fff;
+            position:relative;
+            overflow:hidden;
+
+            box-shadow:0 18px 40px rgba(18,59,102,.18);
+        }
+
+        .health-hero::before{
+            content:"";
+            position:absolute;
+
+            width:320px;
+            height:320px;
+
+            border-radius:50%;
+            right:-90px;
+            top:-130px;
+
+            background:rgba(255,255,255,.08);
+        }
+
+        .health-hero::after{
+            content:"";
+            position:absolute;
+
+            width:250px;
+            height:250px;
+
+            border-radius:50%;
+            left:-100px;
+            bottom:-150px;
+
+            background:rgba(255,121,0,.12);
+        }
+
+        .health-hero-content{
+            position:relative;
+            z-index:2;
+            max-width:850px;
+        }
+
+        .health-hero-badge{
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+
+            padding:8px 16px;
+            margin-bottom:15px;
+
+            background:rgba(255,255,255,.12);
+            border:1px solid rgba(255,255,255,.20);
+            border-radius:30px;
+
+            font-size:14px;
+            font-weight:700;
+        }
+
+        .health-hero h1{
+            margin:0 0 10px;
+            font-size:48px;
+            font-weight:800;
+        }
+
+        .health-hero-line{
+            width:130px;
+            height:5px;
+
+            background:#ff7900;
+            border-radius:20px;
+            margin-bottom:20px;
+        }
+
+        .health-hero p{
+            margin:0;
+            font-size:19px;
+            line-height:1.8;
+            color:#f2f7fb;
+        }
+
+        .health-hero-quote{
+            display:inline-block;
+            margin-top:20px;
+
+            padding:10px 18px;
+            border:1px solid rgba(255,255,255,.28);
+            border-radius:30px;
+
+            font-size:15px;
+            font-weight:700;
+        }
+
+
+        /* =========================================================
+           INTRO
+        ========================================================= */
+
+        .health-intro{
+            width:92%;
+            max-width:1400px;
+            margin:35px auto;
+
+            display:grid;
+            grid-template-columns:1.4fr .8fr;
+            gap:30px;
+            align-items:stretch;
+        }
+
+        .health-intro-text{
+            background:#fff;
+            border:1px solid #e0e7ed;
+            border-radius:20px;
+            padding:32px;
+
+            box-shadow:0 8px 25px rgba(0,0,0,.04);
+        }
+
+        .health-intro-text h2{
+            margin:0 0 15px;
+            color:#123b66;
+            font-size:29px;
+        }
+
+        .health-intro-text p{
+            margin:0 0 14px;
+            color:#526271;
+            font-size:16px;
+            line-height:1.9;
+        }
+
+        .health-highlight{
+            background:#f0faf3;
+            border:1px solid #d6eadb;
+            border-radius:20px;
+            padding:30px;
+
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+        }
+
+        .health-highlight-icon{
+            width:78px;
+            height:78px;
+            border-radius:50%;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            background:#24834b;
+            color:#fff;
+            font-size:34px;
+            margin-bottom:15px;
+        }
+
+        .health-highlight h3{
+            margin:0 0 8px;
+            color:#123b66;
+            font-size:22px;
+        }
+
+        .health-highlight p{
+            margin:0;
+            color:#617181;
+            line-height:1.7;
+            font-size:14px;
+        }
+
+
+        /* =========================================================
+           HEALTH SERVICES
+        ========================================================= */
+
+        .health-services{
+            width:92%;
+            max-width:1400px;
+            margin:0 auto;
+            padding:20px 0 45px;
+        }
+
+        .health-heading{
+            text-align:center;
+            margin-bottom:30px;
+        }
+
+        .health-heading h2{
+            margin:0;
+            color:#123b66;
+            font-size:31px;
+        }
+
+        .health-heading p{
+            margin:7px auto 0;
+            max-width:760px;
+            color:#69798a;
+            font-size:14px;
+        }
+
+        .health-service-grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:18px;
+        }
+
+        .health-service-card{
+            background:#fff;
+            border:1px solid #dfe7ed;
+            border-radius:18px;
+            padding:25px;
+
+            transition:.25s;
+            box-shadow:0 6px 20px rgba(0,0,0,.04);
+        }
+
+        .health-service-card:hover{
+            transform:translateY(-5px);
+            box-shadow:0 15px 32px rgba(18,59,102,.10);
+        }
+
+        .health-service-icon{
+            width:60px;
+            height:60px;
+            border-radius:16px;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            background:#eaf2fb;
+            color:#123b66;
+            font-size:26px;
+            margin-bottom:15px;
+        }
+
+        .health-service-card:nth-child(2) .health-service-icon{
+            background:#fbeaea;
+            color:#d64747;
+        }
+
+        .health-service-card:nth-child(3) .health-service-icon{
+            background:#eaf7ed;
+            color:#24834b;
+        }
+
+        .health-service-card:nth-child(4) .health-service-icon{
+            background:#fff0e7;
+            color:#ff7900;
+        }
+
+        .health-service-card:nth-child(5) .health-service-icon{
+            background:#f2eafa;
+            color:#663399;
+        }
+
+        .health-service-card:nth-child(6) .health-service-icon{
+            background:#e7f4f4;
+            color:#147b7b;
+        }
+
+        .health-service-card h3{
+            margin:0 0 8px;
+            color:#123b66;
+            font-size:20px;
+        }
+
+        .health-service-card p{
+            margin:0;
+            color:#68798a;
+            font-size:14px;
+            line-height:1.7;
+        }
+
+        .health-service-card ul{
+            margin:13px 0 0;
+            padding:0;
+            list-style:none;
+        }
+
+        .health-service-card li{
+            position:relative;
+            padding-left:20px;
+            margin:6px 0;
+
+            color:#526271;
+            font-size:13px;
+        }
+
+        .health-service-card li::before{
+            content:"✓";
+            position:absolute;
+            left:0;
+            color:#24834b;
+            font-weight:800;
+        }
+
+
+        /* =========================================================
+           HEALTH PROCESS
+        ========================================================= */
+
+        .health-process{
+            width:92%;
+            max-width:1400px;
+            margin:0 auto;
+            padding:10px 0 45px;
+        }
+
+        .health-process-box{
+            background:#123b66;
+            border-radius:22px;
+            padding:35px;
+            color:#fff;
+        }
+
+        .health-process-title{
+            text-align:center;
+            margin-bottom:30px;
+        }
+
+        .health-process-title h2{
+            margin:0;
+            font-size:30px;
+        }
+
+        .health-process-title p{
+            margin:7px 0 0;
+            color:#dce8f3;
+            font-size:14px;
+        }
+
+        .health-process-grid{
+            display:grid;
+            grid-template-columns:repeat(5,1fr);
+            gap:15px;
+        }
+
+        .health-step{
+            text-align:center;
+            padding:10px;
+        }
+
+        .health-step-number{
+            width:54px;
+            height:54px;
+            margin:0 auto 10px;
+
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            background:#ff7900;
+            color:#fff;
+
+            font-size:18px;
+            font-weight:800;
+        }
+
+        .health-step h3{
+            margin:0 0 5px;
+            font-size:16px;
+        }
+
+        .health-step p{
+            margin:0;
+            color:#d8e4ee;
+            font-size:12px;
+            line-height:1.5;
+        }
+
+
+        /* =========================================================
+           HEALTH PROMISE
+        ========================================================= */
+
+        .health-promise{
+            width:92%;
+            max-width:1400px;
+            margin:0 auto;
+            padding:0 0 45px;
+        }
+
+        .health-promise-grid{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:15px;
+        }
+
+        .health-promise-card{
+            background:#fff;
+            border:1px solid #e0e7ed;
+            border-radius:16px;
+            padding:24px;
+            text-align:center;
+        }
+
+        .health-promise-card i{
+            color:#24834b;
+            font-size:28px;
+            margin-bottom:10px;
+        }
+
+        .health-promise-card strong{
+            display:block;
+            color:#123b66;
+            font-size:19px;
+        }
+
+        .health-promise-card span{
+            display:block;
+            margin-top:5px;
+            color:#71808f;
+            font-size:13px;
+            line-height:1.6;
+        }
+
+
+        /* =========================================================
+           CTA
+        ========================================================= */
+
+        .health-join{
+            width:92%;
+            max-width:1400px;
+            margin:0 auto 60px;
+        }
+
+        .health-join-box{
+            border-radius:22px;
+            padding:40px;
+
+            background:#f1faf4;
+            border:1px solid #d5e8db;
+            text-align:center;
+        }
+
+        .health-join-box h2{
+            margin:0 0 8px;
+            color:#24834b;
+            font-size:31px;
+        }
+
+        .health-join-box p{
+            max-width:750px;
+            margin:0 auto 20px;
+            color:#526271;
+            line-height:1.8;
+            font-size:15px;
+        }
+
+        .health-buttons{
+            display:flex;
+            justify-content:center;
+            gap:10px;
+            flex-wrap:wrap;
+        }
+
+        .health-button{
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+
+            padding:12px 22px;
+            border-radius:8px;
+
+            color:#fff;
+            font-size:14px;
+            font-weight:700;
+        }
+
+        .health-button.blue{
+            background:#123b66;
+        }
+
+        .health-button.orange{
+            background:#ff7900;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        .health-footer{
+            background:#092e60;
+            color:#fff;
+            padding:45px 0 0;
+        }
+
+        .health-footer-inner{
+            width:92%;
+            max-width:1400px;
+            margin:auto;
+
+            display:grid;
+            grid-template-columns:1.5fr 1fr 1fr 1.3fr;
+            gap:35px;
+        }
+
+        .health-footer-logo{
+            width:90px;
+            height:90px;
+            object-fit:contain;
+            margin-bottom:10px;
+        }
+
+        .health-footer h3,
+        .health-footer h4{
+            margin:0 0 13px;
+            color:#fff;
+        }
+
+        .health-footer p{
+            margin:0 0 9px;
+            color:#dbe5ef;
+            font-size:13px;
+            line-height:1.7;
+        }
+
+        .health-footer a{
+            display:block;
+            color:#dbe5ef;
+            font-size:13px;
+            margin-bottom:8px;
+        }
+
+        .health-footer a:hover{
+            color:#ff7900;
+        }
+
+        .health-footer-bottom{
+            margin-top:35px;
+            padding:17px 0;
+
+            border-top:1px solid rgba(255,255,255,.15);
+            text-align:center;
+
+            color:#dbe5ef;
+            font-size:12px;
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media(max-width:1150px){
+
+            .health-header-inner{
+                flex-direction:column;
+                padding:18px 0;
+            }
+
+            .health-login{
+                width:100%;
+                justify-content:center;
+            }
+
+            .health-intro{
+                grid-template-columns:1fr;
+            }
+
+            .health-process-grid{
+                grid-template-columns:repeat(3,1fr);
+            }
+
+            .health-footer-inner{
+                grid-template-columns:1fr 1fr;
+            }
+        }
+
+
+        @media(max-width:850px){
+
+            .health-contact span:first-child{
+                display:none;
+            }
+
+            .health-brand{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            .health-brand-text h1{
+                font-size:31px;
+            }
+
+            .health-service-grid{
+                grid-template-columns:1fr 1fr;
+            }
+
+            .health-promise-grid{
+                grid-template-columns:1fr 1fr;
+            }
+        }
+
+
+        @media(max-width:650px){
+
+            .health-topbar-inner{
+                justify-content:center;
+            }
+
+            .health-contact{
+                display:none;
+            }
+
+            .health-login{
+                flex-direction:column;
+            }
+
+            .health-login-card{
+                width:100%;
+                max-width:350px;
+            }
+
+            .health-nav-inner{
+                width:100%;
+                overflow-x:auto;
+            }
+
+            .health-nav-link{
+                padding:0 12px;
+                font-size:12px;
+            }
+
+            .health-hero{
+                padding:38px 22px;
+            }
+
+            .health-hero h1{
+                font-size:35px;
+            }
+
+            .health-hero p{
+                font-size:15px;
+            }
+
+            .health-service-grid{
+                grid-template-columns:1fr;
+            }
+
+            .health-process-grid{
+                grid-template-columns:1fr 1fr;
+            }
+
+            .health-footer-inner{
+                grid-template-columns:1fr;
+            }
+        }
+
+
+        @media(max-width:430px){
+
+            .health-brand-text h1{
+                font-size:27px;
+            }
+
+            .health-hero h1{
+                font-size:30px;
+            }
+
+            .health-process-grid,
+            .health-promise-grid{
+                grid-template-columns:1fr;
+            }
+
+            .health-join-box{
+                padding:28px 18px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body class="health-page">
+
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="health-topbar">
+
+    <div class="health-topbar-inner">
+
+        <div class="health-contact">
+
+            <span>
+                <i class="fa-solid fa-envelope"></i>
+                info.yssfoundation@gmail.com
+            </span>
+
+            <span>
+                <i class="fa-solid fa-location-dot"></i>
+                ग्राम नैपुरा, पोस्ट कौड़ाही, जिला अम्बेडकर नगर, उत्तर प्रदेश – 224129
+            </span>
+
+        </div>
+
+
+        <div class="health-social">
+
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+
+            <span>
+                <i class="fa-solid fa-phone"></i>
+                9651731313
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="health-header">
+
+    <div class="health-header-inner">
+
+        <a href="index.html" class="health-brand">
+
+            <img src="images/logo.png"
+                 alt="युवा सेवा संकल्प फाउंडेशन"
+                 class="health-brand-logo">
+
+            <div class="health-brand-text">
+
+                <h1>
+                    युवा सेवा संकल्प
+                    <span>फाउंडेशन</span>
+                </h1>
+
+                <p>युवा शक्ति - राष्ट्र शक्ति</p>
+
+            </div>
+
+        </a>
+
+
+        <div class="health-login">
+
+            <a href="member-login.html"
+               class="health-login-card health-member">
+
+                <div class="health-login-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="health-login-text">
+                    <strong>सदस्य Login</strong>
+                    <small>अपने खाते में लॉगिन करें</small>
+                </div>
+
+            </a>
+
+
+            <a href="volunteer-login.html"
+               class="health-login-card health-volunteer">
+
+                <div class="health-login-icon">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+
+                <div class="health-login-text">
+                    <strong>Volunteer Login</strong>
+                    <small>सेवा करने के लिए जुड़ें</small>
+                </div>
+
+            </a>
+
+
+            <a href="admin-login.html"
+               class="health-login-card health-admin">
+
+                <div class="health-login-icon">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+
+                <div class="health-login-text">
+                    <strong>Admin Login</strong>
+                    <small>Admin Panel</small>
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="health-nav">
+
+    <div class="health-nav-inner">
+
+        <a href="index.html" class="health-nav-link">
+            <i class="fa-solid fa-house"></i>
+            होम
+        </a>
+
+
+        <div class="health-dropdown">
+
+            <a href="about.html" class="health-nav-link">
+                संस्था के बारे में
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+
+            <div class="health-dropdown-menu">
+
+                <a href="about.html">हमारे बारे में</a>
+                <a href="mission.html">हमारा मिशन</a>
+                <a href="vision.html">हमारा विजन</a>
+                <a href="team.html">हमारी टीम</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="health-dropdown">
+
+            <a href="#" class="health-nav-link active">
+                हमारे कार्य
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+
+            <div class="health-dropdown-menu">
+
+                <a href="education.html">शिक्षा</a>
+                <a href="health.html">स्वास्थ्य</a>
+                <a href="environment.html">पर्यावरण</a>
+                <a href="women.html">महिला सशक्तिकरण</a>
+                <a href="youth.html">युवा विकास</a>
+                <a href="social-service.html">समाज सेवा</a>
+
+            </div>
+
+        </div>
+
+
+        <a href="volunteer.html" class="health-nav-link">
+            वॉलंटियर
+        </a>
+
+        <a href="membership.html" class="health-nav-link">
+            सदस्यता
+        </a>
+
+        <a href="news.html" class="health-nav-link">
+            समाचार
+        </a>
+
+        <a href="events.html" class="health-nav-link">
+            आगामी कार्यक्रम
+        </a>
+
+        <a href="gallery.html" class="health-nav-link">
+            गैलरी
+        </a>
+
+        <a href="contact.html" class="health-nav-link">
+            संपर्क करें
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     BREADCRUMB
+===================================================== -->
+
+<div class="health-breadcrumb">
+
+    <div class="health-breadcrumb-inner">
+
+        <a href="index.html">होम</a>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <span>हमारे कार्य</span>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <strong>स्वास्थ्य</strong>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="health-hero">
+
+    <div class="health-hero-content">
+
+        <div class="health-hero-badge">
+            <i class="fa-solid fa-heart-pulse"></i>
+            स्वस्थ समाज • सशक्त राष्ट्र
+        </div>
+
+        <h1>स्वास्थ्य सेवा</h1>
+
+        <div class="health-hero-line"></div>
+
+        <p>
+            स्वास्थ्य जागरूकता, जनसहयोग और सेवा के माध्यम से
+            प्रत्येक व्यक्ति तक बेहतर स्वास्थ्य संबंधी जानकारी,
+            सहयोग और जागरूकता पहुँचाने का हमारा प्रयास।
+        </p>
+
+        <div class="health-hero-quote">
+            <i class="fa-solid fa-heart"></i>
+            स्वस्थ व्यक्ति • स्वस्थ परिवार • स्वस्थ समाज
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="health-intro">
+
+    <div class="health-intro-text">
+
+        <h2>हमारा स्वास्थ्य सेवा संकल्प</h2>
+
+        <p>
+            युवा सेवा संकल्प फाउंडेशन का मानना है कि एक स्वस्थ
+            समाज ही मजबूत और विकसित राष्ट्र की आधारशिला है।
+            इसलिए हम स्वास्थ्य के प्रति जागरूकता बढ़ाने और
+            जरूरतमंद लोगों तक उपयोगी जानकारी एवं सहयोग पहुँचाने
+            के लिए सामाजिक प्रयास करते हैं।
+        </p>
+
+        <p>
+            हमारा उद्देश्य लोगों को स्वास्थ्य, स्वच्छता, पोषण,
+            रोगों की रोकथाम और समय पर उचित स्वास्थ्य सलाह लेने
+            के प्रति जागरूक बनाना है।
+        </p>
+
+        <p>
+            जनभागीदारी और स्वयंसेवकों के सहयोग से स्वास्थ्य
+            जागरूकता अभियान, रक्तदान प्रेरणा, स्वास्थ्य शिविरों
+            में सहयोग तथा स्वच्छता संबंधी कार्यक्रम आयोजित
+            करने की दिशा में हमारा प्रयास है।
+        </p>
+
+    </div>
+
+
+    <div class="health-highlight">
+
+        <div class="health-highlight-icon">
+            <i class="fa-solid fa-heart-pulse"></i>
+        </div>
+
+        <h3>हमारी प्राथमिकता</h3>
+
+        <p>
+            जागरूकता, स्वच्छता, समय पर स्वास्थ्य सलाह और
+            जरूरतमंद लोगों तक सहयोग की भावना को मजबूत बनाना।
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section class="health-services">
+
+    <div class="health-heading">
+
+        <h2>स्वास्थ्य सेवा के प्रमुख क्षेत्र</h2>
+
+        <p>
+            हमारा प्रयास केवल सहायता तक सीमित नहीं, बल्कि लोगों को
+            स्वास्थ्य के प्रति जागरूक और जिम्मेदार बनाना भी है।
+        </p>
+
+    </div>
+
+
+    <div class="health-service-grid">
+
+
+        <!-- 1 -->
+
+        <div class="health-service-card">
+
+            <div class="health-service-icon">
+                <i class="fa-solid fa-notes-medical"></i>
+            </div>
+
+            <h3>स्वास्थ्य जागरूकता</h3>
+
+            <p>
+                आम लोगों तक स्वास्थ्य संबंधी आवश्यक जानकारी और
+                स्वस्थ जीवनशैली के प्रति जागरूकता पहुँचाना।
+            </p>
+
+            <ul>
+                <li>स्वस्थ जीवनशैली</li>
+                <li>रोगों से बचाव की जागरूकता</li>
+                <li>समय पर जांच के प्रति प्रेरणा</li>
+            </ul>
+
+        </div>
+
+
+        <!-- 2 -->
+
+        <div class="health-service-card">
+
+            <div class="health-service-icon">
+                <i class="fa-solid fa-hospital"></i>
+            </div>
+
+            <h3>स्वास्थ्य शिविर सहयोग</h3>
+
+            <p>
+                स्वास्थ्य शिविरों और जनस्वास्थ्य कार्यक्रमों के
+                आयोजन एवं जनभागीदारी में सहयोग करना।
+            </p>
+
+            <ul>
+                <li>स्थानीय स्वास्थ्य शिविर</li>
+                <li>स्वास्थ्य जांच जागरूकता</li>
+                <li>जरूरतमंदों तक जानकारी</li>
+            </ul>
+
+        </div>
+
+
+        <!-- 3 -->
+
+        <div class="health-service-card">
+
+            <div class="health-service-icon">
+                <i class="fa-solid fa-droplet"></i>
+            </div>
+
+            <h3>रक्तदान जागरूकता</h3>
+
+            <p>
+                रक्तदान के महत्व के प्रति समाज को जागरूक करना और
+                स्वैच्छिक रक्तदान की भावना को प्रोत्साहित करना।
+            </p>
+
+            <ul>
+                <li>रक्तदान जागरूकता अभियान</li>
+                <li>स्वैच्छिक दान को प्रेरणा</li>
+                <li>मानवता की सेवा</li>
+            </ul>
+
+        </div>
+
+
+        <!-- 4 -->
+
+        <div class="health-service-card">
+
+            <div class="health-service-icon">
+                <i class="fa-solid fa-person-pregnant"></i>
+            </div>
+
+            <h3>महिला एवं बाल स्वास्थ्य</h3>
+
+            <p>
+                महिलाओं और बच्चों के स्वास्थ्य, पोषण और स्वच्छता
+                के प्रति सामाजिक जागरूकता को बढ़ावा देना।
+            </p>
+
+            <ul>
+                <li>पोषण जागरूकता</li>
+                <li>मातृ एवं बाल स्वास्थ्य जानकारी</li>
+                <li>स्वच्छता के प्रति जागरूकता</li>
+            </ul>
+
+        </div>
+
+
+        <!-- 5 -->
+
+        <div class="health-service-card">
+
+            <div class="health-service-icon">
+                <i class="fa-solid fa-brain"></i>
+            </div>
+
+            <h3>मानसिक स्वास्थ्य जागरूकता</h3>
+
+            <p>
+                मानसिक स्वास्थ्य को लेकर जागरूकता, सकारात्मक सोच
+                और जरूरत पड़ने पर उचित विशेषज्ञ सहायता लेने के
+                प्रति प्रेरित करना।
+            </p>
+
+            <ul>
+                <li>सकारात्मक सोच</li>
+                <li>तनाव जागरूकता</li>
+                <li>सहायता लेने की प्रेरणा</li>
+            </ul>
+
+        </div>
+
+
+        <!-- 6 -->
+
+        <div class="health-service-card">
+
+            <div class="health-service-icon">
+                <i class="fa-solid fa-broom"></i>
+            </div>
+
+            <h3>स्वच्छता एवं रोकथाम</h3>
+
+            <p>
+                स्वच्छ वातावरण और व्यक्तिगत स्वच्छता के महत्व को
+                समाज तक पहुँचाकर रोगों की रोकथाम के प्रति जागरूकता।
+            </p>
+
+            <ul>
+                <li>स्वच्छता अभियान</li>
+                <li>व्यक्तिगत स्वच्छता</li>
+                <li>स्वस्थ वातावरण</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROCESS
+===================================================== -->
+
+<section class="health-process">
+
+    <div class="health-process-box">
+
+        <div class="health-process-title">
+
+            <h2>हम स्वास्थ्य सेवा के लिए कैसे कार्य करते हैं?</h2>
+
+            <p>
+                स्थानीय जरूरतों और जनभागीदारी को ध्यान में रखकर
+                स्वास्थ्य जागरूकता एवं सेवा गतिविधियों को आगे बढ़ाते हैं।
+            </p>
+
+        </div>
+
+
+        <div class="health-process-grid">
+
+
+            <div class="health-step">
+
+                <div class="health-step-number">01</div>
+
+                <h3>समस्या पहचान</h3>
+
+                <p>
+                    स्थानीय स्वास्थ्य संबंधी जरूरतों को समझना।
+                </p>
+
+            </div>
+
+
+            <div class="health-step">
+
+                <div class="health-step-number">02</div>
+
+                <h3>जागरूकता योजना</h3>
+
+                <p>
+                    उपयोगी विषयों पर अभियान की योजना बनाना।
+                </p>
+
+            </div>
+
+
+            <div class="health-step">
+
+                <div class="health-step-number">03</div>
+
+                <h3>जनभागीदारी</h3>
+
+                <p>
+                    सदस्यों और स्वयंसेवकों को जोड़ना।
+                </p>
+
+            </div>
+
+
+            <div class="health-step">
+
+                <div class="health-step-number">04</div>
+
+                <h3>सेवा अभियान</h3>
+
+                <p>
+                    जागरूकता एवं सहयोग कार्यक्रम आयोजित करना।
+                </p>
+
+            </div>
+
+
+            <div class="health-step">
+
+                <div class="health-step-number">05</div>
+
+                <h3>समीक्षा</h3>
+
+                <p>
+                    कार्यक्रम के प्रभाव और आगे की जरूरतों को देखना।
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROMISE
+===================================================== -->
+
+<section class="health-promise">
+
+    <div class="health-heading">
+
+        <h2>हमारी स्वास्थ्य सेवा प्रतिबद्धता</h2>
+
+        <p>
+            बेहतर स्वास्थ्य जागरूकता के लिए समाज के साथ मिलकर
+            जिम्मेदारी और सेवा की भावना से कार्य करना।
+        </p>
+
+    </div>
+
+
+    <div class="health-promise-grid">
+
+
+        <div class="health-promise-card">
+
+            <i class="fa-solid fa-users"></i>
+
+            <strong>जनभागीदारी</strong>
+
+            <span>
+                समाज के लोगों को स्वास्थ्य जागरूकता से जोड़ना।
+            </span>
+
+        </div>
+
+
+        <div class="health-promise-card">
+
+            <i class="fa-solid fa-heart"></i>
+
+            <strong>संवेदनशील सेवा</strong>
+
+            <span>
+                जरूरतमंद लोगों तक सहयोग की भावना पहुँचाना।
+            </span>
+
+        </div>
+
+
+        <div class="health-promise-card">
+
+            <i class="fa-solid fa-shield-heart"></i>
+
+            <strong>जागरूकता</strong>
+
+            <span>
+                सही समय पर स्वास्थ्य संबंधी जानकारी के प्रति प्रेरणा।
+            </span>
+
+        </div>
+
+
+        <div class="health-promise-card">
+
+            <i class="fa-solid fa-seedling"></i>
+
+            <strong>स्वस्थ समाज</strong>
+
+            <span>
+                स्वच्छ और स्वस्थ जीवनशैली को बढ़ावा देना।
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     JOIN CTA
+===================================================== -->
+
+<section class="health-join">
+
+    <div class="health-join-box">
+
+        <h2>स्वस्थ समाज के अभियान से जुड़ें</h2>
+
+        <p>
+            आपका समय, सहयोग और जागरूकता किसी व्यक्ति या परिवार
+            के जीवन में सकारात्मक बदलाव ला सकती है। आइए मिलकर
+            स्वास्थ्य जागरूकता को जनसेवा का एक मजबूत अभियान बनाएं।
+        </p>
+
+
+        <div class="health-buttons">
+
+            <a href="membership.html"
+               class="health-button blue">
+
+                <i class="fa-solid fa-user-plus"></i>
+                सदस्य बनें
+
+            </a>
+
+
+            <a href="volunteer.html"
+               class="health-button orange">
+
+                <i class="fa-solid fa-handshake"></i>
+                Volunteer बनें
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="health-footer">
+
+    <div class="health-footer-inner">
+
+
+        <div>
+
+            <img src="images/logo.png"
+                 alt="YSS Foundation"
+                 class="health-footer-logo">
+
+            <h3>युवा सेवा संकल्प फाउंडेशन</h3>
+
+            <p>
+                सेवा, समर्पण और संस्कार के साथ समाज एवं राष्ट्र
+                निर्माण की दिशा में सकारात्मक प्रयास।
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>महत्वपूर्ण लिंक</h4>
+
+            <a href="index.html">होम</a>
+            <a href="about.html">हमारे बारे में</a>
+            <a href="mission.html">हमारा मिशन</a>
+            <a href="vision.html">हमारा विजन</a>
+            <a href="membership.html">सदस्यता</a>
+            <a href="contact.html">संपर्क करें</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>हमारे कार्य</h4>
+
+            <a href="education.html">शिक्षा</a>
+            <a href="health.html">स्वास्थ्य</a>
+            <a href="environment.html">पर्यावरण</a>
+            <a href="women.html">महिला सशक्तिकरण</a>
+            <a href="youth.html">युवा विकास</a>
+            <a href="social-service.html">समाज सेवा</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>संपर्क करें</h4>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                ग्राम नैपुरा, पोस्ट कौड़ाही,
+                जिला अम्बेडकर नगर,
+                उत्तर प्रदेश – 224129
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                9651731313
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                info.yssfoundation@gmail.com
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="health-footer-bottom">
+
+        © 2026 युवा सेवा संकल्प फाउंडेशन |
+        सर्वाधिकार सुरक्षित |
+        <strong>युवा शक्ति - राष्ट्र शक्ति</strong>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
