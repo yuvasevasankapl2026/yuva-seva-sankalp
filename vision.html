@@ -1,0 +1,1549 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="युवा सेवा संकल्प फाउंडेशन - हमारा विजन, एक शिक्षित, स्वस्थ, सशक्त और आत्मनिर्भर समाज का निर्माण।">
+
+    <title>हमारा विजन | युवा सेवा संकल्प फाउंडेशन</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+<style>
+
+/* =====================================================
+   YUVA SEVA SANKALP FOUNDATION
+   VISION PAGE
+===================================================== */
+
+.vision-page{
+    background:#f5f8fb;
+    color:#263746;
+    font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+}
+
+.vision-page *{
+    box-sizing:border-box;
+}
+
+.vision-container{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+}
+
+/* =====================================================
+   BREADCRUMB
+===================================================== */
+
+.vision-breadcrumb{
+    background:#eef3f8;
+    border-bottom:1px solid #dce5ed;
+}
+
+.vision-breadcrumb .vision-container{
+    min-height:48px;
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-size:14px;
+    color:#667789;
+}
+
+.vision-breadcrumb a{
+    color:#123b66;
+    text-decoration:none;
+    font-weight:700;
+}
+
+.vision-breadcrumb i{
+    color:#ff7900;
+    font-size:11px;
+}
+
+
+/* =====================================================
+   VISION HERO
+===================================================== */
+
+.vision-hero{
+    padding:40px 0 25px;
+}
+
+.vision-hero-box{
+    position:relative;
+    overflow:hidden;
+
+    padding:65px 55px;
+
+    border-radius:25px;
+
+    background:linear-gradient(
+        135deg,
+        #123b66 0%,
+        #1d5d96 55%,
+        #24834b 100%
+    );
+
+    color:#fff;
+
+    box-shadow:0 18px 40px rgba(18,59,102,.18);
+}
+
+.vision-hero-box::before{
+    content:"";
+
+    position:absolute;
+
+    width:320px;
+    height:320px;
+
+    border-radius:50%;
+
+    top:-150px;
+    right:-100px;
+
+    background:rgba(255,255,255,.08);
+}
+
+.vision-hero-box::after{
+    content:"";
+
+    position:absolute;
+
+    width:230px;
+    height:230px;
+
+    border-radius:50%;
+
+    left:-100px;
+    bottom:-120px;
+
+    background:rgba(255,121,0,.15);
+}
+
+.vision-hero-content{
+    position:relative;
+    z-index:2;
+    max-width:850px;
+}
+
+.vision-eye{
+    width:75px;
+    height:75px;
+
+    margin-bottom:20px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    border-radius:18px;
+
+    background:rgba(255,255,255,.15);
+
+    font-size:34px;
+    color:#fff;
+}
+
+.vision-hero h1{
+    margin:0 0 12px;
+
+    font-size:50px;
+    line-height:1.2;
+
+    font-weight:800;
+}
+
+.vision-line{
+    width:140px;
+    height:5px;
+
+    border-radius:10px;
+
+    margin-bottom:20px;
+
+    background:linear-gradient(
+        90deg,
+        #ff7900,
+        #ffffff
+    );
+}
+
+.vision-hero p{
+    margin:0;
+
+    font-size:19px;
+    line-height:1.9;
+
+    color:#f1f7fc;
+}
+
+.vision-tag{
+    display:inline-block;
+
+    margin-top:22px;
+    padding:10px 20px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.12);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    font-size:16px;
+    font-weight:700;
+}
+
+
+/* =====================================================
+   VISION INTRO
+===================================================== */
+
+.vision-intro{
+    padding:25px 0 40px;
+}
+
+.vision-intro-grid{
+    display:grid;
+    grid-template-columns:1.4fr .8fr;
+    gap:30px;
+}
+
+.vision-content-box{
+    background:#fff;
+
+    padding:35px;
+
+    border-radius:22px;
+
+    border:1px solid #e0e8ee;
+
+    box-shadow:0 10px 28px rgba(0,0,0,.04);
+}
+
+.vision-content-box h2{
+    margin:0 0 18px;
+
+    color:#123b66;
+
+    font-size:30px;
+}
+
+.vision-content-box p{
+    margin:0 0 15px;
+
+    color:#526271;
+
+    font-size:16px;
+    line-height:1.9;
+}
+
+.vision-quote-box{
+    background:linear-gradient(
+        180deg,
+        #f0f8f2,
+        #ffffff
+    );
+
+    border:1px solid #d8eadc;
+
+    border-radius:22px;
+
+    padding:30px;
+
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+}
+
+.vision-quote-icon{
+    width:75px;
+    height:75px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#24834b;
+
+    color:#fff;
+
+    font-size:30px;
+
+    margin-bottom:18px;
+}
+
+.vision-quote-box h3{
+    margin:0 0 12px;
+
+    color:#123b66;
+
+    font-size:22px;
+}
+
+.vision-quote-box p{
+    margin:0;
+
+    color:#607080;
+
+    line-height:1.8;
+
+    font-size:15px;
+}
+
+
+/* =====================================================
+   OUR DREAM
+===================================================== */
+
+.vision-dream{
+    padding:0 0 40px;
+}
+
+.vision-heading{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.vision-heading h2{
+    margin:0;
+
+    color:#123b66;
+
+    font-size:32px;
+}
+
+.vision-heading p{
+    max-width:750px;
+
+    margin:8px auto 0;
+
+    color:#68798a;
+
+    font-size:15px;
+}
+
+.vision-dream-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.vision-dream-card{
+    background:#fff;
+
+    padding:28px 20px;
+
+    border-radius:18px;
+
+    border:1px solid #dfe7ed;
+
+    text-align:center;
+
+    transition:.25s ease;
+
+    box-shadow:0 6px 20px rgba(0,0,0,.04);
+}
+
+.vision-dream-card:hover{
+    transform:translateY(-6px);
+
+    box-shadow:0 16px 32px rgba(18,59,102,.10);
+}
+
+.vision-dream-icon{
+    width:65px;
+    height:65px;
+
+    margin:0 auto 15px;
+
+    border-radius:18px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:28px;
+}
+
+.vision-dream-card:nth-child(1) .vision-dream-icon{
+    background:#e7f1ff;
+    color:#1d5d96;
+}
+
+.vision-dream-card:nth-child(2) .vision-dream-icon{
+    background:#eaf7ed;
+    color:#24834b;
+}
+
+.vision-dream-card:nth-child(3) .vision-dream-icon{
+    background:#fff0e7;
+    color:#ff7900;
+}
+
+.vision-dream-card:nth-child(4) .vision-dream-icon{
+    background:#f1eafa;
+    color:#663399;
+}
+
+.vision-dream-card h3{
+    margin:0 0 8px;
+
+    color:#123b66;
+
+    font-size:20px;
+}
+
+.vision-dream-card p{
+    margin:0;
+
+    color:#69798a;
+
+    font-size:14px;
+    line-height:1.7;
+}
+
+
+/* =====================================================
+   FUTURE ROADMAP
+===================================================== */
+
+.vision-roadmap{
+    padding:10px 0 45px;
+}
+
+.vision-roadmap-box{
+    background:#123b66;
+
+    padding:40px;
+
+    border-radius:24px;
+
+    color:#fff;
+}
+
+.vision-roadmap-head{
+    text-align:center;
+    margin-bottom:35px;
+}
+
+.vision-roadmap-head h2{
+    margin:0;
+
+    font-size:32px;
+}
+
+.vision-roadmap-head p{
+    margin:8px 0 0;
+
+    color:#d8e5f0;
+    font-size:15px;
+}
+
+.roadmap-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:20px;
+}
+
+.roadmap-item{
+    position:relative;
+
+    text-align:center;
+
+    padding:15px;
+}
+
+.roadmap-number{
+    width:60px;
+    height:60px;
+
+    margin:0 auto 15px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:#ff7900;
+
+    color:#fff;
+
+    font-size:20px;
+    font-weight:800;
+}
+
+.roadmap-item h3{
+    margin:0 0 8px;
+
+    font-size:18px;
+}
+
+.roadmap-item p{
+    margin:0;
+
+    color:#d7e4ee;
+
+    font-size:13px;
+    line-height:1.7;
+}
+
+
+/* =====================================================
+   CORE VALUES
+===================================================== */
+
+.vision-values{
+    padding:0 0 45px;
+}
+
+.values-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:15px;
+}
+
+.value-item{
+    background:#fff;
+
+    border:1px solid #dfe7ed;
+
+    border-radius:16px;
+
+    padding:22px 15px;
+
+    text-align:center;
+}
+
+.value-item i{
+    display:block;
+
+    color:#24834b;
+
+    font-size:28px;
+
+    margin-bottom:10px;
+}
+
+.value-item h3{
+    margin:0;
+
+    color:#123b66;
+
+    font-size:17px;
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.vision-cta{
+    padding-bottom:60px;
+}
+
+.vision-cta-box{
+    background:#f0faf3;
+
+    border:1px solid #d7e9dc;
+
+    border-radius:24px;
+
+    padding:45px 30px;
+
+    text-align:center;
+}
+
+.vision-cta-box h2{
+    margin:0 0 10px;
+
+    color:#24834b;
+
+    font-size:32px;
+}
+
+.vision-cta-box p{
+    max-width:750px;
+
+    margin:0 auto 22px;
+
+    color:#526271;
+
+    font-size:16px;
+    line-height:1.8;
+}
+
+.vision-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.vision-btn{
+    display:inline-flex;
+
+    align-items:center;
+    gap:8px;
+
+    padding:13px 24px;
+
+    border-radius:9px;
+
+    color:#fff;
+
+    font-weight:700;
+
+    text-decoration:none;
+
+    transition:.2s ease;
+}
+
+.vision-btn:hover{
+    transform:translateY(-3px);
+}
+
+.vision-btn-primary{
+    background:#123b66;
+}
+
+.vision-btn-secondary{
+    background:#ff7900;
+}
+
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media(max-width:1100px){
+
+    .vision-intro-grid{
+        grid-template-columns:1fr;
+    }
+
+    .vision-dream-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .roadmap-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .values-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+}
+
+
+@media(max-width:700px){
+
+    .vision-hero-box{
+        padding:40px 25px;
+    }
+
+    .vision-hero h1{
+        font-size:36px;
+    }
+
+    .vision-hero p{
+        font-size:16px;
+    }
+
+    .vision-content-box{
+        padding:25px 20px;
+    }
+
+    .vision-content-box h2{
+        font-size:25px;
+    }
+
+    .vision-dream-grid{
+        grid-template-columns:1fr;
+    }
+
+    .roadmap-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .vision-roadmap-box{
+        padding:30px 15px;
+    }
+
+    .values-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+}
+
+
+@media(max-width:450px){
+
+    .vision-container{
+        width:94%;
+    }
+
+    .vision-hero{
+        padding-top:25px;
+    }
+
+    .vision-hero-box{
+        padding:30px 18px;
+    }
+
+    .vision-hero h1{
+        font-size:30px;
+    }
+
+    .roadmap-grid{
+        grid-template-columns:1fr;
+    }
+
+    .values-grid{
+        grid-template-columns:1fr;
+    }
+
+    .vision-cta-box{
+        padding:30px 18px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body class="vision-page">
+
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="top-bar">
+
+    <div class="container">
+
+        <div class="top-left">
+
+            <span>
+                <i class="fa-solid fa-envelope"></i>
+                info.yssfoundation@gmail.com
+            </span>
+
+            <span>
+                <i class="fa-solid fa-location-dot"></i>
+                ग्राम नैपुरा, पोस्ट कौड़ाही,
+                जिला अम्बेडकर नगर, उत्तर प्रदेश – 224129
+            </span>
+
+        </div>
+
+
+        <div class="top-right">
+
+            <a href="#">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="#">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="#">
+                <i class="fab fa-youtube"></i>
+            </a>
+
+            <a href="#">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <span class="phone">
+                <i class="fa-solid fa-phone"></i>
+                9651731313
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="main-header">
+
+    <div class="container header-inner">
+
+        <a href="index.html" class="brand">
+
+            <img src="images/logo.png"
+                 alt="युवा सेवा संकल्प फाउंडेशन Logo">
+
+            <div class="brand-text">
+
+                <h1>
+                    युवा सेवा संकल्प
+                    <span>फाउंडेशन</span>
+                </h1>
+
+                <p>युवा शक्ति - राष्ट्र शक्ति</p>
+
+            </div>
+
+        </a>
+
+
+        <div class="header-login">
+
+            <a href="member-login.html"
+               class="login-card member-login">
+
+                <i class="fa-solid fa-user"></i>
+
+                <span>
+                    <strong>सदस्य Login</strong>
+                    <small>अपने खाते में लॉगिन करें</small>
+                </span>
+
+            </a>
+
+
+            <a href="volunteer-login.html"
+               class="login-card volunteer-login">
+
+                <i class="fa-solid fa-handshake"></i>
+
+                <span>
+                    <strong>Volunteer Login</strong>
+                    <small>सेवा करने के लिए जुड़ें</small>
+                </span>
+
+            </a>
+
+
+            <a href="admin-login.html"
+               class="login-card admin-login">
+
+                <i class="fa-solid fa-user-shield"></i>
+
+                <span>
+                    <strong>Admin Login</strong>
+                    <small>Admin Panel</small>
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="main-nav">
+
+    <div class="container nav-inner">
+
+        <a href="index.html">
+            <i class="fa-solid fa-house"></i>
+            होम
+        </a>
+
+
+        <div class="nav-dropdown active">
+
+            <a href="about.html">
+                संस्था के बारे में
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+
+            <div class="dropdown-menu">
+
+                <a href="about.html">हमारे बारे में</a>
+
+                <a href="mission.html">हमारा मिशन</a>
+
+                <a href="vision.html">हमारा विजन</a>
+
+                <a href="team.html">हमारी टीम</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="nav-dropdown">
+
+            <a href="#">
+                हमारे कार्य
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+
+            <div class="dropdown-menu">
+
+                <a href="education.html">शिक्षा</a>
+
+                <a href="health.html">स्वास्थ्य</a>
+
+                <a href="environment.html">पर्यावरण</a>
+
+                <a href="women.html">महिला सशक्तिकरण</a>
+
+                <a href="youth.html">युवा विकास</a>
+
+                <a href="social-service.html">समाज सेवा</a>
+
+            </div>
+
+        </div>
+
+
+        <a href="volunteer.html">
+            वॉलंटियर
+        </a>
+
+        <a href="membership.html">
+            सदस्यता
+        </a>
+
+        <a href="news.html">
+            समाचार
+        </a>
+
+        <a href="events.html">
+            आगामी कार्यक्रम
+        </a>
+
+        <a href="gallery.html">
+            गैलरी
+        </a>
+
+        <a href="contact.html">
+            संपर्क करें
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     BREADCRUMB
+===================================================== -->
+
+<section class="vision-breadcrumb">
+
+    <div class="vision-container">
+
+        <a href="index.html">होम</a>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <a href="about.html">संस्था के बारे में</a>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <strong>हमारा विजन</strong>
+
+    </div>
+
+</section>
+
+
+<main>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="vision-hero">
+
+    <div class="vision-container">
+
+        <div class="vision-hero-box">
+
+            <div class="vision-hero-content">
+
+                <div class="vision-eye">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+
+                <h1>हमारा विजन</h1>
+
+                <div class="vision-line"></div>
+
+                <p>
+                    एक ऐसे समाज और राष्ट्र की कल्पना,
+                    जहाँ हर व्यक्ति को सम्मान, अवसर,
+                    शिक्षा, स्वास्थ्य और आगे बढ़ने का
+                    समान अधिकार प्राप्त हो।
+                </p>
+
+                <div class="vision-tag">
+                    हमारा सपना – हमारा संकल्प – हमारा भविष्य
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTRO
+===================================================== -->
+
+<section class="vision-intro">
+
+    <div class="vision-container">
+
+        <div class="vision-intro-grid">
+
+            <div class="vision-content-box">
+
+                <h2>
+                    हमारा भविष्य का दृष्टिकोण
+                </h2>
+
+                <p>
+                    युवा सेवा संकल्प फाउंडेशन का विजन
+                    एक ऐसे सशक्त, शिक्षित, स्वस्थ और
+                    आत्मनिर्भर समाज का निर्माण करना है,
+                    जहाँ विकास का लाभ समाज के प्रत्येक
+                    व्यक्ति तक पहुँच सके।
+                </p>
+
+                <p>
+                    हमारा विश्वास है कि समाज का वास्तविक
+                    विकास तभी संभव है जब युवा, महिलाएँ,
+                    बच्चे और जरूरतमंद वर्ग अवसरों और
+                    संसाधनों से जुड़कर अपनी क्षमता के
+                    अनुसार आगे बढ़ सकें।
+                </p>
+
+                <p>
+                    हम जनभागीदारी, सेवा, जागरूकता और
+                    सकारात्मक सोच के माध्यम से एक बेहतर,
+                    समृद्ध और जिम्मेदार भारत के निर्माण
+                    की दिशा में निरंतर प्रयास करना चाहते हैं।
+                </p>
+
+            </div>
+
+
+            <div class="vision-quote-box">
+
+                <div class="vision-quote-icon">
+                    <i class="fa-solid fa-quote-left"></i>
+                </div>
+
+                <h3>
+                    हमारा विश्वास
+                </h3>
+
+                <p>
+                    “आज का जागरूक और सशक्त युवा,
+                    कल के मजबूत और समृद्ध राष्ट्र
+                    की सबसे बड़ी शक्ति है।”
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     OUR DREAM
+===================================================== -->
+
+<section class="vision-dream">
+
+    <div class="vision-container">
+
+        <div class="vision-heading">
+
+            <h2>
+                हमारा सपना कैसा समाज है?
+            </h2>
+
+            <p>
+                हमारा विजन समाज के हर क्षेत्र में
+                सकारात्मक और स्थायी परिवर्तन लाना है।
+            </p>
+
+        </div>
+
+
+        <div class="vision-dream-grid">
+
+
+            <div class="vision-dream-card">
+
+                <div class="vision-dream-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <h3>
+                    शिक्षित समाज
+                </h3>
+
+                <p>
+                    ऐसा समाज जहाँ प्रत्येक बच्चे और युवा
+                    को शिक्षा एवं सीखने के बेहतर अवसर
+                    प्राप्त हों।
+                </p>
+
+            </div>
+
+
+            <div class="vision-dream-card">
+
+                <div class="vision-dream-icon">
+                    <i class="fa-solid fa-heart-pulse"></i>
+                </div>
+
+                <h3>
+                    स्वस्थ समाज
+                </h3>
+
+                <p>
+                    स्वास्थ्य जागरूकता और आवश्यक
+                    जानकारी के माध्यम से बेहतर जीवन
+                    की दिशा में आगे बढ़ता समाज।
+                </p>
+
+            </div>
+
+
+            <div class="vision-dream-card">
+
+                <div class="vision-dream-icon">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+
+                <h3>
+                    स्वच्छ पर्यावरण
+                </h3>
+
+                <p>
+                    प्रकृति के प्रति जिम्मेदार और
+                    आने वाली पीढ़ियों के लिए सुरक्षित
+                    पर्यावरण वाला समाज।
+                </p>
+
+            </div>
+
+
+            <div class="vision-dream-card">
+
+                <div class="vision-dream-icon">
+                    <i class="fa-solid fa-people-group"></i>
+                </div>
+
+                <h3>
+                    सशक्त नागरिक
+                </h3>
+
+                <p>
+                    ऐसा भारत जहाँ युवा और नागरिक
+                    अपनी जिम्मेदारियों को समझते हुए
+                    राष्ट्र निर्माण में भाग लें।
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     ROADMAP
+===================================================== -->
+
+<section class="vision-roadmap">
+
+    <div class="vision-container">
+
+        <div class="vision-roadmap-box">
+
+            <div class="vision-roadmap-head">
+
+                <h2>
+                    हमारा Vision Roadmap
+                </h2>
+
+                <p>
+                    एक बेहतर समाज की दिशा में हमारी सोच
+                    और आगे बढ़ने की यात्रा।
+                </p>
+
+            </div>
+
+
+            <div class="roadmap-grid">
+
+
+                <div class="roadmap-item">
+
+                    <div class="roadmap-number">
+                        01
+                    </div>
+
+                    <h3>
+                        जागरूकता
+                    </h3>
+
+                    <p>
+                        लोगों को उनके अधिकारों,
+                        जिम्मेदारियों और सामाजिक
+                        विषयों के प्रति जागरूक करना।
+                    </p>
+
+                </div>
+
+
+                <div class="roadmap-item">
+
+                    <div class="roadmap-number">
+                        02
+                    </div>
+
+                    <h3>
+                        सशक्तिकरण
+                    </h3>
+
+                    <p>
+                        शिक्षा, कौशल और अवसरों के
+                        माध्यम से लोगों को आगे
+                        बढ़ने के लिए सक्षम बनाना।
+                    </p>
+
+                </div>
+
+
+                <div class="roadmap-item">
+
+                    <div class="roadmap-number">
+                        03
+                    </div>
+
+                    <h3>
+                        जनभागीदारी
+                    </h3>
+
+                    <p>
+                        समाज के लोगों, सदस्यों और
+                        युवाओं को सेवा कार्यों से
+                        सक्रिय रूप से जोड़ना।
+                    </p>
+
+                </div>
+
+
+                <div class="roadmap-item">
+
+                    <div class="roadmap-number">
+                        04
+                    </div>
+
+                    <h3>
+                        सकारात्मक बदलाव
+                    </h3>
+
+                    <p>
+                        निरंतर प्रयासों के माध्यम से
+                        समाज में स्थायी और सकारात्मक
+                        परिवर्तन लाना।
+                    </p>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     VALUES
+===================================================== -->
+
+<section class="vision-values">
+
+    <div class="vision-container">
+
+        <div class="vision-heading">
+
+            <h2>
+                हमारे मूल मूल्य
+            </h2>
+
+            <p>
+                यही मूल्य हमारे हर कार्य और निर्णय
+                को दिशा प्रदान करते हैं।
+            </p>
+
+        </div>
+
+
+        <div class="values-grid">
+
+
+            <div class="value-item">
+
+                <i class="fa-solid fa-handshake"></i>
+
+                <h3>सेवा</h3>
+
+            </div>
+
+
+            <div class="value-item">
+
+                <i class="fa-solid fa-heart"></i>
+
+                <h3>समर्पण</h3>
+
+            </div>
+
+
+            <div class="value-item">
+
+                <i class="fa-solid fa-eye"></i>
+
+                <h3>पारदर्शिता</h3>
+
+            </div>
+
+
+            <div class="value-item">
+
+                <i class="fa-solid fa-users"></i>
+
+                <h3>जनभागीदारी</h3>
+
+            </div>
+
+
+            <div class="value-item">
+
+                <i class="fa-solid fa-flag"></i>
+
+                <h3>राष्ट्र निर्माण</h3>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="vision-cta">
+
+    <div class="vision-container">
+
+        <div class="vision-cta-box">
+
+            <h2>
+                आइए, मिलकर भविष्य का निर्माण करें
+            </h2>
+
+            <p>
+                हमारा विजन तभी साकार होगा जब समाज का
+                प्रत्येक जागरूक नागरिक और युवा इस
+                परिवर्तन की यात्रा में अपनी भागीदारी
+                निभाएगा।
+            </p>
+
+
+            <div class="vision-buttons">
+
+                <a href="membership.html"
+                   class="vision-btn vision-btn-primary">
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                    सदस्य बनें
+
+                </a>
+
+
+                <a href="volunteer.html"
+                   class="vision-btn vision-btn-secondary">
+
+                    <i class="fa-solid fa-handshake"></i>
+
+                    Volunteer बनें
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div class="footer-about">
+
+                <img src="images/logo.png"
+                     alt="YSS Foundation Logo"
+                     class="footer-logo">
+
+                <h3>
+                    युवा सेवा संकल्प फाउंडेशन
+                </h3>
+
+                <p>
+                    सेवा, समर्पण और जनभागीदारी के माध्यम से
+                    समाज एवं राष्ट्र निर्माण की दिशा में
+                    सकारात्मक प्रयास।
+                </p>
+
+            </div>
+
+
+            <div>
+
+                <h3>महत्वपूर्ण लिंक</h3>
+
+                <ul>
+
+                    <li>
+                        <a href="about.html">
+                            हमारे बारे में
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="mission.html">
+                            हमारा मिशन
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="vision.html">
+                            हमारा विजन
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="membership.html">
+                            सदस्यता
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <div>
+
+                <h3>संपर्क करें</h3>
+
+                <p>
+                    ग्राम नैपुरा, पोस्ट कौड़ाही,
+                    जिला अम्बेडकर नगर,
+                    उत्तर प्रदेश – 224129
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-phone"></i>
+                    9651731313
+                </p>
+
+                <p>
+                    <i class="fa-solid fa-envelope"></i>
+                    info.yssfoundation@gmail.com
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 युवा सेवा संकल्प फाउंडेशन |
+        सर्वाधिकार सुरक्षित |
+        युवा शक्ति - राष्ट्र शक्ति
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
