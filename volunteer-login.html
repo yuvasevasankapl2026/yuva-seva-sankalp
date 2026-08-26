@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="hi">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="युवा सेवा संकल्प फाउंडेशन वॉलंटियर लॉगिन पेज">
+
+    <title>
+        Volunteer Login | युवा सेवा संकल्प फाउंडेशन
+    </title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+
+        /* =====================================================
+           VOLUNTEER LOGIN PAGE
+        ===================================================== */
+
+        .vol-login-page{
+            margin:0;
+            background:#f5f8fb;
+            color:#263746;
+            font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+        }
+
+        .vol-login-page *,
+        .vol-login-page *::before,
+        .vol-login-page *::after{
+            box-sizing:border-box;
+        }
+
+        .vol-login-page a{
+            text-decoration:none;
+        }
+
+
+        /* =====================================================
+           TOP BAR
+        ===================================================== */
+
+        .vol-topbar{
+            background:#123b66;
+            color:#fff;
+            min-height:42px;
+        }
+
+        .vol-topbar-inner{
+            width:92%;
+            max-width:1400px;
+            margin:auto;
+            min-height:42px;
+
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:20px;
+        }
+
+        .vol-contact{
+            display:flex;
+            align-items:center;
+            gap:25px;
+        }
+
+        .vol-contact span{
+            display:flex;
+            align-items:center;
+            gap:7px;
+            font-size:13px;
+        }
+
+        .vol-contact i{
+            color:#ffb15c;
+        }
+
+        .vol-social{
+            display:flex;
+            align-items:center;
+            gap:15px;
+        }
+
+        .vol-social a{
+            color:#fff;
+            transition:.2s;
+        }
+
+        .vol-social a:hover{
+            color:#ff7900;
+        }
+
+        .vol-social span{
+            font-size:13px;
+            white-space:nowrap;
+        }
+
+
+        /* =====================================================
+           HEADER
+        ===================================================== */
+
+        .vol-header{
+            background:#fff;
+            border-bottom:1px solid #e3e9ef;
+        }
+
+        .vol-header-inner{
+            width:92%;
+            max-width:1400px;
+            margin:auto;
+
+            min-height:135px;
+
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+
+            gap:30px;
+        }
+
+        .vol-brand{
+            display:flex;
+            align-items:center;
+            gap:18px;
+        }
+
+        .vol-brand-logo{
+            width:120px;
+            height:120px;
+            object-fit:contain;
+            flex-shrink:0;
+        }
+
+        .vol-brand-text h1{
+            margin:0;
+            color:#123b66;
+            font-size:39px;
+            line-height:1.15;
+            font-weight:800;
+        }
+
+        .vol-brand-text h1 span{
+            color:#ff7900;
+        }
+
+        .vol-brand-text p{
+            margin:7px 0 0;
+            color:#123b66;
+            font-size:17px;
+            font-weight:700;
+        }
+
+
+        /* =====================================================
+           LOGIN CARDS
+        ===================================================== */
+
+        .vol-header-login{
+            display:flex;
+            align-items:center;
+            gap:12px;
+        }
+
+        .vol-header-login-card{
+            min-width:170px;
+            min-height:66px;
+
+            padding:10px 14px;
+
+            background:#fff;
+            border:1px solid #dce4eb;
+            border-radius:12px;
+
+            display:flex;
+            align-items:center;
+            gap:11px;
+
+            color:#123b66;
+            transition:.25s;
+        }
+
+        .vol-header-login-card:hover{
+            transform:translateY(-3px);
+            box-shadow:0 8px 22px rgba(18,59,102,.12);
+        }
+
+        .vol-header-login-icon{
+            width:42px;
+            height:42px;
+            border-radius:50%;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            font-size:21px;
+        }
+
+        .vol-member-card .vol-header-login-icon{
+            color:#24834b;
+            background:#eaf7ed;
+        }
+
+        .vol-volunteer-card{
+            background:#123b66;
+            border-color:#123b66;
+            color:#fff;
+        }
+
+        .vol-volunteer-card .vol-header-login-icon{
+            color:#fff;
+            background:rgba(255,255,255,.15);
+        }
+
+        .vol-admin-card{
+            background:#ff7900;
+            border-color:#ff7900;
+            color:#fff;
+        }
+
+        .vol-admin-card .vol-header-login-icon{
+            color:#fff;
+            background:rgba(255,255,255,.15);
+        }
+
+        .vol-header-login-text{
+            display:flex;
+            flex-direction:column;
+        }
+
+        .vol-header-login-text strong{
+            font-size:15px;
+        }
+
+        .vol-header-login-text small{
+            font-size:10px;
+            margin-top:3px;
+            opacity:.78;
+        }
+
+
+        /* =====================================================
+           NAVIGATION
+        ===================================================== */
+
+        .vol-nav{
+            background:#082e63;
+            min-height:56px;
+            position:relative;
+            z-index:999;
+        }
+
+        .vol-nav-inner{
+            width:92%;
+            max-width:1400px;
+            margin:auto;
+
+            min-height:56px;
+
+            display:flex;
+            align-items:stretch;
+        }
+
+        .vol-nav-link{
+            min-height:56px;
+            padding:0 17px;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            gap:7px;
+
+            color:#fff;
+            font-size:14px;
+            font-weight:700;
+
+            white-space:nowrap;
+            transition:.2s;
+        }
+
+        .vol-nav-link:hover,
+        .vol-nav-link.active{
+            background:#ff7900;
+        }
+
+        .vol-dropdown{
+            position:relative;
+        }
+
+        .vol-dropdown-menu{
+            display:none;
+
+            position:absolute;
+            left:0;
+            top:56px;
+
+            width:220px;
+
+            background:#fff;
+            border-top:3px solid #ff7900;
+
+            box-shadow:0 12px 30px rgba(0,0,0,.18);
+        }
+
+        .vol-dropdown:hover .vol-dropdown-menu{
+            display:block;
+        }
+
+        .vol-dropdown-menu a{
+            display:block;
+            padding:12px 15px;
+
+            color:#263746;
+            font-size:13px;
+
+            border-bottom:1px solid #edf1f4;
+        }
+
+        .vol-dropdown-menu a:hover{
+            color:#123b66;
+            background:#f3f7fa;
+        }
+
+
+        /* =====================================================
+           BREADCRUMB
+        ===================================================== */
+
+        .vol-breadcrumb{
+            background:#eef3f8;
+            border-bottom:1px solid #dfe7ee;
+        }
+
+        .vol-breadcrumb-inner{
+            width:92%;
+            max-width:1400px;
+            margin:auto;
+
+            min-height:44px;
+
+            display:flex;
+            align-items:center;
+            gap:9px;
+
+            color:#69798a;
+            font-size:13px;
+        }
+
+        .vol-breadcrumb a{
+            color:#123b66;
+            font-weight:700;
+        }
+
+        .vol-breadcrumb i{
+            color:#ff7900;
+            font-size:10px;
+        }
+
+
+        /* =====================================================
+           LOGIN SECTION
+        ===================================================== */
+
+        .vol-login-section{
+            width:92%;
+            max-width:1150px;
+            margin:45px auto 65px;
+        }
+
+        .vol-login-wrapper{
+            display:grid;
+            grid-template-columns:1fr 1fr;
+
+            min-height:560px;
+
+            background:#fff;
+            border-radius:24px;
+            overflow:hidden;
+
+            border:1px solid #dfe7ed;
+
+            box-shadow:0 18px 45px rgba(18,59,102,.10);
+        }
+
+
+        /* LEFT SIDE */
+
+        .vol-login-info{
+            padding:55px 45px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #123b66 0%,
+                    #1d5d96 65%,
+                    #24834b 100%
+                );
+
+            color:#fff;
+
+            position:relative;
+            overflow:hidden;
+        }
+
+        .vol-login-info::before{
+            content:"";
+
+            position:absolute;
+
+            width:300px;
+            height:300px;
+
+            border-radius:50%;
+
+            background:rgba(255,255,255,.07);
+
+            top:-120px;
+            right:-120px;
+        }
+
+        .vol-login-info::after{
+            content:"";
+
+            position:absolute;
+
+            width:230px;
+            height:230px;
+
+            border-radius:50%;
+
+            background:rgba(255,121,0,.12);
+
+            left:-100px;
+            bottom:-100px;
+        }
+
+        .vol-login-info-content{
+            position:relative;
+            z-index:2;
+        }
+
+        .vol-login-badge{
+            width:72px;
+            height:72px;
+
+            border-radius:20px;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            background:rgba(255,255,255,.15);
+
+            font-size:32px;
+
+            margin-bottom:25px;
+        }
+
+        .vol-login-info h1{
+            margin:0 0 15px;
+
+            font-size:38px;
+            line-height:1.3;
+
+            font-weight:800;
+        }
+
+        .vol-login-info p{
+            margin:0;
+
+            font-size:16px;
+            line-height:1.8;
+
+            color:#e8f0f6;
+        }
+
+        .vol-login-benefits{
+            margin-top:35px;
+
+            display:flex;
+            flex-direction:column;
+            gap:15px;
+        }
+
+        .vol-login-benefit{
+            display:flex;
+            align-items:center;
+            gap:12px;
+
+            font-size:14px;
+        }
+
+        .vol-login-benefit i{
+            width:34px;
+            height:34px;
+
+            border-radius:50%;
+
+            display:flex;
+            align-items:center;
+            justify-content:center;
+
+            background:rgba(255,255,255,.14);
+
+            color:#fff;
+        }
+
+
+        /* RIGHT SIDE */
+
+        .vol-login-form-side{
+            padding:55px 50px;
+
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+        }
+
+        .vol-form-heading{
+            margin-bottom:25px;
+        }
+
+        .vol-form-heading h2{
+            margin:0 0 8px;
+
+            color:#123b66;
+            font-size:30px;
+        }
+
+        .vol-form-heading p{
+            margin:0;
+            color:#71808f;
+            font-size:14px;
+        }
+
+        .vol-form-group{
+            margin-bottom:18px;
+        }
+
+        .vol-form-group label{
+            display:block;
+
+            margin-bottom:7px;
+
+            color:#123b66;
+            font-size:14px;
+            font-weight:700;
+        }
+
+        .vol-input-box{
+            position:relative;
+        }
+
+        .vol-input-box i{
+            position:absolute;
+
+            left:16px;
+            top:50%;
+
+            transform:translateY(-50%);
+
+            color:#8292a1;
+            font-size:16px;
+        }
+
+        .vol-input-box input{
+            width:100%;
+            height:52px;
+
+            padding:0 16px 0 46px;
+
+            border:1px solid #d8e2ea;
+            border-radius:10px;
+
+            outline:none;
+
+            font-family:inherit;
+            font-size:14px;
+
+            transition:.2s;
+        }
+
+        .vol-input-box input:focus{
+            border-color:#1d5d96;
+
+            box-shadow:
+                0 0 0 3px rgba(29,93,150,.10);
+        }
+
+        .vol-password-toggle{
+            position:absolute;
+
+            right:15px;
+            top:50%;
+
+            transform:translateY(-50%);
+
+            border:0;
+            background:transparent;
+
+            color:#71808f;
+
+            cursor:pointer;
+            font-size:16px;
+        }
+
+        .vol-login-options{
+            margin:3px 0 22px;
+
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+
+            gap:10px;
+
+            font-size:13px;
+        }
+
+        .vol-remember{
+            display:flex;
+            align-items:center;
+            gap:7px;
+
+            color:#647484;
+        }
+
+        .vol-remember input{
+            accent-color:#123b66;
+        }
+
+        .vol-forgot{
+            color:#1d5d96;
+            font-weight:700;
+        }
+
+        .vol-submit-btn{
+            width:100%;
+            min-height:53px;
+
+            border:0;
+            border-radius:10px;
+
+            background:#123b66;
+            color:#fff;
+
+            font-family:inherit;
+            font-size:16px;
+            font-weight:800;
+
+            cursor:pointer;
+
+            transition:.25s;
+        }
+
+        .vol-submit-btn:hover{
+            background:#0c3158;
+            transform:translateY(-2px);
+
+            box-shadow:
+                0 10px 20px rgba(18,59,102,.18);
+        }
+
+        .vol-login-result{
+            min-height:20px;
+
+            margin:15px 0 0;
+
+            text-align:center;
+
+            font-size:13px;
+            font-weight:700;
+        }
+
+        .vol-register-box{
+            margin-top:25px;
+            padding-top:22px;
+
+            border-top:1px solid #e2e9ee;
+
+            text-align:center;
+        }
+
+        .vol-register-box p{
+            margin:0 0 12px;
+
+            color:#71808f;
+            font-size:13px;
+        }
+
+        .vol-register-btn{
+            display:inline-flex;
+
+            align-items:center;
+            gap:8px;
+
+            padding:10px 20px;
+
+            border:1px solid #ff7900;
+            border-radius:8px;
+
+            color:#ff7900;
+
+            font-size:14px;
+            font-weight:800;
+
+            transition:.2s;
+        }
+
+        .vol-register-btn:hover{
+            background:#ff7900;
+            color:#fff;
+        }
+
+
+        /* =====================================================
+           FOOTER
+        ===================================================== */
+
+        .vol-footer{
+            background:#092e60;
+            color:#fff;
+            padding:45px 0 0;
+        }
+
+        .vol-footer-inner{
+            width:92%;
+            max-width:1400px;
+            margin:auto;
+
+            display:grid;
+            grid-template-columns:1.5fr 1fr 1fr 1.3fr;
+
+            gap:35px;
+        }
+
+        .vol-footer-logo{
+            width:90px;
+            height:90px;
+
+            object-fit:contain;
+
+            margin-bottom:10px;
+        }
+
+        .vol-footer h3,
+        .vol-footer h4{
+            margin:0 0 13px;
+            color:#fff;
+        }
+
+        .vol-footer p{
+            margin:0 0 9px;
+
+            color:#dbe5ef;
+            font-size:13px;
+            line-height:1.7;
+        }
+
+        .vol-footer a{
+            display:block;
+
+            color:#dbe5ef;
+            font-size:13px;
+
+            margin-bottom:8px;
+        }
+
+        .vol-footer a:hover{
+            color:#ff7900;
+        }
+
+        .vol-footer-bottom{
+            margin-top:35px;
+            padding:17px 0;
+
+            border-top:1px solid rgba(255,255,255,.15);
+
+            text-align:center;
+
+            color:#dbe5ef;
+            font-size:12px;
+        }
+
+
+        /* =====================================================
+           RESPONSIVE
+        ===================================================== */
+
+        @media(max-width:1150px){
+
+            .vol-header-inner{
+                flex-direction:column;
+                padding:18px 0;
+            }
+
+            .vol-header-login{
+                width:100%;
+                justify-content:center;
+            }
+
+            .vol-footer-inner{
+                grid-template-columns:1fr 1fr;
+            }
+
+        }
+
+
+        @media(max-width:850px){
+
+            .vol-contact span:first-child{
+                display:none;
+            }
+
+            .vol-brand{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            .vol-brand-text h1{
+                font-size:31px;
+            }
+
+            .vol-login-wrapper{
+                grid-template-columns:1fr;
+            }
+
+            .vol-login-info{
+                padding:40px 30px;
+            }
+
+            .vol-login-form-side{
+                padding:40px 30px;
+            }
+
+        }
+
+
+        @media(max-width:650px){
+
+            .vol-topbar-inner{
+                justify-content:center;
+            }
+
+            .vol-contact{
+                display:none;
+            }
+
+            .vol-header-login{
+                flex-direction:column;
+            }
+
+            .vol-header-login-card{
+                width:100%;
+                max-width:350px;
+            }
+
+            .vol-nav-inner{
+                width:100%;
+                overflow-x:auto;
+            }
+
+            .vol-nav-link{
+                padding:0 12px;
+                font-size:12px;
+            }
+
+            .vol-login-section{
+                width:94%;
+                margin:25px auto 45px;
+            }
+
+            .vol-login-info h1{
+                font-size:31px;
+            }
+
+            .vol-login-form-side{
+                padding:35px 20px;
+            }
+
+            .vol-login-options{
+                flex-direction:column;
+                align-items:flex-start;
+            }
+
+            .vol-footer-inner{
+                grid-template-columns:1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body class="vol-login-page">
+
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="vol-topbar">
+
+    <div class="vol-topbar-inner">
+
+        <div class="vol-contact">
+
+            <span>
+                <i class="fa-solid fa-envelope"></i>
+                info.yssfoundation@gmail.com
+            </span>
+
+            <span>
+                <i class="fa-solid fa-location-dot"></i>
+                ग्राम नैपुरा, पोस्ट कौड़ाही,
+                जिला अम्बेडकर नगर, उत्तर प्रदेश – 224129
+            </span>
+
+        </div>
+
+
+        <div class="vol-social">
+
+            <a href="#" aria-label="Facebook">
+                <i class="fab fa-facebook-f"></i>
+            </a>
+
+            <a href="#" aria-label="Instagram">
+                <i class="fab fa-instagram"></i>
+            </a>
+
+            <a href="#" aria-label="YouTube">
+                <i class="fab fa-youtube"></i>
+            </a>
+
+            <a href="#" aria-label="WhatsApp">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+
+            <span>
+                <i class="fa-solid fa-phone"></i>
+                9651731313
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="vol-header">
+
+    <div class="vol-header-inner">
+
+
+        <a href="index.html" class="vol-brand">
+
+            <img
+                src="images/logo.png"
+                alt="युवा सेवा संकल्प फाउंडेशन"
+                class="vol-brand-logo"
+            >
+
+
+            <div class="vol-brand-text">
+
+                <h1>
+                    युवा सेवा संकल्प
+                    <span>फाउंडेशन</span>
+                </h1>
+
+                <p>
+                    युवा शक्ति - राष्ट्र शक्ति
+                </p>
+
+            </div>
+
+        </a>
+
+
+        <div class="vol-header-login">
+
+
+            <a href="member-login.html"
+                class="vol-header-login-card vol-member-card">
+
+                <div class="vol-header-login-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="vol-header-login-text">
+
+                    <strong>
+                        सदस्य Login
+                    </strong>
+
+                    <small>
+                        अपने खाते में लॉगिन करें
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <a href="volunteer-login.html"
+                class="vol-header-login-card vol-volunteer-card">
+
+                <div class="vol-header-login-icon">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+
+                <div class="vol-header-login-text">
+
+                    <strong>
+                        Volunteer Login
+                    </strong>
+
+                    <small>
+                        Volunteer खाते में लॉगिन करें
+                    </small>
+
+                </div>
+
+            </a>
+
+
+            <a href="admin-login.html"
+                class="vol-header-login-card vol-admin-card">
+
+                <div class="vol-header-login-icon">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+
+                <div class="vol-header-login-text">
+
+                    <strong>
+                        Admin Login
+                    </strong>
+
+                    <small>
+                        Admin Panel
+                    </small>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="vol-nav">
+
+    <div class="vol-nav-inner">
+
+
+        <a href="index.html"
+            class="vol-nav-link">
+
+            <i class="fa-solid fa-house"></i>
+            होम
+
+        </a>
+
+
+        <div class="vol-dropdown">
+
+            <a href="about.html"
+                class="vol-nav-link">
+
+                संस्था के बारे में
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </a>
+
+
+            <div class="vol-dropdown-menu">
+
+                <a href="about.html">
+                    हमारे बारे में
+                </a>
+
+                <a href="mission.html">
+                    हमारा मिशन
+                </a>
+
+                <a href="vision.html">
+                    हमारा विजन
+                </a>
+
+                <a href="team.html">
+                    हमारी टीम
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="vol-dropdown">
+
+            <a href="#"
+                class="vol-nav-link">
+
+                हमारे कार्य
+                <i class="fa-solid fa-chevron-down"></i>
+
+            </a>
+
+
+            <div class="vol-dropdown-menu">
+
+                <a href="education.html">शिक्षा</a>
+                <a href="health.html">स्वास्थ्य</a>
+                <a href="environment.html">पर्यावरण</a>
+                <a href="women.html">महिला सशक्तिकरण</a>
+                <a href="youth.html">युवा विकास</a>
+                <a href="social-service.html">समाज सेवा</a>
+
+            </div>
+
+        </div>
+
+
+        <a href="volunteer.html"
+            class="vol-nav-link active">
+            वॉलंटियर
+        </a>
+
+
+        <a href="membership.html"
+            class="vol-nav-link">
+            सदस्यता
+        </a>
+
+
+        <a href="news.html"
+            class="vol-nav-link">
+            समाचार
+        </a>
+
+
+        <a href="events.html"
+            class="vol-nav-link">
+            आगामी कार्यक्रम
+        </a>
+
+
+        <a href="gallery.html"
+            class="vol-nav-link">
+            गैलरी
+        </a>
+
+
+        <a href="contact.html"
+            class="vol-nav-link">
+            संपर्क करें
+        </a>
+
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     BREADCRUMB
+===================================================== -->
+
+<div class="vol-breadcrumb">
+
+    <div class="vol-breadcrumb-inner">
+
+        <a href="index.html">
+            होम
+        </a>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <a href="volunteer.html">
+            वॉलंटियर
+        </a>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <strong>
+            Volunteer Login
+        </strong>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     VOLUNTEER LOGIN
+===================================================== -->
+
+<section class="vol-login-section">
+
+    <div class="vol-login-wrapper">
+
+
+        <!-- LEFT -->
+
+        <div class="vol-login-info">
+
+            <div class="vol-login-info-content">
+
+                <div class="vol-login-badge">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+
+
+                <h1>
+                    स्वागत है,
+                    <br>
+                    वॉलंटियर!
+                </h1>
+
+
+                <p>
+                    समाज सेवा और राष्ट्र निर्माण की इस
+                    यात्रा में आपका योगदान हमारे लिए
+                    अत्यंत महत्वपूर्ण है।
+                </p>
+
+
+                <div class="vol-login-benefits">
+
+
+                    <div class="vol-login-benefit">
+
+                        <i class="fa-solid fa-user-check"></i>
+
+                        <span>
+                            अपनी Volunteer Profile देखें
+                        </span>
+
+                    </div>
+
+
+                    <div class="vol-login-benefit">
+
+                        <i class="fa-solid fa-calendar-check"></i>
+
+                        <span>
+                            कार्यक्रमों और गतिविधियों की जानकारी
+                        </span>
+
+                    </div>
+
+
+                    <div class="vol-login-benefit">
+
+                        <i class="fa-solid fa-list-check"></i>
+
+                        <span>
+                            अपने सेवा कार्यों का विवरण देखें
+                        </span>
+
+                    </div>
+
+
+                    <div class="vol-login-benefit">
+
+                        <i class="fa-solid fa-award"></i>
+
+                        <span>
+                            संस्था के साथ सेवा यात्रा को आगे बढ़ाएं
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT -->
+
+        <div class="vol-login-form-side">
+
+
+            <div class="vol-form-heading">
+
+                <h2>
+                    Volunteer Login
+                </h2>
+
+                <p>
+                    अपने Volunteer खाते में लॉगिन करें।
+                </p>
+
+            </div>
+
+
+            <form id="volunteerLoginForm">
+
+
+                <div class="vol-form-group">
+
+                    <label for="volunteerId">
+                        Volunteer ID
+                    </label>
+
+                    <div class="vol-input-box">
+
+                        <i class="fa-solid fa-id-card"></i>
+
+                        <input
+                            type="text"
+                            id="volunteerId"
+                            placeholder="अपनी Volunteer ID लिखें"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="vol-form-group">
+
+                    <label for="volunteerPassword">
+                        Password
+                    </label>
+
+                    <div class="vol-input-box">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="volunteerPassword"
+                            placeholder="अपना पासवर्ड लिखें"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="vol-password-toggle"
+                            id="togglePassword"
+                            aria-label="पासवर्ड देखें"
+                        >
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="vol-login-options">
+
+                    <label class="vol-remember">
+
+                        <input type="checkbox" id="rememberVolunteer">
+
+                        <span>
+                            मुझे याद रखें
+                        </span>
+
+                    </label>
+
+
+                    <a href="#"
+                        class="vol-forgot">
+
+                        पासवर्ड भूल गए?
+
+                    </a>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="vol-submit-btn"
+                >
+
+                    <i class="fa-solid fa-right-to-bracket"></i>
+                    Login करें
+
+                </button>
+
+
+                <p
+                    id="volunteerLoginResult"
+                    class="vol-login-result"
+                ></p>
+
+
+            </form>
+
+
+            <div class="vol-register-box">
+
+                <p>
+                    अभी तक Volunteer नहीं बने हैं?
+                </p>
+
+                <a href="volunteer.html"
+                    class="vol-register-btn">
+
+                    <i class="fa-solid fa-user-plus"></i>
+                    Volunteer के रूप में जुड़ें
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="vol-footer">
+
+    <div class="vol-footer-inner">
+
+
+        <div>
+
+            <img
+                src="images/logo.png"
+                alt="YSS Foundation"
+                class="vol-footer-logo"
+            >
+
+            <h3>
+                युवा सेवा संकल्प फाउंडेशन
+            </h3>
+
+            <p>
+                सेवा, समर्पण और संस्कार के साथ
+                समाज एवं राष्ट्र निर्माण की दिशा में
+                सकारात्मक प्रयास।
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                महत्वपूर्ण लिंक
+            </h4>
+
+            <a href="index.html">होम</a>
+            <a href="about.html">हमारे बारे में</a>
+            <a href="mission.html">हमारा मिशन</a>
+            <a href="vision.html">हमारा विजन</a>
+            <a href="membership.html">सदस्यता</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                हमारे कार्य
+            </h4>
+
+            <a href="education.html">शिक्षा</a>
+            <a href="health.html">स्वास्थ्य</a>
+            <a href="environment.html">पर्यावरण</a>
+            <a href="women.html">महिला सशक्तिकरण</a>
+            <a href="youth.html">युवा विकास</a>
+            <a href="social-service.html">समाज सेवा</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>
+                संपर्क करें
+            </h4>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                ग्राम नैपुरा, पोस्ट कौड़ाही,
+                जिला अम्बेडकर नगर,
+                उत्तर प्रदेश – 224129
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                9651731313
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                info.yssfoundation@gmail.com
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="vol-footer-bottom">
+
+        © 2026 युवा सेवा संकल्प फाउंडेशन |
+        सर्वाधिकार सुरक्षित |
+        <strong>युवा शक्ति - राष्ट्र शक्ति</strong>
+
+    </div>
+
+</footer>
+
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
+
+<script>
+
+    /* PASSWORD SHOW / HIDE */
+
+    const passwordInput =
+        document.getElementById("volunteerPassword");
+
+    const togglePassword =
+        document.getElementById("togglePassword");
+
+
+    togglePassword.addEventListener(
+        "click",
+        function(){
+
+            if(passwordInput.type === "password"){
+
+                passwordInput.type = "text";
+
+                togglePassword.innerHTML =
+                '<i class="fa-solid fa-eye-slash"></i>';
+
+            }
+
+            else{
+
+                passwordInput.type = "password";
+
+                togglePassword.innerHTML =
+                '<i class="fa-solid fa-eye"></i>';
+
+            }
+
+        }
+    );
+
+
+    /* LOGIN */
+
+    document
+    .getElementById("volunteerLoginForm")
+    .addEventListener(
+
+        "submit",
+
+        function(event){
+
+            event.preventDefault();
+
+
+            const volunteerId =
+                document
+                .getElementById("volunteerId")
+                .value
+                .trim();
+
+
+            const password =
+                document
+                .getElementById("volunteerPassword")
+                .value
+                .trim();
+
+
+            const result =
+                document
+                .getElementById("volunteerLoginResult");
+
+
+            if(
+                volunteerId === "" ||
+                password === ""
+            ){
+
+                result.innerHTML =
+                "❌ कृपया Volunteer ID और Password भरें।";
+
+                result.style.color =
+                "#d93025";
+
+                return;
+
+            }
+
+
+            /*
+            ==========================================
+            DEMO LOGIN
+            बाद में इसे Database / PHP / Firebase से
+            जोड़ा जा सकता है।
+            ==========================================
+            */
+
+            result.innerHTML =
+            "⏳ कृपया प्रतीक्षा करें...";
+
+
+            result.style.color =
+            "#123b66";
+
+
+            setTimeout(
+
+                function(){
+
+                    result.innerHTML =
+                    "✅ Login सफल! आपका Volunteer Dashboard तैयार किया जा रहा है।";
+
+
+                    result.style.color =
+                    "#24834b";
+
+
+                    /*
+                    बाद में Dashboard बनने पर:
+
+                    window.location.href =
+                    "volunteer-dashboard.html";
+
+                    */
+
+                },
+
+                900
+
+            );
+
+        }
+
+    );
+
+</script>
+
+
+</body>
+
+</html>
