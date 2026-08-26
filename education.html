@@ -1,0 +1,1906 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+content="युवा सेवा संकल्प फाउंडेशन - शिक्षा अभियान, छात्र सहायता, डिजिटल शिक्षा, कौशल विकास और करियर मार्गदर्शन।">
+
+<title>शिक्षा | युवा सेवा संकल्प फाउंडेशन</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* =========================================================
+   YUVA SEVA SANKALP FOUNDATION
+   EDUCATION PAGE
+========================================================= */
+
+.education-page{
+    margin:0;
+    background:#f5f8fb;
+    color:#263746;
+    font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+}
+
+.education-page *,
+.education-page *::before,
+.education-page *::after{
+    box-sizing:border-box;
+}
+
+.education-page a{
+    text-decoration:none;
+}
+
+
+/* =========================================================
+   TOP BAR
+========================================================= */
+
+.edu-topbar{
+    background:#123b66;
+    color:#fff;
+}
+
+.edu-topbar-inner{
+    width:92%;
+    max-width:1400px;
+    min-height:42px;
+    margin:auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.edu-contact,
+.edu-social{
+    display:flex;
+    align-items:center;
+    gap:22px;
+}
+
+.edu-contact span,
+.edu-social span{
+    display:flex;
+    align-items:center;
+    gap:7px;
+    font-size:13px;
+}
+
+.edu-contact i,
+.edu-social i{
+    color:#ffb15c;
+}
+
+.edu-social a{
+    color:#fff;
+    transition:.2s;
+}
+
+.edu-social a:hover{
+    color:#ff7900;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.edu-header{
+    background:#fff;
+    border-bottom:1px solid #e3e9ef;
+}
+
+.edu-header-inner{
+    width:92%;
+    max-width:1400px;
+    min-height:135px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:30px;
+}
+
+.edu-brand{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.edu-brand-logo{
+    width:120px;
+    height:120px;
+    object-fit:contain;
+}
+
+.edu-brand-text h1{
+    margin:0;
+    color:#123b66;
+    font-size:39px;
+    line-height:1.15;
+    font-weight:800;
+}
+
+.edu-brand-text h1 span{
+    color:#ff7900;
+}
+
+.edu-brand-text p{
+    margin:7px 0 0;
+    color:#123b66;
+    font-size:17px;
+    font-weight:700;
+}
+
+
+/* =========================================================
+   LOGIN CARDS
+========================================================= */
+
+.edu-login{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.edu-login-card{
+    min-width:170px;
+    min-height:66px;
+    padding:10px 14px;
+
+    background:#fff;
+    border:1px solid #dce4eb;
+    border-radius:12px;
+
+    display:flex;
+    align-items:center;
+    gap:11px;
+
+    color:#123b66;
+    transition:.25s;
+}
+
+.edu-login-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 8px 22px rgba(18,59,102,.12);
+}
+
+.edu-login-icon{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:20px;
+}
+
+.edu-member .edu-login-icon{
+    color:#24834b;
+    background:#eaf7ed;
+}
+
+.edu-volunteer .edu-login-icon{
+    color:#123b66;
+    background:#eaf1fa;
+}
+
+.edu-admin{
+    background:#ff7900;
+    border-color:#ff7900;
+    color:#fff;
+}
+
+.edu-admin .edu-login-icon{
+    color:#fff;
+    background:rgba(255,255,255,.16);
+}
+
+.edu-login-text{
+    display:flex;
+    flex-direction:column;
+}
+
+.edu-login-text strong{
+    font-size:15px;
+}
+
+.edu-login-text small{
+    margin-top:3px;
+    font-size:10px;
+    opacity:.75;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.edu-nav{
+    min-height:56px;
+    background:#082e63;
+    position:relative;
+    z-index:999;
+}
+
+.edu-nav-inner{
+    width:92%;
+    max-width:1400px;
+    min-height:56px;
+    margin:auto;
+
+    display:flex;
+    align-items:stretch;
+}
+
+.edu-nav-link{
+    min-height:56px;
+    padding:0 17px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:7px;
+
+    color:#fff;
+    font-size:14px;
+    font-weight:700;
+    white-space:nowrap;
+
+    transition:.2s;
+}
+
+.edu-nav-link:hover,
+.edu-nav-link.active{
+    background:#ff7900;
+}
+
+.edu-dropdown{
+    position:relative;
+}
+
+.edu-dropdown-menu{
+    display:none;
+
+    position:absolute;
+    left:0;
+    top:56px;
+
+    width:230px;
+    background:#fff;
+
+    border-top:3px solid #ff7900;
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+}
+
+.edu-dropdown:hover .edu-dropdown-menu{
+    display:block;
+}
+
+.edu-dropdown-menu a{
+    display:block;
+    padding:12px 15px;
+
+    color:#263746;
+    font-size:13px;
+
+    border-bottom:1px solid #edf1f4;
+}
+
+.edu-dropdown-menu a:hover{
+    color:#123b66;
+    background:#f3f7fa;
+}
+
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+
+.edu-breadcrumb{
+    background:#eef3f8;
+    border-bottom:1px solid #dfe7ee;
+}
+
+.edu-breadcrumb-inner{
+    width:92%;
+    max-width:1400px;
+    min-height:44px;
+    margin:auto;
+
+    display:flex;
+    align-items:center;
+    gap:9px;
+
+    color:#69798a;
+    font-size:13px;
+}
+
+.edu-breadcrumb a{
+    color:#123b66;
+    font-weight:700;
+}
+
+.edu-breadcrumb i{
+    color:#ff7900;
+    font-size:10px;
+}
+
+
+/* =========================================================
+   EDUCATION HERO
+========================================================= */
+
+.edu-hero{
+    width:92%;
+    max-width:1400px;
+    margin:35px auto 0;
+
+    min-height:390px;
+    padding:55px 50px;
+
+    border-radius:25px;
+
+    background:
+    linear-gradient(135deg,
+        rgba(18,59,102,.97),
+        rgba(29,93,150,.94),
+        rgba(36,131,75,.92)
+    );
+
+    position:relative;
+    overflow:hidden;
+
+    box-shadow:0 18px 40px rgba(18,59,102,.18);
+
+    display:flex;
+    align-items:center;
+}
+
+.edu-hero::before{
+    content:"";
+    position:absolute;
+
+    width:320px;
+    height:320px;
+
+    border-radius:50%;
+
+    right:-100px;
+    top:-110px;
+
+    background:rgba(255,255,255,.08);
+}
+
+.edu-hero::after{
+    content:"";
+    position:absolute;
+
+    width:260px;
+    height:260px;
+
+    border-radius:50%;
+
+    left:-100px;
+    bottom:-130px;
+
+    background:rgba(255,121,0,.15);
+}
+
+.edu-hero-content{
+    position:relative;
+    z-index:2;
+    max-width:780px;
+    color:#fff;
+}
+
+.edu-hero-badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    padding:8px 17px;
+    margin-bottom:18px;
+
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.25);
+    border-radius:30px;
+
+    font-size:14px;
+    font-weight:700;
+}
+
+.edu-hero h1{
+    margin:0;
+    font-size:50px;
+    font-weight:800;
+}
+
+.edu-hero-line{
+    width:135px;
+    height:5px;
+
+    margin:15px 0 20px;
+
+    background:#ff7900;
+    border-radius:30px;
+}
+
+.edu-hero p{
+    margin:0;
+    max-width:720px;
+
+    font-size:19px;
+    line-height:1.85;
+    color:#eef6fb;
+}
+
+.edu-hero-buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:25px;
+}
+
+.edu-hero-btn{
+    padding:12px 22px;
+    border-radius:9px;
+
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    font-weight:700;
+    transition:.25s;
+}
+
+.edu-hero-btn:hover{
+    transform:translateY(-2px);
+}
+
+.edu-btn-orange{
+    background:#ff7900;
+    color:#fff;
+}
+
+.edu-btn-white{
+    background:#fff;
+    color:#123b66;
+}
+
+
+/* =========================================================
+   INTRODUCTION
+========================================================= */
+
+.edu-intro{
+    width:92%;
+    max-width:1400px;
+    margin:35px auto;
+
+    display:grid;
+    grid-template-columns:1.45fr .75fr;
+    gap:28px;
+}
+
+.edu-intro-main{
+    background:#fff;
+    border:1px solid #e0e7ed;
+    border-radius:20px;
+    padding:35px;
+
+    box-shadow:0 8px 25px rgba(0,0,0,.04);
+}
+
+.edu-intro-main h2{
+    margin:0 0 15px;
+    color:#123b66;
+    font-size:30px;
+}
+
+.edu-intro-main p{
+    margin:0 0 15px;
+    color:#526271;
+    font-size:16px;
+    line-height:1.9;
+}
+
+.edu-education-message{
+    background:#f0faf3;
+    border:1px solid #d6eadb;
+    border-radius:20px;
+
+    padding:30px;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+}
+
+.edu-message-icon{
+    width:78px;
+    height:78px;
+
+    border-radius:50%;
+    background:#24834b;
+    color:#fff;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.edu-education-message h3{
+    margin:0 0 10px;
+    color:#123b66;
+    font-size:23px;
+}
+
+.edu-education-message p{
+    margin:0;
+    color:#617181;
+    line-height:1.8;
+    font-size:14px;
+}
+
+
+/* =========================================================
+   EDUCATION PROGRAMS
+========================================================= */
+
+.edu-programs{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+    padding:15px 0 45px;
+}
+
+.edu-section-title{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.edu-section-title h2{
+    margin:0;
+    color:#123b66;
+    font-size:32px;
+}
+
+.edu-section-title p{
+    max-width:760px;
+    margin:8px auto 0;
+
+    color:#69798a;
+    font-size:14px;
+    line-height:1.7;
+}
+
+.edu-program-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.edu-program-card{
+    background:#fff;
+    border:1px solid #dfe7ed;
+    border-radius:18px;
+    padding:25px;
+
+    box-shadow:0 6px 20px rgba(0,0,0,.04);
+    transition:.25s;
+}
+
+.edu-program-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 16px 35px rgba(18,59,102,.11);
+}
+
+.edu-program-icon{
+    width:60px;
+    height:60px;
+    border-radius:16px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:25px;
+    margin-bottom:16px;
+}
+
+.edu-program-card:nth-child(1) .edu-program-icon{
+    background:#eaf1fb;
+    color:#123b66;
+}
+
+.edu-program-card:nth-child(2) .edu-program-icon{
+    background:#eaf7ed;
+    color:#24834b;
+}
+
+.edu-program-card:nth-child(3) .edu-program-icon{
+    background:#fff0e7;
+    color:#ff7900;
+}
+
+.edu-program-card:nth-child(4) .edu-program-icon{
+    background:#f0ebfb;
+    color:#663399;
+}
+
+.edu-program-card:nth-child(5) .edu-program-icon{
+    background:#e8f7f7;
+    color:#147b7b;
+}
+
+.edu-program-card:nth-child(6) .edu-program-icon{
+    background:#fff7df;
+    color:#b98200;
+}
+
+.edu-program-card h3{
+    margin:0 0 9px;
+    color:#123b66;
+    font-size:20px;
+}
+
+.edu-program-card p{
+    margin:0;
+    color:#68798a;
+    font-size:14px;
+    line-height:1.75;
+}
+
+.edu-program-card ul{
+    margin:15px 0 0;
+    padding:0;
+    list-style:none;
+}
+
+.edu-program-card li{
+    position:relative;
+    padding-left:21px;
+    margin:7px 0;
+
+    color:#526271;
+    font-size:13px;
+}
+
+.edu-program-card li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+
+    color:#24834b;
+    font-weight:800;
+}
+
+
+/* =========================================================
+   EDUCATION MODEL
+========================================================= */
+
+.edu-model{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+    padding:10px 0 45px;
+}
+
+.edu-model-box{
+    padding:38px 30px;
+    border-radius:24px;
+
+    background:#123b66;
+    color:#fff;
+}
+
+.edu-model-title{
+    text-align:center;
+    margin-bottom:32px;
+}
+
+.edu-model-title h2{
+    margin:0;
+    font-size:31px;
+}
+
+.edu-model-title p{
+    margin:8px 0 0;
+    color:#dce8f3;
+    font-size:14px;
+}
+
+.edu-model-grid{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:15px;
+}
+
+.edu-model-step{
+    text-align:center;
+    padding:10px;
+    position:relative;
+}
+
+.edu-model-number{
+    width:58px;
+    height:58px;
+    margin:0 auto 12px;
+
+    border-radius:50%;
+
+    background:#ff7900;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:18px;
+    font-weight:800;
+}
+
+.edu-model-step h3{
+    margin:0 0 6px;
+    font-size:16px;
+}
+
+.edu-model-step p{
+    margin:0;
+    color:#d8e4ee;
+    font-size:12px;
+    line-height:1.6;
+}
+
+
+/* =========================================================
+   STUDENT SUPPORT
+========================================================= */
+
+.edu-support{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+    padding:0 0 45px;
+}
+
+.edu-support-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:22px;
+}
+
+.edu-support-card{
+    background:#fff;
+    border:1px solid #dfe7ed;
+    border-radius:20px;
+    padding:30px;
+}
+
+.edu-support-card h2{
+    margin:0 0 18px;
+    color:#123b66;
+    font-size:27px;
+}
+
+.edu-support-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:12px;
+}
+
+.edu-support-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+
+    padding:13px;
+    background:#f5f8fb;
+    border-radius:10px;
+
+    color:#526271;
+    font-size:14px;
+}
+
+.edu-support-item i{
+    color:#24834b;
+    font-size:18px;
+}
+
+.edu-quote-card{
+    border-radius:20px;
+    padding:35px;
+
+    background:linear-gradient(135deg,#f1faf4,#ffffff);
+    border:1px solid #d6eadb;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.edu-quote-card i{
+    color:#ff7900;
+    font-size:34px;
+    margin-bottom:15px;
+}
+
+.edu-quote-card h3{
+    margin:0 0 12px;
+    color:#24834b;
+    font-size:28px;
+}
+
+.edu-quote-card p{
+    margin:0;
+    color:#526271;
+    line-height:1.9;
+    font-size:16px;
+}
+
+
+/* =========================================================
+   CALL TO ACTION
+========================================================= */
+
+.edu-join{
+    width:92%;
+    max-width:1400px;
+    margin:0 auto 60px;
+}
+
+.edu-join-box{
+    padding:42px 25px;
+    border-radius:24px;
+
+    background:#f1faf4;
+    border:1px solid #d5e8db;
+
+    text-align:center;
+}
+
+.edu-join-box h2{
+    margin:0 0 10px;
+    color:#24834b;
+    font-size:32px;
+}
+
+.edu-join-box p{
+    max-width:750px;
+    margin:0 auto 22px;
+
+    color:#526271;
+    font-size:15px;
+    line-height:1.85;
+}
+
+.edu-join-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.edu-join-btn{
+    padding:13px 24px;
+    border-radius:9px;
+
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+
+    color:#fff;
+    font-weight:700;
+}
+
+.edu-join-blue{
+    background:#123b66;
+}
+
+.edu-join-orange{
+    background:#ff7900;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.edu-footer{
+    background:#092e60;
+    color:#fff;
+    padding:45px 0 0;
+}
+
+.edu-footer-inner{
+    width:92%;
+    max-width:1400px;
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:1.5fr 1fr 1fr 1.3fr;
+    gap:35px;
+}
+
+.edu-footer-logo{
+    width:90px;
+    height:90px;
+    object-fit:contain;
+    margin-bottom:10px;
+}
+
+.edu-footer h3,
+.edu-footer h4{
+    margin:0 0 13px;
+    color:#fff;
+}
+
+.edu-footer p{
+    margin:0 0 9px;
+    color:#dbe5ef;
+    font-size:13px;
+    line-height:1.7;
+}
+
+.edu-footer a{
+    display:block;
+    margin-bottom:8px;
+    color:#dbe5ef;
+    font-size:13px;
+}
+
+.edu-footer a:hover{
+    color:#ff7900;
+}
+
+.edu-footer-bottom{
+    margin-top:35px;
+    padding:17px 15px;
+
+    border-top:1px solid rgba(255,255,255,.15);
+
+    text-align:center;
+    color:#dbe5ef;
+    font-size:12px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:1150px){
+
+    .edu-header-inner{
+        flex-direction:column;
+        padding:18px 0;
+    }
+
+    .edu-login{
+        width:100%;
+        justify-content:center;
+    }
+
+    .edu-intro{
+        grid-template-columns:1fr;
+    }
+
+    .edu-model-grid{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .edu-footer-inner{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+
+@media(max-width:850px){
+
+    .edu-contact span:first-child{
+        display:none;
+    }
+
+    .edu-brand{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .edu-brand-text h1{
+        font-size:31px;
+    }
+
+    .edu-program-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .edu-support-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+
+@media(max-width:650px){
+
+    .edu-topbar-inner{
+        justify-content:center;
+    }
+
+    .edu-contact span:nth-child(2){
+        display:none;
+    }
+
+    .edu-login{
+        flex-direction:column;
+    }
+
+    .edu-login-card{
+        width:100%;
+        max-width:350px;
+    }
+
+    .edu-nav-inner{
+        width:100%;
+        overflow-x:auto;
+    }
+
+    .edu-nav-link{
+        padding:0 12px;
+        font-size:12px;
+    }
+
+    .edu-hero{
+        min-height:auto;
+        padding:40px 22px;
+    }
+
+    .edu-hero h1{
+        font-size:36px;
+    }
+
+    .edu-hero p{
+        font-size:15px;
+    }
+
+    .edu-program-grid{
+        grid-template-columns:1fr;
+    }
+
+    .edu-model-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .edu-support-list{
+        grid-template-columns:1fr;
+    }
+
+    .edu-footer-inner{
+        grid-template-columns:1fr;
+    }
+}
+
+
+@media(max-width:430px){
+
+    .edu-brand-logo{
+        width:95px;
+        height:95px;
+    }
+
+    .edu-brand-text h1{
+        font-size:27px;
+    }
+
+    .edu-hero h1{
+        font-size:30px;
+    }
+
+    .edu-model-grid{
+        grid-template-columns:1fr;
+    }
+
+    .edu-intro-main,
+    .edu-support-card{
+        padding:22px 18px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body class="education-page">
+
+
+<!-- =====================================================
+     TOP BAR
+===================================================== -->
+
+<div class="edu-topbar">
+
+    <div class="edu-topbar-inner">
+
+        <div class="edu-contact">
+
+            <span>
+                <i class="fa-solid fa-envelope"></i>
+                info.yssfoundation@gmail.com
+            </span>
+
+            <span>
+                <i class="fa-solid fa-location-dot"></i>
+                ग्राम नैपुरा, पोस्ट कौड़ाही, जिला अम्बेडकर नगर, उत्तर प्रदेश – 224129
+            </span>
+
+        </div>
+
+
+        <div class="edu-social">
+
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="#"><i class="fab fa-whatsapp"></i></a>
+
+            <span>
+                <i class="fa-solid fa-phone"></i>
+                9651731313
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="edu-header">
+
+    <div class="edu-header-inner">
+
+        <a href="index.html" class="edu-brand">
+
+            <img src="images/logo.png"
+                 alt="युवा सेवा संकल्प फाउंडेशन"
+                 class="edu-brand-logo">
+
+            <div class="edu-brand-text">
+
+                <h1>
+                    युवा सेवा संकल्प
+                    <span>फाउंडेशन</span>
+                </h1>
+
+                <p>युवा शक्ति - राष्ट्र शक्ति</p>
+
+            </div>
+
+        </a>
+
+
+        <div class="edu-login">
+
+            <a href="member-login.html"
+               class="edu-login-card edu-member">
+
+                <div class="edu-login-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="edu-login-text">
+                    <strong>सदस्य Login</strong>
+                    <small>अपने खाते में लॉगिन करें</small>
+                </div>
+
+            </a>
+
+
+            <a href="volunteer-login.html"
+               class="edu-login-card edu-volunteer">
+
+                <div class="edu-login-icon">
+                    <i class="fa-solid fa-handshake"></i>
+                </div>
+
+                <div class="edu-login-text">
+                    <strong>Volunteer Login</strong>
+                    <small>सेवा करने के लिए जुड़ें</small>
+                </div>
+
+            </a>
+
+
+            <a href="admin-login.html"
+               class="edu-login-card edu-admin">
+
+                <div class="edu-login-icon">
+                    <i class="fa-solid fa-user-shield"></i>
+                </div>
+
+                <div class="edu-login-text">
+                    <strong>Admin Login</strong>
+                    <small>Admin Panel</small>
+                </div>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="edu-nav">
+
+    <div class="edu-nav-inner">
+
+        <a href="index.html" class="edu-nav-link">
+            <i class="fa-solid fa-house"></i>
+            होम
+        </a>
+
+
+        <div class="edu-dropdown">
+
+            <a href="about.html" class="edu-nav-link">
+                संस्था के बारे में
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+
+            <div class="edu-dropdown-menu">
+                <a href="about.html">हमारे बारे में</a>
+                <a href="mission.html">हमारा मिशन</a>
+                <a href="vision.html">हमारा विजन</a>
+                <a href="team.html">हमारी टीम</a>
+            </div>
+
+        </div>
+
+
+        <div class="edu-dropdown">
+
+            <a href="our-work.html"
+               class="edu-nav-link active">
+
+                हमारे कार्य
+                <i class="fa-solid fa-chevron-down"></i>
+            </a>
+
+            <div class="edu-dropdown-menu">
+                <a href="education.html">शिक्षा</a>
+                <a href="health.html">स्वास्थ्य</a>
+                <a href="environment.html">पर्यावरण</a>
+                <a href="women.html">महिला सशक्तिकरण</a>
+                <a href="youth.html">युवा विकास</a>
+                <a href="social-service.html">समाज सेवा</a>
+            </div>
+
+        </div>
+
+
+        <a href="volunteer.html" class="edu-nav-link">
+            वॉलंटियर
+        </a>
+
+        <a href="membership.html" class="edu-nav-link">
+            सदस्यता
+        </a>
+
+        <a href="news.html" class="edu-nav-link">
+            समाचार
+        </a>
+
+        <a href="events.html" class="edu-nav-link">
+            आगामी कार्यक्रम
+        </a>
+
+        <a href="gallery.html" class="edu-nav-link">
+            गैलरी
+        </a>
+
+        <a href="contact.html" class="edu-nav-link">
+            संपर्क करें
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     BREADCRUMB
+===================================================== -->
+
+<div class="edu-breadcrumb">
+
+    <div class="edu-breadcrumb-inner">
+
+        <a href="index.html">होम</a>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <a href="our-work.html">हमारे कार्य</a>
+
+        <i class="fa-solid fa-angle-right"></i>
+
+        <strong>शिक्षा</strong>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="edu-hero">
+
+    <div class="edu-hero-content">
+
+        <div class="edu-hero-badge">
+            <i class="fa-solid fa-graduation-cap"></i>
+            शिक्षा अभियान
+        </div>
+
+        <h1>शिक्षा से सशक्त भविष्य</h1>
+
+        <div class="edu-hero-line"></div>
+
+        <p>
+            हमारा विश्वास है कि शिक्षा केवल ज्ञान प्राप्त करने का माध्यम नहीं,
+            बल्कि व्यक्ति, परिवार, समाज और राष्ट्र के उज्ज्वल भविष्य की
+            सबसे मजबूत नींव है।
+        </p>
+
+        <div class="edu-hero-buttons">
+
+            <a href="membership.html"
+               class="edu-hero-btn edu-btn-orange">
+
+                <i class="fa-solid fa-user-plus"></i>
+                अभियान से जुड़ें
+
+            </a>
+
+            <a href="contact.html"
+               class="edu-hero-btn edu-btn-white">
+
+                <i class="fa-solid fa-book-open"></i>
+                शिक्षा सहायता
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     INTRODUCTION
+===================================================== -->
+
+<section class="edu-intro">
+
+    <div class="edu-intro-main">
+
+        <h2>हमारा शिक्षा अभियान</h2>
+
+        <p>
+            युवा सेवा संकल्प फाउंडेशन का प्रयास है कि समाज के बच्चों,
+            युवाओं और जरूरतमंद विद्यार्थियों तक शिक्षा के अवसर,
+            मार्गदर्शन और आवश्यक सहयोग पहुँचाने में सकारात्मक भूमिका निभाई जाए।
+        </p>
+
+        <p>
+            हम मानते हैं कि आर्थिक या सामाजिक परिस्थितियाँ किसी भी बच्चे
+            और युवा के सपनों के रास्ते में बाधा नहीं बननी चाहिए।
+            इसलिए शिक्षा जागरूकता, छात्र मार्गदर्शन, अध्ययन सामग्री,
+            डिजिटल शिक्षा और कौशल विकास जैसे क्षेत्रों में सहयोग की
+            दिशा में कार्य करना हमारा उद्देश्य है।
+        </p>
+
+        <p>
+            हमारा लक्ष्य केवल पढ़ाई तक सीमित नहीं है, बल्कि विद्यार्थियों को
+            ज्ञान, कौशल, आत्मविश्वास और सही दिशा देकर उन्हें एक
+            जिम्मेदार एवं आत्मनिर्भर नागरिक बनने के लिए प्रेरित करना है।
+        </p>
+
+    </div>
+
+
+    <div class="edu-education-message">
+
+        <div class="edu-message-icon">
+            <i class="fa-solid fa-lightbulb"></i>
+        </div>
+
+        <h3>हमारा विश्वास</h3>
+
+        <p>
+            “एक शिक्षित बच्चा केवल अपना भविष्य नहीं बदलता,
+            वह पूरे परिवार और समाज के भविष्य को नई दिशा देता है।”
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROGRAMS
+===================================================== -->
+
+<section class="edu-programs">
+
+    <div class="edu-section-title">
+
+        <h2>हमारे शिक्षा कार्यक्रम</h2>
+
+        <p>
+            शिक्षा को अधिक सुलभ, उपयोगी और भविष्य उन्मुख बनाने की दिशा में
+            हमारे प्रमुख कार्य क्षेत्र।
+        </p>
+
+    </div>
+
+
+    <div class="edu-program-grid">
+
+
+        <div class="edu-program-card">
+
+            <div class="edu-program-icon">
+                <i class="fa-solid fa-child-reaching"></i>
+            </div>
+
+            <h3>बाल शिक्षा</h3>
+
+            <p>
+                बच्चों को शिक्षा के प्रति प्रेरित करना और
+                सीखने के लिए सकारात्मक वातावरण बनाने में सहयोग।
+            </p>
+
+            <ul>
+                <li>शिक्षा जागरूकता</li>
+                <li>विद्यालय जाने के लिए प्रेरणा</li>
+                <li>बुनियादी शिक्षा सहयोग</li>
+            </ul>
+
+        </div>
+
+
+        <div class="edu-program-card">
+
+            <div class="edu-program-icon">
+                <i class="fa-solid fa-user-graduate"></i>
+            </div>
+
+            <h3>छात्र सहायता</h3>
+
+            <p>
+                जरूरतमंद विद्यार्थियों को उपलब्ध संसाधनों के अनुसार
+                शिक्षा से जुड़ी सहायता और मार्गदर्शन प्रदान करने का प्रयास।
+            </p>
+
+            <ul>
+                <li>अध्ययन सामग्री सहायता</li>
+                <li>छात्र मार्गदर्शन</li>
+                <li>शैक्षणिक जानकारी</li>
+            </ul>
+
+        </div>
+
+
+        <div class="edu-program-card">
+
+            <div class="edu-program-icon">
+                <i class="fa-solid fa-laptop"></i>
+            </div>
+
+            <h3>डिजिटल शिक्षा</h3>
+
+            <p>
+                आधुनिक तकनीक और डिजिटल माध्यमों के प्रति
+                विद्यार्थियों को जागरूक और सक्षम बनाने की पहल।
+            </p>
+
+            <ul>
+                <li>कंप्यूटर जागरूकता</li>
+                <li>डिजिटल लर्निंग</li>
+                <li>ऑनलाइन संसाधन जानकारी</li>
+            </ul>
+
+        </div>
+
+
+        <div class="edu-program-card">
+
+            <div class="edu-program-icon">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+
+            <h3>कौशल विकास</h3>
+
+            <p>
+                युवाओं को उपयोगी कौशल और रोजगारोन्मुख जानकारी से जोड़कर
+                आत्मनिर्भरता की दिशा में प्रेरित करना।
+            </p>
+
+            <ul>
+                <li>व्यावहारिक कौशल</li>
+                <li>कैरियर उन्मुख जानकारी</li>
+                <li>स्वरोजगार जागरूकता</li>
+            </ul>
+
+        </div>
+
+
+        <div class="edu-program-card">
+
+            <div class="edu-program-icon">
+                <i class="fa-solid fa-book"></i>
+            </div>
+
+            <h3>पुस्तक एवं अध्ययन सामग्री</h3>
+
+            <p>
+                शिक्षा के लिए आवश्यक पुस्तकों और अध्ययन सामग्री के
+                महत्व के प्रति समाज को जागरूक करना।
+            </p>
+
+            <ul>
+                <li>पुस्तक सहयोग अभियान</li>
+                <li>अध्ययन सामग्री जागरूकता</li>
+                <li>ज्ञान साझा करने की पहल</li>
+            </ul>
+
+        </div>
+
+
+        <div class="edu-program-card">
+
+            <div class="edu-program-icon">
+                <i class="fa-solid fa-compass"></i>
+            </div>
+
+            <h3>करियर मार्गदर्शन</h3>
+
+            <p>
+                विद्यार्थियों और युवाओं को उनके भविष्य के लिए
+                सही दिशा, जानकारी और प्रेरणा प्रदान करने का प्रयास।
+            </p>
+
+            <ul>
+                <li>करियर जागरूकता</li>
+                <li>लक्ष्य निर्धारण</li>
+                <li>प्रतिभा विकास</li>
+            </ul>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EDUCATION MODEL
+===================================================== -->
+
+<section class="edu-model">
+
+    <div class="edu-model-box">
+
+        <div class="edu-model-title">
+
+            <h2>हमारा शिक्षा मॉडल</h2>
+
+            <p>
+                एक विद्यार्थी के विकास को समझने से लेकर उसे
+                आत्मनिर्भर बनने की दिशा तक जोड़ने का प्रयास।
+            </p>
+
+        </div>
+
+
+        <div class="edu-model-grid">
+
+            <div class="edu-model-step">
+
+                <div class="edu-model-number">01</div>
+
+                <h3>पहचान</h3>
+
+                <p>शिक्षा से जुड़ी जरूरतों को समझना।</p>
+
+            </div>
+
+
+            <div class="edu-model-step">
+
+                <div class="edu-model-number">02</div>
+
+                <h3>सहायता</h3>
+
+                <p>उपलब्ध संसाधनों से सहयोग का प्रयास।</p>
+
+            </div>
+
+
+            <div class="edu-model-step">
+
+                <div class="edu-model-number">03</div>
+
+                <h3>शिक्षा</h3>
+
+                <p>सीखने और आगे बढ़ने के लिए प्रेरित करना।</p>
+
+            </div>
+
+
+            <div class="edu-model-step">
+
+                <div class="edu-model-number">04</div>
+
+                <h3>कौशल</h3>
+
+                <p>भविष्य उपयोगी कौशल से जोड़ना।</p>
+
+            </div>
+
+
+            <div class="edu-model-step">
+
+                <div class="edu-model-number">05</div>
+
+                <h3>आत्मनिर्भरता</h3>
+
+                <p>सशक्त और आत्मविश्वासी भविष्य की दिशा।</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     STUDENT SUPPORT
+===================================================== -->
+
+<section class="edu-support">
+
+    <div class="edu-support-grid">
+
+        <div class="edu-support-card">
+
+            <h2>विद्यार्थियों के लिए सहयोग क्षेत्र</h2>
+
+            <div class="edu-support-list">
+
+                <div class="edu-support-item">
+                    <i class="fa-solid fa-book-open"></i>
+                    शिक्षा संबंधी जानकारी
+                </div>
+
+                <div class="edu-support-item">
+                    <i class="fa-solid fa-compass"></i>
+                    करियर मार्गदर्शन
+                </div>
+
+                <div class="edu-support-item">
+                    <i class="fa-solid fa-laptop"></i>
+                    डिजिटल जागरूकता
+                </div>
+
+                <div class="edu-support-item">
+                    <i class="fa-solid fa-award"></i>
+                    प्रतिभा प्रोत्साहन
+                </div>
+
+                <div class="edu-support-item">
+                    <i class="fa-solid fa-users"></i>
+                    समूह अध्ययन प्रेरणा
+                </div>
+
+                <div class="edu-support-item">
+                    <i class="fa-solid fa-screwdriver-wrench"></i>
+                    कौशल विकास जानकारी
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="edu-quote-card">
+
+            <i class="fa-solid fa-quote-left"></i>
+
+            <h3>एक बच्चे की शिक्षा, एक बेहतर भविष्य</h3>
+
+            <p>
+                आइए मिलकर ऐसा समाज बनाने का संकल्प लें जहाँ
+                हर बच्चे को सीखने, आगे बढ़ने और अपने सपनों को
+                साकार करने का अवसर मिले।
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     JOIN CTA
+===================================================== -->
+
+<section class="edu-join">
+
+    <div class="edu-join-box">
+
+        <h2>शिक्षा अभियान से जुड़ें</h2>
+
+        <p>
+            आपका समय, ज्ञान, मार्गदर्शन और सहयोग किसी विद्यार्थी के
+            जीवन में नई उम्मीद जगा सकता है। आइए मिलकर शिक्षा को
+            समाज परिवर्तन की सबसे मजबूत शक्ति बनाएं।
+        </p>
+
+        <div class="edu-join-buttons">
+
+            <a href="membership.html"
+               class="edu-join-btn edu-join-blue">
+
+                <i class="fa-solid fa-user-plus"></i>
+                सदस्य बनें
+
+            </a>
+
+
+            <a href="volunteer.html"
+               class="edu-join-btn edu-join-orange">
+
+                <i class="fa-solid fa-handshake"></i>
+                Volunteer बनें
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="edu-footer">
+
+    <div class="edu-footer-inner">
+
+        <div>
+
+            <img src="images/logo.png"
+                 alt="YSS Foundation"
+                 class="edu-footer-logo">
+
+            <h3>युवा सेवा संकल्प फाउंडेशन</h3>
+
+            <p>
+                सेवा, समर्पण और संस्कार के साथ समाज एवं राष्ट्र निर्माण
+                की दिशा में सकारात्मक प्रयास।
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h4>महत्वपूर्ण लिंक</h4>
+
+            <a href="index.html">होम</a>
+            <a href="about.html">हमारे बारे में</a>
+            <a href="mission.html">हमारा मिशन</a>
+            <a href="vision.html">हमारा विजन</a>
+            <a href="membership.html">सदस्यता</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>हमारे कार्य</h4>
+
+            <a href="education.html">शिक्षा</a>
+            <a href="health.html">स्वास्थ्य</a>
+            <a href="environment.html">पर्यावरण</a>
+            <a href="women.html">महिला सशक्तिकरण</a>
+            <a href="youth.html">युवा विकास</a>
+
+        </div>
+
+
+        <div>
+
+            <h4>संपर्क करें</h4>
+
+            <p>
+                <i class="fa-solid fa-location-dot"></i>
+                ग्राम नैपुरा, पोस्ट कौड़ाही,
+                जिला अम्बेडकर नगर,
+                उत्तर प्रदेश – 224129
+            </p>
+
+            <p>
+                <i class="fa-solid fa-phone"></i>
+                9651731313
+            </p>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                info.yssfoundation@gmail.com
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="edu-footer-bottom">
+
+        © 2026 युवा सेवा संकल्प फाउंडेशन |
+        सर्वाधिकार सुरक्षित |
+        <strong>युवा शक्ति - राष्ट्र शक्ति</strong>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
