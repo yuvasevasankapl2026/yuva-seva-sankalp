@@ -1,47 +1,40 @@
 <!DOCTYPE html>
 <html lang="hi">
-
 <head>
 
 <meta charset="UTF-8">
-
-<meta name="viewport"
-      content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
-      content="युवा सेवा संकल्प फाउंडेशन सदस्यता पंजीकरण">
+content="युवा सेवा संकल्प फाउंडेशन सदस्यता पंजीकरण">
 
 <title>
-सदस्यता | युवा सेवा संकल्प फाउंडेशन
+सदस्य बनें | युवा सेवा संकल्प फाउंडेशन
 </title>
 
-<link rel="preconnect"
-      href="https://fonts.googleapis.com">
-
-<link rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet">
+rel="stylesheet">
 
 <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<link rel="stylesheet"
-      href="style.css">
+<link rel="stylesheet" href="style.css">
 
 
 <style>
 
 /* =========================================================
-   MEMBERSHIP PAGE - YSS
+   YSS MEMBERSHIP PAGE
 ========================================================= */
 
 .membership-page{
-    font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+    margin:0;
     background:#f5f8fb;
     color:#263746;
+    font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
 }
 
 .membership-page *,
@@ -82,11 +75,11 @@
 }
 
 .ms-top-left span{
-    font-size:12px;
-
     display:flex;
     align-items:center;
     gap:7px;
+
+    font-size:12px;
 }
 
 .ms-top-left i{
@@ -96,7 +89,7 @@
 .ms-top-right{
     display:flex;
     align-items:center;
-    gap:15px;
+    gap:14px;
 }
 
 .ms-top-right a{
@@ -136,6 +129,7 @@
     display:flex;
     align-items:center;
     justify-content:space-between;
+
     gap:25px;
 }
 
@@ -179,7 +173,7 @@
 
 
 /* =========================================================
-   HEADER ACTION
+   HEADER ACTIONS
 ========================================================= */
 
 .ms-actions{
@@ -190,18 +184,17 @@
 .ms-action{
     min-width:145px;
 
-    padding:11px 13px;
-
-    border-radius:11px;
+    padding:10px 12px;
 
     border:1px solid #dce5ec;
 
-    display:flex;
-    align-items:center;
-
-    gap:9px;
+    border-radius:11px;
 
     background:#fff;
+
+    display:flex;
+    align-items:center;
+    gap:9px;
 
     color:#123b66;
 
@@ -232,7 +225,6 @@
 
 .ms-action strong{
     display:block;
-
     font-size:12px;
 }
 
@@ -248,7 +240,7 @@
 
 
 /* =========================================================
-   NAV
+   NAVIGATION
 ========================================================= */
 
 .ms-nav{
@@ -313,7 +305,6 @@
 
     display:flex;
     align-items:center;
-
     gap:8px;
 
     color:#6d7c89;
@@ -341,7 +332,7 @@
 
     margin:30px auto 0;
 
-    padding:45px 45px;
+    padding:45px;
 
     position:relative;
     overflow:hidden;
@@ -351,9 +342,9 @@
     background:
     linear-gradient(
         120deg,
-        #123b66 0%,
-        #1d5d96 55%,
-        #24834b 100%
+        #123b66,
+        #1d5d96,
+        #24834b
     );
 
     color:#fff;
@@ -372,10 +363,10 @@
 
     border-radius:50%;
 
-    background:rgba(255,255,255,.06);
-
     right:-130px;
     top:-180px;
+
+    background:rgba(255,255,255,.06);
 }
 
 .ms-hero::after{
@@ -383,15 +374,15 @@
 
     position:absolute;
 
-    width:200px;
-    height:200px;
+    width:210px;
+    height:210px;
 
     border-radius:50%;
 
-    background:rgba(255,121,0,.12);
-
     left:-90px;
-    bottom:-120px;
+    bottom:-130px;
+
+    background:rgba(255,121,0,.13);
 }
 
 .ms-hero-content{
@@ -405,7 +396,7 @@
     align-items:center;
     gap:7px;
 
-    padding:6px 13px;
+    padding:6px 14px;
 
     border:1px solid rgba(255,255,255,.25);
 
@@ -414,7 +405,6 @@
     background:rgba(255,255,255,.08);
 
     font-size:10px;
-
     font-weight:800;
 
     margin-bottom:12px;
@@ -458,13 +448,13 @@
 
 
 /* =========================================================
-   TITLE
+   MEMBERSHIP CATEGORIES
 ========================================================= */
 
 .ms-title{
     text-align:center;
 
-    margin-bottom:23px;
+    margin-bottom:24px;
 }
 
 .ms-title small{
@@ -495,12 +485,7 @@
     font-size:12px;
 }
 
-
-/* =========================================================
-   PLANS
-========================================================= */
-
-.ms-plans{
+.ms-categories{
     display:grid;
 
     grid-template-columns:
@@ -508,11 +493,11 @@
 
     gap:20px;
 
-    margin-bottom:35px;
+    margin-bottom:36px;
 }
 
-.ms-plan{
-    position:relative;
+.ms-category{
+    padding:25px 21px;
 
     background:#fff;
 
@@ -520,7 +505,7 @@
 
     border-radius:18px;
 
-    padding:25px 21px 21px;
+    text-align:center;
 
     box-shadow:
     0 8px 28px rgba(18,59,102,.07);
@@ -528,77 +513,49 @@
     transition:.25s;
 }
 
-.ms-plan:hover{
+.ms-category:hover{
     transform:translateY(-5px);
 
     box-shadow:
     0 16px 38px rgba(18,59,102,.13);
 }
 
-.ms-plan.featured{
-    border:2px solid #ff7900;
-}
+.ms-category-icon{
+    width:64px;
+    height:64px;
 
-.ms-ribbon{
-    position:absolute;
+    margin:0 auto 13px;
 
-    top:-1px;
-    left:50%;
-
-    transform:translateX(-50%);
-
-    background:#ff7900;
-
-    color:#fff;
-
-    padding:5px 18px;
-
-    border-radius:
-    0 0 10px 10px;
-
-    font-size:9px;
-
-    font-weight:800;
-}
-
-.ms-plan-icon{
-    width:62px;
-    height:62px;
-
-    margin:0 auto 12px;
+    border-radius:17px;
 
     display:flex;
 
     align-items:center;
     justify-content:center;
 
-    border-radius:16px;
-
-    font-size:23px;
+    font-size:24px;
 }
 
-.ms-plan:nth-child(1)
-.ms-plan-icon{
+.ms-category:nth-child(1)
+.ms-category-icon{
     background:#eaf2fb;
     color:#123b66;
 }
 
-.ms-plan:nth-child(2)
-.ms-plan-icon{
+.ms-category:nth-child(2)
+.ms-category-icon{
     background:#fff0e5;
     color:#ff7900;
 }
 
-.ms-plan:nth-child(3)
-.ms-plan-icon{
+.ms-category:nth-child(3)
+.ms-category-icon{
     background:#eaf7ed;
     color:#24834b;
 }
 
-.ms-plan h3{
-    margin:0;
-
-    text-align:center;
+.ms-category h3{
+    margin:0 0 7px;
 
     color:#123b66;
 
@@ -607,63 +564,22 @@
     font-weight:800;
 }
 
-.ms-price{
-    margin:7px 0 16px;
+.ms-category p{
+    margin:0;
 
-    text-align:center;
-
-    color:#123b66;
-
-    font-size:30px;
-
-    font-weight:800;
-}
-
-.ms-price small{
-    color:#7b8994;
-
-    font-size:10px;
-
-    font-weight:500;
-}
-
-.ms-plan ul{
-    margin:0 0 18px;
-    padding:0;
-
-    list-style:none;
-}
-
-.ms-plan li{
-    display:flex;
-
-    align-items:flex-start;
-
-    gap:8px;
-
-    padding:7px 0;
-
-    border-bottom:1px dashed #e4e9ee;
-
-    color:#687885;
+    color:#71808d;
 
     font-size:11px;
+
+    line-height:1.7;
 }
 
-.ms-plan li:last-child{
-    border-bottom:0;
-}
+.ms-category button{
+    margin-top:15px;
 
-.ms-plan li i{
-    color:#24834b;
-
-    margin-top:3px;
-}
-
-.ms-plan button{
     width:100%;
 
-    padding:11px;
+    padding:10px;
 
     border:0;
 
@@ -675,18 +591,18 @@
 
     font-family:inherit;
 
-    font-size:12px;
+    font-size:11px;
 
     font-weight:800;
 
     cursor:pointer;
 }
 
-.ms-plan:nth-child(2) button{
+.ms-category:nth-child(2) button{
     background:#ff7900;
 }
 
-.ms-plan:nth-child(3) button{
+.ms-category:nth-child(3) button{
     background:#24834b;
 }
 
@@ -761,60 +677,7 @@
 
 
 /* =========================================================
-   PLAN SELECT
-========================================================= */
-
-.ms-selected-plan{
-    padding:15px;
-
-    margin-bottom:24px;
-
-    background:#f5f9fc;
-
-    border:1px solid #dce6ed;
-
-    border-radius:11px;
-}
-
-.ms-selected-plan label{
-    display:block;
-
-    margin-bottom:6px;
-
-    color:#123b66;
-
-    font-size:12px;
-
-    font-weight:800;
-}
-
-.ms-selected-plan label i{
-    color:#ff7900;
-}
-
-.ms-selected-plan select{
-    width:100%;
-
-    padding:11px;
-
-    border:1px solid #d3dfe7;
-
-    border-radius:8px;
-
-    background:#fff;
-
-    color:#263746;
-
-    font-family:inherit;
-
-    font-size:12px;
-
-    outline:none;
-}
-
-
-/* =========================================================
-   SECTION TITLE
+   SECTION
 ========================================================= */
 
 .ms-section{
@@ -857,7 +720,7 @@
 
 
 /* =========================================================
-   GRID
+   FORM GRID
 ========================================================= */
 
 .ms-grid{
@@ -1081,7 +944,7 @@
 
 
 /* =========================================================
-   SUBMIT
+   BUTTONS
 ========================================================= */
 
 .ms-buttons{
@@ -1278,6 +1141,8 @@
 
     object-fit:contain;
 
+    display:block;
+
     margin-bottom:8px;
 }
 
@@ -1382,7 +1247,7 @@
 
 @media(max-width:900px){
 
-    .ms-plans{
+    .ms-categories{
         grid-template-columns:1fr;
 
         max-width:600px;
@@ -1426,6 +1291,7 @@
 
     .ms-actions{
         flex-direction:column;
+
         align-items:center;
     }
 
@@ -1527,7 +1393,7 @@
     }
 
     .ms-form,
-    .ms-plan{
+    .ms-category{
         box-shadow:none;
     }
 
@@ -1607,7 +1473,7 @@ info.yssfoundation@gmail.com
 
 
 <a href="index.html"
-   class="ms-brand">
+class="ms-brand">
 
 <img
 src="images/logo.png"
@@ -1717,7 +1583,7 @@ Admin Panel
 
 
 <!-- =====================================================
-     NAVIGATION
+     NAV
 ===================================================== -->
 
 <nav class="ms-nav">
@@ -1741,12 +1607,9 @@ Admin Panel
 वॉलंटियर
 </a>
 
-<a
-href="membership.html"
+<a href="membership.html"
 class="active">
-
 सदस्यता
-
 </a>
 
 <a href="news.html">
@@ -1834,80 +1697,54 @@ class="active">
 <main class="ms-main">
 
 
-<!-- PLANS -->
+<!-- =====================================================
+     MEMBERSHIP CATEGORIES
+===================================================== -->
 
 <div class="ms-title">
 
 <small>
-MEMBERSHIP PLANS
+MEMBERSHIP
 </small>
 
 <h2>
-अपनी सदस्यता चुनें
+अपनी सदस्यता श्रेणी चुनें
 </h2>
 
 <p>
-अपनी पसंद की सदस्यता श्रेणी चुनकर पंजीकरण करें।
+अपने उद्देश्य के अनुसार सदस्यता श्रेणी चुनकर पंजीकरण करें।
 </p>
 
 </div>
 
 
-<div class="ms-plans">
+<div class="ms-categories">
 
 
-<!-- 1100 -->
+<!-- GENERAL -->
 
-<div class="ms-plan">
+<div class="ms-category">
 
-<div class="ms-plan-icon">
+<div class="ms-category-icon">
 
 <i class="fa-solid fa-user"></i>
 
 </div>
 
 <h3>
-सामान्य सदस्यता
+सामान्य सदस्य
 </h3>
 
-<div class="ms-price">
-₹1100
-<small>/ सदस्यता</small>
-</div>
-
-<ul>
-
-<li>
-<i class="fa-solid fa-check"></i>
-सदस्य पंजीकरण
-</li>
-
-<li>
-<i class="fa-solid fa-check"></i>
-यूनिक सदस्य ID
-</li>
-
-<li>
-<i class="fa-solid fa-check"></i>
-सदस्यता पहचान पत्र
-</li>
-
-<li>
-<i class="fa-solid fa-check"></i>
-संस्था की गतिविधियों की जानकारी
-</li>
-
-<li>
-<i class="fa-solid fa-check"></i>
-समाज सेवा में सहभागिता
-</li>
-
-</ul>
+<p>
+संस्था से जुड़कर समाज सेवा के
+विभिन्न कार्यों में अपना सहयोग दें।
+</p>
 
 <button
-onclick="selectPlan('सामान्य सदस्यता')">
+onclick="selectCategory('सामान्य सदस्य')">
 
 सदस्य बनें
+
 <i class="fa-solid fa-arrow-right"></i>
 
 </button>
@@ -1915,62 +1752,30 @@ onclick="selectPlan('सामान्य सदस्यता')">
 </div>
 
 
-<!-- 2100 -->
+<!-- ACTIVE -->
 
-<div class="ms-plan featured">
+<div class="ms-category">
 
-<div class="ms-ribbon">
-लोकप्रिय
-</div>
-
-<div class="ms-plan-icon">
+<div class="ms-category-icon">
 
 <i class="fa-solid fa-star"></i>
 
 </div>
 
 <h3>
-सक्रिय सदस्यता
+सक्रिय सदस्य
 </h3>
 
-<div class="ms-price">
-₹2100
-<small>/ सदस्यता</small>
-</div>
-
-<ul>
-
-<li>
-<i class="fa-solid fa-check"></i>
-सदस्य पंजीकरण
-</li>
-
-<li>
-<i class="fa-solid fa-check"></i>
-यूनिक सदस्य ID
-</li>
-
-<li>
-<i class="fa-solid fa-check"></i>
-सदस्यता पहचान पत्र
-</li>
-
-<li>
-<i class="fa-solid fa-check"></i>
-सेवा कार्यक्रमों में सक्रिय भागीदारी
-</li>
-
-<li>
-<i class="fa-solid fa-check"></i>
-विशेष कार्यक्रमों की जानकारी
-</li>
-
-</ul>
+<p>
+संस्था की सेवा गतिविधियों में
+सक्रिय रूप से भाग लेकर योगदान दें।
+</p>
 
 <button
-onclick="selectPlan('सक्रिय सदस्यता')">
+onclick="selectCategory('सक्रिय सदस्य')">
 
 सक्रिय सदस्य बनें
+
 <i class="fa-solid fa-arrow-right"></i>
 
 </button>
@@ -1978,58 +1783,30 @@ onclick="selectPlan('सक्रिय सदस्यता')">
 </div>
 
 
-<!-- 5100 -->
+<!-- SUPPORTER -->
 
-<div class="ms-plan">
+<div class="ms-category">
 
-<div class="ms-plan-icon">
+<div class="ms-category-icon">
 
 <i class="fa-solid fa-handshake"></i>
 
 </div>
 
 <h3>
-सहयोगी सदस्यता
+सहयोगी सदस्य
 </h3>
 
-<div class="ms-price">
-₹5100
-<small>/ सदस्यता</small>
-</div>
-
-<ul>
-
-<li>
-<i class="fa-solid fa-check"></i>
-सदस्य पंजीकरण
-</li>
-
-<li>
-<i class="fa-solid fa-check"></i>
-यूनिक सदस्य ID
-</li>
-
-<li>
-<i class="fa-solid fa-check"></i>
-सदस्यता पहचान पत्र
-</li>
-
-<li>
-<i class="fa-solid fa-check"></i>
-समाज सेवा गतिविधियों में सहयोग
-</li>
-
-<li>
-<i class="fa-solid fa-check"></i>
-संस्था के कार्यों से विशेष जुड़ाव
-</li>
-
-</ul>
+<p>
+समाज सेवा के अभियानों में संस्था
+के साथ सहयोग और सहभागिता करें।
+</p>
 
 <button
-onclick="selectPlan('सहयोगी सदस्यता')">
+onclick="selectCategory('सहयोगी सदस्य')">
 
 सहयोगी सदस्य बनें
+
 <i class="fa-solid fa-arrow-right"></i>
 
 </button>
@@ -2041,11 +1818,11 @@ onclick="selectPlan('सहयोगी सदस्यता')">
 
 
 <!-- =====================================================
-     FORM
+     REGISTRATION FORM
 ===================================================== -->
 
 <div class="ms-form"
-     id="registration">
+id="registration">
 
 
 <div class="ms-form-head">
@@ -2053,11 +1830,11 @@ onclick="selectPlan('सहयोगी सदस्यता')">
 <div>
 
 <h2>
-सदस्यता पंजीकरण
+सदस्यता पंजीकरण फॉर्म
 </h2>
 
 <p>
-नीचे अपनी सही जानकारी भरें
+सही जानकारी भरें। * वाले फील्ड अनिवार्य हैं।
 </p>
 
 </div>
@@ -2077,40 +1854,49 @@ onclick="selectPlan('सहयोगी सदस्यता')">
 <form id="membershipForm">
 
 
-<!-- PLAN -->
+<!-- CATEGORY -->
 
-<div class="ms-selected-plan">
+<div class="ms-section">
 
-<label>
-
-<i class="fa-solid fa-layer-group"></i>
+<i class="fa-solid fa-users"></i>
 
 सदस्यता श्रेणी
-<span class="ms-required">*</span>
 
+</div>
+
+
+<div class="ms-grid">
+
+<div class="ms-field full">
+
+<label>
+सदस्यता का प्रकार
+<span class="ms-required">*</span>
 </label>
 
 <select
-id="plan"
+id="category"
 required>
 
 <option value="">
--- सदस्यता चुनें --
+-- सदस्यता प्रकार चुनें --
 </option>
 
-<option value="सामान्य सदस्यता">
-सामान्य सदस्यता - ₹1100
+<option>
+सामान्य सदस्य
 </option>
 
-<option value="सक्रिय सदस्यता">
-सक्रिय सदस्यता - ₹2100
+<option>
+सक्रिय सदस्य
 </option>
 
-<option value="सहयोगी सदस्यता">
-सहयोगी सदस्यता - ₹5100
+<option>
+सहयोगी सदस्य
 </option>
 
 </select>
+
+</div>
 
 </div>
 
@@ -2371,8 +2157,8 @@ required>
 <span>
 
 कृपया पहचान संबंधी जानकारी सावधानीपूर्वक भरें।
-Aadhaar सहित किसी भी पहचान पत्र की जानकारी
-केवल संस्था की आवश्यक सदस्यता प्रक्रिया के
+Aadhaar Card सहित किसी भी पहचान पत्र की
+जानकारी केवल आवश्यक सदस्यता प्रक्रिया के
 अनुसार ही उपयोग करें।
 
 </span>
@@ -2667,11 +2453,11 @@ class="ms-result">
 <div>
 
 <h4>
-यूनिक सदस्य ID
+सदस्य ID
 </h4>
 
 <p>
-सदस्य पहचान
+विशेष पहचान
 </p>
 
 </div>
@@ -2803,15 +2589,15 @@ class="ms-footer-logo"
 </h4>
 
 <a href="#registration">
-₹1100 सामान्य सदस्यता
+सामान्य सदस्य
 </a>
 
 <a href="#registration">
-₹2100 सक्रिय सदस्यता
+सक्रिय सदस्य
 </a>
 
 <a href="#registration">
-₹5100 सहयोगी सदस्यता
+सहयोगी सदस्य
 </a>
 
 <a href="member-login.html">
@@ -2877,12 +2663,14 @@ class="ms-whatsapp">
 <script>
 
 /* =========================================================
-   SELECT MEMBERSHIP PLAN
+   CATEGORY SELECT
 ========================================================= */
 
-function selectPlan(plan){
+function selectCategory(category){
 
-    document.getElementById("plan").value = plan;
+    document
+    .getElementById("category")
+    .value = category;
 
     document
     .getElementById("registration")
@@ -2898,7 +2686,7 @@ function selectPlan(plan){
 
 
 /* =========================================================
-   MOBILE VALIDATION
+   MOBILE
 ========================================================= */
 
 document
@@ -3074,72 +2862,119 @@ document
 
 
     /* =====================================================
-       DATA
+       MEMBER DATA
     ===================================================== */
 
     const member = {
 
         memberId:memberId,
 
-        plan:
-        document.getElementById("plan").value,
+        category:
+        document
+        .getElementById("category")
+        .value,
 
         name:
-        document.getElementById("name").value.trim(),
+        document
+        .getElementById("name")
+        .value
+        .trim(),
 
         father:
-        document.getElementById("father").value.trim(),
+        document
+        .getElementById("father")
+        .value
+        .trim(),
 
         mobile:mobile,
 
         email:
-        document.getElementById("email").value.trim(),
+        document
+        .getElementById("email")
+        .value
+        .trim(),
 
         dob:
-        document.getElementById("dob").value,
+        document
+        .getElementById("dob")
+        .value,
 
         gender:
-        document.getElementById("gender").value,
+        document
+        .getElementById("gender")
+        .value,
 
         address:
-        document.getElementById("address").value.trim(),
+        document
+        .getElementById("address")
+        .value
+        .trim(),
 
         district:
-        document.getElementById("district").value.trim(),
+        document
+        .getElementById("district")
+        .value
+        .trim(),
 
         state:
-        document.getElementById("state").value.trim(),
+        document
+        .getElementById("state")
+        .value
+        .trim(),
 
         block:
-        document.getElementById("block").value.trim(),
+        document
+        .getElementById("block")
+        .value
+        .trim(),
 
         city:
-        document.getElementById("city").value.trim(),
+        document
+        .getElementById("city")
+        .value
+        .trim(),
 
         pincode:pincode,
 
         idType:
-        document.getElementById("idType").value,
+        document
+        .getElementById("idType")
+        .value,
 
         idNumber:
-        document.getElementById("idNumber").value.trim(),
+        document
+        .getElementById("idNumber")
+        .value
+        .trim(),
 
         occupation:
-        document.getElementById("occupation").value.trim(),
+        document
+        .getElementById("occupation")
+        .value
+        .trim(),
 
         education:
-        document.getElementById("education").value.trim(),
+        document
+        .getElementById("education")
+        .value
+        .trim(),
 
         service:
-        document.getElementById("service").value,
+        document
+        .getElementById("service")
+        .value,
 
         message:
-        document.getElementById("message").value.trim(),
+        document
+        .getElementById("message")
+        .value
+        .trim(),
 
         status:"लंबित",
 
         date:
-        new Date().toLocaleDateString("hi-IN")
+        new Date()
+        .toLocaleDateString("hi-IN")
 
     };
 
@@ -3197,7 +3032,7 @@ document
 
     '<strong>' +
 
-    member.plan +
+    member.category +
 
     '</strong>' +
 
@@ -3248,5 +3083,4 @@ document
 </script>
 
 </body>
-
 </html>
