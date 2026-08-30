@@ -3,65 +3,55 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
-    <meta name="description"
-          content="युवा सेवा संकल्प फाउंडेशन - वॉलंटियर पंजीकरण फॉर्म">
+<meta name="description"
+      content="युवा सेवा संकल्प फाउंडेशन - सदस्यता पंजीकरण">
 
-    <title>
-        वॉलंटियर पंजीकरण | युवा सेवा संकल्प फाउंडेशन
-    </title>
+<title>
+सदस्यता पंजीकरण | युवा सेवा संकल्प फाउंडेशन
+</title>
 
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
 
-    <!-- GOOGLE FONT -->
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet">
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+<link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet">
-
-
-    <!-- FONT AWESOME -->
-
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-
-    <!-- MAIN CSS -->
-
-    <link rel="stylesheet"
-          href="style.css">
+<link rel="stylesheet"
+      href="style.css">
 
 
 <style>
 
 /* =========================================================
-   YUVA SEVA SANKALP FOUNDATION
-   VOLUNTEER REGISTRATION PAGE
+   YSS MEMBERSHIP PAGE
 ========================================================= */
 
-.volunteer-page{
+.membership-page{
     margin:0;
     background:#f5f8fb;
     color:#263746;
     font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
 }
 
-.volunteer-page *,
-.volunteer-page *::before,
-.volunteer-page *::after{
+.membership-page *,
+.membership-page *::before,
+.membership-page *::after{
     box-sizing:border-box;
 }
 
-.volunteer-page a{
+.membership-page a{
     text-decoration:none;
 }
 
@@ -70,12 +60,12 @@
    TOP BAR
 ========================================================= */
 
-.vol-topbar{
+.mem-topbar{
     background:#123b66;
-    color:#ffffff;
+    color:#fff;
 }
 
-.vol-topbar-inner{
+.mem-topbar-inner{
     width:92%;
     max-width:1400px;
     min-height:44px;
@@ -88,40 +78,38 @@
     gap:20px;
 }
 
-.vol-contact{
+.mem-contact{
     display:flex;
     align-items:center;
     gap:22px;
 }
 
-.vol-contact span{
+.mem-contact span{
     display:flex;
     align-items:center;
     gap:7px;
-
     font-size:13px;
 }
 
-.vol-contact i{
+.mem-contact i{
     color:#ffb15c;
 }
 
-.vol-social{
+.mem-social{
     display:flex;
     align-items:center;
     gap:14px;
 }
 
-.vol-social a{
-    color:#ffffff;
-    transition:.2s;
+.mem-social a{
+    color:#fff;
 }
 
-.vol-social a:hover{
+.mem-social a:hover{
     color:#ff7900;
 }
 
-.vol-phone{
+.mem-phone{
     display:flex;
     align-items:center;
     gap:7px;
@@ -135,12 +123,12 @@
    HEADER
 ========================================================= */
 
-.vol-header{
-    background:#ffffff;
+.mem-header{
+    background:#fff;
     border-bottom:1px solid #e3e9ef;
 }
 
-.vol-header-inner{
+.mem-header-inner{
     width:92%;
     max-width:1400px;
     min-height:135px;
@@ -153,19 +141,22 @@
     gap:30px;
 }
 
-.vol-brand{
+.mem-brand{
     display:flex;
     align-items:center;
     gap:18px;
 }
 
-.vol-logo{
+.mem-logo{
     width:115px;
     height:115px;
+
     object-fit:contain;
+
+    display:block;
 }
 
-.vol-brand-text h1{
+.mem-brand-text h1{
     margin:0;
 
     color:#123b66;
@@ -176,11 +167,11 @@
     font-weight:800;
 }
 
-.vol-brand-text h1 span{
+.mem-brand-text h1 span{
     color:#ff7900;
 }
 
-.vol-brand-text p{
+.mem-brand-text p{
     margin:7px 0 0;
 
     color:#24834b;
@@ -191,17 +182,17 @@
 
 
 /* =========================================================
-   HEADER LOGIN
+   LOGIN CARDS
 ========================================================= */
 
-.vol-login{
+.mem-login{
     display:flex;
     align-items:center;
     gap:12px;
 }
 
-.vol-login-card{
-    min-width:165px;
+.mem-login-card{
+    min-width:160px;
     min-height:65px;
 
     padding:10px 13px;
@@ -209,7 +200,7 @@
     border:1px solid #dce4eb;
     border-radius:12px;
 
-    background:#ffffff;
+    background:#fff;
 
     display:flex;
     align-items:center;
@@ -220,12 +211,12 @@
     transition:.25s;
 }
 
-.vol-login-card:hover{
+.mem-login-card:hover{
     transform:translateY(-3px);
     box-shadow:0 10px 25px rgba(18,59,102,.12);
 }
 
-.vol-login-icon{
+.mem-login-icon{
     width:42px;
     height:42px;
 
@@ -235,46 +226,46 @@
     align-items:center;
     justify-content:center;
 
-    font-size:19px;
+    font-size:18px;
 }
 
-.vol-member .vol-login-icon{
+.mem-member .mem-login-icon{
     background:#eaf7ed;
     color:#24834b;
 }
 
-.vol-volunteer{
+.mem-volunteer{
     background:#eaf2fb;
 }
 
-.vol-volunteer .vol-login-icon{
+.mem-volunteer .mem-login-icon{
     background:#123b66;
-    color:#ffffff;
+    color:#fff;
 }
 
-.vol-admin{
+.mem-admin{
     background:#ff7900;
-    color:#ffffff;
+    color:#fff;
     border-color:#ff7900;
 }
 
-.vol-admin .vol-login-icon{
+.mem-admin .mem-login-icon{
     background:rgba(255,255,255,.18);
-    color:#ffffff;
+    color:#fff;
 }
 
-.vol-login-text{
+.mem-login-text{
     display:flex;
     flex-direction:column;
 }
 
-.vol-login-text strong{
-    font-size:14px;
+.mem-login-text strong{
+    font-size:13px;
 }
 
-.vol-login-text small{
+.mem-login-text small{
     margin-top:3px;
-    font-size:10px;
+    font-size:9px;
     opacity:.75;
 }
 
@@ -283,7 +274,7 @@
    NAVIGATION
 ========================================================= */
 
-.vol-nav{
+.mem-nav{
     background:#082e63;
     min-height:56px;
 
@@ -291,7 +282,7 @@
     z-index:999;
 }
 
-.vol-nav-inner{
+.mem-nav-inner{
     width:92%;
     max-width:1400px;
     min-height:56px;
@@ -301,7 +292,7 @@
     align-items:stretch;
 }
 
-.vol-nav-link{
+.mem-nav-link{
     min-height:56px;
 
     padding:0 16px;
@@ -312,7 +303,7 @@
 
     gap:7px;
 
-    color:#ffffff;
+    color:#fff;
 
     font-size:14px;
     font-weight:700;
@@ -322,51 +313,9 @@
     transition:.2s;
 }
 
-.vol-nav-link:hover,
-.vol-nav-link.active{
+.mem-nav-link:hover,
+.mem-nav-link.active{
     background:#ff7900;
-}
-
-.vol-dropdown{
-    position:relative;
-}
-
-.vol-dropdown-menu{
-    display:none;
-
-    position:absolute;
-
-    top:56px;
-    left:0;
-
-    width:220px;
-
-    background:#ffffff;
-
-    border-top:3px solid #ff7900;
-
-    box-shadow:0 12px 30px rgba(0,0,0,.18);
-}
-
-.vol-dropdown:hover .vol-dropdown-menu{
-    display:block;
-}
-
-.vol-dropdown-menu a{
-    display:block;
-
-    padding:12px 15px;
-
-    color:#263746;
-
-    font-size:13px;
-
-    border-bottom:1px solid #edf1f4;
-}
-
-.vol-dropdown-menu a:hover{
-    color:#123b66;
-    background:#f4f7fa;
 }
 
 
@@ -374,12 +323,12 @@
    BREADCRUMB
 ========================================================= */
 
-.vol-breadcrumb{
+.mem-breadcrumb{
     background:#eef3f8;
     border-bottom:1px solid #dfe7ee;
 }
 
-.vol-breadcrumb-inner{
+.mem-breadcrumb-inner{
     width:92%;
     max-width:1400px;
     min-height:46px;
@@ -393,12 +342,12 @@
     color:#69798a;
 }
 
-.vol-breadcrumb a{
+.mem-breadcrumb a{
     color:#123b66;
     font-weight:700;
 }
 
-.vol-breadcrumb i{
+.mem-breadcrumb i{
     color:#ff7900;
     font-size:10px;
 }
@@ -408,13 +357,13 @@
    HERO
 ========================================================= */
 
-.vol-hero{
+.mem-hero{
     width:92%;
     max-width:1400px;
 
     margin:32px auto 0;
 
-    padding:42px 40px;
+    padding:45px 40px;
 
     border-radius:24px;
 
@@ -426,60 +375,61 @@
         #24834b
     );
 
-    color:#ffffff;
+    color:#fff;
 
     position:relative;
     overflow:hidden;
 
-    box-shadow:0 18px 40px rgba(18,59,102,.16);
+    box-shadow:
+    0 18px 40px rgba(18,59,102,.16);
 }
 
-.vol-hero::before{
+.mem-hero::before{
     content:"";
 
     position:absolute;
 
-    width:300px;
-    height:300px;
+    width:330px;
+    height:330px;
 
     border-radius:50%;
 
-    right:-110px;
-    top:-140px;
+    right:-130px;
+    top:-160px;
 
     background:rgba(255,255,255,.08);
 }
 
-.vol-hero::after{
+.mem-hero::after{
     content:"";
 
     position:absolute;
 
-    width:220px;
-    height:220px;
+    width:230px;
+    height:230px;
 
     border-radius:50%;
 
     left:-80px;
-    bottom:-130px;
+    bottom:-140px;
 
     background:rgba(255,121,0,.14);
 }
 
-.vol-hero-content{
+.mem-hero-content{
     position:relative;
     z-index:2;
 }
 
-.vol-hero h1{
+.mem-hero h1{
     margin:0 0 10px;
 
     font-size:42px;
     font-weight:800;
 }
 
-.vol-hero p{
-    max-width:800px;
+.mem-hero p{
+    max-width:850px;
 
     margin:0;
 
@@ -491,62 +441,152 @@
 
 
 /* =========================================================
-   MAIN FORM
+   MAIN
 ========================================================= */
 
-.vol-main{
+.mem-main{
     width:92%;
-    max-width:1150px;
+    max-width:1250px;
 
-    margin:35px auto 60px;
-}
-
-.vol-form-box{
-    background:#ffffff;
-
-    border:1px solid #e0e7ed;
-    border-radius:24px;
-
-    padding:35px;
-
-    box-shadow:0 12px 35px rgba(18,59,102,.07);
-}
-
-.vol-form-heading{
-    margin-bottom:28px;
-}
-
-.vol-form-heading h2{
-    margin:0 0 7px;
-
-    color:#123b66;
-
-    font-size:28px;
-}
-
-.vol-form-heading p{
-    margin:0;
-
-    color:#69798a;
-
-    font-size:14px;
+    margin:38px auto 65px;
 }
 
 
 /* =========================================================
-   FORM SECTION
+   MEMBERSHIP PLANS
 ========================================================= */
 
-.vol-section-title{
-    margin:30px 0 18px;
+.mem-plans-title{
+    text-align:center;
 
-    padding-bottom:10px;
+    margin-bottom:24px;
+}
 
-    border-bottom:2px solid #edf1f4;
+.mem-plans-title small{
+    color:#ff7900;
+
+    font-size:12px;
+
+    font-weight:800;
+
+    letter-spacing:1px;
+}
+
+.mem-plans-title h2{
+    margin:5px 0;
+
+    color:#123b66;
+
+    font-size:29px;
+
+    font-weight:800;
+}
+
+.mem-plans-title p{
+    margin:0;
+
+    color:#69798a;
+
+    font-size:13px;
+}
+
+.mem-plans{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:20px;
+
+    margin-bottom:35px;
+}
+
+.mem-plan{
+    position:relative;
+
+    background:#fff;
+
+    border:1px solid #dfe7ee;
+
+    border-radius:20px;
+
+    padding:28px 23px 23px;
+
+    box-shadow:
+    0 10px 30px rgba(18,59,102,.07);
+
+    transition:.25s;
+}
+
+.mem-plan:hover{
+    transform:translateY(-6px);
+
+    box-shadow:
+    0 18px 40px rgba(18,59,102,.13);
+}
+
+.mem-plan.popular{
+    border:2px solid #ff7900;
+}
+
+.mem-ribbon{
+    position:absolute;
+
+    top:-1px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    padding:6px 22px;
+
+    border-radius:
+    0 0 12px 12px;
+
+    background:#ff7900;
+
+    color:#fff;
+
+    font-size:10px;
+    font-weight:800;
+}
+
+.mem-plan-icon{
+    width:65px;
+    height:65px;
+
+    margin:0 auto 13px;
+
+    border-radius:17px;
 
     display:flex;
     align-items:center;
-    gap:10px;
+    justify-content:center;
+
+    font-size:25px;
+}
+
+.mem-plan:nth-child(1)
+.mem-plan-icon{
+    background:#eaf2fb;
+    color:#123b66;
+}
+
+.mem-plan:nth-child(2)
+.mem-plan-icon{
+    background:#fff0e5;
+    color:#ff7900;
+}
+
+.mem-plan:nth-child(3)
+.mem-plan-icon{
+    background:#eaf7ed;
+    color:#24834b;
+}
+
+.mem-plan h3{
+    margin:0;
+
+    text-align:center;
 
     color:#123b66;
 
@@ -554,13 +594,251 @@
     font-weight:800;
 }
 
-.vol-section-title i{
-    width:40px;
-    height:40px;
+.mem-price{
+    text-align:center;
+
+    margin:9px 0 18px;
+
+    color:#123b66;
+
+    font-size:32px;
+    font-weight:800;
+}
+
+.mem-price span{
+    font-size:12px;
+
+    color:#7b8995;
+
+    font-weight:500;
+}
+
+.mem-plan ul{
+    list-style:none;
+
+    margin:0 0 20px;
+    padding:0;
+}
+
+.mem-plan li{
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:8px;
+
+    padding:8px 0;
+
+    border-bottom:1px dashed #e4eaef;
+
+    color:#657583;
+
+    font-size:12px;
+}
+
+.mem-plan li:last-child{
+    border-bottom:0;
+}
+
+.mem-plan li i{
+    color:#24834b;
+
+    margin-top:3px;
+}
+
+.mem-plan button{
+    width:100%;
+
+    border:0;
+
+    border-radius:9px;
+
+    padding:12px;
+
+    color:#fff;
+
+    background:#123b66;
+
+    font-family:inherit;
+
+    font-size:13px;
+
+    font-weight:800;
+
+    cursor:pointer;
+
+    transition:.2s;
+}
+
+.mem-plan:nth-child(2) button{
+    background:#ff7900;
+}
+
+.mem-plan:nth-child(3) button{
+    background:#24834b;
+}
+
+.mem-plan button:hover{
+    transform:translateY(-2px);
+
+    filter:brightness(.95);
+}
+
+
+/* =========================================================
+   FORM BOX
+========================================================= */
+
+.mem-form-box{
+    background:#fff;
+
+    border:1px solid #e0e7ed;
+
+    border-radius:24px;
+
+    overflow:hidden;
+
+    box-shadow:
+    0 12px 35px rgba(18,59,102,.08);
+}
+
+.mem-form-header{
+    padding:25px 30px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #123b66,
+        #1d5d96
+    );
+
+    color:#fff;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+}
+
+.mem-form-header h2{
+    margin:0 0 4px;
+
+    font-size:25px;
+}
+
+.mem-form-header p{
+    margin:0;
+
+    color:#dce9f4;
+
+    font-size:12px;
+}
+
+.mem-form-header-icon{
+    width:55px;
+    height:55px;
+
+    border-radius:15px;
+
+    background:rgba(255,255,255,.12);
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    font-size:24px;
+}
+
+.mem-form-body{
+    padding:30px;
+}
+
+
+/* =========================================================
+   SELECTED PLAN
+========================================================= */
+
+.mem-selected{
+    padding:17px;
+
+    background:#f5f9fc;
+
+    border:1px solid #dce7ef;
+
+    border-radius:12px;
+
+    margin-bottom:27px;
+}
+
+.mem-selected label{
+    display:block;
+
+    margin-bottom:7px;
+
+    color:#123b66;
+
+    font-size:13px;
+    font-weight:800;
+}
+
+.mem-selected label i{
+    color:#ff7900;
+}
+
+.mem-selected select{
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #d5e0e8;
+
+    border-radius:9px;
+
+    background:#fff;
+
+    color:#263746;
+
+    font-family:inherit;
+
+    outline:none;
+
+    font-size:13px;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.mem-section-title{
+    margin:28px 0 18px;
+
+    padding-bottom:10px;
+
+    border-bottom:2px solid #edf1f4;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    color:#123b66;
+
+    font-size:19px;
+
+    font-weight:800;
+}
+
+.mem-section-title i{
+    width:39px;
+    height:39px;
 
     border-radius:10px;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
@@ -569,167 +847,223 @@
     color:#123b66;
 }
 
-.vol-grid{
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.mem-grid{
     display:grid;
 
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:
+    1fr 1fr;
 
     gap:18px;
 }
 
-.vol-form-group{
+.mem-group{
     display:flex;
+
     flex-direction:column;
 }
 
-.vol-full{
+.mem-full{
     grid-column:1 / -1;
 }
 
-.vol-form-group label{
+.mem-group label{
     margin-bottom:7px;
 
     color:#263746;
 
-    font-size:14px;
+    font-size:13px;
+
     font-weight:700;
 }
 
-.vol-required{
+.mem-required{
     color:#e53935;
 }
 
-.vol-form-group input,
-.vol-form-group select,
-.vol-form-group textarea{
+.mem-group input,
+.mem-group select,
+.mem-group textarea{
     width:100%;
 
     padding:13px 14px;
 
     border:1px solid #d9e3eb;
+
     border-radius:9px;
 
     outline:none;
 
-    background:#ffffff;
+    background:#fff;
 
     color:#263746;
 
-    font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+    font-family:inherit;
 
-    font-size:14px;
+    font-size:13px;
 
     transition:.2s;
 }
 
-.vol-form-group textarea{
-    min-height:115px;
+.mem-group textarea{
+    min-height:100px;
+
     resize:vertical;
 }
 
-.vol-form-group input:focus,
-.vol-form-group select:focus,
-.vol-form-group textarea:focus{
+.mem-group input:focus,
+.mem-group select:focus,
+.mem-group textarea:focus{
     border-color:#1d5d96;
 
-    box-shadow:0 0 0 3px rgba(29,93,150,.10);
-}
-
-.vol-help{
-    margin-top:5px;
-
-    color:#8a99a7;
-
-    font-size:11px;
+    box-shadow:
+    0 0 0 3px rgba(29,93,150,.09);
 }
 
 
 /* =========================================================
-   PHOTO
+   AADHAAR / ID NOTE
 ========================================================= */
 
-.vol-photo-box{
-    display:flex;
-    align-items:center;
-    gap:18px;
+.mem-id-note{
+    margin-bottom:17px;
 
-    padding:18px;
+    padding:14px;
+
+    background:#fff8ee;
+
+    border:1px solid #f1dfbd;
+
+    border-radius:11px;
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:10px;
+
+    color:#6f5b32;
+
+    font-size:11px;
+
+    line-height:1.7;
+}
+
+.mem-id-note i{
+    color:#e28a18;
+
+    font-size:18px;
+
+    margin-top:2px;
+}
+
+
+/* =========================================================
+   PHOTO UPLOAD
+========================================================= */
+
+.mem-photo-box{
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:20px;
 
     background:#f7fafc;
 
-    border:1px dashed #b9c9d7;
+    border:1px dashed #bacbd8;
 
     border-radius:15px;
 }
 
-.vol-photo-preview{
-    width:100px;
-    height:100px;
+.mem-photo-preview{
+    width:105px;
+    height:105px;
+
+    flex-shrink:0;
 
     border-radius:50%;
 
-    background:#eaf2fb;
-
     display:flex;
+
     align-items:center;
     justify-content:center;
 
     overflow:hidden;
 
+    background:#eaf2fb;
+
     color:#123b66;
 
     font-size:38px;
 
-    border:3px solid #ffffff;
+    border:3px solid #fff;
 
-    box-shadow:0 4px 15px rgba(18,59,102,.10);
+    box-shadow:
+    0 5px 18px rgba(18,59,102,.12);
 }
 
-.vol-photo-preview img{
+.mem-photo-preview img{
     width:100%;
     height:100%;
 
     object-fit:cover;
 }
 
-.vol-photo-content strong{
+.mem-photo-content strong{
     display:block;
+
+    margin-bottom:5px;
 
     color:#123b66;
 
-    margin-bottom:5px;
+    font-size:14px;
 }
 
-.vol-photo-content p{
-    margin:0 0 10px;
+.mem-photo-content p{
+    margin:0 0 11px;
 
     color:#71808f;
+
+    font-size:11px;
+}
+
+.mem-photo-content input{
+    font-family:inherit;
 
     font-size:12px;
 }
 
 
 /* =========================================================
-   AGREEMENT
+   DECLARATION
 ========================================================= */
 
-.vol-agreement{
-    margin-top:28px;
+.mem-agreement{
+    margin-top:25px;
 
-    padding:18px;
+    padding:17px;
 
     background:#f8fbfd;
 
-    border:1px solid #e0e9ef;
+    border:1px solid #dfe8ef;
 
-    border-radius:12px;
+    border-radius:11px;
 
     display:flex;
+
     align-items:flex-start;
+
     gap:10px;
 }
 
-.vol-agreement input{
+.mem-agreement input{
     width:18px;
     height:18px;
 
@@ -738,42 +1072,46 @@
     accent-color:#24834b;
 }
 
-.vol-agreement label{
+.mem-agreement label{
     color:#526271;
 
-    font-size:13px;
+    font-size:12px;
+
     line-height:1.7;
 }
 
 
 /* =========================================================
-   BUTTON
+   SUBMIT
 ========================================================= */
 
-.vol-submit-row{
+.mem-submit-row{
     margin-top:25px;
 
     display:flex;
+
     align-items:center;
-    gap:15px;
+
+    gap:13px;
 
     flex-wrap:wrap;
 }
 
-.vol-submit{
+.mem-submit{
     border:0;
 
-    padding:14px 28px;
+    padding:14px 30px;
 
     border-radius:9px;
 
-    background:#123b66;
+    background:#ff7900;
 
-    color:#ffffff;
+    color:#fff;
 
-    font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+    font-family:inherit;
 
-    font-size:16px;
+    font-size:15px;
+
     font-weight:800;
 
     cursor:pointer;
@@ -781,26 +1119,29 @@
     transition:.25s;
 }
 
-.vol-submit:hover{
-    background:#ff7900;
+.mem-submit:hover{
+    background:#123b66;
 
     transform:translateY(-2px);
 
-    box-shadow:0 10px 22px rgba(255,121,0,.20);
+    box-shadow:
+    0 10px 25px rgba(18,59,102,.18);
 }
 
-.vol-reset{
+.mem-reset{
     padding:13px 22px;
+
+    border:1px solid #d7e1e8;
 
     border-radius:9px;
 
-    border:1px solid #d9e3eb;
+    background:#fff;
 
-    background:#ffffff;
+    color:#566675;
 
-    color:#526271;
+    font-family:inherit;
 
-    font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+    font-size:13px;
 
     font-weight:700;
 
@@ -809,83 +1150,107 @@
 
 
 /* =========================================================
-   RESULT
+   SUCCESS MESSAGE
 ========================================================= */
 
-.vol-result{
+.mem-result{
     display:none;
 
-    margin-top:25px;
+    margin-top:22px;
 
     padding:18px;
 
     border-radius:12px;
 
-    font-size:15px;
+    font-size:13px;
+
     line-height:1.8;
 }
 
-.vol-result.success{
+.mem-result.success{
     display:block;
 
     background:#edf9f0;
 
-    color:#18723a;
-
     border:1px solid #ccebd4;
+
+    color:#18723a;
 }
 
-.vol-result.error{
+.mem-result.error{
     display:block;
 
     background:#fff0f0;
 
-    color:#c62828;
-
     border:1px solid #f2caca;
+
+    color:#c62828;
 }
 
 
 /* =========================================================
-   INFO BOX
+   TRUST BOXES
 ========================================================= */
 
-.vol-info-box{
+.mem-trust{
+    display:grid;
+
+    grid-template-columns:
+    repeat(3,1fr);
+
+    gap:15px;
+
     margin-top:25px;
+}
 
-    padding:20px;
+.mem-trust-box{
+    padding:15px;
 
-    background:#fff8ee;
+    border:1px solid #e0e8ee;
 
-    border:1px solid #f3dfbd;
+    border-radius:12px;
 
-    border-radius:15px;
+    background:#fff;
 
     display:flex;
-    gap:14px;
+
+    align-items:center;
+
+    gap:11px;
 }
 
-.vol-info-box i{
-    color:#ff7900;
+.mem-trust-icon{
+    width:42px;
+    height:42px;
 
-    font-size:24px;
-}
+    flex-shrink:0;
 
-.vol-info-box strong{
-    display:block;
+    border-radius:10px;
 
-    margin-bottom:5px;
+    background:#eaf2fb;
 
     color:#123b66;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
 }
 
-.vol-info-box p{
+.mem-trust-box h4{
     margin:0;
 
-    color:#6c7782;
+    color:#123b66;
 
-    font-size:13px;
-    line-height:1.7;
+    font-size:12px;
+}
+
+.mem-trust-box p{
+    margin:2px 0 0;
+
+    color:#81909d;
+
+    font-size:9px;
 }
 
 
@@ -893,15 +1258,15 @@
    FOOTER
 ========================================================= */
 
-.vol-footer{
+.mem-footer{
     background:#092e60;
 
-    color:#ffffff;
+    color:#fff;
 
     padding:42px 0 0;
 }
 
-.vol-footer-inner{
+.mem-footer-inner{
     width:92%;
     max-width:1400px;
 
@@ -909,35 +1274,39 @@
 
     display:grid;
 
-    grid-template-columns:1.4fr 1fr 1fr 1.3fr;
+    grid-template-columns:
+    1.4fr 1fr 1fr 1.3fr;
 
     gap:30px;
 }
 
-.vol-footer-logo{
+.mem-footer-logo{
     width:85px;
     height:85px;
 
     object-fit:contain;
 
+    display:block;
+
     margin-bottom:10px;
 }
 
-.vol-footer h3,
-.vol-footer h4{
+.mem-footer h3,
+.mem-footer h4{
     margin:0 0 13px;
 }
 
-.vol-footer p{
+.mem-footer p{
     margin:0 0 9px;
 
     color:#dbe5ef;
 
     font-size:13px;
+
     line-height:1.7;
 }
 
-.vol-footer a{
+.mem-footer a{
     display:block;
 
     margin-bottom:8px;
@@ -947,14 +1316,14 @@
     font-size:13px;
 }
 
-.vol-footer a:hover{
+.mem-footer a:hover{
     color:#ff7900;
 }
 
-.vol-footer-bottom{
+.mem-footer-bottom{
     margin-top:32px;
 
-    padding:16px 15px;
+    padding:16px;
 
     border-top:1px solid rgba(255,255,255,.15);
 
@@ -967,106 +1336,167 @@
 
 
 /* =========================================================
+   WHATSAPP
+========================================================= */
+
+.mem-whatsapp{
+    position:fixed;
+
+    right:20px;
+    bottom:20px;
+
+    width:52px;
+    height:52px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    background:#25d366;
+
+    color:#fff;
+
+    font-size:25px;
+
+    box-shadow:
+    0 8px 22px rgba(0,0,0,.20);
+
+    z-index:9999;
+}
+
+
+/* =========================================================
    RESPONSIVE
 ========================================================= */
 
-@media(max-width:1150px){
+@media(max-width:1100px){
 
-    .vol-header-inner{
+    .mem-header-inner{
         flex-direction:column;
 
         padding:18px 0;
     }
 
-    .vol-login{
-        justify-content:center;
+    .mem-login{
         width:100%;
+
+        justify-content:center;
     }
 
-    .vol-footer-inner{
-        grid-template-columns:1fr 1fr;
+    .mem-footer-inner{
+        grid-template-columns:
+        1fr 1fr;
     }
 
 }
 
 
-@media(max-width:850px){
+@media(max-width:900px){
 
-    .vol-contact span:first-child{
+    .mem-plans{
+        grid-template-columns:1fr;
+
+        max-width:600px;
+
+        margin-left:auto;
+        margin-right:auto;
+
+        margin-bottom:35px;
+    }
+
+}
+
+
+@media(max-width:700px){
+
+    .mem-topbar-inner{
+        justify-content:center;
+
+        flex-wrap:wrap;
+    }
+
+    .mem-contact span:nth-child(2){
         display:none;
     }
 
-    .vol-brand{
+    .mem-social{
+        display:none;
+    }
+
+    .mem-brand{
         flex-direction:column;
+
         text-align:center;
     }
 
-    .vol-brand-text h1{
-        font-size:31px;
+    .mem-brand-text h1{
+        font-size:30px;
     }
 
-}
-
-
-@media(max-width:650px){
-
-    .vol-topbar-inner{
-        justify-content:center;
-    }
-
-    .vol-contact span:nth-child(2){
-        display:none;
-    }
-
-    .vol-login{
-        flex-direction:column;
-    }
-
-    .vol-login-card{
-        width:100%;
-        max-width:360px;
-    }
-
-    .vol-nav-inner{
-        width:100%;
-        overflow-x:auto;
-    }
-
-    .vol-nav-link{
-        padding:0 12px;
-        font-size:12px;
-    }
-
-    .vol-hero{
-        padding:32px 22px;
-    }
-
-    .vol-hero h1{
-        font-size:32px;
-    }
-
-    .vol-hero p{
+    .mem-brand-text p{
         font-size:14px;
     }
 
-    .vol-form-box{
-        padding:22px 16px;
+    .mem-login{
+        flex-direction:column;
     }
 
-    .vol-grid{
+    .mem-login-card{
+        width:100%;
+
+        max-width:350px;
+    }
+
+    .mem-nav-inner{
+        width:100%;
+
+        overflow-x:auto;
+    }
+
+    .mem-nav-link{
+        padding:0 12px;
+
+        font-size:12px;
+    }
+
+    .mem-hero{
+        padding:32px 22px;
+    }
+
+    .mem-hero h1{
+        font-size:31px;
+    }
+
+    .mem-hero p{
+        font-size:14px;
+    }
+
+    .mem-form-body{
+        padding:20px 16px;
+    }
+
+    .mem-grid{
         grid-template-columns:1fr;
     }
 
-    .vol-full{
+    .mem-full{
         grid-column:auto;
     }
 
-    .vol-photo-box{
+    .mem-photo-box{
         flex-direction:column;
+
         text-align:center;
     }
 
-    .vol-footer-inner{
+    .mem-trust{
+        grid-template-columns:1fr;
+    }
+
+    .mem-footer-inner{
         grid-template-columns:1fr;
     }
 
@@ -1075,21 +1505,65 @@
 
 @media(max-width:430px){
 
-    .vol-brand-text h1{
-        font-size:26px;
-    }
-
-    .vol-logo{
+    .mem-logo{
         width:95px;
         height:95px;
     }
 
-    .vol-hero h1{
-        font-size:28px;
+    .mem-brand-text h1{
+        font-size:25px;
     }
 
-    .vol-form-heading h2{
-        font-size:23px;
+    .mem-hero h1{
+        font-size:27px;
+    }
+
+    .mem-form-header{
+        padding:20px;
+    }
+
+    .mem-form-header h2{
+        font-size:20px;
+    }
+
+    .mem-submit{
+        width:100%;
+    }
+
+    .mem-reset{
+        width:100%;
+    }
+
+}
+
+
+/* =========================================================
+   PRINT
+========================================================= */
+
+@media print{
+
+    .mem-topbar,
+    .mem-nav,
+    .mem-login,
+    .mem-whatsapp,
+    .mem-submit-row{
+        display:none !important;
+    }
+
+    .mem-header-inner{
+        min-height:auto;
+    }
+
+    .mem-hero{
+        box-shadow:none;
+
+        margin-top:10px;
+    }
+
+    .mem-form-box,
+    .mem-plan{
+        box-shadow:none;
     }
 
 }
@@ -1099,59 +1573,62 @@
 </head>
 
 
-<body class="volunteer-page">
+<body class="membership-page">
 
 
 <!-- =====================================================
      TOP BAR
 ===================================================== -->
 
-<div class="vol-topbar">
+<div class="mem-topbar">
 
-    <div class="vol-topbar-inner">
+<div class="mem-topbar-inner">
 
-        <div class="vol-contact">
+<div class="mem-contact">
 
-            <span>
-                <i class="fa-solid fa-envelope"></i>
-                info.yssfoundation@gmail.com
-            </span>
+<span>
+<i class="fa-solid fa-envelope"></i>
+info.yssfoundation@gmail.com
+</span>
 
-            <span>
-                <i class="fa-solid fa-location-dot"></i>
-                ग्राम नैपुरा, पोस्ट कौड़ाही,
-                जिला अम्बेडकर नगर, उत्तर प्रदेश – 224129
-            </span>
+<span>
+<i class="fa-solid fa-location-dot"></i>
+ग्राम नैपुरा, पोस्ट कौड़ाही,
+जिला अम्बेडकर नगर, उत्तर प्रदेश – 224129
+</span>
 
-        </div>
+</div>
 
 
-        <div class="vol-social">
+<div class="mem-social">
 
-            <a href="#" aria-label="Facebook">
-                <i class="fab fa-facebook-f"></i>
-            </a>
+<a href="#">
+<i class="fab fa-facebook-f"></i>
+</a>
 
-            <a href="#" aria-label="Instagram">
-                <i class="fab fa-instagram"></i>
-            </a>
+<a href="#">
+<i class="fab fa-instagram"></i>
+</a>
 
-            <a href="#" aria-label="YouTube">
-                <i class="fab fa-youtube"></i>
-            </a>
+<a href="#">
+<i class="fab fa-youtube"></i>
+</a>
 
-            <a href="#" aria-label="WhatsApp">
-                <i class="fab fa-whatsapp"></i>
-            </a>
+<a href="#">
+<i class="fab fa-whatsapp"></i>
+</a>
 
-            <span class="vol-phone">
-                <i class="fa-solid fa-phone"></i>
-                9651731313
-            </span>
+<span class="mem-phone">
 
-        </div>
+<i class="fa-solid fa-phone"></i>
 
-    </div>
+9651731313
+
+</span>
+
+</div>
+
+</div>
 
 </div>
 
@@ -1160,109 +1637,117 @@
      HEADER
 ===================================================== -->
 
-<header class="vol-header">
+<header class="mem-header">
 
-    <div class="vol-header-inner">
-
-
-        <a href="index.html"
-           class="vol-brand">
-
-            <img
-                src="images/logo.png"
-                alt="युवा सेवा संकल्प फाउंडेशन"
-                class="vol-logo"
-            >
+<div class="mem-header-inner">
 
 
-            <div class="vol-brand-text">
-
-                <h1>
-                    युवा सेवा संकल्प
-                    <span>फाउंडेशन</span>
-                </h1>
-
-                <p>
-                    युवा शक्ति - राष्ट्र शक्ति
-                </p>
-
-            </div>
-
-        </a>
+<a href="index.html"
+   class="mem-brand">
 
 
-        <div class="vol-login">
+<img
+src="logo.png"
+alt="युवा सेवा संकल्प फाउंडेशन"
+class="mem-logo"
+>
 
 
-            <a href="member-login.html"
-               class="vol-login-card vol-member">
+<div class="mem-brand-text">
 
-                <div class="vol-login-icon">
-                    <i class="fa-solid fa-user"></i>
-                </div>
+<h1>
 
-                <div class="vol-login-text">
+युवा सेवा संकल्प
+<span>फाउंडेशन</span>
 
-                    <strong>
-                        सदस्य Login
-                    </strong>
+</h1>
 
-                    <small>
-                        अपने खाते में लॉगिन करें
-                    </small>
+<p>
+युवा शक्ति - राष्ट्र शक्ति
+</p>
 
-                </div>
+</div>
 
-            </a>
+</a>
 
 
-            <a href="volunteer-login.html"
-               class="vol-login-card vol-volunteer">
-
-                <div class="vol-login-icon">
-                    <i class="fa-solid fa-handshake"></i>
-                </div>
-
-                <div class="vol-login-text">
-
-                    <strong>
-                        Volunteer Login
-                    </strong>
-
-                    <small>
-                        अपना Volunteer खाता खोलें
-                    </small>
-
-                </div>
-
-            </a>
+<div class="mem-login">
 
 
-            <a href="admin-login.html"
-               class="vol-login-card vol-admin">
+<a href="member-login.html"
+   class="mem-login-card mem-member">
 
-                <div class="vol-login-icon">
-                    <i class="fa-solid fa-user-shield"></i>
-                </div>
+<div class="mem-login-icon">
 
-                <div class="vol-login-text">
+<i class="fa-solid fa-user"></i>
 
-                    <strong>
-                        Admin Login
-                    </strong>
+</div>
 
-                    <small>
-                        Admin Panel
-                    </small>
+<div class="mem-login-text">
 
-                </div>
+<strong>
+सदस्य Login
+</strong>
 
-            </a>
+<small>
+अपने खाते में लॉगिन करें
+</small>
+
+</div>
+
+</a>
 
 
-        </div>
+<a href="volunteer-login.html"
+   class="mem-login-card mem-volunteer">
 
-    </div>
+<div class="mem-login-icon">
+
+<i class="fa-solid fa-handshake"></i>
+
+</div>
+
+<div class="mem-login-text">
+
+<strong>
+Volunteer Login
+</strong>
+
+<small>
+अपना Volunteer खाता खोलें
+</small>
+
+</div>
+
+</a>
+
+
+<a href="admin-login.html"
+   class="mem-login-card mem-admin">
+
+<div class="mem-login-icon">
+
+<i class="fa-solid fa-user-shield"></i>
+
+</div>
+
+<div class="mem-login-text">
+
+<strong>
+Admin Login
+</strong>
+
+<small>
+Admin Panel
+</small>
+
+</div>
+
+</a>
+
+</div>
+
+</div>
 
 </header>
 
@@ -1271,135 +1756,75 @@
      NAVIGATION
 ===================================================== -->
 
-<nav class="vol-nav">
+<nav class="mem-nav">
 
-    <div class="vol-nav-inner">
+<div class="mem-nav-inner">
 
+<a href="index.html"
+   class="mem-nav-link">
 
-        <a href="index.html"
-           class="vol-nav-link">
+<i class="fa-solid fa-house"></i>
+होम
 
-            <i class="fa-solid fa-house"></i>
-            होम
+</a>
 
-        </a>
+<a href="about.html"
+   class="mem-nav-link">
 
+संस्था के बारे में
 
-        <div class="vol-dropdown">
+</a>
 
-            <a href="about.html"
-               class="vol-nav-link">
+<a href="work.html"
+   class="mem-nav-link">
 
-                संस्था के बारे में
+हमारे कार्य
 
-                <i class="fa-solid fa-chevron-down"></i>
+</a>
 
-            </a>
+<a href="volunteer.html"
+   class="mem-nav-link">
 
+वॉलंटियर
 
-            <div class="vol-dropdown-menu">
+</a>
 
-                <a href="about.html">
-                    हमारे बारे में
-                </a>
+<a href="membership.html"
+   class="mem-nav-link active">
 
-                <a href="mission.html">
-                    हमारा मिशन
-                </a>
+सदस्यता
 
-                <a href="vision.html">
-                    हमारा विजन
-                </a>
+</a>
 
-                <a href="team.html">
-                    हमारी टीम
-                </a>
+<a href="news.html"
+   class="mem-nav-link">
 
-            </div>
+समाचार
 
-        </div>
+</a>
 
+<a href="events.html"
+   class="mem-nav-link">
 
-        <div class="vol-dropdown">
+आगामी कार्यक्रम
 
-            <a href="#"
-               class="vol-nav-link">
+</a>
 
-                हमारे कार्य
+<a href="gallery.html"
+   class="mem-nav-link">
 
-                <i class="fa-solid fa-chevron-down"></i>
+गैलरी
 
-            </a>
+</a>
 
+<a href="contact.html"
+   class="mem-nav-link">
 
-            <div class="vol-dropdown-menu">
+संपर्क करें
 
-                <a href="education.html">
-                    शिक्षा
-                </a>
+</a>
 
-                <a href="health.html">
-                    स्वास्थ्य
-                </a>
-
-                <a href="environment.html">
-                    पर्यावरण
-                </a>
-
-                <a href="women.html">
-                    महिला सशक्तिकरण
-                </a>
-
-                <a href="youth.html">
-                    युवा विकास
-                </a>
-
-                <a href="social-service.html">
-                    समाज सेवा
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <a href="volunteer.html"
-           class="vol-nav-link active">
-            वॉलंटियर
-        </a>
-
-
-        <a href="membership.html"
-           class="vol-nav-link">
-            सदस्यता
-        </a>
-
-
-        <a href="news.html"
-           class="vol-nav-link">
-            समाचार
-        </a>
-
-
-        <a href="events.html"
-           class="vol-nav-link">
-            आगामी कार्यक्रम
-        </a>
-
-
-        <a href="gallery.html"
-           class="vol-nav-link">
-            गैलरी
-        </a>
-
-
-        <a href="contact.html"
-           class="vol-nav-link">
-            संपर्क करें
-        </a>
-
-
-    </div>
+</div>
 
 </nav>
 
@@ -1408,21 +1833,21 @@
      BREADCRUMB
 ===================================================== -->
 
-<div class="vol-breadcrumb">
+<div class="mem-breadcrumb">
 
-    <div class="vol-breadcrumb-inner">
+<div class="mem-breadcrumb-inner">
 
-        <a href="index.html">
-            होम
-        </a>
+<a href="index.html">
+होम
+</a>
 
-        <i class="fa-solid fa-angle-right"></i>
+<i class="fa-solid fa-angle-right"></i>
 
-        <strong>
-            वॉलंटियर पंजीकरण
-        </strong>
+<strong>
+सदस्यता
+</strong>
 
-    </div>
+</div>
 
 </div>
 
@@ -1431,591 +1856,943 @@
      HERO
 ===================================================== -->
 
-<section class="vol-hero">
+<section class="mem-hero">
 
-    <div class="vol-hero-content">
+<div class="mem-hero-content">
 
-        <h1>
-            <i class="fa-solid fa-handshake"></i>
-            वॉलंटियर बनें
-        </h1>
+<h1>
 
-        <p>
-            समाज सेवा और राष्ट्र निर्माण में अपना योगदान देने के लिए
-            युवा सेवा संकल्प फाउंडेशन से जुड़ें। आपका समय, प्रतिभा
-            और सेवा भावना किसी के जीवन में सकारात्मक बदलाव ला सकती है।
-        </p>
+<i class="fa-solid fa-users"></i>
 
-    </div>
+सदस्य बनें
+
+</h1>
+
+<p>
+
+युवा सेवा संकल्प फाउंडेशन से जुड़कर
+समाज सेवा, युवा सशक्तिकरण और राष्ट्र निर्माण
+के अभियान को मजबूत करें। आइए, सेवा के संकल्प
+के साथ एक बेहतर समाज के निर्माण में अपना योगदान दें।
+
+</p>
+
+</div>
 
 </section>
 
 
 <!-- =====================================================
-     VOLUNTEER FORM
+     MAIN
 ===================================================== -->
 
-<main class="vol-main">
+<main class="mem-main">
 
-    <div class="vol-form-box">
 
+<!-- =====================================================
+     PLANS
+===================================================== -->
 
-        <div class="vol-form-heading">
+<div class="mem-plans-title">
 
-            <h2>
-                वॉलंटियर पंजीकरण फॉर्म
-            </h2>
+<small>
+MEMBERSHIP
+</small>
 
-            <p>
-                कृपया सभी आवश्यक जानकारी सही-सही भरें।
-                <span class="vol-required">*</span> वाले फील्ड अनिवार्य हैं।
-            </p>
+<h2>
+अपनी सदस्यता श्रेणी चुनें
+</h2>
 
-        </div>
+<p>
+अपनी पसंद की सदस्यता चुनकर नीचे पंजीकरण फॉर्म भरें।
+</p>
 
+</div>
 
-        <form id="volunteerForm">
 
+<div class="mem-plans">
 
-            <!-- PHOTO -->
 
-            <div class="vol-section-title">
+<!-- PLAN 1 -->
 
-                <i class="fa-solid fa-camera"></i>
+<div class="mem-plan">
 
-                फोटो
+<div class="mem-plan-icon">
 
-            </div>
+<i class="fa-solid fa-user"></i>
 
+</div>
 
-            <div class="vol-photo-box">
+<h3>
+सामान्य सदस्यता
+</h3>
 
-                <div class="vol-photo-preview"
-                     id="photoPreview">
+<div class="mem-price">
+₹1100
+<span> / सदस्यता</span>
+</div>
 
-                    <i class="fa-solid fa-user"></i>
+<ul>
 
-                </div>
+<li>
+<i class="fa-solid fa-check"></i>
+सदस्य पंजीकरण
+</li>
 
+<li>
+<i class="fa-solid fa-check"></i>
+यूनिक सदस्य ID
+</li>
 
-                <div class="vol-photo-content">
+<li>
+<i class="fa-solid fa-check"></i>
+सदस्यता पहचान पत्र
+</li>
 
-                    <strong>
-                        अपनी पासपोर्ट साइज फोटो चुनें
-                    </strong>
+<li>
+<i class="fa-solid fa-check"></i>
+संस्था की गतिविधियों की जानकारी
+</li>
 
-                    <p>
-                        JPG, JPEG या PNG फोटो अपलोड करें।
-                    </p>
+<li>
+<i class="fa-solid fa-check"></i>
+समाज सेवा में सहभागिता
+</li>
 
-                    <input
-                        type="file"
-                        id="volunteerPhoto"
-                        accept="image/*"
-                    >
+</ul>
 
-                </div>
+<button
+onclick="choosePlan('सामान्य सदस्यता')">
 
-            </div>
+सामान्य सदस्य बनें
 
+<i class="fa-solid fa-arrow-right"></i>
 
-            <!-- PERSONAL DETAILS -->
+</button>
 
-            <div class="vol-section-title">
+</div>
 
-                <i class="fa-solid fa-user"></i>
 
-                व्यक्तिगत जानकारी
+<!-- PLAN 2 -->
 
-            </div>
+<div class="mem-plan popular">
 
+<div class="mem-ribbon">
+लोकप्रिय सदस्यता
+</div>
 
-            <div class="vol-grid">
+<div class="mem-plan-icon">
 
+<i class="fa-solid fa-star"></i>
 
-                <div class="vol-form-group">
+</div>
 
-                    <label>
-                        पूरा नाम
-                        <span class="vol-required">*</span>
-                    </label>
+<h3>
+सक्रिय सदस्यता
+</h3>
 
-                    <input
-                        type="text"
-                        id="volunteerName"
-                        placeholder="अपना पूरा नाम लिखें"
-                        required
-                    >
+<div class="mem-price">
+₹2100
+<span> / सदस्यता</span>
+</div>
 
-                </div>
+<ul>
 
+<li>
+<i class="fa-solid fa-check"></i>
+सदस्य पंजीकरण
+</li>
 
-                <div class="vol-form-group">
+<li>
+<i class="fa-solid fa-check"></i>
+यूनिक सदस्य ID
+</li>
 
-                    <label>
-                        पिता / पति का नाम
-                    </label>
+<li>
+<i class="fa-solid fa-check"></i>
+सदस्यता पहचान पत्र
+</li>
 
-                    <input
-                        type="text"
-                        id="volunteerFather"
-                        placeholder="पिता / पति का नाम लिखें"
-                    >
+<li>
+<i class="fa-solid fa-check"></i>
+सेवा कार्यक्रमों में सक्रिय भागीदारी
+</li>
 
-                </div>
+<li>
+<i class="fa-solid fa-check"></i>
+विशेष कार्यक्रमों की जानकारी
+</li>
 
+</ul>
 
-                <div class="vol-form-group">
+<button
+onclick="choosePlan('सक्रिय सदस्यता')">
 
-                    <label>
-                        जन्म तिथि
-                        <span class="vol-required">*</span>
-                    </label>
+सक्रिय सदस्य बनें
 
-                    <input
-                        type="date"
-                        id="volunteerDOB"
-                        required
-                    >
+<i class="fa-solid fa-arrow-right"></i>
 
-                </div>
+</button>
 
+</div>
 
-                <div class="vol-form-group">
 
-                    <label>
-                        लिंग
-                        <span class="vol-required">*</span>
-                    </label>
+<!-- PLAN 3 -->
 
-                    <select
-                        id="volunteerGender"
-                        required
-                    >
+<div class="mem-plan">
 
-                        <option value="">
-                            चयन करें
-                        </option>
+<div class="mem-plan-icon">
 
-                        <option value="पुरुष">
-                            पुरुष
-                        </option>
+<i class="fa-solid fa-handshake"></i>
 
-                        <option value="महिला">
-                            महिला
-                        </option>
+</div>
 
-                        <option value="अन्य">
-                            अन्य
-                        </option>
+<h3>
+सहयोगी सदस्यता
+</h3>
 
-                    </select>
+<div class="mem-price">
+₹5100
+<span> / सदस्यता</span>
+</div>
 
-                </div>
+<ul>
 
+<li>
+<i class="fa-solid fa-check"></i>
+सदस्य पंजीकरण
+</li>
 
-                <div class="vol-form-group">
+<li>
+<i class="fa-solid fa-check"></i>
+यूनिक सदस्य ID
+</li>
 
-                    <label>
-                        मोबाइल नंबर
-                        <span class="vol-required">*</span>
-                    </label>
+<li>
+<i class="fa-solid fa-check"></i>
+सदस्यता पहचान पत्र
+</li>
 
-                    <input
-                        type="tel"
-                        id="volunteerMobile"
-                        placeholder="10 अंकों का मोबाइल नंबर"
-                        maxlength="10"
-                        inputmode="numeric"
-                        required
-                    >
+<li>
+<i class="fa-solid fa-check"></i>
+समाज सेवा गतिविधियों में सहयोग
+</li>
 
-                    <span class="vol-help">
-                        उदाहरण: 9651731313
-                    </span>
+<li>
+<i class="fa-solid fa-check"></i>
+संस्था के कार्यों से विशेष जुड़ाव
+</li>
 
-                </div>
+</ul>
 
+<button
+onclick="choosePlan('सहयोगी सदस्यता')">
 
-                <div class="vol-form-group">
+सहयोगी सदस्य बनें
 
-                    <label>
-                        ईमेल
-                    </label>
+<i class="fa-solid fa-arrow-right"></i>
 
-                    <input
-                        type="email"
-                        id="volunteerEmail"
-                        placeholder="अपना ईमेल लिखें"
-                    >
+</button>
 
-                </div>
+</div>
 
-            </div>
 
+</div>
 
-            <!-- ADDRESS -->
 
-            <div class="vol-section-title">
+<!-- =====================================================
+     REGISTRATION FORM
+===================================================== -->
 
-                <i class="fa-solid fa-location-dot"></i>
+<div class="mem-form-box"
+     id="registration">
 
-                पता का विवरण
 
-            </div>
+<div class="mem-form-header">
 
+<div>
 
-            <div class="vol-grid">
+<h2>
+सदस्यता पंजीकरण फॉर्म
+</h2>
 
+<p>
+सही जानकारी भरें। <b>*</b> वाले फील्ड अनिवार्य हैं।
+</p>
 
-                <div class="vol-form-group vol-full">
+</div>
 
-                    <label>
-                        पूरा पता
-                        <span class="vol-required">*</span>
-                    </label>
+<div class="mem-form-header-icon">
 
-                    <textarea
-                        id="volunteerAddress"
-                        placeholder="ग्राम / मोहल्ला, पोस्ट आदि लिखें"
-                        required
-                    ></textarea>
+<i class="fa-solid fa-id-card"></i>
 
-                </div>
+</div>
 
+</div>
 
-                <div class="vol-form-group">
 
-                    <label>
-                        जिला
-                        <span class="vol-required">*</span>
-                    </label>
+<div class="mem-form-body">
 
-                    <input
-                        type="text"
-                        id="volunteerDistrict"
-                        placeholder="जिला लिखें"
-                        required
-                    >
 
-                </div>
+<form id="membershipForm">
 
 
-                <div class="vol-form-group">
+<!-- SELECT PLAN -->
 
-                    <label>
-                        राज्य
-                        <span class="vol-required">*</span>
-                    </label>
+<div class="mem-selected">
 
-                    <input
-                        type="text"
-                        id="volunteerState"
-                        placeholder="राज्य लिखें"
-                        value="उत्तर प्रदेश"
-                        required
-                    >
+<label>
 
-                </div>
+<i class="fa-solid fa-layer-group"></i>
 
+सदस्यता श्रेणी
+<span class="mem-required">*</span>
 
-                <div class="vol-form-group">
+</label>
 
-                    <label>
-                        पिन कोड
-                        <span class="vol-required">*</span>
-                    </label>
+<select
+id="memberPlan"
+required>
 
-                    <input
-                        type="tel"
-                        id="volunteerPincode"
-                        placeholder="6 अंकों का पिन कोड"
-                        maxlength="6"
-                        inputmode="numeric"
-                        required
-                    >
+<option value="">
+-- सदस्यता चुनें --
+</option>
 
-                </div>
+<option value="सामान्य सदस्यता">
+सामान्य सदस्यता - ₹1100
+</option>
 
+<option value="सक्रिय सदस्यता">
+सक्रिय सदस्यता - ₹2100
+</option>
 
-                <div class="vol-form-group">
+<option value="सहयोगी सदस्यता">
+सहयोगी सदस्यता - ₹5100
+</option>
 
-                    <label>
-                        पहचान का प्रकार
-                    </label>
+</select>
 
-                    <select id="volunteerIdType">
+</div>
 
-                        <option value="">
-                            चयन करें
-                        </option>
 
-                        <option value="Aadhaar Card">
-                            Aadhaar Card
-                        </option>
+<!-- PERSONAL -->
 
-                        <option value="Voter ID">
-                            Voter ID
-                        </option>
+<div class="mem-section-title">
 
-                        <option value="Driving Licence">
-                            Driving Licence
-                        </option>
+<i class="fa-solid fa-user"></i>
 
-                        <option value="अन्य">
-                            अन्य
-                        </option>
+व्यक्तिगत जानकारी
 
-                    </select>
+</div>
 
-                </div>
 
-            </div>
+<div class="mem-grid">
 
 
-            <!-- SERVICE DETAILS -->
+<div class="mem-group">
 
-            <div class="vol-section-title">
+<label>
+पूरा नाम
+<span class="mem-required">*</span>
+</label>
 
-                <i class="fa-solid fa-hand-holding-heart"></i>
+<input
+type="text"
+id="fullName"
+placeholder="अपना पूरा नाम लिखें"
+required>
 
-                सेवा से संबंधित जानकारी
+</div>
 
-            </div>
 
+<div class="mem-group">
 
-            <div class="vol-grid">
+<label>
+पिता / पति का नाम
+<span class="mem-required">*</span>
+</label>
 
+<input
+type="text"
+id="fatherName"
+placeholder="पिता / पति का नाम"
+required>
 
-                <div class="vol-form-group">
+</div>
 
-                    <label>
-                        सेवा क्षेत्र
-                        <span class="vol-required">*</span>
-                    </label>
 
-                    <select
-                        id="volunteerService"
-                        required
-                    >
+<div class="mem-group">
 
-                        <option value="">
-                            सेवा क्षेत्र चुनें
-                        </option>
+<label>
+मोबाइल नंबर
+<span class="mem-required">*</span>
+</label>
 
-                        <option value="शिक्षा">
-                            शिक्षा
-                        </option>
+<input
+type="tel"
+id="mobile"
+maxlength="10"
+inputmode="numeric"
+placeholder="10 अंकों का मोबाइल नंबर"
+required>
 
-                        <option value="स्वास्थ्य">
-                            स्वास्थ्य
-                        </option>
+</div>
 
-                        <option value="पर्यावरण">
-                            पर्यावरण
-                        </option>
 
-                        <option value="महिला सशक्तिकरण">
-                            महिला सशक्तिकरण
-                        </option>
+<div class="mem-group">
 
-                        <option value="युवा विकास">
-                            युवा विकास
-                        </option>
+<label>
+ईमेल
+</label>
 
-                        <option value="समाज सेवा">
-                            समाज सेवा
-                        </option>
+<input
+type="email"
+id="email"
+placeholder="example@gmail.com">
 
-                        <option value="अन्य">
-                            अन्य
-                        </option>
+</div>
 
-                    </select>
 
-                </div>
+<div class="mem-group">
 
+<label>
+जन्म तिथि
+<span class="mem-required">*</span>
+</label>
 
-                <div class="vol-form-group">
+<input
+type="date"
+id="dob"
+required>
 
-                    <label>
-                        आप कब सेवा दे सकते हैं?
-                        <span class="vol-required">*</span>
-                    </label>
+</div>
 
-                    <select
-                        id="volunteerAvailability"
-                        required
-                    >
 
-                        <option value="">
-                            समय चुनें
-                        </option>
+<div class="mem-group">
 
-                        <option value="सप्ताहांत">
-                            सप्ताहांत
-                        </option>
+<label>
+लिंग
+<span class="mem-required">*</span>
+</label>
 
-                        <option value="सप्ताह में कुछ दिन">
-                            सप्ताह में कुछ दिन
-                        </option>
+<select
+id="gender"
+required>
 
-                        <option value="कार्यक्रम के समय">
-                            कार्यक्रम के समय
-                        </option>
+<option value="">
+चयन करें
+</option>
 
-                        <option value="आवश्यकतानुसार">
-                            आवश्यकतानुसार
-                        </option>
+<option>
+पुरुष
+</option>
 
-                    </select>
+<option>
+महिला
+</option>
 
-                </div>
+<option>
+अन्य
+</option>
 
+</select>
 
-                <div class="vol-form-group">
+</div>
 
-                    <label>
-                        शिक्षा / योग्यता
-                    </label>
+</div>
 
-                    <input
-                        type="text"
-                        id="volunteerEducation"
-                        placeholder="अपनी शैक्षिक योग्यता लिखें"
-                    >
 
-                </div>
+<!-- ADDRESS -->
 
+<div class="mem-section-title">
 
-                <div class="vol-form-group">
+<i class="fa-solid fa-location-dot"></i>
 
-                    <label>
-                        विशेष कौशल
-                    </label>
+पता का विवरण
 
-                    <input
-                        type="text"
-                        id="volunteerSkills"
-                        placeholder="जैसे: कंप्यूटर, शिक्षण, आयोजन आदि"
-                    >
+</div>
 
-                </div>
 
+<div class="mem-grid">
 
-                <div class="vol-form-group vol-full">
 
-                    <label>
-                        समाज सेवा का अनुभव / संदेश
-                    </label>
+<div class="mem-group mem-full">
 
-                    <textarea
-                        id="volunteerMessage"
-                        placeholder="यदि आपके पास समाज सेवा का कोई अनुभव या संदेश है तो लिखें"
-                    ></textarea>
+<label>
+पूरा पता
+<span class="mem-required">*</span>
+</label>
 
-                </div>
+<textarea
+id="address"
+placeholder="मकान नंबर, ग्राम / मोहल्ला, पोस्ट आदि"
+required></textarea>
 
-            </div>
+</div>
 
 
-            <!-- DECLARATION -->
+<div class="mem-group">
 
-            <div class="vol-section-title">
+<label>
+जिला
+<span class="mem-required">*</span>
+</label>
 
-                <i class="fa-solid fa-file-signature"></i>
+<input
+type="text"
+id="district"
+placeholder="जिला"
+required>
 
-                घोषणा
+</div>
 
-            </div>
 
+<div class="mem-group">
 
-            <div class="vol-agreement">
+<label>
+राज्य
+<span class="mem-required">*</span>
+</label>
 
-                <input
-                    type="checkbox"
-                    id="volunteerAgree"
-                    required
-                >
+<input
+type="text"
+id="state"
+value="उत्तर प्रदेश"
+required>
 
+</div>
 
-                <label for="volunteerAgree">
 
-                    मैं घोषणा करता/करती हूँ कि मेरे द्वारा दी गई जानकारी
-                    मेरी जानकारी के अनुसार सही है। मैं युवा सेवा संकल्प
-                    फाउंडेशन के नियमों का पालन करने और संस्था के
-                    समाज सेवा कार्यों में ईमानदारी एवं जिम्मेदारी से
-                    सहयोग करने के लिए सहमत हूँ।
+<div class="mem-group">
 
-                </label>
+<label>
+ब्लॉक / तहसील
+</label>
 
-            </div>
+<input
+type="text"
+id="block"
+placeholder="ब्लॉक / तहसील">
 
+</div>
 
-            <!-- BUTTON -->
 
-            <div class="vol-submit-row">
+<div class="mem-group">
 
-                <button
-                    type="submit"
-                    class="vol-submit"
-                >
+<label>
+ग्राम / शहर
+<span class="mem-required">*</span>
+</label>
 
-                    <i class="fa-solid fa-user-plus"></i>
+<input
+type="text"
+id="city"
+placeholder="ग्राम / शहर"
+required>
 
-                    वॉलंटियर के रूप में पंजीकरण करें
+</div>
 
-                </button>
 
+<div class="mem-group">
 
-                <button
-                    type="reset"
-                    class="vol-reset"
-                    id="resetButton"
-                >
+<label>
+पिन कोड
+<span class="mem-required">*</span>
+</label>
 
-                    <i class="fa-solid fa-rotate-left"></i>
+<input
+type="tel"
+id="pincode"
+maxlength="6"
+inputmode="numeric"
+placeholder="6 अंकों का पिन कोड"
+required>
 
-                    फॉर्म साफ करें
+</div>
 
-                </button>
+</div>
 
-            </div>
 
+<!-- ID -->
 
-            <!-- RESULT -->
+<div class="mem-section-title">
 
-            <div
-                id="volunteerResult"
-                class="vol-result"
-            ></div>
+<i class="fa-solid fa-address-card"></i>
 
+पहचान संबंधी जानकारी
 
-        </form>
+</div>
 
 
-        <div class="vol-info-box">
+<div class="mem-id-note">
 
-            <i class="fa-solid fa-circle-info"></i>
+<i class="fa-solid fa-shield-halved"></i>
 
-            <div>
+<span>
 
-                <strong>
-                    महत्वपूर्ण सूचना
-                </strong>
+पहचान संबंधी जानकारी सही भरें।
+यदि Aadhaar Card का विकल्प चुना जाता है तो
+केवल आवश्यक जानकारी ही दर्ज करें और संस्था की
+गोपनीयता नीति का पालन करें।
 
-                <p>
-                    पंजीकरण के बाद आपकी Volunteer ID स्वतः बनाई जाएगी।
-                    संस्था द्वारा जानकारी की समीक्षा के बाद आगे की प्रक्रिया
-                    की जा सकती है।
-                </p>
+</span>
 
-            </div>
+</div>
 
-        </div>
 
+<div class="mem-grid">
 
-    </div>
+
+<div class="mem-group">
+
+<label>
+पहचान पत्र का प्रकार
+<span class="mem-required">*</span>
+</label>
+
+<select
+id="idType"
+required>
+
+<option value="">
+-- पहचान पत्र चुनें --
+</option>
+
+<option value="Aadhaar Card">
+Aadhaar Card
+</option>
+
+<option value="Voter ID">
+Voter ID
+</option>
+
+<option value="Driving Licence">
+Driving Licence
+</option>
+
+<option value="PAN Card">
+PAN Card
+</option>
+
+<option value="Other">
+अन्य
+</option>
+
+</select>
+
+</div>
+
+
+<div class="mem-group">
+
+<label>
+पहचान पत्र संख्या
+<span class="mem-required">*</span>
+</label>
+
+<input
+type="text"
+id="idNumber"
+placeholder="पहचान पत्र संख्या"
+required>
+
+</div>
+
+</div>
+
+
+<!-- PHOTO -->
+
+<div class="mem-section-title">
+
+<i class="fa-solid fa-camera"></i>
+
+सदस्य का फोटो
+
+</div>
+
+
+<div class="mem-photo-box">
+
+
+<div
+class="mem-photo-preview"
+id="photoPreview">
+
+<i class="fa-solid fa-user"></i>
+
+</div>
+
+
+<div class="mem-photo-content">
+
+<strong>
+पासपोर्ट साइज फोटो
+</strong>
+
+<p>
+साफ और हाल का JPG / PNG फोटो चुनें।
+</p>
+
+<input
+type="file"
+id="memberPhoto"
+accept="image/jpeg,image/png">
+
+</div>
+
+</div>
+
+
+<!-- EXTRA -->
+
+<div class="mem-section-title">
+
+<i class="fa-solid fa-circle-info"></i>
+
+अतिरिक्त जानकारी
+
+</div>
+
+
+<div class="mem-grid">
+
+
+<div class="mem-group">
+
+<label>
+व्यवसाय / कार्य
+</label>
+
+<input
+type="text"
+id="occupation"
+placeholder="व्यवसाय / कार्य">
+
+</div>
+
+
+<div class="mem-group">
+
+<label>
+शैक्षणिक योग्यता
+</label>
+
+<input
+type="text"
+id="education"
+placeholder="शैक्षणिक योग्यता">
+
+</div>
+
+
+<div class="mem-group mem-full">
+
+<label>
+समाज सेवा में रुचि का क्षेत्र
+<span class="mem-required">*</span>
+</label>
+
+<select
+id="serviceArea"
+required>
+
+<option value="">
+-- सेवा क्षेत्र चुनें --
+</option>
+
+<option>
+शिक्षा
+</option>
+
+<option>
+स्वास्थ्य
+</option>
+
+<option>
+पर्यावरण
+</option>
+
+<option>
+रक्तदान
+</option>
+
+<option>
+महिला सशक्तिकरण
+</option>
+
+<option>
+युवा सशक्तिकरण
+</option>
+
+<option>
+समाज सेवा
+</option>
+
+<option>
+अन्य
+</option>
+
+</select>
+
+</div>
+
+
+<div class="mem-group mem-full">
+
+<label>
+आप संस्था से क्यों जुड़ना चाहते हैं?
+</label>
+
+<textarea
+id="message"
+placeholder="अपना संदेश / उद्देश्य लिखें"></textarea>
+
+</div>
+
+</div>
+
+
+<!-- AGREEMENT -->
+
+<div class="mem-agreement">
+
+<input
+type="checkbox"
+id="agreement"
+required>
+
+<label for="agreement">
+
+मैं घोषणा करता/करती हूँ कि मेरे द्वारा दी गई
+जानकारी मेरी जानकारी के अनुसार सही है।
+मैं युवा सेवा संकल्प फाउंडेशन के नियमों का
+पालन करने तथा समाज सेवा के कार्यों में
+ईमानदारी एवं जिम्मेदारी से सहयोग करने के
+लिए सहमत हूँ।
+
+</label>
+
+</div>
+
+
+<!-- BUTTON -->
+
+<div class="mem-submit-row">
+
+<button
+type="submit"
+class="mem-submit">
+
+<i class="fa-solid fa-user-plus"></i>
+
+सदस्यता आवेदन भेजें
+
+</button>
+
+
+<button
+type="reset"
+class="mem-reset"
+id="resetBtn">
+
+<i class="fa-solid fa-rotate-left"></i>
+
+फॉर्म साफ करें
+
+</button>
+
+</div>
+
+
+<div
+id="result"
+class="mem-result">
+</div>
+
+
+</form>
+
+
+<!-- TRUST -->
+
+<div class="mem-trust">
+
+
+<div class="mem-trust-box">
+
+<div class="mem-trust-icon">
+
+<i class="fa-solid fa-id-card"></i>
+
+</div>
+
+<div>
+
+<h4>
+यूनिक सदस्य ID
+</h4>
+
+<p>
+सदस्य पहचान
+</p>
+
+</div>
+
+</div>
+
+
+<div class="mem-trust-box">
+
+<div class="mem-trust-icon">
+
+<i class="fa-solid fa-users"></i>
+
+</div>
+
+<div>
+
+<h4>
+सेवा सहभागिता
+</h4>
+
+<p>
+समाज सेवा गतिविधियाँ
+</p>
+
+</div>
+
+</div>
+
+
+<div class="mem-trust-box">
+
+<div class="mem-trust-icon">
+
+<i class="fa-solid fa-shield-halved"></i>
+
+</div>
+
+<div>
+
+<h4>
+सुरक्षित जानकारी
+</h4>
+
+<p>
+सदस्य विवरण
+</p>
+
+</div>
+
+</div>
+
+
+</div>
+
+</div>
+
+</div>
 
 </main>
 
@@ -2024,550 +2801,590 @@
      FOOTER
 ===================================================== -->
 
-<footer class="vol-footer">
+<footer class="mem-footer">
 
-    <div class="vol-footer-inner">
-
-
-        <div>
-
-            <img
-                src="images/logo.png"
-                alt="युवा सेवा संकल्प फाउंडेशन"
-                class="vol-footer-logo"
-            >
-
-            <h3>
-                युवा सेवा संकल्प फाउंडेशन
-            </h3>
-
-            <p>
-                सेवा, समर्पण और संस्कार के साथ
-                समाज एवं राष्ट्र निर्माण की दिशा में
-                सकारात्मक प्रयास।
-            </p>
-
-        </div>
+<div class="mem-footer-inner">
 
 
-        <div>
+<div>
 
-            <h4>
-                महत्वपूर्ण लिंक
-            </h4>
+<img
+src="logo.png"
+alt="युवा सेवा संकल्प फाउंडेशन"
+class="mem-footer-logo">
 
-            <a href="index.html">होम</a>
-            <a href="about.html">हमारे बारे में</a>
-            <a href="mission.html">हमारा मिशन</a>
-            <a href="vision.html">हमारा विजन</a>
-            <a href="membership.html">सदस्यता</a>
+<h3>
+युवा सेवा संकल्प फाउंडेशन
+</h3>
 
-        </div>
+<p>
+युवा शक्ति - राष्ट्र शक्ति
+</p>
 
+<p>
+शिक्षा, स्वास्थ्य, पर्यावरण,
+समाज सेवा एवं युवा सशक्तिकरण
+के लिए समर्पित।
+</p>
 
-        <div>
-
-            <h4>
-                हमारे कार्य
-            </h4>
-
-            <a href="education.html">शिक्षा</a>
-            <a href="health.html">स्वास्थ्य</a>
-            <a href="environment.html">पर्यावरण</a>
-            <a href="women.html">महिला सशक्तिकरण</a>
-            <a href="youth.html">युवा विकास</a>
-            <a href="social-service.html">समाज सेवा</a>
-
-        </div>
+</div>
 
 
-        <div>
+<div>
 
-            <h4>
-                संपर्क करें
-            </h4>
+<h4>
+महत्वपूर्ण लिंक
+</h4>
 
-            <p>
-                <i class="fa-solid fa-location-dot"></i>
-                ग्राम नैपुरा, पोस्ट कौड़ाही,
-                जिला अम्बेडकर नगर,
-                उत्तर प्रदेश – 224129
-            </p>
+<a href="index.html">
+होम
+</a>
 
-            <p>
-                <i class="fa-solid fa-phone"></i>
-                9651731313
-            </p>
+<a href="about.html">
+हमारे बारे में
+</a>
 
-            <p>
-                <i class="fa-solid fa-envelope"></i>
-                info.yssfoundation@gmail.com
-            </p>
+<a href="work.html">
+हमारे कार्य
+</a>
 
-        </div>
+<a href="volunteer.html">
+वॉलंटियर
+</a>
+
+<a href="membership.html">
+सदस्यता
+</a>
+
+</div>
 
 
-    </div>
+<div>
+
+<h4>
+सदस्यता
+</h4>
+
+<a href="#registration">
+सामान्य सदस्यता
+</a>
+
+<a href="#registration">
+सक्रिय सदस्यता
+</a>
+
+<a href="#registration">
+सहयोगी सदस्यता
+</a>
+
+<a href="member-login.html">
+सदस्य Login
+</a>
+
+</div>
 
 
-    <div class="vol-footer-bottom">
+<div>
 
-        © 2026 युवा सेवा संकल्प फाउंडेशन |
-        सर्वाधिकार सुरक्षित |
-        <strong>युवा शक्ति - राष्ट्र शक्ति</strong>
+<h4>
+संपर्क करें
+</h4>
 
-    </div>
+<p>
+<i class="fa-solid fa-location-dot"></i>
+ग्राम नैपुरा, पोस्ट कौड़ाही,
+जिला अम्बेडकर नगर,
+उत्तर प्रदेश – 224129
+</p>
+
+<p>
+<i class="fa-solid fa-phone"></i>
+9651731313
+</p>
+
+<p>
+<i class="fa-solid fa-envelope"></i>
+info.yssfoundation@gmail.com
+</p>
+
+</div>
+
+
+</div>
+
+
+<div class="mem-footer-bottom">
+
+© 2026 युवा सेवा संकल्प फाउंडेशन |
+सर्वाधिकार सुरक्षित |
+युवा शक्ति - राष्ट्र शक्ति
+
+</div>
 
 </footer>
 
 
 <!-- =====================================================
-     JAVASCRIPT
+     WHATSAPP
 ===================================================== -->
+
+<a
+href="https://wa.me/919651731313"
+target="_blank"
+class="mem-whatsapp">
+
+<i class="fa-brands fa-whatsapp"></i>
+
+</a>
+
 
 <script>
 
+/* =========================================================
+   PLAN SELECT
+========================================================= */
 
-/* PHOTO PREVIEW */
+function choosePlan(plan){
+
+    document
+    .getElementById("memberPlan")
+    .value = plan;
+
+    document
+    .getElementById("registration")
+    .scrollIntoView({
+
+        behavior:"smooth",
+
+        block:"start"
+
+    });
+
+}
+
+
+/* =========================================================
+   PHOTO PREVIEW
+========================================================= */
 
 document
-.getElementById("volunteerPhoto")
+.getElementById("memberPhoto")
 .addEventListener(
 
-    "change",
+"change",
 
-    function(){
+function(){
 
-        const file = this.files[0];
+    const file = this.files[0];
 
-        const preview =
-
-        document
-        .getElementById("photoPreview");
+    const preview =
+    document.getElementById("photoPreview");
 
 
-        if(file){
+    if(!file){
 
-            const reader = new FileReader();
+        preview.innerHTML =
+        '<i class="fa-solid fa-user"></i>';
 
-
-            reader.onload = function(event){
-
-                preview.innerHTML =
-
-                '<img src="' +
-
-                event.target.result +
-
-                '" alt="Volunteer Photo">';
-
-            };
-
-
-            reader.readAsDataURL(file);
-
-        }
+        return;
 
     }
 
-);
+
+    if(!file.type.startsWith("image/")){
+
+        alert(
+        "कृपया JPG या PNG फोटो चुनें।"
+        );
+
+        this.value="";
+
+        return;
+
+    }
 
 
+    const reader =
+    new FileReader();
 
-/* FORM SUBMIT */
+
+    reader.onload =
+    function(e){
+
+        preview.innerHTML =
+        '<img src="' +
+        e.target.result +
+        '" alt="Member Photo">';
+
+    };
+
+
+    reader.readAsDataURL(file);
+
+});
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
 
 document
-.getElementById("volunteerForm")
+.getElementById("mobile")
 .addEventListener(
 
-    "submit",
+"input",
 
-    function(event){
+function(){
 
+    this.value =
+    this.value
+    .replace(/[^0-9]/g,"")
+    .slice(0,10);
 
-        event.preventDefault();
+});
 
 
-        const name =
+/* =========================================================
+   PINCODE
+========================================================= */
 
-        document
-        .getElementById("volunteerName")
-        .value
-        .trim();
+document
+.getElementById("pincode")
+.addEventListener(
 
+"input",
 
-        const mobile =
+function(){
 
-        document
-        .getElementById("volunteerMobile")
-        .value
-        .trim();
+    this.value =
+    this.value
+    .replace(/[^0-9]/g,"")
+    .slice(0,6);
 
+});
 
-        const pincode =
 
-        document
-        .getElementById("volunteerPincode")
-        .value
-        .trim();
+/* =========================================================
+   FORM SUBMIT
+========================================================= */
 
+document
+.getElementById("membershipForm")
+.addEventListener(
 
-        const result =
+"submit",
 
-        document
-        .getElementById("volunteerResult");
+function(e){
 
+    e.preventDefault();
 
-        /* MOBILE VALIDATION */
 
-        if(
+    const form = this;
 
-            !/^[0-9]{10}$/.test(mobile)
 
-        ){
+    const mobile =
+    document
+    .getElementById("mobile")
+    .value
+    .trim();
 
-            result.className =
 
-            "vol-result error";
+    const pincode =
+    document
+    .getElementById("pincode")
+    .value
+    .trim();
 
 
-            result.innerHTML =
+    const result =
+    document
+    .getElementById("result");
 
-            '<i class="fa-solid fa-circle-xmark"></i> ' +
 
-            'कृपया सही 10 अंकों का मोबाइल नंबर लिखें।';
-
-
-            return;
-
-        }
-
-
-        /* PINCODE VALIDATION */
-
-        if(
-
-            !/^[0-9]{6}$/.test(pincode)
-
-        ){
-
-            result.className =
-
-            "vol-result error";
-
-
-            result.innerHTML =
-
-            '<i class="fa-solid fa-circle-xmark"></i> ' +
-
-            'कृपया सही 6 अंकों का पिन कोड लिखें।';
-
-
-            return;
-
-        }
-
-
-        /* GET LOCAL STORAGE DATA */
-
-        let volunteers =
-
-        JSON.parse(
-
-            localStorage.getItem(
-
-                "yssfVolunteers"
-
-            )
-
-        ) || [];
-
-
-        /* VOLUNTEER ID */
-
-        const year =
-
-        new Date()
-
-        .getFullYear();
-
-
-        const volunteerId =
-
-        "YSSF-VOL-" +
-
-        year +
-
-        "-" +
-
-        String(
-
-            volunteers.length + 1
-
-        ).padStart(
-
-            4,
-
-            "0"
-
-        );
-
-
-        /* CREATE VOLUNTEER DATA */
-
-        const volunteer = {
-
-
-            volunteerId:
-            volunteerId,
-
-
-            name:
-            name,
-
-
-            father:
-
-            document
-            .getElementById("volunteerFather")
-            .value
-            .trim(),
-
-
-            dob:
-
-            document
-            .getElementById("volunteerDOB")
-            .value,
-
-
-            gender:
-
-            document
-            .getElementById("volunteerGender")
-            .value,
-
-
-            mobile:
-            mobile,
-
-
-            email:
-
-            document
-            .getElementById("volunteerEmail")
-            .value
-            .trim(),
-
-
-            address:
-
-            document
-            .getElementById("volunteerAddress")
-            .value
-            .trim(),
-
-
-            district:
-
-            document
-            .getElementById("volunteerDistrict")
-            .value
-            .trim(),
-
-
-            state:
-
-            document
-            .getElementById("volunteerState")
-            .value
-            .trim(),
-
-
-            pincode:
-            pincode,
-
-
-            idType:
-
-            document
-            .getElementById("volunteerIdType")
-            .value,
-
-
-            service:
-
-            document
-            .getElementById("volunteerService")
-            .value,
-
-
-            availability:
-
-            document
-            .getElementById("volunteerAvailability")
-            .value,
-
-
-            education:
-
-            document
-            .getElementById("volunteerEducation")
-            .value
-            .trim(),
-
-
-            skills:
-
-            document
-            .getElementById("volunteerSkills")
-            .value
-            .trim(),
-
-
-            message:
-
-            document
-            .getElementById("volunteerMessage")
-            .value
-            .trim(),
-
-
-            status:
-            "लंबित",
-
-
-            registrationDate:
-
-            new Date()
-
-            .toLocaleDateString(
-
-                "hi-IN"
-
-            )
-
-        };
-
-
-        /* SAVE */
-
-        volunteers.push(
-
-            volunteer
-
-        );
-
-
-        localStorage.setItem(
-
-            "yssfVolunteers",
-
-            JSON.stringify(
-
-                volunteers
-
-            )
-
-        );
-
-
-        /* SUCCESS */
+    if(!/^[0-9]{10}$/.test(mobile)){
 
         result.className =
-
-        "vol-result success";
-
+        "mem-result error";
 
         result.innerHTML =
+        '<i class="fa-solid fa-circle-xmark"></i> ' +
+        'कृपया सही 10 अंकों का मोबाइल नंबर लिखें।';
 
-        '<strong>' +
-
-        '<i class="fa-solid fa-circle-check"></i> ' +
-
-        'पंजीकरण सफल हुआ!</strong>' +
-
-        '<br>' +
-
-        'धन्यवाद <strong>' +
-
-        name +
-
-        '</strong>, आपका वॉलंटियर पंजीकरण सफलतापूर्वक दर्ज हो गया है।' +
-
-        '<br>' +
-
-        'आपकी Volunteer ID: ' +
-
-        '<strong>' +
-
-        volunteerId +
-
-        '</strong>' +
-
-        '<br>' +
-
-        'स्थिति: <strong>लंबित</strong>';
-
-
-        /* RESET FORM */
-
-        document
-        .getElementById("volunteerForm")
-        .reset();
-
-
-        /* RESET PHOTO */
-
-        document
-        .getElementById("photoPreview")
-        .innerHTML =
-
-        '<i class="fa-solid fa-user"></i>';
-
-
-        /* SCROLL RESULT */
-
-        result.scrollIntoView({
-
-            behavior:"smooth",
-
-            block:"center"
-
-        });
-
+        return;
 
     }
 
-);
+
+    if(!/^[0-9]{6}$/.test(pincode)){
+
+        result.className =
+        "mem-result error";
+
+        result.innerHTML =
+        '<i class="fa-solid fa-circle-xmark"></i> ' +
+        'कृपया सही 6 अंकों का पिन कोड लिखें।';
+
+        return;
+
+    }
 
 
-/* RESET RESULT */
+    /* =====================================================
+       MEMBER ID
+    ===================================================== */
+
+    let members =
+
+    JSON.parse(
+
+        localStorage.getItem(
+            "yssfMembers"
+        )
+
+    ) || [];
+
+
+    const year =
+    new Date().getFullYear();
+
+
+    const memberId =
+
+    "YSSF-MEM-" +
+    year +
+    "-" +
+    String(
+
+        members.length + 1
+
+    ).padStart(4,"0");
+
+
+    /* =====================================================
+       MEMBER DATA
+    ===================================================== */
+
+    const member = {
+
+        memberId:memberId,
+
+        plan:
+        document
+        .getElementById("memberPlan")
+        .value,
+
+        name:
+        document
+        .getElementById("fullName")
+        .value
+        .trim(),
+
+        father:
+        document
+        .getElementById("fatherName")
+        .value
+        .trim(),
+
+        mobile:mobile,
+
+        email:
+        document
+        .getElementById("email")
+        .value
+        .trim(),
+
+        dob:
+        document
+        .getElementById("dob")
+        .value,
+
+        gender:
+        document
+        .getElementById("gender")
+        .value,
+
+        address:
+        document
+        .getElementById("address")
+        .value
+        .trim(),
+
+        district:
+        document
+        .getElementById("district")
+        .value
+        .trim(),
+
+        state:
+        document
+        .getElementById("state")
+        .value
+        .trim(),
+
+        block:
+        document
+        .getElementById("block")
+        .value
+        .trim(),
+
+        city:
+        document
+        .getElementById("city")
+        .value
+        .trim(),
+
+        pincode:pincode,
+
+        idType:
+        document
+        .getElementById("idType")
+        .value,
+
+        idNumber:
+        document
+        .getElementById("idNumber")
+        .value
+        .trim(),
+
+        occupation:
+        document
+        .getElementById("occupation")
+        .value
+        .trim(),
+
+        education:
+        document
+        .getElementById("education")
+        .value
+        .trim(),
+
+        serviceArea:
+        document
+        .getElementById("serviceArea")
+        .value,
+
+        message:
+        document
+        .getElementById("message")
+        .value
+        .trim(),
+
+        status:"लंबित",
+
+        registrationDate:
+        new Date()
+        .toLocaleDateString("hi-IN")
+
+    };
+
+
+    members.push(member);
+
+
+    localStorage.setItem(
+
+        "yssfMembers",
+
+        JSON.stringify(members)
+
+    );
+
+
+    /* =====================================================
+       SUCCESS
+    ===================================================== */
+
+    result.className =
+    "mem-result success";
+
+
+    result.innerHTML =
+
+    '<strong>' +
+
+    '<i class="fa-solid fa-circle-check"></i> ' +
+
+    'सदस्यता आवेदन सफलतापूर्वक दर्ज हुआ!</strong>' +
+
+    '<br>' +
+
+    'धन्यवाद ' +
+
+    '<strong>' +
+
+    member.name +
+
+    '</strong>।' +
+
+    '<br>' +
+
+    'आपकी सदस्य ID: ' +
+
+    '<strong>' +
+
+    memberId +
+
+    '</strong>' +
+
+    '<br>' +
+
+    'सदस्यता: ' +
+
+    '<strong>' +
+
+    member.plan +
+
+    '</strong>' +
+
+    '<br>' +
+
+    'स्थिति: <strong>लंबित</strong>';
+
+
+    form.reset();
+
+
+    document
+    .getElementById("photoPreview")
+    .innerHTML =
+    '<i class="fa-solid fa-user"></i>';
+
+
+    result.scrollIntoView({
+
+        behavior:"smooth",
+
+        block:"center"
+
+    });
+
+});
+
+
+/* =========================================================
+   RESET
+========================================================= */
 
 document
-.getElementById("resetButton")
+.getElementById("resetBtn")
 .addEventListener(
 
-    "click",
+"click",
 
-    function(){
+function(){
 
-        document
-        .getElementById("volunteerResult")
-        .className =
+    document
+    .getElementById("result")
+    .className =
+    "mem-result";
 
-        "vol-result";
 
+    document
+    .getElementById("photoPreview")
+    .innerHTML =
+    '<i class="fa-solid fa-user"></i>';
 
-        document
-        .getElementById("photoPreview")
-        .innerHTML =
-
-        '<i class="fa-solid fa-user"></i>';
-
-    }
-
-);
+});
 
 
 </script>
