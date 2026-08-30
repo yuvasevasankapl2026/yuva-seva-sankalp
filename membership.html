@@ -3,64 +3,75 @@
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
 
 <meta name="description"
-content="युवा सेवा संकल्प फाउंडेशन सदस्यता पंजीकरण">
+      content="युवा सेवा संकल्प फाउंडेशन सदस्यता">
 
 <title>
-सदस्य बनें | युवा सेवा संकल्प फाउंडेशन
+सदस्यता | युवा सेवा संकल्प फाउंडेशन
 </title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
-rel="stylesheet">
+      rel="stylesheet">
 
 <link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet"
+      href="style.css">
 
 
 <style>
 
-/* =========================================================
-   YSS MEMBERSHIP PAGE
-========================================================= */
+/* =====================================================
+   MEMBERSHIP PAGE
+===================================================== */
 
-.membership-page{
-    margin:0;
-    background:#f5f8fb;
-    color:#263746;
-    font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
-}
-
-.membership-page *,
-.membership-page *::before,
-.membership-page *::after{
+*{
     box-sizing:border-box;
 }
 
-.membership-page a{
+body{
+    margin:0;
+    font-family:
+    "Noto Sans Devanagari",
+    "Mangal",
+    Arial,
+    sans-serif;
+
+    background:#f4f7fa;
+    color:#263746;
+}
+
+a{
     text-decoration:none;
 }
 
 
-/* =========================================================
+/* =====================================================
    TOP BAR
-========================================================= */
+===================================================== */
 
-.ms-top{
+.membership-top{
     background:#123b66;
     color:#fff;
 }
 
-.ms-top-inner{
+.membership-top-inner{
     width:92%;
     max-width:1400px;
     min-height:42px;
+
     margin:auto;
 
     display:flex;
@@ -68,62 +79,56 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     justify-content:space-between;
 }
 
-.ms-top-left{
+.membership-top-left{
     display:flex;
     align-items:center;
     gap:22px;
 }
 
-.ms-top-left span{
+.membership-top-left span{
+    font-size:12px;
+
     display:flex;
     align-items:center;
     gap:7px;
-
-    font-size:12px;
 }
 
-.ms-top-left i{
-    color:#ff9a42;
+.membership-top-left i{
+    color:#ff7900;
 }
 
-.ms-top-right{
+.membership-social{
     display:flex;
     align-items:center;
     gap:14px;
 }
 
-.ms-top-right a{
+.membership-social a{
     color:#fff;
     font-size:13px;
 }
 
-.ms-top-right a:hover{
+.membership-social a:hover{
     color:#ff7900;
 }
 
-.ms-phone{
-    display:flex;
-    align-items:center;
-    gap:6px;
 
-    font-size:12px;
-    font-weight:700;
-}
-
-
-/* =========================================================
+/* =====================================================
    HEADER
-========================================================= */
+===================================================== */
 
-.ms-header{
+.membership-header{
     background:#fff;
-    border-bottom:1px solid #e1e8ee;
+
+    border-bottom:1px solid #e0e7ed;
 }
 
-.ms-header-inner{
+.membership-header-inner{
     width:92%;
     max-width:1400px;
-    min-height:130px;
+
+    min-height:125px;
+
     margin:auto;
 
     display:flex;
@@ -133,102 +138,106 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     gap:25px;
 }
 
-.ms-brand{
+.membership-brand{
     display:flex;
     align-items:center;
-    gap:17px;
+
+    gap:16px;
 }
 
-.ms-logo{
-    width:105px;
-    height:105px;
+.membership-logo{
+    width:100px;
+    height:100px;
 
     object-fit:contain;
+
     display:block;
 }
 
-.ms-brand h1{
+.membership-brand-text h1{
     margin:0;
 
     color:#123b66;
 
-    font-size:36px;
+    font-size:34px;
     line-height:1.2;
 
     font-weight:800;
 }
 
-.ms-brand h1 span{
+.membership-brand-text h1 span{
     color:#ff7900;
 }
 
-.ms-brand p{
-    margin:6px 0 0;
+.membership-brand-text p{
+    margin:5px 0 0;
 
     color:#24834b;
 
-    font-size:15px;
+    font-size:14px;
+
     font-weight:700;
 }
 
 
-/* =========================================================
-   HEADER ACTIONS
-========================================================= */
+/* =====================================================
+   LOGIN BUTTONS
+===================================================== */
 
-.ms-actions{
+.membership-actions{
     display:flex;
     gap:10px;
 }
 
-.ms-action{
-    min-width:145px;
+.membership-action{
+    min-width:140px;
 
-    padding:10px 12px;
+    padding:10px;
 
-    border:1px solid #dce5ec;
+    border:1px solid #dce4eb;
 
-    border-radius:11px;
+    border-radius:10px;
 
     background:#fff;
 
+    color:#123b66;
+
     display:flex;
     align-items:center;
-    gap:9px;
 
-    color:#123b66;
+    gap:9px;
 
     transition:.2s;
 }
 
-.ms-action:hover{
+.membership-action:hover{
     transform:translateY(-2px);
 
     box-shadow:
     0 8px 20px rgba(18,59,102,.10);
 }
 
-.ms-action-icon{
-    width:40px;
-    height:40px;
+.membership-action-icon{
+    width:38px;
+    height:38px;
 
     border-radius:9px;
+
+    background:#eaf2fb;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    background:#eaf2fb;
-
     color:#123b66;
 }
 
-.ms-action strong{
+.membership-action strong{
     display:block;
-    font-size:12px;
+    font-size:11px;
 }
 
-.ms-action small{
+.membership-action small{
     display:block;
 
     margin-top:2px;
@@ -239,34 +248,38 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 }
 
 
-/* =========================================================
+/* =====================================================
    NAVIGATION
-========================================================= */
+===================================================== */
 
-.ms-nav{
+.membership-nav{
     background:#082e63;
 }
 
-.ms-nav-inner{
+.membership-nav-inner{
     width:92%;
     max-width:1400px;
+
     min-height:54px;
+
     margin:auto;
 
     display:flex;
+
     overflow-x:auto;
 }
 
-.ms-nav-inner::-webkit-scrollbar{
+.membership-nav-inner::-webkit-scrollbar{
     display:none;
 }
 
-.ms-nav a{
+.membership-nav a{
     min-height:54px;
 
     padding:0 16px;
 
     display:flex;
+
     align-items:center;
     justify-content:center;
 
@@ -275,6 +288,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     color:#fff;
 
     font-size:13px;
+
     font-weight:700;
 
     white-space:nowrap;
@@ -282,182 +296,199 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     transition:.2s;
 }
 
-.ms-nav a:hover,
-.ms-nav a.active{
+.membership-nav a:hover,
+.membership-nav a.active{
     background:#ff7900;
 }
 
 
-/* =========================================================
+/* =====================================================
    BREADCRUMB
-========================================================= */
+===================================================== */
 
-.ms-breadcrumb{
+.membership-breadcrumb{
     background:#eef3f8;
+
     border-bottom:1px solid #dfe7ee;
 }
 
-.ms-breadcrumb-inner{
+.membership-breadcrumb-inner{
     width:92%;
     max-width:1400px;
-    min-height:45px;
+
+    min-height:44px;
+
     margin:auto;
 
     display:flex;
     align-items:center;
+
     gap:8px;
 
-    color:#6d7c89;
+    color:#71808d;
 
     font-size:12px;
 }
 
-.ms-breadcrumb a{
+.membership-breadcrumb a{
     color:#123b66;
+
     font-weight:700;
 }
 
-.ms-breadcrumb i{
+.membership-breadcrumb i{
     color:#ff7900;
 }
 
 
-/* =========================================================
+/* =====================================================
    HERO
-========================================================= */
+===================================================== */
 
-.ms-hero{
+.membership-hero{
     width:92%;
     max-width:1400px;
 
-    margin:30px auto 0;
+    margin:30px auto;
 
-    padding:45px;
+    padding:55px 45px;
+
+    border-radius:24px;
 
     position:relative;
-    overflow:hidden;
 
-    border-radius:23px;
+    overflow:hidden;
 
     background:
     linear-gradient(
         120deg,
-        #123b66,
-        #1d5d96,
-        #24834b
+        #123b66 0%,
+        #1d5d96 55%,
+        #24834b 100%
     );
 
     color:#fff;
 
     box-shadow:
-    0 15px 40px rgba(18,59,102,.15);
+    0 18px 45px rgba(18,59,102,.15);
 }
 
-.ms-hero::before{
+.membership-hero::before{
     content:"";
 
     position:absolute;
 
-    width:350px;
-    height:350px;
+    width:420px;
+    height:420px;
 
     border-radius:50%;
 
-    right:-130px;
-    top:-180px;
+    right:-160px;
+    top:-230px;
 
-    background:rgba(255,255,255,.06);
+    background:
+    rgba(255,255,255,.07);
 }
 
-.ms-hero::after{
+.membership-hero::after{
     content:"";
 
     position:absolute;
 
-    width:210px;
-    height:210px;
+    width:240px;
+    height:240px;
 
     border-radius:50%;
 
-    left:-90px;
-    bottom:-130px;
+    left:-120px;
+    bottom:-150px;
 
-    background:rgba(255,121,0,.13);
+    background:
+    rgba(255,121,0,.13);
 }
 
-.ms-hero-content{
+.membership-hero-content{
     position:relative;
+
     z-index:2;
+
+    max-width:900px;
 }
 
-.ms-hero-badge{
+.membership-badge{
     display:inline-flex;
 
     align-items:center;
+
     gap:7px;
 
-    padding:6px 14px;
-
-    border:1px solid rgba(255,255,255,.25);
+    padding:7px 15px;
 
     border-radius:30px;
 
-    background:rgba(255,255,255,.08);
+    border:1px solid
+    rgba(255,255,255,.25);
+
+    background:
+    rgba(255,255,255,.08);
 
     font-size:10px;
-    font-weight:800;
-
-    margin-bottom:12px;
-}
-
-.ms-hero h2{
-    margin:0 0 8px;
-
-    font-size:40px;
 
     font-weight:800;
+
+    margin-bottom:14px;
 }
 
-.ms-hero h2 span{
+.membership-hero h2{
+    margin:0 0 10px;
+
+    font-size:42px;
+
+    line-height:1.2;
+
+    font-weight:800;
+}
+
+.membership-hero h2 span{
     color:#ffb45c;
 }
 
-.ms-hero p{
-    max-width:850px;
-
+.membership-hero p{
     margin:0;
 
-    color:#e7f0f7;
+    max-width:800px;
+
+    color:#e6f0f7;
 
     font-size:14px;
 
-    line-height:1.8;
+    line-height:1.9;
 }
 
 
-/* =========================================================
+/* =====================================================
    MAIN
-========================================================= */
+===================================================== */
 
-.ms-main{
+.membership-main{
     width:92%;
-    max-width:1250px;
+    max-width:1200px;
 
-    margin:38px auto 65px;
+    margin:0 auto 70px;
 }
 
 
-/* =========================================================
-   MEMBERSHIP CATEGORIES
-========================================================= */
+/* =====================================================
+   TITLE
+===================================================== */
 
-.ms-title{
+.membership-title{
     text-align:center;
 
-    margin-bottom:24px;
+    margin-bottom:25px;
 }
 
-.ms-title small{
+.membership-title small{
     color:#ff7900;
 
     font-size:11px;
@@ -467,25 +498,30 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     letter-spacing:1px;
 }
 
-.ms-title h2{
+.membership-title h2{
     margin:5px 0;
 
     color:#123b66;
 
-    font-size:28px;
+    font-size:29px;
 
     font-weight:800;
 }
 
-.ms-title p{
+.membership-title p{
     margin:0;
 
-    color:#748391;
+    color:#758491;
 
     font-size:12px;
 }
 
-.ms-categories{
+
+/* =====================================================
+   MEMBERSHIP CARDS
+===================================================== */
+
+.membership-cards{
     display:grid;
 
     grid-template-columns:
@@ -493,17 +529,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
     gap:20px;
 
-    margin-bottom:36px;
+    margin-bottom:30px;
 }
 
-.ms-category{
-    padding:25px 21px;
-
+.membership-card{
     background:#fff;
 
     border:1px solid #dfe7ee;
 
     border-radius:18px;
+
+    padding:28px 22px;
 
     text-align:center;
 
@@ -511,79 +547,91 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     0 8px 28px rgba(18,59,102,.07);
 
     transition:.25s;
+
+    position:relative;
 }
 
-.ms-category:hover{
-    transform:translateY(-5px);
+.membership-card:hover{
+    transform:translateY(-6px);
 
     box-shadow:
-    0 16px 38px rgba(18,59,102,.13);
+    0 18px 40px rgba(18,59,102,.13);
 }
 
-.ms-category-icon{
-    width:64px;
-    height:64px;
+.membership-card:nth-child(2){
+    border-top:4px solid #ff7900;
+}
 
-    margin:0 auto 13px;
+.membership-card:nth-child(3){
+    border-top:4px solid #24834b;
+}
 
-    border-radius:17px;
+.membership-card-icon{
+    width:70px;
+    height:70px;
+
+    margin:0 auto 15px;
+
+    border-radius:18px;
 
     display:flex;
 
     align-items:center;
     justify-content:center;
 
-    font-size:24px;
+    font-size:26px;
 }
 
-.ms-category:nth-child(1)
-.ms-category-icon{
+.membership-card:nth-child(1)
+.membership-card-icon{
     background:#eaf2fb;
     color:#123b66;
 }
 
-.ms-category:nth-child(2)
-.ms-category-icon{
+.membership-card:nth-child(2)
+.membership-card-icon{
     background:#fff0e5;
     color:#ff7900;
 }
 
-.ms-category:nth-child(3)
-.ms-category-icon{
+.membership-card:nth-child(3)
+.membership-card-icon{
     background:#eaf7ed;
     color:#24834b;
 }
 
-.ms-category h3{
-    margin:0 0 7px;
+.membership-card h3{
+    margin:0 0 9px;
 
     color:#123b66;
 
-    font-size:18px;
+    font-size:19px;
 
     font-weight:800;
 }
 
-.ms-category p{
+.membership-card p{
     margin:0;
 
-    color:#71808d;
+    min-height:55px;
+
+    color:#74828e;
 
     font-size:11px;
 
     line-height:1.7;
 }
 
-.ms-category button{
-    margin-top:15px;
-
+.membership-card button{
     width:100%;
 
-    padding:10px;
+    margin-top:18px;
+
+    padding:12px;
 
     border:0;
 
-    border-radius:8px;
+    border-radius:9px;
 
     background:#123b66;
 
@@ -591,27 +639,39 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
     font-family:inherit;
 
-    font-size:11px;
+    font-size:12px;
 
     font-weight:800;
 
     cursor:pointer;
+
+    transition:.2s;
 }
 
-.ms-category:nth-child(2) button{
+.membership-card:nth-child(2)
+button{
     background:#ff7900;
 }
 
-.ms-category:nth-child(3) button{
+.membership-card:nth-child(3)
+button{
     background:#24834b;
 }
 
+.membership-card button:hover{
+    transform:translateY(-2px);
 
-/* =========================================================
-   FORM
-========================================================= */
+    filter:brightness(.94);
+}
 
-.ms-form{
+
+/* =====================================================
+   REGISTRATION
+===================================================== */
+
+.membership-form-box{
+    display:none;
+
     background:#fff;
 
     border:1px solid #dfe7ee;
@@ -624,7 +684,28 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     0 12px 35px rgba(18,59,102,.08);
 }
 
-.ms-form-head{
+.membership-form-box.show{
+    display:block;
+
+    animation:
+    formShow .35s ease;
+}
+
+@keyframes formShow{
+
+    from{
+        opacity:0;
+        transform:translateY(15px);
+    }
+
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+
+}
+
+.membership-form-header{
     padding:23px 28px;
 
     background:
@@ -642,13 +723,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     justify-content:space-between;
 }
 
-.ms-form-head h2{
+.membership-form-header h2{
     margin:0 0 4px;
 
     font-size:22px;
 }
 
-.ms-form-head p{
+.membership-form-header p{
     margin:0;
 
     color:#d9e7f2;
@@ -656,31 +737,33 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     font-size:11px;
 }
 
-.ms-form-head-icon{
-    width:50px;
-    height:50px;
+.membership-form-icon{
+    width:52px;
+    height:52px;
 
     border-radius:13px;
 
+    background:
+    rgba(255,255,255,.12);
+
     display:flex;
+
     align-items:center;
     justify-content:center;
-
-    background:rgba(255,255,255,.12);
 
     font-size:22px;
 }
 
-.ms-form-body{
+.membership-form-body{
     padding:28px;
 }
 
 
-/* =========================================================
-   SECTION
-========================================================= */
+/* =====================================================
+   FORM SECTION
+===================================================== */
 
-.ms-section{
+.form-section-title{
     margin:25px 0 17px;
 
     padding-bottom:9px;
@@ -700,30 +783,34 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     font-weight:800;
 }
 
-.ms-section i{
+.form-section-title:first-child{
+    margin-top:0;
+}
+
+.form-section-title i{
     width:34px;
     height:34px;
 
     border-radius:9px;
+
+    background:#eaf2fb;
+
+    color:#123b66;
 
     display:flex;
 
     align-items:center;
     justify-content:center;
 
-    background:#eaf2fb;
-
-    color:#123b66;
-
     font-size:14px;
 }
 
 
-/* =========================================================
+/* =====================================================
    FORM GRID
-========================================================= */
+===================================================== */
 
-.ms-grid{
+.form-grid{
     display:grid;
 
     grid-template-columns:
@@ -732,16 +819,17 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     gap:16px;
 }
 
-.ms-field{
+.form-field{
     display:flex;
+
     flex-direction:column;
 }
 
-.ms-field.full{
+.form-field.full{
     grid-column:1/-1;
 }
 
-.ms-field label{
+.form-field label{
     margin-bottom:6px;
 
     color:#344756;
@@ -751,13 +839,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     font-weight:700;
 }
 
-.ms-required{
+.required{
     color:#e53935;
 }
 
-.ms-field input,
-.ms-field select,
-.ms-field textarea{
+.form-field input,
+.form-field select,
+.form-field textarea{
     width:100%;
 
     padding:11px 12px;
@@ -779,62 +867,28 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     transition:.2s;
 }
 
-.ms-field textarea{
-    min-height:90px;
+.form-field textarea{
+    min-height:95px;
 
     resize:vertical;
 }
 
-.ms-field input:focus,
-.ms-field select:focus,
-.ms-field textarea:focus{
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus{
     border-color:#1d5d96;
 
     box-shadow:
-    0 0 0 3px rgba(29,93,150,.08);
+    0 0 0 3px
+    rgba(29,93,150,.08);
 }
 
 
-/* =========================================================
-   ID NOTE
-========================================================= */
-
-.ms-note{
-    display:flex;
-
-    align-items:flex-start;
-
-    gap:9px;
-
-    padding:12px;
-
-    margin-bottom:15px;
-
-    border-radius:9px;
-
-    background:#fff8ed;
-
-    border:1px solid #f1dfba;
-
-    color:#705c34;
-
-    font-size:10px;
-
-    line-height:1.7;
-}
-
-.ms-note i{
-    color:#df8b19;
-
-    font-size:16px;
-}
-
-
-/* =========================================================
+/* =====================================================
    PHOTO
-========================================================= */
+===================================================== */
 
-.ms-photo{
+.member-photo-box{
     display:flex;
 
     align-items:center;
@@ -845,12 +899,12 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
     background:#f7fafc;
 
-    border:1px dashed #bccdd9;
+    border:1px dashed #bdccd8;
 
     border-radius:12px;
 }
 
-.ms-photo-preview{
+.member-photo-preview{
     width:90px;
     height:90px;
 
@@ -858,33 +912,33 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
     border-radius:50%;
 
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    overflow:hidden;
-
     background:#eaf2fb;
-
-    color:#123b66;
-
-    font-size:30px;
 
     border:3px solid #fff;
 
     box-shadow:
     0 4px 15px rgba(18,59,102,.12);
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:#123b66;
+
+    font-size:30px;
+
+    overflow:hidden;
 }
 
-.ms-photo-preview img{
+.member-photo-preview img{
     width:100%;
     height:100%;
 
     object-fit:cover;
 }
 
-.ms-photo-info strong{
+.member-photo-info strong{
     display:block;
 
     margin-bottom:4px;
@@ -894,7 +948,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     font-size:13px;
 }
 
-.ms-photo-info p{
+.member-photo-info p{
     margin:0 0 9px;
 
     color:#7c8b97;
@@ -903,11 +957,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 }
 
 
-/* =========================================================
+/* =====================================================
    AGREEMENT
-========================================================= */
+===================================================== */
 
-.ms-agreement{
+.member-agreement{
     margin-top:22px;
 
     padding:14px;
@@ -925,7 +979,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     gap:9px;
 }
 
-.ms-agreement input{
+.member-agreement input{
     width:17px;
     height:17px;
 
@@ -934,7 +988,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     accent-color:#24834b;
 }
 
-.ms-agreement label{
+.member-agreement label{
     color:#596a77;
 
     font-size:10px;
@@ -943,11 +997,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 }
 
 
-/* =========================================================
-   BUTTONS
-========================================================= */
+/* =====================================================
+   BUTTON
+===================================================== */
 
-.ms-buttons{
+.member-form-buttons{
     margin-top:20px;
 
     display:flex;
@@ -957,7 +1011,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     flex-wrap:wrap;
 }
 
-.ms-submit{
+.member-submit{
     padding:12px 25px;
 
     border:0;
@@ -975,17 +1029,13 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     font-weight:800;
 
     cursor:pointer;
-
-    transition:.2s;
 }
 
-.ms-submit:hover{
+.member-submit:hover{
     background:#123b66;
-
-    transform:translateY(-2px);
 }
 
-.ms-clear{
+.member-reset{
     padding:11px 22px;
 
     border:1px solid #d6e0e8;
@@ -1006,11 +1056,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 }
 
 
-/* =========================================================
+/* =====================================================
    RESULT
-========================================================= */
+===================================================== */
 
-.ms-result{
+.member-result{
     display:none;
 
     margin-top:18px;
@@ -1024,7 +1074,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     line-height:1.8;
 }
 
-.ms-result.success{
+.member-result.success{
     display:block;
 
     color:#18723a;
@@ -1034,7 +1084,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     border:1px solid #cbe8d3;
 }
 
-.ms-result.error{
+.member-result.error{
     display:block;
 
     color:#c62828;
@@ -1045,75 +1095,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 }
 
 
-/* =========================================================
-   TRUST
-========================================================= */
-
-.ms-trust{
-    display:grid;
-
-    grid-template-columns:
-    repeat(3,1fr);
-
-    gap:12px;
-
-    margin-top:22px;
-}
-
-.ms-trust-box{
-    padding:13px;
-
-    border:1px solid #e0e8ee;
-
-    border-radius:10px;
-
-    background:#fff;
-
-    display:flex;
-
-    align-items:center;
-
-    gap:9px;
-}
-
-.ms-trust-icon{
-    width:38px;
-    height:38px;
-
-    border-radius:9px;
-
-    display:flex;
-
-    align-items:center;
-    justify-content:center;
-
-    background:#eaf2fb;
-
-    color:#123b66;
-}
-
-.ms-trust-box h4{
-    margin:0;
-
-    color:#123b66;
-
-    font-size:10px;
-}
-
-.ms-trust-box p{
-    margin:2px 0 0;
-
-    color:#81909b;
-
-    font-size:8px;
-}
-
-
-/* =========================================================
+/* =====================================================
    FOOTER
-========================================================= */
+===================================================== */
 
-.ms-footer{
+.membership-footer{
     background:#092e60;
 
     color:#fff;
@@ -1121,7 +1107,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     padding-top:38px;
 }
 
-.ms-footer-inner{
+.membership-footer-inner{
     width:92%;
     max-width:1400px;
 
@@ -1135,26 +1121,24 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     gap:30px;
 }
 
-.ms-footer-logo{
-    width:80px;
-    height:80px;
+.membership-footer-logo{
+    width:78px;
+    height:78px;
 
     object-fit:contain;
-
-    display:block;
 
     margin-bottom:8px;
 }
 
-.ms-footer h3,
-.ms-footer h4{
+.membership-footer h3,
+.membership-footer h4{
     margin:0 0 10px;
 
     font-size:15px;
 }
 
-.ms-footer p,
-.ms-footer a{
+.membership-footer p,
+.membership-footer a{
     color:#d6e2ed;
 
     font-size:11px;
@@ -1162,22 +1146,23 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
     line-height:1.7;
 }
 
-.ms-footer a{
+.membership-footer a{
     display:block;
 
     margin-bottom:5px;
 }
 
-.ms-footer a:hover{
+.membership-footer a:hover{
     color:#ff7900;
 }
 
-.ms-footer-bottom{
+.membership-footer-bottom{
     margin-top:28px;
 
     padding:14px;
 
-    border-top:1px solid rgba(255,255,255,.14);
+    border-top:1px solid
+    rgba(255,255,255,.14);
 
     text-align:center;
 
@@ -1187,11 +1172,11 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 }
 
 
-/* =========================================================
+/* =====================================================
    WHATSAPP
-========================================================= */
+===================================================== */
 
-.ms-whatsapp{
+.membership-whatsapp{
     position:fixed;
 
     right:20px;
@@ -1202,14 +1187,14 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
     border-radius:50%;
 
+    background:#25d366;
+
+    color:#fff;
+
     display:flex;
 
     align-items:center;
     justify-content:center;
-
-    background:#25d366;
-
-    color:#fff;
 
     font-size:24px;
 
@@ -1220,25 +1205,25 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 }
 
 
-/* =========================================================
+/* =====================================================
    RESPONSIVE
-========================================================= */
+===================================================== */
 
 @media(max-width:1100px){
 
-    .ms-header-inner{
+    .membership-header-inner{
         flex-direction:column;
 
         padding:18px 0;
     }
 
-    .ms-actions{
+    .membership-actions{
         width:100%;
 
         justify-content:center;
     }
 
-    .ms-footer-inner{
+    .membership-footer-inner{
         grid-template-columns:1fr 1fr;
     }
 
@@ -1247,7 +1232,7 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 @media(max-width:900px){
 
-    .ms-categories{
+    .membership-cards{
         grid-template-columns:1fr;
 
         max-width:600px;
@@ -1261,90 +1246,86 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 @media(max-width:700px){
 
-    .ms-top-inner{
+    .membership-top-left span:last-child{
+        display:none;
+    }
+
+    .membership-social{
+        display:none;
+    }
+
+    .membership-top-inner{
         justify-content:center;
 
         padding:7px 0;
     }
 
-    .ms-top-left span:last-child{
-        display:none;
-    }
-
-    .ms-top-right{
-        display:none;
-    }
-
-    .ms-brand{
+    .membership-brand{
         flex-direction:column;
 
         text-align:center;
     }
 
-    .ms-brand h1{
-        font-size:28px;
+    .membership-brand-text h1{
+        font-size:27px;
     }
 
-    .ms-brand p{
+    .membership-brand-text p{
         font-size:13px;
     }
 
-    .ms-actions{
+    .membership-actions{
         flex-direction:column;
 
         align-items:center;
     }
 
-    .ms-action{
+    .membership-action{
         width:100%;
         max-width:350px;
     }
 
-    .ms-nav-inner{
+    .membership-nav-inner{
         width:100%;
     }
 
-    .ms-nav a{
+    .membership-nav a{
         padding:0 12px;
 
         font-size:11px;
     }
 
-    .ms-hero{
-        padding:32px 22px;
+    .membership-hero{
+        padding:35px 22px;
     }
 
-    .ms-hero h2{
+    .membership-hero h2{
         font-size:30px;
     }
 
-    .ms-hero p{
+    .membership-hero p{
         font-size:12px;
     }
 
-    .ms-grid{
+    .form-grid{
         grid-template-columns:1fr;
     }
 
-    .ms-field.full{
+    .form-field.full{
         grid-column:auto;
     }
 
-    .ms-form-body{
+    .membership-form-body{
         padding:19px 15px;
     }
 
-    .ms-photo{
+    .member-photo-box{
         flex-direction:column;
 
         text-align:center;
     }
 
-    .ms-trust{
-        grid-template-columns:1fr;
-    }
-
-    .ms-footer-inner{
+    .membership-footer-inner{
         grid-template-columns:1fr;
     }
 
@@ -1353,48 +1334,42 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 
 @media(max-width:430px){
 
-    .ms-logo{
+    .membership-logo{
         width:90px;
         height:90px;
     }
 
-    .ms-brand h1{
-        font-size:24px;
+    .membership-brand-text h1{
+        font-size:23px;
     }
 
-    .ms-hero h2{
+    .membership-hero h2{
         font-size:27px;
     }
 
-    .ms-buttons{
+    .member-form-buttons{
         flex-direction:column;
     }
 
-    .ms-submit,
-    .ms-clear{
+    .member-submit,
+    .member-reset{
         width:100%;
     }
 
 }
 
 
-/* =========================================================
+/* =====================================================
    PRINT
-========================================================= */
+===================================================== */
 
 @media print{
 
-    .ms-top,
-    .ms-nav,
-    .ms-actions,
-    .ms-whatsapp,
-    .ms-buttons{
+    .membership-top,
+    .membership-nav,
+    .membership-actions,
+    .membership-whatsapp{
         display:none !important;
-    }
-
-    .ms-form,
-    .ms-category{
-        box-shadow:none;
     }
 
 }
@@ -1404,18 +1379,18 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 </head>
 
 
-<body class="membership-page">
+<body>
 
 
 <!-- =====================================================
      TOP BAR
 ===================================================== -->
 
-<div class="ms-top">
+<div class="membership-top">
 
-<div class="ms-top-inner">
+<div class="membership-top-inner">
 
-<div class="ms-top-left">
+<div class="membership-top-left">
 
 <span>
 <i class="fa-solid fa-envelope"></i>
@@ -1431,7 +1406,7 @@ info.yssfoundation@gmail.com
 </div>
 
 
-<div class="ms-top-right">
+<div class="membership-social">
 
 <a href="#">
 <i class="fab fa-facebook-f"></i>
@@ -1449,11 +1424,9 @@ info.yssfoundation@gmail.com
 <i class="fab fa-whatsapp"></i>
 </a>
 
-<span class="ms-phone">
-
+<span>
 <i class="fa-solid fa-phone"></i>
 9651731313
-
 </span>
 
 </div>
@@ -1467,21 +1440,21 @@ info.yssfoundation@gmail.com
      HEADER
 ===================================================== -->
 
-<header class="ms-header">
+<header class="membership-header">
 
-<div class="ms-header-inner">
+<div class="membership-header-inner">
 
 
 <a href="index.html"
-class="ms-brand">
+class="membership-brand">
 
 <img
 src="images/logo.png"
 alt="युवा सेवा संकल्प फाउंडेशन"
-class="ms-logo"
+class="membership-logo"
 >
 
-<div>
+<div class="membership-brand-text">
 
 <h1>
 युवा सेवा संकल्प
@@ -1497,14 +1470,14 @@ class="ms-logo"
 </a>
 
 
-<div class="ms-actions">
+<div class="membership-actions">
 
 
 <a
 href="member-login.html"
-class="ms-action">
+class="membership-action">
 
-<div class="ms-action-icon">
+<div class="membership-action-icon">
 
 <i class="fa-solid fa-user"></i>
 
@@ -1527,9 +1500,9 @@ class="ms-action">
 
 <a
 href="volunteer-login.html"
-class="ms-action">
+class="membership-action">
 
-<div class="ms-action-icon">
+<div class="membership-action-icon">
 
 <i class="fa-solid fa-handshake"></i>
 
@@ -1552,9 +1525,9 @@ Volunteer खाता
 
 <a
 href="admin-login.html"
-class="ms-action">
+class="membership-action">
 
-<div class="ms-action-icon">
+<div class="membership-action-icon">
 
 <i class="fa-solid fa-user-shield"></i>
 
@@ -1583,12 +1556,12 @@ Admin Panel
 
 
 <!-- =====================================================
-     NAV
+     NAVIGATION
 ===================================================== -->
 
-<nav class="ms-nav">
+<nav class="membership-nav">
 
-<div class="ms-nav-inner">
+<div class="membership-nav-inner">
 
 <a href="index.html">
 <i class="fa-solid fa-house"></i>
@@ -1637,9 +1610,9 @@ class="active">
      BREADCRUMB
 ===================================================== -->
 
-<div class="ms-breadcrumb">
+<div class="membership-breadcrumb">
 
-<div class="ms-breadcrumb-inner">
+<div class="membership-breadcrumb-inner">
 
 <a href="index.html">
 होम
@@ -1660,11 +1633,11 @@ class="active">
      HERO
 ===================================================== -->
 
-<section class="ms-hero">
+<section class="membership-hero">
 
-<div class="ms-hero-content">
+<div class="membership-hero-content">
 
-<div class="ms-hero-badge">
+<div class="membership-badge">
 
 <i class="fa-solid fa-users"></i>
 
@@ -1673,15 +1646,19 @@ class="active">
 </div>
 
 <h2>
-आइए <span>सदस्य बनें</span>
+
+समाज सेवा से जुड़ें,
+<span>सदस्य बनें</span>
+
 </h2>
 
 <p>
 
 युवा सेवा संकल्प फाउंडेशन से जुड़कर
-समाज सेवा, युवा सशक्तिकरण, पर्यावरण,
-रक्तदान एवं राष्ट्र निर्माण के कार्यों में
-अपना योगदान दें।
+समाज सेवा, युवा सशक्तिकरण, शिक्षा,
+स्वास्थ्य, पर्यावरण, रक्तदान और
+राष्ट्र निर्माण के कार्यों में अपनी
+सक्रिय भागीदारी निभाएँ।
 
 </p>
 
@@ -1694,38 +1671,36 @@ class="active">
      MAIN
 ===================================================== -->
 
-<main class="ms-main">
+<main class="membership-main">
 
 
-<!-- =====================================================
-     MEMBERSHIP CATEGORIES
-===================================================== -->
-
-<div class="ms-title">
+<div class="membership-title">
 
 <small>
-MEMBERSHIP
+JOIN US
 </small>
 
 <h2>
-अपनी सदस्यता श्रेणी चुनें
+युवा सेवा संकल्प फाउंडेशन की सदस्यता
 </h2>
 
 <p>
-अपने उद्देश्य के अनुसार सदस्यता श्रेणी चुनकर पंजीकरण करें।
+अपनी रुचि के अनुसार सदस्यता श्रेणी चुनें।
 </p>
 
 </div>
 
 
-<div class="ms-categories">
+<!-- =====================================================
+     CARDS
+===================================================== -->
+
+<div class="membership-cards">
 
 
-<!-- GENERAL -->
+<div class="membership-card">
 
-<div class="ms-category">
-
-<div class="ms-category-icon">
+<div class="membership-card-icon">
 
 <i class="fa-solid fa-user"></i>
 
@@ -1736,12 +1711,15 @@ MEMBERSHIP
 </h3>
 
 <p>
+
 संस्था से जुड़कर समाज सेवा के
 विभिन्न कार्यों में अपना सहयोग दें।
+
 </p>
 
 <button
-onclick="selectCategory('सामान्य सदस्य')">
+type="button"
+onclick="openForm('सामान्य सदस्य')">
 
 सदस्य बनें
 
@@ -1752,11 +1730,9 @@ onclick="selectCategory('सामान्य सदस्य')">
 </div>
 
 
-<!-- ACTIVE -->
+<div class="membership-card">
 
-<div class="ms-category">
-
-<div class="ms-category-icon">
+<div class="membership-card-icon">
 
 <i class="fa-solid fa-star"></i>
 
@@ -1767,12 +1743,15 @@ onclick="selectCategory('सामान्य सदस्य')">
 </h3>
 
 <p>
-संस्था की सेवा गतिविधियों में
-सक्रिय रूप से भाग लेकर योगदान दें।
+
+संस्था की सेवा गतिविधियों और
+अभियानों में सक्रिय भागीदारी करें।
+
 </p>
 
 <button
-onclick="selectCategory('सक्रिय सदस्य')">
+type="button"
+onclick="openForm('सक्रिय सदस्य')">
 
 सक्रिय सदस्य बनें
 
@@ -1783,11 +1762,9 @@ onclick="selectCategory('सक्रिय सदस्य')">
 </div>
 
 
-<!-- SUPPORTER -->
+<div class="membership-card">
 
-<div class="ms-category">
-
-<div class="ms-category-icon">
+<div class="membership-card-icon">
 
 <i class="fa-solid fa-handshake"></i>
 
@@ -1798,12 +1775,15 @@ onclick="selectCategory('सक्रिय सदस्य')">
 </h3>
 
 <p>
-समाज सेवा के अभियानों में संस्था
-के साथ सहयोग और सहभागिता करें।
+
+संस्था के सामाजिक कार्यों और
+सेवा अभियानों में सहयोग करें।
+
 </p>
 
 <button
-onclick="selectCategory('सहयोगी सदस्य')">
+type="button"
+onclick="openForm('सहयोगी सदस्य')">
 
 सहयोगी सदस्य बनें
 
@@ -1821,25 +1801,26 @@ onclick="selectCategory('सहयोगी सदस्य')">
      REGISTRATION FORM
 ===================================================== -->
 
-<div class="ms-form"
-id="registration">
+<div
+class="membership-form-box"
+id="membershipFormBox">
 
 
-<div class="ms-form-head">
+<div class="membership-form-header">
 
 <div>
 
 <h2>
-सदस्यता पंजीकरण फॉर्म
+सदस्यता पंजीकरण
 </h2>
 
 <p>
-सही जानकारी भरें। * वाले फील्ड अनिवार्य हैं।
+अपनी सही जानकारी भरकर आवेदन करें।
 </p>
 
 </div>
 
-<div class="ms-form-head-icon">
+<div class="membership-form-icon">
 
 <i class="fa-solid fa-id-card"></i>
 
@@ -1848,7 +1829,7 @@ id="registration">
 </div>
 
 
-<div class="ms-form-body">
+<div class="membership-form-body">
 
 
 <form id="membershipForm">
@@ -1856,7 +1837,7 @@ id="registration">
 
 <!-- CATEGORY -->
 
-<div class="ms-section">
+<div class="form-section-title">
 
 <i class="fa-solid fa-users"></i>
 
@@ -1865,13 +1846,13 @@ id="registration">
 </div>
 
 
-<div class="ms-grid">
+<div class="form-grid">
 
-<div class="ms-field full">
+<div class="form-field full">
 
 <label>
 सदस्यता का प्रकार
-<span class="ms-required">*</span>
+<span class="required">*</span>
 </label>
 
 <select
@@ -1879,7 +1860,7 @@ id="category"
 required>
 
 <option value="">
--- सदस्यता प्रकार चुनें --
+-- सदस्यता चुनें --
 </option>
 
 <option>
@@ -1903,7 +1884,7 @@ required>
 
 <!-- PERSONAL -->
 
-<div class="ms-section">
+<div class="form-section-title">
 
 <i class="fa-solid fa-user"></i>
 
@@ -1912,14 +1893,14 @@ required>
 </div>
 
 
-<div class="ms-grid">
+<div class="form-grid">
 
 
-<div class="ms-field">
+<div class="form-field">
 
 <label>
 पूरा नाम
-<span class="ms-required">*</span>
+<span class="required">*</span>
 </label>
 
 <input
@@ -1931,11 +1912,11 @@ required>
 </div>
 
 
-<div class="ms-field">
+<div class="form-field">
 
 <label>
 पिता / पति का नाम
-<span class="ms-required">*</span>
+<span class="required">*</span>
 </label>
 
 <input
@@ -1947,11 +1928,11 @@ required>
 </div>
 
 
-<div class="ms-field">
+<div class="form-field">
 
 <label>
 मोबाइल नंबर
-<span class="ms-required">*</span>
+<span class="required">*</span>
 </label>
 
 <input
@@ -1965,7 +1946,7 @@ required>
 </div>
 
 
-<div class="ms-field">
+<div class="form-field">
 
 <label>
 ईमेल
@@ -1979,11 +1960,11 @@ placeholder="example@gmail.com">
 </div>
 
 
-<div class="ms-field">
+<div class="form-field">
 
 <label>
 जन्म तिथि
-<span class="ms-required">*</span>
+<span class="required">*</span>
 </label>
 
 <input
@@ -1994,11 +1975,11 @@ required>
 </div>
 
 
-<div class="ms-field">
+<div class="form-field">
 
 <label>
 लिंग
-<span class="ms-required">*</span>
+<span class="required">*</span>
 </label>
 
 <select
@@ -2030,7 +2011,7 @@ required>
 
 <!-- ADDRESS -->
 
-<div class="ms-section">
+<div class="form-section-title">
 
 <i class="fa-solid fa-location-dot"></i>
 
@@ -2039,14 +2020,14 @@ required>
 </div>
 
 
-<div class="ms-grid">
+<div class="form-grid">
 
 
-<div class="ms-field full">
+<div class="form-field full">
 
 <label>
 पूरा पता
-<span class="ms-required">*</span>
+<span class="required">*</span>
 </label>
 
 <textarea
@@ -2057,57 +2038,11 @@ required></textarea>
 </div>
 
 
-<div class="ms-field">
-
-<label>
-जिला
-<span class="ms-required">*</span>
-</label>
-
-<input
-type="text"
-id="district"
-placeholder="जिला"
-required>
-
-</div>
-
-
-<div class="ms-field">
-
-<label>
-राज्य
-<span class="ms-required">*</span>
-</label>
-
-<input
-type="text"
-id="state"
-value="उत्तर प्रदेश"
-required>
-
-</div>
-
-
-<div class="ms-field">
-
-<label>
-ब्लॉक / तहसील
-</label>
-
-<input
-type="text"
-id="block"
-placeholder="ब्लॉक / तहसील">
-
-</div>
-
-
-<div class="ms-field">
+<div class="form-field">
 
 <label>
 ग्राम / शहर
-<span class="ms-required">*</span>
+<span class="required">*</span>
 </label>
 
 <input
@@ -2119,11 +2054,43 @@ required>
 </div>
 
 
-<div class="ms-field">
+<div class="form-field">
+
+<label>
+जिला
+<span class="required">*</span>
+</label>
+
+<input
+type="text"
+id="district"
+placeholder="जिला"
+required>
+
+</div>
+
+
+<div class="form-field">
+
+<label>
+राज्य
+<span class="required">*</span>
+</label>
+
+<input
+type="text"
+id="state"
+value="उत्तर प्रदेश"
+required>
+
+</div>
+
+
+<div class="form-field">
 
 <label>
 पिन कोड
-<span class="ms-required">*</span>
+<span class="required">*</span>
 </label>
 
 <input
@@ -2136,12 +2103,26 @@ required>
 
 </div>
 
+
+<div class="form-field">
+
+<label>
+ब्लॉक / तहसील
+</label>
+
+<input
+type="text"
+id="block"
+placeholder="ब्लॉक / तहसील">
+
+</div>
+
 </div>
 
 
 <!-- ID -->
 
-<div class="ms-section">
+<div class="form-section-title">
 
 <i class="fa-solid fa-address-card"></i>
 
@@ -2150,30 +2131,14 @@ required>
 </div>
 
 
-<div class="ms-note">
-
-<i class="fa-solid fa-shield-halved"></i>
-
-<span>
-
-कृपया पहचान संबंधी जानकारी सावधानीपूर्वक भरें।
-Aadhaar Card सहित किसी भी पहचान पत्र की
-जानकारी केवल आवश्यक सदस्यता प्रक्रिया के
-अनुसार ही उपयोग करें।
-
-</span>
-
-</div>
+<div class="form-grid">
 
 
-<div class="ms-grid">
-
-
-<div class="ms-field">
+<div class="form-field">
 
 <label>
 पहचान पत्र का प्रकार
-<span class="ms-required">*</span>
+<span class="required">*</span>
 </label>
 
 <select
@@ -2181,7 +2146,7 @@ id="idType"
 required>
 
 <option value="">
--- पहचान पत्र चुनें --
+-- चुनें --
 </option>
 
 <option>
@@ -2209,11 +2174,11 @@ PAN Card
 </div>
 
 
-<div class="ms-field">
+<div class="form-field">
 
 <label>
 पहचान पत्र संख्या
-<span class="ms-required">*</span>
+<span class="required">*</span>
 </label>
 
 <input
@@ -2229,7 +2194,7 @@ required>
 
 <!-- PHOTO -->
 
-<div class="ms-section">
+<div class="form-section-title">
 
 <i class="fa-solid fa-camera"></i>
 
@@ -2238,11 +2203,11 @@ required>
 </div>
 
 
-<div class="ms-photo">
+<div class="member-photo-box">
 
 
 <div
-class="ms-photo-preview"
+class="member-photo-preview"
 id="photoPreview">
 
 <i class="fa-solid fa-user"></i>
@@ -2250,14 +2215,14 @@ id="photoPreview">
 </div>
 
 
-<div class="ms-photo-info">
+<div class="member-photo-info">
 
 <strong>
-सदस्य का फोटो
+अपना फोटो चुनें
 </strong>
 
 <p>
-साफ और हाल का JPG / PNG फोटो चुनें।
+साफ और हाल का JPG / PNG फोटो लगाएँ।
 </p>
 
 <input
@@ -2270,21 +2235,21 @@ accept="image/jpeg,image/png">
 </div>
 
 
-<!-- OTHER -->
+<!-- SERVICE -->
 
-<div class="ms-section">
+<div class="form-section-title">
 
-<i class="fa-solid fa-circle-info"></i>
+<i class="fa-solid fa-heart"></i>
 
-अतिरिक्त जानकारी
+सेवा संबंधी जानकारी
 
 </div>
 
 
-<div class="ms-grid">
+<div class="form-grid">
 
 
-<div class="ms-field">
+<div class="form-field">
 
 <label>
 व्यवसाय / कार्य
@@ -2298,7 +2263,7 @@ placeholder="व्यवसाय / कार्य">
 </div>
 
 
-<div class="ms-field">
+<div class="form-field">
 
 <label>
 शैक्षणिक योग्यता
@@ -2312,11 +2277,11 @@ placeholder="शैक्षणिक योग्यता">
 </div>
 
 
-<div class="ms-field full">
+<div class="form-field full">
 
 <label>
 समाज सेवा में रुचि
-<span class="ms-required">*</span>
+<span class="required">*</span>
 </label>
 
 <select
@@ -2364,7 +2329,7 @@ required>
 </div>
 
 
-<div class="ms-field full">
+<div class="form-field full">
 
 <label>
 आप संस्था से क्यों जुड़ना चाहते हैं?
@@ -2381,7 +2346,7 @@ placeholder="अपना उद्देश्य / संदेश लिख�
 
 <!-- AGREEMENT -->
 
-<div class="ms-agreement">
+<div class="member-agreement">
 
 <input
 type="checkbox"
@@ -2400,13 +2365,13 @@ required>
 </div>
 
 
-<!-- BUTTON -->
+<!-- BUTTONS -->
 
-<div class="ms-buttons">
+<div class="member-form-buttons">
 
 <button
 type="submit"
-class="ms-submit">
+class="member-submit">
 
 <i class="fa-solid fa-user-plus"></i>
 
@@ -2417,7 +2382,7 @@ class="ms-submit">
 
 <button
 type="reset"
-class="ms-clear">
+class="member-reset">
 
 <i class="fa-solid fa-rotate-left"></i>
 
@@ -2430,88 +2395,11 @@ class="ms-clear">
 
 <div
 id="result"
-class="ms-result">
+class="member-result">
 </div>
 
 
 </form>
-
-
-<!-- TRUST -->
-
-<div class="ms-trust">
-
-
-<div class="ms-trust-box">
-
-<div class="ms-trust-icon">
-
-<i class="fa-solid fa-id-card"></i>
-
-</div>
-
-<div>
-
-<h4>
-सदस्य ID
-</h4>
-
-<p>
-विशेष पहचान
-</p>
-
-</div>
-
-</div>
-
-
-<div class="ms-trust-box">
-
-<div class="ms-trust-icon">
-
-<i class="fa-solid fa-users"></i>
-
-</div>
-
-<div>
-
-<h4>
-सेवा सहभागिता
-</h4>
-
-<p>
-समाज सेवा
-</p>
-
-</div>
-
-</div>
-
-
-<div class="ms-trust-box">
-
-<div class="ms-trust-icon">
-
-<i class="fa-solid fa-shield-halved"></i>
-
-</div>
-
-<div>
-
-<h4>
-सुरक्षित जानकारी
-</h4>
-
-<p>
-सदस्य विवरण
-</p>
-
-</div>
-
-</div>
-
-
-</div>
 
 </div>
 
@@ -2524,9 +2412,9 @@ class="ms-result">
      FOOTER
 ===================================================== -->
 
-<footer class="ms-footer">
+<footer class="membership-footer">
 
-<div class="ms-footer-inner">
+<div class="membership-footer-inner">
 
 
 <div>
@@ -2534,7 +2422,7 @@ class="ms-result">
 <img
 src="images/logo.png"
 alt="युवा सेवा संकल्प फाउंडेशन"
-class="ms-footer-logo"
+class="membership-footer-logo"
 >
 
 <h3>
@@ -2588,15 +2476,15 @@ class="ms-footer-logo"
 सदस्यता
 </h4>
 
-<a href="#registration">
+<a href="#membershipFormBox">
 सामान्य सदस्य
 </a>
 
-<a href="#registration">
+<a href="#membershipFormBox">
 सक्रिय सदस्य
 </a>
 
-<a href="#registration">
+<a href="#membershipFormBox">
 सहयोगी सदस्य
 </a>
 
@@ -2636,7 +2524,7 @@ info.yssfoundation@gmail.com
 </div>
 
 
-<div class="ms-footer-bottom">
+<div class="membership-footer-bottom">
 
 © 2026 युवा सेवा संकल्प फाउंडेशन |
 सर्वाधिकार सुरक्षित
@@ -2653,7 +2541,7 @@ info.yssfoundation@gmail.com
 <a
 href="https://wa.me/919651731313"
 target="_blank"
-class="ms-whatsapp">
+class="membership-whatsapp">
 
 <i class="fa-brands fa-whatsapp"></i>
 
@@ -2662,36 +2550,48 @@ class="ms-whatsapp">
 
 <script>
 
-/* =========================================================
-   CATEGORY SELECT
-========================================================= */
+/* =====================================================
+   OPEN FORM ONLY AFTER BUTTON CLICK
+===================================================== */
 
-function selectCategory(category){
+function openForm(category){
 
-    document
-    .getElementById("category")
-    .value = category;
+    const formBox =
+    document.getElementById(
+        "membershipFormBox"
+    );
 
-    document
-    .getElementById("registration")
-    .scrollIntoView({
+    const categorySelect =
+    document.getElementById(
+        "category"
+    );
 
-        behavior:"smooth",
+    categorySelect.value =
+    category;
 
-        block:"start"
+    formBox.classList.add("show");
 
-    });
+    setTimeout(function(){
+
+        formBox.scrollIntoView({
+            behavior:"smooth",
+            block:"start"
+        });
+
+    },100);
 
 }
 
 
-/* =========================================================
-   MOBILE
-========================================================= */
+/* =====================================================
+   MOBILE NUMBER
+===================================================== */
 
 document
 .getElementById("mobile")
-.addEventListener("input",function(){
+.addEventListener(
+"input",
+function(){
 
     this.value =
     this.value
@@ -2701,13 +2601,15 @@ document
 });
 
 
-/* =========================================================
+/* =====================================================
    PINCODE
-========================================================= */
+===================================================== */
 
 document
 .getElementById("pincode")
-.addEventListener("input",function(){
+.addEventListener(
+"input",
+function(){
 
     this.value =
     this.value
@@ -2717,18 +2619,23 @@ document
 });
 
 
-/* =========================================================
+/* =====================================================
    PHOTO PREVIEW
-========================================================= */
+===================================================== */
 
 document
 .getElementById("photo")
-.addEventListener("change",function(){
+.addEventListener(
+"change",
+function(){
 
-    const file = this.files[0];
+    const file =
+    this.files[0];
 
     const preview =
-    document.getElementById("photoPreview");
+    document.getElementById(
+        "photoPreview"
+    );
 
 
     if(!file){
@@ -2774,13 +2681,15 @@ document
 });
 
 
-/* =========================================================
+/* =====================================================
    FORM SUBMIT
-========================================================= */
+===================================================== */
 
 document
 .getElementById("membershipForm")
-.addEventListener("submit",function(e){
+.addEventListener(
+"submit",
+function(e){
 
     e.preventDefault();
 
@@ -2800,13 +2709,15 @@ document
 
 
     const result =
-    document.getElementById("result");
+    document.getElementById(
+        "result"
+    );
 
 
     if(!/^[0-9]{10}$/.test(mobile)){
 
         result.className =
-        "ms-result error";
+        "member-result error";
 
         result.innerHTML =
         '<i class="fa-solid fa-circle-xmark"></i> ' +
@@ -2820,7 +2731,7 @@ document
     if(!/^[0-9]{6}$/.test(pincode)){
 
         result.className =
-        "ms-result error";
+        "member-result error";
 
         result.innerHTML =
         '<i class="fa-solid fa-circle-xmark"></i> ' +
@@ -2831,18 +2742,12 @@ document
     }
 
 
-    /* =====================================================
-       MEMBER ID
-    ===================================================== */
-
     let members =
 
     JSON.parse(
-
         localStorage.getItem(
             "yssfMembers"
         )
-
     ) || [];
 
 
@@ -2860,10 +2765,6 @@ document
         members.length + 1
     ).padStart(4,"0");
 
-
-    /* =====================================================
-       MEMBER DATA
-    ===================================================== */
 
     const member = {
 
@@ -2910,6 +2811,12 @@ document
         .value
         .trim(),
 
+        city:
+        document
+        .getElementById("city")
+        .value
+        .trim(),
+
         district:
         document
         .getElementById("district")
@@ -2922,19 +2829,13 @@ document
         .value
         .trim(),
 
+        pincode:pincode,
+
         block:
         document
         .getElementById("block")
         .value
         .trim(),
-
-        city:
-        document
-        .getElementById("city")
-        .value
-        .trim(),
-
-        pincode:pincode,
 
         idType:
         document
@@ -2988,12 +2889,8 @@ document
     );
 
 
-    /* =====================================================
-       SUCCESS
-    ===================================================== */
-
     result.className =
-    "ms-result success";
+    "member-result success";
 
 
     result.innerHTML =
@@ -3003,16 +2900,6 @@ document
     '<i class="fa-solid fa-circle-check"></i> ' +
 
     'सदस्यता आवेदन सफलतापूर्वक दर्ज हुआ।' +
-
-    '</strong>' +
-
-    '<br>' +
-
-    'सदस्य: ' +
-
-    '<strong>' +
-
-    member.name +
 
     '</strong>' +
 
@@ -3028,17 +2915,23 @@ document
 
     '<br>' +
 
+    'सदस्य: ' +
+
+    '<strong>' +
+
+    member.name +
+
+    '</strong>' +
+
+    '<br>' +
+
     'सदस्यता: ' +
 
     '<strong>' +
 
     member.category +
 
-    '</strong>' +
-
-    '<br>' +
-
-    'स्थिति: <strong>लंबित</strong>';
+    '</strong>';
 
 
     this.reset();
@@ -3051,23 +2944,22 @@ document
 
 
     result.scrollIntoView({
-
         behavior:"smooth",
-
         block:"center"
-
     });
 
 });
 
 
-/* =========================================================
-   RESET
-========================================================= */
+/* =====================================================
+   RESET PHOTO
+===================================================== */
 
 document
 .getElementById("membershipForm")
-.addEventListener("reset",function(){
+.addEventListener(
+"reset",
+function(){
 
     setTimeout(function(){
 
@@ -3081,6 +2973,7 @@ document
 });
 
 </script>
+
 
 </body>
 </html>
