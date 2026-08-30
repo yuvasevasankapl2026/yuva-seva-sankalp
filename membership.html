@@ -6,6 +6,9 @@
 
 <title>सदस्य बनें | युवा सेवा संकल्प फाउंडेशन</title>
 
+<meta name="description"
+content="युवा सेवा संकल्प फाउंडेशन की सदस्यता के लिए ऑनलाइन पंजीकरण करें।">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -17,26 +20,27 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
 <style>
 
 /* =========================================================
-   YSS FOUNDATION — MEMBERSHIP PAGE
+   YSS FOUNDATION
+   PREMIUM MEMBERSHIP PAGE
 ========================================================= */
 
 :root{
-    --blue:#123b66;
-    --blue2:#1d5d96;
-    --dark:#082944;
-
-    --orange:#f47721;
+    --navy:#082d4f;
+    --blue:#123f6d;
+    --blue2:#21689e;
+    --orange:#ef6c1b;
+    --orange2:#ff9a3d;
     --green:#238447;
+    --green2:#53ad68;
 
-    --white:#fff;
-    --bg:#f5f8fc;
-
+    --white:#ffffff;
+    --bg:#f4f8fc;
     --text:#263746;
-    --muted:#6c7c8b;
+    --muted:#71808d;
+    --border:#e0e8ef;
 
-    --border:#e0e7ee;
-
-    --shadow:0 12px 35px rgba(18,59,102,.10);
+    --shadow:0 15px 45px rgba(8,45,79,.10);
+    --shadow2:0 22px 60px rgba(8,45,79,.15);
 }
 
 *{
@@ -51,18 +55,19 @@ html{
 
 body{
     font-family:
-    "Noto Sans Devanagari",
-    "Mangal",
-    Arial,
-    sans-serif;
+        "Noto Sans Devanagari",
+        "Mangal",
+        Arial,
+        sans-serif;
 
     background:var(--bg);
     color:var(--text);
-    line-height:1.6;
+    line-height:1.65;
 }
 
 a{
     text-decoration:none;
+    color:inherit;
 }
 
 button,
@@ -72,42 +77,50 @@ textarea{
     font-family:inherit;
 }
 
+img{
+    max-width:100%;
+}
+
+
 /* =========================================================
    TOP BAR
 ========================================================= */
 
 .topbar{
-    background:var(--dark);
+    background:var(--navy);
     color:#fff;
     font-size:12px;
 }
 
 .topbar-inner{
-    max-width:1180px;
+    max-width:1240px;
     margin:auto;
+    padding:0 20px;
     min-height:38px;
-    padding:0 18px;
 
     display:flex;
     align-items:center;
     justify-content:space-between;
 }
 
-.top-left{
+.top-contact{
     display:flex;
+    align-items:center;
     gap:22px;
     flex-wrap:wrap;
 }
 
-.top-left span{
+.top-contact span{
     display:flex;
     align-items:center;
-    gap:6px;
+    gap:7px;
+    white-space:nowrap;
 }
 
-.top-left i{
-    color:#ffb45c;
+.top-contact i{
+    color:#ffb15e;
 }
+
 
 /* =========================================================
    HEADER
@@ -119,9 +132,9 @@ textarea{
 }
 
 .header-inner{
-    max-width:1180px;
+    max-width:1240px;
     margin:auto;
-    padding:14px 18px;
+    padding:13px 20px;
 
     display:flex;
     align-items:center;
@@ -135,41 +148,41 @@ textarea{
 }
 
 .logo{
-    width:74px;
-    height:74px;
+    width:76px;
+    height:76px;
+
     object-fit:contain;
-    border-radius:50%;
+    display:block;
+    flex-shrink:0;
 }
 
-.brand h1{
-    font-size:25px;
-    line-height:1.15;
+.brand-name{
     color:var(--blue);
+    font-size:25px;
     font-weight:800;
+    line-height:1.2;
 }
 
-.brand h1 span{
+.brand-name span{
     color:var(--orange);
 }
 
-.brand p{
-    margin-top:3px;
+.tagline{
     color:var(--blue2);
     font-size:11px;
     font-weight:700;
+    margin-top:3px;
 }
 
-/* HEADER BUTTON */
-
-.header-btn{
+.back-home{
     display:flex;
     align-items:center;
     gap:8px;
 
-    padding:10px 16px;
+    padding:10px 17px;
 
-    border:1px solid #d9e3eb;
-    border-radius:10px;
+    border:1px solid var(--border);
+    border-radius:11px;
 
     color:var(--blue);
     background:#fff;
@@ -180,21 +193,23 @@ textarea{
     transition:.25s;
 }
 
-.header-btn:hover{
+.back-home:hover{
     background:#f2f7fb;
     transform:translateY(-2px);
 }
 
+
 /* =========================================================
-   NAV
+   NAVIGATION
 ========================================================= */
 
-.nav{
+.navbar{
     background:var(--blue);
+    box-shadow:0 4px 15px rgba(0,0,0,.08);
 }
 
 .nav-inner{
-    max-width:1180px;
+    max-width:1240px;
     margin:auto;
 
     display:flex;
@@ -203,7 +218,11 @@ textarea{
     overflow-x:auto;
 }
 
-.nav a{
+.nav-inner::-webkit-scrollbar{
+    height:0;
+}
+
+.nav-inner a{
     color:#fff;
     padding:12px 16px;
 
@@ -215,10 +234,11 @@ textarea{
     transition:.2s;
 }
 
-.nav a:hover,
-.nav a.active{
+.nav-inner a:hover,
+.nav-inner a.active{
     background:var(--orange);
 }
+
 
 /* =========================================================
    HERO
@@ -226,183 +246,208 @@ textarea{
 
 .hero{
     position:relative;
+    overflow:hidden;
 
     background:
-    linear-gradient(
-        135deg,
-        #edf5fc,
-        #ffffff
-    );
+        radial-gradient(
+            circle at 88% 25%,
+            rgba(35,132,71,.07),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 8% 90%,
+            rgba(239,108,27,.07),
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #edf5fb,
+            #ffffff
+        );
 
-    padding:48px 18px 55px;
+    padding:65px 20px 70px;
 
-    overflow:hidden;
+    border-bottom:1px solid #e6edf3;
 }
 
-.hero:before{
-    content:"";
-
+.hero-ring1,
+.hero-ring2{
     position:absolute;
-
-    width:330px;
-    height:330px;
-
     border-radius:50%;
-
-    border:45px solid rgba(35,132,71,.045);
-
-    right:-120px;
-    top:-150px;
+    pointer-events:none;
 }
 
-.hero:after{
-    content:"";
+.hero-ring1{
+    width:360px;
+    height:360px;
 
-    position:absolute;
+    right:-160px;
+    top:-170px;
 
-    width:220px;
-    height:220px;
+    border:48px solid rgba(18,63,109,.035);
+}
 
-    border-radius:50%;
+.hero-ring2{
+    width:260px;
+    height:260px;
 
-    border:30px solid rgba(244,119,33,.045);
+    left:-130px;
+    bottom:-150px;
 
-    left:-120px;
-    bottom:-130px;
+    border:35px solid rgba(239,108,27,.045);
 }
 
 .hero-content{
     position:relative;
     z-index:2;
 
-    max-width:850px;
+    max-width:900px;
     margin:auto;
 
     text-align:center;
 }
 
-.hero-tag{
+.hero-badge{
     display:inline-flex;
     align-items:center;
-    gap:7px;
+    gap:8px;
+
+    padding:7px 17px;
+
+    border-radius:30px;
 
     background:#fff;
-
     border:1px solid #dce7ef;
 
     color:var(--orange);
 
-    border-radius:30px;
-
-    padding:6px 15px;
-
     font-size:12px;
     font-weight:800;
 
-    box-shadow:0 6px 18px rgba(18,59,102,.06);
+    box-shadow:0 8px 25px rgba(8,45,79,.07);
 
-    margin-bottom:15px;
+    margin-bottom:17px;
 }
 
-.hero h2{
+.hero h1{
     color:var(--blue);
 
-    font-size:38px;
-    line-height:1.25;
-
+    font-size:42px;
     font-weight:800;
 
-    margin-bottom:9px;
+    line-height:1.25;
+
+    margin-bottom:10px;
 }
 
-.hero h2 span{
+.hero h1 span{
     color:var(--orange);
 }
 
-.hero p{
+.hero-description{
+    max-width:720px;
+    margin:auto;
+
     color:var(--muted);
     font-size:14px;
-    max-width:680px;
-    margin:auto;
 }
 
+.hero-line{
+    width:70px;
+    height:4px;
+
+    border-radius:10px;
+
+    margin:20px auto 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--blue),
+            var(--orange),
+            var(--green)
+        );
+}
+
+
 /* =========================================================
-   CONTAINER
+   COMMON
 ========================================================= */
 
 .container{
     max-width:1180px;
     margin:auto;
-    padding:0 18px;
+    padding:0 20px;
 }
-
-/* =========================================================
-   SECTION TITLE
-========================================================= */
 
 .section{
-    padding:45px 0 25px;
+    padding:55px 0;
 }
 
-.title{
+.section-heading{
     text-align:center;
-    margin-bottom:28px;
+    margin-bottom:30px;
 }
 
-.title small{
+.section-heading .eyebrow{
     color:var(--orange);
     font-size:12px;
     font-weight:800;
+    letter-spacing:.4px;
 }
 
-.title h2{
+.section-heading h2{
     color:var(--blue);
-    font-size:27px;
+    font-size:29px;
     font-weight:800;
+    margin-top:2px;
 }
 
-.title p{
+.section-heading p{
     color:var(--muted);
     font-size:13px;
     margin-top:4px;
 }
 
+
 /* =========================================================
    MEMBERSHIP CARDS
 ========================================================= */
 
-.memberships{
+.membership-grid{
     display:grid;
     grid-template-columns:repeat(3,1fr);
-    gap:18px;
+    gap:20px;
 }
 
-.card{
+.membership-card{
     position:relative;
 
     background:#fff;
 
     border:1px solid var(--border);
 
-    border-radius:18px;
+    border-radius:20px;
 
-    padding:25px 22px;
+    padding:28px 23px 23px;
 
     box-shadow:var(--shadow);
 
-    transition:.3s;
+    transition:
+        transform .3s,
+        box-shadow .3s;
 }
 
-.card:hover{
-    transform:translateY(-6px);
-    box-shadow:0 18px 42px rgba(18,59,102,.15);
+.membership-card:hover{
+    transform:translateY(-7px);
+    box-shadow:var(--shadow2);
 }
 
-.card.popular{
+.membership-card.featured{
     border:2px solid var(--orange);
 }
 
-.popular-label{
+.popular{
     position:absolute;
 
     top:-1px;
@@ -410,93 +455,97 @@ textarea{
 
     transform:translateX(-50%);
 
-    background:var(--orange);
+    padding:6px 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--orange),
+            var(--orange2)
+        );
 
     color:#fff;
 
-    padding:5px 18px;
-
-    border-radius:0 0 12px 12px;
+    border-radius:0 0 14px 14px;
 
     font-size:11px;
     font-weight:800;
 }
 
-.card-icon{
-    width:58px;
-    height:58px;
+.plan-icon{
+    width:65px;
+    height:65px;
 
-    border-radius:16px;
+    margin:0 auto 15px;
+
+    border-radius:18px;
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    margin:0 auto 13px;
-
-    font-size:23px;
+    font-size:25px;
 }
 
-.card:nth-child(1) .card-icon{
+.membership-card:nth-child(1) .plan-icon{
     background:#eaf3ff;
     color:var(--blue);
 }
 
-.card:nth-child(2) .card-icon{
+.membership-card:nth-child(2) .plan-icon{
     background:#fff0e5;
     color:var(--orange);
 }
 
-.card:nth-child(3) .card-icon{
-    background:#eaf8ef;
+.membership-card:nth-child(3) .plan-icon{
+    background:#eaf8ee;
     color:var(--green);
 }
 
-.card h3{
+.membership-card h3{
     text-align:center;
 
     color:var(--blue);
 
-    font-size:19px;
+    font-size:20px;
     font-weight:800;
 
-    margin-bottom:14px;
+    margin-bottom:17px;
 }
 
-.features{
+.plan-list{
     list-style:none;
     margin-bottom:20px;
 }
 
-.features li{
+.plan-list li{
     display:flex;
     align-items:flex-start;
-    gap:8px;
+    gap:9px;
 
-    padding:7px 0;
+    padding:8px 0;
 
-    border-bottom:1px dashed #e6ebef;
+    border-bottom:1px dashed #e5ebef;
 
-    color:#637382;
+    color:#657582;
     font-size:12px;
 }
 
-.features li:last-child{
+.plan-list li:last-child{
     border-bottom:0;
 }
 
-.features i{
+.plan-list i{
     color:var(--green);
     margin-top:4px;
 }
 
-.choose{
+.plan-button{
     width:100%;
 
+    padding:12px;
+
     border:0;
-
-    padding:11px;
-
     border-radius:10px;
 
     background:var(--blue);
@@ -509,104 +558,141 @@ textarea{
     transition:.25s;
 }
 
-.card:nth-child(2) .choose{
+.membership-card:nth-child(2) .plan-button{
     background:var(--orange);
 }
 
-.card:nth-child(3) .choose{
+.membership-card:nth-child(3) .plan-button{
     background:var(--green);
 }
 
-.choose:hover{
-    filter:brightness(.95);
+.plan-button:hover{
     transform:translateY(-2px);
+    filter:brightness(.95);
 }
 
+
 /* =========================================================
-   FORM
+   FORM AREA
 ========================================================= */
 
 .form-section{
-    padding:25px 0 65px;
+    padding:10px 0 70px;
 }
 
-.form-box{
+.form-card{
     background:#fff;
 
     border:1px solid var(--border);
 
-    border-radius:20px;
+    border-radius:24px;
 
     overflow:hidden;
 
     box-shadow:
-    0 15px 50px rgba(18,59,102,.10);
+        0 20px 65px rgba(8,45,79,.12);
 }
 
-.form-top{
+.form-header{
+    position:relative;
+    overflow:hidden;
+
     background:
-    linear-gradient(
-        135deg,
-        var(--dark),
-        var(--blue2)
-    );
+        linear-gradient(
+            120deg,
+            #072b4b,
+            #123f6d 65%,
+            #21689e
+        );
 
     color:#fff;
 
-    padding:23px 28px;
+    padding:25px 30px;
 
     display:flex;
-    justify-content:space-between;
     align-items:center;
+    justify-content:space-between;
 }
 
-.form-top h2{
-    font-size:21px;
+.form-header:after{
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    border:30px solid rgba(255,255,255,.045);
+
+    border-radius:50%;
+
+    right:-70px;
+    top:-100px;
+}
+
+.form-header h2{
+    position:relative;
+    z-index:2;
+
+    font-size:22px;
     font-weight:800;
 }
 
-.form-top p{
+.form-header p{
+    position:relative;
+    z-index:2;
+
+    opacity:.78;
+
     font-size:11px;
-    opacity:.8;
-    margin-top:3px;
+    margin-top:2px;
 }
 
-.form-top-icon{
-    width:47px;
-    height:47px;
+.form-header-icon{
+    position:relative;
+    z-index:3;
 
-    border-radius:12px;
+    width:50px;
+    height:50px;
 
-    background:rgba(255,255,255,.12);
+    border-radius:14px;
+
+    background:rgba(255,255,255,.11);
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    font-size:20px;
+    font-size:21px;
 }
 
 .form-body{
-    padding:28px;
+    padding:30px;
 }
 
+
 /* =========================================================
-   SELECTED PLAN
+   PLAN SELECT
 ========================================================= */
 
-.selected{
-    background:#f4f8fc;
+.plan-select{
+    background:
+        linear-gradient(
+            135deg,
+            #f2f7fb,
+            #fafcfe
+        );
 
     border:1px solid #dce7ef;
 
-    padding:15px;
+    border-radius:14px;
 
-    border-radius:12px;
+    padding:17px;
 
-    margin-bottom:25px;
+    margin-bottom:28px;
 }
 
-.selected label{
+.plan-select label{
     display:block;
 
     color:var(--blue);
@@ -614,33 +700,42 @@ textarea{
     font-size:12px;
     font-weight:800;
 
-    margin-bottom:6px;
+    margin-bottom:7px;
 }
 
-.selected select{
+.plan-select label i{
+    color:var(--orange);
+    margin-right:5px;
+}
+
+.plan-select select{
     width:100%;
 
-    border:1px solid #d5e0e8;
+    padding:11px 12px;
+
+    border:1px solid #d4e0e8;
 
     border-radius:9px;
 
-    padding:11px;
+    background:#fff;
 
     color:var(--blue);
 
-    background:#fff;
+    font-size:13px;
+    font-weight:600;
 
     outline:none;
 }
 
+
 /* =========================================================
-   FORM GRID
+   FORM TITLES
 ========================================================= */
 
 .form-title{
     display:flex;
     align-items:center;
-    gap:8px;
+    gap:9px;
 
     color:var(--blue);
 
@@ -649,7 +744,7 @@ textarea{
 
     padding-bottom:9px;
 
-    margin-bottom:17px;
+    margin-bottom:18px;
 
     border-bottom:1px solid var(--border);
 }
@@ -658,9 +753,15 @@ textarea{
     color:var(--orange);
 }
 
-.grid{
+
+/* =========================================================
+   FORM GRID
+========================================================= */
+
+.form-grid{
     display:grid;
     grid-template-columns:repeat(2,1fr);
+
     gap:17px;
 
     margin-bottom:28px;
@@ -677,13 +778,14 @@ textarea{
 }
 
 .field label{
+    color:#465968;
+
     font-size:12px;
     font-weight:700;
-    color:#435565;
 }
 
 .required{
-    color:#d33;
+    color:#d63a3a;
 }
 
 .field input,
@@ -691,19 +793,19 @@ textarea{
 .field textarea{
     width:100%;
 
-    border:1px solid #d6e0e8;
-
-    border-radius:9px;
+    padding:11px 12px;
 
     background:#fbfdff;
 
-    padding:11px 12px;
+    border:1px solid #d6e1e8;
 
-    font-size:13px;
+    border-radius:9px;
+
+    outline:none;
 
     color:var(--text);
 
-    outline:none;
+    font-size:13px;
 
     transition:.2s;
 }
@@ -716,7 +818,7 @@ textarea{
     border-color:var(--blue2);
 
     box-shadow:
-    0 0 0 3px rgba(29,93,150,.07);
+        0 0 0 3px rgba(33,104,158,.08);
 }
 
 .field textarea{
@@ -724,55 +826,66 @@ textarea{
     resize:vertical;
 }
 
+
 /* =========================================================
-   DOCUMENT
+   IDENTITY NOTE
 ========================================================= */
 
-.note{
+.identity-note{
     display:flex;
-    gap:9px;
-
-    padding:12px 14px;
-
-    border-radius:10px;
+    gap:10px;
 
     background:#fff9ed;
 
-    border:1px solid #f1dfb4;
+    border:1px solid #f1dfb1;
 
-    color:#75602d;
+    color:#725d2b;
+
+    border-radius:11px;
+
+    padding:12px 14px;
 
     font-size:11px;
 
-    margin-bottom:17px;
+    margin-bottom:18px;
 }
 
-.note i{
-    color:#c18d1e;
+.identity-note i{
+    color:#c48e20;
     margin-top:3px;
 }
 
+
 /* =========================================================
-   PHOTO
+   PHOTO UPLOAD
 ========================================================= */
 
-.photo-box{
-    border:2px dashed #cbd9e4;
+.photo-upload{
+    border:2px dashed #cbd9e3;
 
-    border-radius:13px;
+    border-radius:15px;
 
     background:#fbfdff;
 
-    padding:20px;
+    padding:22px;
 
     text-align:center;
+
+    transition:.25s;
+}
+
+.photo-upload:hover{
+    border-color:var(--blue2);
+    background:#f7fbfe;
 }
 
 .photo-icon{
-    width:50px;
-    height:50px;
+    width:52px;
+    height:52px;
 
     border-radius:50%;
+
+    margin:0 auto 9px;
 
     background:#edf5fb;
     color:var(--blue2);
@@ -781,12 +894,10 @@ textarea{
     align-items:center;
     justify-content:center;
 
-    margin:0 auto 8px;
-
-    font-size:20px;
+    font-size:21px;
 }
 
-.photo-box label{
+.photo-upload label{
     display:inline-block;
 
     color:var(--blue);
@@ -797,17 +908,17 @@ textarea{
     cursor:pointer;
 }
 
-.photo-box p{
-    color:#8a98a4;
+.photo-upload input{
+    display:none;
+}
+
+.photo-upload p{
+    color:#8997a3;
     font-size:10px;
     margin-top:3px;
 }
 
-.photo-box input{
-    display:none;
-}
-
-.preview{
+.photo-preview{
     display:none;
 
     width:90px;
@@ -817,12 +928,13 @@ textarea{
 
     margin:12px auto 0;
 
-    border-radius:8px;
+    border-radius:9px;
 
     border:2px solid #fff;
 
-    box-shadow:0 5px 15px rgba(0,0,0,.12);
+    box-shadow:0 6px 18px rgba(0,0,0,.15);
 }
+
 
 /* =========================================================
    CONSENT
@@ -830,16 +942,16 @@ textarea{
 
 .consent{
     display:flex;
-    gap:9px;
     align-items:flex-start;
+    gap:9px;
+
+    padding:14px;
+
+    border-radius:11px;
 
     background:#f5f8fb;
 
     border:1px solid var(--border);
-
-    padding:13px;
-
-    border-radius:10px;
 
     margin-top:20px;
 }
@@ -852,34 +964,34 @@ textarea{
 }
 
 .consent label{
-    color:#627383;
+    color:#617382;
     font-size:11px;
 }
+
 
 /* =========================================================
    SUBMIT
 ========================================================= */
 
-.submit{
+.submit-area{
     text-align:center;
-    margin-top:22px;
+    margin-top:23px;
 }
 
-.submit button{
-    border:0;
+.submit-button{
+    min-width:275px;
 
-    min-width:260px;
+    border:0;
+    border-radius:12px;
 
     padding:13px 25px;
 
-    border-radius:11px;
-
     background:
-    linear-gradient(
-        135deg,
-        var(--orange),
-        #e45b14
-    );
+        linear-gradient(
+            135deg,
+            var(--orange),
+            #df5911
+        );
 
     color:#fff;
 
@@ -887,30 +999,32 @@ textarea{
     font-weight:800;
 
     box-shadow:
-    0 9px 22px rgba(244,119,33,.20);
+        0 10px 25px rgba(239,108,27,.22);
 
     transition:.25s;
 }
 
-.submit button:hover{
-    transform:translateY(-2px);
+.submit-button:hover{
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 15px 30px rgba(239,108,27,.28);
 }
+
 
 /* =========================================================
-   BENEFITS
+   TRUST BOXES
 ========================================================= */
 
-.benefits{
+.trust-grid{
     display:grid;
-
     grid-template-columns:repeat(3,1fr);
+    gap:14px;
 
-    gap:15px;
-
-    margin-top:18px;
+    margin-top:20px;
 }
 
-.benefit{
+.trust-item{
     display:flex;
     align-items:center;
     gap:11px;
@@ -924,13 +1038,13 @@ textarea{
     padding:13px;
 }
 
-.benefit-icon{
-    width:40px;
-    height:40px;
+.trust-icon{
+    width:41px;
+    height:41px;
 
     flex-shrink:0;
 
-    border-radius:10px;
+    border-radius:11px;
 
     background:#edf5fb;
 
@@ -941,24 +1055,32 @@ textarea{
     justify-content:center;
 }
 
-.benefit h4{
+.trust-item h4{
     color:var(--blue);
     font-size:12px;
 }
 
-.benefit p{
+.trust-item p{
     color:var(--muted);
     font-size:10px;
 }
+
 
 /* =========================================================
    FOOTER
 ========================================================= */
 
 .footer{
-    background:var(--dark);
+    background:
+        linear-gradient(
+            135deg,
+            #062a49,
+            #103e68
+        );
+
     color:#fff;
-    padding:35px 18px 15px;
+
+    padding:38px 20px 16px;
 }
 
 .footer-inner{
@@ -966,17 +1088,17 @@ textarea{
     margin:auto;
 
     display:grid;
-
     grid-template-columns:1.5fr 1fr 1fr;
 
-    gap:30px;
+    gap:35px;
 }
 
 .footer-logo{
-    width:60px;
-    height:60px;
+    width:62px;
+    height:62px;
 
     object-fit:contain;
+    display:block;
 
     border-radius:50%;
 
@@ -1002,7 +1124,7 @@ textarea{
 }
 
 .footer li{
-    margin:5px 0;
+    margin:6px 0;
 }
 
 .footer a:hover{
@@ -1015,7 +1137,7 @@ textarea{
 
     padding-top:13px;
 
-    border-top:1px solid rgba(255,255,255,.1);
+    border-top:1px solid rgba(255,255,255,.12);
 
     text-align:center;
 
@@ -1024,20 +1146,22 @@ textarea{
     font-size:10px;
 }
 
+
 /* =========================================================
-   SUCCESS
+   SUCCESS MODAL
 ========================================================= */
 
 .modal{
     position:fixed;
     inset:0;
 
-    background:rgba(4,20,35,.70);
-
     display:none;
-
     align-items:center;
     justify-content:center;
+
+    background:rgba(4,21,36,.72);
+
+    backdrop-filter:blur(5px);
 
     padding:20px;
 
@@ -1049,62 +1173,65 @@ textarea{
 }
 
 .modal-box{
+    width:100%;
+    max-width:420px;
+
     background:#fff;
 
-    width:100%;
-    max-width:400px;
+    border-radius:22px;
 
     padding:30px;
 
-    border-radius:20px;
-
     text-align:center;
 
-    box-shadow:0 25px 70px rgba(0,0,0,.25);
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.25);
 }
 
-.success{
-    width:65px;
-    height:65px;
+.success-icon{
+    width:68px;
+    height:68px;
 
     border-radius:50%;
 
+    margin:0 auto 13px;
+
     background:#eaf8ef;
+
     color:var(--green);
 
     display:flex;
     align-items:center;
     justify-content:center;
 
-    font-size:28px;
-
-    margin:0 auto 13px;
+    font-size:30px;
 }
 
 .modal-box h2{
     color:var(--blue);
-    font-size:20px;
+    font-size:21px;
 }
 
 .modal-box p{
     color:var(--muted);
     font-size:12px;
-
     margin:7px 0 18px;
 }
 
-.modal-box button{
+.modal-close{
     border:0;
-
-    background:var(--blue);
-    color:#fff;
 
     border-radius:9px;
 
-    padding:10px 22px;
+    padding:10px 24px;
+
+    background:var(--blue);
+
+    color:#fff;
 
     font-weight:700;
 }
+
 
 /* =========================================================
    WHATSAPP
@@ -1116,8 +1243,8 @@ textarea{
     right:20px;
     bottom:20px;
 
-    width:50px;
-    height:50px;
+    width:51px;
+    height:51px;
 
     border-radius:50%;
 
@@ -1131,81 +1258,99 @@ textarea{
 
     font-size:25px;
 
-    box-shadow:0 8px 22px rgba(0,0,0,.20);
+    box-shadow:
+        0 8px 25px rgba(0,0,0,.20);
 
-    z-index:3000;
+    z-index:5000;
+
+    transition:.25s;
 }
+
+.whatsapp:hover{
+    transform:scale(1.08);
+}
+
 
 /* =========================================================
    RESPONSIVE
 ========================================================= */
 
-@media(max-width:900px){
+@media(max-width:950px){
 
-    .memberships{
+    .membership-grid{
         grid-template-columns:1fr;
-        max-width:600px;
+        max-width:620px;
         margin:auto;
     }
 
-    .card.popular{
+    .membership-card.featured{
         transform:none;
     }
 
-    .benefits{
+    .trust-grid{
         grid-template-columns:1fr;
     }
 
     .footer-inner{
         grid-template-columns:1fr 1fr;
     }
-
-    .header-btn{
-        display:none;
-    }
 }
 
-@media(max-width:650px){
 
-    .topbar-inner{
-        justify-content:center;
-    }
+@media(max-width:700px){
 
-    .top-left{
+    .top-contact{
         justify-content:center;
-        gap:7px 14px;
+        gap:6px 15px;
     }
 
     .header-inner{
         justify-content:center;
     }
 
-    .brand-logo{
-        width:60px;
-        height:60px;
+    .back-home{
+        display:none;
     }
 
-    .brand h1{
+    .logo{
+        width:63px;
+        height:63px;
+    }
+
+    .brand-name{
         font-size:20px;
     }
 
-    .brand p{
+    .tagline{
         font-size:9px;
     }
 
-    .hero{
-        padding:38px 15px 45px;
-    }
-
-    .hero h2{
-        font-size:29px;
-    }
-
-    .hero p{
+    .nav-inner a{
+        padding:11px 13px;
         font-size:12px;
     }
 
-    .grid{
+    .hero{
+        padding:48px 17px 52px;
+    }
+
+    .hero h1{
+        font-size:31px;
+    }
+
+    .hero-description{
+        font-size:12px;
+    }
+
+    .section{
+        padding:42px 0;
+    }
+
+    .section-heading h2{
+        font-size:24px;
+    }
+
+    .form-grid{
         grid-template-columns:1fr;
     }
 
@@ -1214,14 +1359,14 @@ textarea{
     }
 
     .form-body{
-        padding:20px 15px;
+        padding:20px 17px;
     }
 
-    .form-top{
+    .form-header{
         padding:20px;
     }
 
-    .form-top h2{
+    .form-header h2{
         font-size:18px;
     }
 
@@ -1230,32 +1375,50 @@ textarea{
     }
 }
 
-@media(max-width:420px){
 
-    .brand h1{
+@media(max-width:430px){
+
+    .topbar{
+        font-size:10px;
+    }
+
+    .top-contact{
+        gap:4px 10px;
+    }
+
+    .brand-name{
         font-size:17px;
     }
 
-    .brand-logo{
-        width:52px;
-        height:52px;
+    .logo{
+        width:54px;
+        height:54px;
     }
 
-    .hero h2{
-        font-size:25px;
+    .hero h1{
+        font-size:27px;
     }
 
-    .title h2{
-        font-size:23px;
+    .membership-card{
+        padding:23px 17px;
     }
 
-    .card{
-        padding:22px 17px;
+    .form-header-icon{
+        width:42px;
+        height:42px;
     }
 
-    .submit button{
+    .submit-button{
         width:100%;
         min-width:0;
+    }
+
+    .whatsapp{
+        width:47px;
+        height:47px;
+
+        right:14px;
+        bottom:14px;
     }
 }
 
@@ -1273,7 +1436,7 @@ textarea{
 
     <div class="topbar-inner">
 
-        <div class="top-left">
+        <div class="top-contact">
 
             <span>
                 <i class="fa-solid fa-phone"></i>
@@ -1307,29 +1470,29 @@ textarea{
 
         <a href="index.html" class="brand">
 
+            <!-- आपका असली लोगो -->
             <img
-                src="assets/logo.png"
+                src="/assets/logo.png"
                 alt="युवा सेवा संकल्प फाउंडेशन"
-                class="logo"
-            >
+                class="logo">
 
             <div>
 
-                <h1>
+                <div class="brand-name">
                     युवा सेवा संकल्प
                     <span>फाउंडेशन</span>
-                </h1>
+                </div>
 
-                <p>
+                <div class="tagline">
                     युवा शक्ति – राष्ट्र शक्ति
-                </p>
+                </div>
 
             </div>
 
         </a>
 
 
-        <a href="index.html" class="header-btn">
+        <a href="index.html" class="back-home">
 
             <i class="fa-solid fa-house"></i>
 
@@ -1346,7 +1509,7 @@ textarea{
      NAVIGATION
 ===================================================== -->
 
-<nav class="nav">
+<nav class="navbar">
 
     <div class="nav-inner">
 
@@ -1394,9 +1557,12 @@ textarea{
 
 <section class="hero">
 
+    <div class="hero-ring1"></div>
+    <div class="hero-ring2"></div>
+
     <div class="hero-content">
 
-        <div class="hero-tag">
+        <div class="hero-badge">
 
             <i class="fa-solid fa-users"></i>
 
@@ -1404,15 +1570,17 @@ textarea{
 
         </div>
 
-        <h2>
+        <h1>
             आइए, <span>सदस्य बनें</span>
-        </h2>
+        </h1>
 
-        <p>
+        <p class="hero-description">
             युवा सेवा संकल्प फाउंडेशन से जुड़कर
-            समाज सेवा, युवा सशक्तिकरण और
-            राष्ट्र निर्माण के संकल्प को मजबूत करें।
+            समाज सेवा, युवा सशक्तिकरण और राष्ट्र निर्माण
+            के संकल्प को मजबूत करें।
         </p>
+
+        <div class="hero-line"></div>
 
     </div>
 
@@ -1420,72 +1588,78 @@ textarea{
 
 
 <!-- =====================================================
-     MEMBERSHIP PLANS
+     MEMBERSHIP OPTIONS
 ===================================================== -->
 
 <section class="section">
 
     <div class="container">
 
-        <div class="title">
+        <div class="section-heading">
 
-            <small>MEMBERSHIP</small>
+            <div class="eyebrow">
+                MEMBERSHIP
+            </div>
 
             <h2>
                 अपनी सदस्यता श्रेणी चुनें
             </h2>
 
             <p>
-                अपनी पसंद के अनुसार सदस्यता का चयन करें
+                अपनी रुचि और सहभागिता के अनुसार विकल्प चुनें।
             </p>
 
         </div>
 
 
-        <div class="memberships">
+        <div class="membership-grid">
 
 
             <!-- GENERAL -->
 
-            <div class="card">
+            <div class="membership-card">
 
-                <div class="card-icon">
+                <div class="plan-icon">
+
                     <i class="fa-solid fa-user"></i>
+
                 </div>
 
                 <h3>
                     सामान्य सदस्यता
                 </h3>
 
-                <ul class="features">
+                <ul class="plan-list">
 
                     <li>
-                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-circle-check"></i>
                         सदस्य पंजीकरण
                     </li>
 
                     <li>
-                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-circle-check"></i>
                         यूनिक सदस्य ID
                     </li>
 
                     <li>
-                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-circle-check"></i>
                         संस्था की गतिविधियों की जानकारी
                     </li>
 
                     <li>
-                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-circle-check"></i>
                         समाज सेवा में सहभागिता
                     </li>
 
                 </ul>
 
                 <button
-                    class="choose"
-                    onclick="choosePlan('सामान्य सदस्यता')">
+                    class="plan-button"
+                    type="button"
+                    onclick="selectPlan('सामान्य सदस्यता')">
 
                     सदस्य बनें
+                    <i class="fa-solid fa-arrow-right"></i>
 
                 </button>
 
@@ -1494,49 +1668,53 @@ textarea{
 
             <!-- ACTIVE -->
 
-            <div class="card popular">
+            <div class="membership-card featured">
 
-                <div class="popular-label">
+                <div class="popular">
                     लोकप्रिय
                 </div>
 
-                <div class="card-icon">
+                <div class="plan-icon">
+
                     <i class="fa-solid fa-star"></i>
+
                 </div>
 
                 <h3>
                     सक्रिय सदस्यता
                 </h3>
 
-                <ul class="features">
+                <ul class="plan-list">
 
                     <li>
-                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-circle-check"></i>
                         सदस्य पंजीकरण
                     </li>
 
                     <li>
-                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-circle-check"></i>
                         यूनिक सदस्य ID
                     </li>
 
                     <li>
-                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-circle-check"></i>
                         सेवा कार्यक्रमों में सक्रिय भागीदारी
                     </li>
 
                     <li>
-                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-circle-check"></i>
                         विशेष कार्यक्रमों की जानकारी
                     </li>
 
                 </ul>
 
                 <button
-                    class="choose"
-                    onclick="choosePlan('सक्रिय सदस्यता')">
+                    class="plan-button"
+                    type="button"
+                    onclick="selectPlan('सक्रिय सदस्यता')">
 
                     सदस्य बनें
+                    <i class="fa-solid fa-arrow-right"></i>
 
                 </button>
 
@@ -1545,49 +1723,54 @@ textarea{
 
             <!-- SUPPORTER -->
 
-            <div class="card">
+            <div class="membership-card">
 
-                <div class="card-icon">
+                <div class="plan-icon">
+
                     <i class="fa-solid fa-handshake"></i>
+
                 </div>
 
                 <h3>
                     सहयोगी सदस्यता
                 </h3>
 
-                <ul class="features">
+                <ul class="plan-list">
 
                     <li>
-                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-circle-check"></i>
                         सदस्य पंजीकरण
                     </li>
 
                     <li>
-                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-circle-check"></i>
                         यूनिक सदस्य ID
                     </li>
 
                     <li>
-                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-circle-check"></i>
                         संस्था से विशेष जुड़ाव
                     </li>
 
                     <li>
-                        <i class="fa-solid fa-check"></i>
+                        <i class="fa-solid fa-circle-check"></i>
                         समाज सेवा गतिविधियों में सहयोग
                     </li>
 
                 </ul>
 
                 <button
-                    class="choose"
-                    onclick="choosePlan('सहयोगी सदस्यता')">
+                    class="plan-button"
+                    type="button"
+                    onclick="selectPlan('सहयोगी सदस्यता')">
 
                     सदस्य बनें
+                    <i class="fa-solid fa-arrow-right"></i>
 
                 </button>
 
             </div>
+
 
         </div>
 
@@ -1597,31 +1780,33 @@ textarea{
 
 
 <!-- =====================================================
-     REGISTRATION FORM
+     REGISTRATION
 ===================================================== -->
 
 <section class="form-section" id="registration">
 
     <div class="container">
 
-        <div class="form-box">
+        <div class="form-card">
 
 
-            <div class="form-top">
+            <!-- FORM HEADER -->
+
+            <div class="form-header">
 
                 <div>
 
                     <h2>
-                        सदस्यता पंजीकरण
+                        सदस्यता पंजीकरण फॉर्म
                     </h2>
 
                     <p>
-                        नीचे अपनी सही जानकारी दर्ज करें
+                        अपनी जानकारी सावधानीपूर्वक भरें
                     </p>
 
                 </div>
 
-                <div class="form-top-icon">
+                <div class="form-header-icon">
 
                     <i class="fa-solid fa-id-card"></i>
 
@@ -1636,22 +1821,23 @@ textarea{
                 <form id="membershipForm">
 
 
-                    <!-- SELECT PLAN -->
+                    <!-- PLAN -->
 
-                    <div class="selected">
+                    <div class="plan-select">
 
                         <label>
+
                             <i class="fa-solid fa-layer-group"></i>
+
                             सदस्यता श्रेणी
                             <span class="required">*</span>
+
                         </label>
 
-                        <select
-                            id="memberPlan"
-                            required>
+                        <select id="memberPlan" required>
 
                             <option value="">
-                                -- सदस्यता चुनें --
+                                -- सदस्यता श्रेणी चुनें --
                             </option>
 
                             <option value="सामान्य सदस्यता">
@@ -1682,7 +1868,7 @@ textarea{
                     </div>
 
 
-                    <div class="grid">
+                    <div class="form-grid">
 
 
                         <div class="field">
@@ -1694,7 +1880,8 @@ textarea{
 
                             <input
                                 type="text"
-                                placeholder="पूरा नाम"
+                                name="name"
+                                placeholder="अपना पूरा नाम"
                                 required>
 
                         </div>
@@ -1709,6 +1896,7 @@ textarea{
 
                             <input
                                 type="text"
+                                name="father"
                                 placeholder="पिता / पति का नाम"
                                 required>
 
@@ -1802,7 +1990,7 @@ textarea{
                     </div>
 
 
-                    <div class="grid">
+                    <div class="form-grid">
 
 
                         <div class="field">
@@ -1815,7 +2003,6 @@ textarea{
                             <input
                                 type="text"
                                 value="उत्तर प्रदेश"
-                                placeholder="राज्य"
                                 required>
 
                         </div>
@@ -1908,20 +2095,19 @@ textarea{
                     </div>
 
 
-                    <div class="note">
+                    <div class="identity-note">
 
                         <i class="fa-solid fa-shield-halved"></i>
 
                         <span>
                             पहचान संबंधी जानकारी केवल आवश्यक होने पर
-                            दर्ज करें और संस्था की सुरक्षित प्रणाली में
-                            ही इसका उपयोग करें।
+                            दर्ज करें और इसे सुरक्षित तरीके से संभालें।
                         </span>
 
                     </div>
 
 
-                    <div class="grid">
+                    <div class="form-grid">
 
 
                         <div class="field">
@@ -1932,7 +2118,7 @@ textarea{
 
                             <select>
 
-                                <option>
+                                <option value="">
                                     -- चुनें --
                                 </option>
 
@@ -1983,7 +2169,7 @@ textarea{
                     </div>
 
 
-                    <div class="photo-box">
+                    <div class="photo-upload">
 
                         <div class="photo-icon">
 
@@ -1991,7 +2177,7 @@ textarea{
 
                         </div>
 
-                        <label for="photo">
+                        <label for="memberPhoto">
 
                             फोटो चुनें
 
@@ -1999,25 +2185,26 @@ textarea{
 
                         <input
                             type="file"
-                            id="photo"
+                            id="memberPhoto"
                             accept="image/jpeg,image/png">
 
                         <p>
-                            JPG / PNG फोटो
+                            JPG या PNG | साफ और हाल का फोटो
                         </p>
 
                         <img
-                            id="preview"
-                            class="preview"
-                            alt="Photo Preview">
+                            id="photoPreview"
+                            class="photo-preview"
+                            alt="फोटो Preview">
 
                     </div>
 
 
-                    <!-- OTHER -->
+                    <!-- ADDITIONAL -->
 
-                    <div class="form-title"
-                         style="margin-top:27px;">
+                    <div
+                        class="form-title"
+                        style="margin-top:28px;">
 
                         <i class="fa-solid fa-circle-info"></i>
 
@@ -2026,7 +2213,7 @@ textarea{
                     </div>
 
 
-                    <div class="grid">
+                    <div class="form-grid">
 
 
                         <div class="field">
@@ -2063,8 +2250,8 @@ textarea{
 
                             <select>
 
-                                <option>
-                                    -- क्षेत्र चुनें --
+                                <option value="">
+                                    -- सेवा क्षेत्र चुनें --
                                 </option>
 
                                 <option>
@@ -2104,12 +2291,15 @@ textarea{
 
                         <input
                             type="checkbox"
+                            id="agree"
                             required>
 
-                        <label>
+                        <label for="agree">
+
                             मैं घोषणा करता/करती हूँ कि मेरे द्वारा दी गई
                             जानकारी मेरी जानकारी के अनुसार सही है और मैं
-                            संस्था के नियमों का पालन करूँगा/करूँगी।
+                            संस्था के नियमों एवं सेवा भावना का पालन करूँगा/करूँगी।
+
                         </label>
 
                     </div>
@@ -2117,9 +2307,11 @@ textarea{
 
                     <!-- SUBMIT -->
 
-                    <div class="submit">
+                    <div class="submit-area">
 
-                        <button type="submit">
+                        <button
+                            type="submit"
+                            class="submit-button">
 
                             <i class="fa-solid fa-paper-plane"></i>
 
@@ -2133,53 +2325,75 @@ textarea{
                 </form>
 
 
-                <!-- BENEFITS -->
+                <!-- TRUST -->
 
-                <div class="benefits">
+                <div class="trust-grid">
 
-                    <div class="benefit">
 
-                        <div class="benefit-icon">
+                    <div class="trust-item">
+
+                        <div class="trust-icon">
                             <i class="fa-solid fa-id-card"></i>
                         </div>
 
                         <div>
-                            <h4>सदस्य ID</h4>
-                            <p>यूनिक सदस्य पहचान</p>
+
+                            <h4>
+                                यूनिक सदस्य ID
+                            </h4>
+
+                            <p>
+                                सदस्य पहचान के लिए
+                            </p>
+
                         </div>
 
                     </div>
 
 
-                    <div class="benefit">
+                    <div class="trust-item">
 
-                        <div class="benefit-icon">
+                        <div class="trust-icon">
                             <i class="fa-solid fa-users"></i>
                         </div>
 
                         <div>
-                            <h4>सेवा से जुड़ाव</h4>
-                            <p>सामाजिक गतिविधियों में सहभागिता</p>
+
+                            <h4>
+                                सेवा सहभागिता
+                            </h4>
+
+                            <p>
+                                सामाजिक गतिविधियों से जुड़ाव
+                            </p>
+
                         </div>
 
                     </div>
 
 
-                    <div class="benefit">
+                    <div class="trust-item">
 
-                        <div class="benefit-icon">
-                            <i class="fa-solid fa-handshake"></i>
+                        <div class="trust-icon">
+                            <i class="fa-solid fa-handshake-angle"></i>
                         </div>
 
                         <div>
-                            <h4>सामाजिक सहयोग</h4>
-                            <p>राष्ट्र निर्माण में योगदान</p>
+
+                            <h4>
+                                समाज सेवा
+                            </h4>
+
+                            <p>
+                                राष्ट्र निर्माण में योगदान
+                            </p>
+
                         </div>
 
                     </div>
 
-                </div>
 
+                </div>
 
             </div>
 
@@ -2202,9 +2416,9 @@ textarea{
         <div>
 
             <img
-                src="assets/logo.png"
-                class="footer-logo"
-                alt="YSS Foundation">
+                src="/assets/logo.png"
+                alt="युवा सेवा संकल्प फाउंडेशन"
+                class="footer-logo">
 
             <h3>
                 युवा सेवा संकल्प फाउंडेशन
@@ -2232,19 +2446,33 @@ textarea{
             <ul>
 
                 <li>
-                    <a href="index.html">होम</a>
+                    <a href="index.html">
+                        होम
+                    </a>
                 </li>
 
                 <li>
-                    <a href="about.html">हमारे बारे में</a>
+                    <a href="about.html">
+                        हमारे बारे में
+                    </a>
                 </li>
 
                 <li>
-                    <a href="volunteer.html">वॉलंटियर</a>
+                    <a href="work.html">
+                        हमारे कार्य
+                    </a>
                 </li>
 
                 <li>
-                    <a href="contact.html">संपर्क करें</a>
+                    <a href="volunteer.html">
+                        वॉलंटियर
+                    </a>
+                </li>
+
+                <li>
+                    <a href="contact.html">
+                        संपर्क करें
+                    </a>
                 </li>
 
             </ul>
@@ -2299,7 +2527,8 @@ textarea{
 <a
     href="https://wa.me/91965731313"
     target="_blank"
-    class="whatsapp">
+    class="whatsapp"
+    aria-label="WhatsApp">
 
     <i class="fa-brands fa-whatsapp"></i>
 
@@ -2310,11 +2539,11 @@ textarea{
      SUCCESS MODAL
 ===================================================== -->
 
-<div class="modal" id="modal">
+<div class="modal" id="successModal">
 
     <div class="modal-box">
 
-        <div class="success">
+        <div class="success-icon">
 
             <i class="fa-solid fa-check"></i>
 
@@ -2325,12 +2554,15 @@ textarea{
         </h2>
 
         <p>
-            आपका सदस्यता फॉर्म सफलतापूर्वक
-            तैयार हो गया है।
+            आपका सदस्यता आवेदन सफलतापूर्वक तैयार हो गया है।
         </p>
 
-        <button onclick="closeModal()">
+        <button
+            class="modal-close"
+            onclick="closeModal()">
+
             ठीक है
+
         </button>
 
     </div>
@@ -2340,11 +2572,11 @@ textarea{
 
 <script>
 
-/* =====================================================
-   PLAN SELECT
-===================================================== */
+/* =========================================================
+   MEMBERSHIP PLAN
+========================================================= */
 
-function choosePlan(plan){
+function selectPlan(plan){
 
     const select =
         document.getElementById("memberPlan");
@@ -2354,124 +2586,161 @@ function choosePlan(plan){
     document
         .getElementById("registration")
         .scrollIntoView({
-            behavior:"smooth"
+            behavior:"smooth",
+            block:"start"
         });
 }
 
 
-/* =====================================================
+/* =========================================================
    PHOTO PREVIEW
-===================================================== */
+========================================================= */
 
-const photo =
-    document.getElementById("photo");
+const memberPhoto =
+    document.getElementById("memberPhoto");
 
-const preview =
-    document.getElementById("preview");
+const photoPreview =
+    document.getElementById("photoPreview");
 
-photo.addEventListener("change",function(){
 
-    const file = this.files[0];
+memberPhoto.addEventListener(
+    "change",
+    function(){
 
-    if(!file){
+        const file = this.files[0];
 
-        preview.style.display="none";
+        if(!file){
 
-        return;
+            photoPreview.style.display="none";
+
+            return;
+        }
+
+        if(!file.type.startsWith("image/")){
+
+            alert("कृपया JPG या PNG फोटो चुनें।");
+
+            this.value="";
+
+            return;
+        }
+
+        const reader =
+            new FileReader();
+
+        reader.onload =
+            function(e){
+
+                photoPreview.src =
+                    e.target.result;
+
+                photoPreview.style.display =
+                    "block";
+
+            };
+
+        reader.readAsDataURL(file);
+
     }
-
-    if(!file.type.startsWith("image/")){
-
-        alert("कृपया JPG या PNG फोटो चुनें।");
-
-        this.value="";
-
-        return;
-    }
-
-    const reader =
-        new FileReader();
-
-    reader.onload=function(e){
-
-        preview.src=e.target.result;
-
-        preview.style.display="block";
-
-    };
-
-    reader.readAsDataURL(file);
-
-});
+);
 
 
-/* =====================================================
-   MOBILE
-===================================================== */
+/* =========================================================
+   MOBILE NUMBER
+========================================================= */
 
 document
 .getElementById("mobile")
-.addEventListener("input",function(){
+.addEventListener(
+    "input",
+    function(){
 
-    this.value =
-        this.value
-        .replace(/[^0-9]/g,"")
-        .slice(0,10);
+        this.value =
+            this.value
+            .replace(/[^0-9]/g,"")
+            .slice(0,10);
 
-});
+    }
+);
 
 
-/* =====================================================
-   PINCODE
-===================================================== */
+/* =========================================================
+   PIN CODE
+========================================================= */
 
 document
 .getElementById("pincode")
-.addEventListener("input",function(){
+.addEventListener(
+    "input",
+    function(){
 
-    this.value =
-        this.value
-        .replace(/[^0-9]/g,"")
-        .slice(0,6);
+        this.value =
+            this.value
+            .replace(/[^0-9]/g,"")
+            .slice(0,6);
 
-});
+    }
+);
 
 
-/* =====================================================
-   FORM
-===================================================== */
+/* =========================================================
+   FORM SUBMIT
+========================================================= */
 
 document
 .getElementById("membershipForm")
-.addEventListener("submit",function(e){
+.addEventListener(
+    "submit",
+    function(e){
 
-    e.preventDefault();
+        e.preventDefault();
 
-    if(!this.checkValidity()){
+        if(!this.checkValidity()){
 
-        this.reportValidity();
+            this.reportValidity();
 
-        return;
+            return;
+        }
+
+        document
+        .getElementById("successModal")
+        .classList.add("show");
+
     }
-
-    document
-    .getElementById("modal")
-    .classList.add("show");
-
-});
+);
 
 
-/* =====================================================
-   CLOSE
-===================================================== */
+/* =========================================================
+   CLOSE MODAL
+========================================================= */
 
 function closeModal(){
 
     document
-    .getElementById("modal")
+    .getElementById("successModal")
     .classList.remove("show");
 
 }
+
+
+/* =========================================================
+   MODAL CLICK OUTSIDE
+========================================================= */
+
+document
+.getElementById("successModal")
+.addEventListener(
+    "click",
+    function(e){
+
+        if(e.target === this){
+
+            closeModal();
+
+        }
+
+    }
+);
 
 </script>
 
