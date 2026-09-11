@@ -1,1246 +1,1414 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<meta name="description" content="युवा सेवा संकल्प फाउंडेशन में स्वयंसेवक बनें और समाज सेवा, युवा सशक्तिकरण एवं राष्ट्र निर्माण में अपना योगदान दें।">
-
-<title>स्वयंसेवक बनें | युवा सेवा संकल्प फाउंडेशन</title>
-
-<!-- Google Font -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-<!-- Font Awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-<!-- Main CSS -->
-<link rel="stylesheet" href="style.css">
-
-<style>
-/* =========================================================
-   VOLUNTEER PAGE
-========================================================= */
-
-*{
-    box-sizing:border-box;
-}
-
-body{
-    margin:0;
-    font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
-    background:#f4f7fa;
-    color:#263746;
-}
-
-:root{
-    --blue:#123b66;
-    --blue2:#1d5d96;
-    --orange:#ff7900;
-    --green:#24834b;
-    --light:#f3f7fb;
-    --white:#ffffff;
-    --text:#263746;
-    --muted:#647484;
-    --border:#d9e3ec;
-    --shadow:0 10px 30px rgba(18,59,102,.10);
-    --radius:16px;
-}
-
-a{
-    text-decoration:none;
-}
-
-.container{
-    width:min(1180px,92%);
-    margin:auto;
-}
-
-/* =========================================================
-   TOP BAR
-========================================================= */
-
-.v-topbar{
-    background:var(--blue);
-    color:#fff;
-    font-size:14px;
-}
-
-.v-topbar-inner{
-    min-height:42px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:15px;
-}
-
-.v-top-left,
-.v-top-right{
-    display:flex;
-    align-items:center;
-    gap:18px;
-    flex-wrap:wrap;
-}
-
-.v-topbar a{
-    color:#fff;
-}
-
-.v-topbar i{
-    color:#ffb15f;
-    margin-right:5px;
-}
-
-.v-social{
-    display:flex;
-    gap:8px;
-}
-
-.v-social a{
-    width:28px;
-    height:28px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    background:rgba(255,255,255,.12);
-}
-
-/* =========================================================
-   HEADER
-========================================================= */
-
-.v-header{
-    background:#fff;
-    box-shadow:0 3px 15px rgba(0,0,0,.07);
-}
-
-.v-header-inner{
-    min-height:92px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:20px;
-}
-
-.v-brand{
-    display:flex;
-    align-items:center;
-    gap:13px;
-}
-
-.v-logo{
-    width:70px;
-    height:70px;
-    object-fit:contain;
-}
-
-.v-brand-text h1{
-    margin:0;
-    color:var(--blue);
-    font-size:24px;
-    font-weight:800;
-    line-height:1.25;
-}
-
-.v-brand-text p{
-    margin:4px 0 0;
-    color:var(--orange);
-    font-size:14px;
-    font-weight:700;
-}
-
-.v-header-actions{
-    display:flex;
-    gap:10px;
-    flex-wrap:wrap;
-}
-
-.v-login-btn{
-    padding:10px 15px;
-    border:1px solid var(--border);
-    border-radius:9px;
-    color:var(--blue);
-    background:#fff;
-    font-weight:700;
-    transition:.3s;
-}
-
-.v-login-btn:hover{
-    background:var(--blue);
-    color:#fff;
-}
-
-.v-login-btn.admin{
-    color:#fff;
-    background:var(--orange);
-    border-color:var(--orange);
-}
-
-.v-login-btn.admin:hover{
-    background:#e86d00;
-}
-
-/* =========================================================
-   NAVIGATION
-========================================================= */
-
-.v-nav{
-    background:#fff;
-    border-top:1px solid #edf1f4;
-    border-bottom:1px solid var(--border);
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
-
-.v-nav-inner{
-    min-height:52px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-}
-
-.v-menu{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    gap:4px;
-    flex-wrap:wrap;
-    margin:0;
-    padding:0;
-    list-style:none;
-}
-
-.v-menu a{
-    display:block;
-    padding:13px 14px;
-    color:var(--text);
-    font-size:14px;
-    font-weight:700;
-    border-radius:7px;
-    transition:.3s;
-}
-
-.v-menu a:hover,
-.v-menu a.active{
-    color:#fff;
-    background:var(--blue);
-}
-
-.v-menu a.join{
-    background:var(--orange);
-    color:#fff;
-}
-
-/* =========================================================
-   BREADCRUMB
-========================================================= */
-
-.v-breadcrumb{
-    background:#eef4f8;
-    border-bottom:1px solid var(--border);
-}
-
-.v-breadcrumb-inner{
-    min-height:45px;
-    display:flex;
-    align-items:center;
-    gap:8px;
-    color:var(--muted);
-    font-size:14px;
-}
-
-.v-breadcrumb a{
-    color:var(--blue2);
-    font-weight:600;
-}
-
-.v-breadcrumb i{
-    font-size:11px;
-}
-
-/* =========================================================
-   HERO
-========================================================= */
-
-.volunteer-hero{
-    padding:70px 0;
-    background:
-        linear-gradient(135deg,rgba(18,59,102,.96),rgba(29,93,150,.90)),
-        url("images/volunteer-bg.jpg") center/cover;
-    color:#fff;
-    position:relative;
-    overflow:hidden;
-}
-
-.volunteer-hero:before{
-    content:"";
-    position:absolute;
-    width:300px;
-    height:300px;
-    border-radius:50%;
-    background:rgba(255,121,0,.15);
-    right:-100px;
-    top:-100px;
-}
-
-.volunteer-hero:after{
-    content:"";
-    position:absolute;
-    width:220px;
-    height:220px;
-    border-radius:50%;
-    background:rgba(36,131,75,.15);
-    left:-100px;
-    bottom:-100px;
-}
-
-.volunteer-hero-inner{
-    position:relative;
-    z-index:2;
-    display:grid;
-    grid-template-columns:1.4fr .8fr;
-    gap:40px;
-    align-items:center;
-}
-
-.hero-tag{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    background:rgba(255,255,255,.13);
-    border:1px solid rgba(255,255,255,.25);
-    padding:8px 14px;
-    border-radius:30px;
-    font-size:14px;
-    margin-bottom:16px;
-}
-
-.volunteer-hero h2{
-    margin:0 0 15px;
-    font-size:42px;
-    line-height:1.25;
-    font-weight:800;
-}
-
-.volunteer-hero h2 span{
-    color:#ffb15f;
-}
-
-.volunteer-hero p{
-    margin:0;
-    max-width:700px;
-    font-size:17px;
-    line-height:1.9;
-    color:#eef5fb;
-}
-
-.hero-buttons{
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-    margin-top:25px;
-}
-
-.hero-btn{
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-    padding:13px 20px;
-    border-radius:9px;
-    font-weight:800;
-    transition:.3s;
-}
-
-.hero-btn.primary{
-    background:var(--orange);
-    color:#fff;
-}
-
-.hero-btn.primary:hover{
-    background:#e96e00;
-    transform:translateY(-2px);
-}
-
-.hero-btn.light{
-    background:#fff;
-    color:var(--blue);
-}
-
-.hero-btn.light:hover{
-    transform:translateY(-2px);
-}
-
-/* Hero Card */
-
-.hero-volunteer-card{
-    background:#fff;
-    color:var(--text);
-    border-radius:20px;
-    padding:28px;
-    box-shadow:0 20px 50px rgba(0,0,0,.18);
-}
-
-.hero-volunteer-card .icon{
-    width:65px;
-    height:65px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#eef6ff;
-    color:var(--blue2);
-    font-size:28px;
-    margin-bottom:16px;
-}
-
-.hero-volunteer-card h3{
-    margin:0 0 8px;
-    color:var(--blue);
-    font-size:21px;
-}
-
-.hero-volunteer-card p{
-    color:var(--muted);
-    font-size:14px;
-    line-height:1.7;
-}
-
-.hero-volunteer-card ul{
-    margin:15px 0 0;
-    padding:0;
-    list-style:none;
-}
-
-.hero-volunteer-card li{
-    display:flex;
-    gap:9px;
-    margin:10px 0;
-    font-size:14px;
-}
-
-.hero-volunteer-card li i{
-    color:var(--green);
-    margin-top:4px;
-}
-
-/* =========================================================
-   COMMON SECTION
-========================================================= */
-
-.v-section{
-    padding:65px 0;
-}
-
-.v-section-title{
-    text-align:center;
-    margin-bottom:38px;
-}
-
-.v-section-title .small{
-    color:var(--orange);
-    font-weight:800;
-    font-size:14px;
-    margin-bottom:7px;
-}
-
-.v-section-title h2{
-    color:var(--blue);
-    font-size:30px;
-    margin:0 0 10px;
-    font-weight:800;
-}
-
-.v-section-title p{
-    color:var(--muted);
-    margin:0 auto;
-    max-width:720px;
-    line-height:1.8;
-}
-
-/* =========================================================
-   WHY VOLUNTEER
-========================================================= */
-
-.v-why-grid{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-}
-
-.v-why-card{
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:var(--radius);
-    padding:25px 20px;
-    text-align:center;
-    box-shadow:var(--shadow);
-    transition:.3s;
-}
-
-.v-why-card:hover{
-    transform:translateY(-5px);
-}
-
-.v-why-icon{
-    width:65px;
-    height:65px;
-    margin:0 auto 15px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:25px;
-    background:#edf5ff;
-    color:var(--blue2);
-}
-
-.v-why-card:nth-child(2) .v-why-icon{
-    background:#fff3e8;
-    color:var(--orange);
-}
-
-.v-why-card:nth-child(3) .v-why-icon{
-    background:#eaf7ef;
-    color:var(--green);
-}
-
-.v-why-card:nth-child(4) .v-why-icon{
-    background:#f0edff;
-    color:#6844b5;
-}
-
-.v-why-card h3{
-    margin:0 0 8px;
-    color:var(--blue);
-    font-size:18px;
-}
-
-.v-why-card p{
-    margin:0;
-    color:var(--muted);
-    font-size:14px;
-    line-height:1.7;
-}
-
-/* =========================================================
-   SERVICE AREAS
-========================================================= */
-
-.v-service-section{
-    background:#fff;
-}
-
-.v-service-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.v-service-card{
-    border:1px solid var(--border);
-    border-radius:15px;
-    padding:24px;
-    background:#fff;
-    display:flex;
-    gap:15px;
-    transition:.3s;
-}
-
-.v-service-card:hover{
-    box-shadow:var(--shadow);
-    transform:translateY(-3px);
-}
-
-.v-service-icon{
-    flex:0 0 52px;
-    width:52px;
-    height:52px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#edf5ff;
-    color:var(--blue2);
-    border-radius:12px;
-    font-size:21px;
-}
-
-.v-service-card h3{
-    margin:0 0 5px;
-    color:var(--blue);
-    font-size:17px;
-}
-
-.v-service-card p{
-    margin:0;
-    color:var(--muted);
-    font-size:13px;
-    line-height:1.7;
-}
-
-/* =========================================================
-   REGISTRATION
-========================================================= */
-
-.v-register-section{
-    background:#f4f7fa;
-}
-
-.v-register-layout{
-    display:grid;
-    grid-template-columns:.72fr 1.5fr;
-    gap:28px;
-    align-items:start;
-}
-
-/* Side */
-
-.v-register-side{
-    background:linear-gradient(145deg,var(--blue),var(--blue2));
-    color:#fff;
-    border-radius:18px;
-    padding:28px;
-    position:sticky;
-    top:75px;
-    box-shadow:var(--shadow);
-}
-
-.v-register-side h3{
-    margin:0 0 10px;
-    font-size:22px;
-}
-
-.v-register-side > p{
-    margin:0 0 22px;
-    color:#e6f0f8;
-    font-size:14px;
-    line-height:1.8;
-}
-
-.v-side-item{
-    display:flex;
-    gap:12px;
-    padding:14px 0;
-    border-bottom:1px solid rgba(255,255,255,.16);
-}
-
-.v-side-item:last-child{
-    border-bottom:0;
-}
-
-.v-side-item .side-icon{
-    width:40px;
-    height:40px;
-    flex:0 0 40px;
-    border-radius:10px;
-    background:rgba(255,255,255,.12);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    color:#ffb15f;
-}
-
-.v-side-item strong{
-    display:block;
-    font-size:14px;
-    margin-bottom:2px;
-}
-
-.v-side-item span{
-    display:block;
-    font-size:12px;
-    color:#dce9f3;
-    line-height:1.5;
-}
-
-/* Form */
-
-.v-form-box{
-    background:#fff;
-    border:1px solid var(--border);
-    border-radius:18px;
-    box-shadow:var(--shadow);
-    overflow:hidden;
-}
-
-.v-form-header{
-    padding:25px 28px;
-    background:#fff;
-    border-bottom:1px solid var(--border);
-}
-
-.v-form-header h3{
-    margin:0 0 6px;
-    color:var(--blue);
-    font-size:24px;
-}
-
-.v-form-header p{
-    margin:0;
-    color:var(--muted);
-    font-size:13px;
-}
-
-.v-form{
-    padding:28px;
-}
-
-.v-form-section-title{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    color:var(--blue);
-    border-bottom:1px solid var(--border);
-    padding-bottom:10px;
-    margin:0 0 20px;
-    font-size:18px;
-}
-
-.v-form-section-title i{
-    color:var(--orange);
-}
-
-.v-form-grid{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:18px;
-    margin-bottom:28px;
-}
-
-.v-field{
-    display:flex;
-    flex-direction:column;
-}
-
-.v-field.full{
-    grid-column:1/-1;
-}
-
-.v-field label{
-    font-size:13px;
-    font-weight:700;
-    color:var(--text);
-    margin-bottom:7px;
-}
-
-.v-field label span{
-    color:#e64d4d;
-}
-
-.v-field input,
-.v-field select,
-.v-field textarea{
-    width:100%;
-    border:1px solid var(--border);
-    border-radius:9px;
-    padding:12px 13px;
-    outline:none;
-    font-family:inherit;
-    font-size:14px;
-    color:var(--text);
-    background:#fff;
-    transition:.25s;
-}
-
-.v-field textarea{
-    min-height:115px;
-    resize:vertical;
-}
-
-.v-field input:focus,
-.v-field select:focus,
-.v-field textarea:focus{
-    border-color:var(--blue2);
-    box-shadow:0 0 0 3px rgba(29,93,150,.08);
-}
-
-/* Radio */
-
-.v-radio-group{
-    display:flex;
-    gap:15px;
-    flex-wrap:wrap;
-}
-
-.v-radio{
-    position:relative;
-}
-
-.v-radio input{
-    position:absolute;
-    opacity:0;
-}
-
-.v-radio label{
-    display:flex;
-    align-items:center;
-    gap:7px;
-    border:1px solid var(--border);
-    border-radius:8px;
-    padding:9px 12px;
-    cursor:pointer;
-    font-weight:500;
-    margin:0;
-}
-
-.v-radio label:before{
-    content:"";
-    width:15px;
-    height:15px;
-    border:1px solid #aab8c5;
-    border-radius:50%;
-}
-
-.v-radio input:checked + label{
-    border-color:var(--blue2);
-    background:#eef6ff;
-    color:var(--blue);
-}
-
-.v-radio input:checked + label:before{
-    border:4px solid var(--blue2);
-}
-
-/* Checkbox */
-
-.v-agreement{
-    display:flex;
-    align-items:flex-start;
-    gap:10px;
-    background:#f7fafc;
-    border:1px solid var(--border);
-    padding:14px;
-    border-radius:10px;
-    margin-bottom:20px;
-}
-
-.v-agreement input{
-    margin-top:4px;
-    width:17px;
-    height:17px;
-    accent-color:var(--green);
-}
-
-.v-agreement label{
-    color:var(--muted);
-    font-size:13px;
-    line-height:1.7;
-}
-
-.v-agreement a{
-    color:var(--blue2);
-    font-weight:700;
-}
-
-/* Buttons */
-
-.v-form-buttons{
-    display:flex;
-    gap:12px;
-    flex-wrap:wrap;
-}
-
-.v-submit-btn,
-.v-reset-btn{
-    border:0;
-    padding:13px 22px;
-    border-radius:9px;
-    font-family:inherit;
-    font-weight:800;
-    font-size:14px;
-    cursor:pointer;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    gap:8px;
-}
-
-.v-submit-btn{
-    background:var(--green);
-    color:#fff;
-}
-
-.v-submit-btn:hover{
-    background:#1e703f;
-}
-
-.v-reset-btn{
-    background:#edf1f4;
-    color:var(--text);
-}
-
-.v-reset-btn:hover{
-    background:#e0e7ec;
-}
-
-/* Photo */
-
-.photo-upload{
-    border:2px dashed #cbd7e1;
-    border-radius:12px;
-    padding:18px;
-    text-align:center;
-    background:#fafcfd;
-    cursor:pointer;
-}
-
-.photo-upload:hover{
-    border-color:var(--blue2);
-    background:#f5f9fd;
-}
-
-.photo-upload i{
-    font-size:28px;
-    color:var(--blue2);
-    margin-bottom:7px;
-}
-
-.photo-upload p{
-    margin:0;
-    font-size:13px;
-    color:var(--muted);
-}
-
-.photo-preview{
-    display:none;
-    width:110px;
-    height:130px;
-    object-fit:cover;
-    border-radius:10px;
-    border:2px solid var(--border);
-    margin:10px auto 0;
-}
-
-/* Success */
-
-.v-success{
-    display:none;
-    margin-top:20px;
-    padding:18px;
-    border-radius:12px;
-    background:#eaf8ef;
-    border:1px solid #b8e1c5;
-    color:#1d6739;
-}
-
-.v-success h4{
-    margin:0 0 6px;
-    font-size:18px;
-}
-
-.v-success p{
-    margin:4px 0;
-    font-size:14px;
-}
-
-/* =========================================================
-   QUOTE
-========================================================= */
-
-.v-quote{
-    padding:55px 0;
-    background:#fff;
-}
-
-.v-quote-box{
-    max-width:900px;
-    margin:auto;
-    text-align:center;
-}
-
-.v-quote-box i{
-    font-size:35px;
-    color:var(--orange);
-    margin-bottom:15px;
-}
-
-.v-quote-box h2{
-    margin:0;
-    color:var(--blue);
-    font-size:28px;
-    line-height:1.6;
-}
-
-.v-quote-box p{
-    color:var(--muted);
-    margin:12px 0 0;
-}
-
-/* =========================================================
-   FOOTER
-========================================================= */
-
-.v-footer{
-    background:#102f4f;
-    color:#dce8f2;
-    padding:55px 0 0;
-}
-
-.v-footer-grid{
-    display:grid;
-    grid-template-columns:1.3fr 1fr 1fr 1fr;
-    gap:35px;
-    padding-bottom:40px;
-}
-
-.v-footer h3{
-    color:#fff;
-    margin:0 0 15px;
-    font-size:18px;
-}
-
-.v-footer p{
-    font-size:13px;
-    line-height:1.8;
-    margin:0;
-}
-
-.v-footer ul{
-    list-style:none;
-    margin:0;
-    padding:0;
-}
-
-.v-footer li{
-    margin:9px 0;
-}
-
-.v-footer a{
-    color:#dce8f2;
-    font-size:13px;
-}
-
-.v-footer a:hover{
-    color:#ffad61;
-}
-
-.v-footer-contact li{
-    display:flex;
-    gap:9px;
-}
-
-.v-footer-contact i{
-    color:#ffad61;
-    margin-top:4px;
-}
-
-.v-footer-bottom{
-    border-top:1px solid rgba(255,255,255,.12);
-    padding:17px 0;
-    text-align:center;
-    font-size:12px;
-}
-
-/* =========================================================
-   WHATSAPP
-========================================================= */
-
-.v-whatsapp{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    width:55px;
-    height:55px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#25D366;
-    color:#fff;
-    font-size:27px;
-    box-shadow:0 8px 25px rgba(0,0,0,.2);
-    z-index:9999;
-}
-
-.v-whatsapp:hover{
-    transform:scale(1.06);
-}
-
-/* =========================================================
-   RESPONSIVE
-========================================================= */
-
-@media(max-width:1000px){
-
-    .v-header-inner{
-        flex-direction:column;
-        padding:15px 0;
-    }
-
-    .v-menu a{
-        padding:10px 9px;
-        font-size:13px;
-    }
-
-    .volunteer-hero-inner{
-        grid-template-columns:1fr;
-    }
-
-    .hero-volunteer-card{
-        max-width:600px;
-    }
-
-    .v-why-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .v-service-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    .v-register-layout{
-        grid-template-columns:1fr;
-    }
-
-    .v-register-side{
-        position:static;
-    }
-
-    .v-footer-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-}
-
-@media(max-width:700px){
-
-    .v-topbar-inner{
-        justify-content:center;
-        padding:8px 0;
-    }
-
-    .v-top-left,
-    .v-top-right{
-        justify-content:center;
-    }
-
-    .v-brand{
-        text-align:center;
-        justify-content:center;
-    }
-
-    .v-brand-text h1{
-        font-size:19px;
-    }
-
-    .v-logo{
-        width:58px;
-        height:58px;
-    }
-
-    .v-header-actions{
-        justify-content:center;
-    }
-
-    .v-nav{
-        position:static;
-    }
-
-    .v-nav-inner{
-        overflow-x:auto;
-        justify-content:flex-start;
-    }
-
-    .v-menu{
-        flex-wrap:nowrap;
-        min-width:max-content;
-    }
-
-    .volunteer-hero{
-        padding:48px 0;
-    }
-
-    .volunteer-hero h2{
-        font-size:31px;
-    }
-
-    .volunteer-hero p{
-        font-size:15px;
-    }
-
-    .v-section{
-        padding:45px 0;
-    }
-
-    .v-section-title h2{
-        font-size:25px;
-    }
-
-    .v-why-grid,
-    .v-service-grid{
-        grid-template-columns:1fr;
-    }
-
-    .v-form{
-        padding:20px 16px;
-    }
-
-    .v-form-header{
-        padding:20px 16px;
-    }
-
-    .v-form-grid{
-        grid-template-columns:1fr;
-        gap:15px;
-    }
-
-    .v-field.full{
-        grid-column:auto;
-    }
-
-    .v-footer-grid{
-        grid-template-columns:1fr;
-        gap:25px;
-    }
-
-    .v-quote-box h2{
-        font-size:22px;
-    }
-}
-
-@media(max-width:450px){
-
-    .v-login-btn{
-        font-size:12px;
-        padding:8px 10px;
-    }
-
-    .hero-buttons{
-        flex-direction:column;
-    }
-
-    .hero-btn{
-        justify-content:center;
-    }
-
-    .v-radio-group{
-        flex-direction:column;
-    }
-
-    .v-form-buttons{
-        flex-direction:column;
-    }
-
-    .v-submit-btn,
-    .v-reset-btn{
-        width:100%;
-    }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="युवा सेवा संकल्प फाउंडेशन में स्वयंसेवक बनें और समाज सेवा, युवा सशक्तिकरण एवं राष्ट्र निर्माण में अपना योगदान दें।">
+
+    <meta name="theme-color" content="#123b66">
+
+    <title>स्वयंसेवक बनें | युवा सेवा संकल्प फाउंडेशन</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700;800&display=swap"
+          rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =========================================================
+           VOLUNTEER PAGE
+        ========================================================= */
+
+        :root{
+            --blue:#123b66;
+            --blue2:#1d5d96;
+            --orange:#ff7900;
+            --green:#24834b;
+            --light:#f3f7fb;
+            --white:#ffffff;
+            --text:#263746;
+            --muted:#647484;
+            --border:#d9e3ec;
+            --shadow:0 10px 30px rgba(18,59,102,.10);
+            --radius:16px;
+        }
+
+        *{
+            box-sizing:border-box;
+            margin:0;
+            padding:0;
+        }
+
+        html{
+            scroll-behavior:smooth;
+        }
+
+        body{
+            margin:0;
+            font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+            background:#f4f7fa;
+            color:var(--text);
+            line-height:1.6;
+        }
+
+        img{
+            max-width:100%;
+        }
+
+        a{
+            text-decoration:none;
+        }
+
+        button,
+        input,
+        select,
+        textarea{
+            font-family:inherit;
+        }
+
+        .container{
+            width:min(1180px,92%);
+            margin:auto;
+        }
+
+
+        /* =========================================================
+           TOP BAR
+        ========================================================= */
+
+        .v-topbar{
+            background:var(--blue);
+            color:#fff;
+            font-size:14px;
+        }
+
+        .v-topbar-inner{
+            min-height:42px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:15px;
+        }
+
+        .v-top-left,
+        .v-top-right{
+            display:flex;
+            align-items:center;
+            gap:18px;
+            flex-wrap:wrap;
+        }
+
+        .v-topbar a{
+            color:#fff;
+        }
+
+        .v-topbar i{
+            color:#ffb15f;
+            margin-right:5px;
+        }
+
+        .v-social{
+            display:flex;
+            gap:8px;
+        }
+
+        .v-social a{
+            width:28px;
+            height:28px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            border-radius:50%;
+            background:rgba(255,255,255,.12);
+            transition:.3s;
+        }
+
+        .v-social a:hover{
+            background:var(--orange);
+            transform:translateY(-2px);
+        }
+
+
+        /* =========================================================
+           HEADER
+        ========================================================= */
+
+        .v-header{
+            background:#fff;
+            box-shadow:0 3px 15px rgba(0,0,0,.07);
+        }
+
+        .v-header-inner{
+            min-height:94px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:20px;
+        }
+
+        .v-brand{
+            display:flex;
+            align-items:center;
+            gap:14px;
+            min-width:0;
+        }
+
+        /*
+         IMPORTANT:
+         Logo ko stretch/cut hone se bachane ke liye
+         fixed box + object-fit:contain use kiya gaya hai.
+        */
+
+        .v-logo-box{
+            width:78px;
+            height:78px;
+            flex:0 0 78px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:#fff;
+            overflow:hidden;
+            border-radius:10px;
+        }
+
+        .v-logo{
+            width:100%;
+            height:100%;
+            display:block;
+            object-fit:contain;
+            object-position:center;
+            border:0;
+            outline:none;
+        }
+
+        .v-brand-text{
+            min-width:0;
+        }
+
+        .v-brand-text h1{
+            margin:0;
+            color:var(--blue);
+            font-size:24px;
+            font-weight:800;
+            line-height:1.25;
+        }
+
+        .v-brand-text p{
+            margin:4px 0 0;
+            color:var(--orange);
+            font-size:14px;
+            font-weight:700;
+        }
+
+        .v-header-actions{
+            display:flex;
+            gap:10px;
+            flex-wrap:wrap;
+            justify-content:flex-end;
+        }
+
+        .v-login-btn{
+            padding:10px 15px;
+            border:1px solid var(--border);
+            border-radius:9px;
+            color:var(--blue);
+            background:#fff;
+            font-weight:700;
+            transition:.3s;
+            white-space:nowrap;
+        }
+
+        .v-login-btn:hover{
+            background:var(--blue);
+            color:#fff;
+        }
+
+        .v-login-btn.admin{
+            color:#fff;
+            background:var(--orange);
+            border-color:var(--orange);
+        }
+
+        .v-login-btn.admin:hover{
+            background:#e86d00;
+        }
+
+
+        /* =========================================================
+           NAVIGATION
+        ========================================================= */
+
+        .v-nav{
+            background:#fff;
+            border-top:1px solid #edf1f4;
+            border-bottom:1px solid var(--border);
+            position:sticky;
+            top:0;
+            z-index:1000;
+        }
+
+        .v-nav-inner{
+            min-height:52px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+        }
+
+        .v-menu{
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            gap:4px;
+            flex-wrap:wrap;
+            margin:0;
+            padding:0;
+            list-style:none;
+        }
+
+        .v-menu a{
+            display:block;
+            padding:12px 13px;
+            color:var(--text);
+            font-size:14px;
+            font-weight:700;
+            border-radius:7px;
+            transition:.3s;
+            white-space:nowrap;
+        }
+
+        .v-menu a:hover,
+        .v-menu a.active{
+            color:#fff;
+            background:var(--blue);
+        }
+
+        .v-menu a.join{
+            background:var(--orange);
+            color:#fff;
+        }
+
+        .v-menu a.join:hover{
+            background:#e96e00;
+        }
+
+
+        /* =========================================================
+           BREADCRUMB
+        ========================================================= */
+
+        .v-breadcrumb{
+            background:#eef4f8;
+            border-bottom:1px solid var(--border);
+        }
+
+        .v-breadcrumb-inner{
+            min-height:45px;
+            display:flex;
+            align-items:center;
+            gap:8px;
+            color:var(--muted);
+            font-size:14px;
+        }
+
+        .v-breadcrumb a{
+            color:var(--blue2);
+            font-weight:600;
+        }
+
+        .v-breadcrumb i{
+            font-size:11px;
+        }
+
+
+        /* =========================================================
+           HERO
+        ========================================================= */
+
+        .volunteer-hero{
+            padding:72px 0;
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(18,59,102,.97),
+                    rgba(29,93,150,.92)
+                ),
+                url("images/volunteer-bg.jpg") center/cover;
+            color:#fff;
+            position:relative;
+            overflow:hidden;
+        }
+
+        .volunteer-hero:before{
+            content:"";
+            position:absolute;
+            width:320px;
+            height:320px;
+            border-radius:50%;
+            background:rgba(255,121,0,.15);
+            right:-120px;
+            top:-120px;
+        }
+
+        .volunteer-hero:after{
+            content:"";
+            position:absolute;
+            width:240px;
+            height:240px;
+            border-radius:50%;
+            background:rgba(36,131,75,.15);
+            left:-120px;
+            bottom:-120px;
+        }
+
+        .volunteer-hero-inner{
+            position:relative;
+            z-index:2;
+            display:grid;
+            grid-template-columns:1.4fr .8fr;
+            gap:40px;
+            align-items:center;
+        }
+
+        .hero-tag{
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+            background:rgba(255,255,255,.13);
+            border:1px solid rgba(255,255,255,.25);
+            padding:8px 14px;
+            border-radius:30px;
+            font-size:14px;
+            margin-bottom:16px;
+        }
+
+        .volunteer-hero h2{
+            margin:0 0 15px;
+            font-size:42px;
+            line-height:1.25;
+            font-weight:800;
+        }
+
+        .volunteer-hero h2 span{
+            color:#ffb15f;
+        }
+
+        .volunteer-hero p{
+            margin:0;
+            max-width:700px;
+            font-size:17px;
+            line-height:1.9;
+            color:#eef5fb;
+        }
+
+        .hero-buttons{
+            display:flex;
+            gap:12px;
+            flex-wrap:wrap;
+            margin-top:25px;
+        }
+
+        .hero-btn{
+            display:inline-flex;
+            align-items:center;
+            gap:8px;
+            padding:13px 20px;
+            border-radius:9px;
+            font-weight:800;
+            transition:.3s;
+        }
+
+        .hero-btn.primary{
+            background:var(--orange);
+            color:#fff;
+        }
+
+        .hero-btn.primary:hover{
+            background:#e96e00;
+            transform:translateY(-2px);
+        }
+
+        .hero-btn.light{
+            background:#fff;
+            color:var(--blue);
+        }
+
+        .hero-btn.light:hover{
+            transform:translateY(-2px);
+        }
+
+
+        /* =========================================================
+           HERO CARD
+        ========================================================= */
+
+        .hero-volunteer-card{
+            background:#fff;
+            color:var(--text);
+            border-radius:20px;
+            padding:28px;
+            box-shadow:0 20px 50px rgba(0,0,0,.18);
+        }
+
+        .hero-volunteer-card .icon{
+            width:65px;
+            height:65px;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:#eef6ff;
+            color:var(--blue2);
+            font-size:28px;
+            margin-bottom:16px;
+        }
+
+        .hero-volunteer-card h3{
+            margin:0 0 8px;
+            color:var(--blue);
+            font-size:21px;
+        }
+
+        .hero-volunteer-card p{
+            color:var(--muted);
+            font-size:14px;
+            line-height:1.7;
+        }
+
+        .hero-volunteer-card ul{
+            margin:15px 0 0;
+            padding:0;
+            list-style:none;
+        }
+
+        .hero-volunteer-card li{
+            display:flex;
+            gap:9px;
+            margin:10px 0;
+            font-size:14px;
+        }
+
+        .hero-volunteer-card li i{
+            color:var(--green);
+            margin-top:4px;
+        }
+
+
+        /* =========================================================
+           COMMON SECTION
+        ========================================================= */
+
+        .v-section{
+            padding:65px 0;
+        }
+
+        .v-section-title{
+            text-align:center;
+            margin-bottom:38px;
+        }
+
+        .v-section-title .small{
+            color:var(--orange);
+            font-weight:800;
+            font-size:14px;
+            margin-bottom:7px;
+        }
+
+        .v-section-title h2{
+            color:var(--blue);
+            font-size:30px;
+            margin:0 0 10px;
+            font-weight:800;
+        }
+
+        .v-section-title p{
+            color:var(--muted);
+            margin:0 auto;
+            max-width:720px;
+            line-height:1.8;
+        }
+
+
+        /* =========================================================
+           WHY VOLUNTEER
+        ========================================================= */
+
+        .v-why-grid{
+            display:grid;
+            grid-template-columns:repeat(4,1fr);
+            gap:20px;
+        }
+
+        .v-why-card{
+            background:#fff;
+            border:1px solid var(--border);
+            border-radius:var(--radius);
+            padding:25px 20px;
+            text-align:center;
+            box-shadow:var(--shadow);
+            transition:.3s;
+        }
+
+        .v-why-card:hover{
+            transform:translateY(-5px);
+        }
+
+        .v-why-icon{
+            width:65px;
+            height:65px;
+            margin:0 auto 15px;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-size:25px;
+            background:#edf5ff;
+            color:var(--blue2);
+        }
+
+        .v-why-card:nth-child(2) .v-why-icon{
+            background:#fff3e8;
+            color:var(--orange);
+        }
+
+        .v-why-card:nth-child(3) .v-why-icon{
+            background:#eaf7ef;
+            color:var(--green);
+        }
+
+        .v-why-card:nth-child(4) .v-why-icon{
+            background:#f0edff;
+            color:#6844b5;
+        }
+
+        .v-why-card h3{
+            margin:0 0 8px;
+            color:var(--blue);
+            font-size:18px;
+        }
+
+        .v-why-card p{
+            margin:0;
+            color:var(--muted);
+            font-size:14px;
+            line-height:1.7;
+        }
+
+
+        /* =========================================================
+           SERVICE AREAS
+        ========================================================= */
+
+        .v-service-section{
+            background:#fff;
+        }
+
+        .v-service-grid{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:20px;
+        }
+
+        .v-service-card{
+            border:1px solid var(--border);
+            border-radius:15px;
+            padding:24px;
+            background:#fff;
+            display:flex;
+            gap:15px;
+            transition:.3s;
+        }
+
+        .v-service-card:hover{
+            box-shadow:var(--shadow);
+            transform:translateY(-3px);
+        }
+
+        .v-service-icon{
+            flex:0 0 52px;
+            width:52px;
+            height:52px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:#edf5ff;
+            color:var(--blue2);
+            border-radius:12px;
+            font-size:21px;
+        }
+
+        .v-service-card h3{
+            margin:0 0 5px;
+            color:var(--blue);
+            font-size:17px;
+        }
+
+        .v-service-card p{
+            margin:0;
+            color:var(--muted);
+            font-size:13px;
+            line-height:1.7;
+        }
+
+
+        /* =========================================================
+           REGISTRATION
+        ========================================================= */
+
+        .v-register-section{
+            background:#f4f7fa;
+        }
+
+        .v-register-layout{
+            display:grid;
+            grid-template-columns:.72fr 1.5fr;
+            gap:28px;
+            align-items:start;
+        }
+
+
+        /* SIDE */
+
+        .v-register-side{
+            background:linear-gradient(145deg,var(--blue),var(--blue2));
+            color:#fff;
+            border-radius:18px;
+            padding:28px;
+            position:sticky;
+            top:75px;
+            box-shadow:var(--shadow);
+        }
+
+        .v-register-side h3{
+            margin:0 0 10px;
+            font-size:22px;
+        }
+
+        .v-register-side > p{
+            margin:0 0 22px;
+            color:#e6f0f8;
+            font-size:14px;
+            line-height:1.8;
+        }
+
+        .v-side-item{
+            display:flex;
+            gap:12px;
+            padding:14px 0;
+            border-bottom:1px solid rgba(255,255,255,.16);
+        }
+
+        .v-side-item:last-child{
+            border-bottom:0;
+        }
+
+        .side-icon{
+            width:40px;
+            height:40px;
+            flex:0 0 40px;
+            border-radius:10px;
+            background:rgba(255,255,255,.12);
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            color:#ffb15f;
+        }
+
+        .v-side-item strong{
+            display:block;
+            font-size:14px;
+            margin-bottom:2px;
+        }
+
+        .v-side-item span{
+            display:block;
+            font-size:12px;
+            color:#dce9f3;
+            line-height:1.5;
+        }
+
+
+        /* FORM */
+
+        .v-form-box{
+            background:#fff;
+            border:1px solid var(--border);
+            border-radius:18px;
+            box-shadow:var(--shadow);
+            overflow:hidden;
+        }
+
+        .v-form-header{
+            padding:25px 28px;
+            background:#fff;
+            border-bottom:1px solid var(--border);
+        }
+
+        .v-form-header h3{
+            margin:0 0 6px;
+            color:var(--blue);
+            font-size:24px;
+        }
+
+        .v-form-header p{
+            margin:0;
+            color:var(--muted);
+            font-size:13px;
+        }
+
+        .v-form{
+            padding:28px;
+        }
+
+        .v-form-section-title{
+            display:flex;
+            align-items:center;
+            gap:10px;
+            color:var(--blue);
+            border-bottom:1px solid var(--border);
+            padding-bottom:10px;
+            margin:0 0 20px;
+            font-size:18px;
+        }
+
+        .v-form-section-title i{
+            color:var(--orange);
+        }
+
+        .v-form-grid{
+            display:grid;
+            grid-template-columns:repeat(2,1fr);
+            gap:18px;
+            margin-bottom:28px;
+        }
+
+        .v-field{
+            display:flex;
+            flex-direction:column;
+        }
+
+        .v-field.full{
+            grid-column:1/-1;
+        }
+
+        .v-field label{
+            font-size:13px;
+            font-weight:700;
+            color:var(--text);
+            margin-bottom:7px;
+        }
+
+        .v-field label span{
+            color:#e64d4d;
+        }
+
+        .v-field input,
+        .v-field select,
+        .v-field textarea{
+            width:100%;
+            border:1px solid var(--border);
+            border-radius:9px;
+            padding:12px 13px;
+            outline:none;
+            font-family:inherit;
+            font-size:14px;
+            color:var(--text);
+            background:#fff;
+            transition:.25s;
+        }
+
+        .v-field input:focus,
+        .v-field select:focus,
+        .v-field textarea:focus{
+            border-color:var(--blue2);
+            box-shadow:0 0 0 3px rgba(29,93,150,.08);
+        }
+
+        .v-field textarea{
+            min-height:115px;
+            resize:vertical;
+        }
+
+
+        /* RADIO */
+
+        .v-radio-group{
+            display:flex;
+            gap:10px;
+            flex-wrap:wrap;
+        }
+
+        .v-radio{
+            position:relative;
+        }
+
+        .v-radio input{
+            position:absolute;
+            opacity:0;
+        }
+
+        .v-radio label{
+            display:flex;
+            align-items:center;
+            gap:7px;
+            border:1px solid var(--border);
+            border-radius:8px;
+            padding:9px 12px;
+            cursor:pointer;
+            font-weight:500;
+            margin:0;
+        }
+
+        .v-radio label:before{
+            content:"";
+            width:15px;
+            height:15px;
+            border:1px solid #aab8c5;
+            border-radius:50%;
+        }
+
+        .v-radio input:checked + label{
+            border-color:var(--blue2);
+            background:#eef6ff;
+            color:var(--blue);
+        }
+
+        .v-radio input:checked + label:before{
+            border:4px solid var(--blue2);
+        }
+
+
+        /* CHECKBOX */
+
+        .v-agreement{
+            display:flex;
+            align-items:flex-start;
+            gap:10px;
+            background:#f7fafc;
+            border:1px solid var(--border);
+            padding:14px;
+            border-radius:10px;
+            margin-bottom:20px;
+        }
+
+        .v-agreement input{
+            margin-top:4px;
+            width:17px;
+            height:17px;
+            accent-color:var(--green);
+            flex:0 0 17px;
+        }
+
+        .v-agreement label{
+            color:var(--muted);
+            font-size:13px;
+            line-height:1.7;
+            margin:0;
+        }
+
+        .v-agreement a{
+            color:var(--blue2);
+            font-weight:700;
+        }
+
+
+        /* BUTTONS */
+
+        .v-form-buttons{
+            display:flex;
+            gap:12px;
+            flex-wrap:wrap;
+        }
+
+        .v-submit-btn,
+        .v-reset-btn{
+            border:0;
+            padding:13px 22px;
+            border-radius:9px;
+            font-family:inherit;
+            font-weight:800;
+            font-size:14px;
+            cursor:pointer;
+            display:inline-flex;
+            align-items:center;
+            justify-content:center;
+            gap:8px;
+            transition:.3s;
+        }
+
+        .v-submit-btn{
+            background:var(--green);
+            color:#fff;
+        }
+
+        .v-submit-btn:hover{
+            background:#1e703f;
+            transform:translateY(-1px);
+        }
+
+        .v-reset-btn{
+            background:#edf1f4;
+            color:var(--text);
+        }
+
+        .v-reset-btn:hover{
+            background:#e0e7ec;
+        }
+
+
+        /* PHOTO */
+
+        .photo-upload{
+            border:2px dashed #cbd7e1;
+            border-radius:12px;
+            padding:20px;
+            text-align:center;
+            background:#fafcfd;
+            cursor:pointer;
+            transition:.3s;
+        }
+
+        .photo-upload:hover{
+            border-color:var(--blue2);
+            background:#f5f9fd;
+        }
+
+        .photo-upload i{
+            font-size:28px;
+            color:var(--blue2);
+            margin-bottom:7px;
+        }
+
+        .photo-upload p{
+            margin:0;
+            font-size:13px;
+            color:var(--muted);
+        }
+
+        .photo-preview{
+            display:none;
+            width:110px;
+            height:130px;
+            object-fit:cover;
+            border-radius:10px;
+            border:2px solid var(--border);
+            margin:10px auto 0;
+        }
+
+
+        /* SUCCESS */
+
+        .v-success{
+            display:none;
+            margin-top:20px;
+            padding:18px;
+            border-radius:12px;
+            background:#eaf8ef;
+            border:1px solid #b8e1c5;
+            color:#1d6739;
+        }
+
+        .v-success h4{
+            margin:0 0 6px;
+            font-size:18px;
+        }
+
+        .v-success p{
+            margin:4px 0;
+            font-size:14px;
+        }
+
+        .volunteer-id{
+            font-weight:800;
+            font-size:18px;
+            color:var(--blue);
+        }
+
+
+        /* =========================================================
+           QUOTE
+        ========================================================= */
+
+        .v-quote{
+            padding:55px 0;
+            background:#fff;
+        }
+
+        .v-quote-box{
+            max-width:900px;
+            margin:auto;
+            text-align:center;
+        }
+
+        .v-quote-box i{
+            font-size:35px;
+            color:var(--orange);
+            margin-bottom:15px;
+        }
+
+        .v-quote-box h2{
+            margin:0;
+            color:var(--blue);
+            font-size:28px;
+            line-height:1.6;
+        }
+
+        .v-quote-box p{
+            color:var(--muted);
+            margin:12px 0 0;
+        }
+
+
+        /* =========================================================
+           FOOTER
+        ========================================================= */
+
+        .v-footer{
+            background:#102f4f;
+            color:#dce8f2;
+            padding:55px 0 0;
+        }
+
+        .v-footer-grid{
+            display:grid;
+            grid-template-columns:1.3fr 1fr 1fr 1fr;
+            gap:35px;
+            padding-bottom:40px;
+        }
+
+        .v-footer h3{
+            color:#fff;
+            margin:0 0 15px;
+            font-size:18px;
+        }
+
+        .v-footer p{
+            font-size:13px;
+            line-height:1.8;
+            margin:0;
+        }
+
+        .v-footer ul{
+            list-style:none;
+            margin:0;
+            padding:0;
+        }
+
+        .v-footer li{
+            margin:9px 0;
+        }
+
+        .v-footer a{
+            color:#dce8f2;
+            font-size:13px;
+        }
+
+        .v-footer a:hover{
+            color:#ffad61;
+        }
+
+        .v-footer-contact li{
+            display:flex;
+            gap:9px;
+        }
+
+        .v-footer-contact i{
+            color:#ffad61;
+            margin-top:4px;
+        }
+
+        .v-footer-bottom{
+            border-top:1px solid rgba(255,255,255,.12);
+            padding:17px 0;
+            text-align:center;
+            font-size:12px;
+        }
+
+
+        /* =========================================================
+           WHATSAPP
+        ========================================================= */
+
+        .v-whatsapp{
+            position:fixed;
+            right:20px;
+            bottom:20px;
+            width:55px;
+            height:55px;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:#25D366;
+            color:#fff;
+            font-size:27px;
+            box-shadow:0 8px 25px rgba(0,0,0,.2);
+            z-index:9999;
+            transition:.3s;
+        }
+
+        .v-whatsapp:hover{
+            transform:scale(1.08);
+        }
+
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media(max-width:1050px){
+
+            .v-header-inner{
+                flex-direction:column;
+                padding:15px 0;
+            }
+
+            .v-header-actions{
+                justify-content:center;
+            }
+
+            .v-menu a{
+                padding:10px 9px;
+                font-size:13px;
+            }
+
+            .volunteer-hero-inner{
+                grid-template-columns:1fr;
+            }
+
+            .hero-volunteer-card{
+                max-width:600px;
+            }
+
+            .v-why-grid{
+                grid-template-columns:repeat(2,1fr);
+            }
+
+            .v-service-grid{
+                grid-template-columns:repeat(2,1fr);
+            }
+
+            .v-register-layout{
+                grid-template-columns:1fr;
+            }
+
+            .v-register-side{
+                position:static;
+            }
+
+            .v-footer-grid{
+                grid-template-columns:repeat(2,1fr);
+            }
+        }
+
+
+        @media(max-width:700px){
+
+            .v-topbar-inner{
+                justify-content:center;
+                padding:8px 0;
+            }
+
+            .v-top-left,
+            .v-top-right{
+                justify-content:center;
+                gap:10px;
+            }
+
+            .v-brand{
+                width:100%;
+                justify-content:center;
+            }
+
+            .v-logo-box{
+                width:64px;
+                height:64px;
+                flex-basis:64px;
+            }
+
+            .v-logo{
+                width:100%;
+                height:100%;
+                object-fit:contain;
+            }
+
+            .v-brand-text h1{
+                font-size:19px;
+            }
+
+            .v-brand-text p{
+                font-size:12px;
+            }
+
+            .v-header-actions{
+                width:100%;
+                justify-content:center;
+            }
+
+            .v-login-btn{
+                font-size:12px;
+                padding:8px 10px;
+            }
+
+            .v-nav{
+                position:static;
+            }
+
+            .v-nav-inner{
+                overflow-x:auto;
+                justify-content:flex-start;
+            }
+
+            .v-menu{
+                flex-wrap:nowrap;
+                min-width:max-content;
+            }
+
+            .v-menu a{
+                padding:11px 12px;
+            }
+
+            .volunteer-hero{
+                padding:48px 0;
+            }
+
+            .volunteer-hero h2{
+                font-size:31px;
+            }
+
+            .volunteer-hero p{
+                font-size:15px;
+            }
+
+            .v-section{
+                padding:45px 0;
+            }
+
+            .v-section-title h2{
+                font-size:25px;
+            }
+
+            .v-why-grid,
+            .v-service-grid{
+                grid-template-columns:1fr;
+            }
+
+            .v-form{
+                padding:20px 16px;
+            }
+
+            .v-form-header{
+                padding:20px 16px;
+            }
+
+            .v-form-grid{
+                grid-template-columns:1fr;
+                gap:15px;
+            }
+
+            .v-field.full{
+                grid-column:auto;
+            }
+
+            .v-footer-grid{
+                grid-template-columns:1fr;
+                gap:25px;
+            }
+
+            .v-quote-box h2{
+                font-size:22px;
+            }
+        }
+
+
+        @media(max-width:450px){
+
+            .v-topbar{
+                font-size:12px;
+            }
+
+            .v-logo-box{
+                width:58px;
+                height:58px;
+                flex-basis:58px;
+            }
+
+            .v-brand{
+                gap:9px;
+            }
+
+            .v-brand-text h1{
+                font-size:17px;
+            }
+
+            .v-brand-text p{
+                font-size:11px;
+            }
+
+            .v-header-actions{
+                gap:6px;
+            }
+
+            .v-login-btn{
+                font-size:11px;
+                padding:7px 8px;
+            }
+
+            .hero-buttons{
+                flex-direction:column;
+            }
+
+            .hero-btn{
+                justify-content:center;
+            }
+
+            .v-radio-group{
+                flex-direction:column;
+            }
+
+            .v-form-buttons{
+                flex-direction:column;
+            }
+
+            .v-submit-btn,
+            .v-reset-btn{
+                width:100%;
+            }
+
+            .v-whatsapp{
+                width:50px;
+                height:50px;
+                right:14px;
+                bottom:14px;
+                font-size:24px;
+            }
+        }
+    </style>
 </head>
+
 
 <body>
 
-<!-- ======================================================
+
+<!-- =========================================================
      TOP BAR
-====================================================== -->
+========================================================= -->
 
 <div class="v-topbar">
+
     <div class="container v-topbar-inner">
 
         <div class="v-top-left">
+
             <a href="mailto:info.yssfoundation@gmail.com">
                 <i class="fa-solid fa-envelope"></i>
                 info.yssfoundation@gmail.com
@@ -1250,15 +1418,19 @@ a{
                 <i class="fa-solid fa-location-dot"></i>
                 अम्बेडकर नगर, उत्तर प्रदेश
             </span>
+
         </div>
 
+
         <div class="v-top-right">
+
             <span>
                 <i class="fa-solid fa-phone"></i>
                 9651731313
             </span>
 
             <div class="v-social">
+
                 <a href="#" aria-label="Facebook">
                     <i class="fa-brands fa-facebook-f"></i>
                 </a>
@@ -1270,16 +1442,20 @@ a{
                 <a href="#" aria-label="YouTube">
                     <i class="fa-brands fa-youtube"></i>
                 </a>
+
             </div>
+
         </div>
 
     </div>
+
 </div>
 
 
-<!-- ======================================================
+
+<!-- =========================================================
      HEADER
-====================================================== -->
+========================================================= -->
 
 <header class="v-header">
 
@@ -1287,16 +1463,29 @@ a{
 
         <a href="index.html" class="v-brand">
 
-            <img src="logo.png"
-                 alt="युवा सेवा संकल्प फाउंडेशन लोगो"
-                 class="v-logo">
+            <!-- LOGO -->
+            <div class="v-logo-box">
+                <img
+                    src="logo.png"
+                    alt="युवा सेवा संकल्प फाउंडेशन लोगो"
+                    class="v-logo"
+                    loading="eager">
+            </div>
 
             <div class="v-brand-text">
-                <h1>युवा सेवा संकल्प फाउंडेशन</h1>
-                <p>युवा शक्ति - राष्ट्र शक्ति</p>
+
+                <h1>
+                    युवा सेवा संकल्प फाउंडेशन
+                </h1>
+
+                <p>
+                    युवा शक्ति - राष्ट्र शक्ति
+                </p>
+
             </div>
 
         </a>
+
 
         <div class="v-header-actions">
 
@@ -1322,9 +1511,10 @@ a{
 </header>
 
 
-<!-- ======================================================
+
+<!-- =========================================================
      NAVIGATION
-====================================================== -->
+========================================================= -->
 
 <nav class="v-nav">
 
@@ -1400,9 +1590,10 @@ a{
 </nav>
 
 
-<!-- ======================================================
+
+<!-- =========================================================
      BREADCRUMB
-====================================================== -->
+========================================================= -->
 
 <div class="v-breadcrumb">
 
@@ -1415,50 +1606,72 @@ a{
 
         <i class="fa-solid fa-angle-right"></i>
 
-        <span>स्वयंसेवक बनें</span>
+        <span>
+            स्वयंसेवक बनें
+        </span>
 
     </div>
 
 </div>
 
 
-<!-- ======================================================
+
+<!-- =========================================================
      HERO
-====================================================== -->
+========================================================= -->
 
 <section class="volunteer-hero">
 
     <div class="container volunteer-hero-inner">
 
+
         <div>
 
             <div class="hero-tag">
+
                 <i class="fa-solid fa-hands-helping"></i>
+
                 समाज सेवा से जुड़ने का अवसर
+
             </div>
 
+
             <h2>
-                आइए, <span>स्वयंसेवक</span> बनकर
-                समाज में बदलाव लाएँ
+
+                आइए,
+                <span>स्वयंसेवक</span>
+                बनकर समाज में बदलाव लाएँ
+
             </h2>
 
+
             <p>
+
                 आपका समय, आपकी प्रतिभा और आपकी मेहनत किसी के जीवन में
                 नई उम्मीद पैदा कर सकती है। युवा सेवा संकल्प फाउंडेशन के
                 साथ जुड़कर शिक्षा, स्वास्थ्य, पर्यावरण, महिला सशक्तिकरण,
                 युवा विकास और सामाजिक सेवा के कार्यों में अपना योगदान दें।
+
             </p>
+
 
             <div class="hero-buttons">
 
                 <a href="#volunteerForm" class="hero-btn primary">
+
                     <i class="fa-solid fa-user-plus"></i>
+
                     स्वयंसेवक बनें
+
                 </a>
 
+
                 <a href="volunteer-login.html" class="hero-btn light">
+
                     <i class="fa-solid fa-right-to-bracket"></i>
+
                     स्वयंसेवक लॉगिन
+
                 </a>
 
             </div>
@@ -1466,18 +1679,26 @@ a{
         </div>
 
 
+
         <div class="hero-volunteer-card">
 
             <div class="icon">
+
                 <i class="fa-solid fa-people-group"></i>
+
             </div>
 
-            <h3>आप हमारे साथ क्यों जुड़ें?</h3>
+
+            <h3>
+                आप हमारे साथ क्यों जुड़ें?
+            </h3>
+
 
             <p>
                 समाज सेवा के माध्यम से अपने समय और प्रतिभा को
                 एक सकारात्मक उद्देश्य से जोड़ें।
             </p>
+
 
             <ul>
 
@@ -1510,9 +1731,10 @@ a{
 </section>
 
 
-<!-- ======================================================
+
+<!-- =========================================================
      WHY VOLUNTEER
-====================================================== -->
+========================================================= -->
 
 <section class="v-section">
 
@@ -1538,13 +1760,16 @@ a{
 
         <div class="v-why-grid">
 
+
             <div class="v-why-card">
 
                 <div class="v-why-icon">
                     <i class="fa-solid fa-heart"></i>
                 </div>
 
-                <h3>सेवा का अवसर</h3>
+                <h3>
+                    सेवा का अवसर
+                </h3>
 
                 <p>
                     जरूरतमंद लोगों की सहायता करके समाज के प्रति
@@ -1554,13 +1779,16 @@ a{
             </div>
 
 
+
             <div class="v-why-card">
 
                 <div class="v-why-icon">
                     <i class="fa-solid fa-lightbulb"></i>
                 </div>
 
-                <h3>नई सीख</h3>
+                <h3>
+                    नई सीख
+                </h3>
 
                 <p>
                     सामाजिक कार्यों के माध्यम से नेतृत्व और
@@ -1570,13 +1798,16 @@ a{
             </div>
 
 
+
             <div class="v-why-card">
 
                 <div class="v-why-icon">
                     <i class="fa-solid fa-users"></i>
                 </div>
 
-                <h3>नई टीम</h3>
+                <h3>
+                    नई टीम
+                </h3>
 
                 <p>
                     समाज सेवा के लिए समर्पित युवाओं और लोगों
@@ -1586,13 +1817,16 @@ a{
             </div>
 
 
+
             <div class="v-why-card">
 
                 <div class="v-why-icon">
                     <i class="fa-solid fa-flag"></i>
                 </div>
 
-                <h3>राष्ट्र निर्माण</h3>
+                <h3>
+                    राष्ट्र निर्माण
+                </h3>
 
                 <p>
                     छोटे-छोटे प्रयासों से मजबूत, जागरूक और
@@ -1608,9 +1842,10 @@ a{
 </section>
 
 
-<!-- ======================================================
+
+<!-- =========================================================
      SERVICE AREAS
-====================================================== -->
+========================================================= -->
 
 <section class="v-section v-service-section">
 
@@ -1636,6 +1871,7 @@ a{
 
         <div class="v-service-grid">
 
+
             <div class="v-service-card">
 
                 <div class="v-service-icon">
@@ -1643,13 +1879,19 @@ a{
                 </div>
 
                 <div>
-                    <h3>शिक्षा सेवा</h3>
+
+                    <h3>
+                        शिक्षा सेवा
+                    </h3>
+
                     <p>
                         बच्चों की शिक्षा, जागरूकता और शैक्षणिक गतिविधियों में सहयोग।
                     </p>
+
                 </div>
 
             </div>
+
 
 
             <div class="v-service-card">
@@ -1659,13 +1901,19 @@ a{
                 </div>
 
                 <div>
-                    <h3>स्वास्थ्य सेवा</h3>
+
+                    <h3>
+                        स्वास्थ्य सेवा
+                    </h3>
+
                     <p>
                         स्वास्थ्य शिविर, जागरूकता कार्यक्रम और सहायता गतिविधियाँ।
                     </p>
+
                 </div>
 
             </div>
+
 
 
             <div class="v-service-card">
@@ -1675,13 +1923,19 @@ a{
                 </div>
 
                 <div>
-                    <h3>पर्यावरण संरक्षण</h3>
+
+                    <h3>
+                        पर्यावरण संरक्षण
+                    </h3>
+
                     <p>
                         वृक्षारोपण, स्वच्छता एवं पर्यावरण जागरूकता अभियान।
                     </p>
+
                 </div>
 
             </div>
+
 
 
             <div class="v-service-card">
@@ -1691,13 +1945,19 @@ a{
                 </div>
 
                 <div>
-                    <h3>महिला सशक्तिकरण</h3>
+
+                    <h3>
+                        महिला सशक्तिकरण
+                    </h3>
+
                     <p>
                         महिलाओं की जागरूकता, शिक्षा और आत्मनिर्भरता से जुड़े प्रयास।
                     </p>
+
                 </div>
 
             </div>
+
 
 
             <div class="v-service-card">
@@ -1707,13 +1967,19 @@ a{
                 </div>
 
                 <div>
-                    <h3>युवा विकास</h3>
+
+                    <h3>
+                        युवा विकास
+                    </h3>
+
                     <p>
                         युवाओं को नेतृत्व, कौशल और सामाजिक जिम्मेदारी से जोड़ना।
                     </p>
+
                 </div>
 
             </div>
+
 
 
             <div class="v-service-card">
@@ -1723,10 +1989,81 @@ a{
                 </div>
 
                 <div>
-                    <h3>सामाजिक सहायता</h3>
+
+                    <h3>
+                        सामाजिक सहायता
+                    </h3>
+
                     <p>
                         जरूरतमंद परिवारों एवं समुदायों तक सहायता पहुँचाने में सहयोग।
                     </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="v-service-card">
+
+                <div class="v-service-icon">
+                    <i class="fa-solid fa-truck-medical"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        आपदा राहत
+                    </h3>
+
+                    <p>
+                        आपदा एवं आपातकालीन परिस्थितियों में राहत कार्यों में सहयोग।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="v-service-card">
+
+                <div class="v-service-icon">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        डिजिटल / सोशल मीडिया
+                    </h3>
+
+                    <p>
+                        डिजिटल जागरूकता, सोशल मीडिया और ऑनलाइन गतिविधियों में सहयोग।
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="v-service-card">
+
+                <div class="v-service-icon">
+                    <i class="fa-solid fa-people-carry-box"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        अन्य सामाजिक सेवा
+                    </h3>
+
+                    <p>
+                        अपनी रुचि और योग्यता के अनुसार अन्य सामाजिक गतिविधियों में सहयोग।
+                    </p>
+
                 </div>
 
             </div>
@@ -1738,9 +2075,10 @@ a{
 </section>
 
 
-<!-- ======================================================
+
+<!-- =========================================================
      REGISTRATION FORM
-====================================================== -->
+========================================================= -->
 
 <section class="v-section v-register-section" id="volunteerForm">
 
@@ -1766,6 +2104,7 @@ a{
 
         <div class="v-register-layout">
 
+
             <!-- SIDE -->
 
             <aside class="v-register-side">
@@ -1787,13 +2126,19 @@ a{
                     </div>
 
                     <div>
-                        <strong>पंजीकरण</strong>
+
+                        <strong>
+                            पंजीकरण
+                        </strong>
+
                         <span>
                             अपनी सही जानकारी के साथ आवेदन करें।
                         </span>
+
                     </div>
 
                 </div>
+
 
 
                 <div class="v-side-item">
@@ -1803,13 +2148,19 @@ a{
                     </div>
 
                     <div>
-                        <strong>टीम से जुड़ें</strong>
+
+                        <strong>
+                            टीम से जुड़ें
+                        </strong>
+
                         <span>
                             सामाजिक कार्यों में हमारी टीम के साथ भाग लें।
                         </span>
+
                     </div>
 
                 </div>
+
 
 
                 <div class="v-side-item">
@@ -1819,13 +2170,19 @@ a{
                     </div>
 
                     <div>
-                        <strong>कार्यक्रमों में भागीदारी</strong>
+
+                        <strong>
+                            कार्यक्रमों में भागीदारी
+                        </strong>
+
                         <span>
                             अभियान एवं सेवा कार्यक्रमों में सहयोग करें।
                         </span>
+
                     </div>
 
                 </div>
+
 
 
                 <div class="v-side-item">
@@ -1835,15 +2192,22 @@ a{
                     </div>
 
                     <div>
-                        <strong>योगदान की पहचान</strong>
+
+                        <strong>
+                            योगदान की पहचान
+                        </strong>
+
                         <span>
                             आपके सेवा योगदान को महत्व दिया जाएगा।
                         </span>
+
                     </div>
 
                 </div>
 
+
             </aside>
+
 
 
             <!-- FORM -->
@@ -1864,18 +2228,27 @@ a{
                 </div>
 
 
-                <form class="v-form" id="volunteerRegistrationForm">
+                <form
+                    class="v-form"
+                    id="volunteerRegistrationForm">
+
 
                     <!-- PERSONAL -->
 
                     <h4 class="v-form-section-title">
+
                         <i class="fa-solid fa-user"></i>
+
                         व्यक्तिगत जानकारी
+
                     </h4>
+
 
                     <div class="v-form-grid">
 
+
                         <div class="v-field">
+
                             <label>
                                 पूरा नाम <span>*</span>
                             </label>
@@ -1886,10 +2259,13 @@ a{
                                 name="fullName"
                                 placeholder="अपना पूरा नाम लिखें"
                                 required>
+
                         </div>
 
 
+
                         <div class="v-field">
+
                             <label>
                                 पिता / पति का नाम
                             </label>
@@ -1899,10 +2275,13 @@ a{
                                 id="fatherName"
                                 name="fatherName"
                                 placeholder="पिता / पति का नाम">
+
                         </div>
 
 
+
                         <div class="v-field">
+
                             <label>
                                 मोबाइल नंबर <span>*</span>
                             </label>
@@ -1913,11 +2292,15 @@ a{
                                 name="mobile"
                                 placeholder="10 अंकों का मोबाइल नंबर"
                                 maxlength="10"
+                                inputmode="numeric"
                                 required>
+
                         </div>
 
 
+
                         <div class="v-field">
+
                             <label>
                                 ई-मेल
                             </label>
@@ -1927,10 +2310,13 @@ a{
                                 id="email"
                                 name="email"
                                 placeholder="example@gmail.com">
+
                         </div>
 
 
+
                         <div class="v-field">
+
                             <label>
                                 जन्म तिथि
                             </label>
@@ -1939,7 +2325,9 @@ a{
                                 type="date"
                                 id="dob"
                                 name="dob">
+
                         </div>
+
 
 
                         <div class="v-field">
@@ -1951,6 +2339,7 @@ a{
                             <div class="v-radio-group">
 
                                 <div class="v-radio">
+
                                     <input
                                         type="radio"
                                         name="gender"
@@ -1961,9 +2350,12 @@ a{
                                     <label for="male">
                                         पुरुष
                                     </label>
+
                                 </div>
 
+
                                 <div class="v-radio">
+
                                     <input
                                         type="radio"
                                         name="gender"
@@ -1973,9 +2365,12 @@ a{
                                     <label for="female">
                                         महिला
                                     </label>
+
                                 </div>
 
+
                                 <div class="v-radio">
+
                                     <input
                                         type="radio"
                                         name="gender"
@@ -1985,6 +2380,7 @@ a{
                                     <label for="other">
                                         अन्य
                                     </label>
+
                                 </div>
 
                             </div>
@@ -1994,14 +2390,20 @@ a{
                     </div>
 
 
+
                     <!-- ADDRESS -->
 
                     <h4 class="v-form-section-title">
+
                         <i class="fa-solid fa-location-dot"></i>
+
                         पता एवं स्थान
+
                     </h4>
 
+
                     <div class="v-form-grid">
+
 
                         <div class="v-field full">
 
@@ -2016,6 +2418,7 @@ a{
                                 required></textarea>
 
                         </div>
+
 
 
                         <div class="v-field">
@@ -2034,6 +2437,7 @@ a{
                         </div>
 
 
+
                         <div class="v-field">
 
                             <label>
@@ -2047,6 +2451,7 @@ a{
                                 placeholder="ब्लॉक / तहसील">
 
                         </div>
+
 
 
                         <div class="v-field">
@@ -2065,13 +2470,17 @@ a{
                         </div>
 
 
+
                         <div class="v-field">
 
                             <label>
                                 राज्य <span>*</span>
                             </label>
 
-                            <select id="state" name="state" required>
+                            <select
+                                id="state"
+                                name="state"
+                                required>
 
                                 <option value="">
                                     राज्य चुनें
@@ -2110,6 +2519,7 @@ a{
                         </div>
 
 
+
                         <div class="v-field">
 
                             <label>
@@ -2121,6 +2531,7 @@ a{
                                 id="pincode"
                                 name="pincode"
                                 maxlength="6"
+                                inputmode="numeric"
                                 placeholder="6 अंकों का पिन कोड"
                                 required>
 
@@ -2129,14 +2540,20 @@ a{
                     </div>
 
 
+
                     <!-- VOLUNTEER DETAILS -->
 
                     <h4 class="v-form-section-title">
+
                         <i class="fa-solid fa-hand-holding-heart"></i>
+
                         स्वयंसेवक संबंधी जानकारी
+
                     </h4>
 
+
                     <div class="v-form-grid">
+
 
                         <div class="v-field">
 
@@ -2144,23 +2561,46 @@ a{
                                 आपकी शिक्षा
                             </label>
 
-                            <select id="education" name="education">
+                            <select
+                                id="education"
+                                name="education">
 
                                 <option value="">
                                     चुनें
                                 </option>
 
-                                <option>हाई स्कूल</option>
-                                <option>इंटरमीडिएट</option>
-                                <option>स्नातक</option>
-                                <option>स्नातकोत्तर</option>
-                                <option>डिप्लोमा</option>
-                                <option>तकनीकी शिक्षा</option>
-                                <option>अन्य</option>
+                                <option>
+                                    हाई स्कूल
+                                </option>
+
+                                <option>
+                                    इंटरमीडिएट
+                                </option>
+
+                                <option>
+                                    स्नातक
+                                </option>
+
+                                <option>
+                                    स्नातकोत्तर
+                                </option>
+
+                                <option>
+                                    डिप्लोमा
+                                </option>
+
+                                <option>
+                                    तकनीकी शिक्षा
+                                </option>
+
+                                <option>
+                                    अन्य
+                                </option>
 
                             </select>
 
                         </div>
+
 
 
                         <div class="v-field">
@@ -2176,6 +2616,7 @@ a{
                                 placeholder="जैसे विद्यार्थी, शिक्षक, व्यवसाय आदि">
 
                         </div>
+
 
 
                         <div class="v-field full">
@@ -2234,13 +2675,16 @@ a{
                         </div>
 
 
+
                         <div class="v-field">
 
                             <label>
                                 सेवा का अनुभव
                             </label>
 
-                            <select id="experience" name="experience">
+                            <select
+                                id="experience"
+                                name="experience">
 
                                 <option value="">
                                     चुनें
@@ -2271,13 +2715,16 @@ a{
                         </div>
 
 
+
                         <div class="v-field">
 
                             <label>
                                 सप्ताह में उपलब्ध समय
                             </label>
 
-                            <select id="availability" name="availability">
+                            <select
+                                id="availability"
+                                name="availability">
 
                                 <option value="">
                                     चुनें
@@ -2304,6 +2751,7 @@ a{
                         </div>
 
 
+
                         <div class="v-field full">
 
                             <label>
@@ -2317,6 +2765,7 @@ a{
                                 placeholder="जैसे कंप्यूटर, सोशल मीडिया, फोटोग्राफी, शिक्षण, आयोजन आदि">
 
                         </div>
+
 
 
                         <div class="v-field full">
@@ -2335,12 +2784,17 @@ a{
                     </div>
 
 
+
                     <!-- PHOTO -->
 
                     <h4 class="v-form-section-title">
+
                         <i class="fa-solid fa-camera"></i>
+
                         फोटो
+
                     </h4>
+
 
                     <div class="v-form-grid">
 
@@ -2350,7 +2804,9 @@ a{
                                 स्वयंसेवक फोटो
                             </label>
 
-                            <label class="photo-upload" for="photo">
+                            <label
+                                class="photo-upload"
+                                for="photo">
 
                                 <i class="fa-solid fa-cloud-arrow-up"></i>
 
@@ -2381,19 +2837,25 @@ a{
                     </div>
 
 
+
                     <!-- EMERGENCY -->
 
                     <h4 class="v-form-section-title">
+
                         <i class="fa-solid fa-phone-volume"></i>
+
                         आपातकालीन संपर्क
+
                     </h4>
 
+
                     <div class="v-form-grid">
+
 
                         <div class="v-field">
 
                             <label>
-                                संपर्क व्यक्ति का नाम
+                                आपातकालीन संपर्क व्यक्ति
                             </label>
 
                             <input
@@ -2405,10 +2867,11 @@ a{
                         </div>
 
 
+
                         <div class="v-field">
 
                             <label>
-                                संपर्क नंबर
+                                आपातकालीन मोबाइल नंबर
                             </label>
 
                             <input
@@ -2416,11 +2879,13 @@ a{
                                 id="emergencyMobile"
                                 name="emergencyMobile"
                                 maxlength="10"
+                                inputmode="numeric"
                                 placeholder="10 अंकों का मोबाइल नंबर">
 
                         </div>
 
                     </div>
+
 
 
                     <!-- AGREEMENT -->
@@ -2430,29 +2895,21 @@ a{
                         <input
                             type="checkbox"
                             id="agreement"
+                            name="agreement"
                             required>
 
                         <label for="agreement">
 
                             मैं घोषणा करता/करती हूँ कि मेरे द्वारा दी गई जानकारी
                             मेरी जानकारी के अनुसार सही है। मैं युवा सेवा संकल्प
-                            फाउंडेशन के सामाजिक सेवा कार्यों में अनुशासन एवं
-                            जिम्मेदारी के साथ सहयोग करने के लिए सहमत हूँ।
-
-                            <br>
-
-                            <a href="privacy-policy.html">
-                                गोपनीयता नीति
-                            </a>
-                            एवं
-                            <a href="terms.html">
-                                नियम एवं शर्तें
-                            </a>
-                            स्वीकार हैं।
+                            फाउंडेशन के सेवा कार्यों में संस्था के नियमों एवं
+                            दिशा-निर्देशों का पालन करते हुए सहयोग करने के लिए
+                            सहमत हूँ।
 
                         </label>
 
                     </div>
+
 
 
                     <!-- BUTTONS -->
@@ -2464,6 +2921,7 @@ a{
                             class="v-submit-btn">
 
                             <i class="fa-solid fa-paper-plane"></i>
+
                             स्वयंसेवक पंजीकरण करें
 
                         </button>
@@ -2474,11 +2932,13 @@ a{
                             class="v-reset-btn">
 
                             <i class="fa-solid fa-rotate-left"></i>
+
                             फॉर्म साफ करें
 
                         </button>
 
                     </div>
+
 
 
                     <!-- SUCCESS -->
@@ -2497,12 +2957,15 @@ a{
                         </p>
 
                         <p>
-                            <strong>स्वयंसेवक ID:</strong>
-                            <span id="volunteerId"></span>
+                            आपका स्वयंसेवक ID:
+                            <span
+                                class="volunteer-id"
+                                id="volunteerId">
+                            </span>
                         </p>
 
                         <p>
-                            कृपया अपनी Volunteer ID सुरक्षित रखें।
+                            कृपया इस ID को सुरक्षित रखें।
                         </p>
 
                     </div>
@@ -2518,9 +2981,10 @@ a{
 </section>
 
 
-<!-- ======================================================
+
+<!-- =========================================================
      QUOTE
-====================================================== -->
+========================================================= -->
 
 <section class="v-quote">
 
@@ -2531,12 +2995,12 @@ a{
             <i class="fa-solid fa-quote-left"></i>
 
             <h2>
-                "सेवा केवल किसी की मदद करना नहीं,
-                बल्कि किसी के जीवन में उम्मीद बनना है।"
+                "समाज सेवा के लिए बड़ा पद नहीं,
+                बड़ा दिल चाहिए।"
             </h2>
 
             <p>
-                आइए मिलकर एक बेहतर समाज और मजबूत राष्ट्र का निर्माण करें।
+                आइए मिलकर सेवा, सहयोग और समर्पण की भावना को मजबूत करें।
             </p>
 
         </div>
@@ -2546,15 +3010,19 @@ a{
 </section>
 
 
-<!-- ======================================================
+
+<!-- =========================================================
      FOOTER
-====================================================== -->
+========================================================= -->
 
 <footer class="v-footer">
 
     <div class="container">
 
         <div class="v-footer-grid">
+
+
+            <!-- ABOUT -->
 
             <div>
 
@@ -2563,14 +3031,22 @@ a{
                 </h3>
 
                 <p>
-                    युवा शक्ति को सामाजिक सेवा से जोड़कर शिक्षा,
-                    स्वास्थ्य, पर्यावरण, महिला सशक्तिकरण और
-                    राष्ट्र निर्माण के क्षेत्र में सकारात्मक बदलाव
-                    लाने का हमारा प्रयास है।
+                    युवा शक्ति - राष्ट्र शक्ति
+                </p>
+
+                <p style="margin-top:10px;">
+
+                    समाज सेवा, युवा सशक्तिकरण, शिक्षा,
+                    स्वास्थ्य, पर्यावरण संरक्षण और
+                    राष्ट्र निर्माण के लिए समर्पित प्रयास।
+
                 </p>
 
             </div>
 
+
+
+            <!-- QUICK LINKS -->
 
             <div>
 
@@ -2581,27 +3057,27 @@ a{
                 <ul>
 
                     <li>
-                        <a href="index.html">होम</a>
+                        <a href="index.html">
+                            होम
+                        </a>
                     </li>
 
                     <li>
-                        <a href="about.html">हमारे बारे में</a>
+                        <a href="about.html">
+                            हमारे बारे में
+                        </a>
                     </li>
 
                     <li>
-                        <a href="work.html">हमारे कार्य</a>
+                        <a href="work.html">
+                            हमारे कार्य
+                        </a>
                     </li>
 
                     <li>
-                        <a href="events.html">कार्यक्रम</a>
-                    </li>
-
-                    <li>
-                        <a href="membership.html">सदस्यता</a>
-                    </li>
-
-                    <li>
-                        <a href="volunteer.html">स्वयंसेवक</a>
+                        <a href="events.html">
+                            कार्यक्रम
+                        </a>
                     </li>
 
                 </ul>
@@ -2609,16 +3085,25 @@ a{
             </div>
 
 
+
+            <!-- JOIN -->
+
             <div>
 
                 <h3>
-                    स्वयंसेवक
+                    हमारे साथ जुड़ें
                 </h3>
 
                 <ul>
 
                     <li>
-                        <a href="#volunteerForm">
+                        <a href="membership.html">
+                            सदस्यता
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="volunteer.html">
                             स्वयंसेवक बनें
                         </a>
                     </li>
@@ -2630,14 +3115,8 @@ a{
                     </li>
 
                     <li>
-                        <a href="membership.html">
-                            सदस्य बनें
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="contact.html">
-                            संपर्क करें
+                        <a href="member-login.html">
+                            सदस्य लॉगिन
                         </a>
                     </li>
 
@@ -2645,6 +3124,9 @@ a{
 
             </div>
 
+
+
+            <!-- CONTACT -->
 
             <div>
 
@@ -2655,6 +3137,7 @@ a{
                 <ul class="v-footer-contact">
 
                     <li>
+
                         <i class="fa-solid fa-location-dot"></i>
 
                         <span>
@@ -2662,22 +3145,29 @@ a{
                             जिला अम्बेडकर नगर,
                             उत्तर प्रदेश – 224129
                         </span>
+
                     </li>
 
+
                     <li>
+
                         <i class="fa-solid fa-phone"></i>
 
                         <a href="tel:9651731313">
                             9651731313
                         </a>
+
                     </li>
 
+
                     <li>
+
                         <i class="fa-solid fa-envelope"></i>
 
                         <a href="mailto:info.yssfoundation@gmail.com">
                             info.yssfoundation@gmail.com
                         </a>
+
                     </li>
 
                 </ul>
@@ -2687,11 +3177,12 @@ a{
         </div>
 
 
+
         <div class="v-footer-bottom">
 
-            © <span id="currentYear"></span>
-            युवा सेवा संकल्प फाउंडेशन |
-            सर्वाधिकार सुरक्षित
+            © 2026
+            युवा सेवा संकल्प फाउंडेशन
+            | सर्वाधिकार सुरक्षित
 
         </div>
 
@@ -2700,14 +3191,16 @@ a{
 </footer>
 
 
-<!-- ======================================================
+
+<!-- =========================================================
      WHATSAPP
-====================================================== -->
+========================================================= -->
 
 <a
     href="https://wa.me/919651731313"
     class="v-whatsapp"
     target="_blank"
+    rel="noopener"
     aria-label="WhatsApp">
 
     <i class="fa-brands fa-whatsapp"></i>
@@ -2715,432 +3208,323 @@ a{
 </a>
 
 
-<!-- ======================================================
+
+<!-- =========================================================
      JAVASCRIPT
-====================================================== -->
+========================================================= -->
 
 <script>
 
 document.addEventListener("DOMContentLoaded", function(){
 
-    /* Current Year */
+    const form = document.getElementById("volunteerRegistrationForm");
 
-    const year = document.getElementById("currentYear");
+    const photoInput = document.getElementById("photo");
 
-    if(year){
-        year.textContent = new Date().getFullYear();
-    }
+    const photoPreview = document.getElementById("photoPreview");
 
+    const successMessage = document.getElementById("successMessage");
 
-    /* Mobile validation */
-
-    const mobile =
-        document.getElementById("mobile");
-
-    if(mobile){
-
-        mobile.addEventListener("input", function(){
-
-            this.value =
-                this.value
-                .replace(/\D/g,"")
-                .slice(0,10);
-
-        });
-
-    }
+    const volunteerIdBox = document.getElementById("volunteerId");
 
 
-    /* Emergency mobile */
+    /* =====================================================
+       MOBILE NUMBER
+    ===================================================== */
+
+    const mobileInput = document.getElementById("mobile");
+
+    mobileInput.addEventListener("input", function(){
+
+        this.value = this.value
+            .replace(/\D/g,"")
+            .slice(0,10);
+
+    });
+
+
+    /* =====================================================
+       PINCODE
+    ===================================================== */
+
+    const pincodeInput = document.getElementById("pincode");
+
+    pincodeInput.addEventListener("input", function(){
+
+        this.value = this.value
+            .replace(/\D/g,"")
+            .slice(0,6);
+
+    });
+
+
+    /* =====================================================
+       EMERGENCY MOBILE
+    ===================================================== */
 
     const emergencyMobile =
         document.getElementById("emergencyMobile");
 
-    if(emergencyMobile){
+    emergencyMobile.addEventListener("input", function(){
 
-        emergencyMobile.addEventListener("input", function(){
+        this.value = this.value
+            .replace(/\D/g,"")
+            .slice(0,10);
 
-            this.value =
-                this.value
-                .replace(/\D/g,"")
-                .slice(0,10);
-
-        });
-
-    }
+    });
 
 
-    /* Pincode */
+    /* =====================================================
+       PHOTO PREVIEW
+    ===================================================== */
 
-    const pincode =
-        document.getElementById("pincode");
+    photoInput.addEventListener("change", function(){
 
-    if(pincode){
+        const file = this.files[0];
 
-        pincode.addEventListener("input", function(){
-
-            this.value =
-                this.value
-                .replace(/\D/g,"")
-                .slice(0,6);
-
-        });
-
-    }
+        if(!file){
+            return;
+        }
 
 
-    /* Photo preview */
+        if(!file.type.startsWith("image/")){
 
-    const photo =
-        document.getElementById("photo");
+            alert("कृपया JPG या PNG फोटो चुनें।");
 
-    const photoPreview =
-        document.getElementById("photoPreview");
+            this.value = "";
 
+            return;
 
-    if(photo){
-
-        photo.addEventListener("change", function(){
-
-            const file = this.files[0];
-
-            if(!file){
-                photoPreview.style.display = "none";
-                return;
-            }
+        }
 
 
-            /* File type */
+        if(file.size > 2 * 1024 * 1024){
 
-            if(
-                file.type !== "image/jpeg" &&
-                file.type !== "image/png"
-            ){
+            alert("फोटो का आकार 2 MB से अधिक नहीं होना चाहिए।");
 
-                alert(
-                    "कृपया JPG या PNG फोटो चुनें।"
-                );
+            this.value = "";
 
-                this.value = "";
-                photoPreview.style.display = "none";
+            return;
 
-                return;
-            }
+        }
 
 
-            /* File size */
-
-            if(file.size > 2 * 1024 * 1024){
-
-                alert(
-                    "फोटो का आकार 2 MB से कम होना चाहिए।"
-                );
-
-                this.value = "";
-                photoPreview.style.display = "none";
-
-                return;
-            }
+        const reader = new FileReader();
 
 
-            const reader =
-                new FileReader();
+        reader.onload = function(e){
+
+            photoPreview.src = e.target.result;
+
+            photoPreview.style.display = "block";
+
+        };
 
 
-            reader.onload = function(e){
+        reader.readAsDataURL(file);
 
-                photoPreview.src =
-                    e.target.result;
-
-                photoPreview.style.display =
-                    "block";
-
-            };
+    });
 
 
-            reader.readAsDataURL(file);
 
-        });
+    /* =====================================================
+       GENERATE VOLUNTEER ID
+    ===================================================== */
+
+    function generateVolunteerId(){
+
+        const year = new Date().getFullYear();
+
+        const random =
+            Math.floor(10000 + Math.random() * 90000);
+
+        return "YSSF-V" + year + "-" + random;
 
     }
 
 
-    /* Form */
 
-    const form =
-        document.getElementById(
-            "volunteerRegistrationForm"
-        );
+    /* =====================================================
+       GET EXISTING DATA
+    ===================================================== */
 
+    function getVolunteers(){
 
-    if(form){
+        try{
 
-        form.addEventListener("submit", function(e){
+            return JSON.parse(
+                localStorage.getItem("yssfVolunteers") || "[]"
+            );
 
-            e.preventDefault();
+        }catch(error){
 
+            return [];
 
-            /* Validate mobile */
+        }
 
-            if(
-                mobile.value.length !== 10
-            ){
-
-                alert(
-                    "कृपया सही 10 अंकों का मोबाइल नंबर दर्ज करें।"
-                );
-
-                mobile.focus();
-
-                return;
-            }
+    }
 
 
-            /* Validate emergency mobile */
 
-            if(
-                emergencyMobile.value &&
-                emergencyMobile.value.length !== 10
-            ){
+    /* =====================================================
+       FORM SUBMIT
+    ===================================================== */
 
-                alert(
-                    "कृपया सही आपातकालीन मोबाइल नंबर दर्ज करें।"
-                );
+    form.addEventListener("submit", function(e){
 
-                emergencyMobile.focus();
-
-                return;
-            }
+        e.preventDefault();
 
 
-            /* Volunteer ID */
+        /* Mobile validation */
 
-            const volunteerId =
-                "YSSF-V" +
-                new Date().getFullYear() +
-                "-" +
-                Math.floor(
-                    10000 + Math.random() * 90000
-                );
+        const mobile = mobileInput.value.trim();
 
+        if(!/^[6-9]\d{9}$/.test(mobile)){
 
-            /* Data */
+            alert("कृपया सही 10 अंकों का मोबाइल नंबर दर्ज करें।");
 
-            const volunteer = {
+            mobileInput.focus();
 
-                volunteerId:
-                    volunteerId,
+            return;
 
-                fullName:
-                    document.getElementById(
-                        "fullName"
-                    ).value.trim(),
-
-                fatherName:
-                    document.getElementById(
-                        "fatherName"
-                    ).value.trim(),
-
-                mobile:
-                    mobile.value,
-
-                email:
-                    document.getElementById(
-                        "email"
-                    ).value.trim(),
-
-                dob:
-                    document.getElementById(
-                        "dob"
-                    ).value,
-
-                gender:
-                    document.querySelector(
-                        'input[name="gender"]:checked'
-                    )?.value || "",
-
-                address:
-                    document.getElementById(
-                        "address"
-                    ).value.trim(),
-
-                village:
-                    document.getElementById(
-                        "village"
-                    ).value.trim(),
-
-                block:
-                    document.getElementById(
-                        "block"
-                    ).value.trim(),
-
-                district:
-                    document.getElementById(
-                        "district"
-                    ).value.trim(),
-
-                state:
-                    document.getElementById(
-                        "state"
-                    ).value,
-
-                pincode:
-                    pincode.value,
-
-                education:
-                    document.getElementById(
-                        "education"
-                    ).value,
-
-                occupation:
-                    document.getElementById(
-                        "occupation"
-                    ).value.trim(),
-
-                serviceArea:
-                    document.getElementById(
-                        "serviceArea"
-                    ).value,
-
-                experience:
-                    document.getElementById(
-                        "experience"
-                    ).value,
-
-                availability:
-                    document.getElementById(
-                        "availability"
-                    ).value,
-
-                skills:
-                    document.getElementById(
-                        "skills"
-                    ).value.trim(),
-
-                reason:
-                    document.getElementById(
-                        "reason"
-                    ).value.trim(),
-
-                emergencyName:
-                    document.getElementById(
-                        "emergencyName"
-                    ).value.trim(),
-
-                emergencyMobile:
-                    emergencyMobile.value,
-
-                registrationDate:
-                    new Date().toLocaleDateString(
-                        "hi-IN"
-                    ),
-
-                status:
-                    "लंबित"
-
-            };
+        }
 
 
-            /* Existing volunteers */
+        /* Pincode validation */
 
-            let volunteers = [];
+        const pincode = pincodeInput.value.trim();
+
+        if(!/^\d{6}$/.test(pincode)){
+
+            alert("कृपया सही 6 अंकों का पिन कोड दर्ज करें।");
+
+            pincodeInput.focus();
+
+            return;
+
+        }
 
 
-            try{
+        /* Collect form data */
 
-                volunteers =
-                    JSON.parse(
-                        localStorage.getItem(
-                            "yssfVolunteers"
-                        )
-                    ) || [];
+        const formData = new FormData(form);
 
-            }catch(error){
+        const volunteer = {};
 
-                volunteers = [];
+
+        formData.forEach(function(value,key){
+
+            if(key !== "photo"){
+
+                volunteer[key] = value;
 
             }
 
+        });
 
-            /* Save */
+
+        /* ID */
+
+        volunteer.volunteerId = generateVolunteerId();
+
+        volunteer.status = "लंबित";
+
+        volunteer.registrationDate =
+            new Date().toLocaleString("hi-IN");
+
+
+
+        /* Photo */
+
+        const photoFile = photoInput.files[0];
+
+
+        function saveVolunteer(photoData){
+
+            volunteer.photo = photoData || "";
+
+
+            const volunteers = getVolunteers();
 
             volunteers.push(volunteer);
 
 
             localStorage.setItem(
                 "yssfVolunteers",
-                JSON.stringify(
-                    volunteers
-                )
+                JSON.stringify(volunteers)
             );
 
 
-            /* Success */
+            /* Show success */
 
-            document.getElementById(
-                "volunteerId"
-            ).textContent =
-                volunteerId;
+            volunteerIdBox.textContent =
+                volunteer.volunteerId;
 
-
-            document.getElementById(
-                "successMessage"
-            ).style.display =
-                "block";
+            successMessage.style.display = "block";
 
 
-            /* Scroll */
+            /* Scroll to success */
 
-            document.getElementById(
-                "successMessage"
-            ).scrollIntoView({
+            successMessage.scrollIntoView({
                 behavior:"smooth",
                 block:"center"
             });
 
 
-            /* Reset */
+            console.log(
+                "Volunteer Registered:",
+                volunteer
+            );
 
-            form.reset();
+        }
 
 
-            photoPreview.style.display =
-                "none";
+        if(photoFile){
+
+            const reader = new FileReader();
+
+
+            reader.onload = function(event){
+
+                saveVolunteer(event.target.result);
+
+            };
+
+
+            reader.readAsDataURL(photoFile);
+
+        }else{
+
+            saveVolunteer("");
+
+        }
+
+    });
+
+
+
+    /* =====================================================
+       FORM RESET
+    ===================================================== */
+
+    form.addEventListener("reset", function(){
+
+        setTimeout(function(){
 
             photoPreview.src = "";
 
+            photoPreview.style.display = "none";
 
-        });
+            successMessage.style.display = "none";
 
+        },50);
 
-        /* Reset */
-
-        form.addEventListener(
-            "reset",
-            function(){
-
-                setTimeout(function(){
-
-                    document.getElementById(
-                        "successMessage"
-                    ).style.display =
-                        "none";
-
-                    photoPreview.style.display =
-                        "none";
-
-                    photoPreview.src = "";
-
-                },50);
-
-            }
-        );
-
-    }
+    });
 
 });
 
 </script>
+
 
 </body>
 </html>
